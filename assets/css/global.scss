@@ -1,0 +1,35 @@
+:root {
+  // Color
+  --c-primary: blue;
+  --c-secondary: red;
+  --c-white: white;
+  --c-black: black;
+
+  // Others
+  --transition-speed: .3s ease-out;
+  --transition: all var(--transition-speed);
+}
+
+body, p, h1, h2, h3, h4 {
+  margin: 0;
+}
+
+body *:not(style, script) {
+  display: flex;
+}
+
+#__layout {
+  flex: 0 0 100%;
+}
+
+main {
+  flex: 0 0 100%;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#content {
+  flex: 0 1 100%;
+  display: block;
+  overflow: auto;
+}
