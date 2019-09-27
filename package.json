@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-v3",
+  "version": "1.0.0",
+  "description": "My personal portfolio",
+  "author": "Erwan Jugand (@erwanjugand)",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
