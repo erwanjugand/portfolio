@@ -2,9 +2,13 @@
 
 <template>
   <div>
-    <div></div>
-    <div>
-      Drawer
-    </div>
+    <transition name="overlay">
+      <div v-show="$store.state.drawerOpened" class="overlay" @click="$store.commit('toggleDrawer')" />
+    </transition>
+    <transition name="drawer">
+      <div class="drawer" v-show="$store.state.drawerOpened">
+        Drawer
+      </div>
+    </transition>
   </div>
 </template>

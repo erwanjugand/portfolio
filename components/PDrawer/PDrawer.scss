@@ -1,0 +1,38 @@
+@import '~/assets/css/variables.scss';
+
+.drawer {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  max-width: calc(100vw - 48px);
+  height: 100vh;
+  background: var(--c-white);
+  box-shadow: var(--elevation-3);
+
+  &-enter-active, &-leave-active {
+    transition: transform var(--transition-speed);
+  }
+
+  &-enter, &-leave-to {
+    transform: translateX(-300px)
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--c-black-75);
+
+  &-enter-active, &-leave-active {
+    transition: opacity var(--transition-speed);
+  }
+
+  &-enter, &-leave-to {
+    opacity: 0;
+  }
+}
