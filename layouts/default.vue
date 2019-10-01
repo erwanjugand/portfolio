@@ -1,12 +1,12 @@
 <template>
-  <main>
+  <div>
     <PHeader />
     <PDrawer />
     <div id="content">
       <nuxt />
       <PFooter />
     </div>
-  </main>
+  </div>
 </template>
 
 <script>

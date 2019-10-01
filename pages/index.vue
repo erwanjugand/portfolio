@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <main>
     <logo />
     <h1 class="title">
       portfolio-v3
     </h1>
-  </div>
+  </main>
 </template>
 
 <script>
