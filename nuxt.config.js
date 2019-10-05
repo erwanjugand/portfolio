@@ -1,6 +1,8 @@
+const env = require('dotenv').config()
 
 export default {
   mode: 'universal',
+  env: env.parsed,
   /*
   ** Headers of the page
   */
@@ -39,6 +41,9 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    ['@nuxtjs/axios', {
+      progress: false
+    }]
   ],
   /*
   ** Build configuration
