@@ -26,17 +26,17 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({ commit }) {
-    const experiences = await this.$axios.get(`${process.env.API_URL}/experiences`)
-    const skills = await this.$axios.get(`${process.env.API_URL}/skills`)
-    const works = await this.$axios.get(`${process.env.API_URL}/works`)
-    const worksFilters = await this.$axios.get(`${process.env.API_URL}/work_filters`)
-    commit('setExperiences', experiences.data)
-    commit('setSkills', skills.data)
-    commit('setWorks', works.data)
-    commit('setWorksFilters', worksFilters.data)
-  },
-  async test ({ commit }) {
-    const { data } = await this.$axios.get(`${process.env.API_URL}/works`)
-    commit('setWorks', data)
+    try {
+      const experiences = await this.$axios.get(`${process.env.API_URL}/experiences`)
+      const skills = await this.$axios.get(`${process.env.API_URL}/skills`)
+      const works = await this.$axios.get(`${process.env.API_URL}/works`)
+      const worksFilters = await this.$axios.get(`${process.env.API_URL}/work_filters`)
+      commit('setExperiences', experiences.data)
+      commit('setSkills', skills.data)
+      commit('setWorks', works.data)
+      commit('setWorksFilters', worksFilters.data)
+    } catch (e) {
+      console.error('error', e)
+    }
   }
 }
