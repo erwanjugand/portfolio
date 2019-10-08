@@ -17,10 +17,16 @@ export const mutations = {
     state.skills = data
   },
   setWorks (state, data) {
+    data.forEach((work) => {
+      work.url = slugify(work.title)
+    })
     state.works = data
   },
   setWorksFilters (state, data) {
     state.worksFilters = data
+    data.forEach((workFilter) => {
+      workFilter.tag = slugify(workFilter.name)
+    })
   }
 }
 
@@ -39,4 +45,19 @@ export const actions = {
       console.error('error', e)
     }
   }
+}
+
+function slugify (string) {
+  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+  const p = new RegExp(a.split('').join('|'), 'g')
+
+  return string.toString().toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
 }
