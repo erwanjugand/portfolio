@@ -8,8 +8,6 @@
   width: 300px;
   max-width: calc(100vw - 48px);
   height: 100vh;
-  background: var(--c-white);
-  box-shadow: var(--elevation-3);
 
   &-enter-active, &-leave-active {
     transition: transform var(--transition-speed);

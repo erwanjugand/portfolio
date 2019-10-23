@@ -1,9 +1,11 @@
 // Media Query
-
-
 $small: 'only screen and (max-width : 575px)';
 $medium-and-up: 'only screen and (min-width : 576px)';
 $medium-and-down: 'only screen and (max-width : 1023px)';
 $large-and-up: 'only screen and (min-width : 1024px)';
 $large-and-down: 'only screen and (min-width : 1399px)';
 $extra-large: 'only screen and (min-width : 1400px)';
+
+// Color
+$black: #000;
+$white: #fff;

@@ -19,6 +19,27 @@ export default {
     PDrawer,
     PFooter,
     PHeader
+  },
+
+  data () {
+    return {
+      route: null
+    }
+  },
+
+  watch: {
+    '$route' (to, from) {
+      this.route = this.$store.state.pages.find(p => p.name === to.name)
+    }
+  },
+
+  head () {
+    return {
+      title: this.route ? this.route.metaTitle : process.env.SITE_TITLE,
+      meta: [
+        { hid: 'description', name: 'description', content: this.route ? this.route.metaDescription : process.env.SITE_DESCRIPTION }
+      ]
+    }
   }
 }
 </script>

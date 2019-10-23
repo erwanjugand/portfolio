@@ -1,7 +1,7 @@
 <style lang="scss" src="./PHeader.scss"></style>
 
 <template>
-  <header>
+  <header class="elevation-2">
     HEADER
     <button type="button" @click="$store.commit('toggleDrawer')">
       Toggle drawer

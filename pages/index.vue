@@ -6,6 +6,8 @@
     </h1>
     skills
     <pre>{{ $store.state.skills }}</pre>
+    pages
+    <pre>{{ $store.state.pages }}</pre>
     experiences
     <pre>{{ $store.state.experiences }}</pre>
     works
@@ -19,6 +21,14 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
+  head () {
+    return {
+      meta: [
+        { hid: 'description', name: 'description', content: this.$store.state.pages.find(p => p.name === 'index').metaDescription }
+      ]
+    }
+  },
+
   components: {
     Logo
   }
