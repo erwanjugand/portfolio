@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="html" :class="darkMode !== undefined ? `${darkMode ? 'dark' : 'light'}-mode` : ''">
     <PHeader />
     <PDrawer />
     <div id="content">
@@ -23,7 +23,8 @@ export default {
 
   data () {
     return {
-      route: null
+      route: null,
+      darkMode: this.$cookies.get('darkMode')
     }
   },
 

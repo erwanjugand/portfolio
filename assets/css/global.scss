@@ -1,4 +1,4 @@
-:root {
+:root, #html.light-mode {
   // Colors
   --c-primary: blue;
   --c-secondary: red;
@@ -16,23 +16,37 @@
   --transition: all var(--transition-speed);
 }
 
+@mixin dark-mode {
+  // Colors
+  --c-background: #{mix($black, $white, 93%)};
+  --c-background-1: #{mix($black, $white, 90%)};
+  --c-background-2: #{mix($black, $white, 87%)};
+  --c-background-3: #{mix($black, $white, 84%)};
+  --c-text: #{$white};
+  --c-text-secondary: #{mix($white, $black, 80%)};
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    // Colors
-    --c-background: #{mix($black, $white, 93%)};
-    --c-background-1: #{mix($black, $white, 90%)};
-    --c-background-2: #{mix($black, $white, 87%)};
-    --c-background-3: #{mix($black, $white, 84%)};
-    --c-text: #{$white};
-    --c-text-secondary: #{mix($white, $black, 80%)};
+    @include dark-mode;
   }
 }
 
 // GLOBAL
+#__layout {
+  flex: 0 0 100%;
+}
 
-html {
+#html {
+  flex: 0 0 100%;
+  flex-direction: column;
+  height: 100vh;
   background-color: var(--c-background);
   color: var(--c-text);
+
+  &.dark-mode {
+    @include dark-mode;
+  }
 }
 
 body, p, h1, h2, h3, h4 {
@@ -43,15 +57,6 @@ body *:not(style, script) {
   display: flex;
 }
 
-#__layout {
-  flex: 0 0 100%;
-
-  > div {
-    flex: 0 0 100%;
-    flex-direction: column;
-    height: 100vh;
-  }
-}
 
 #content {
   flex: 0 1 100%;
