@@ -64,10 +64,10 @@ header {
     fill: #fff;
     margin-left: .5em;
     transition: var(--transition);
+  }
 
-    .active & {
-      transform: rotate(180deg);
-    }
+  &.active svg {
+    transform: rotate(180deg);
   }
 
   &-container {
@@ -90,12 +90,8 @@ header {
     display: flex;
     border-radius: .5em;
     overflow: hidden;
+    transform: translateX(-50%);
     transition: var(--transition);
-    transform: translateX(-50%) scale(0);
-
-    .active & {
-      transform: translateX(-50%) scale(1);
-    }
 
     a {
       display: flex;
@@ -109,6 +105,10 @@ header {
         background: var(--c-primary);
       }
     }
+  }
+
+  &-enter, &-leave-to {
+    transform: translateX(-50%) scale(0);
   }
 }
 
