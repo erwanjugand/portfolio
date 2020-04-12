@@ -1,3 +1,6 @@
+import en from './i18n/en.json'
+import fr from './i18n/fr.json'
+
 require('dotenv').config()
 
 export default {
@@ -32,6 +35,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/directives.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,9 +48,32 @@ export default {
   */
   modules: [
     'cookie-universal-nuxt',
+    [
+      'nuxt-i18n',
+      {
+        seo: false,
+        locales: [
+          { code: 'fr',
+            iso: 'fr'
+          },
+          { code: 'en',
+            iso: 'en'
+          }
+        ],
+        defaultLocale: 'fr',
+        vueI18n: {
+          fallbackLocale: 'fr',
+          messages: {
+            en,
+            fr
+          }
+        }
+      }
+    ],
     ['@nuxtjs/axios', {
       progress: false
-    }]
+    }],
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Build configuration
@@ -56,6 +83,13 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+
+  pageTransition: {
+    name: 'page',
+    afterEnter () {
+      this.$store.commit('setMenuOpening', false)
     }
   }
 }

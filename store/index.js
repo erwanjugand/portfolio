@@ -1,6 +1,7 @@
 export const state = () => ({
-  drawerOpened: false,
+  darkMode: null,
   experiences: [],
+  menuOpened: false,
   pages: [],
   skills: [],
   works: [],
@@ -8,8 +9,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  toggleDrawer (state) {
-    state.drawerOpened = !state.drawerOpened
+  setMenuOpening (state, data) {
+    state.menuOpened = data
+  },
+  setDarkMode (state, data) {
+    state.darkMode = data
   },
   setExperiences (state, data) {
     state.experiences = data
@@ -22,7 +26,7 @@ export const mutations = {
   },
   setWorks (state, data) {
     data.forEach((work) => {
-      work.url = slugify(work.title)
+      work.slug = slugify(work.title)
     })
     state.works = data
   },

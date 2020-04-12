@@ -1,46 +1,29 @@
 <template>
-  <div id="html" :class="darkMode !== undefined ? `${darkMode ? 'dark' : 'light'}-mode` : ''">
+  <div id="page" :class="$store.state.darkMode !== null && `${$store.state.darkMode ? 'dark' : 'light'}-mode`">
     <PHeader />
-    <PDrawer />
-    <div id="content">
+    <PMenu />
+    <div id="page-content" :class="{'minimized': $store.state.menuOpened}" v-on="$store.state.menuOpened ? { click: () => $store.commit('setMenuOpening', false) } : {}">
       <nuxt />
-      <PFooter />
     </div>
   </div>
 </template>
 
 <script>
-import PDrawer from '~/components/PDrawer/PDrawer.vue'
-import PFooter from '~/components/PFooter/PFooter.vue'
+import PMenu from '~/components/PMenu/PMenu.vue'
 import PHeader from '~/components/PHeader/PHeader.vue'
 
 export default {
+  head () {
+    return this.$nuxtI18nSeo()
+  },
+
   components: {
-    PDrawer,
-    PFooter,
+    PMenu,
     PHeader
   },
 
-  data () {
-    return {
-      route: null,
-      darkMode: this.$cookies.get('darkMode')
-    }
-  },
-
-  watch: {
-    '$route' (to, from) {
-      this.route = this.$store.state.pages.find(p => p.name === to.name)
-    }
-  },
-
-  head () {
-    return {
-      title: this.route ? this.route.metaTitle : process.env.SITE_TITLE,
-      meta: [
-        { hid: 'description', name: 'description', content: this.route ? this.route.metaDescription : process.env.SITE_DESCRIPTION }
-      ]
-    }
+  mounted () {
+    this.$store.commit('setDarkMode', this.$cookies.get('darkMode') || window.matchMedia('(prefers-color-scheme: dark)').matches)
   }
 }
 </script>

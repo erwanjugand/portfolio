@@ -1,0 +1,80 @@
+@import '~/assets/css/variables';
+
+#menu {
+  background: #212121;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ul {
+    position: relative;
+    left: 12vw;
+    max-width: 70vw;
+    transition: var(--transition);
+
+    @media #{$medium-and-up} {
+      left: 28vw;
+      max-width: 40vw;
+    }
+  }
+
+  svg {
+    flex: 0 0 2em;
+    height: calc(4em / 3);
+    margin-right: .5em;
+    fill: #fff;
+  }
+
+  a, button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    font-size: 1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    transition: var(--transition);
+
+    .ripple {
+      background: #fff;
+    }
+
+    &:not(.nuxt-link-exact-active) {
+      opacity: .8;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @media #{$large-and-up} {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.fade {
+  &-enter-active, &-leave-active {
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  &-enter-active {
+    @for $i from 2 through 5 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{($i - 1) / 10}s;
+      }
+    }
+  }
+
+  &-enter, &-leave-active {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

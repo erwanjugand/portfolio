@@ -1,0 +1,20 @@
+{
+  "global": {},
+  "header": {
+    "backToHome": "Revenir sur l'acceuil",
+    "changeLanguage": "Changer de langue",
+    "contactMe": "Me contacter",
+    "darkMode": "Thème sombre",
+    "home": "Accueil",
+    "lang": {
+      "fr": "Français",
+      "en": "English"
+    },
+    "lightMode": "Thème clair",
+    "menu": "Menu",
+    "portfolioEvolution": "Évolution du portfolio",
+    "works": "Mes travaux"
+  },
+  "footer": {},
+  "home": {}
+}

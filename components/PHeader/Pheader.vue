@@ -1,48 +1,62 @@
 <style lang="scss" src="./PHeader.scss"></style>
 
 <template>
-  <header class="elevation-2">
-    HEADER
-    <button type="button" @click="$store.commit('toggleDrawer')">
-      Toggle drawer
+  <header :class="['elevation-2', {'flat': $store.state.menuOpened}]">
+    <div>
+      <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$store.commit('setMenuOpening', false)">
+        <img src="/images/logo.svg" alt="">
+        <span v-text="'Erwan Jugand'" />
+      </nuxt-link>
+    </div>
+
+    <div v-click-outside="() => switchLanguage = false" class="switch-language-container" :class="{'active': switchLanguage}">
+      <button
+        v-ripple
+        type="button"
+        class="switch-language"
+        :aria-label="$t('header.changeLanguage')"
+        :title="$t('header.changeLanguage')"
+        @click="switchLanguage = !switchLanguage"
+      >
+        <img :src="`/images/flag-${$i18n.locale}.svg`" :alt="$t(`header.lang.${$i18n.locale}`)">
+        <PIcon type="solid" name="caretDown" />
+      </button>
+      <div class="switch-language-list elevation-1">
+        <nuxt-link
+          v-for="lang of $i18n.locales"
+          :key="lang.iso"
+          v-ripple
+          :to="localePath('index', lang.iso)"
+          :aria-label="$t(`header.lang.${lang.iso}`)"
+          :title="$t(`header.lang.${lang.iso}`)"
+          @click.native="switchLanguage = false"
+        >
+          <img :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
+        </nuxt-link>
+      </div>
+    </div>
+
+    <button v-ripple class="burger" type="button" :class="{'active': $store.state.menuOpened}" @click="$store.commit('setMenuOpening', !$store.state.menuOpened)">
+      <span v-text="$t('header.menu')" />
+      <span class="burger-icon">
+        <span />
+        <span />
+        <span />
+      </span>
     </button>
-    <nav>
-      <ul>
-        <li>
-          <nuxt-link to="/">
-            Accueil
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/works">
-            travaux
-          </nuxt-link>
-        </li>
-        <li>
-          <nuxt-link to="/contact">
-            contact
-          </nuxt-link>
-        </li>
-        <li>
-          <button type="button" @click="toggleDarkMode">
-            toggle darkMode
-          </button>
-        </li>
-      </ul>
-    </nav>
   </header>
 </template>
 
 <script>
+import PIcon from '~/components/PIcon/PIcon.vue'
+
 export default {
-  methods: {
-    toggleDarkMode () {
-      const cookieValue = !this.$cookies.get('darkMode')
-      document.querySelector('#html').className = `${cookieValue ? 'dark' : 'light'}-mode`
-      this.$cookies.set('darkMode', cookieValue, {
-        path: '/',
-        maxAge: 60 * 60 * 24 * 365
-      })
+  components: {
+    PIcon
+  },
+  data () {
+    return {
+      switchLanguage: false
     }
   }
 }

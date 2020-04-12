@@ -1,29 +1,34 @@
-:root, #html.light-mode {
+:root, #page.light-mode {
   // Colors
   --c-primary: blue;
   --c-secondary: red;
-  --c-black-75: #{rgba($black, .75)};
+  --c-text: #000;
+  --c-text-secondary: #{mix(#000, #fff, 80%)};
+  --c-background: #fff;
+  --c-background-1: #fff;
+  --c-background-2: #fff;
+  --c-background-3: #fff;
 
-  --c-background: #{$white};
-  --c-background-1: #{$white};
-  --c-background-2: #{$white};
-  --c-background-3: #{$white};
-  --c-text: #{$black};
-  --c-text-secondary: #{mix($black, $white, 80%)};
+  --c-scrollbar-1: #{mix(#000, #fff, 25%)};
+  --c-scrollbar-2: #{mix(#000, #fff, 35%)};
+  --c-scrollbar-3: #{mix(#000, #fff, 50%)};
 
   // Others
-  --transition-speed: .3s ease-out;
-  --transition: all var(--transition-speed);
+  --transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @mixin dark-mode {
   // Colors
-  --c-background: #{mix($black, $white, 93%)};
-  --c-background-1: #{mix($black, $white, 90%)};
-  --c-background-2: #{mix($black, $white, 87%)};
-  --c-background-3: #{mix($black, $white, 84%)};
-  --c-text: #{$white};
-  --c-text-secondary: #{mix($white, $black, 80%)};
+  --c-text: #fff;
+  --c-text-secondary: #{mix(#fff,#000,80%)};
+  --c-background: #{mix(#000,#fff,93%)};
+  --c-background-1: #{mix(#000,#fff,90%)};
+  --c-background-2: #{mix(#000,#fff,87%)};
+  --c-background-3: #{mix(#000,#fff,84%)};
+
+  --c-scrollbar-1: #{mix(#fff, #000, 25%)};
+  --c-scrollbar-2: #{mix(#fff, #000, 35%)};
+  --c-scrollbar-3: #{mix(#fff, #000, 50%)};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,51 +37,132 @@
   }
 }
 
-// GLOBAL
-#__layout {
-  flex: 0 0 100%;
-}
-
-#html {
-  flex: 0 0 100%;
-  flex-direction: column;
-  height: 100vh;
-  background-color: var(--c-background);
-  color: var(--c-text);
+#page {
+  perspective: 5000px;
+  overflow: hidden;
 
   &.dark-mode {
     @include dark-mode;
   }
 }
 
-body, p, h1, h2, h3, h4 {
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
   margin: 0;
+
+  ::-webkit-scrollbar {
+    background: var(--c-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-scrollbar-1);
+    border: 1px solid var(--c-background);
+
+    &:hover {
+      background: var(--c-scrollbar-2);
+    }
+
+    &:active {
+      background: var(--c-scrollbar-3);
+    }
+  }
 }
 
-body *:not(style, script) {
+
+#page-content {
+  position: relative;
   display: flex;
+  height: 100vh;
+  color: var(--c-text);
+  transition: transform var(--transition);
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(white,.1);
+    transition: var(--transition);
+    z-index: -1;
+  }
+
+  &.minimized {
+    transform: scale(.75) rotateY(50deg) translateX(-100vw);
+    cursor: zoom-in;
+
+    @media #{$medium-and-up} {
+      transform: scale(.5) rotateY(50deg) translateX(-30vw);
+    }
+
+    &::before {
+      transform: translate3d(calc(-13vw - 100px), 0, 0) scale(.8);
+    }
+
+    &::after {
+      transform: translate3d(calc(-7vw - 50px), 0, 0) scale(.9);
+    }
+  }
+}
+
+main {
+  flex: 100%;
+  padding-top: 64px;
+  background: var(--c-background);
+  box-shadow: 0 5px 5px 0px rgba(black,.5);
+  overflow: auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+.ripple {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  background: #000;
+  border-radius: 50%;
+  opacity: .1;
+  transition: .5s ease-out, opacity .3s ease-out;
+  z-index: -.1;
+
+  &-container > *:not(.ripple) {
+    position: relative;
+  }
 }
 
 
-#content {
-  flex: 0 1 100%;
-  display: block;
-  overflow-y: auto;
+button {
+  font-size: 1em;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-// // ELEVATION
+button, a {
+  outline: 2px solid transparent;
+
+  &:focus:not(:active) {
+    outline-color: var(--c-primary);
+  }
+}
 
 .elevation-1 {
-  background-color: var(--c-background-1);
-  box-shadow: 0px 2px 1px -1px rgba($black, .1), 0px 1px 1px 0px rgba($black, .07), 0px 1px 3px 0px rgba($black, .06);
+  background: var(--c-background-1);
+  box-shadow: 0px 2px 1px -1px rgba(#000, .1), 0px 1px 1px 0px rgba(#000, .07), 0px 1px 3px 0px rgba(#000, .06);
 }
 
 .elevation-2 {
-  background-color: var(--c-background-2);
-  box-shadow: 0px 3px 1px -2px rgba($black, .1), 0px 2px 2px 0px rgba($black, .07), 0px 1px 5px 0px rgba($black, .06)
+  background: var(--c-background-2);
+  box-shadow: 0px 3px 1px -2px rgba(#000, .1), 0px 2px 2px 0px rgba(#000, .07), 0px 1px 5px 0px rgba(#000, .06)
 }
 
 .elevation-3 {
-  background-color: var(--c-background-3);
-  box-shadow: 0px 3px 3px -2px rgba($black, .1), 0px 3px 4px 0px rgba($black, .07), 0px 1px 8px 0px rgba($black, .06);
+  background: var(--c-background-3);
+  box-shadow: 0px 3px 3px -2px rgba(#000, .1), 0px 3px 4px 0px rgba(#000, .07), 0px 1px 8px 0px rgba(#000, .06);
 }

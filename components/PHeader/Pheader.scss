@@ -1,3 +1,149 @@
+@import '~/assets/css/variables';
+
 header {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  width: 100vw;
+  height: 4em;
   z-index: 10;
+  padding: 0 5vw;
+  transition: box-shadow var(--transition);
+
+  &.elevation-2 {
+    background: #212121;
+  }
+
+  &.flat {
+    box-shadow: none;
+  }
+
+  > div {
+    display: flex;
+  }
+
+  .ripple {
+    background: #fff;
+  }
+}
+
+.logo, .burger {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+
+  > span:first-of-type {
+    font-weight: 300;
+    transition: font var(--transition);
+
+    @media #{$small} {
+      font-size: 0;
+    }
+  }
+}
+
+// Logo
+
+.logo > span {
+  padding-left: 1em;
+}
+
+
+// Switch Language
+
+.switch-language {
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+
+  svg {
+    width: .625em;
+    fill: #fff;
+    margin-left: .5em;
+    transition: var(--transition);
+
+    .active & {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-container {
+    position: relative;
+    transition: var(--transition);
+
+    @media #{$medium-and-up} {
+      margin-right: 1em;
+    }
+
+    img {
+      width: 2em;
+    }
+  }
+
+  &-list {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: flex;
+    border-radius: .5em;
+    overflow: hidden;
+    transition: var(--transition);
+    transform: translateX(-50%) scale(0);
+
+    .active & {
+      transform: translateX(-50%) scale(1);
+    }
+
+    a {
+      display: flex;
+      padding: .25em .5em;
+
+      &:hover {
+        background: var(--c-background-1);
+      }
+
+      &.nuxt-link-exact-active {
+        background: var(--c-primary);
+      }
+    }
+  }
+}
+
+// Burger
+
+.burger {
+  > span:first-of-type {
+    padding-right: 1em;
+  }
+
+  &-icon {
+    span {
+      display: flex;
+      width: 2em;
+      height: .1875em;
+      background: #fff;
+      border-radius: .25em;
+      transition: var(--transition);
+      &:not(:first-of-type) {
+        margin-top: .5em;
+      }
+    }
+
+    .active & span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate3d(.5em, .5em, 0);
+      }
+
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(135deg) translate3d(-.5em, .5em, 0);
+      }
+    }
+  }
 }
