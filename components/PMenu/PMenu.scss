@@ -41,6 +41,7 @@
     text-decoration: none;
     color: #fff;
     transition: var(--transition);
+    box-sizing: initial; // Fix Flex auto with with text
 
     .ripple {
       background: #fff;
