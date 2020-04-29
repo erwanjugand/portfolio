@@ -27,7 +27,7 @@
             v-for="lang of $i18n.locales"
             :key="lang.iso"
             v-ripple
-            :to="localePath('index', lang.iso)"
+            :to="localePath($route.name.split('__')[0], lang.iso)"
             :aria-label="$t(`header.lang.${lang.iso}`)"
             :title="$t(`header.lang.${lang.iso}`)"
             @click.native="switchLanguage = false"
@@ -50,12 +50,7 @@
 </template>
 
 <script>
-import PIcon from '~/components/PIcon/PIcon.vue'
-
 export default {
-  components: {
-    PIcon
-  },
   data () {
     return {
       switchLanguage: false

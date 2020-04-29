@@ -20,20 +20,15 @@
 </template>
 
 <script>
-import PIcon from '~/components/PIcon/PIcon.vue'
 
 export default {
-  components: {
-    PIcon
-  },
-
   computed: {
     links () {
       return [
         { name: 'home', icon: 'homeAlt', route: 'index' },
         { name: 'works', icon: 'folderOpen', route: 'works' },
         { name: 'contactMe', icon: 'envelopeOpenText', route: 'contact' },
-        { name: 'portfolioEvolution', icon: 'sparkles', route: 'contact' }
+        { name: 'portfolioEvolution', icon: 'sparkles', route: 'changelog' }
       ]
     }
   },

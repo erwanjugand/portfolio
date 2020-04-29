@@ -9,17 +9,9 @@
 </template>
 
 <script>
-import PMenu from '~/components/PMenu/PMenu.vue'
-import PHeader from '~/components/PHeader/PHeader.vue'
-
 export default {
   head () {
     return this.$nuxtI18nSeo()
-  },
-
-  components: {
-    PMenu,
-    PHeader
   },
 
   mounted () {

@@ -16,10 +16,8 @@
     <pre>{{ $store.state.worksFilters }}</pre>
   </main>
 </template>
+
 <script>
-
-import Logo from '~/components/Logo.vue'
-
 export default {
   head () {
     return {
@@ -27,10 +25,6 @@ export default {
         { hid: 'description', name: 'description', content: this.$store.state.pages.find(p => p.name === 'index').metaDescription }
       ]
     }
-  },
-
-  components: {
-    Logo
   }
 }
 </script>
