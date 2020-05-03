@@ -1,17 +1,23 @@
 :root, #page.light-mode {
   // Colors
-  --c-primary: blue;
-  --c-secondary: red;
+  --c-primary: #0077DB;
+  --c-secondary: #A23FFD;
   --c-text: #000;
-  --c-text-secondary: #{mix(#000, #fff, 80%)};
+  --c-text-80: #{mix(#000, #fff, 80%)};
+  --c-text-65: #{mix(#000, #fff, 65%)};
+  --c-text-50: #{mix(#000, #fff, 50%)};
+  --c-text-35: #{mix(#000, #fff, 35%)};
   --c-background: #fff;
   --c-background-1: #fff;
   --c-background-2: #fff;
   --c-background-3: #fff;
-
+  --c-danger:#ab0000;
   --c-scrollbar-1: #{mix(#000, #fff, 25%)};
   --c-scrollbar-2: #{mix(#000, #fff, 35%)};
   --c-scrollbar-3: #{mix(#000, #fff, 50%)};
+
+  --fs-regular: 1rem;
+  --fs-small: .75rem;
 
   // Others
   --transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -20,12 +26,13 @@
 @mixin dark-mode {
   // Colors
   --c-text: #fff;
-  --c-text-secondary: #{mix(#fff,#000,80%)};
+  --c-text-80: #{mix(#fff,#000,80%)};
+  --c-text-65: #{mix(#fff, #000, 65%)};
+  --c-text-35: #{mix(#fff, #000, 35%)};
   --c-background: #{mix(#000,#fff,93%)};
   --c-background-1: #{mix(#000,#fff,90%)};
   --c-background-2: #{mix(#000,#fff,87%)};
   --c-background-3: #{mix(#000,#fff,84%)};
-
   --c-scrollbar-1: #{mix(#fff, #000, 25%)};
   --c-scrollbar-2: #{mix(#fff, #000, 35%)};
   --c-scrollbar-3: #{mix(#fff, #000, 50%)};
@@ -138,10 +145,14 @@ li {
 
 
 button {
-  font-size: 1em;
+  font-size: var(--fs-regular);
   border: none;
   background: transparent;
   cursor: pointer;
+
+  &::-moz-focus-inner {
+    border: none; // Remove border when focused for Firefox
+  }
 }
 
 button, a {

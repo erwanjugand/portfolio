@@ -1,4 +1,14 @@
 {
+  "contact": {
+    "email": "Email",
+    "message": "Message",
+    "title": "Title"
+  },
+  "footer": {},
+  "form": {
+    "invalidEmail": "Invalid email",
+    "required": "Required !"
+  },
   "global": {},
   "header": {
     "backToHome": "Back to home",
@@ -15,6 +25,5 @@
     "portfolioEvolution": "Portfolio evolution",
     "works": "My works"
   },
-  "footer": {},
   "home": {}
 }

@@ -49,7 +49,10 @@ export default {
     },
     type: {
       type: String,
-      default: 'light'
+      default: 'light',
+      validator (value) {
+        return ['light', 'solid'].includes(value)
+      }
     }
   },
 
