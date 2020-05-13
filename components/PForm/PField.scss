@@ -50,6 +50,11 @@
       }
     }
 
+    &:-webkit-autofill {
+      animation-name: autofill;
+      animation-fill-mode: both;
+    }
+
     &.error {
       box-shadow: inset 0 0 0 .125em var(--c-danger);
 
@@ -97,5 +102,12 @@
       opacity: 0;
       transform: translateY(-25%);
     }
+  }
+}
+
+@keyframes autofill {
+  to {
+    color: inherit;
+    background: transparent;
   }
 }

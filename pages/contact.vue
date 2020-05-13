@@ -7,6 +7,7 @@
         required
         type="email"
         :label="$t('contact.email')"
+        autocomplete="email"
       />
       <PField
         v-model="form.password"
