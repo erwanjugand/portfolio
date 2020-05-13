@@ -3,25 +3,28 @@
     contact
     <PForm>
       <PField
-        v-model="form.text"
+        v-model="form.email"
         required
         type="email"
         :label="$t('contact.email')"
         autocomplete="email"
       />
       <PField
-        v-model="form.password"
+        v-model="form.title"
         type="text"
+        required
         :label="$t('contact.title')"
       />
       <PField
-        v-model="form.textarea"
+        v-model="form.message"
         required
         type="textarea"
         :min-rows="2"
-        :max-rows="6"
         :label="$t('contact.message')"
       />
+      <PButton icon="sparkles">
+        Envoyer
+      </PButton>
     </PForm>
   </main>
 </template>
@@ -39,10 +42,9 @@ export default {
   data () {
     return {
       form: {
-        title: null,
-        password: 'test',
-        number: null,
-        textArea: null
+        email: '',
+        title: '',
+        message: ''
       }
     }
   }

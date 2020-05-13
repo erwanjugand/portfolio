@@ -1,0 +1,76 @@
+@import '~/assets/css/variables';
+
+.button {
+  position: relative;
+  display: flex;
+  min-height: 3em;
+  border-radius: .5rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    padding: .5em 1.5em;
+    text-transform: uppercase;
+    line-height: 1.25em;
+
+    svg {
+      flex: 0 0 1.25em;
+      height: 1.25em;
+      margin:  0 1em 0 -.25em;
+    }
+  }
+
+  &-outlined {
+    font-weight: 500;
+    color: var(--c-secondary);
+    fill: var(--c-secondary);
+    border: .125rem solid var(--c-secondary);
+
+    .ripple {
+      background: var(--c-secondary);
+      opacity: .2;
+    }
+
+    &:not(.button-loading):hover {
+      background: var(--c-button-outlined-bg-hover);
+    }
+
+    .button:not(&) {
+      color: var(--c-background);
+      fill: var(--c-background);
+      background: var(--c-secondary);
+
+      .ripple {
+        background: var(--c-background);
+      }
+
+      &:not(.button-loading):hover {
+        background: var(--c-button-bg-hover);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: .8;
+  }
+
+  &-loading span {
+    cursor: wait;
+    color: transparent;
+    fill: transparent;
+  }
+
+  .circular-loader {
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+
+    circle {
+      stroke: var(--c-background);
+    }
+
+    @at-root .button-outlined .circular-loader circle {
+      stroke: var(--c-secondary);
+    }
+  }
+}

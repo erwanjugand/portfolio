@@ -5,7 +5,7 @@ header {
   display: grid;
   grid-template-columns: 1fr auto auto;
   width: 100vw;
-  height: 4em;
+  height: 3.5em;
   z-index: 10;
   padding: 0 5vw;
   transition: box-shadow var(--transition);
@@ -95,7 +95,7 @@ header {
 
     a {
       display: flex;
-      padding: .25em .5em;
+      padding: .5em;
 
       &:hover {
         background: var(--c-background-1);

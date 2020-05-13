@@ -1,20 +1,24 @@
+@import '~/assets/css/variables';
+
 :root, #page.light-mode {
   // Colors
-  --c-primary: #0077DB;
-  --c-secondary: #A23FFD;
-  --c-text: #000;
-  --c-text-80: #{mix(#000, #fff, 80%)};
-  --c-text-65: #{mix(#000, #fff, 65%)};
-  --c-text-50: #{mix(#000, #fff, 50%)};
-  --c-text-35: #{mix(#000, #fff, 35%)};
-  --c-background: #fff;
-  --c-background-1: #fff;
-  --c-background-2: #fff;
-  --c-background-3: #fff;
-  --c-danger:#ab0000;
-  --c-scrollbar-1: #{mix(#000, #fff, 25%)};
-  --c-scrollbar-2: #{mix(#000, #fff, 35%)};
-  --c-scrollbar-3: #{mix(#000, #fff, 50%)};
+  --c-primary: #{$primary};
+  --c-secondary: #{$secondary};
+  --c-text: #{$black};
+  --c-text-80: #{mix($black, $white, 80%)};
+  --c-text-65: #{mix($black, $white, 65%)};
+  --c-text-50: #{mix($black, $white, 50%)};
+  --c-text-35: #{mix($black, $white, 35%)};
+  --c-button-bg-hover: #{mix($secondary, $white, 90%)};
+  --c-button-outlined-bg-hover: #{rgba($secondary, .1)};
+  --c-background: #{$white};
+  --c-background-1: #{$white};
+  --c-background-2: #{$white};
+  --c-background-3: #{$white};
+  --c-danger: #{$red};
+  --c-scrollbar-1: #{mix($black, $white, 25%)};
+  --c-scrollbar-2: #{mix($black, $white, 35%)};
+  --c-scrollbar-3: #{mix($black, $white, 50%)};
 
   --fs-regular: 1rem;
   --fs-small: .75rem;
@@ -25,17 +29,18 @@
 
 @mixin dark-mode {
   // Colors
-  --c-text: #fff;
-  --c-text-80: #{mix(#fff,#000,80%)};
-  --c-text-65: #{mix(#fff, #000, 65%)};
-  --c-text-35: #{mix(#fff, #000, 35%)};
-  --c-background: #{mix(#000,#fff,93%)};
-  --c-background-1: #{mix(#000,#fff,90%)};
-  --c-background-2: #{mix(#000,#fff,87%)};
-  --c-background-3: #{mix(#000,#fff,84%)};
-  --c-scrollbar-1: #{mix(#fff, #000, 25%)};
-  --c-scrollbar-2: #{mix(#fff, #000, 35%)};
-  --c-scrollbar-3: #{mix(#fff, #000, 50%)};
+  --c-text: #{$white};
+  --c-text-80: #{mix($white,$black,80%)};
+  --c-text-65: #{mix($white, $black, 65%)};
+  --c-text-35: #{mix($white, $black, 35%)};
+  --c-button-bg-hover: #{mix($secondary, $black, 90%)};
+  --c-background: #{mix($black,$white,93%)};
+  --c-background-1: #{mix($black,$white,90%)};
+  --c-background-2: #{mix($black,$white,87%)};
+  --c-background-3: #{mix($black,$white,84%)};
+  --c-scrollbar-1: #{mix($white, $black, 25%)};
+  --c-scrollbar-2: #{mix($white, $black, 35%)};
+  --c-scrollbar-3: #{mix($white, $black, 50%)};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,6 +64,7 @@
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
+  outline: none;
 
   ::-webkit-scrollbar {
     background: var(--c-background);
@@ -118,7 +124,7 @@
 
 main {
   flex: 100%;
-  padding-top: 64px;
+  padding-top: 3.5em;
   background: var(--c-background);
   box-shadow: 0 5px 5px 0px rgba(black,.5);
   overflow: auto;
@@ -130,9 +136,9 @@ li {
 
 .ripple {
   position: absolute;
-  height: 1px;
-  width: 1px;
-  background: #000;
+  height: 0;
+  width: 0;
+  background: $black;
   border-radius: 50%;
   opacity: .1;
   transition: .5s ease-out, opacity .3s ease-out;
@@ -156,24 +162,25 @@ button {
 }
 
 button, a {
-  outline: 2px solid transparent;
+  // outline: 2px solid transparent;
 
   &:focus:not(:active) {
+    box-shadow: 0 0 0 2px var(--c-primary);
     outline-color: var(--c-primary);
   }
 }
 
 .elevation-1 {
   background: var(--c-background-1);
-  box-shadow: 0px 2px 1px -1px rgba(#000, .1), 0px 1px 1px 0px rgba(#000, .07), 0px 1px 3px 0px rgba(#000, .06);
+  box-shadow: 0px 2px 1px -1px rgba($black, .1), 0px 1px 1px 0px rgba($black, .07), 0px 1px 3px 0px rgba($black, .06);
 }
 
 .elevation-2 {
   background: var(--c-background-2);
-  box-shadow: 0px 3px 1px -2px rgba(#000, .1), 0px 2px 2px 0px rgba(#000, .07), 0px 1px 5px 0px rgba(#000, .06)
+  box-shadow: 0px 3px 1px -2px rgba($black, .1), 0px 2px 2px 0px rgba($black, .07), 0px 1px 5px 0px rgba($black, .06)
 }
 
 .elevation-3 {
   background: var(--c-background-3);
-  box-shadow: 0px 3px 3px -2px rgba(#000, .1), 0px 3px 4px 0px rgba(#000, .07), 0px 1px 8px 0px rgba(#000, .06);
+  box-shadow: 0px 3px 3px -2px rgba($black, .1), 0px 3px 4px 0px rgba($black, .07), 0px 1px 8px 0px rgba($black, .06);
 }
