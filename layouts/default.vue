@@ -12,6 +12,12 @@
 export default {
   head () {
     return this.$nuxtI18nSeo()
+  },
+
+  mounted () {
+    if (this.$store.state.darkMode === null) {
+      this.$store.commit('setDarkMode', window.matchMedia('(prefers-color-scheme: dark)').matches)
+    }
   }
 }
 </script>

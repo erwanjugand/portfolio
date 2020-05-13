@@ -47,17 +47,17 @@ export const actions = {
     try {
       const experiences = await this.$axios.get(`${process.env.API_URL}/experiences`)
       const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
-      const releases = await this.$axios.get(process.env.GITHUB_RELEASES)
+      // const releases = await this.$axios.get(process.env.GITHUB_RELEASES)
       const skills = await this.$axios.get(`${process.env.API_URL}/skills`)
       const works = await this.$axios.get(`${process.env.API_URL}/works`)
       const worksFilters = await this.$axios.get(`${process.env.API_URL}/work_filters`)
       commit('setExperiences', experiences.data)
       commit('setPages', pages.data)
-      commit('setReleases', releases.data)
+      // commit('setReleases', releases.data)
       commit('setSkills', skills.data)
       commit('setWorks', works.data)
       commit('setWorksFilters', worksFilters.data)
-      commit('setDarkMode', typeof this.$cookies.get('darkMode') !== 'undefined' ? this.$cookies.get('darkMode') : window.matchMedia('(prefers-color-scheme: dark)').matches)
+      commit('setDarkMode', typeof this.$cookies.get('darkMode') !== 'undefined' ? this.$cookies.get('darkMode') : null)
     } catch (e) {
       console.error('error', e)
     }

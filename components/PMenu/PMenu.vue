@@ -34,7 +34,7 @@ export default {
 
   methods: {
     toggleDarkMode () {
-      const cookieValue = !this.$cookies.get('darkMode')
+      const cookieValue = typeof this.$cookies.get('darkMode') !== 'undefined' ? !this.$cookies.get('darkMode') : !window.matchMedia('(prefers-color-scheme: dark)').matches
       this.$store.commit('setDarkMode', cookieValue)
       this.$cookies.set('darkMode', cookieValue, {
         path: '/',
