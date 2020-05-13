@@ -12,10 +12,6 @@
 export default {
   head () {
     return this.$nuxtI18nSeo()
-  },
-
-  mounted () {
-    this.$store.commit('setDarkMode', typeof this.$cookies.get('darkMode') !== 'undefined' ? this.$cookies.get('darkMode') : window.matchMedia('(prefers-color-scheme: dark)').matches)
   }
 }
 </script>

@@ -57,6 +57,7 @@ export const actions = {
       commit('setSkills', skills.data)
       commit('setWorks', works.data)
       commit('setWorksFilters', worksFilters.data)
+      commit('setDarkMode', typeof this.$cookies.get('darkMode') !== 'undefined' ? this.$cookies.get('darkMode') : window.matchMedia('(prefers-color-scheme: dark)').matches)
     } catch (e) {
       console.error('error', e)
     }
