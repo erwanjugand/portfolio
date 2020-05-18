@@ -11,7 +11,34 @@
 <script>
 export default {
   head () {
-    return this.$nuxtI18nSeo()
+    const i18nSeo = this.$nuxtI18nSeo()
+    return {
+      title: process.env.SITE_TITLE + (this.page && this.page.metaTitle && this.page.metaTitle !== process.env.SITE_TITLE ? ` - ${this.page.metaTitle}` : ''),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.page && this.page.metaDescription
+        },
+        ...i18nSeo.meta
+      ],
+      htmlAttrs: i18nSeo.htmlAttrs,
+      link: i18nSeo.link
+    }
+  },
+
+  data ({ $store }) {
+    return {
+      page: $store.state.pages.find(p => p.name === this.$route.name.split('__')[0])
+    }
+  },
+
+  watch: {
+    $route: {
+      handler (to) {
+        this.page = this.$store.state.pages.find(p => p.name === to.name.split('__')[0])
+      }
+    }
   },
 
   mounted () {

@@ -1,7 +1,7 @@
 <template>
   <main>
     ChangeLog
-    <div v-for="release of $store.state.releases.filter(r => !r.draft)" :key="release.id">
+    <div v-for="release of $store.state.releases" :key="release.id">
       {{ release.tag_name }}
       {{ release.name }}
       {{ release.published_at }}

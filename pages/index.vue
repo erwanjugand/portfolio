@@ -5,26 +5,38 @@
       portfolio-v3
     </h1>
     skills
-    <pre>{{ $store.state.skills }}</pre>
-    pages
-    <pre>{{ $store.state.pages }}</pre>
+    <pre>{{ skills }}</pre>
     experiences
-    <pre>{{ $store.state.experiences }}</pre>
+    <pre>{{ experiences }}</pre>
     works
-    <pre>{{ $store.state.works }}</pre>
+    <pre>{{ works }}</pre>
     works filters
-    <pre>{{ $store.state.worksFilters }}</pre>
+    <pre>{{ workFilters }}</pre>
   </main>
 </template>
 
 <script>
 export default {
-  head () {
-    return {
-      meta: [
-        { hid: 'description', name: 'description', content: this.$store.state.pages.find(p => p.name === 'index').metaDescription }
-      ]
+  async asyncData ({ store, $axios }) {
+    const datas = {}
+    const datasRequired = [
+      { name: 'experiences', path: 'experiences' },
+      { name: 'skills', path: 'skills' },
+      { name: 'works', path: 'works' },
+      { name: 'workFilters', path: 'work_filters' }
+    ]
+
+    for (const dataRequired of datasRequired) {
+      let values = store.state[dataRequired.name]
+      if (!values.length) {
+        const { data } = await $axios.get(`${process.env.API_URL}/${dataRequired.path}`)
+        values = data
+        store.commit(`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`, data)
+      }
+      datas[dataRequired.name] = values
     }
+
+    return datas
   }
 }
 </script>

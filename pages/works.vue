@@ -13,7 +13,26 @@ export default {
       fr: '/travaux',
       en: '/works'
     }
+  },
+
+  async asyncData ({ store, $axios }) {
+    const datas = {}
+    const datasRequired = [
+      { name: 'works', path: 'works' },
+      { name: 'workFilters', path: 'work_filters' }
+    ]
+
+    for (const dataRequired of datasRequired) {
+      let values = store.state[dataRequired.name]
+      if (!values.length) {
+        const { data } = await $axios.get(`${process.env.API_URL}/${dataRequired.path}`)
+        values = data
+        store.commit(`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`, data)
+      }
+      datas[dataRequired.name] = values
+    }
+
+    return datas
   }
 }
-// :to="localePath({ name: 'category-slug', params: { slug: category.slug } })">
 </script>
