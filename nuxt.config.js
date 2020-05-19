@@ -42,6 +42,7 @@ export default {
   */
   buildModules: [
     '@nuxt/components',
+    '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
     '@nuxtjs/dotenv'
   ],
@@ -53,7 +54,6 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    'cookie-universal-nuxt',
     [
       'nuxt-i18n',
       {

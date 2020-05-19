@@ -1,5 +1,4 @@
 export const state = () => ({
-  darkMode: null,
   experiences: [],
   menuOpened: false,
   pages: [],
@@ -12,9 +11,6 @@ export const state = () => ({
 export const mutations = {
   setMenuOpening (state, data) {
     state.menuOpened = data
-  },
-  setDarkMode (state, data) {
-    state.darkMode = data
   },
   setExperiences (state, data) {
     state.experiences = data
@@ -47,7 +43,6 @@ export const actions = {
     try {
       const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
       commit('setPages', pages.data)
-      commit('setDarkMode', typeof this.$cookies.get('darkMode') !== 'undefined' ? this.$cookies.get('darkMode') : null)
     } catch (e) {
       console.error('error', e)
     }

@@ -10,9 +10,9 @@
         </nuxt-link>
       </li>
       <li v-show="$store.state.menuOpened" key="darkMode">
-        <button v-ripple type="button" @click="toggleDarkMode">
-          <PIcon :name="`lightbulb${$store.state.darkMode ? 'Slash' : 'On'}`" />
-          {{ $t(`header.${$store.state.darkMode ? 'dark' : 'light'}Mode`) }}
+        <button v-ripple type="button" @click="() => { $colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark' }">
+          <PIcon :name="`lightbulb${$colorMode.value === 'dark' ? 'Slash' : 'On'}`" />
+          {{ $t(`header.${$colorMode.value === 'dark' ? 'dark' : 'light'}Mode`) }}
         </button>
       </li>
     </transition-group>
@@ -29,17 +29,6 @@ export default {
         { name: 'contactMe', icon: 'envelopeOpenText', route: 'contact' },
         { name: 'portfolioEvolution', icon: 'sparkles', route: 'changelog' }
       ]
-    }
-  },
-
-  methods: {
-    toggleDarkMode () {
-      const cookieValue = typeof this.$cookies.get('darkMode') !== 'undefined' ? !this.$cookies.get('darkMode') : !window.matchMedia('(prefers-color-scheme: dark)').matches
-      this.$store.commit('setDarkMode', cookieValue)
-      this.$cookies.set('darkMode', cookieValue, {
-        path: '/',
-        maxAge: 60 * 60 * 24 * 365
-      })
     }
   }
 }
