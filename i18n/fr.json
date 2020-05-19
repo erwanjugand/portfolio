@@ -2,7 +2,12 @@
   "contact": {
     "email": "Email",
     "message": "Message",
-    "title": "Titre"
+    "send": "Envoyer",
+    "title": "Titre",
+    "validation": {
+      "sent": "Le message a été transmis !",
+      "error": "Une erreur est survenue, le message n'a pas pu être transmis"
+    }
   },
   "footer": {},
   "form": {

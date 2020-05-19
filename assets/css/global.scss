@@ -1,12 +1,19 @@
 @import '~/assets/css/variables';
 
+
+// --- CSS VARIABLES
+
+
 :root {
   // Colors
   --c-primary: #{$primary};
   --c-secondary: #{$secondary};
   --c-text-50: #{mix($black, $white, 50%)};
   --c-button-outlined-bg-hover: #{rgba($secondary, .1)};
-  --c-danger: #{$red};
+  --c-fail: #{$red};
+  --c-fail-25: #{rgba($red, .25)};
+  --c-success: #{$green};
+  --c-success-25: #{rgba($green, .25)};
 
   // Fonts
   --fs-regular: 1rem;
@@ -48,11 +55,14 @@
   --c-scrollbar-3: #{mix($white, $black, 50%)};
 }
 
+
+// --- GLOBAL
+
+
 #page {
   perspective: 5000px;
   overflow: hidden;
 }
-
 
 * {
   box-sizing: border-box;
@@ -117,6 +127,7 @@
   }
 }
 
+
 main {
   flex: 100%;
   padding-top: 3.5em;
@@ -144,7 +155,6 @@ li {
   }
 }
 
-
 button {
   font-size: var(--fs-regular);
   border: none;
@@ -157,13 +167,15 @@ button {
 }
 
 button, a {
-  // outline: 2px solid transparent;
-
   &:focus:not(:active) {
-    box-shadow: 0 0 0 2px var(--c-primary);
+    box-shadow: 0 0 0 .125em var(--c-primary);
     outline-color: var(--c-primary);
   }
 }
+
+
+// --- HELPER
+
 
 .elevation-1 {
   background: var(--c-background-1);
@@ -178,4 +190,33 @@ button, a {
 .elevation-3 {
   background: var(--c-background-3);
   box-shadow: 0px 3px 3px -2px rgba($black, .1), 0px 3px 4px 0px rgba($black, .07), 0px 1px 8px 0px rgba($black, .06);
+}
+
+
+.message-success, .message-fail {
+  display: flex;
+  align-items: center;
+  padding: .8125em 1em;
+  margin-bottom: 2em;
+  border-radius: .5em;
+
+  svg {
+    flex: 0 0 1.25em;
+    height: 1.25em;
+    margin-right: 1em;
+  }
+}
+
+.message-success {
+  color: var(--c-success);
+  fill: var(--c-success);
+  background: var(--c-success-25);
+  border: .0625em solid var(--c-success);
+}
+
+.message-fail {
+  color: var(--c-fail);
+  fill: var(--c-fail);
+  background: var(--c-fail-25);
+  border: .0625em solid var(--c-fail);
 }

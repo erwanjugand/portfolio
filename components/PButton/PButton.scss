@@ -5,6 +5,7 @@
   display: flex;
   min-height: 3em;
   border-radius: .5rem;
+  transition: var(--transition);
 
   span {
     display: flex;
@@ -50,9 +51,15 @@
     }
   }
 
+
+  // Disabled
+
   &:disabled {
     opacity: .8;
   }
+
+
+  // Loading
 
   &-loading span {
     cursor: wait;

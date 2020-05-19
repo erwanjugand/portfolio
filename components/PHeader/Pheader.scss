@@ -45,10 +45,17 @@ header {
   }
 }
 
+
 // Logo
 
-.logo > span {
-  padding-left: 1em;
+.logo {
+  > span {
+    padding-left: 1em;
+  }
+
+  img {
+    width: 2.5em;
+  }
 }
 
 
@@ -111,6 +118,7 @@ header {
     transform: translateX(-50%) scale(0);
   }
 }
+
 
 // Burger
 

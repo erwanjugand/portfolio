@@ -16,6 +16,7 @@ export default {
   },
 
   async asyncData ({ store, $axios }) {
+    // Fetch datas if necessary
     const datas = {}
     const datasRequired = [
       { name: 'works', path: 'works' },

@@ -25,16 +25,16 @@ export const mutations = {
     state.skills = data
   },
   setWorks (state, data) {
-    data.forEach((work) => {
+    for (const work of data) {
       work.slug = slugify(work.title)
-    })
+    }
     state.works = data
   },
   setWorkFilters (state, data) {
     state.workFilters = data
-    data.forEach((workFilter) => {
+    for (const workFilter of data) {
       workFilter.tag = slugify(workFilter.name)
-    })
+    }
   }
 }
 

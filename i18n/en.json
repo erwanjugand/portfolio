@@ -2,7 +2,12 @@
   "contact": {
     "email": "Email",
     "message": "Message",
-    "title": "Title"
+    "send": "Send",
+    "title": "Title",
+    "validation": {
+      "sent": null,
+      "error": null
+    }
   },
   "footer": {},
   "form": {

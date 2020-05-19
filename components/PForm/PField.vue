@@ -8,7 +8,6 @@
       :class="classes"
       :type="type"
       :value="value"
-      :required="required"
       @input="$emit('input', $event.target.value)"
       @focus="hasFocused = true"
       @blur="hasFocused = false"
@@ -95,17 +94,28 @@ export default {
   },
 
   watch: {
-    value () {
-      this.updateStatus()
-    },
     hasFocused () {
       this.updateStatus()
+    },
+    value () {
+      if (this.selectedOnce) {
+        this.updateStatus()
+      }
     }
   },
 
   methods: {
+    autoSize () {
+      const textarea = this.$refs.textarea
+      textarea.style.height = '0px'
+      textarea.style.height = textarea.scrollHeight + 'px'
+    },
+    reset () {
+      this.selectedOnce = false
+    },
     updateStatus () {
       this.selectedOnce = true
+      // Check the validation of the field
       this.requiredError = this.selectedOnce && !this.hasFocused && this.required && !this.value
       this.emailError = this.selectedOnce && !this.hasFocused && this.type === 'email' && !this.hasFocused && !RegExp(/([\w.-]+)@([\w.-]+)\.(\w+)/).test(this.value)
       const errorMessages = []
@@ -116,11 +126,8 @@ export default {
         errorMessages.push(this.$t('form.invalidEmail'))
       }
       this.errorMessages = errorMessages
-    },
-    autoSize () {
-      const textarea = this.$refs.textarea
-      textarea.style.height = '0px'
-      textarea.style.height = textarea.scrollHeight + 'px'
+      // Return list of errors for PForm
+      return !!errorMessages.length
     }
   }
 }
