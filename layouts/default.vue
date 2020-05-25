@@ -10,6 +10,8 @@
 
 <script>
 export default {
+  middleware: 'support',
+
   head () {
     const i18nSeo = this.$nuxtI18nSeo()
     return {
@@ -29,7 +31,7 @@ export default {
 
   data ({ $store }) {
     return {
-      page: $store.state.pages.find(p => p.name === this.$route.name.split('__')[0])
+      page: $store.state.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
     }
   },
 
