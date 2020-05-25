@@ -4,7 +4,7 @@
   <nav id="menu">
     <transition-group tag="ul" name="fade">
       <li v-for="link of links" v-show="$store.state.menuOpened" :key="link.name">
-        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$store.commit('setMenuOpening', false)">
+        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$store.commit('setMenuOpening', localePath(link.route) !== $route.path)">
           <PIcon :name="link.icon" />
           <span v-text="$t(`header.${link.name}`)" />
         </nuxt-link>

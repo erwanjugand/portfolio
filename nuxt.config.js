@@ -24,7 +24,13 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: 'var(--c-primary)',
+    continuous: true,
+    duration: 1000,
+    failedColor: 'var(--c-fail)',
+    height: '.25em'
+  },
   /*
   ** Global CSS
   */
