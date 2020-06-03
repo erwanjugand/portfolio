@@ -5,7 +5,7 @@ header {
   display: grid;
   grid-template-columns: 1fr auto auto;
   width: 100vw;
-  height: 3.5em;
+  height: 3.75em;
   z-index: 10;
   padding: 0 5vw;
   transition: box-shadow var(--transition);
@@ -54,7 +54,7 @@ header {
   }
 
   img {
-    width: 2.5em;
+    width: 3.75em;
   }
 }
 

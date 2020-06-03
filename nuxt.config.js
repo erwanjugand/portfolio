@@ -18,8 +18,22 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
     ]
+  },
+  /* PWA */
+  pwa: {
+    manifest: {
+      name: process.env.SITE_TITLE,
+      short_name: process.env.SHORT_NAME,
+      description: process.env.SITE_DESCRIPTION,
+      theme_color: '#0077DB',
+      background_color: '#212121'
+    },
+    icon: {
+      iconSrc: 'static/images/favicon-pwa.png',
+      sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
+    }
   },
   /*
   ** Customize the progress-bar color
@@ -48,6 +62,7 @@ export default {
   */
   buildModules: [
     '@nuxt/components',
+    '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
     '@nuxtjs/dotenv'
