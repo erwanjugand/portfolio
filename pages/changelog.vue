@@ -3,7 +3,7 @@
     ChangeLog
     <div v-for="release of releases" :key="release.id">
       <h2 v-text="release.name" />
-      <time :datetime="release.date" v-text="$dateFns.format(release.date, 'MMMM yyyy', {locale: currentLanguage})" />
+      <time :datetime="release.date" v-text="$dateFns.format(release.date, 'MMMM yyyy', {locale: currentLang})" />
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div v-html="release.description" />
     </div>
@@ -12,6 +12,7 @@
 
 <script>
 import { fr, enGB } from 'date-fns/locale'
+const locale = { fr, en: enGB }
 
 export default {
   nuxtI18n: {
@@ -22,8 +23,8 @@ export default {
   },
 
   computed: {
-    currentLanguage () {
-      return this.$i18n.locale === 'fr' ? fr : enGB
+    currentLang () {
+      return locale[this.$i18n.locale]
     }
   },
 
