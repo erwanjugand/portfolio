@@ -2,7 +2,7 @@ export const state = () => ({
   experiences: [],
   menuOpened: false,
   pages: [],
-  release: [],
+  releases: [],
   skills: [],
   works: [],
   workFilters: []

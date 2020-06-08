@@ -1087,6 +1087,13 @@
     defu "^1.0.0"
     lodash.template "^4.5.0"
 
+"@nuxtjs/date-fns@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/date-fns/-/date-fns-1.3.0.tgz#893fafab403a64acde653304ce84b9520119d502"
+  integrity sha512-zdqfEHxEGi+l/HJMrQVIESBQOACuTuqk4q8GP827H4UQS7uEa/Gt478lVkVZ38Gfy4tZcf6wrxum1F0V9Tsoow==
+  dependencies:
+    date-fns "^2.12.0"
+
 "@nuxtjs/dotenv@^1.4.1":
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/dotenv/-/dotenv-1.4.1.tgz#dd5abb98e22cc7ae27139d3aa606151034293128"
@@ -2949,6 +2956,11 @@ dashdash@^1.12.0:
   integrity sha1-hTz6D3y+L+1d4gMmuN1YEDX24vA=
   dependencies:
     assert-plus "^1.0.0"
+
+date-fns@^2.12.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
+  integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
 
 de-indent@^1.0.2:
   version "1.0.2"

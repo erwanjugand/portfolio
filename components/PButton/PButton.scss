@@ -3,6 +3,7 @@
 .button {
   position: relative;
   display: flex;
+  align-items: center;
   min-height: 3em;
   border-radius: .5rem;
   transition: var(--transition);

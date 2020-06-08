@@ -5,9 +5,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
-  /*
-  ** Headers of the page
-  */
+  // Headers of the page
   head: {
     title: process.env.SITE_TITLE,
     htmlAttrs: {
@@ -21,7 +19,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
     ]
   },
-  /* PWA */
+  // PWA
   pwa: {
     manifest: {
       name: process.env.SITE_TITLE,
@@ -35,9 +33,7 @@ export default {
       sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
     }
   },
-  /*
-  ** Customize the progress-bar color
-  */
+  // Customize the progress-bar color
   loading: {
     color: 'var(--c-primary)',
     continuous: true,
@@ -45,35 +41,28 @@ export default {
     failedColor: 'var(--c-fail)',
     height: '.25em'
   },
-  /*
-  ** Global CSS
-  */
+  // Global CSS
   css: [
     '~/assets/css/app'
   ],
-  /*
-  ** Plugins to load before mounting the App
-  */
+  // Plugins to load before mounting the App
   plugins: [
     '~/plugins/directives.js'
   ],
-  /*
-  ** Nuxt.js dev-modules
-  */
+  // Nuxt.js dev-modules
   buildModules: [
     '@nuxt/components',
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/date-fns',
     '@nuxtjs/dotenv'
   ],
 
   googleAnalytics: {
     id: 'UA-89170994-1'
   },
-  /*
-  ** Nuxt.js modules
-  */
+  // Nuxt.js modules
   modules: [
     [
       'nuxt-i18n',
@@ -102,13 +91,9 @@ export default {
     }],
     '@nuxtjs/sitemap'
   ],
-  /*
-  ** Build configuration
-  */
+  // Build configuration
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    // You can extend webpack config here
     extend (config, ctx) {
     }
   },
