@@ -32,9 +32,6 @@ export const mutations = {
   },
   setWorkFilters (state, data) {
     state.workFilters = data
-    for (const workFilter of data) {
-      workFilter.tag = slugify(workFilter.name)
-    }
   }
 }
 

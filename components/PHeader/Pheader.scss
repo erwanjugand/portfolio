@@ -8,13 +8,15 @@ header {
   height: 3.75em;
   z-index: 10;
   padding: 0 5vw;
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), border var(--transition);
 
   &.elevation-2 {
     background: #212121;
+    border-color: transparent transparent rgba($white, .05) transparent
   }
 
   &.flat {
+    border-color: transparent;
     box-shadow: none;
   }
 
@@ -50,7 +52,7 @@ header {
 
 .logo {
   > span {
-    padding-left: 1em;
+    margin-left: 1em;
   }
 
   img {
@@ -124,7 +126,7 @@ header {
 
 .burger {
   > span:first-of-type {
-    padding-right: 1em;
+    margin-right: 1em;
   }
 
   &-icon {

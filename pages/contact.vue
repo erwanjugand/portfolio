@@ -1,6 +1,6 @@
 <template>
   <main>
-    contact
+    <h1 v-text="$t('contact.mainTitle')" />
     <PForm :data="form" secure @submit="sendEmail">
       <PField
         v-model="form.email"

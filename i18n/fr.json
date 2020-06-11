@@ -1,6 +1,10 @@
 {
+  "changeLog": {
+    "mainTitle": "Journal de modifications"
+  },
   "contact": {
     "email": "Email",
+    "mainTitle": "Contact",
     "message": "Message",
     "send": "Envoyer",
     "title": "Titre",
