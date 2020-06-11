@@ -13,6 +13,9 @@
       "error": null
     }
   },
+  "errors": {
+    "browserNotSupported": "Browser not supported"
+  },
   "footer": {},
   "form": {
     "invalidEmail": "Invalid email",

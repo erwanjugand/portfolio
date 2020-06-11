@@ -9,11 +9,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setMenuOpening (state, data) {
-    state.menuOpened = data
-  },
   setExperiences (state, data) {
     state.experiences = data
+  },
+  setMenuOpening (state, data) {
+    state.menuOpened = data
   },
   setPages (state, data) {
     state.pages = data
@@ -37,6 +37,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit ({ commit }) {
+    // Fetch pages data
     try {
       const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
       commit('setPages', pages.data)
@@ -46,7 +47,7 @@ export const actions = {
   }
 }
 
-function slugify (string) {
+const slugify = (string) => {
   const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
   const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnooooooooprrsssssttuuuuuuuuuwxyyzzz------'
   const p = new RegExp(a.split('').join('|'), 'g')

@@ -1,20 +1,32 @@
 <template>
   <main class="release-container">
     <h1 v-text="$t('changeLog.mainTitle')" />
-    <div v-for="release of releases" :key="release.id" class="release elevation-1">
-      <div class="release-header">
-        <h2>
-          <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
-          {{ release.name }}
-        </h2>
-        <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
-      </div>
-      <ul class="release-tags">
-        <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`" class="release-tag elevation-2" :style="{background: tag.color}" v-text="tag.name" />
-      </ul>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="release-content" v-html="release.description" />
-    </div>
+    <STransitionFadeHeight group tag="ul">
+      <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
+        <div class="release elevation-1">
+          <div class="release-header">
+            <h2>
+              <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
+              {{ release.name }}
+            </h2>
+            <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
+          </div>
+          <div class="release-tags">
+            <button
+              v-for="tag of release.tags"
+              :key="`${release.id}-${tag.id}`"
+              class="release-tag elevation-2"
+              :class="['release-tag', 'elevation-2', {'release-tag-darken': filterTag && tag.id !== filterTag}]"
+              :style="{background: tag.color}"
+              @click.prevent="filter(tag.id)"
+              v-text="tag.name"
+            />
+          </div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div class="release-content" v-html="release.description" />
+        </div>
+      </li>
+    </STransitionFadeHeight>
   </main>
 </template>
 
@@ -30,9 +42,19 @@ export default {
     }
   },
 
+  data () {
+    return {
+      filterTag: null
+    }
+  },
+
   computed: {
     currentLang () {
       return locale[this.$i18n.locale]
+    },
+
+    releasesFiltered () {
+      return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
   },
 
@@ -45,6 +67,12 @@ export default {
       releases = data
     }
     return { releases }
+  },
+
+  methods: {
+    filter (id) {
+      this.filterTag = this.filterTag === id ? null : id
+    }
   }
 }
 </script>
@@ -113,6 +141,10 @@ export default {
     font-size: .875em;
     color: $white;
     border-radius: 1rem;
+
+    &-darken {
+      opacity: .3;
+    }
 
     &:not(:last-of-type) {
       margin-right: 1em;

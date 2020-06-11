@@ -136,11 +136,12 @@ main {
   padding-top: 3.75em;
   background: var(--c-background);
   box-shadow: 0 5px 5px 0px rgba(black,.5);
+  overflow: overlay;
   overflow: auto;
 }
 
 h1 {
-  padding: .5em 0;
+  margin: .75em 0;
   font-size: 2em;
   text-align: center;
   color: var(--c-primary);

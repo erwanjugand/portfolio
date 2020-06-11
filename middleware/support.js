@@ -24,6 +24,6 @@ const browserNotSupported = {
 
 export default function ({ error }) {
   if (browserNotSupported[currentBrowser.name] !== undefined && parseFloat(currentBrowser.major) <= browserNotSupported[currentBrowser.name]) {
-    error({ statusCode: 418, message: 'Non supporté' })
+    error({ statusCode: 418, message: this.$t('errors.browserNotSupported') })
   }
 }

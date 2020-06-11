@@ -13,6 +13,9 @@
       "error": "Une erreur est survenue, le message n'a pas pu être transmis"
     }
   },
+  "errors": {
+    "browserNotSupported": "Navigateur non supporté"
+  },
   "footer": {},
   "form": {
     "invalidEmail": "Email invalide",
