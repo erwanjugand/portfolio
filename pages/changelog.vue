@@ -11,17 +11,14 @@
             </h2>
             <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
           </div>
-          <div class="release-tags">
             <button
               v-for="tag of release.tags"
               :key="`${release.id}-${tag.id}`"
-              class="release-tag elevation-2"
               :class="['release-tag', 'elevation-2', {'release-tag-darken': filterTag && tag.id !== filterTag}]"
               :style="{background: tag.color}"
               @click.prevent="filter(tag.id)"
               v-text="tag.name"
             />
-          </div>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div class="release-content" v-html="release.description" />
         </div>
@@ -85,8 +82,8 @@ export default {
   max-width: 40em;
   margin: 0 auto 1em;
   padding: 1em;
-  border-radius: 1em;
   background: var(--c-background-1);
+  border-radius: 1em;
   transition: margin var(--transition);
 
   @media #{$medium-and-up} {
@@ -110,15 +107,15 @@ export default {
   }
 
   h2 {
-    font-weight: 500;
     display: flex;
     align-items: center;
+    font-weight: 500;
 
     svg {
       width: 1.5em;
       height: 1em;
-      fill: var(--c-text-80);
       margin-right: 1rem;
+      fill: var(--c-text-80);
     }
   }
 
@@ -128,11 +125,6 @@ export default {
     @media #{$small} {
       margin-top: 1em;
     }
-  }
-
-  &-tags {
-    display: flex;
-    flex-wrap: wrap;
   }
 
   &-tag {
@@ -152,6 +144,8 @@ export default {
   }
 
   &-content {
+    font-weight: 300;
+
     li::before {
       content: '-';
       padding: 0 .5em;

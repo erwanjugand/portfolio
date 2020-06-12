@@ -43,7 +43,7 @@ export default Vue.extend({
     },
 
     afterEnterLeave (el) {
-      el.style.height = 'inherit'
+      el.style.height = null
     }
   }
 })
