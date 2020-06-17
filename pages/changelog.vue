@@ -14,6 +14,7 @@
             <button
               v-for="tag of release.tags"
               :key="`${release.id}-${tag.id}`"
+              v-ripple
               :class="['release-tag', 'elevation-2', {'release-tag-darken': filterTag && tag.id !== filterTag}]"
               :style="{background: tag.color}"
               @click.prevent="filter(tag.id)"
@@ -86,9 +87,9 @@ export default {
   border-radius: 1em;
   transition: margin var(--transition);
 
-  @media #{$medium-and-up} {
-    &:not(:first-of-type) {
-      margin-top: 2em;
+  &-wrapper:not(:last-child) & {
+    @media #{$medium-and-up} {
+      margin-bottom: 2em;
     }
   }
 
@@ -133,6 +134,7 @@ export default {
     font-size: .875em;
     color: $white;
     border-radius: 1rem;
+    transition: opacity var(--transition);
 
     &-darken {
       opacity: .3;
