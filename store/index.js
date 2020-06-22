@@ -36,10 +36,10 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit, context }) {
+  async nuxtServerInit ({ commit }) {
     // Fetch pages data
     try {
-      const pages = await this.$axios.get(`${context.$config.apiUrl}/pages`)
+      const pages = await this.$axios.get(`${this.$config.apiUrl}/pages`)
       commit('setPages', pages.data)
     } catch (e) {
       console.error('error', e)
