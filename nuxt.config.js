@@ -5,6 +5,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  components: true,
   // Headers of the page
   head: {
     title: process.env.SITE_TITLE,
@@ -51,7 +52,6 @@ export default {
   ],
   // Nuxt.js dev-modules
   buildModules: [
-    '@nuxt/components',
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
