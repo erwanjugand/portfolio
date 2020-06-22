@@ -19,10 +19,18 @@
   </nav>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+interface Link {
+  name: string,
+  icon: string,
+  route: string
+}
+
+export default Vue.extend({
   computed: {
-    links () {
+    links (): Link[] {
       return [
         { name: 'home', icon: 'homeAlt', route: 'index' },
         { name: 'works', icon: 'folderOpen', route: 'works' },
@@ -31,5 +39,5 @@ export default {
       ]
     }
   }
-}
+})
 </script>

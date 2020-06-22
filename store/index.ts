@@ -1,3 +1,6 @@
+import { ActionTree, MutationTree } from 'vuex'
+
+
 export const state = () => ({
   experiences: [],
   menuOpened: false,
@@ -8,7 +11,9 @@ export const state = () => ({
   workFilters: []
 })
 
-export const mutations = {
+export type RootState = ReturnType<typeof state>
+
+export const mutations: MutationTree<RootState> = {
   setExperiences (state, data) {
     state.experiences = data
   },
@@ -35,7 +40,8 @@ export const mutations = {
   }
 }
 
-export const actions = {
+
+export const actions: ActionTree<RootState, RootState>  = {
   async nuxtServerInit ({ commit }) {
     // Fetch pages data
     try {
@@ -47,12 +53,12 @@ export const actions = {
   }
 }
 
-const slugify = (string) => {
+const slugify = (text: string) => {
   const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
   const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnooooooooprrsssssttuuuuuuuuuwxyyzzz------'
   const p = new RegExp(a.split('').join('|'), 'g')
 
-  return string.toString().toLowerCase()
+  return text.toString().toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'

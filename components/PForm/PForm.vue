@@ -7,39 +7,38 @@
   </form>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   props: {
-    data: {
-      type: Object,
-      default: null
-    },
+    data: Object,
     secure: Boolean
   },
 
   methods: {
-    trySubmit (event) {
+    trySubmit () {
       let submitable = true
       // Find PField component in slot
-      const fields = this.$slots.default.filter(e => e.componentOptions && e.componentOptions.tag === 'PField')
+      const fields = this.$slots.default?.filter(e => e.componentOptions && e.componentOptions.tag === 'PField') || []
       for (const field of fields) {
-        const error = field.componentInstance.updateStatus()
+        // @ts-ignore
+        const error = field.componentInstance!.updateStatus()
         if (error) {
           submitable = false
         }
       }
 
-      // If fack field is empty and form is submitable
-      if ((!this.secure || this.$refs.fakeField.value === '') && submitable) {
+      // If fake field is empty and form is submitable
+      if ((!this.secure || (this.$refs.fakeField as HTMLInputElement).value === '') && submitable) {
         this.$emit('submit', this.data)
         // Change selectedOnce to false of PField component
         for (const field of fields) {
-          field.componentInstance.reset()
+          // @ts-ignore
+          field.componentInstance!.reset()
         }
       }
     }
   }
-}
+})
 </script>

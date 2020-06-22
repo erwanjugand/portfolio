@@ -15,7 +15,7 @@ export default {
     }
   },
 
-  async asyncData ({ store, $axios, $config: {apiUrl} }) {
+  async asyncData ({ store, $axios, $config: { apiUrl } }) {
     // Fetch datas if necessary
     const datas = {}
     const datasRequired = [

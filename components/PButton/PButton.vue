@@ -10,25 +10,21 @@
   </component>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   props: {
-    icon: {
-      type: String,
-      default: null
-    },
+    icon: String,
     loading: Boolean,
     outlined: Boolean,
-    to: {
-      type: [String, Object, Boolean],
-      default: null
-    }
+    to: [String, Object, Boolean]
   },
 
   computed: {
-    type () {
+    type (): 'nuxt-link' | 'a' | 'button' {
       return this.to ? 'nuxt-link' : this.$attrs.href ? 'a' : 'button'
     }
   }
-}
+})
 </script>

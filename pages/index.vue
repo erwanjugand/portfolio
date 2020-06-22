@@ -1,6 +1,5 @@
 <template>
   <main>
-    <logo />
     <h1 class="title">
       portfolio-v3
     </h1>
@@ -17,7 +16,7 @@
 
 <script>
 export default {
-  async asyncData ({ store, $axios, $config: {apiUrl} }) {
+  async asyncData ({ store, $axios, $config: { apiUrl } }) {
     // Fetch datas if necessary
     const datas = {}
     const datasRequired = [

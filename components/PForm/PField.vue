@@ -34,23 +34,16 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+import { TranslateResult } from 'vue-i18n'
 import uniqueId from '~/utils/uniqueId'
 
-export default {
+export default Vue.extend({
   props: {
-    label: {
-      type: String,
-      default: null
-    },
-    maxRows: {
-      type: Number,
-      default: null
-    },
-    minRows: {
-      type: Number,
-      default: null
-    },
+    label: String,
+    maxRows: Number,
+    minRows: Number,
     required: Boolean,
     type: {
       type: String,
@@ -59,15 +52,12 @@ export default {
         return ['text', 'password', 'email', 'textarea'].includes(value)
       }
     },
-    value: {
-      type: String,
-      default: ''
-    }
+    value: String
   },
 
   data () {
     return {
-      errorMessages: [],
+      errorMessages: [] as TranslateResult[],
       emailError: false,
       hasFocused: false,
       requiredError: false,
@@ -76,19 +66,19 @@ export default {
   },
 
   computed: {
-    classes () {
+    classes (): object {
       return {
         'has-content': this.value,
-        'error': this.requiredError || this.emailError
+        error: this.requiredError || this.emailError
       }
     },
-    id () {
-      return this.label ? uniqueId('field-') : null
+    id (): string {
+      return this.label ? uniqueId('field-') : ''
     },
-    styles () {
+    styles (): Partial<CSSStyleDeclaration> {
       return {
-        minHeight: this.minRows ? `${this.minRows * 20 + 28}px` : null,
-        maxHeight: this.maxRows ? `${this.maxRows * 20 + 28}px` : null
+        minHeight: this.minRows ? `${this.minRows * 20 + 28}px` : undefined,
+        maxHeight: this.maxRows ? `${this.maxRows * 20 + 28}px` : undefined
       }
     }
   },
@@ -106,7 +96,7 @@ export default {
 
   methods: {
     autoSize () {
-      const textarea = this.$refs.textarea
+      const textarea = this.$refs.textarea as HTMLTextAreaElement
       textarea.style.height = '0px'
       textarea.style.height = textarea.scrollHeight + 'px'
     },
@@ -118,7 +108,7 @@ export default {
       // Check the validation of the field
       this.requiredError = this.selectedOnce && !this.hasFocused && this.required && !this.value
       this.emailError = this.selectedOnce && !this.hasFocused && this.type === 'email' && !this.hasFocused && !RegExp(/([\w.-]+)@([\w.-]+)\.(\w+)/).test(this.value)
-      const errorMessages = []
+      const errorMessages: TranslateResult[] = []
       if (this.requiredError) {
         errorMessages.push(this.$t('form.required'))
       }
@@ -130,5 +120,5 @@ export default {
       return !!errorMessages.length
     }
   }
-}
+})
 </script>

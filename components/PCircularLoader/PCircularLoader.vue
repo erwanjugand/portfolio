@@ -9,8 +9,10 @@
   </svg>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   props: {
     size: {
       type: Number,
@@ -19,7 +21,7 @@ export default {
   },
 
   computed: {
-    styles () {
+    styles (): Partial<CSSStyleDeclaration> {
       return {
         width: `${this.size / 16}rem`,
         height: `${this.size / 16}rem`,
@@ -27,5 +29,5 @@ export default {
       }
     }
   }
-}
+})
 </script>

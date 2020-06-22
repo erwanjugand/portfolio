@@ -11,15 +11,15 @@
             </h2>
             <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
           </div>
-            <button
-              v-for="tag of release.tags"
-              :key="`${release.id}-${tag.id}`"
-              v-ripple
-              :class="['release-tag', 'elevation-2', {'release-tag-darken': filterTag && tag.id !== filterTag}]"
-              :style="{background: tag.color}"
-              @click.prevent="filter(tag.id)"
-              v-text="tag.name"
-            />
+          <button
+            v-for="tag of release.tags"
+            :key="`${release.id}-${tag.id}`"
+            v-ripple
+            :class="['release-tag', 'elevation-2', {'release-tag-darken': filterTag && tag.id !== filterTag}]"
+            :style="{background: tag.color}"
+            @click.prevent="filter(tag.id)"
+            v-text="tag.name"
+          />
           <!-- eslint-disable-next-line vue/no-v-html -->
           <div class="release-content" v-html="release.description" />
         </div>
@@ -56,7 +56,7 @@ export default {
     }
   },
 
-  async asyncData ({ store, $axios, $config: {apiUrl} }) {
+  async asyncData ({ store, $axios, $config: { apiUrl } }) {
     // Fetch data if necessary
     let releases = store.state.releases
     if (!releases.length) {

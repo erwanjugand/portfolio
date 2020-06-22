@@ -58,10 +58,11 @@ export default {
   ],
   // Plugins to load before mounting the App
   plugins: [
-    '~/plugins/directives.js'
+    '~/plugins/directives.ts'
   ],
   // Nuxt.js dev-modules
   buildModules: [
+    '@nuxt/typescript-build',
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
@@ -78,10 +79,12 @@ export default {
       {
         seo: false,
         locales: [
-          { code: 'fr',
+          {
+            code: 'fr',
             iso: 'fr'
           },
-          { code: 'en',
+          {
+            code: 'en',
             iso: 'en'
           }
         ],
@@ -103,8 +106,8 @@ export default {
   // Build configuration
   build: {
     // You can extend webpack config here
-    extend (config, ctx) {
-    }
+    // extend (config, ctx) {
+    // }
   },
 
   pageTransition: {

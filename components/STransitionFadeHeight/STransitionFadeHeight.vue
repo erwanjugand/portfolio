@@ -38,12 +38,12 @@ export default Vue.extend({
   },
 
   methods: {
-    beforeEnterLeave (el) {
+    beforeEnterLeave (el:HTMLElement) {
       el.style.height = el.scrollHeight + 'px'
     },
 
-    afterEnterLeave (el) {
-      el.style.height = null
+    afterEnterLeave (el:HTMLElement) {
+      el.style.height = 'inherit'
     }
   }
 })
