@@ -15,7 +15,7 @@ export default {
     }
   },
 
-  async asyncData ({ store, $axios }) {
+  async asyncData ({ store, $axios, $config: {apiUrl} }) {
     // Fetch datas if necessary
     const datas = {}
     const datasRequired = [
@@ -26,7 +26,7 @@ export default {
     for (const dataRequired of datasRequired) {
       let values = store.state[dataRequired.name]
       if (!values.length) {
-        const { data } = await $axios.get(`${process.env.API_URL}/${dataRequired.path}`)
+        const { data } = await $axios.get(`${apiUrl}/${dataRequired.path}`)
         values = data
         store.commit(`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`, data)
       }

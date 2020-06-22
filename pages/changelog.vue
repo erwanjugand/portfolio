@@ -56,11 +56,11 @@ export default {
     }
   },
 
-  async asyncData ({ store, $axios }) {
+  async asyncData ({ store, $axios, $config: {apiUrl} }) {
     // Fetch data if necessary
     let releases = store.state.releases
     if (!releases.length) {
-      const { data } = await $axios.get(`${process.env.API_URL}/versions`)
+      const { data } = await $axios.get(`${apiUrl}/versions`)
       store.commit('setReleases', data.sort())
       releases = data
     }

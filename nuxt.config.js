@@ -5,6 +5,16 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  // .env
+  publicRuntimeConfig: {
+    apiUrl: process.env.API_URL,
+    siteTitle: process.env.SITE_TITLE,
+    siteDescription: process.env.SITE_DESCRIPTION,
+    shortName: process.env.SHORT_NAME
+  },
+  privateRuntimeConfig: {
+  },
+  // Components
   components: true,
   // Headers of the page
   head: {
@@ -55,8 +65,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/date-fns',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/date-fns'
   ],
 
   googleAnalytics: {

@@ -15,7 +15,7 @@ export default {
   head () {
     const i18nSeo = this.$nuxtI18nSeo()
     return {
-      title: process.env.SITE_TITLE + (this.page && this.page.metaTitle && this.page.metaTitle !== process.env.SITE_TITLE ? ` - ${this.page.metaTitle}` : ''),
+      title: this.$config.siteTitle + (this.page && this.page.metaTitle && this.page.metaTitle !== this.$config.siteTitle ? ` - ${this.page.metaTitle}` : ''),
       meta: [
         {
           hid: 'description',
