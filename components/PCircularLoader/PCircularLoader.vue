@@ -1,11 +1,7 @@
 <style lang="scss" src="./PCircularLoader.scss"></style>
 <template>
   <svg class="circular-loader" :style="styles">
-    <circle
-      :cx="size / 2"
-      :cy="size / 2"
-      :r="size * .45"
-    />
+    <circle :cx="size / 2" :cy="size / 2" :r="size * .45" />
   </svg>
 </template>
 

@@ -6,15 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
-interface Icons {
-  [type: string]: {
-    [name: string]: {
-      path: string,
-      viewBox: string
-    }
-  }
-}
+import { Icon, Icons } from 'models'
 
 const icons: Icons = {
   light: {
@@ -84,7 +76,7 @@ export default Vue.extend({
   },
 
   computed: {
-    icon (): object {
+    icon (): Icon {
       return icons[this.type][this.name]
     }
   }

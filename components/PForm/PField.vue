@@ -27,9 +27,7 @@
       <span v-text="label" />
     </label>
     <transition name="field-message-error">
-      <div v-if="errorMessages.length" class="field-message-error">
-        {{ errorMessages[0] }}
-      </div>
+      <div v-if="errorMessages.length" class="field-message-error" v-text="errorMessages[0]" />
     </transition>
   </div>
 </template>

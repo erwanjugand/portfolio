@@ -2,14 +2,16 @@
   <div id="page">
     <PHeader />
     <PMenu />
-    <div id="page-content" :class="{'minimized': $store.state.menuOpened}" v-on="$store.state.menuOpened ? { click: () => $store.commit('setMenuOpening', false) } : {}">
+    <div id="page-content" :class="{'minimized': $accessor.menuOpened}" v-on="$accessor.menuOpened ? { click: () => $accessor.setMenuOpening(false) } : {}">
       <nuxt />
     </div>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   middleware: 'support',
 
   head () {
@@ -29,18 +31,18 @@ export default {
     }
   },
 
-  data ({ $store }) {
+  data ({ $accessor }) {
     return {
-      page: $store.state.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
+      page: $accessor.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
     }
   },
 
   watch: {
     $route: {
       handler (to) {
-        this.page = this.$store.state.pages.find(p => p.name === to.name.split('__')[0])
+        this.page = this.$accessor.pages.find(p => p.name === to.name.split('__')[0])
       }
     }
   }
-}
+})
 </script>

@@ -28,11 +28,14 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+import { Release } from 'models'
 import { fr, enGB } from 'date-fns/locale'
-const locale = { fr, en: enGB }
 
-export default {
+const locale: {[key: string]: Locale} = { fr, en: enGB }
+
+export default Vue.extend({
   nuxtI18n: {
     paths: {
       fr: '/journal-des-modifications',
@@ -42,37 +45,37 @@ export default {
 
   data () {
     return {
-      filterTag: null
+      filterTag: null as number | null
     }
   },
 
   computed: {
-    currentLang () {
+    currentLang (): Locale {
       return locale[this.$i18n.locale]
     },
 
-    releasesFiltered () {
-      return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
+    releasesFiltered (): Release[] {
+      return this.releases
+      // return this.releases.filter((r: Release) => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
   },
-
-  async asyncData ({ store, $axios, $config: { apiUrl } }) {
+  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
     // Fetch data if necessary
-    let releases = store.state.releases
+    let releases = $accessor.releases as Release[]
     if (!releases.length) {
       const { data } = await $axios.get(`${apiUrl}/versions`)
-      store.commit('setReleases', data.sort())
+      $accessor.setReleases(data.sort())
       releases = data
     }
     return { releases }
   },
 
   methods: {
-    filter (id) {
+    filter (id: number) {
       this.filterTag = this.filterTag === id ? null : id
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

@@ -37,9 +37,10 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   nuxtI18n: {
     paths: {
       fr: '/contact',
@@ -54,7 +55,7 @@ export default {
         title: '',
         message: ''
       },
-      emailStatus: null
+      emailStatus: null as 'sent' | 'error' | null
     }
   },
 
@@ -71,5 +72,5 @@ export default {
       // TODO : POST email datas
     }
   }
-}
+})
 </script>

@@ -3,13 +3,13 @@
 <template>
   <nav id="menu">
     <transition-group tag="ul" name="fade">
-      <li v-for="link of links" v-show="$store.state.menuOpened" :key="link.name">
-        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$store.commit('setMenuOpening', localePath(link.route) !== $route.path)">
+      <li v-for="link of links" v-show="$accessor.menuOpened" :key="link.name">
+        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$accessor.setMenuOpening(localePath(link.route) !== $route.path)">
           <PIcon :name="link.icon" />
           <span v-text="$t(`header.${link.name}`)" />
         </nuxt-link>
       </li>
-      <li v-show="$store.state.menuOpened" key="darkMode">
+      <li v-show="$accessor.menuOpened" key="darkMode">
         <button v-ripple type="button" @click="() => { $colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark' }">
           <PIcon :name="`lightbulb${$colorMode.value === 'dark' ? 'Slash' : 'On'}`" />
           {{ $t(`header.${$colorMode.value === 'dark' ? 'dark' : 'light'}Mode`) }}
@@ -21,12 +21,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
-interface Link {
-  name: string,
-  icon: string,
-  route: string
-}
+import { Link } from 'models'
 
 export default Vue.extend({
   computed: {

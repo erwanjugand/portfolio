@@ -1,6 +1,8 @@
+import { Middleware } from '@nuxt/types'
 import { UAParser } from 'ua-parser-js'
+
 const currentBrowser = new UAParser().getBrowser()
-const browserNotSupported = {
+const browserNotSupported: {[key: string]: number | null | undefined} = {
   'Android Browser': 48,
   baidu: null,
   Baidu: null,
@@ -22,8 +24,11 @@ const browserNotSupported = {
   'Samsung Browser': null
 }
 
-export default function ({ error }) {
-  if (browserNotSupported[currentBrowser.name] !== undefined && parseFloat(currentBrowser.major) <= browserNotSupported[currentBrowser.name]) {
+const support: Middleware = ({ error }) => {
+  const currentBrowserNotSupported = currentBrowser.name ? browserNotSupported[currentBrowser.name] : undefined
+  if (currentBrowserNotSupported !== undefined && (!currentBrowserNotSupported || parseFloat(currentBrowser.major || '0') <= (browserNotSupported[currentBrowser.name || ''] || 0) )) {
     error({ statusCode: 418, message: this.$t('errors.browserNotSupported') })
   }
 }
+
+export default support
