@@ -45,7 +45,8 @@ export default Vue.extend({
 
   data () {
     return {
-      filterTag: null as number | null
+      filterTag: null as number | null,
+      releases: [] as Release[]
     }
   },
 
@@ -55,10 +56,10 @@ export default Vue.extend({
     },
 
     releasesFiltered (): Release[] {
-      return this.releases
-      // return this.releases.filter((r: Release) => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
+      return this.releases.filter((r: Release) => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
   },
+
   async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
     // Fetch data if necessary
     let releases = $accessor.releases as Release[]

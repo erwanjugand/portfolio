@@ -18,7 +18,7 @@ export default Vue.extend({
     }
   },
 
-  async asyncData ({ app: { $accessor}, $axios, $config: { apiUrl } }) {
+  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
     // Fetch datas if necessary
     const datas: {[key: string]: Work | WorkFilter} = {}
     const datasRequired = [

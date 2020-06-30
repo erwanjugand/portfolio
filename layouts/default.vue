@@ -31,9 +31,9 @@ export default Vue.extend({
     }
   },
 
-  data ({ $accessor }) {
+  data () {
     return {
-      page: $accessor.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
+      page: this.$accessor.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
     }
   },
 

@@ -1,7 +1,12 @@
+// Global
+
+export interface Model {
+  id: number
+}
+
 // Works
 
-export interface Work {
-  id: number
+export interface Work extends Model {
   title: string
   description: string
   dateRealization: Date
@@ -10,22 +15,19 @@ export interface Work {
   filters: WorkFilter[]
 }
 
-export interface WorkFilter {
-  id: number
+export interface WorkFilter extends Model {
   name: string
   level: number
 }
 
 // Skills
 
-export interface Skill {
-  id: number
+export interface Skill extends Model {
 }
 
 // Experience
 
-export interface Experience {
-  id: number
+export interface Experience extends Model {
   name: string
   description: string
   dateRealization: Date
@@ -33,30 +35,26 @@ export interface Experience {
 
 // Releases
 
-export interface Release {
-  id: number
+export interface Release extends Model {
   name: string
   date: Date
   major: boolean
   tags: Tag[]
 }
 
-export interface Tag {
-  id: number
+export interface Tag extends Model {
   name: string
   color: string
 }
 
 // Pages
 
-export interface Page {
-  id: number
+export interface Page extends Model {
   name: string
   metaTitle: string
   metaDescription: string
   data: any[]
 }
-
 
 // Icons
 
