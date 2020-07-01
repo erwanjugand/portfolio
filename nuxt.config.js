@@ -66,7 +66,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/date-fns'
+    '@nuxtjs/date-fns',
+    'nuxt-typed-vuex'
   ],
 
   googleAnalytics: {
@@ -106,14 +107,15 @@ export default {
   // Build configuration
   build: {
     // You can extend webpack config here
-    // extend (config, ctx) {
-    // }
+    transpile: [
+      /typed-vuex/
+    ]
   },
 
   pageTransition: {
     name: 'page',
     afterEnter () {
-      this.$store.commit('setMenuOpening', false)
+      this.$accessor.setMenuOpening(false)
     }
   }
 }

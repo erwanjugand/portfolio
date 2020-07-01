@@ -2,6 +2,6 @@
 
 <template>
   <footer>
-    HEADER
+    FOOTER
   </footer>
 </template>

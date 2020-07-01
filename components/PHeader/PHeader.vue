@@ -1,11 +1,11 @@
 <style lang="scss" src="./PHeader.scss"></style>
 
 <template>
-  <header :class="['elevation-2', {'flat': $store.state.menuOpened}]">
+  <header :class="['elevation-2', {'flat': $accessor.menuOpened}]">
     <div>
-      <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$store.commit('setMenuOpening', false)">
+      <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
         <img src="/images/logo.svg" alt="">
-        <span v-text="'Erwan Jugand'" />
+        <span v-text="$config.siteTitle" />
       </nuxt-link>
     </div>
 
@@ -38,12 +38,10 @@
       </transition>
     </div>
 
-    <button v-ripple type="button" :class="['burger', {'active': $store.state.menuOpened}]" @click="$store.commit('setMenuOpening', !$store.state.menuOpened)">
+    <button v-ripple type="button" :class="['burger', {'active': $accessor.menuOpened}]" @click="$accessor.setMenuOpening(!$accessor.menuOpened)">
       <span v-text="$t('header.menu')" />
       <span class="burger-icon">
-        <span />
-        <span />
-        <span />
+        <span v-for="n of 3" :key="n" />
       </span>
     </button>
   </header>

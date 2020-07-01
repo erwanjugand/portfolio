@@ -27,9 +27,7 @@
       <span v-text="label" />
     </label>
     <transition name="field-message-error">
-      <div v-if="errorMessages.length" class="field-message-error">
-        {{ errorMessages[0] }}
-      </div>
+      <div v-if="errorMessages.length" class="field-message-error" v-text="errorMessages[0]" />
     </transition>
   </div>
 </template>
@@ -57,8 +55,8 @@ export default Vue.extend({
 
   data () {
     return {
-      errorMessages: [] as TranslateResult[],
       emailError: false,
+      errorMessages: [] as TranslateResult[],
       hasFocused: false,
       requiredError: false,
       selectedOnce: false
@@ -77,8 +75,8 @@ export default Vue.extend({
     },
     styles (): Partial<CSSStyleDeclaration> {
       return {
-        minHeight: this.minRows ? `${this.minRows * 20 + 28}px` : undefined,
-        maxHeight: this.maxRows ? `${this.maxRows * 20 + 28}px` : undefined
+        maxHeight: this.maxRows ? `${this.maxRows * 20 + 28}px` : undefined,
+        minHeight: this.minRows ? `${this.minRows * 20 + 28}px` : undefined
       }
     }
   },

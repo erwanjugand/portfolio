@@ -4,8 +4,11 @@
   </main>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import { Work } from 'models'
+
+export default Vue.extend({
   nuxtI18n: {
     paths: {
       fr: '/travail/:slug',
@@ -15,18 +18,16 @@ export default {
 
   data () {
     return {
-      work: null
+      work: undefined as Work | undefined
     }
   },
 
   mounted () {
-    const work = this.$store.state.works.find(w => w.slug === this.$route.params.slug)
+    this.work = this.$accessor.works.find(w => w.slug === this.$route.params.slug)
 
-    if (work) {
-      this.work = work
-    } else {
+    if (!this.work) {
       this.$nuxt.error({ statusCode: 404, message: 'Work not found' })
     }
   }
-}
+})
 </script>

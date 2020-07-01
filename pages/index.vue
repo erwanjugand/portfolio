@@ -14,11 +14,14 @@
   </main>
 </template>
 
-<script>
-export default {
-  async asyncData ({ store, $axios, $config: { apiUrl } }) {
+<script lang="ts">
+import Vue from 'vue'
+import { Experience, Skill, Work, WorkFilter } from 'models'
+
+export default Vue.extend({
+  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
     // Fetch datas if necessary
-    const datas = {}
+    const datas: {[key: string]: Experience | Skill | Work | WorkFilter} = {}
     const datasRequired = [
       { name: 'experiences', path: 'experiences' },
       { name: 'skills', path: 'skills' },
@@ -27,16 +30,16 @@ export default {
     ]
 
     for (const dataRequired of datasRequired) {
-      let values = store.state[dataRequired.name]
+      let values = $accessor[dataRequired.name]
       if (!values.length) {
         const { data } = await $axios.get(`${apiUrl}/${dataRequired.path}`)
         values = data
-        store.commit(`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`, data)
+        $accessor[`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`](data)
       }
       datas[dataRequired.name] = values
     }
 
     return datas
   }
-}
+})
 </script>

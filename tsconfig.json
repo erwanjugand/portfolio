@@ -9,6 +9,7 @@
       "dom"
     ],
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "allowJs": true,
     "resolveJsonModule": true,
     "sourceMap": true,
@@ -28,8 +29,8 @@
       "@types/node",
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@nuxtjs/date-fns",
-      "vue-i18n"
+      "nuxt-i18n",
+      "@nuxtjs/date-fns"
     ]
   }
 }
