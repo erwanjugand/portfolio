@@ -26,7 +26,7 @@ export default Vue.extend({
           name: 'description',
           content: this.page?.metaDescription || ''
         },
-        ...i18nSeo.meta
+        ...(i18nSeo.meta || [])
       ],
       htmlAttrs: i18nSeo.htmlAttrs,
       link: i18nSeo.link
