@@ -10,19 +10,21 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { MetaInfo } from 'vue-meta'
+import { NuxtI18nSeo } from 'nuxt-i18n/types/nuxt-i18n'
 
 export default Vue.extend({
   middleware: 'support',
 
-  head () {
-    const i18nSeo = this.$nuxtI18nSeo()
+  head (): MetaInfo {
+    const i18nSeo: NuxtI18nSeo = this.$nuxtI18nSeo()
     return {
       title: this.$config.siteTitle + (this.page && this.page.metaTitle && this.page.metaTitle !== this.$config.siteTitle ? ` - ${this.page.metaTitle}` : ''),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.page && this.page.metaDescription
+          content: this.page?.metaDescription || ''
         },
         ...i18nSeo.meta
       ],

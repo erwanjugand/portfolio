@@ -45,7 +45,7 @@ export const actions: ActionTree<RootState, RootState>  = {
   async nuxtServerInit ({ commit }) {
     // Fetch pages data
     try {
-      const pages = await this.$axios.get(`${this.$config.apiUrl}/pages`)
+      const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
       commit('setPages', pages.data)
     } catch (e) {
       console.error('error', e)
