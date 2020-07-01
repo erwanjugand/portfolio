@@ -7,17 +7,17 @@ export interface Model {
 // Works
 
 export interface Work extends Model {
-  title: string
-  description: string
-  dateRealization: Date
   created: Date
-  slug: string
+  dateRealization: Date
+  description: string
   filters: WorkFilter[]
+  slug: string
+  title: string
 }
 
 export interface WorkFilter extends Model {
-  name: string
   level: number
+  name: string
 }
 
 // Skills
@@ -28,32 +28,32 @@ export interface Skill extends Model {
 // Experience
 
 export interface Experience extends Model {
-  name: string
-  description: string
   dateRealization: Date
+  description: string
+  name: string
 }
 
 // Releases
 
 export interface Release extends Model {
-  name: string
   date: Date
   major: boolean
+  name: string
   tags: Tag[]
 }
 
 export interface Tag extends Model {
-  name: string
   color: string
+  name: string
 }
 
 // Pages
 
 export interface Page extends Model {
-  name: string
-  metaTitle: string
-  metaDescription: string
   data: any[]
+  metaDescription: string
+  metaTitle: string
+  name: string
 }
 
 // Icons
@@ -71,7 +71,7 @@ export interface Icon {
 // Header
 
 export interface Link {
-  name: string,
   icon: string,
+  name: string,
   route: string
 }

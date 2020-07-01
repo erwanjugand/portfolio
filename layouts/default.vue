@@ -19,7 +19,8 @@ export default Vue.extend({
   head (): MetaInfo {
     const i18nSeo: NuxtI18nSeo = this.$nuxtI18nSeo()
     return {
-      title: this.$config.siteTitle + (this.page && this.page.metaTitle && this.page.metaTitle !== this.$config.siteTitle ? ` - ${this.page.metaTitle}` : ''),
+      htmlAttrs: i18nSeo.htmlAttrs,
+      link: i18nSeo.link,
       meta: [
         {
           hid: 'description',
@@ -28,8 +29,7 @@ export default Vue.extend({
         },
         ...(i18nSeo.meta || [])
       ],
-      htmlAttrs: i18nSeo.htmlAttrs,
-      link: i18nSeo.link
+      title: this.$config.siteTitle + (this.page && this.page.metaTitle && this.page.metaTitle !== this.$config.siteTitle ? ` - ${this.page.metaTitle}` : '')
     }
   },
 
