@@ -16,6 +16,9 @@
   "errors": {
     "browserNotSupported": "Browser not supported"
   },
+  "experiences": {
+    "today": "Today"
+  },
   "footer": {},
   "form": {
     "invalidEmail": "Invalid email",

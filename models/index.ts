@@ -28,9 +28,11 @@ export interface Skill extends Model {
 // Experience
 
 export interface Experience extends Model {
+  contract: string
   dateRealization: Date
   description: string
   name: string
+  year: number
 }
 
 // Releases

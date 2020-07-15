@@ -5,8 +5,7 @@
     </h1>
     skills
     <pre>{{ skills }}</pre>
-    experiences
-    <pre>{{ experiences }}</pre>
+    <PIndexExperiences :experiences="experiences" />
     works
     <pre>{{ works }}</pre>
     works filters
@@ -43,3 +42,18 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+@import '~/assets/css/variables';
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  font-size: 2em;
+}
+</style>

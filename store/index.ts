@@ -1,6 +1,9 @@
 import { getAccessorType } from 'typed-vuex'
 import { ActionTree, MutationTree } from 'vuex'
 import { Experience, Page, Release, Skill, Work, WorkFilter } from 'models'
+import parseIso from 'date-fns/parseISO'
+import compareDesc from 'date-fns/compareDesc'
+import getYear from 'date-fns/getYear'
 
 export const state = () => ({
   experiences: [] as Experience[],
@@ -16,7 +19,11 @@ export type RootState = ReturnType<typeof state>
 
 export const mutations: MutationTree<RootState> = {
   setExperiences (state, data: Experience[]) {
-    state.experiences = data
+    for (const experience of data) {
+      experience.dateRealization = parseIso(experience.dateRealization.toString())
+      experience.year = getYear(new Date(experience.dateRealization))
+    }
+    state.experiences = data.sort((a, b) => compareDesc(a.dateRealization, b.dateRealization))
   },
   setMenuOpening (state, data: boolean) {
     state.menuOpened = data
@@ -41,7 +48,7 @@ export const mutations: MutationTree<RootState> = {
   }
 }
 
-export const actions: ActionTree<RootState, RootState>  = {
+export const actions: ActionTree<RootState, RootState> = {
   async nuxtServerInit ({ commit }) {
     // Fetch pages data
     try {

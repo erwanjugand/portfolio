@@ -65,7 +65,7 @@ export default Vue.extend({
     let releases = $accessor.releases as Release[]
     if (!releases.length) {
       const { data } = await $axios.get(`${apiUrl}/versions`)
-      $accessor.setReleases(data.sort())
+      $accessor.setReleases(data)
       releases = data
     }
     return { releases }
