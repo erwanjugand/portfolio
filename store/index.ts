@@ -32,7 +32,7 @@ export const mutations: MutationTree<RootState> = {
     state.pages = data
   },
   setReleases (state, data: Release[]) {
-    state.releases = data
+    state.releases = data.sort((a, b) => compareDesc(a.date, b.date))
   },
   setSkills (state, data: Skill[]) {
     state.skills = data

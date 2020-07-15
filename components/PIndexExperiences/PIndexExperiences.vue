@@ -38,7 +38,7 @@ export default Vue.extend({
   &-container {
     position: relative;
     max-width: unquote('min(100vw, 36em)');
-    margin: 0 1em;
+    margin: .75em 1em 0;
     transition: var(--transition);
 
     @media #{$medium-and-up} {
