@@ -10,6 +10,7 @@
         <time v-show="!index || experiences[index - 1].year !== experience.year" :datetime="experience.dateRealization">
           <span v-text="!index ? $t('experiences.today') : experience.year" />
         </time>
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="experience-content" v-html="experience.description" />
         <div class="experience-contract" v-text="experience.contract" />
       </li>

@@ -1,0 +1,36 @@
+$columns: 12;
+$spacing: 1em;
+$container-width: 80em;
+
+.container {
+  width: unquote('min(90vw, #{$container-width})');
+  margin: auto;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $spacing;
+}
+
+$medias: ('s': $small, 'm': $medium-and-up, 'l': $large-and-up, 'xl': $extra-large);
+
+@mixin col($letter) {
+  @for $i from 1 through $columns {
+    .#{$letter + $i} {
+      grid-column-end: $i span;
+    }
+  }
+}
+
+@each $letter, $block in $medias {
+  @if ($letter == 's') {
+    @include col($letter)
+  }
+
+  @else {
+    @media #{$block} {
+      @include col($letter)
+    }
+  }
+}
