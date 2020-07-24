@@ -24,10 +24,6 @@ header {
   > div {
     display: flex;
   }
-
-  .ripple {
-    background: #fff;
-  }
 }
 
 .logo, .burger {
@@ -68,6 +64,7 @@ header {
   display: flex;
   align-items: center;
   padding: 0 1em;
+  color: #fff;
 
   svg {
     width: .625em;

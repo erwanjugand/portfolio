@@ -28,11 +28,6 @@
     fill: var(--c-secondary);
     border: .125rem solid var(--c-secondary);
 
-    .ripple {
-      background: var(--c-secondary);
-      opacity: .2;
-    }
-
     &:not(.button-loading):hover {
       background: var(--c-button-outlined-bg-hover);
     }
@@ -41,10 +36,6 @@
       color: var(--c-background);
       fill: var(--c-background);
       background: var(--c-secondary);
-
-      .ripple {
-        background: var(--c-background);
-      }
 
       &:not(.button-loading):hover {
         background: var(--c-button-bg-hover);

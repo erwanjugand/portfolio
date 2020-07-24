@@ -161,21 +161,6 @@ a {
   color: var(--c-primary);
 }
 
-.ripple {
-  position: absolute;
-  height: 0;
-  width: 0;
-  background: $black;
-  border-radius: 50%;
-  opacity: .1;
-  transition: .5s ease-out, opacity .3s ease-out;
-  z-index: -.1;
-
-  &-container > *:not(.ripple) {
-    position: relative;
-  }
-}
-
 button {
   font-size: var(--fs-regular);
   border: none;

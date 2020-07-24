@@ -42,10 +42,6 @@
     transition: var(--transition);
     box-sizing: initial; // Fix Flex auto with with text
 
-    .ripple {
-      background: #fff;
-    }
-
     &:not(.nuxt-link-exact-active) {
       opacity: .8;
     }

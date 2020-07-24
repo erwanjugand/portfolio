@@ -18,7 +18,7 @@ $medias: ('s': $small, 'm': $medium-and-up, 'l': $large-and-up, 'xl': $extra-lar
 @mixin col($letter) {
   @for $i from 1 through $columns {
     .#{$letter + $i} {
-      grid-column-end: $i span;
+      grid-column: $i span;
     }
   }
 }
