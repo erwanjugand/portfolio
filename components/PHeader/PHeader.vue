@@ -5,7 +5,7 @@
     <div>
       <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
         <img src="/images/logo.svg" alt="">
-        <span v-text="$config.siteTitle" />
+        {{ $config.siteTitle }}
       </nuxt-link>
     </div>
 
@@ -39,7 +39,7 @@
     </div>
 
     <button v-ripple type="button" :class="['burger', {'active': $accessor.menuOpened}]" @click="$accessor.setMenuOpening(!$accessor.menuOpened)">
-      <span v-text="$t('header.menu')" />
+      {{ $t('header.menu') }}
       <span class="burger-icon">
         <span v-for="n of 3" :key="n" />
       </span>

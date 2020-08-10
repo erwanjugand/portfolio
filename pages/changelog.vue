@@ -20,7 +20,6 @@
             @click.prevent="filter(tag.id)"
             v-text="tag.name"
           />
-          <!-- eslint-disable-next-line vue/no-v-html -->
           <div class="release-content" v-html="release.description" />
         </div>
       </li>
@@ -91,10 +90,14 @@ export default Vue.extend({
   border-radius: 1em;
   transition: margin var(--transition);
 
-  &-wrapper:not(:last-child) & {
+  &-wrapper {
+    overflow: hidden;
+
+    &:not(:last-child) & {
     @media #{$medium-and-up} {
       margin-bottom: 2em;
     }
+  }
   }
 
   &-container {

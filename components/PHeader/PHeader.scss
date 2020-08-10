@@ -29,32 +29,24 @@ header {
 .logo, .burger {
   display: flex;
   align-items: center;
-  padding: 0 1em;
+  padding: 0 1rem;
+  font-weight: 300;
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
+  transition: font-size var(--transition);
 
-  > span:first-of-type {
-    font-weight: 300;
-    transition: font var(--transition);
-
-    @media #{$small} {
-      font-size: 0;
-    }
+  @media #{$small} {
+    font-size: 0;
   }
 }
 
 
 // Logo
 
-.logo {
-  > span {
-    margin-left: 1em;
-  }
-
-  img {
-    width: 3.75em;
-  }
+.logo img {
+  width: 3.75rem;
+  margin-right: 1em;
 }
 
 
@@ -123,26 +115,25 @@ header {
 // Burger
 
 .burger {
-  > span:first-of-type {
-    margin-right: 1em;
-  }
-
   &-icon {
+    margin-left: 1em;
+
     span {
       display: flex;
-      width: 2em;
-      height: .1875em;
+      width: 2rem;
+      height: .1875rem;
       background: #fff;
-      border-radius: .25em;
+      border-radius: .25rem;
       transition: var(--transition);
+
       &:not(:first-of-type) {
-        margin-top: .5em;
+        margin-top: .5rem;
       }
     }
 
     .active & span {
       &:nth-child(1) {
-        transform: rotate(45deg) translate3d(.5em, .5em, 0);
+        transform: rotate(45deg) translate3d(.5rem, .5rem, 0);
       }
 
       &:nth-child(2) {
@@ -150,7 +141,7 @@ header {
       }
 
       &:nth-child(3) {
-        transform: rotate(135deg) translate3d(-.5em, .5em, 0);
+        transform: rotate(135deg) translate3d(-.5rem, .5rem, 0);
       }
     }
   }

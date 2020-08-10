@@ -108,6 +108,7 @@ export default {
   build: {
     // You can extend webpack config here
     transpile: [
+      'directivue',
       /typed-vuex/
     ]
   },

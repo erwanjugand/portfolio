@@ -19,6 +19,7 @@
     "@nuxtjs/sitemap": "^2.2.0",
     "@types/ua-parser-js": "^0.7.33",
     "babel-eslint": "^10.0.3",
+    "directivue": "^0.1.5",
     "eslint": "^7.3.1",
     "eslint-config-standard": "^14.1.0",
     "eslint-loader": "^4.0.2",

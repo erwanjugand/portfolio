@@ -1,12 +1,18 @@
-import Vue, { DirectiveOptions } from 'vue'
+import Vue from 'vue'
+import { ClickOutside, Ripple } from 'directivue'
 
-import ripple from './ripple'
-import clickOutside from './clickOutside'
+Vue.directive('clickOutside', ClickOutside)
+Vue.directive('ripple', Ripple)
 
-const directives: Record<string, DirectiveOptions> = {
-  clickOutside,
-  ripple
-}
-for (const name in directives) {
-  Vue.directive(name, directives[name])
-}
+// import Vue, { DirectiveOptions } from 'vue'
+
+// import ripple from './ripple'
+// import clickOutside from './clickOutside'
+
+// const directives: Record<string, DirectiveOptions> = {
+//   clickOutside,
+//   ripple
+// }
+// for (const name in directives) {
+//   Vue.directive(name, directives[name])
+// }

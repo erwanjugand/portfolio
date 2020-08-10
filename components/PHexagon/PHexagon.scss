@@ -1,0 +1,46 @@
+@import '~/assets/css/variables';
+
+@mixin dynamic-border ($width, $height, $border-size) {
+  width: $width;
+  height: $height;
+  border: solid var(--c-primary);
+  border-width: $border-size 0;
+
+  &::before, &::after {
+    top: -$border-size;
+    width: $width;
+    height: $height;
+    border: solid var(--c-primary);
+    border-width: $border-size 0;
+  }
+}
+
+.hexagon {
+  display: flex;
+  padding: 3px;
+  @include dynamic-border($hexagon-width, $hexagon-height, $border-out);
+
+  &, &-content {
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      box-sizing: border-box;
+    }
+
+    &::before {
+      transform: rotate(60deg);
+    }
+
+    &::after {
+      transform: rotate(-60deg);
+    }
+  }
+
+  &-content {
+    flex-grow: 1;
+    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $border-in);
+  }
+}

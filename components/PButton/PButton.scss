@@ -5,22 +5,12 @@
   display: flex;
   align-items: center;
   min-height: 3em;
+  padding: .5em 1.5em;
+  text-transform: uppercase;
+  line-height: 1.25em;
   border-radius: .5rem;
   transition: var(--transition);
 
-  span {
-    display: flex;
-    align-items: center;
-    padding: .5em 1.5em;
-    text-transform: uppercase;
-    line-height: 1.25em;
-
-    svg {
-      flex: 0 0 1.25em;
-      height: 1.25em;
-      margin:  0 1em 0 -.25em;
-    }
-  }
 
   &-outlined {
     font-weight: 500;
@@ -41,6 +31,12 @@
         background: var(--c-button-bg-hover);
       }
     }
+  }
+
+  svg {
+    flex: 0 0 1.25em;
+    height: 1.25em;
+    margin:  0 1em 0 -.25em;
   }
 
 

@@ -6,7 +6,7 @@
       <li v-for="link of links" v-show="$accessor.menuOpened" :key="link.name">
         <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$accessor.setMenuOpening(localePath(link.route) !== $route.path)">
           <PIcon :name="link.icon" />
-          <span v-text="$t(`header.${link.name}`)" />
+          {{ $t(`header.${link.name}`) }}
         </nuxt-link>
       </li>
       <li v-show="$accessor.menuOpened" key="darkMode">

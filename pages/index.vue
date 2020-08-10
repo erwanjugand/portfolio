@@ -3,8 +3,7 @@
     <h1 class="title">
       portfolio-v3
     </h1>
-    skills
-    <pre>{{ skills }}</pre>
+    <PIndexSkills :skills="skills" />
     <PIndexExperiences :experiences="experiences" />
     works
     <pre>{{ works }}</pre>

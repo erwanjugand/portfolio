@@ -10,8 +10,10 @@ $green: #4CAF50;
 $small: '(max-width : 575px)';
 $medium-and-up: '(min-width : 576px)';
 $medium-and-down: '(max-width : 1023px)';
+$medium-only: '(min-width : 576px) and (max-width: 1023px)';
 $large-and-up: '(min-width : 1024px)';
-$large-and-down: '(min-width : 1399px)';
+$large-and-down: '(max-width : 1399px)';
+$large-only: '(min-width : 1024px) and (max-width: 1399px)';
 $extra-large: '(min-width : 1400px)';
 
 
@@ -20,3 +22,6 @@ $extra-large: '(min-width : 1400px)';
 $diagonal: 1.7320508075688772935274463415059;
 $border-in: 1px;
 $border-out: 3px;
+
+$hexagon-height: 200px;
+$hexagon-width: $hexagon-height / $diagonal;

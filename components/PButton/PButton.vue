@@ -2,10 +2,8 @@
 
 <template>
   <component :is="type" v-ripple="!loading" :disabled="loading" :class="['button', {'button-outlined': outlined, 'button-loading': loading}]" v-on="$listeners">
-    <span>
-      <PIcon v-if="icon" :name="icon" />
-      <slot />
-    </span>
+    <PIcon v-if="icon" :name="icon" />
+    <slot />
     <PCircularLoader v-if="loading" :size="32" />
   </component>
 </template>
