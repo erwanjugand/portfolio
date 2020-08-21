@@ -37,10 +37,12 @@ export default {
       short_name: process.env.SHORT_NAME,
       description: process.env.SITE_DESCRIPTION,
       theme_color: '#0077DB',
-      background_color: '#212121'
+      background_color: '#212121',
+      lang: 'fr',
     },
     icon: {
-      iconSrc: 'static/images/favicon-pwa.png',
+      source: 'static/images/favicon-pwa.png',
+      purpose: 'maskable',
       sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
     }
   },
@@ -102,7 +104,8 @@ export default {
     ['@nuxtjs/axios', {
       progress: false
     }],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/svg'
   ],
   // Build configuration
   build: {

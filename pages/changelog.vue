@@ -1,5 +1,5 @@
 <template>
-  <main class="release-container">
+  <main id="changelog" class="release-container">
     <h1 v-text="$t('changeLog.mainTitle')" />
     <STransitionFadeHeight group tag="ul">
       <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
@@ -31,7 +31,6 @@
 import Vue from 'vue'
 import { Release } from 'models'
 import { fr, enGB } from 'date-fns/locale'
-
 const locale: {[key: string]: Locale} = { fr, en: enGB }
 
 export default Vue.extend({

@@ -30,7 +30,7 @@
   --c-text-65: #{mix($black, $white, 65%)};
   --c-text-35: #{mix($black, $white, 35%)};
   --c-button-bg-hover: #{mix($secondary, $white, 90%)};
-  --c-background: #{$white};
+  --c-background: #{mix($black,$white,2%)};
   --c-background-1: #{$white};
   --c-background-2: #{$white};
   --c-background-3: #{$white};
@@ -71,6 +71,8 @@
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
+  backface-visibility: hidden; // Tricks font aliasing
+
   outline: none;
   line-height: 1.25;
 
@@ -99,6 +101,7 @@
   height: 100vh;
   color: var(--c-text);
   transition: transform var(--transition);
+  will-change: transform;
 
   &::before, &::after {
     content: '';

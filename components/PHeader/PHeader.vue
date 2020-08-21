@@ -4,7 +4,7 @@
   <header :class="['elevation-2', {'flat': $accessor.menuOpened}]">
     <div>
       <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
-        <img src="/images/logo.svg" alt="">
+        <PLogo />
         {{ $config.siteTitle }}
       </nuxt-link>
     </div>
@@ -32,7 +32,7 @@
             :title="$t(`header.lang.${lang.iso}`)"
             @click.native="switchLanguage = false"
           >
-            <img :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
+            <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
           </nuxt-link>
         </div>
       </transition>
@@ -49,8 +49,13 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import PLogo from '~/assets/svg/logo.svg?inline'
 
 export default Vue.extend({
+  components: {
+    PLogo
+  },
+
   data () {
     return {
       switchLanguage: false

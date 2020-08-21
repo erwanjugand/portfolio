@@ -1,14 +1,11 @@
 <template>
-  <main>
+  <main id="index">
     <h1 class="title">
       portfolio-v3
     </h1>
     <PIndexSkills :skills="skills" />
     <PIndexExperiences :experiences="experiences" />
-    works
-    <pre>{{ works }}</pre>
-    works filters
-    <pre>{{ workFilters }}</pre>
+    <PIndexWorkPreviews :works="works" />
   </main>
 </template>
 
@@ -45,14 +42,17 @@ export default Vue.extend({
 <style lang="scss">
 @import '~/assets/css/variables';
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+#index {
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 0;
+  }
 
-h2 {
-  margin-bottom: 2rem;
-  font-size: 2em;
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 2em;
+  }
 }
 </style>

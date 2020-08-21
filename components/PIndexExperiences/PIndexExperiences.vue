@@ -1,3 +1,5 @@
+<style lang="scss" src="./PIndexExperiences.scss"></style>
+
 <template>
   <section>
     <h2>Mes expériences</h2>
@@ -31,77 +33,3 @@ export default Vue.extend({
   }
 })
 </script>
-
-<style lang="scss">
-@import '~/assets/css/variables';
-.experience {
-
-  &-container {
-    position: relative;
-    max-width: unquote('min(100vw, 36em)');
-    margin: .75em 1em 0;
-    transition: var(--transition);
-
-    @media #{$medium-and-up} {
-      margin-right: 9em + 1em;
-      transform: translateX(9em);
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: calc(#{2rem * $diagonal / 2} - #{$border-out / 2});
-      width: $border-out;
-      height: 100%;
-      background: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background));
-    }
-  }
-
-  time {
-    position: relative;
-    display: flex;
-    width: 9em;
-    font-size: 1.25em;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -.225rem;
-      left: ((2rem * $diagonal) - 2rem) / 2;
-      width: 2rem;
-      height: 2rem;
-      border: $border-out solid transparent;
-      background: var(--c-background);
-      transform: rotate(45deg);
-      box-shadow: 0 0 0 $border-out var(--c-primary), inset 0 0 0 $border-in var(--c-primary);
-      box-sizing: border-box;
-    }
-
-    span {
-      text-transform: uppercase;
-      opacity: .5;
-      transform: translateX(2rem * $diagonal + 1rem);
-      transition: var(--transition);
-
-      @media #{$medium-and-up} {
-        transform: translateX(calc(-100% - 1rem))
-      }
-    }
-  }
-
-  &-content {
-    margin: 1rem 0 0 3rem;
-  }
-
-  &-contract {
-    margin: 0 0 1rem 3rem;
-    font-size: .875em;
-    color: var(--c-primary);
-  }
-
-  &:first-child time::before {
-    box-shadow: 0 0 0 3px var(--c-primary), inset 0 0 0 20px var(--c-primary);
-  }
-}
-</style>
