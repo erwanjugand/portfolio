@@ -1,5 +1,5 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" :viewBox="icon.viewBox">
+  <svg role="img" :viewBox="icon.viewBox">
     <path :d="icon.path" />
   </svg>
 </template>

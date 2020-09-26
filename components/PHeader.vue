@@ -20,10 +20,9 @@
         <PIcon type="solid" name="caretDown" />
       </button>
       <transition name="switch-language">
-        <div v-show="switchLanguage" class="switch-language-list elevation-1">
-          <nuxt-link
-            v-for="lang of $i18n.locales"
-            :key="lang.iso"
+        <ul v-show="switchLanguage" class="switch-language-list elevation-1">
+          <li v-for="lang of $i18n.locales" :key="lang.iso">
+            <nuxt-link
             v-ripple
             :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
             :aria-label="$t(`header.lang.${lang.iso}`)"
@@ -32,13 +31,14 @@
           >
             <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
           </nuxt-link>
-        </div>
+          </li>
+        </ul>
       </transition>
     </div>
 
     <button v-ripple type="button" :class="['burger', {'active': $accessor.menuOpened}]" @click="$accessor.setMenuOpening(!$accessor.menuOpened)">
       {{ $t('header.menu') }}
-      <span class="burger-icon">
+      <span aria-hidden="true" class="burger-icon">
         <span v-for="n of 3" :key="n" />
       </span>
     </button>
