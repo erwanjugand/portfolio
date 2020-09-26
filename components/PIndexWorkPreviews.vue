@@ -1,5 +1,3 @@
-<style lang="scss" src="./PIndexWorkPreviews.scss"></style>
-
 <template>
   <section class="work-previews">
     <h2>Me derniers travaux</h2>
@@ -24,3 +22,15 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.work-preview {
+  background: red;
+  height: 18.75em;
+
+  &-container {
+    width: 100%;
+    gap: 3px;
+  }
+}
+</style>

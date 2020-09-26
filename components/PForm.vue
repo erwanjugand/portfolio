@@ -1,5 +1,3 @@
-<style lang="scss" src="./PForm.scss"></style>
-
 <template>
   <form @submit.prevent="trySubmit">
     <slot />
@@ -42,3 +40,17 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field-hidden {
+  width: 0;
+  height: 0;
+  border: none;
+}
+</style>

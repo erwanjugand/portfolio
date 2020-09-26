@@ -1,5 +1,18 @@
-@import '~/assets/css/variables';
+<template>
+  <li class="hexagon">
+    <div class="hexagon-content">
+      <slot />
+    </div>
+  </li>
+</template>
 
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+})
+</script>
+
+<style lang="scss">
 @mixin dynamic-border ($width, $height, $border-size) {
   width: $width;
   height: $height;
@@ -48,3 +61,4 @@
     @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $border-in);
   }
 }
+</style>

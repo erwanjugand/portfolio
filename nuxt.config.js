@@ -105,8 +105,12 @@ export default {
       progress: false
     }],
     '@nuxtjs/sitemap',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    scss: '~/assets/css/variables.scss'
+  },
   // Build configuration
   build: {
     // You can extend webpack config here

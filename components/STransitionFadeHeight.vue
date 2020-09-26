@@ -1,5 +1,3 @@
-<style lang="scss" src="./STransitionFadeHeight.scss"></style>
-
 <template>
   <transition-group
     v-if="group"
@@ -47,3 +45,20 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.fade-height {
+  &-enter-active, &-leave-active {
+    transition: opacity .25s ease, height .25s ease;
+  }
+
+  &-enter, &-leave-to {
+    height: 0;
+    opacity: 0;
+  }
+
+  &-leave-to {
+    height: 0!important;
+  }
+}
+</style>

@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.12.1",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/style-resources": "^1.0.0",
     "@types/ua-parser-js": "^0.7.33",
     "babel-eslint": "^10.1.0",
     "directivue": "^0.1.5",
