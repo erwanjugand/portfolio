@@ -152,6 +152,7 @@ header {
     left: 50%;
     display: flex;
     border-radius: .5em;
+    background: var(--c-background);
     overflow: hidden;
     transform: translateX(-50%);
     transition: var(--transition);
