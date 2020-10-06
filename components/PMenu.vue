@@ -37,15 +37,15 @@ export default Vue.extend({
 
 <style lang="scss">
 #menu {
-  background: #212121;
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #212121;
 
   ul {
     position: relative;
@@ -63,7 +63,7 @@ export default Vue.extend({
     flex: 0 0 2em;
     height: calc(4em / 3);
     margin-right: .5em;
-    fill: #fff;
+    fill: #FFF;
   }
 
   a, button {
@@ -72,11 +72,11 @@ export default Vue.extend({
     width: 100%;
     padding: 1rem;
     font-weight: 300;
-    text-transform: uppercase;
     text-decoration: none;
-    color: #fff;
-    transition: var(--transition);
+    text-transform: uppercase;
+    color: #FFF;
     box-sizing: initial; // Fix Flex auto with with text
+    transition: var(--transition);
 
     &:not(.nuxt-link-exact-active) {
       opacity: .8;
@@ -91,7 +91,6 @@ export default Vue.extend({
     }
   }
 }
-
 
 // Animation
 
@@ -109,8 +108,8 @@ export default Vue.extend({
   }
 
   &-enter, &-leave-active {
-    transform: translateY(100%);
     opacity: 0;
+    transform: translateY(100%);
   }
 }
 </style>

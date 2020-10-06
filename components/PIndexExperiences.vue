@@ -69,10 +69,10 @@ export default Vue.extend({
       left: ((2rem * $diagonal) - 2rem) / 2;
       width: 2rem;
       height: 2rem;
-      border: $border-out solid transparent;
       background: var(--c-background);
-      transform: rotate(45deg);
+      border: $border-out solid transparent;
       box-shadow: 0 0 0 $border-out var(--c-primary), inset 0 0 0 $border-in var(--c-primary);
+      transform: rotate(45deg);
       box-sizing: border-box;
     }
 
@@ -83,7 +83,7 @@ export default Vue.extend({
       transition: var(--transition);
 
       @media #{$medium-and-up} {
-        transform: translateX(calc(-100% - 1rem))
+        transform: translateX(calc(-100% - 1rem));
       }
     }
   }

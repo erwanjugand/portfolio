@@ -51,6 +51,6 @@ form {
 .field-hidden {
   width: 0;
   height: 0;
-  border: none;
+  border-style: none;
 }
 </style>

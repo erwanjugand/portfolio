@@ -29,9 +29,9 @@ export default Vue.extend({
 }
 
 .hexagon {
+  @include dynamic-border($hexagon-width, $hexagon-height, $border-out);
   display: flex;
   padding: 3px;
-  @include dynamic-border($hexagon-width, $hexagon-height, $border-out);
 
   &, &-content {
     position: relative;
@@ -53,12 +53,12 @@ export default Vue.extend({
   }
 
   &-content {
-    flex-grow: 1;
+    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $border-in);
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
     justify-content: center;
-    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $border-in);
   }
 }
 </style>

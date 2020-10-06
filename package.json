@@ -12,6 +12,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lintcssfix": "stylelint **/*.{scss,vue} --fix",
     "image": "svgo static/images/ -r --indent=2 --pretty & find static/images/ -type f -name '*.jpg' | xargs jpegoptim --strip-all & find static/images/ -type f -name '*.png' | xargs optipng"
   },
   "dependencies": {
@@ -47,6 +48,8 @@
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.1",
-    "@nuxtjs/svg": "^0.1.11"
+    "@nuxtjs/svg": "^0.1.11",
+    "stylelint": "^13.7.2",
+    "stylelint-config-sass-guidelines": "^7.1.0"
   }
 }

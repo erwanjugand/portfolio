@@ -93,10 +93,10 @@ export default Vue.extend({
     overflow: hidden;
 
     &:not(:last-child) & {
-    @media #{$medium-and-up} {
-      margin-bottom: 2em;
+      @media #{$medium-and-up} {
+        margin-bottom: 2em;
+      }
     }
-  }
   }
 
   &-container {

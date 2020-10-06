@@ -1,8 +1,6 @@
 @import '~/assets/css/variables';
 
-
 // --- CSS VARIABLES
-
 
 :root {
   // Colors
@@ -20,7 +18,7 @@
   --fs-small: .75rem;
 
   // Others
-  --transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .light-mode {
@@ -30,7 +28,7 @@
   --c-text-65: #{mix($black, $white, 65%)};
   --c-text-35: #{mix($black, $white, 35%)};
   --c-button-bg-hover: #{mix($secondary, $white, 90%)};
-  --c-background: #{mix($black,$white,2%)};
+  --c-background: #{mix($black, $white, 2%)};
   --c-background-1: #{$white};
   --c-background-2: #{$white};
   --c-background-3: #{$white};
@@ -43,23 +41,21 @@
 .dark-mode {
   // Colors
   --c-text: #{$white};
-  --c-text-80: #{mix($white,$black,80%)};
+  --c-text-80: #{mix($white, $black, 80%)};
   --c-text-65: #{mix($white, $black, 65%)};
   --c-text-35: #{mix($white, $black, 35%)};
   --c-button-bg-hover: #{mix($secondary, $black, 90%)};
-  --c-background: #{mix($black,$white,93%)};
-  --c-background-1: #{mix($black,$white,90%)};
-  --c-background-2: #{mix($black,$white,87%)};
-  --c-background-3: #{mix($black,$white,84%)};
+  --c-background: #{mix($black, $white, 93%)};
+  --c-background-1: #{mix($black, $white, 90%)};
+  --c-background-2: #{mix($black, $white, 87%)};
+  --c-background-3: #{mix($black, $white, 84%)};
   --c-border: #{rgba($white, .05)};
   --c-scrollbar-1: #{mix($white, $black, 25%)};
   --c-scrollbar-2: #{mix($white, $black, 35%)};
   --c-scrollbar-3: #{mix($white, $black, 50%)};
 }
 
-
 // --- GLOBAL
-
 
 #page {
   perspective: 5000px;
@@ -67,13 +63,13 @@
 }
 
 * {
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  padding: 0;
   margin: 0;
-  backface-visibility: hidden; // Tricks font aliasing
-  outline: none;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.25;
+  outline: none;
+  box-sizing: border-box;
+  backface-visibility: hidden; // Tricks font aliasing
 
   ::-webkit-scrollbar {
     background: var(--c-background);
@@ -93,7 +89,6 @@
   }
 }
 
-
 #page-content {
   position: relative;
   display: flex;
@@ -104,19 +99,19 @@
 
   &::before, &::after {
     content: '';
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(white,.1);
+    background: rgba(#FFF, .1);
     transition: var(--transition);
-    z-index: -1;
   }
 
   &.minimized {
-    transform: scale(.75) rotateY(50deg) translateX(-100vw);
     cursor: zoom-in;
+    transform: scale(.75) rotateY(50deg) translateX(-100vw);
 
     @media #{$medium-and-up} {
       transform: scale(.5) rotateY(50deg) translateX(-30vw);
@@ -132,12 +127,11 @@
   }
 }
 
-
 main {
   flex: 100%;
   padding-top: 3.75em;
   background: var(--c-background);
-  box-shadow: 0 5px 5px 0px rgba(black,.5);
+  box-shadow: 0 5px 5px 0 rgba(#000, .5);
   overflow: auto;
   overflow: overlay;
 }
@@ -165,47 +159,44 @@ a {
 
 button {
   font-size: var(--fs-regular);
-  border: none;
-  background: transparent;
   cursor: pointer;
+  background: transparent;
+  border-style: none;
 
   &::-moz-focus-inner {
-    border: none; // Remove border when focused for Firefox
+    border-style: none; // Remove border when focused for Firefox
   }
 }
 
 button, a {
   &:focus:not(:active) {
-    box-shadow: 0 0 0 .125em var(--c-primary);
     outline-color: var(--c-primary);
+    box-shadow: 0 0 0 .125em var(--c-primary);
   }
 }
 
-
 // --- HELPER
-
 
 .elevation-1 {
   background: 1px solid var(--c-background-1);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0px 2px 1px -1px rgba($black, .1), 0px 1px 1px 0px rgba($black, .07), 0px 1px 3px 0px rgba($black, .06);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($black, .1), 0 1px 1px 0 rgba($black, .07), 0 1px 3px 0 rgba($black, .06);
 }
 
 .elevation-2 {
-  background: 1px solid  var(--c-background-2);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0px 3px 1px -2px rgba($black, .1), 0px 2px 2px 0px rgba($black, .07), 0px 1px 5px 0px rgba($black, .06)
+  background: 1px solid var(--c-background-2);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 1px -2px rgba($black, .1), 0 2px 2px 0 rgba($black, .07), 0 1px 5px 0 rgba($black, .06);
 }
 
 .elevation-3 {
-  background: 1px solid  var(--c-background-3);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0px 3px 3px -2px rgba($black, .1), 0px 3px 4px 0px rgba($black, .07), 0px 1px 8px 0px rgba($black, .06);
+  background: 1px solid var(--c-background-3);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 3px -2px rgba($black, .1), 0 3px 4px 0 rgba($black, .07), 0 1px 8px 0 rgba($black, .06);
 }
-
 
 .message-success, .message-fail {
   display: flex;
   align-items: center;
-  padding: .8125em 1em;
   margin-bottom: 2em;
+  padding: .8125em 1em;
   border-radius: .5em;
 
   svg {

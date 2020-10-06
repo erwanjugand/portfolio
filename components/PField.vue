@@ -128,7 +128,6 @@ export default Vue.extend({
   max-width: 100%;
   margin-bottom: 2em;
 
-
   // Input / Textarea
 
   input, textarea {
@@ -138,12 +137,12 @@ export default Vue.extend({
     line-height: 1.25;
     color: var(--c-text);
     background: transparent;
-    box-shadow: inset 0 0 0 .0625em var(--c-text-50);
-    border: none;
+    border-style: none;
     border-radius: .5em;
     outline: none;
-    transition: box-shadow var(--transition);
+    box-shadow: inset 0 0 0 .0625em var(--c-text-50);
     resize: none;
+    transition: box-shadow var(--transition);
 
     &:hover {
       box-shadow: inset 0 0 0 .0625em var(--c-text-65);
@@ -187,7 +186,6 @@ export default Vue.extend({
     }
   }
 
-
   // Label
 
   label {
@@ -215,14 +213,13 @@ export default Vue.extend({
     }
   }
 
-
   // Message
 
   &-message-error {
-    margin: .25em 0 -1.5em;
-    font-size: var(--fs-small);
     height: 1.25em;
+    margin: .25em 0 -1.5em;
     padding: 0 1em;
+    font-size: var(--fs-small);
     color: var(--c-fail);
     transition: var(--transition);
 

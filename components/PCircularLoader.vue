@@ -29,20 +29,26 @@ export default Vue.extend({
 
 <style lang="scss">
 @keyframes rotator {
-  0%   { transform: rotate(0); }
-  100% { transform: rotate(720deg); }
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
 }
 
 @keyframes dash {
   0% {
     stroke-dashoffset: 3.1em;
     transform: rotate(90deg);
-
   }
+
   50% {
     stroke-dashoffset: .75em;
     transform: rotate(135deg);
   }
+
   100% {
     stroke-dashoffset: 3.1em;
     transform: rotate(450deg);
@@ -53,17 +59,17 @@ export default Vue.extend({
   animation: rotator 2.1s linear infinite;
 
   circle {
+    fill: transparent;
+    stroke: var(--c-primary);
+    transform-origin: center;
+    animation: dash 1.4s ease-in-out infinite;
     stroke-dasharray: 1.875em;
-    @supports (stroke-dasharray: 0) {
-      stroke-dasharray: 3.1em;
-    }
     stroke-dashoffset: 0;
     stroke-width: .1em;
     stroke-linecap: round;
-    transform-origin: center;
-    stroke: var(--c-primary);
-    fill: transparent;
-    animation: dash 1.4s ease-in-out infinite;
+    @supports (stroke-dasharray: 0) {
+      stroke-dasharray: 3.1em;
+    }
   }
 }
 </style>

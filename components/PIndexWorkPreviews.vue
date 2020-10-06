@@ -25,12 +25,12 @@ export default Vue.extend({
 
 <style lang="scss">
 .work-preview {
-  background: red;
   height: 18.75em;
+  background: #F00;
 
   &-container {
-    width: 100%;
     gap: 3px;
+    width: 100%;
   }
 }
 </style>

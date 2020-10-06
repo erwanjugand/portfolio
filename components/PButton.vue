@@ -32,11 +32,10 @@ export default Vue.extend({
   align-items: center;
   min-height: 3em;
   padding: .5em 1.5em;
-  text-transform: uppercase;
   line-height: 1.25em;
+  text-transform: uppercase;
   border-radius: .5rem;
   transition: var(--transition);
-
 
   &-outlined {
     font-weight: 500;
@@ -47,31 +46,29 @@ export default Vue.extend({
     &:not(.button-loading):hover {
       background: var(--c-button-outlined-bg-hover);
     }
+  }
 
-    .button:not(&) {
-      color: var(--c-background);
-      fill: var(--c-background);
-      background: var(--c-secondary);
+  &:not(.button-outlined) {
+    color: var(--c-background);
+    fill: var(--c-background);
+    background: var(--c-secondary);
 
-      &:not(.button-loading):hover {
-        background: var(--c-button-bg-hover);
-      }
+    &:not(.button-loading):hover {
+      background: var(--c-button-bg-hover);
     }
   }
 
   svg {
     flex: 0 0 1.25em;
     height: 1.25em;
-    margin:  0 1em 0 -.25em;
+    margin: 0 1em 0 -.25em;
   }
-
 
   // Disabled
 
   &:disabled {
     opacity: .8;
   }
-
 
   // Loading
 

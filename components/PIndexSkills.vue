@@ -33,7 +33,7 @@ export default Vue.extend({
     flex-wrap: wrap;
     padding-bottom: $hexagon-height / 2;
 
-    > * {
+    .skill {
       margin: 0 #{($hexagon-width * 1.5) - ($border-out / 2)} #{(-$hexagon-height / 2) - ($border-out / 2)} #{($hexagon-width / 2) - ($border-out / 2)};
     }
 

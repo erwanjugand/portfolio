@@ -25,12 +25,12 @@ $medias: ('s': $small, 'm': $medium-and-up, 'l': $large-and-up, 'xl': $extra-lar
 
 @each $letter, $block in $medias {
   @if ($letter == 's') {
-    @include col($letter)
+    @include col($letter);
   }
 
   @else {
     @media #{$block} {
-      @include col($letter)
+      @include col($letter);
     }
   }
 }

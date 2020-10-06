@@ -64,19 +64,19 @@ export default Vue.extend({
 
 <style lang="scss">
 header {
+  z-index: 10;
   position: fixed;
   display: grid;
   grid-template-columns: 1fr auto auto;
   width: 100vw;
   height: 3.75em;
-  z-index: 10;
   padding: 0 5vw;
   transition: box-shadow var(--transition), border var(--transition);
 
   &.elevation-2 {
     background: #212121;
+    border-color: transparent transparent rgba($white, .05) transparent;
     border-width: 0 0 1px;
-    border-color: transparent transparent rgba($white, .05) transparent
   }
 
   &.flat {
@@ -94,16 +94,15 @@ header {
   align-items: center;
   padding: 0 1rem;
   font-weight: 300;
-  text-transform: uppercase;
   text-decoration: none;
-  color: #fff;
+  text-transform: uppercase;
+  color: #FFF;
   transition: font-size var(--transition);
 
   @media #{$small} {
     font-size: 0;
   }
 }
-
 
 // Logo
 
@@ -113,19 +112,18 @@ header {
   fill: var(--c-primary);
 }
 
-
 // Switch Language
 
 .switch-language {
   display: flex;
   align-items: center;
   padding: 0 1em;
-  color: #fff;
+  color: #FFF;
 
   svg {
     width: .625em;
-    fill: #fff;
     margin-left: .5em;
+    fill: #FFF;
     transition: var(--transition);
   }
 
@@ -151,10 +149,10 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    border-radius: .5em;
     background: var(--c-background);
-    overflow: hidden;
+    border-radius: .5em;
     transform: translateX(-50%);
+    overflow: hidden;
     transition: var(--transition);
 
     a {
@@ -176,7 +174,6 @@ header {
   }
 }
 
-
 // Burger
 
 .burger {
@@ -187,7 +184,7 @@ header {
       display: flex;
       width: 2rem;
       height: .1875rem;
-      background: #fff;
+      background: #FFF;
       border-radius: .25rem;
       transition: var(--transition);
 
