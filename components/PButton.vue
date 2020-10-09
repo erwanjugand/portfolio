@@ -73,9 +73,9 @@ export default Vue.extend({
   // Loading
 
   &-loading span {
-    cursor: wait;
     color: transparent;
     fill: transparent;
+    cursor: wait;
   }
 
   .circular-loader {

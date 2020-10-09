@@ -110,8 +110,8 @@
   }
 
   &.minimized {
-    cursor: zoom-in;
     transform: scale(.75) rotateY(50deg) translateX(-100vw);
+    cursor: zoom-in;
 
     @media #{$medium-and-up} {
       transform: scale(.5) rotateY(50deg) translateX(-30vw);
@@ -159,9 +159,9 @@ a {
 
 button {
   font-size: var(--fs-regular);
-  cursor: pointer;
   background: transparent;
   border-style: none;
+  cursor: pointer;
 
   &::-moz-focus-inner {
     border-style: none; // Remove border when focused for Firefox
