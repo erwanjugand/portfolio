@@ -4,7 +4,6 @@ import fr from './i18n/fr.json'
 require('dotenv').config()
 
 export default {
-  mode: 'universal',
   // .env
   publicRuntimeConfig: {
     apiUrl: process.env.API_URL,
