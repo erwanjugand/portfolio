@@ -11,9 +11,13 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "lintcssfix": "stylelint **/*.{scss,vue} --fix",
-    "image": "svgo static/images/ -r --indent=2 --pretty & find static/images/ -type f -name '*.jpg' | xargs jpegoptim --strip-all & find static/images/ -type f -name '*.png' | xargs optipng"
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lintcss": "stylelint **/*.{scss,vue}",
+    "lintcss:fix": "stylelint **/*.{scss,vue} --fix",
+    "svg:opti": "svgo --config=svgo.json static/ -r --indent=2 --pretty --multipass",
+    "jpg:opti": "find static/images/ -type f -name '*.jpg' | xargs jpegoptim --strip-all",
+    "png:opti": "find static/images/ -type f -name '*.png' | xargs optipng",
+    "image:opti": "yarn run svg:opti && yarn run jpg:opti && yarn run png:opti"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.1",
