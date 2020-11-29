@@ -23,14 +23,14 @@
         <ul v-show="switchLanguage" class="switch-language-list elevation-1">
           <li v-for="lang of $i18n.locales" :key="lang.iso">
             <nuxt-link
-            v-ripple
-            :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
-            :aria-label="$t(`header.lang.${lang.iso}`)"
-            :title="$t(`header.lang.${lang.iso}`)"
-            @click.native="switchLanguage = false"
-          >
-            <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
-          </nuxt-link>
+              v-ripple
+              :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
+              :aria-label="$t(`header.lang.${lang.iso}`)"
+              :title="$t(`header.lang.${lang.iso}`)"
+              @click.native="switchLanguage = false"
+            >
+              <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
+            </nuxt-link>
           </li>
         </ul>
       </transition>
@@ -149,7 +149,7 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    background: var(--c-background);
+    background: var(--c-background-0);
     border-radius: .5em;
     transform: translateX(-50%);
     overflow: hidden;

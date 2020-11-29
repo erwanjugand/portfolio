@@ -1,12 +1,23 @@
-// Color
+// Colors
 $white: #FFF;
 $black: #000;
+$black-93: #{mix($black, $white, 93%)};
+$black-90: #{mix($black, $white, 90%)};
+$black-87: #{mix($black, $white, 87%)};
+$black-84: #{mix($black, $white, 84%)};
+$black-80: #{mix($black, $white, 80%)};
+$black-75: #{mix($black, $white, 75%)};
+$black-65: #{mix($black, $white, 65%)};
+$grey: #{mix($black, $white, 50%)};
+$black-35: #{mix($black, $white, 35%)};
+$black-25: #{mix($black, $white, 25%)};
+$black-20: #{mix($black, $white, 20%)};
 $primary: #0077DB;
 $secondary: #A23FFD;
 $red: #AB0000;
 $green: #4CAF50;
 
-// Media Query
+// Medias Query
 $small: '(max-width : 575px)';
 $medium-and-up: '(min-width : 576px)';
 $medium-and-down: '(max-width : 1023px)';

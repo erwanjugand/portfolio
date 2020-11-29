@@ -37,7 +37,7 @@ export default {
       description: process.env.SITE_DESCRIPTION,
       theme_color: '#0077DB',
       background_color: '#212121',
-      lang: 'fr',
+      lang: 'fr'
     },
     icon: {
       source: 'static/images/favicon-pwa.png',
@@ -50,7 +50,7 @@ export default {
     color: 'var(--c-primary)',
     continuous: true,
     duration: 1000,
-    failedColor: 'var(--c-fail)',
+    failedColor: 'var(--c-error)',
     height: '.25em'
   },
   // Global CSS

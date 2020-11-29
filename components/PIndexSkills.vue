@@ -2,7 +2,7 @@
   <section class="skills">
     <h2>Mes compétences</h2>
     <ul class="skills-container">
-      <PHexagon v-for="skill of skills" class="skill" :key="`skill-${skill.id}`">
+      <PHexagon v-for="skill of skills" :key="`skill-${skill.id}`" class="skill">
         <span class="skill-name" v-text="skill.name" />
         <div class="skill-score">
           <PIcon v-for="n of 3" :key="`star-${n}`" :type="n > skill.level ? 'light' : 'solid'" name="star" />

@@ -2,7 +2,7 @@
   <section class="work-previews">
     <h2>Me derniers travaux</h2>
     <ul class="work-preview-container row">
-      <li v-for="work in works" class="work-preview s12 m6 l4" :key="work.id">
+      <li v-for="work in works" :key="work.id" class="work-preview s12 m6 l4">
         {{ work.title }}
       </li>
     </ul>

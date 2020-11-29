@@ -122,12 +122,12 @@ export default Vue.extend({
       width: 1.5em;
       height: 1em;
       margin-right: 1rem;
-      fill: var(--c-text-80);
+      fill: var(--c-tertiary-1);
     }
   }
 
   time {
-    color: var(--c-text-35);
+    color: var(--c-tertiary-4);
 
     @media #{$small} {
       margin-top: 1em;
