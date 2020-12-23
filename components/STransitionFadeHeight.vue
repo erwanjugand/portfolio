@@ -49,6 +49,7 @@ export default Vue.extend({
 <style lang="scss">
 .fade-height {
   &-enter-active, &-leave-active {
+    overflow: hidden;
     transition: opacity .25s ease, height .25s ease;
   }
 
@@ -58,7 +59,7 @@ export default Vue.extend({
   }
 
   &-leave-to {
-    height: 0;
+    height: 0 !important;
   }
 }
 </style>

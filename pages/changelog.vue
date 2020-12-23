@@ -89,14 +89,8 @@ export default Vue.extend({
   border-radius: 1em;
   transition: margin var(--transition);
 
-  &-wrapper {
-    overflow: hidden;
-
-    &:not(:last-child) & {
-      @media #{$medium-and-up} {
-        margin-bottom: 2em;
-      }
-    }
+  &-wrapper:last-child {
+    margin-bottom: 3em;
   }
 
   &-container {
