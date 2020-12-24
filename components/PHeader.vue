@@ -1,11 +1,9 @@
 <template>
   <header :class="['elevation-2', {'flat': $accessor.menuOpened}]">
-    <div>
-      <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
-        <PLogo />
-        {{ $config.siteTitle }}
-      </nuxt-link>
-    </div>
+    <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
+      <PLogo />
+      {{ $config.siteTitle }}
+    </nuxt-link>
 
     <div v-click-outside="() => switchLanguage = false" class="switch-language-container">
       <button
@@ -93,10 +91,6 @@ header {
     border-color: transparent;
     box-shadow: none;
   }
-
-  > div {
-    display: flex;
-  }
 }
 
 .logo, .burger {
@@ -116,10 +110,14 @@ header {
 
 // Logo
 
-.logo svg {
-  width: 3.75rem;
-  margin-right: 1em;
-  fill: var(--c-primary);
+.logo {
+  margin-right: auto;
+
+  svg {
+    width: 3.75rem;
+    margin-right: 1em;
+    fill: var(--c-primary);
+  }
 }
 
 // Switch Language
@@ -143,6 +141,7 @@ header {
 
   &-container {
     position: relative;
+    display: flex;
     transition: var(--transition);
 
     @media #{$medium-and-up} {
