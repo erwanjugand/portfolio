@@ -11,7 +11,9 @@
       <button
         v-ripple
         type="button"
-        :class="['switch-language', {'active': switchLanguage}]"
+        class="switch-language"
+        :aria-expanded="switchLanguage"
+        aria-controls="menu-languages"
         :aria-label="$t('header.changeLanguage')"
         :title="$t('header.changeLanguage')"
         @click="switchLanguage = !switchLanguage"
@@ -20,10 +22,11 @@
         <PIcon type="solid" name="caretDown" />
       </button>
       <transition name="switch-language">
-        <ul v-show="switchLanguage" class="switch-language-list elevation-1">
+        <ul v-show="switchLanguage" id="menu-languages" role="menu" class="switch-language-list elevation-1">
           <li v-for="lang of $i18n.locales" :key="lang.iso">
             <nuxt-link
               v-ripple
+              role="menuitem"
               :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
               :aria-label="$t(`header.lang.${lang.iso}`)"
               :title="$t(`header.lang.${lang.iso}`)"
@@ -36,7 +39,14 @@
       </transition>
     </div>
 
-    <button v-ripple type="button" :class="['burger', {'active': $accessor.menuOpened}]" @click="$accessor.setMenuOpening(!$accessor.menuOpened)">
+    <button
+      v-ripple
+      type="button"
+      :aria-expanded="$accessor.menuOpened"
+      aria-controls="menu"
+      class="burger"
+      @click="$accessor.setMenuOpening(!$accessor.menuOpened)"
+    >
       {{ $t('header.menu') }}
       <span aria-hidden="true" class="burger-icon">
         <span v-for="n of 3" :key="n" />
@@ -127,7 +137,7 @@ header {
     transition: var(--transition);
   }
 
-  &.active svg {
+  &[aria-expanded='true'] svg {
     transform: rotate(180deg);
   }
 
@@ -193,7 +203,7 @@ header {
       }
     }
 
-    .active & span {
+    [aria-expanded='true'] & span {
       &:nth-child(1) {
         transform: rotate(45deg) translate3d(.5rem, .5rem, 0);
       }

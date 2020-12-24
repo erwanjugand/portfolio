@@ -20,6 +20,7 @@
             @click.prevent="filter(tag.id)"
             v-text="tag.name"
           />
+          <!-- eslint-disable-next-line vue/no-v-html -->
           <div class="release-content" v-html="release.description" />
         </div>
       </li>

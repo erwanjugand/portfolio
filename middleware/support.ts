@@ -26,7 +26,7 @@ const browserNotSupported: {[key: string]: number | null | undefined} = {
 
 const support: Middleware = ({ error, app }) => {
   const currentBrowserNotSupported = currentBrowser.name ? browserNotSupported[currentBrowser.name] : undefined
-  if (currentBrowserNotSupported !== undefined && (!currentBrowserNotSupported || parseFloat(currentBrowser.major || '0') <= (browserNotSupported[currentBrowser.name || ''] || 0) )) {
+  if (currentBrowserNotSupported !== undefined && (!currentBrowserNotSupported || parseFloat(currentBrowser.major || '0') <= (browserNotSupported[currentBrowser.name || ''] || 0))) {
     error({ statusCode: 418, message: app.$t('errors.browserNotSupported') })
   }
 }

@@ -31,7 +31,7 @@ export default Vue.extend({
 
   article {
     height: 18.75em;
-    background: red;
+    background: #F00;
   }
 }
 </style>

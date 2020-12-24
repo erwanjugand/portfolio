@@ -56,6 +56,7 @@ export const actions: ActionTree<RootState, RootState> = {
       const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
       commit('setPages', pages.data)
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error('error', e)
     }
   }
@@ -70,8 +71,8 @@ const slugify = (text: string) => {
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
     .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/[^\w-]+/g, '') // Remove all non-word characters
+    .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
 }

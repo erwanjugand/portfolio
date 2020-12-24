@@ -122,6 +122,7 @@
       "font-size",
       "font-style",
       "font-weight",
+      "font-display",
       "font-variant",
       "font-size-adjust",
       "font-stretch",
