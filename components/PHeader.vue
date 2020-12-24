@@ -1,6 +1,12 @@
 <template>
   <header :class="['elevation-2', {'flat': $accessor.menuOpened}]">
-    <nuxt-link v-ripple class="logo" :to="localePath('index')" :title="$t('header.backToHome')" @click.native="$accessor.setMenuOpening(false)">
+    <nuxt-link
+      v-ripple
+      class="logo"
+      :to="localePath('index')"
+      :title="$t('header.backToHome')"
+      @click.native="$accessor.setMenuOpening(false)"
+    >
       <PLogo />
       {{ $config.siteTitle }}
     </nuxt-link>
@@ -8,10 +14,9 @@
     <div v-click-outside="() => switchLanguage = false" class="switch-language-container">
       <button
         v-ripple
-        type="button"
         class="switch-language"
-        :aria-expanded="switchLanguage"
         aria-controls="menu-languages"
+        :aria-expanded="switchLanguage"
         :aria-label="$t('header.changeLanguage')"
         :title="$t('header.changeLanguage')"
         @click="switchLanguage = !switchLanguage"
@@ -39,7 +44,6 @@
 
     <button
       v-ripple
-      type="button"
       :aria-expanded="$accessor.menuOpened"
       aria-controls="menu"
       class="burger"
@@ -76,19 +80,13 @@ header {
   position: fixed;
   display: grid;
   grid-template-columns: 1fr auto auto;
-  width: 100vw;
-  height: 3.75em;
-  padding: 0 5vw;
-  transition: box-shadow var(--transition), border var(--transition);
-
-  &.elevation-2 {
-    background: #212121;
-    border-color: transparent transparent rgba($white, .05) transparent;
-    border-width: 0 0 1px;
-  }
+  width: 100%;
+  height: 60px;
+  padding: 0 5%;
+  background-color: mix($black, $white, 87%);
+  transition: box-shadow var(--transition);
 
   &.flat {
-    border-color: transparent;
     box-shadow: none;
   }
 }
@@ -96,11 +94,11 @@ header {
 .logo, .burger {
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 16px;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
-  color: #FFF;
+  color: $white;
   transition: font-size var(--transition);
 
   @media #{$small} {
@@ -114,8 +112,8 @@ header {
   margin-right: auto;
 
   svg {
-    width: 3.75rem;
-    margin-right: 1em;
+    width: 60px;
+    margin-right: 16px;
     fill: var(--c-primary);
   }
 }
@@ -125,14 +123,14 @@ header {
 .switch-language {
   display: flex;
   align-items: center;
-  padding: 0 1em;
-  color: #FFF;
+  padding: 0 16px;
+  color: $white;
 
   svg {
-    width: .625em;
-    margin-left: .5em;
-    fill: #FFF;
-    transition: var(--transition);
+    width: 10px;
+    margin-left: 8px;
+    fill: $white;
+    transition: transform var(--transition);
   }
 
   &[aria-expanded='true'] svg {
@@ -142,14 +140,14 @@ header {
   &-container {
     position: relative;
     display: flex;
-    transition: var(--transition);
+    transition: margin var(--transition);
 
     @media #{$medium-and-up} {
-      margin-right: 1em;
+      margin-right: 16px;
     }
 
     img {
-      width: 2em;
+      width: 32px;
     }
   }
 
@@ -158,22 +156,22 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    background: var(--c-background-0);
-    border-radius: .5em;
+    background-color: var(--c-background-0);
+    border-radius: 8px;
     transform: translateX(-50%);
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform var(--transition);
 
     a {
       display: flex;
-      padding: .5em;
+      padding: 8px;
 
       &:hover {
-        background: var(--c-background-1);
+        background-color: var(--c-background-1);
       }
 
       &.nuxt-link-exact-active {
-        background: var(--c-primary);
+        background-color: var(--c-primary);
       }
     }
   }
@@ -187,24 +185,24 @@ header {
 
 .burger {
   &-icon {
-    margin-left: 1em;
+    margin-left: 16px;
 
     span {
       display: flex;
-      width: 2rem;
-      height: .1875rem;
-      background: #FFF;
-      border-radius: .25rem;
-      transition: var(--transition);
+      width: 32px;
+      height: 3px;
+      background-color: $white;
+      border-radius: 2px;
+      transition: transform var(--transition);
 
       &:not(:first-of-type) {
-        margin-top: .5rem;
+        margin-top: 8px;
       }
     }
 
     [aria-expanded='true'] & span {
       &:nth-child(1) {
-        transform: rotate(45deg) translate3d(.5rem, .5rem, 0);
+        transform: rotate(45deg) translate3d(8px, 8px, 0);
       }
 
       &:nth-child(2) {
@@ -212,7 +210,7 @@ header {
       }
 
       &:nth-child(3) {
-        transform: rotate(135deg) translate3d(-.5rem, .5rem, 0);
+        transform: rotate(135deg) translate3d(-8px, 8px, 0);
       }
     }
   }

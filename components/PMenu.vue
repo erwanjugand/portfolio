@@ -45,7 +45,7 @@ export default Vue.extend({
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: #212121;
+  background-color: mix($black, $white, 87%);
 
   ul {
     position: relative;
