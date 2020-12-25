@@ -38,8 +38,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~/assets/css/variables';
-
 #index {
   section {
     display: flex;

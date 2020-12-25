@@ -26,7 +26,7 @@ export default Vue.extend({
 <style lang="scss">
 .work-preview {
   height: 18.75em;
-  background: #F00;
+  background-color: #F00;
 
   &-container {
     gap: 3px;

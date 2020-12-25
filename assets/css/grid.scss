@@ -1,6 +1,6 @@
 $columns: 12;
-$spacing: 1em;
-$container-width: 80em;
+$spacing: 16px;
+$container-width: 1280px;
 
 .container {
   width: unquote('min(90vw, #{$container-width})');

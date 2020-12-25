@@ -7,7 +7,8 @@
     "mainTitle": "Contact",
     "message": "Message",
     "send": "Envoyer",
-    "title": "Titre",
+    "title": "Envie de me contacter ? C'est par ici !",
+    "titleMessage": "Titre",
     "validation": {
       "sent": "Le message a été transmis !",
       "error": "Une erreur est survenue, le message n'a pas pu être transmis"

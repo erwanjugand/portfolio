@@ -44,17 +44,17 @@ export default Vue.extend({
     border: .125rem solid var(--c-secondary);
 
     &:not(.button-loading):hover {
-      background: var(--c-button-outlined-bg-hover);
+      background-color: var(--c-button-outlined-bg-hover);
     }
   }
 
   &:not(.button-outlined) {
     color: var(--c-background-0);
     fill: var(--c-background-0);
-    background: var(--c-secondary);
+    background-color: var(--c-secondary);
 
     &:not(.button-loading):hover {
-      background: var(--c-secondary-hover);
+      background-color: var(--c-secondary-hover);
     }
   }
 

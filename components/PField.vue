@@ -124,7 +124,7 @@ export default Vue.extend({
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 25em;
+  width: 500px;
   max-width: 100%;
   margin-bottom: 2em;
 
@@ -136,7 +136,7 @@ export default Vue.extend({
     font-weight: 300;
     line-height: 1.25;
     color: var(--c-default);
-    background: transparent;
+    background-color: transparent;
     border-style: none;
     border-radius: .5em;
     outline: none;
@@ -207,7 +207,7 @@ export default Vue.extend({
       display: flex;
       width: 100%;
       height: .25rem;
-      background: var(--c-background-0);
+      background-color: var(--c-background-0);
       transform: scaleX(0) translateY(-.9375rem);
       transition: var(--transition);
     }
@@ -233,7 +233,7 @@ export default Vue.extend({
 @keyframes autofill {
   to {
     color: inherit;
-    background: transparent;
+    background-color: transparent;
   }
 }
 </style>

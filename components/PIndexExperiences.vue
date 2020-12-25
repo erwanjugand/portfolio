@@ -52,7 +52,7 @@ export default Vue.extend({
       left: calc(#{2rem * $diagonal / 2} - #{$border-out / 2});
       width: $border-out;
       height: 100%;
-      background: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background-0));
+      background-color: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background-0));
     }
   }
 
@@ -69,7 +69,7 @@ export default Vue.extend({
       left: ((2rem * $diagonal) - 2rem) / 2;
       width: 2rem;
       height: 2rem;
-      background: var(--c-background-0);
+      background-color: var(--c-background-0);
       border: $border-out solid transparent;
       box-shadow: 0 0 0 $border-out var(--c-primary), inset 0 0 0 $border-in var(--c-primary);
       transform: rotate(45deg);

@@ -22,8 +22,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import '~/assets/css/variables';
-
 .preview-work-container {
   gap: $border-out;
   width: unquote('min(calc(100vw - #{2 * $border-out}), 120em)');
@@ -31,7 +29,7 @@ export default Vue.extend({
 
   article {
     height: 18.75em;
-    background: #F00;
+    background-color: #F00;
   }
 }
 </style>

@@ -83,8 +83,11 @@ header {
   width: 100%;
   height: 60px;
   padding: 0 5%;
-  background-color: mix($black, $white, 87%);
   transition: box-shadow var(--transition);
+
+  &.elevation-2 {
+    background-color: mix($black, $white, 87%);
+  }
 
   &.flat {
     box-shadow: none;
@@ -109,12 +112,14 @@ header {
 // Logo
 
 .logo {
+  position: relative;
   margin-right: auto;
 
   svg {
     width: 60px;
-    margin-right: 16px;
+    margin-right: 1em;
     fill: var(--c-primary);
+    transition: margin var(--transition);
   }
 }
 
@@ -147,6 +152,7 @@ header {
     }
 
     img {
+      position: relative;
       width: 32px;
     }
   }
@@ -185,7 +191,7 @@ header {
 
 .burger {
   &-icon {
-    margin-left: 16px;
+    margin-left: 1em;
 
     span {
       display: flex;
@@ -193,7 +199,7 @@ header {
       height: 3px;
       background-color: $white;
       border-radius: 2px;
-      transition: transform var(--transition);
+      transition: margin var(--transition), transform var(--transition);
 
       &:not(:first-of-type) {
         margin-top: 8px;
