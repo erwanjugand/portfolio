@@ -49,8 +49,8 @@ export default Vue.extend({
   }
 
   &:not(.button-outlined) {
-    color: var(--c-background-0);
-    fill: var(--c-background-0);
+    color: var(--c-background-bg);
+    fill: var(--c-background-bg);
     background-color: var(--c-secondary);
 
     &:not(.button-loading):hover {
@@ -84,7 +84,7 @@ export default Vue.extend({
     left: calc(50% - 1rem);
 
     circle {
-      stroke: var(--c-background-0);
+      stroke: var(--c-background-bg);
     }
 
     @at-root .button-outlined .circular-loader circle {

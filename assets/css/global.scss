@@ -25,11 +25,15 @@
   --c-background-1: #{$white-100};
   --c-background-2: #{$white-100};
   --c-background-3: #{$white-100};
+  --c-secondary-hover: #{mix($secondary, $white, 90%)};
 
   // Scroll
-  --c-scroll-background: #{$black-25};
-  --c-scroll-hover: #{$black-35};
-  --c-scroll-active: #{$black-50};
+  --c-scroll-background: #{$white-25};
+  --c-scroll-hover: #{$white-35};
+  --c-scroll-active: #{$white-50};
+
+  // Border
+  --c-border: #{rgba($black, .05)};
 }
 
 .dark-mode {
@@ -45,11 +49,15 @@
   --c-background-1: #{$black-90};
   --c-background-2: #{$black-87};
   --c-background-3: #{$black-84};
+  --c-secondary-hover: #{mix($secondary, $black, 90%)};
 
   // Scroll
-  --c-scroll-background: #{$white-25};
-  --c-scroll-hover: #{$white-35};
-  --c-scroll-active: #{$white-50};
+  --c-scroll-background: #{$black-25};
+  --c-scroll-hover: #{$black-35};
+  --c-scroll-active: #{$black-50};
+
+  // Border
+  --c-border: #{rgba($white, .05)};
 }
 
 // --- CSS VARIABLES
@@ -71,42 +79,6 @@
   --transition: .3s cubic-bezier(.4, 0, .2, 1);
 }
 
-.light-mode {
-  // Colors
-  --c-secondary-hover: #{mix($secondary, $white, 90%)};
-  --c-default: #{$black};
-  --c-tertiary-1: #{$black-80};
-  --c-tertiary-2: #{$black-65};
-  --c-tertiary-3: #{$grey};
-  --c-tertiary-4: #{$black-35};
-  --c-background-0: #{$white};
-  --c-background-1: #{$white};
-  --c-background-2: #{$white};
-  --c-background-3: #{$white};
-  --c-scrollbar-background: #{$black-25};
-  --c-scrollbar-hover: #{$black-35};
-  --c-scrollbar-active: #{$grey};
-  --c-border: #{rgba($black, .05)};
-}
-
-.dark-mode {
-  // Colors
-  --c-secondary-hover: #{mix($secondary, $black, 90%)};
-  --c-default: #{$white};
-  --c-tertiary-1: #{$black-20};
-  --c-tertiary-2: #{$black-35};
-  --c-tertiary-3: #{$grey};
-  --c-tertiary-4: #{$black-65};
-  --c-background-0: #{$black-93};
-  --c-background-1: #{$black-90};
-  --c-background-2: #{$black-87};
-  --c-background-3: #{$black-84};
-  --c-scrollbar-background: #{$black-75};
-  --c-scrollbar-hover: #{$black-65};
-  --c-scrollbar-active: #{$grey};
-  --c-border: #{rgba($white, .05)};
-}
-
 // --- GLOBAL
 
 #page {
@@ -123,19 +95,19 @@
   backface-visibility: hidden; // Tricks font aliasing
 
   ::-webkit-scrollbar {
-    background-color: var(--c-background-0);
+    background-color: var(--c-background-bg);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--c-scrollbar-background);
-    border: 1px solid var(--c-background-0);
+    background-color: var(--c-scroll-background);
+    border: 1px solid var(--c-background-bg);
 
     &:hover {
-      background-color: var(--c-scrollbar-hover);
+      background-color: var(--c-scroll-hover);
     }
 
     &:active {
-      background-color: var(--c-scrollbar-active);
+      background-color: var(--c-scroll-active);
     }
   }
 }
@@ -144,7 +116,7 @@
   position: relative;
   display: flex;
   height: 100vh;
-  color: var(--c-default);
+  color: var(--c-text);
   transition: transform var(--transition);
   will-change: transform;
 
@@ -181,8 +153,8 @@
 main {
   flex: 100%;
   padding: 60px 16px 16px;
-  background-color: var(--c-background-0);
-  box-shadow: 0 5px 5px 0 rgba(#000, .5);
+  background-color: var(--c-background-bg);
+  box-shadow: 0 5px 5px 0 rgba($black, .5);
   overflow: auto;
   overflow: overlay;
 }
@@ -204,10 +176,6 @@ li {
   list-style-type: none;
 }
 
-a {
-  color: var(--c-primary);
-}
-
 button {
   font-size: var(--fs-regular);
   background-color: transparent;
@@ -224,7 +192,7 @@ button, a {
     outline: none;
   }
 
-  &:focus-visible, &:-moz-focusring {
+  &:focus-visible {
     outline-color: var(--c-primary);
     box-shadow: 0 0 0 .125em var(--c-primary);
   }
@@ -255,13 +223,13 @@ button, a {
         width: 1.5em;
         height: 1em;
         margin-right: 16px;
-        fill: var(--c-tertiary-1);
+        fill: var(--c-text);
       }
     }
 
     time {
       margin: 0 0 16px 16px;
-      color: var(--c-tertiary-4);
+      color: var(--c-text-secondary-4);
     }
   }
 

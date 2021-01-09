@@ -45,7 +45,7 @@ export default Vue.extend({
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: mix($black, $white, 87%);
+  background-color: $black-87;
 
   ul {
     position: relative;
@@ -63,7 +63,7 @@ export default Vue.extend({
     flex: 0 0 2em;
     height: calc(4em / 3);
     margin-right: .5em;
-    fill: #FFF;
+    fill: $white;
   }
 
   a, button {
@@ -74,7 +74,7 @@ export default Vue.extend({
     font-weight: 300;
     text-decoration: none;
     text-transform: uppercase;
-    color: #FFF;
+    color: $white;
     box-sizing: initial; // Fix Flex auto with with text
     transition: var(--transition);
 

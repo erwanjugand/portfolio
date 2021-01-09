@@ -86,7 +86,7 @@ header {
   transition: box-shadow var(--transition);
 
   &.elevation-2 {
-    background-color: mix($black, $white, 87%);
+    background-color: $black-87;
   }
 
   &.flat {
@@ -162,7 +162,7 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    background-color: var(--c-background-0);
+    background-color: $black-87;
     border-radius: 8px;
     transform: translateX(-50%);
     overflow: hidden;
@@ -171,10 +171,7 @@ header {
     a {
       display: flex;
       padding: 8px;
-
-      &:hover {
-        background-color: var(--c-background-1);
-      }
+      color: $white;
 
       &.nuxt-link-exact-active {
         background-color: var(--c-primary);

@@ -135,20 +135,20 @@ export default Vue.extend({
     font-size: var(--fs-regular);
     font-weight: 300;
     line-height: 1.25;
-    color: var(--c-default);
+    color: var(--c-text);
     background-color: transparent;
     border-style: none;
     border-radius: .5em;
     outline: none;
-    box-shadow: inset 0 0 0 .0625em var(--c-tertiary-3);
+    box-shadow: inset 0 0 0 .0625em var(--c-text-secondary-3);
     resize: none;
     transition: box-shadow var(--transition);
 
     &:hover {
-      box-shadow: inset 0 0 0 .0625em var(--c-tertiary-2);
+      box-shadow: inset 0 0 0 .0625em var(--c-text-secondary-2);
 
       &.has-content:not(:focus):not(.error) + label {
-        color: var(--c-tertiary-2);
+        color: var(--c-text-secondary-2);
       }
     }
 
@@ -192,7 +192,7 @@ export default Vue.extend({
     position: absolute;
     top: .875rem;
     left: 1em;
-    color: var(--c-tertiary-3);
+    color: var(--c-text-secondary-3);
     transition: var(--transition);
 
     span {
@@ -207,7 +207,7 @@ export default Vue.extend({
       display: flex;
       width: 100%;
       height: .25rem;
-      background-color: var(--c-background-0);
+      background-color: var(--c-background-bg);
       transform: scaleX(0) translateY(-.9375rem);
       transition: var(--transition);
     }
