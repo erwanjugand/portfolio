@@ -1,31 +1,43 @@
 // Colors
 $white: #FFF;
 $black: #000;
-$black-93: #{mix($black, $white, 93%)};
-$black-90: #{mix($black, $white, 90%)};
-$black-87: #{mix($black, $white, 87%)};
-$black-84: #{mix($black, $white, 84%)};
-$black-80: #{mix($black, $white, 80%)};
-$black-75: #{mix($black, $white, 75%)};
-$black-65: #{mix($black, $white, 65%)};
-$grey: #{mix($black, $white, 50%)};
-$black-35: #{mix($black, $white, 35%)};
-$black-25: #{mix($black, $white, 25%)};
-$black-20: #{mix($black, $white, 20%)};
 $primary: #0077DB;
 $secondary: #A23FFD;
 $red: #AB0000;
 $green: #4CAF50;
 
-// Medias Query
-$small: '(max-width : 575px)';
-$medium-and-up: '(min-width : 576px)';
-$medium-and-down: '(max-width : 1023px)';
-$medium-only: '(min-width : 576px) and (max-width: 1023px)';
-$large-and-up: '(min-width : 1024px)';
-$large-and-down: '(max-width : 1399px)';
-$large-only: '(min-width : 1024px) and (max-width: 1399px)';
-$extra-large: '(min-width : 1400px)';
+$black-100: $black;
+$black-93: mix($white, $black, 93%);
+$black-90: mix($white, $black, 90%);
+$black-87: mix($white, $black, 87%);
+$black-84: mix($white, $black, 84%);
+$black-80: mix($white, $black, 80%);
+$black-65: mix($white, $black, 65%);
+$black-50: mix($white, $black, 50%);
+$black-35: mix($white, $black, 35%);
+$black-25: mix($white, $black, 25%);
+
+$white-100: $white;
+$white-80: mix($black, $white, 80%);
+$black-93: mix($black, $white, 93%);
+$black-90: mix($black, $white, 90%);
+$black-87: mix($black, $white, 87%);
+$black-84: mix($black, $white, 84%);
+$white-65: mix($black, $white, 65%);
+$white-50: mix($black, $white, 50%);
+$white-35: mix($black, $white, 35%);
+$white-25: mix($black, $white, 25%);
+$white-2: mix($black, $white, 2%);
+
+// Media Query
+$small: '(max-width: 575px)';
+$medium-and-up: '(min-width: 576px)';
+$medium-and-down: '(max-width: 1023px)';
+$medium-only: '(min-width: 576px) and (max-width: 1023px)';
+$large-and-up: '(min-width: 1024px)';
+$large-and-down: '(max-width: 1399px)';
+$large-only: '(min-width: 1024px) and (max-width: 1399px)';
+$extra-large: '(min-width: 1400px)';
 
 // Other
 

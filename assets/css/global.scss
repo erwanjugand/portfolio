@@ -1,6 +1,60 @@
 // --- CSS VARIABLES
 
 :root {
+  // Text
+  --c-text-primary: #{$primary};
+  --c-text-secondary: #{$secondary};
+  --c-text-fail: #{$red};
+  --c-text-success: #{$green};
+
+  // Background
+  --c-background-fail: #{rgba($red, .25)};
+  --c-background-success: #{rgba($green, .25)};
+}
+
+.light-mode {
+  // Text
+  --c-text: #{$black-100};
+  --c-text-secondary-1: #{$black-80};
+  --c-text-secondary-2: #{$black-65};
+  --c-text-secondary-3: #{$black-50};
+  --c-text-secondary-4: #{$black-35};
+
+  // Background
+  --c-background-bg: #{$white-2};
+  --c-background-1: #{$white-100};
+  --c-background-2: #{$white-100};
+  --c-background-3: #{$white-100};
+
+  // Scroll
+  --c-scroll-background: #{$black-25};
+  --c-scroll-hover: #{$black-35};
+  --c-scroll-active: #{$black-50};
+}
+
+.dark-mode {
+  // Text
+  --c-text: #{$white};
+  --c-text-secondary-1: #{$white-80};
+  --c-text-secondary-2: #{$white-65};
+  --c-text-secondary-3: #{$white-50};
+  --c-text-secondary-4: #{$white-35};
+
+  // Background
+  --c-background-bg: #{$black-93};
+  --c-background-1: #{$black-90};
+  --c-background-2: #{$black-87};
+  --c-background-3: #{$black-84};
+
+  // Scroll
+  --c-scroll-background: #{$white-25};
+  --c-scroll-hover: #{$white-35};
+  --c-scroll-active: #{$white-50};
+}
+
+// --- CSS VARIABLES
+
+:root {
   // Colors
   --c-primary: #{$primary};
   --c-secondary: #{$secondary};
@@ -170,7 +224,8 @@ button, a {
     outline: none;
   }
 
-  &:focus-visible {
+  &:focus-visible, &:-moz-focusring {
+    outline-color: var(--c-primary);
     box-shadow: 0 0 0 .125em var(--c-primary);
   }
 }
