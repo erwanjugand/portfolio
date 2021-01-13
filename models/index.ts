@@ -6,6 +6,11 @@ export interface Model {
 
 // Works
 
+export interface WorkFilter extends Model {
+  level: number
+  name: string
+}
+
 export interface Work extends Model {
   created: Date
   dateRealization: Date
@@ -13,11 +18,6 @@ export interface Work extends Model {
   filters: WorkFilter[]
   slug: string
   title: string
-}
-
-export interface WorkFilter extends Model {
-  level: number
-  name: string
 }
 
 // Skills
@@ -37,16 +37,16 @@ export interface Experience extends Model {
 
 // Releases
 
+export interface Tag extends Model {
+  color: string
+  name: string
+}
+
 export interface Release extends Model {
   date: Date
   major: boolean
   name: string
   tags: Tag[]
-}
-
-export interface Tag extends Model {
-  color: string
-  name: string
 }
 
 // Pages
@@ -60,14 +60,15 @@ export interface Page extends Model {
 
 // Icons
 
+export interface Icon {
+  path: string,
+  viewBox: string
+}
+
 export interface Icons {
   [type: string]: {
     [name: string]: Icon
   }
-}
-export interface Icon {
-  path: string,
-  viewBox: string
 }
 
 // Header

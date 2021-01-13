@@ -13,7 +13,7 @@ export default Vue.extend({
     tag: {
       type: String,
       default: ''
-    },
+    }
   }
 })
 </script>

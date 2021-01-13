@@ -1,1 +1,1 @@
-declare module '*.svg?inline';
+declare module '*.svg?inline'

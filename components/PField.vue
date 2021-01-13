@@ -103,7 +103,7 @@ export default Vue.extend({
       this.selectedOnce = true
       // Check the validation of the field
       this.requiredError = this.selectedOnce && !this.hasFocused && this.required && !this.value
-      this.emailError = this.selectedOnce && !this.hasFocused && this.type === 'email' && !this.hasFocused && !RegExp(/([\w.-]+)@([\w.-]+)\.(\w+)/).test(this.value)
+      this.emailError = this.selectedOnce && !this.hasFocused && this.type === 'email' && !this.hasFocused && !/([\w.-]+)@([\w.-]+)\.(\w+)/.test(this.value)
       const errorMessages: TranslateResult[] = []
       if (this.requiredError) {
         errorMessages.push(this.$t('form.required'))
