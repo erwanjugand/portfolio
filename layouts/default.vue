@@ -21,28 +21,10 @@ export default Vue.extend({
     return {
       htmlAttrs: i18nSeo.htmlAttrs,
       link: i18nSeo.link,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.page?.metaDescription || ''
-        },
-        ...(i18nSeo.meta || [])
-      ],
-      title: this.$config.siteTitle + (this.page && this.page.metaTitle && this.page.metaTitle !== this.$config.siteTitle ? ` - ${this.page.metaTitle}` : '')
-    }
-  },
-
-  data () {
-    return {
-      page: this.$accessor.pages.find(p => this.$route.name && p.name === this.$route.name.split('__')[0])
-    }
-  },
-
-  watch: {
-    $route: {
-      handler (to) {
-        this.page = this.$accessor.pages.find(p => p.name === to.name.split('__')[0])
+      meta: i18nSeo.meta,
+      title: '',
+      titleTemplate: (titleChunk) => {
+        return this.$config.siteTitle + (titleChunk && ` - ${titleChunk}`)
       }
     }
   }

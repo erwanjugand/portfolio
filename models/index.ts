@@ -49,15 +49,6 @@ export interface Release extends Model {
   tags: Tag[]
 }
 
-// Pages
-
-export interface Page extends Model {
-  data: any[]
-  metaDescription: string
-  metaTitle: string
-  name: string
-}
-
 // Icons
 
 export interface Icon {

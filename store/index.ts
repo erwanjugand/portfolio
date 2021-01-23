@@ -1,12 +1,11 @@
 import { getAccessorType } from 'typed-vuex'
 import { ActionTree, MutationTree } from 'vuex'
-import { Experience, Page, Release, Skill, Work, WorkFilter } from 'models'
+import { Experience, Release, Skill, Work, WorkFilter } from 'models'
 import { parseISO, compareDesc, getYear } from 'date-fns'
 
 export const state = () => ({
   experiences: [] as Experience[],
   menuOpened: false,
-  pages: [] as Page[],
   releases: [] as Release[],
   skills: [] as Skill[],
   works: [] as Work[],
@@ -25,9 +24,6 @@ export const mutations: MutationTree<RootState> = {
   },
   setMenuOpening (state, data: boolean) {
     state.menuOpened = data
-  },
-  setPages (state, data: Page[]) {
-    state.pages = data
   },
   setReleases (state, data: Release[]) {
     for (const release of data) {
@@ -50,16 +46,8 @@ export const mutations: MutationTree<RootState> = {
 }
 
 export const actions: ActionTree<RootState, RootState> = {
-  async nuxtServerInit ({ commit }) {
-    // Fetch pages data
-    try {
-      const pages = await this.$axios.get(`${process.env.API_URL}/pages`)
-      commit('setPages', pages.data)
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.error('error', e)
-    }
-  }
+  // async nuxtServerInit ({ commit }, { error }) {
+  // }
 }
 
 const slugify = (text: string) => {
