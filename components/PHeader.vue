@@ -25,7 +25,7 @@
         <PIcon type="solid" name="caretDown" />
       </button>
       <transition name="switch-language">
-        <ul v-show="switchLanguage" id="menu-languages" role="menu" class="switch-language-list elevation-1">
+        <ul v-show="switchLanguage" id="menu-languages" role="menu" class="switch-language-list elevation-3">
           <li v-for="lang of $i18n.locales" :key="lang.iso">
             <nuxt-link
               v-ripple
@@ -162,7 +162,6 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    background-color: $black-87;
     border-radius: 8px;
     transform: translateX(-50%);
     overflow: hidden;

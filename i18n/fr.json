@@ -1,11 +1,13 @@
 {
   "changeLog": {
-    "mainTitle": "Journal de modifications"
+    "mainTitle": "Journal de modifications",
+    "metaTitle": "Journal de modifications"
   },
   "contact": {
     "email": "Email",
     "mainTitle": "Contact",
     "message": "Message",
+    "metaTitle": "Contact",
     "send": "Envoyer",
     "title": "Envie de me contacter ? C'est par ici !",
     "titleMessage": "Titre",
@@ -41,5 +43,8 @@
     "portfolioEvolution": "Évolution du portfolio",
     "works": "Mes travaux"
   },
-  "home": {}
+  "home": {},
+  "works": {
+    "metaTitle": "Mes travaux"
+  }
 }

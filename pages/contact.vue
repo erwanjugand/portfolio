@@ -1,14 +1,14 @@
 <template>
   <main>
     <h1 v-text="$t('contact.mainTitle')" />
-    <div class="card form-contact elevation-1">
-      <div class="card-header">
+    <PCard class="form-contact">
+      <template #header>
         <h2>
           <PIcon name="envelopeOpenText" />
           {{ $t('contact.title') }}
         </h2>
-      </div>
-      <PForm class="card-content" :data="form" secure @submit="sendEmail">
+      </template>
+      <PForm :data="form" secure @submit="sendEmail">
         <PField
           v-model="form.email"
           required
@@ -41,7 +41,7 @@
           {{ $t('contact.send') }}
         </PButton>
       </PForm>
-    </div>
+    </PCard>
   </main>
 </template>
 
@@ -49,6 +49,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+  head () {
+    return {
+      title: this.$t('contact.metaTitle').toString()
+    }
+  },
+
   nuxtI18n: {
     paths: {
       fr: '/contact',

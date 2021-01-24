@@ -11,6 +11,12 @@ import Vue from 'vue'
 import { Work, WorkFilter } from 'models'
 
 export default Vue.extend({
+  head () {
+    return {
+      title: this.$t('works.metaTitle').toString()
+    }
+  },
+
   nuxtI18n: {
     paths: {
       fr: '/travaux',

@@ -1,8 +1,6 @@
 import en from './i18n/en.json'
 import fr from './i18n/fr.json'
 
-require('dotenv').config()
-
 export default {
   // .env
   publicRuntimeConfig: {
@@ -11,20 +9,11 @@ export default {
     siteDescription: process.env.SITE_DESCRIPTION,
     shortName: process.env.SHORT_NAME
   },
-  privateRuntimeConfig: {
-  },
   // Components
   components: true,
-  // Headers of the page
+  // Head
   head: {
     title: process.env.SITE_TITLE,
-    htmlAttrs: {
-      lang: 'fr'
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
     ]
@@ -34,7 +23,6 @@ export default {
     manifest: {
       name: process.env.SITE_TITLE,
       short_name: process.env.SHORT_NAME,
-      description: process.env.SITE_DESCRIPTION,
       theme_color: '#0077DB',
       background_color: '#212121',
       lang: 'fr'
@@ -45,13 +33,13 @@ export default {
       sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
     }
   },
-  // Customize the progress-bar color
+  // Customize the progress-bar
   loading: {
     color: 'var(--c-primary)',
     continuous: true,
     duration: 1000,
     failedColor: 'var(--c-error)',
-    height: '.25em'
+    height: '4px'
   },
   // Global CSS
   css: [

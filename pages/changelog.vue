@@ -3,30 +3,28 @@
     <h1 v-text="$t('changeLog.mainTitle')" />
     <STransitionFadeHeight group tag="ul">
       <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
-        <article class="card release elevation-1">
-          <div class="card-header">
+        <PCard tag="article" class="release">
+          <template #header>
             <h2>
               <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
               {{ release.name }}
             </h2>
             <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
-          </div>
-          <div class="card-content">
-            <ul class="release-tags">
-              <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`">
-                <button
-                  v-ripple
-                  :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
-                  :style="{ backgroundColor: tag.color }"
-                  @click.prevent="filter(tag.id)"
-                  v-text="tag.name"
-                />
-              </li>
-            </ul>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="release-content" v-html="release.description" />
-          </div>
-        </article>
+          </template>
+          <ul class="release-tags">
+            <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`">
+              <button
+                v-ripple
+                :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
+                :style="{ backgroundColor: tag.color }"
+                @click.prevent="filter(tag.id)"
+                v-text="tag.name"
+              />
+            </li>
+          </ul>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <div class="release-content" v-html="release.description" />
+        </PCard>
       </li>
     </STransitionFadeHeight>
   </main>
@@ -38,9 +36,16 @@ import { Release } from 'models'
 import { AxiosResponse } from 'axios'
 import { Locale } from 'date-fns'
 import { fr, enGB } from 'date-fns/locale'
+
 const locale: {[key: string]: Locale} = { fr, en: enGB }
 
 export default Vue.extend({
+  head () {
+    return {
+      title: this.$t('changeLog.metaTitle').toString()
+    }
+  },
+
   nuxtI18n: {
     paths: {
       fr: '/journal-des-modifications',

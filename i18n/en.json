@@ -1,13 +1,16 @@
 {
   "changeLog": {
-    "mainTitle": "Changelog"
+    "mainTitle": "Changelog",
+    "metaTitle": "Changelog"
   },
   "contact": {
     "email": "Email",
     "mainTitle": "Contact",
     "message": "Message",
+    "metaTitle": "Contact",
     "send": "Send",
-    "title": "Title",
+    "title": null,
+    "titleMessage": "Title",
     "validation": {
       "sent": null,
       "error": null
@@ -40,5 +43,8 @@
     "portfolioEvolution": "Portfolio evolution",
     "works": "My works"
   },
-  "home": {}
+  "home": {},
+  "works": {
+    "metaTitle": "My works"
+  }
 }

@@ -23,7 +23,6 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "@types/ua-parser-js": "^0.7.35",
     "directivue": "^0.1.5",
     "eslint": "^7.17.0",
     "node-sass": "^5.0.0",
@@ -38,11 +37,11 @@
     "@nuxt/typescript-build": "^2.0.3",
     "@nuxtjs/color-mode": "^2.0.2",
     "@nuxtjs/date-fns": "^1.4.3",
-    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "^5.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/svg": "^0.1.12",
+    "@types/ua-parser-js": "^0.7.35",
     "stylelint": "^13.8.0",
     "stylelint-config-sass-guidelines": "^7.1.0"
   }
