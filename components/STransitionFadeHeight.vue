@@ -51,6 +51,10 @@ export default Vue.extend({
   &-enter-active, &-leave-active {
     overflow: hidden;
     transition: opacity .25s ease, height .25s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: 0s;
+    }
   }
 
   &-enter, &-leave-to {

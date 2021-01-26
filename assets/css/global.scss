@@ -1,15 +1,24 @@
 // --- CSS VARIABLES
 
 :root {
-  // Text
-  --c-text-primary: #{$primary};
-  --c-text-secondary: #{$secondary};
-  --c-text-fail: #{$red};
-  --c-text-success: #{$green};
+  // Color
+  --c-primary: #{$primary};
+  --c-secondary: #{$secondary};
+  --c-error: #{$red};
+  --c-error-background: #{rgba($red, .25)};
+  --c-success: #{$green};
+  --c-success-background: #{rgba($green, .25)};
 
   // Background
   --c-background-fail: #{rgba($red, .25)};
   --c-background-success: #{rgba($green, .25)};
+
+  // Fonts
+  --fs-regular: 1rem;
+  --fs-small: .75rem;
+
+  // Transition
+  --transition: .3s cubic-bezier(.4, 0, .2, 1);
 }
 
 .light-mode {
@@ -60,23 +69,11 @@
   --c-border: #{rgba($white, .05)};
 }
 
-// --- CSS VARIABLES
-
-:root {
-  // Colors
-  --c-primary: #{$primary};
-  --c-secondary: #{$secondary};
-  --c-error: #{$red};
-  --c-error-background: #{rgba($red, .25)};
-  --c-success: #{$green};
-  --c-success-background: #{rgba($green, .25)};
-
-  // Fonts
-  --fs-regular: 1rem;
-  --fs-small: .75rem;
-
-  // Transition
-  --transition: .3s cubic-bezier(.4, 0, .2, 1);
+// Accessibility : User prefers to delete all animations
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0s;
+  }
 }
 
 // --- GLOBAL
@@ -232,13 +229,13 @@ button, a {
 .message-success {
   color: var(--c-success);
   fill: var(--c-success);
-  background-color: var(--c-success-25);
+  background-color: var(--c-success-background);
   border: 1px solid var(--c-success);
 }
 
 .message-fail {
   color: var(--c-error);
   fill: var(--c-error);
-  background-color: var(--c-error-25);
+  background-color: var(--c-error-background);
   border: 1px solid var(--c-error);
 }
