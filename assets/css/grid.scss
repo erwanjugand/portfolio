@@ -1,36 +1,50 @@
-$columns: 12;
-$spacing: 16px;
-$container-width: 1280px;
+$columns-breakpoints: (
+  's': (
+    'values': (12),
+    'media-query': null
+  ),
+  'm': (
+    'values': (6),
+    'media-query': $medium-and-up
+  ),
+  'l': (
+    'values': (4),
+    'media-query': $large-and-up
+  ),
+  'xl': (
+    'values': (),
+    'media-query': $extra-large
+  )
+);
 
 .container {
-  width: unquote('min(90vw, #{$container-width})');
+  width: unquote('min(90vw, 1280px)');
   margin: auto;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-  gap: $spacing;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
 }
 
-$medias: ('s': $small, 'm': $medium-and-up, 'l': $large-and-up, 'xl': $extra-large);
-
-@mixin col($letter) {
-  @for $i from 1 through $columns {
-    .#{$letter + $i} {
-      grid-column: $i span;
+@mixin col($prefix, $values) {
+  @each $value in $values {
+    .#{$prefix + $value} {
+      grid-column: $value span;
     }
   }
 }
 
-@each $letter, $block in $medias {
-  @if ($letter == 's') {
-    @include col($letter);
-  }
+@each $prefix, $data in $columns-breakpoints {
+  $media-query: map-get($data, 'media-query');
+  $values: map-get($data, 'values');
 
-  @else {
-    @media #{$block} {
-      @include col($letter);
+  @if ($media-query) {
+    @media #{$media-query} {
+      @include col($prefix, $values);
     }
+  } @else {
+    @include col($prefix, $values);
   }
 }
