@@ -1,4 +1,4 @@
-$columns-breakpoints: (
+$columns: (
   's': (
     'values': (12),
     'media-query': null
@@ -36,7 +36,7 @@ $columns-breakpoints: (
   }
 }
 
-@each $prefix, $data in $columns-breakpoints {
+@each $prefix, $data in $columns {
   $media-query: map-get($data, 'media-query');
   $values: map-get($data, 'values');
 
