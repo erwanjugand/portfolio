@@ -25,7 +25,6 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "directivue": "^0.1.5",
     "eslint": "^7.17.0",
-    "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "6.18.0",
     "nuxt-typed-vuex": "^0.1.22",
@@ -42,6 +41,8 @@
     "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/svg": "^0.1.12",
     "@types/ua-parser-js": "^0.7.35",
+    "fibers": "^5.0.0",
+    "sass": "^1.32.5",
     "stylelint": "^13.8.0",
     "stylelint-config-sass-guidelines": "^7.1.0"
   }

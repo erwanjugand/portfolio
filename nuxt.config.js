@@ -1,3 +1,5 @@
+import Fiber from 'fibers'
+import Sass from 'sass'
 import en from './i18n/en.json'
 import fr from './i18n/fr.json'
 
@@ -101,6 +103,14 @@ export default {
   // Build configuration
   build: {
     // You can extend webpack config here
+    loaders: {
+      scss: {
+        implementation: Sass,
+        sassOptions: {
+          fiber: Fiber
+        }
+      }
+    },
     transpile: [
       'directivue',
       /typed-vuex/
