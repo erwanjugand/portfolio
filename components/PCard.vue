@@ -42,6 +42,7 @@ export default Vue.extend({
       font-weight: 400;
 
       svg {
+        flex-shrink: 0;
         width: 1.5em;
         height: 1em;
         margin-right: 16px;

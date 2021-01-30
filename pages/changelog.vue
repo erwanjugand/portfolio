@@ -1,32 +1,34 @@
 <template>
   <main id="changelog">
-    <h1 v-text="$t('changeLog.mainTitle')" />
-    <STransitionFadeHeight group tag="ul">
-      <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
-        <PCard tag="article" class="release">
-          <template #header>
-            <h2>
-              <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
-              {{ release.name }}
-            </h2>
-            <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
-          </template>
-          <ul class="release-tags">
-            <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`">
-              <button
-                v-ripple
-                :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
-                :style="{ backgroundColor: tag.color }"
-                @click.prevent="filter(tag.id)"
-                v-text="tag.name"
-              />
-            </li>
-          </ul>
-          <!-- eslint-disable-next-line vue/no-v-html -->
-          <div class="release-content" v-html="release.description" />
-        </PCard>
-      </li>
-    </STransitionFadeHeight>
+    <section class="container">
+      <h1 v-text="$t('changeLog.mainTitle')" />
+      <STransitionFadeHeight group tag="ul">
+        <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
+          <PCard tag="article" class="release">
+            <template #header>
+              <h2>
+                <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
+                {{ release.name }}
+              </h2>
+              <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
+            </template>
+            <ul class="release-tags">
+              <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`">
+                <button
+                  v-ripple
+                  :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
+                  :style="{ backgroundColor: tag.color }"
+                  @click.prevent="filter(tag.id)"
+                  v-text="tag.name"
+                />
+              </li>
+            </ul>
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <div class="release-content" v-html="release.description" />
+          </PCard>
+        </li>
+      </STransitionFadeHeight>
+    </section>
   </main>
 </template>
 
