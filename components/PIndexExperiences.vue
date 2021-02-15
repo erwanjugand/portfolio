@@ -33,6 +33,10 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@use 'sass:math' as *;
+
+$diagonal: sqrt(3);
+
 .experience {
   &-container {
     position: relative;

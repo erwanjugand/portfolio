@@ -38,12 +38,11 @@ $large-and-up: '(min-width: 1024px)';
 $large-and-down: '(max-width: 1399px)';
 $large-only: '(min-width: 1024px) and (max-width: 1399px)';
 $extra-large: '(min-width: 1400px)';
+$touchscreen: (hover: none) and (pointer: coarse);
 
 // Other
 
-$diagonal: 1.7320508075688772935274463415059;
 $border-in: 1px;
 $border-out: 3px;
 
 $hexagon-height: 200px;
-$hexagon-width: $hexagon-height / $diagonal;

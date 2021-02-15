@@ -118,7 +118,7 @@ export default Vue.extend({
     transition: opacity var(--transition);
 
     &-darken {
-      opacity: .3;
+      opacity: .25;
     }
   }
 

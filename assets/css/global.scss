@@ -184,11 +184,13 @@ button {
   }
 }
 
-button, a {
+button, a, [tabindex] {
   &:focus {
     outline: none;
   }
+}
 
+button, a {
   &:focus-visible {
     outline-color: var(--c-primary);
     box-shadow: 0 0 0 .125em var(--c-primary);

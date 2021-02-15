@@ -67,7 +67,7 @@ export default Vue.extend({
   // Disabled
 
   &:disabled {
-    opacity: .8;
+    opacity: .75;
   }
 
   // Loading

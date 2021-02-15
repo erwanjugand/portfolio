@@ -79,7 +79,7 @@ export default Vue.extend({
     transition: var(--transition);
 
     &:not(.nuxt-link-exact-active) {
-      opacity: .8;
+      opacity: .75;
     }
 
     &:hover {

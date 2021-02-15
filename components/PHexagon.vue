@@ -13,17 +13,21 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@use 'sass:math' as *;
+
+$hexagon-width: $hexagon-height / sqrt(3);
+
 @mixin dynamic-border ($width, $height, $border-size) {
   width: $width;
   height: $height;
-  border: solid var(--c-primary);
+  border: solid currentColor;
   border-width: $border-size 0;
 
   &::before, &::after {
     top: -$border-size;
     width: $width;
     height: $height;
-    border: solid var(--c-primary);
+    border: solid currentColor;
     border-width: $border-size 0;
   }
 }
@@ -32,6 +36,8 @@ export default Vue.extend({
   @include dynamic-border($hexagon-width, $hexagon-height, $border-out);
   display: flex;
   padding: 3px;
+  color: var(--c-primary);
+  fill: currentColor;
 
   &, &-content {
     position: relative;
