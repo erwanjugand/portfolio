@@ -16,6 +16,9 @@ export default {
     title: process.env.SITE_TITLE,
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/images/favicon.ico' }
+    ],
+    meta: [
+      { name: 'viewport', content: 'width=320, initial-scale=1' }
     ]
   },
   // PWA

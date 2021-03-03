@@ -7,6 +7,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { InstanceOf } from '~/@types'
+import PField from '~/components/PField.vue'
 
 export default Vue.extend({
   props: {
@@ -18,10 +20,11 @@ export default Vue.extend({
     trySubmit () {
       let submitable = true
       // Find PField component in slot
-      const fields = this.$slots.default?.filter(e => e.componentOptions && e.componentOptions.tag === 'PField') || []
+      const fields = (this.$slots.default || [])
+        .filter(e => e.componentOptions?.tag === 'PField')
+        .map(slot => slot.componentInstance) as InstanceOf<typeof PField>[]
       for (const field of fields) {
-        // @ts-ignore
-        const error = field.componentInstance!.updateStatus()
+        const error = field.updateStatus()
         if (error) {
           submitable = false
         }
@@ -32,8 +35,7 @@ export default Vue.extend({
         this.$emit('submit', this.data)
         // Change selectedOnce to false of PField component
         for (const field of fields) {
-          // @ts-ignore
-          field.componentInstance!.reset()
+          field.reset()
         }
       }
     }

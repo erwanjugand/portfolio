@@ -1,7 +1,7 @@
 <template>
   <div class="field">
     <input
-      v-if="type === 'text' || type === 'email' || type === 'password'"
+      v-if="['text', 'email', 'password'].includes(type)"
       :id="id"
       :class="classes"
       :type="type"

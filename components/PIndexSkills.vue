@@ -45,6 +45,7 @@ $hexagon-space-to-remove: ceil($border-out / sin(60deg));
   justify-content: center;
   width: 100%;
   background: url('/images/bee.svg') center top;
+  overflow: hidden;
 
   @media #{$small} {
     background-position-x: calc(50% - #{$hexagon-width / 4 + $hexagon-space-to-remove / 2});
