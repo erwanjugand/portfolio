@@ -1,6 +1,6 @@
 <template>
   <component :is="tag" class="card elevation-1">
-    <div v-if="this.$slots.header" class="card-header">
+    <div v-if="$slots.header" class="card-header">
       <slot name="header" />
     </div>
     <div class="card-content">
