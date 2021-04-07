@@ -21,21 +21,6 @@ export default {
       { name: 'viewport', content: 'width=320, initial-scale=1' }
     ]
   },
-  // PWA
-  pwa: {
-    manifest: {
-      name: process.env.SITE_TITLE,
-      short_name: process.env.SHORT_NAME,
-      theme_color: '#0077DB',
-      background_color: '#212121',
-      lang: 'fr'
-    },
-    icon: {
-      source: 'static/images/favicon-pwa.png',
-      purpose: 'maskable',
-      sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
-    }
-  },
   // Customize the progress-bar
   loading: {
     color: 'var(--c-primary)',
@@ -61,43 +46,59 @@ export default {
     '@nuxtjs/date-fns',
     'nuxt-typed-vuex'
   ],
-
-  googleAnalytics: {
-    id: 'UA-89170994-1'
-  },
   // Nuxt.js modules
   modules: [
-    [
-      'nuxt-i18n',
-      {
-        seo: false,
-        locales: [
-          {
-            code: 'fr',
-            iso: 'fr'
-          },
-          {
-            code: 'en',
-            iso: 'en'
-          }
-        ],
-        defaultLocale: 'fr',
-        vueI18n: {
-          fallbackLocale: 'fr',
-          messages: {
-            en,
-            fr
-          }
-        }
-      }
-    ],
-    ['@nuxtjs/axios', {
-      progress: false
-    }],
+    'nuxt-i18n',
+    '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/svg',
     '@nuxtjs/style-resources'
   ],
+  i18n: {
+    seo: false,
+    locales: [
+      {
+        code: 'fr',
+        iso: 'fr'
+      },
+      {
+        code: 'en',
+        iso: 'en'
+      }
+    ],
+    defaultLocale: 'fr',
+    vueI18n: {
+      fallbackLocale: 'fr',
+      messages: {
+        en,
+        fr
+      }
+    }
+  },
+  axios: {
+    progress: false
+  },
+  pwa: {
+    manifest: {
+      name: process.env.SITE_TITLE,
+      short_name: process.env.SHORT_NAME,
+      theme_color: '#0077DB',
+      background_color: '#212121',
+      lang: 'fr'
+    },
+    icon: {
+      source: 'static/images/favicon-pwa.png',
+      purpose: 'maskable',
+      sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
+    }
+  },
+  dateFns: {
+    locales: ['en-US', 'fr'],
+    defaultLocale: 'fr'
+  },
+  googleAnalytics: {
+    id: 'UA-89170994-1'
+  },
   styleResources: {
     scss: '~/assets/css/variables.scss'
   },

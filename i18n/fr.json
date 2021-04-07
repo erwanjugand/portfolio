@@ -43,7 +43,14 @@
     "portfolioEvolution": "Évolution du portfolio",
     "works": "Mes travaux"
   },
-  "home": {},
+  "home": {
+    "experiences": {
+      "title": "Mes expériences"
+    },
+    "skills": {
+      "title": "Mes compétences"
+    }
+  },
   "works": {
     "metaTitle": "Mes travaux"
   }

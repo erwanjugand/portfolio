@@ -51,6 +51,17 @@
 import Vue from 'vue'
 
 export default Vue.extend({
+
+  data () {
+    return {
+      form: {
+        email: '',
+        title: '',
+        message: ''
+      },
+      emailStatus: null as 'sent' | 'error' | null
+    }
+  },
   head () {
     return {
       title: this.$t('contact.metaTitle').toString()
@@ -61,17 +72,6 @@ export default Vue.extend({
     paths: {
       fr: '/contact',
       en: '/contact'
-    }
-  },
-
-  data () {
-    return {
-      form: {
-        email: '',
-        title: '',
-        message: ''
-      },
-      emailStatus: null as 'sent' | 'error' | null
     }
   },
 

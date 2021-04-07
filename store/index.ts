@@ -1,7 +1,7 @@
 import { getAccessorType } from 'typed-vuex'
 import { ActionTree, MutationTree } from 'vuex'
 import { Experience, Release, Skill, Work, WorkFilter } from 'models'
-import { parseISO, compareDesc, getYear } from 'date-fns'
+import { compareDesc, getYear } from 'date-fns'
 
 export const state = () => ({
   experiences: [] as Experience[],
@@ -17,7 +17,7 @@ export type RootState = ReturnType<typeof state>
 export const mutations: MutationTree<RootState> = {
   setExperiences (state, data: Experience[]) {
     for (const experience of data) {
-      experience.dateRealization = parseISO(experience.dateRealization.toString())
+      experience.dateRealization = new Date(experience.dateRealization)
       experience.year = getYear(new Date(experience.dateRealization))
     }
     state.experiences = data.sort((a, b) => compareDesc(a.dateRealization, b.dateRealization))
@@ -27,7 +27,7 @@ export const mutations: MutationTree<RootState> = {
   },
   setReleases (state, data: Release[]) {
     for (const release of data) {
-      release.date = parseISO(release.date.toString())
+      release.date = new Date(release.date)
     }
     state.releases = data.sort((a, b) => compareDesc(a.date, b.date))
   },
@@ -36,6 +36,7 @@ export const mutations: MutationTree<RootState> = {
   },
   setWorks (state, data: Work[]) {
     for (const work of data) {
+      work.dateRealization = new Date(work.dateRealization)
       work.slug = slugify(work.title)
     }
     state.works = data

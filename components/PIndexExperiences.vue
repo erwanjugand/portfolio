@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Mes expériences</h2>
+    <h2 v-text="$t('home.experiences.title')" />
     <ul class="experience-container">
       <li
         v-for="(experience, index) of experiences"

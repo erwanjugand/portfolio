@@ -10,7 +10,7 @@
                 <PIcon :name="release.major ? 'boxFull' : 'pencilRuler'" />
                 {{ release.name }}
               </h2>
-              <time :datetime="release.date" v-text="$dateFns.format(release.date, 'd MMMM yyyy', {locale: currentLang})" />
+              <PTime :date="release.date" />
             </template>
             <ul class="release-tags">
               <li v-for="tag of release.tags" :key="`${release.id}-${tag.id}`">
@@ -42,6 +42,24 @@ import { fr, enGB } from 'date-fns/locale'
 const locale: {[key: string]: Locale} = { fr, en: enGB }
 
 export default Vue.extend({
+
+  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
+    // Fetch data if necessary
+    let releases = $accessor.releases
+    if (!releases.length) {
+      const { data }: AxiosResponse<Release[]> = await $axios.get(`${apiUrl}/versions`)
+      $accessor.setReleases(data)
+      releases = data
+    }
+    return { releases }
+  },
+
+  data () {
+    return {
+      filterTag: null as number | null,
+      releases: [] as Release[]
+    }
+  },
   head () {
     return {
       title: this.$t('changeLog.metaTitle').toString()
@@ -55,13 +73,6 @@ export default Vue.extend({
     }
   },
 
-  data () {
-    return {
-      filterTag: null as number | null,
-      releases: [] as Release[]
-    }
-  },
-
   computed: {
     currentLang (): Locale {
       return locale[this.$i18n.locale]
@@ -70,17 +81,6 @@ export default Vue.extend({
     releasesFiltered (): Release[] {
       return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
-  },
-
-  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
-    // Fetch data if necessary
-    let releases = $accessor.releases
-    if (!releases.length) {
-      const { data }: AxiosResponse<Release[]> = await $axios.get(`${apiUrl}/versions`)
-      $accessor.setReleases(data)
-      releases = data
-    }
-    return { releases }
   },
 
   methods: {

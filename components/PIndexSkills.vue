@@ -1,6 +1,6 @@
 <template>
   <section class="skills">
-    <h2>Mes compétences</h2>
+    <h2 v-text="$t('home.skills.title')" />
     <div class="skills-container">
       <ul>
         <PHexagon v-for="skill of skills" :key="`skill-${skill.id}`" tabindex="0" class="skill">
