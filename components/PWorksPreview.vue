@@ -1,11 +1,17 @@
 <template>
-  <ul class="preview-work-container row">
-    <li v-for="work in works" :key="work.id" class="s12 m6 l4">
-      <article>
-        {{ work.title }}
-      </article>
-    </li>
-  </ul>
+  <li class="work-preview s12 m6 l4">
+    <nuxt-link v-ripple :to="localePath({ name: 'work-slug', params: { slug: work.slug } })">
+      <PCard tag="article">
+        <template #header>
+          <h3 v-text="work.title" />
+          <PTime :date="work.dateRealization" />
+        </template>
+        <ul class="work-preview-tags">
+          <li v-text="'ok'" />
+        </ul>
+      </PCard>
+    </nuxt-link>
+  </li>
 </template>
 
 <script lang="ts">
@@ -13,23 +19,29 @@ import Vue, { PropType } from 'vue'
 import { Work } from 'models'
 export default Vue.extend({
   props: {
-    works: {
-      type: Array as PropType<Work[]>,
-      default: []
+    work: {
+      type: Object as PropType<Work>,
+      required: true
     }
   }
 })
 </script>
 
 <style lang="scss">
-.preview-work-container {
-  gap: $border-out;
-  width: unquote('min(calc(100vw - #{2 * $border-out}), 120em)');
-  margin: auto;
+.work-preview {
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 32px 8px;
 
-  article {
-    height: 18.75em;
-    background-color: #F00;
+    .ripple {
+      z-index: 1;
+    }
+  }
+
+  &-tags {
+    display: flex;
   }
 }
 </style>

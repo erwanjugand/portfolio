@@ -1,8 +1,8 @@
 <template>
   <main>
-    <nuxt-link v-for="work in $accessor.works" :key="work.id" :to="localePath({ name: 'work-slug', params: { slug: work.slug } })">
-      {{ work.title }}
-    </nuxt-link>
+    <ul class="row">
+      <PWorksPreview v-for="work in $accessor.works" :key="work.id" :work="work" />
+    </ul>
   </main>
 </template>
 

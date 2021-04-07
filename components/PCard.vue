@@ -24,6 +24,7 @@ export default Vue.extend({
 <style lang="scss">
 .card {
   border-radius: 32px 8px;
+  overflow: hidden;
 
   &-header {
     display: flex;
@@ -32,14 +33,19 @@ export default Vue.extend({
     padding: 16px 24px 0;
 
     @media #{$medium-and-up} {
-      padding: 16px 32px 0;
+      padding: 24px 32px 0;
     }
 
-    h2 {
+    h2, h3 {
       display: flex;
       align-items: center;
       margin-bottom: 16px;
+      font-size: 1.5em;
       font-weight: 400;
+
+      @media #{$medium-and-up} {
+        margin-bottom: 24px;
+      }
 
       svg {
         flex-shrink: 0;

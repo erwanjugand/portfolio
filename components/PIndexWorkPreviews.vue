@@ -2,9 +2,7 @@
   <section class="work-previews">
     <h2>Me derniers travaux</h2>
     <ul class="work-preview-container row">
-      <li v-for="work in works" :key="work.id" class="work-preview s12 m6 l4">
-        {{ work.title }}
-      </li>
+      <PWorksPreview v-for="work in works" :key="work.id" :work="work" />
     </ul>
   </section>
 </template>
@@ -25,12 +23,21 @@ export default Vue.extend({
 
 <style lang="scss">
 .work-preview {
-  height: 18.75em;
-  background-color: #F00;
-
   &-container {
-    gap: 3px;
     width: 100%;
+    padding: 0 16px;
+  }
+
+  &:not(:first-child) {
+    a, .card {
+      border-top-left-radius: 8px;
+    }
+  }
+
+  &:not(:last-child) {
+    a, .card {
+      border-bottom-right-radius: 8px;
+    }
   }
 }
 </style>
