@@ -43,6 +43,7 @@
     </div>
 
     <button
+      ref="menuButton"
       v-ripple
       :aria-expanded="$accessor.menuOpened"
       aria-controls="menu"
@@ -69,6 +70,23 @@ export default Vue.extend({
   data () {
     return {
       switchLanguage: false
+    }
+  },
+
+  mounted () {
+    document.documentElement.addEventListener('keyup', this.closeMenu)
+  },
+
+  beforeDestroy () {
+    document.documentElement.removeEventListener('keyup', this.closeMenu)
+  },
+
+  methods: {
+    closeMenu (e: KeyboardEvent) {
+      if (this.$accessor.menuOpened && e.key === 'Escape') {
+        (this.$refs.menuButton as HTMLButtonElement).focus()
+        this.$accessor.setMenuOpening(false)
+      }
     }
   }
 })
