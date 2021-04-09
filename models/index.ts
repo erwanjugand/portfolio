@@ -15,17 +15,17 @@ export interface LocaleDate {
 // Works
 
 export interface WorkFilter extends Model {
-  level: number
   name: string
+  works: Array<{ id: number }>
 }
-
 export interface Work extends Model {
   created: Date
   dateRealization: Date
   description: string
-  filters: WorkFilter[]
+  filters: Array<{ id: number }>
   slug: string
   title: string
+  updated: Date
 }
 
 // Skills

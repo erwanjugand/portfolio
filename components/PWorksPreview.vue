@@ -7,7 +7,7 @@
           <PTime :date="work.dateRealization" />
         </template>
         <ul class="work-preview-tags">
-          <li v-text="'ok'" />
+          <li v-for="filter of filters" :key="filter.id" v-text="filter.name" />
         </ul>
       </PCard>
     </nuxt-link>
@@ -16,12 +16,18 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue'
-import { Work } from 'models'
+import { Work, WorkFilter } from 'models'
 export default Vue.extend({
   props: {
     work: {
       type: Object as PropType<Work>,
       required: true
+    }
+  },
+
+  computed: {
+    filters (): WorkFilter[] {
+      return this.$accessor.workFilters.filter(f => this.work.filters.some(wf => wf.id === f.id))
     }
   }
 })
@@ -38,6 +44,10 @@ export default Vue.extend({
     .ripple {
       z-index: 1;
     }
+  }
+
+  .card {
+    height: 320px;
   }
 
   &-tags {
