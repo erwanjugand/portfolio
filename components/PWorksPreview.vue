@@ -6,8 +6,9 @@
           <h3 v-text="work.title" />
           <PTime :date="work.dateRealization" />
         </template>
+        <img class="work-preview-image" src="/images/favicon-pwa.png" alt="">
         <ul class="work-preview-tags">
-          <li v-for="filter of filters" :key="filter.id" v-text="filter.name" />
+          <li v-for="filter of filters" :key="filter.id" class="work-preview-tag" v-text="filter.name" />
         </ul>
       </PCard>
     </nuxt-link>
@@ -48,10 +49,35 @@ export default Vue.extend({
 
   .card {
     height: 320px;
+
+    &-content {
+      position: relative;
+      display: flex;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+
+  &-image {
+    width: 100%;
   }
 
   &-tags {
+    position: absolute;
+    bottom: 0;
     display: flex;
+    width: 100%;
+    padding: 32px 24px 16px;
+    color: $white;
+    background: linear-gradient(transparent 0%, rgba($black, .5) 80%);
+
+    @media #{$medium-and-up} {
+      padding: 32px;
+    }
+  }
+
+  &-tag:not(:first-child)::after {
+    content: ',\a0';
   }
 }
 </style>

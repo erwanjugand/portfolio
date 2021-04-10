@@ -18,7 +18,7 @@ $columns: (
 );
 
 .container {
-  width: unquote('min(90vw, 1280px)');
+  width: min(90vw, 1280px);
   margin: auto;
 }
 

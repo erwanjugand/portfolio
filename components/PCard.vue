@@ -23,6 +23,8 @@ export default Vue.extend({
 
 <style lang="scss">
 .card {
+  display: flex;
+  flex-direction: column;
   border-radius: 32px 8px;
   overflow: hidden;
 

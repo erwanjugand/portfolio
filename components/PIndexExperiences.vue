@@ -40,7 +40,7 @@ $diagonal: sqrt(3);
 .experience {
   &-container {
     position: relative;
-    max-width: unquote('min(100vw, 36em)');
+    max-width: min(100vw, 36em);
     margin: .75em 1em 0;
     transition: var(--transition);
 
