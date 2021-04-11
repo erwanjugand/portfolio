@@ -1,14 +1,44 @@
 <template>
   <main>
-    <ul class="row">
-      <PWorksPreview v-for="work in $accessor.works" :key="work.id" :work="work" />
-    </ul>
+    <section class="container">
+      <h1 v-text="$t('works.mainTitle')" />
+      <div class="row works-filters-container">
+        <PCard class="s12">
+          <template #header>
+            <h2>
+              <PIcon name="filter" />
+              {{ $t('works.formTitle') }}
+            </h2>
+          </template>
+          <div class="works-filters">
+            <ul>
+              <li>
+                <PButton :outlined="!!activeFilterId" @click="activeFilterId = null">
+                  {{ $t('works.allWorksButton') }}
+                </PButton>
+              </li>
+              <li v-for="filter of $accessor.workFilters" :key="filter.id">
+                <PButton :outlined="filter.id !== activeFilterId" @click="activeFilterId = filter.id">
+                  {{ filter.name }}
+                </PButton>
+              </li>
+            </ul>
+          </div>
+        </PCard>
+      </div>
+      <client-only>
+        <ul v-masonry item-selector=".work-preview" :gutter="16" class="row works-masonry">
+          <PWorksPreview v-for="work in activeWorks" :key="work.id" v-masonry-tile :work="work" />
+        </ul>
+      </client-only>
+    </section>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Work, WorkFilter } from 'models'
+import { MetaInfo } from 'vue-meta'
 
 export default Vue.extend({
 
@@ -32,9 +62,26 @@ export default Vue.extend({
 
     return datas as {[key:string]: Work | WorkFilter}
   },
-  head () {
+
+  data () {
+    return {
+      activeFilterId: null as number | null
+    }
+  },
+
+  head (): MetaInfo {
     return {
       title: this.$t('works.metaTitle').toString()
+    }
+  },
+
+  computed: {
+    activeFilter (): WorkFilter | undefined {
+      return this.$accessor.workFilters.find(f => f.id === this.activeFilterId)
+    },
+
+    activeWorks (): Work[] {
+      return this.$accessor.works.filter(w => !this.activeFilter || this.activeFilter.works.some(fw => fw.id === w.id))
     }
   },
 
@@ -46,3 +93,54 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.works {
+  &-filters {
+    display: flex;
+    overflow: auto;
+
+    &-container {
+      margin-bottom: 16px;
+      transition: margin var(--transition);
+
+      @media #{$medium-and-up} {
+        justify-items: center;
+        margin-bottom: 64px;
+      }
+
+      .card {
+        max-width: 100%;
+
+        @media #{$medium-and-up} {
+          width: fit-content;
+        }
+      }
+    }
+
+    ul {
+      display: flex;
+      white-space: nowrap;
+    }
+
+    li:not(:last-of-type) {
+      margin-right: 16px;
+    }
+  }
+
+  &-masonry {
+    .work-preview {
+      width: 100%;
+      margin-bottom: 16px;
+
+      @media #{$medium-and-up} {
+        width: calc((100% - 16px) / 2);
+      }
+
+      @media #{$large-and-up} {
+        width: calc((100% - 32px) / 3);
+      }
+    }
+  }
+}
+</style>

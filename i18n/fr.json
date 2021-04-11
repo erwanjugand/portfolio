@@ -52,6 +52,9 @@
     }
   },
   "works": {
+    "allWorksButton": "Tous",
+    "formTitle": "Filtres",
+    "mainTitle": "Mes travaux",
     "metaTitle": "Mes travaux"
   }
 }

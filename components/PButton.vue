@@ -32,16 +32,17 @@ export default Vue.extend({
   align-items: center;
   min-height: 3em;
   padding: .5em 1.5em;
+  font-weight: 500;
   line-height: 1.25em;
   text-transform: uppercase;
+  border: .125rem solid transparent;
   border-radius: .5rem;
   transition: var(--transition);
 
   &-outlined {
-    font-weight: 500;
     color: var(--c-secondary);
     fill: var(--c-secondary);
-    border: .125rem solid var(--c-secondary);
+    border-color: var(--c-secondary);
 
     &:not(.button-loading):hover {
       background-color: var(--c-button-outlined-bg-hover);

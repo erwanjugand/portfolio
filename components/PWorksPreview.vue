@@ -7,7 +7,7 @@
           <PTime :date="work.dateRealization" />
         </template>
         <img class="work-preview-image" src="/images/favicon-pwa.png" alt="">
-        <ul class="work-preview-tags">
+        <ul v-if="filters.length" class="work-preview-tags">
           <li v-for="filter of filters" :key="filter.id" class="work-preview-tag" v-text="filter.name" />
         </ul>
       </PCard>

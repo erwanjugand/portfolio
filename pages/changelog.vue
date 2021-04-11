@@ -38,6 +38,7 @@ import { Release } from 'models'
 import { AxiosResponse } from 'axios'
 import { Locale } from 'date-fns'
 import { fr, enGB } from 'date-fns/locale'
+import { MetaInfo } from 'vue-meta'
 
 const locale: {[key: string]: Locale} = { fr, en: enGB }
 
@@ -60,7 +61,8 @@ export default Vue.extend({
       releases: [] as Release[]
     }
   },
-  head () {
+
+  head (): MetaInfo {
     return {
       title: this.$t('changeLog.metaTitle').toString()
     }

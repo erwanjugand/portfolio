@@ -35,7 +35,9 @@ export default {
   ],
   // Plugins to load before mounting the App
   plugins: [
-    '~/plugins/directives.ts'
+    '~/plugins/directives.ts',
+    { src: '~/plugins/vue-masonry', ssr: false }
+
   ],
   // Nuxt.js dev-modules
   buildModules: [
@@ -110,7 +112,6 @@ export default {
       /typed-vuex/
     ]
   },
-
   pageTransition: {
     name: 'page',
     afterEnter () {

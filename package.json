@@ -29,7 +29,9 @@
     "nuxt-i18n": "6.21.1",
     "nuxt-typed-vuex": "^0.1.22",
     "sass-loader": "^10.1.1",
-    "ua-parser-js": "^0.7.23"
+    "ua-parser-js": "^0.7.23",
+    "vue-client-only": "^2.0.0",
+    "vue-masonry": "^0.12.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",

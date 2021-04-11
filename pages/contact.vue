@@ -49,6 +49,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { MetaInfo } from 'vue-meta'
 
 export default Vue.extend({
 
@@ -62,7 +63,8 @@ export default Vue.extend({
       emailStatus: null as 'sent' | 'error' | null
     }
   },
-  head () {
+
+  head (): MetaInfo {
     return {
       title: this.$t('contact.metaTitle').toString()
     }
