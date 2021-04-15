@@ -25,7 +25,7 @@ export default Vue.extend({
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: 32px 8px;
+  border-radius: $br-large $br-small;
   overflow: hidden;
 
   &-header {

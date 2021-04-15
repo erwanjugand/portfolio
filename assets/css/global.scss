@@ -193,7 +193,7 @@ button, a, [tabindex] {
 button, a {
   &:focus-visible {
     outline-color: var(--c-primary);
-    box-shadow: 0 0 0 .125em var(--c-primary);
+    box-shadow: 0 0 0 3px var(--c-primary);
   }
 }
 
@@ -223,7 +223,7 @@ img {
   align-items: center;
   margin-bottom: 32px;
   padding: 13px 16px;
-  border-radius: 8px;
+  border-radius: $br-small;
 
   svg {
     flex: 0 0 20px;

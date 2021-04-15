@@ -33,7 +33,7 @@ $hexagon-width: $hexagon-height / sqrt(3);
 }
 
 .hexagon {
-  @include dynamic-border($hexagon-width, $hexagon-height, $border-out);
+  @include dynamic-border($hexagon-width, $hexagon-height, $bw-out);
   display: flex;
   padding: 3px;
   color: var(--c-primary);
@@ -59,7 +59,7 @@ $hexagon-width: $hexagon-height / sqrt(3);
   }
 
   &-content {
-    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $border-in);
+    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $bw-in);
     display: flex;
     flex-direction: column;
     flex-grow: 1;

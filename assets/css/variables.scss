@@ -40,9 +40,13 @@ $large-only: '(min-width: 1024px) and (max-width: 1399px)';
 $extra-large: '(min-width: 1400px)';
 $touchscreen: (hover: none) and (pointer: coarse);
 
-// Other
+// Border
+$bw-in: 1px;
+$bw-out: 3px;
+$br-small: 8px;
+$br-regular: 16px;
+$br-large: 32px;
 
-$border-in: 1px;
-$border-out: 3px;
+// Other
 
 $hexagon-height: 200px;

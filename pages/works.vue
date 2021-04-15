@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="container">
+    <section>
       <h1 v-text="$t('works.mainTitle')" />
       <div class="row works-filters-container">
         <PCard class="s12">
@@ -129,6 +129,8 @@ export default Vue.extend({
   }
 
   &-masonry {
+    margin: 0  16px;
+
     .work-preview {
       width: 100%;
       margin-bottom: 16px;

@@ -40,7 +40,7 @@ export default Vue.extend({
     display: block;
     text-decoration: none;
     color: inherit;
-    border-radius: 32px 8px;
+    border-radius: $br-large $br-small;
 
     .ripple {
       z-index: 1;

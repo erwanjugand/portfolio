@@ -32,7 +32,7 @@ export default Vue.extend({
 @use 'sass:math' as *;
 
 $hexagon-width: $hexagon-height / sqrt(3);
-$hexagon-space-to-remove: ceil($border-out / sin(60deg));
+$hexagon-space-to-remove: ceil($bw-out / sin(60deg));
 
 @mixin show-content {
   outline: none;
@@ -66,10 +66,10 @@ $hexagon-space-to-remove: ceil($border-out / sin(60deg));
   ul {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: $hexagon-height / 2 + $border-out / 2;
+    padding-bottom: $hexagon-height / 2 + $bw-out / 2;
 
     .skill {
-      margin: 0 #{$hexagon-width * 1.5 - $hexagon-space-to-remove / 2} #{-$hexagon-height / 2 - $border-out / 2} #{$hexagon-width / 2 - $hexagon-space-to-remove / 2};
+      margin: 0 #{$hexagon-width * 1.5 - $hexagon-space-to-remove / 2} #{-$hexagon-height / 2 - $bw-out / 2} #{$hexagon-width / 2 - $hexagon-space-to-remove / 2};
     }
 
     @media #{$small} {

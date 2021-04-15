@@ -180,10 +180,19 @@ header {
     top: 100%;
     left: 50%;
     display: flex;
-    border-radius: 8px;
+    border-radius: $br-small;
     transform: translateX(-50%);
-    overflow: hidden;
     transition: transform var(--transition);
+
+    li {
+      &:first-child a {
+        border-radius: $br-small 0 0 $br-small;
+      }
+
+      &:last-child a {
+        border-radius: 0 $br-small $br-small 0;
+      }
+    }
 
     a {
       display: flex;

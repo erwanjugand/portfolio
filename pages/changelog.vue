@@ -116,7 +116,7 @@ export default Vue.extend({
     font-size: 14px;
     line-height: 1.2;
     color: $white;
-    border-radius: 16px;
+    border-radius: $br-regular;
     transition: opacity var(--transition);
 
     &-darken {

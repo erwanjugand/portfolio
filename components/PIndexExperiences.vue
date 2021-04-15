@@ -53,8 +53,8 @@ $diagonal: sqrt(3);
       content: '';
       position: absolute;
       top: 0;
-      left: calc(#{2rem * $diagonal / 2} - #{$border-out / 2});
-      width: $border-out;
+      left: calc(#{2rem * $diagonal / 2} - #{$bw-out / 2});
+      width: $bw-out;
       height: 100%;
       background-image: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background-bg));
     }
@@ -74,8 +74,8 @@ $diagonal: sqrt(3);
       width: 2rem;
       height: 2rem;
       background-color: var(--c-background-bg);
-      border: $border-out solid transparent;
-      box-shadow: 0 0 0 $border-out var(--c-primary), inset 0 0 0 $border-in var(--c-primary);
+      border: $bw-out solid transparent;
+      box-shadow: 0 0 0 $bw-out var(--c-primary), inset 0 0 0 $bw-in var(--c-primary);
       transform: rotate(45deg);
       box-sizing: border-box;
     }
