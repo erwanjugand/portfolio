@@ -1,9 +1,12 @@
 <template>
   <section class="work-previews">
-    <h2>Me derniers travaux</h2>
+    <h2 v-text="$t('home.works.title')" />
     <ul class="work-preview-container row">
       <PWorksPreview v-for="work in works" :key="work.id" :work="work" />
     </ul>
+    <PButton class="work-preview-cta" :to="localePath('works')">
+      {{ $t('home.works.cta') }}
+    </PButton>
   </section>
 </template>
 
@@ -37,6 +40,15 @@ export default Vue.extend({
   &:not(:last-child) {
     a, .card {
       border-bottom-right-radius: 8px;
+    }
+  }
+
+  &-cta {
+    margin-top: 16px;
+    transition: margin var(--transition);
+
+    @media #{$medium-and-up} {
+      margin-top: 32px;
     }
   }
 }

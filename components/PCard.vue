@@ -31,23 +31,21 @@ export default Vue.extend({
   &-header {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
     justify-content: space-between;
-    padding: 16px 24px 0;
+    padding: 16px 24px;
+    transition: padding var(--transition);
 
     @media #{$medium-and-up} {
-      padding: 24px 32px 0;
+      padding: 24px 32px;
     }
 
     h2, h3 {
       display: flex;
       align-items: center;
-      margin-bottom: 16px;
       font-size: 1.5em;
       font-weight: 400;
-
-      @media #{$medium-and-up} {
-        margin-bottom: 24px;
-      }
+      transition: margin var(--transition);
 
       svg {
         flex-shrink: 0;
@@ -59,7 +57,6 @@ export default Vue.extend({
     }
 
     time {
-      margin: 0 0 16px 16px;
       color: var(--c-text-secondary-4);
     }
   }
@@ -67,6 +64,7 @@ export default Vue.extend({
   &-content {
     padding: 0 24px 16px;
     font-weight: 300;
+    transition: padding var(--transition);
 
     @media #{$medium-and-up} {
       padding: 0 32px 32px;

@@ -70,6 +70,7 @@ export default Vue.extend({
     padding: 32px 24px 16px;
     color: $white;
     background: linear-gradient(transparent 0%, rgba($black, .5) 80%);
+    transition: padding var(--transition);
 
     @media #{$medium-and-up} {
       padding: 32px;

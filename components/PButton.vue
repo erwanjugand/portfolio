@@ -1,5 +1,12 @@
 <template>
-  <component :is="type" v-ripple="!loading" :disabled="loading" :class="['button', {'button-outlined': outlined, 'button-loading': loading}]" v-on="$listeners">
+  <component
+    :is="type"
+    v-ripple="!loading"
+    :disabled="loading"
+    :class="['button', {'button-outlined': outlined, 'button-loading': loading}]"
+    :to="to"
+    v-on="$listeners"
+  >
     <PIcon v-if="icon" :name="icon" />
     <slot />
     <PCircularLoader v-if="loading" :size="32" />
@@ -7,14 +14,17 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue, { PropOptions } from 'vue'
+import { RawLocation } from 'vue-router'
 
 export default Vue.extend({
   props: {
     icon: String,
     loading: Boolean,
     outlined: Boolean,
-    to: [String, Object, Boolean]
+    to: {
+      type: [String, Object, Boolean]
+    } as PropOptions<RawLocation>
   },
 
   computed: {
@@ -34,15 +44,16 @@ export default Vue.extend({
   padding: .5em 1.5em;
   font-weight: 500;
   line-height: 1.25em;
+  text-decoration: none;
   text-transform: uppercase;
-  border: .125rem solid transparent;
-  border-radius: .5rem;
+  border-radius: $br-small;
+  box-shadow: inset 0 0 0 2px transparent;
   transition: var(--transition);
 
   &-outlined {
     color: var(--c-secondary);
     fill: var(--c-secondary);
-    border-color: var(--c-secondary);
+    box-shadow: inset 0 0 0 2px var(--c-secondary);
 
     &:not(.button-loading):hover {
       background-color: var(--c-button-outlined-bg-hover);

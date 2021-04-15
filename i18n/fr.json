@@ -49,6 +49,10 @@
     },
     "skills": {
       "title": "Mes compétences"
+    },
+    "works": {
+      "title": "Mes derniers travaux",
+      "cta": "Afficher plus de travaux"
     }
   },
   "works": {
