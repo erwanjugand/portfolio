@@ -38,7 +38,7 @@
               </div>
             </div>
           </STransitionFadeHeight>
-          <PButton icon="sparkles">
+          <PButton icon="sparkles" :loading="loading">
             {{ $t('contact.send') }}
           </PButton>
         </PForm>
@@ -60,7 +60,8 @@ export default Vue.extend({
         title: '',
         message: ''
       },
-      emailStatus: null as 'sent' | 'error' | null
+      emailStatus: null as 'sent' | 'error' | null,
+      loading: false
     }
   },
 
@@ -78,16 +79,19 @@ export default Vue.extend({
   },
 
   methods: {
-    sendEmail () {
+    async sendEmail () {
       this.form = {
         email: '',
         title: '',
         message: ''
       }
 
+      this.loading = true
+      // TODO : POST email datas
+      await new Promise(resolve => setTimeout(resolve, 5000))
+      this.loading = false
       this.emailStatus = 'sent'
       setTimeout(() => { this.emailStatus = null }, 5000)
-      // TODO : POST email datas
     }
   }
 })

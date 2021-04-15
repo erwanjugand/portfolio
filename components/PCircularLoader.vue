@@ -1,5 +1,5 @@
 <template>
-  <svg class="circular-loader" :style="styles">
+  <svg class="circular-loader" :style="styles" :aria-label="$t('loader.label')">
     <circle :cx="size / 2" :cy="size / 2" :r="size * .45" />
   </svg>
 </template>
@@ -67,6 +67,7 @@ export default Vue.extend({
     stroke-dashoffset: 0;
     stroke-width: .1em;
     stroke-linecap: round;
+
     @supports (stroke-dasharray: 0) {
       stroke-dasharray: 3.1em;
     }

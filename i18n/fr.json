@@ -55,6 +55,9 @@
       "cta": "Afficher plus de travaux"
     }
   },
+  "loader": {
+    "label": "Chargement en cours..."
+  },
   "works": {
     "allWorksButton": "Tous",
     "formTitle": "Filtres",

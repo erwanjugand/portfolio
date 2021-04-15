@@ -70,7 +70,7 @@ export default Vue.extend({
     }
   }
 
-  svg {
+  .icon {
     flex: 0 0 1.25em;
     height: 1.25em;
     margin: 0 1em 0 -.25em;
@@ -84,7 +84,7 @@ export default Vue.extend({
 
   // Loading
 
-  &-loading span {
+  &-loading.button {
     color: transparent;
     fill: transparent;
     cursor: wait;
