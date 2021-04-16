@@ -13,12 +13,12 @@
           <div class="works-filters">
             <ul>
               <li>
-                <PButton :outlined="!!activeFilterId" @click="activeFilterId = null">
+                <PButton :outlined="!!activeFilterId" @click="changeFilter(null)">
                   {{ $t('works.allWorksButton') }}
                 </PButton>
               </li>
               <li v-for="filter of $accessor.workFilters" :key="filter.id">
-                <PButton :outlined="filter.id !== activeFilterId" @click="activeFilterId = filter.id">
+                <PButton :outlined="filter.id !== activeFilterId" @click="changeFilter(filter.id)">
                   {{ filter.name }}
                 </PButton>
               </li>
@@ -63,12 +63,6 @@ export default Vue.extend({
     return datas as {[key:string]: Work | WorkFilter}
   },
 
-  data () {
-    return {
-      activeFilterId: null as number | null
-    }
-  },
-
   head (): MetaInfo {
     return {
       title: this.$t('works.metaTitle').toString()
@@ -76,12 +70,21 @@ export default Vue.extend({
   },
 
   computed: {
+    activeFilterId (): number | null {
+      return this.$route.query.filterId ? +this.$route.query.filterId : null
+    },
+
     activeFilter (): WorkFilter | undefined {
       return this.$accessor.workFilters.find(f => f.id === this.activeFilterId)
     },
 
     activeWorks (): Work[] {
       return this.$accessor.works.filter(w => !this.activeFilter || this.activeFilter.works.some(fw => fw.id === w.id))
+    }
+  },
+  methods: {
+    changeFilter (filterId: number | null) {
+      this.$router.replace({ path: this.$route.path, query: { filterId: filterId?.toString() } })
     }
   },
 
