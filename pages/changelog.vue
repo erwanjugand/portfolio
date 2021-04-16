@@ -29,6 +29,7 @@
         </li>
       </PTransitionFadeHeight>
     </section>
+    <PFooter />
   </main>
 </template>
 

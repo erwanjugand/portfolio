@@ -32,6 +32,7 @@
         </ul>
       </client-only>
     </section>
+    <PFooter />
   </main>
 </template>
 

@@ -148,8 +148,11 @@
 }
 
 main {
+  display: flex;
   flex: 100%;
-  padding: 60px 0 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 60px;
   background-color: var(--c-background-bg);
   box-shadow: 0 5px 5px 0 rgba($black, .5);
   overflow: auto;
@@ -191,6 +194,8 @@ button, a, [tabindex] {
 }
 
 button, a {
+  color: inherit;
+
   &:focus-visible {
     box-shadow: 0 0 0 3px var(--c-primary);
   }

@@ -4,6 +4,7 @@
     <PIndexSkills :skills="skills" />
     <PIndexExperiences :experiences="experiences" />
     <PIndexLastWorks :works="works" />
+    <PFooter />
   </main>
 </template>
 

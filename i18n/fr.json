@@ -22,7 +22,11 @@
   "experiences": {
     "today": "Aujourd'hui"
   },
-  "footer": {},
+  "footer": {
+    "copyright": "Copyright© {year} : Tout droits réservés.",
+    "github": "Mon compte Github",
+    "linkedin": "Mon compte Linkedin"
+  },
   "form": {
     "invalidEmail": "Email invalide",
     "required": "Champ obligatoire !"
@@ -54,6 +58,10 @@
       "title": "Mes derniers travaux",
       "cta": "Afficher plus de travaux"
     }
+  },
+  "legalMentions": {
+    "mainTitle": "Mentions légales",
+    "metaTitle": "Mentions légales"
   },
   "loader": {
     "label": "Chargement en cours..."

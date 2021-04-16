@@ -44,6 +44,7 @@
         </PForm>
       </PCard>
     </section>
+    <PFooter />
   </main>
 </template>
 
