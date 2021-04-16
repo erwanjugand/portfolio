@@ -2,7 +2,7 @@
   <main id="changelog">
     <section class="container">
       <h1 v-text="$t('changeLog.mainTitle')" />
-      <STransitionFadeHeight group tag="ul">
+      <PTransitionFadeHeight group tag="ul">
         <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
           <PCard tag="article" class="release">
             <template #header>
@@ -27,7 +27,7 @@
             <div class="release-content" v-html="release.description" />
           </PCard>
         </li>
-      </STransitionFadeHeight>
+      </PTransitionFadeHeight>
     </section>
   </main>
 </template>

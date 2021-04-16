@@ -30,14 +30,14 @@
             :min-rows="2"
             :label="$t('contact.message')"
           />
-          <STransitionFadeHeight tag="ul">
+          <PTransitionFadeHeight tag="ul">
             <div v-if="emailStatus === 'sent' || emailStatus === 'error'">
               <div :class="emailStatus === 'sent' ? 'message-success' : 'message-fail'">
                 <PIcon :name="emailStatus === 'sent' ? 'checkCircle' : 'timesCircle'" />
                 {{ $t(`contact.validation.${emailStatus}`) }}
               </div>
             </div>
-          </STransitionFadeHeight>
+          </PTransitionFadeHeight>
           <PButton icon="sparkles" :loading="loading">
             {{ $t('contact.send') }}
           </PButton>

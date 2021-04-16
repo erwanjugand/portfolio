@@ -3,7 +3,7 @@
     <h1 class="title" v-text="'portfolio-v3'" />
     <PIndexSkills :skills="skills" />
     <PIndexExperiences :experiences="experiences" />
-    <PIndexWorkPreviews :works="works" />
+    <PIndexLastWorks :works="works" />
   </main>
 </template>
 
