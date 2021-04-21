@@ -107,7 +107,7 @@ export default Vue.extend({
     overflow: auto;
 
     &-container {
-      margin-bottom: 16px;
+      margin: 0 16px 16px;
       transition: margin var(--transition);
 
       @media #{$medium-and-up} {

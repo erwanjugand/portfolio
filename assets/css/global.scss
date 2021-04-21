@@ -195,6 +195,7 @@ button, a, [tabindex] {
 
 button, a {
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus-visible {
     box-shadow: 0 0 0 3px var(--c-primary);

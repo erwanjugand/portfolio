@@ -134,6 +134,7 @@ header {
   margin-right: auto;
 
   svg {
+    position: relative;
     width: 60px;
     margin-right: 1em;
     fill: var(--c-primary);
