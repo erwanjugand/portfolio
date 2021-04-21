@@ -207,7 +207,7 @@ export default Vue.extend({
       display: flex;
       width: 100%;
       height: .25rem;
-      background-color: var(--c-background-bg);
+      background-color: var(--c-background-1);
       transform: scaleX(0) translateY(-.9375rem);
       transition: var(--transition);
     }
