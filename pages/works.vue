@@ -85,7 +85,9 @@ export default Vue.extend({
   },
   methods: {
     changeFilter (filterId: number | null) {
-      this.$router.replace({ path: this.$route.path, query: { filterId: filterId?.toString() } })
+      if ((this.$route.query.filterId ? +this.$route.query.filterId : null) !== filterId) {
+        this.$router.replace({ path: this.$route.path, query: { filterId: filterId?.toString() } })
+      }
     }
   },
 

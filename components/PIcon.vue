@@ -93,7 +93,7 @@ export default Vue.extend({
       type: String,
       default: 'light',
       validator (value) {
-        return ['light', 'solid'].includes(value)
+        return ['light', 'solid', 'brand'].includes(value)
       }
     }
   },
