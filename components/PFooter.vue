@@ -64,6 +64,7 @@
     a {
       display: inline-flex;
       padding: 4px 0;
+      border-radius: $br-small;
     }
   }
 
@@ -77,6 +78,7 @@
       align-items: center;
       width: 60px;
       height: 60px;
+      border-radius: $br-small;
 
       svg {
         width: 2.5em;

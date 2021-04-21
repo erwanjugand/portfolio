@@ -77,7 +77,7 @@ export default Vue.extend({
     }
   }
 
-  &-tag:not(:first-child)::after {
+  &-tag:not(:first-child)::before {
     content: ',\a0';
   }
 }
