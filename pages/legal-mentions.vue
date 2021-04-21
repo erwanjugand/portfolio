@@ -1,6 +1,6 @@
 <template>
-  <main id="legal-mentions">
-    <section class="container">
+  <main>
+    <section id="legal-mentions" class="container">
       <h1 v-text="$t('legalMentions.mainTitle')" />
 
       <h2>

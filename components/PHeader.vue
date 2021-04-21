@@ -120,7 +120,6 @@ header {
   text-decoration: none;
   text-transform: uppercase;
   color: $white;
-  border-radius: $br-small;
   transition: font-size var(--transition);
 
   @media #{$small} {
@@ -149,7 +148,6 @@ header {
   align-items: center;
   padding: 0 16px;
   color: $white;
-  border-radius: $br-small;
 
   svg {
     width: 10px;

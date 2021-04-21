@@ -1,5 +1,5 @@
 <template>
-  <main id="changelog">
+  <main>
     <section class="container">
       <h1 v-text="$t('changeLog.mainTitle')" />
       <PTransitionFadeHeight group tag="ul">
