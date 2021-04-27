@@ -2,7 +2,7 @@
   <footer class="footer elevation-1">
     <div class="container">
       <div class="footer-copyright">
-        <p v-text="$t('footer.copyright', { year: 2021 })" />
+        <p v-text="$t('footer.copyright', { year: currentYear })" />
         <nuxt-link :to="localePath('legal-mentions')">
           {{ $t('legalMentions.mainTitle') }}
         </nuxt-link>
@@ -31,6 +31,17 @@
     </div>
   </footer>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
+  computed: {
+    currentYear (): number {
+      return new Date().getFullYear()
+    }
+  }
+})
+</script>
 
 <style lang="scss">
 .footer {
