@@ -1,7 +1,7 @@
 <template>
   <main v-if="work">
     <pre v-text="work" />
-    <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { country: $t('global.country.' + $i18n.locale) })" />
+    <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
   </main>
 </template>
 

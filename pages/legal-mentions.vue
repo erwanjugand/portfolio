@@ -3,7 +3,7 @@
     <section id="legal-mentions" class="container">
       <h1 v-text="$t('legalMentions.mainTitle')" />
 
-      <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { country: $t('global.country.' + $i18n.locale) })" />
+      <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
 
       <h2>
         1. Présentation du site

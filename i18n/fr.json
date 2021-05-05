@@ -32,8 +32,8 @@
     "required": "Champ obligatoire !"
   },
   "global": {
-    "noTranslationAvailable": "Le contenu n'est pas disponible en {country}",
-    "country": {
+    "noTranslationAvailable": "Le contenu n'est pas disponible en {lang}",
+    "lang": {
       "fr": "Français",
       "en": "Anglais"
     }
