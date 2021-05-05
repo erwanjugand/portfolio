@@ -1,7 +1,7 @@
 <template>
   <main v-if="work">
     <pre v-text="work" />
-    <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
+    <p v-if="isOnlyFrenchContent" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
   </main>
 </template>
 
@@ -24,7 +24,7 @@ export default Vue.extend({
   },
 
   computed: {
-    isNotFrenchPage (): boolean {
+    isOnlyFrenchContent (): boolean {
       return this.$i18n.locale !== 'fr'
     }
   },
