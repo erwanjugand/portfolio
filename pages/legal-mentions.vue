@@ -3,6 +3,8 @@
     <section id="legal-mentions" class="container">
       <h1 v-text="$t('legalMentions.mainTitle')" />
 
+      <p v-if="isNotFrenchPage" v-text="$t('global.noTranslationAvailable', { country: $t('global.country.' + $i18n.locale) })" />
+
       <h2>
         1. Présentation du site
       </h2>
@@ -126,6 +128,12 @@ export default Vue.extend({
     paths: {
       fr: '/mentions-legales',
       en: '/legal-mentions'
+    }
+  },
+
+  computed: {
+    isNotFrenchPage (): boolean {
+      return this.$i18n.locale !== 'fr'
     }
   }
 })

@@ -31,7 +31,13 @@
     "invalidEmail": "Email invalide",
     "required": "Champ obligatoire !"
   },
-  "global": {},
+  "global": {
+    "noTranslationAvailable": "Le contenu n'est pas disponible en {country}",
+    "country": {
+      "fr": "Français",
+      "en": "Anglais"
+    }
+  },
   "header": {
     "backToHome": "Revenir sur l'accueil",
     "changeLanguage": "Changer de langue",
