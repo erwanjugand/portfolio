@@ -21,8 +21,7 @@ import { Skill } from 'models'
 export default Vue.extend({
   props: {
     skills: {
-      type: Array as PropType<Skill[]>,
-      default: []
+      type: Array as PropType<Skill[]>
     }
   }
 })

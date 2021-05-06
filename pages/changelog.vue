@@ -36,7 +36,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Release } from 'models'
-import { AxiosResponse } from 'axios'
 import { Locale } from 'date-fns'
 import { fr, enGB } from 'date-fns/locale'
 import { MetaInfo } from 'vue-meta'

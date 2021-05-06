@@ -17,8 +17,7 @@ import { Work } from 'models'
 export default Vue.extend({
   props: {
     works: {
-      type: Array as PropType<Work[]>,
-      default: []
+      type: Array as PropType<Work[]>
     }
   }
 })

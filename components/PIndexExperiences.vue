@@ -25,8 +25,7 @@ import { Experience } from 'models'
 export default Vue.extend({
   props: {
     experiences: {
-      type: Array as PropType<Experience[]>,
-      default: []
+      type: Array as PropType<Experience[]>
     }
   }
 })
