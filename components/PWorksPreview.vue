@@ -28,7 +28,7 @@ export default Vue.extend({
 
   computed: {
     filters (): WorkFilter[] {
-      return this.$accessor.workFilters.filter(f => this.work.filters.some(wf => wf.id === f.id))
+      return this.$accessor.workFilters.items.filter(f => this.work.filters.some(wf => wf.id === f.id))
     }
   }
 })

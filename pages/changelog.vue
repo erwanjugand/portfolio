@@ -44,16 +44,13 @@ import { MetaInfo } from 'vue-meta'
 const locale: {[key: string]: Locale} = { fr, en: enGB }
 
 export default Vue.extend({
+  async asyncData ({ app: { $accessor } }) {
+    await $accessor.releases.fetchAll()
+    await $accessor.workFilters.fetchAll()
 
-  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
-    // Fetch data if necessary
-    let releases = $accessor.releases
-    if (!releases.length) {
-      const { data }: AxiosResponse<Release[]> = await $axios.get(`${apiUrl}/versions`)
-      $accessor.setReleases(data)
-      releases = data
+    return {
+      releases: $accessor.releases.items
     }
-    return { releases }
   },
 
   data () {

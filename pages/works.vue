@@ -17,7 +17,7 @@
                   {{ $t('works.allWorksButton') }}
                 </PButton>
               </li>
-              <li v-for="filter of $accessor.workFilters" :key="filter.id">
+              <li v-for="filter of workFilters" :key="filter.id">
                 <PButton :outlined="filter.id !== activeFilterId" @click="changeFilter(filter.id)">
                   {{ filter.name }}
                 </PButton>
@@ -42,26 +42,21 @@ import { Work, WorkFilter } from 'models'
 import { MetaInfo } from 'vue-meta'
 
 export default Vue.extend({
+  async asyncData ({ app: { $accessor } }) {
+    await $accessor.works.fetchAll()
+    await $accessor.workFilters.fetchAll()
 
-  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
-    // Fetch datas if necessary
-    const datas: {[key: string]: Work | WorkFilter} = {}
-    const datasRequired = [
-      { name: 'works', path: 'works' },
-      { name: 'workFilters', path: 'work_filters' }
-    ]
-
-    for (const dataRequired of datasRequired) {
-      let values = $accessor[dataRequired.name]
-      if (!values.length) {
-        const { data } = await $axios.get(`${apiUrl}/${dataRequired.path}`)
-        values = data
-        $accessor[`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`](data)
-      }
-      datas[dataRequired.name] = values
+    return {
+      works: $accessor.works.items,
+      workFilters: $accessor.workFilters.items
     }
+  },
 
-    return datas as {[key:string]: Work | WorkFilter}
+  data () {
+    return {
+      works: [] as Work[],
+      workFilters: [] as WorkFilter[]
+    }
   },
 
   head (): MetaInfo {
@@ -76,11 +71,11 @@ export default Vue.extend({
     },
 
     activeFilter (): WorkFilter | undefined {
-      return this.$accessor.workFilters.find(f => f.id === this.activeFilterId)
+      return this.workFilters.find(f => f.id === this.activeFilterId)
     },
 
     activeWorks (): Work[] {
-      return this.$accessor.works.filter(w => !this.activeFilter || this.activeFilter.works.some(fw => fw.id === w.id))
+      return this.works.filter(w => !this.activeFilter || this.activeFilter.works.some(fw => fw.id === w.id))
     }
   },
   methods: {

@@ -17,23 +17,30 @@ export default Vue.extend({
     }
   },
 
+  async asyncData ({ app: { $accessor }, route, error }) {
+    const id = +route.params.slug.split('-')[0]
+    await $accessor.works.fetch(id)
+
+    const work = $accessor.works.items.find(w => w.id === id)
+
+    if (work) {
+      return {
+        work
+      }
+    } else {
+      error({ statusCode: 404, message: 'Work not found' })
+    }
+  },
+
   data () {
     return {
-      work: undefined as Work | undefined
+      work: {} as Work
     }
   },
 
   computed: {
     isOnlyFrenchContent (): boolean {
       return this.$i18n.locale !== 'fr'
-    }
-  },
-
-  mounted () {
-    this.work = this.$accessor.works.find(w => w.slug === this.$route.params.slug)
-
-    if (!this.work) {
-      this.$nuxt.error({ statusCode: 404, message: 'Work not found' })
     }
   }
 })

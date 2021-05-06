@@ -13,27 +13,27 @@ import Vue from 'vue'
 import { Experience, Skill, Work, WorkFilter } from 'models'
 
 export default Vue.extend({
-  async asyncData ({ app: { $accessor }, $axios, $config: { apiUrl } }) {
-    // Fetch datas if necessary
-    const datas: {[key: string]: Experience | Skill | Work | WorkFilter} = {}
-    const datasRequired = [
-      { name: 'experiences', path: 'experiences' },
-      { name: 'skills', path: 'skills' },
-      { name: 'works', path: 'works' },
-      { name: 'workFilters', path: 'work_filters' }
-    ]
+  async asyncData ({ app: { $accessor } }) {
+    await $accessor.experiences.fetchAll()
+    await $accessor.works.fetchAll()
+    await $accessor.workFilters.fetchAll()
+    await $accessor.skills.fetchAll()
 
-    for (const dataRequired of datasRequired) {
-      let values = $accessor[dataRequired.name]
-      if (!values.length) {
-        const { data } = await $axios.get(`${apiUrl}/${dataRequired.path}`)
-        values = data
-        $accessor[`set${dataRequired.name[0].toUpperCase() + dataRequired.name.slice(1)}`](data)
-      }
-      datas[dataRequired.name] = values
+    return {
+      experiences: $accessor.experiences.items,
+      works: $accessor.works.items,
+      workFilters: $accessor.workFilters.items,
+      skills: $accessor.skills.items
     }
+  },
 
-    return datas
+  data () {
+    return {
+      experiences: [] as Experience[],
+      works: [] as Work[],
+      workFilters: [] as WorkFilter[],
+      skills: [] as Skill[]
+    }
   }
 })
 </script>
