@@ -1,7 +1,7 @@
 <template>
   <main>
     <section>
-      <h1 v-text="$t('works.mainTitle')" />
+      <h1 :background="$t('works.mainTitle')" v-text="$t('works.mainTitle')" />
       <div class="row works-filters-container">
         <PCard class="s12">
           <template #header>

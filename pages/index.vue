@@ -1,6 +1,6 @@
 <template>
   <main id="index">
-    <h1 class="title" v-text="'portfolio-v3'" />
+    <h1 :background="'portfolio-v3'" class="title" v-text="'portfolio-v3'" />
     <PIndexSkills :skills="skills" />
     <PIndexExperiences :experiences="experiences" />
     <PIndexLastWorks :works="works" />

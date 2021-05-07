@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="container">
-      <h1 v-text="$t('changeLog.mainTitle')" />
+      <h1 :background="$t('changeLog.mainTitle')" v-text="$t('changeLog.mainTitle')" />
       <PTransitionFadeHeight group tag="ul">
         <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
           <PCard tag="article" class="release">

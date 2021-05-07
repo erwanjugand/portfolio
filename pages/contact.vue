@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="container">
-      <h1 v-text="$t('contact.mainTitle')" />
+      <h1 :background="$t('contact.mainTitle')" v-text="$t('contact.mainTitle')" />
       <PCard class="form-contact">
         <template #header>
           <h2>

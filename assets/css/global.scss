@@ -160,12 +160,26 @@ main {
 }
 
 h1 {
+  position: relative;
   margin: .75em 0;
   font-size: 2em;
   text-align: center;
   color: var(--c-primary);
   opacity: .5;
   transition: font-size var(--transition);
+
+  &::before {
+    content: attr(background);
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-shadow: 0 0 1px var(--c-primary);
+    white-space: nowrap;
+    color: var(--c-background-bg);
+    transform: scale(2) translate(-50%, -50%);
+    transform-origin: top left;
+  }
 
   @media #{$medium-and-up} {
     font-size: 4em;

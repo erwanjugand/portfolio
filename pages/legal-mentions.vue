@@ -1,7 +1,7 @@
 <template>
   <main>
     <section id="legal-mentions" class="container">
-      <h1 v-text="$t('legalMentions.mainTitle')" />
+      <h1 :background="$t('legalMentions.mainTitle')" v-text="$t('legalMentions.mainTitle')" />
 
       <p v-if="isOnlyFrenchContent" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
 
