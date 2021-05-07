@@ -12,6 +12,7 @@
         <a
           v-ripple
           target="_blank"
+          rel="noopener"
           href="https://github.com/erwanjugand"
           aria-label="Github"
           :title="$t('footer.github')"
@@ -21,6 +22,7 @@
         <a
           v-ripple
           target="_blank"
+          rel="noopener"
           href="https://www.linkedin.com/in/erwan-jugand/"
           aria-label="Linkedin"
           :title="$t('footer.linkedin')"

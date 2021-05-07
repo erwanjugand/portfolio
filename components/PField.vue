@@ -56,6 +56,7 @@ export default Vue.extend({
       emailError: false,
       errorMessages: [] as TranslateResult[],
       hasFocused: false,
+      id: uniqueId('field-'),
       requiredError: false,
       selectedOnce: false
     }
@@ -67,9 +68,6 @@ export default Vue.extend({
         'has-content': this.value,
         error: this.requiredError || this.emailError
       }
-    },
-    id (): string {
-      return this.label ? uniqueId('field-') : ''
     },
     styles (): Partial<CSSStyleDeclaration> {
       return {

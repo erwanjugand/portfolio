@@ -57,6 +57,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   i18n: {
+    baseUrl: process.env.SITE_URL,
     seo: false,
     locales: [
       {
