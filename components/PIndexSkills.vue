@@ -3,7 +3,7 @@
     <h2 v-text="$t('home.skills.title')" />
     <div class="skills-container">
       <ul>
-        <PHexagon v-for="skill of skills" :key="`skill-${skill.id}`" tabindex="0" class="skill">
+        <PHexagon v-for="skill of skills" :key="`skill-${skill.id}`" tag="li" tabindex="0" class="skill">
           <span class="skill-name" v-text="skill.name" />
           <div class="skill-score">
             <PIcon v-for="n of 3" :key="`star-${n}`" :type="n > skill.level ? 'light' : 'solid'" name="star" />

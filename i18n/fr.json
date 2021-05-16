@@ -57,6 +57,12 @@
     "experiences": {
       "title": "Mes expériences"
     },
+    "moreInformation": {
+      "addressTitle": "Adresse",
+      "emailTitle": "Email",
+      "phoneTitle": "Téléphone",
+      "title": "Plus d'informations"
+    },
     "skills": {
       "title": "Mes compétences"
     },

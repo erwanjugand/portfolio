@@ -1,14 +1,22 @@
 <template>
-  <li class="hexagon">
+  <component :is="tag" :class="['hexagon', { 'hexagon-turned': turned }]">
     <div class="hexagon-content">
       <slot />
     </div>
-  </li>
+  </component>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
+  props: {
+    tag: {
+      type: String,
+      default: 'div'
+    },
+    turned: Boolean
+  }
 })
 </script>
 
@@ -65,6 +73,14 @@ $hexagon-width: $hexagon-height / sqrt(3);
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+  }
+
+  &-turned {
+    transform: rotate(90deg);
+
+    .hexagon-content > * {
+      transform: rotate(-90deg);
+    }
   }
 }
 </style>
