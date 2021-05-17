@@ -85,13 +85,50 @@ export default {
     manifest: {
       name: process.env.SITE_TITLE,
       short_name: process.env.SHORT_NAME,
+      description: process.env.SITE_DESCRIPTION,
       theme_color: '#0077DB',
       background_color: '#212121',
-      lang: 'fr'
+      display: 'standalone',
+      lang: 'fr',
+      start_url: '/?source=pwa',
+      shortcuts: [
+        {
+          name: 'Mes travaux',
+          url: '/travaux?source=pwa',
+          icons: [
+            {
+              src: '/images/projects-shortcut.png',
+              sizes: '512x512',
+              type: 'image/png'
+            }
+          ]
+        },
+        {
+          name: 'Me contacter',
+          url: '/contact?source=pwa',
+          icons: [
+            {
+              src: '/images/contact-shortcut.png',
+              sizes: '512x512',
+              type: 'image/png'
+            }
+          ]
+        },
+        {
+          name: 'Évolution du portfolio',
+          url: '/journal-des-modifications?source=pwa',
+          icons: [
+            {
+              src: '/images/changelog-shortcut.png',
+              sizes: '512x512',
+              type: 'image/png'
+            }
+          ]
+        }
+      ]
     },
     icon: {
       source: 'static/images/favicon-pwa.png',
-      purpose: 'maskable',
       sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
     }
   },
