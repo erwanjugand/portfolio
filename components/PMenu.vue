@@ -2,13 +2,13 @@
   <nav id="menu">
     <transition-group tag="ul" name="fade">
       <li v-for="link of links" v-show="$accessor.menuOpened" :key="link.name">
-        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$accessor.setMenuOpening(localePath(link.route) !== $route.path)">
+        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="closeMenu">
           <PIcon :name="link.icon" />
           {{ $t(`header.${link.name}`) }}
         </nuxt-link>
       </li>
       <li v-show="$accessor.menuOpened" key="darkMode">
-        <button v-ripple type="button" @click="() => { $colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark' }">
+        <button v-ripple type="button" @click="toggleDarkMode">
           <PIcon :name="`lightbulb${$colorMode.value === 'dark' ? 'Slash' : 'On'}`" />
           {{ $t(`header.${$colorMode.value === 'dark' ? 'dark' : 'light'}Mode`) }}
         </button>
@@ -30,6 +30,16 @@ export default Vue.extend({
         { name: 'contactMe', icon: 'envelopeOpenText', route: 'contact' },
         { name: 'portfolioEvolution', icon: 'sparkles', route: 'changelog' }
       ]
+    }
+  },
+
+  methods: {
+    closeMenu () {
+      this.$accessor.setMenuOpening(false)
+    },
+
+    toggleDarkMode () {
+      this.$colorMode.preference = this.$colorMode.value === 'dark' ? 'light' : 'dark'
     }
   }
 })

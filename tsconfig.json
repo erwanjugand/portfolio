@@ -32,6 +32,7 @@
       "@nuxtjs/pwa",
       "nuxt-i18n",
       "@nuxtjs/date-fns",
+      "@nuxtjs/color-mode"
     ]
   }
 }

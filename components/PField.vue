@@ -1,7 +1,7 @@
 <template>
   <div class="field">
     <input
-      v-if="['text', 'email', 'password'].includes(type)"
+      v-if="isInput"
       :id="id"
       :class="classes"
       :type="type"
@@ -11,7 +11,7 @@
       @blur="hasFocused = false"
     >
     <textarea
-      v-if="type === 'textarea'"
+      v-else
       :id="id"
       ref="textarea"
       :style="styles"
@@ -63,6 +63,10 @@ export default Vue.extend({
   },
 
   computed: {
+    isInput (): boolean {
+      return ['text', 'email', 'password'].includes(this.type)
+    },
+
     classes (): object {
       return {
         'has-content': this.value,

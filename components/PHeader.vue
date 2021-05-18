@@ -1,5 +1,5 @@
 <template>
-  <header :class="['elevation-2', {'flat': $accessor.menuOpened}]">
+  <header :class="['elevation-2', { 'flat': $accessor.menuOpened }]">
     <nuxt-link
       v-ripple
       class="logo"

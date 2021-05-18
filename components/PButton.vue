@@ -3,7 +3,7 @@
     :is="type"
     v-ripple="!loading"
     :disabled="loading"
-    :class="['button', {'button-outlined': outlined, 'button-loading': loading}]"
+    :class="['button', { 'button-outlined': outlined, 'button-loading': loading }]"
     :to="to"
     v-on="$listeners"
   >
