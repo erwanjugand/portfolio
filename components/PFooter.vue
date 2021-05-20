@@ -1,37 +1,50 @@
 <template>
-  <footer class="footer elevation-1">
-    <div class="container">
-      <div class="footer-copyright">
-        <p v-text="$t('footer.copyright', { year: currentYear })" />
-        <nuxt-link :to="localePath('legal-mentions')">
-          {{ $t('legalMentions.mainTitle') }}
-        </nuxt-link>
-      </div>
-
-      <div class="footer-social-networks">
-        <a
-          v-ripple
-          target="_blank"
-          rel="noopener"
-          href="https://github.com/erwanjugand"
-          aria-label="Github"
-          :title="$t('footer.github')"
-        >
-          <PIcon type="brand" name="github" />
-        </a>
-        <a
-          v-ripple
-          target="_blank"
-          rel="noopener"
-          href="https://www.linkedin.com/in/erwan-jugand/"
-          aria-label="Linkedin"
-          :title="$t('footer.linkedin')"
-        >
-          <PIcon type="brand" name="linkedin" />
-        </a>
-      </div>
+  <div class="footer-container">
+    <div class="footer-easter-egg-button-container">
+      <button
+        v-ripple
+        class="footer-easter-egg-button"
+        title="?????"
+        aria-label="?????"
+        @click="$nuxt.$emit('launchEasterEgg')"
+      >
+        <PIcon type="custom" name="easterEgg" />
+      </button>
     </div>
-  </footer>
+    <footer class="footer elevation-1">
+      <div class="container">
+        <div class="footer-copyright">
+          <p v-text="$t('footer.copyright', { year: currentYear })" />
+          <nuxt-link :to="localePath('legal-mentions')">
+            {{ $t('legalMentions.mainTitle') }}
+          </nuxt-link>
+        </div>
+
+        <div class="footer-social-networks">
+          <a
+            v-ripple
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/erwanjugand"
+            aria-label="Github"
+            :title="$t('footer.github')"
+          >
+            <PIcon type="brand" name="github" />
+          </a>
+          <a
+            v-ripple
+            target="_blank"
+            rel="noopener"
+            href="https://www.linkedin.com/in/erwan-jugand/"
+            aria-label="Linkedin"
+            :title="$t('footer.linkedin')"
+          >
+            <PIcon type="brand" name="linkedin" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script lang="ts">
@@ -47,12 +60,18 @@ export default Vue.extend({
 
 <style lang="scss">
 .footer {
-  margin-top: 16px;
+  z-index: 1;
+  position: relative;
   color: $white;
   background-color: $black-87;
 
-  @media #{$medium-and-up} {
-    margin-top: 32px;
+  &-container {
+    position: relative;
+    margin-top: 16px;
+
+    @media #{$medium-and-up} {
+      margin-top: 32px;
+    }
   }
 
   .container {
@@ -95,6 +114,28 @@ export default Vue.extend({
         width: 2.5em;
         fill: currentColor;
       }
+    }
+  }
+
+  &-easter-egg-button {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    color: var(--c-text-secondary-1);
+    fill: currentColor;
+    border-radius: $br-small $br-small 0 0;
+    transform: translateY(-50%);
+    transition: transform var(--transition), color var(--transition);
+
+    &:hover, &:focus {
+      color: var(--c-text-secondary-2);
+      transform: translateY(-100%);
+    }
+
+    &-container {
+      position: absolute;
+      top: 0;
+      right: 10%;
     }
   }
 }

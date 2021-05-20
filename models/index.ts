@@ -60,7 +60,7 @@ export interface Release extends Model {
 // Icons
 
 export interface Icon {
-  path: string,
+  path: string
   viewBox: string
 }
 
@@ -73,7 +73,15 @@ export interface Icons {
 // Header
 
 export interface Link {
-  icon: string,
-  name: string,
+  icon: string
+  name: string
   route: string
+}
+
+// Easter Egg
+
+export interface EasterEggStep {
+  text: string
+  value: number
+  duration: number
 }

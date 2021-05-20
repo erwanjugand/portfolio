@@ -69,6 +69,33 @@
   --c-border: #{rgba($white, .05)};
 }
 
+.hacked-mode {
+  // Text
+  --c-primary: #{$secondary};
+  --c-secondary: #{$primary};
+
+  --c-text: #{$white};
+  --c-text-secondary-1: #{$white-80};
+  --c-text-secondary-2: #{$white-65};
+  --c-text-secondary-3: #{$white-50};
+  --c-text-secondary-4: #{$white-35};
+
+  // Background
+  --c-background-bg: #{$black-93};
+  --c-background-1: #{$black-90};
+  --c-background-2: #{$black-87};
+  --c-background-3: #{$black-84};
+  --c-secondary-hover: #{mix($primary, $black, 90%)};
+
+  // Scroll
+  --c-scroll-background: #{$black-25};
+  --c-scroll-hover: #{$black-35};
+  --c-scroll-active: #{$black-50};
+
+  // Border
+  --c-border: #{rgba($white, .05)};
+}
+
 // Accessibility : User prefers to delete all animations
 @media (prefers-reduced-motion: reduce) {
   :root {

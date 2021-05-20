@@ -5,6 +5,7 @@
     <div id="page-content" :class="{'minimized': $accessor.menuOpened}" v-on="$accessor.menuOpened ? { click: () => $accessor.setMenuOpening(false) } : {}">
       <nuxt />
     </div>
+    <PEasterEgg />
   </div>
 </template>
 
