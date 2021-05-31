@@ -30,7 +30,8 @@ export default Vue.extend({
 <style lang="scss">
 @use 'sass:math' as *;
 
-$hexagon-width: $hexagon-height / sqrt(3);
+$hexagon-width: round(($hexagon-height / sqrt(3)) * 100) / 100;
+
 $hexagon-space-to-remove: ceil($bw-out / sin(60deg));
 
 @mixin show-content {
