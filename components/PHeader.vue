@@ -202,7 +202,7 @@ header {
       color: $white;
 
       &.nuxt-link-exact-active {
-        background-color: var(--c-primary);
+        background-color: var(--c-secondary);
       }
     }
   }
