@@ -14,8 +14,6 @@ import Vue from 'vue'
 import { MetaInfo } from 'vue-meta'
 
 export default Vue.extend({
-  middleware: 'support',
-
   head (): MetaInfo {
     return {
       title: '',
