@@ -71,6 +71,7 @@
     align-items: center;
     margin-top: 24px;
     padding: 8px 16px;
+    text-decoration: none;
     border-radius: $br-regular;
   }
 }
