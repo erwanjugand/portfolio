@@ -5,6 +5,7 @@
     <PIndexExperiences :experiences="experiences" />
     <PIndexLastWorks :works="works" />
     <PIndexMoreInformation />
+    <PIndexContact />
     <PFooter />
   </main>
 </template>

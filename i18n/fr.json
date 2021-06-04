@@ -54,6 +54,11 @@
     "works": "Mes travaux"
   },
   "home": {
+    "contact": {
+      "action": "Me contacter",
+      "description": "Vous souhaitez me contacter ? Signaler un bug ? Dire des bétises ?",
+      "title": "Contact"
+    },
     "experiences": {
       "title": "Mes expériences"
     },

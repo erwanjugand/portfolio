@@ -17,6 +17,9 @@
   --fs-regular: 1rem;
   --fs-small: .75rem;
 
+  // Envelope
+  --c-enveloppe-shadow: #{rgba($black, .3)};
+
   // Transition
   --transition: .3s cubic-bezier(.4, 0, .2, 1);
 }
@@ -41,6 +44,11 @@
   --c-scroll-hover: #{$white-35};
   --c-scroll-active: #{$white-50};
 
+  // Envelope
+  --c-enveloppe-background-1: #{$white-10};
+  --c-enveloppe-background-2: #{$white-25};
+  --c-enveloppe-background-3: #{$white-35};
+
   // Border
   --c-border: transparent;
 }
@@ -64,6 +72,11 @@
   --c-scroll-background: #{$black-25};
   --c-scroll-hover: #{$black-35};
   --c-scroll-active: #{$black-50};
+
+  // Envelope
+  --c-enveloppe-background-1: #{$black-90};
+  --c-enveloppe-background-2: #{$black-87};
+  --c-enveloppe-background-3: #{$black-87};
 
   // Border
   --c-border: #{rgba($white, .05)};
