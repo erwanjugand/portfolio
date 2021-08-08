@@ -78,6 +78,13 @@ export interface Link {
   route: string
 }
 
+// Tools
+
+export interface Tool {
+  title: string
+  name: string
+}
+
 // Easter Egg
 
 export interface EasterEggStep {

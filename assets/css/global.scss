@@ -195,8 +195,8 @@ main {
   padding-top: 60px;
   background-color: var(--c-background-bg);
   box-shadow: 0 5px 5px 0 rgba($black, .5);
-  overflow: auto;
-  overflow: overlay;
+  overflow: hidden auto;
+  overflow: hidden overlay;
 }
 
 h1 {

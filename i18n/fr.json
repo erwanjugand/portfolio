@@ -71,6 +71,9 @@
     "skills": {
       "title": "Mes compétences"
     },
+    "tools": {
+      "title": "Les outils que j'utilise"
+    },
     "works": {
       "title": "Mes derniers travaux",
       "cta": "Afficher plus de travaux"
