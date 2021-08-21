@@ -46,6 +46,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
+@use 'sass:math' as *;
+
 #menu {
   position: fixed;
   top: 0;
@@ -112,7 +114,7 @@ export default Vue.extend({
   &-enter-active {
     @for $i from 2 through 5 {
       &:nth-child(#{$i}) {
-        transition-delay: #{($i - 1) / 10}s;
+        transition-delay: div($i - 1s, 10);
       }
     }
   }

@@ -30,9 +30,9 @@ export default Vue.extend({
 <style lang="scss">
 @use 'sass:math' as *;
 
-$hexagon-width: round(($hexagon-height / sqrt(3)) * 100) / 100;
+$hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 
-$hexagon-space-to-remove: ceil($bw-out / sin(60deg));
+$hexagon-space-to-remove: ceil(div($bw-out, sin(60deg)));
 
 @mixin show-content {
   outline: none;
@@ -48,35 +48,35 @@ $hexagon-space-to-remove: ceil($bw-out / sin(60deg));
   overflow: hidden;
 
   @media #{$small} {
-    background-position-x: calc(50% - #{$hexagon-width / 4 + $hexagon-space-to-remove / 2});
+    background-position-x: calc(50% - #{div($hexagon-width, 4) + div($hexagon-space-to-remove, 2)});
   }
 
   @media #{$medium-only} {
-    background-position-x: calc(50% - #{$hexagon-width + $hexagon-space-to-remove / 2});
+    background-position-x: calc(50% - #{$hexagon-width + div($hexagon-space-to-remove, 2)});
   }
 
   @media #{$large-only} {
-    background-position-x: calc(50% + #{$hexagon-width / 2 - $hexagon-space-to-remove / 2 });
+    background-position-x: calc(50% + #{div($hexagon-width, 2) - div($hexagon-space-to-remove, 2)});
   }
 
   @media #{$extra-large} {
-    background-position-x: calc(50% - #{$hexagon-width + $hexagon-space-to-remove / 2});
+    background-position-x: calc(50% - #{$hexagon-width + div($hexagon-space-to-remove, 2)});
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: $hexagon-height / 2 + $bw-out / 2;
+    padding-bottom: div($hexagon-height, 2) + div($bw-out, 2);
 
     .skill {
-      margin: 0 #{$hexagon-width * 1.5 - $hexagon-space-to-remove / 2} #{-$hexagon-height / 2 - $bw-out / 2} #{$hexagon-width / 2 - $hexagon-space-to-remove / 2};
+      margin: 0 #{$hexagon-width * 1.5 - div($hexagon-space-to-remove, 2)} #{div(-$hexagon-height, 2) - div($bw-out, 2)} #{div($hexagon-width, 2) - div($hexagon-space-to-remove, 2)};
     }
 
     @media #{$small} {
       width: $hexagon-width * 3.5 - $hexagon-space-to-remove;
 
       > *:nth-child(even) {
-        margin-right: $hexagon-width / 2 - $hexagon-space-to-remove / 2;
+        margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
         margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
       }
     }
@@ -85,7 +85,7 @@ $hexagon-space-to-remove: ceil($bw-out / sin(60deg));
       width: $hexagon-width * 5 - $hexagon-space-to-remove;
 
       > *:nth-child(3n + 2) {
-        margin-right: $hexagon-width / 2 - $hexagon-space-to-remove / 2;
+        margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
       }
 
       > *:nth-child(3n + 3) {
@@ -97,7 +97,7 @@ $hexagon-space-to-remove: ceil($bw-out / sin(60deg));
       width: $hexagon-width * 8 - $hexagon-space-to-remove * 3;
 
       > *:nth-child(5n + 3) {
-        margin-right: $hexagon-width / 2 - $hexagon-space-to-remove / 2;
+        margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
       }
 
       > *:nth-child(5n + 4) {
@@ -109,7 +109,7 @@ $hexagon-space-to-remove: ceil($bw-out / sin(60deg));
       width: $hexagon-width * 11 - $hexagon-space-to-remove * 3;
 
       > *:nth-child(7n + 4) {
-        margin-right: $hexagon-width / 2 - $hexagon-space-to-remove / 2;
+        margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
       }
 
       > *:nth-child(7n + 5) {

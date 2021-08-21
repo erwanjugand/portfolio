@@ -35,10 +35,10 @@
   overflow: hidden;
 
   &-top {
-    $width: round(sqrt(40 * 40 / 2) * 100) / 100 * 1em;
+    $width: div(round(sqrt(div(40 * 40, 2)) * 100) * 1em, 100);
     width: $width;
     height: $width;
-    margin-top: round(sqrt(40 * 40 / 2) * 100) / 100 * -1em / 2;
+    margin-top: div(round(sqrt(div(40 * 40, 2)) * 100) * -1em, 2 * 100);
     background: var(--c-enveloppe-background-3);
     border-top-left-radius: $br-large;
     transform: rotateX(45deg) rotateZ(45deg);

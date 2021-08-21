@@ -23,7 +23,7 @@ export default Vue.extend({
 <style lang="scss">
 @use 'sass:math' as *;
 
-$hexagon-width: round(($hexagon-height / sqrt(3)) * 100) / 100;
+$hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 
 @mixin dynamic-border ($width, $height, $border-size) {
   width: $width;
