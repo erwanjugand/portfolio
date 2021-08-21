@@ -8,7 +8,7 @@
       </div>
       <div class="s12 l8 about__content">
         <!-- eslint-disable vue/no-v-html -->
-        <p class="about__text" v-html="$t('home.about.text1', { year: age })>" />
+        <p class="about__text" v-html="$t('home.about.text1', { year: age })" />
         <p class="about__text" v-html="$t('home.about.text2')" />
         <p class="about__text" v-html="$t('home.about.text3')" />
         <p class="about__text" v-html="$t('home.about.text4')" />
