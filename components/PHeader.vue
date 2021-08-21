@@ -52,7 +52,7 @@
     >
       {{ $t('header.menu') }}
       <span aria-hidden="true" class="burger-icon">
-        <span v-for="n of 3" :key="n" />
+        <span v-for="n of 3" :key="n" :class="'burger-path-' + n" />
       </span>
     </button>
   </header>
@@ -217,32 +217,32 @@ header {
 .burger {
   &-icon {
     margin-left: 1em;
+  }
 
-    span {
-      display: flex;
-      width: 32px;
-      height: 3px;
-      background-color: $white;
-      border-radius: 2px;
-      transition: margin var(--transition), transform var(--transition);
+  &-path-1, &-path-2, &-path-3 {
+    display: flex;
+    width: 32px;
+    height: 3px;
+    background-color: $white;
+    border-radius: 2px;
+    transition: margin var(--transition), transform var(--transition);
+  }
 
-      &:not(:first-of-type) {
-        margin-top: 8px;
-      }
+  &-path-2, &-path-3 {
+    margin-top: 8px;
+  }
+
+  &[aria-expanded='true'] .burger {
+    &-path-1 {
+      transform: rotate(45deg) translate3d(8px, 8px, 0);
     }
 
-    [aria-expanded='true'] & span {
-      &:nth-child(1) {
-        transform: rotate(45deg) translate3d(8px, 8px, 0);
-      }
+    &-path-2 {
+      transform: rotate(45deg);
+    }
 
-      &:nth-child(2) {
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(3) {
-        transform: rotate(135deg) translate3d(-8px, 8px, 0);
-      }
+    &-path-3 {
+      transform: rotate(135deg) translate3d(-8px, 8px, 0);
     }
   }
 }

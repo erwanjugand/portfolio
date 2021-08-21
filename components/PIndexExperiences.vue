@@ -7,8 +7,8 @@
         :key="experience.id"
         class="experience"
       >
-        <time v-show="!index || experiences[index - 1].year !== experience.year" :datetime="experience.dateRealization">
-          <span v-text="!index ? $t('experiences.today') : experience.year" />
+        <time v-show="!index || experiences[index - 1].year !== experience.year" class="time" :datetime="experience.dateRealization">
+          <span class="time-text" v-text="!index ? $t('experiences.today') : experience.year" />
         </time>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <div class="experience-content" v-html="experience.description" />
@@ -59,7 +59,7 @@ $diagonal: sqrt(3);
     }
   }
 
-  time {
+  .time {
     position: relative;
     display: flex;
     width: 9em;
@@ -79,7 +79,7 @@ $diagonal: sqrt(3);
       box-sizing: border-box;
     }
 
-    span {
+    &-text {
       text-transform: uppercase;
       opacity: .5;
       transform: translateX(2rem * $diagonal + 1rem);

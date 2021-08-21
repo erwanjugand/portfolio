@@ -3,7 +3,7 @@
     <input
       v-if="isInput"
       :id="id"
-      :class="classes"
+      :class="['field-input', classes]"
       :type="type"
       :value="value"
       @input="$emit('input', $event.target.value)"
@@ -16,13 +16,13 @@
       ref="textarea"
       :style="styles"
       :value="value"
-      :class="classes"
+      :class="['field-textarea', classes]"
       @input="$emit('input', $event.target.value); autoSize()"
       @focus="hasFocused = true"
       @blur="hasFocused = false"
     />
-    <label v-if="label" :for="id">
-      <span v-text="label" />
+    <label v-if="label" class="label" :for="id">
+      <span class="label-text" v-text="label" />
     </label>
     <transition name="field-message-error">
       <div v-if="errorMessages.length" class="field-message-error" v-text="errorMessages[0]" />
@@ -132,7 +132,7 @@ export default Vue.extend({
 
   // Input / Textarea
 
-  input, textarea {
+  &-input, &-textarea {
     padding: .875em 1em;
     font-size: var(--fs-regular);
     font-weight: 300;
@@ -190,14 +190,14 @@ export default Vue.extend({
 
   // Label
 
-  label {
+  .label {
     position: absolute;
     top: .875rem;
     left: 1em;
     color: var(--c-text-secondary-3);
     transition: var(--transition);
 
-    span {
+    &-text {
       position: relative;
     }
 
