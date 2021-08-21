@@ -19,4 +19,17 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+## Encoding images
+
+### Webp
+
+Install : https://www.tecmint.com/convert-images-to-webp-format-in-linux/
+
+Quality 90 for x1  
+Quality 85 for x2  
+Quality 80 for x3  
+
+``` bash
+cwebp -q 95 -resize 100 100 image.jpg -o image.webp --preset photo
+```
