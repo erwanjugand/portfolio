@@ -2,23 +2,25 @@
   <section class="container contact">
     <h2 v-text="$t('home.contact.title')" />
 
-    <div class="envelope">
-      <div class="envelope-top" />
-      <div class="envelope-center" />
-      <div class="paper elevation-3">
-        <p class="paper-text" v-text="$t('home.contact.description')" />
+    <div class="envelope-container">
+      <div class="envelope">
+        <div class="envelope-top" />
+        <div class="envelope-center" />
+        <div class="paper elevation-3">
+          <p class="paper-text" v-text="$t('home.contact.description')" />
 
-        <div class="paper-action">
-          <PButton :to="localePath('contact')">
-            {{ $t('home.contact.action') }}
-          </PButton>
+          <div class="paper-action">
+            <PButton :to="localePath('contact')">
+              {{ $t('home.contact.action') }}
+            </PButton>
+          </div>
         </div>
-      </div>
-      <div class="envelope-bottom">
-        <div class="envelope-bottom-left" />
-        <div class="envelope-bottom-left" />
-        <div class="envelope-bottom-right" />
-        <div class="envelope-bottom-center" />
+        <div class="envelope-bottom">
+          <div class="envelope-bottom-left" />
+          <div class="envelope-bottom-left" />
+          <div class="envelope-bottom-right" />
+          <div class="envelope-bottom-center" />
+        </div>
       </div>
     </div>
   </section>
@@ -33,6 +35,12 @@
   font-size: .75rem;
   border-radius: $br-large;
   overflow: hidden;
+
+  &-container {
+    height: 480px;
+    margin-bottom: -80px;
+    overflow: hidden;
+  }
 
   &-top {
     $width: div(round(sqrt(div(40 * 40, 2)) * 100) * 1em, 100);

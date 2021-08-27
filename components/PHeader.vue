@@ -99,7 +99,7 @@ header {
   display: grid;
   grid-template-columns: 1fr auto auto;
   width: 100%;
-  height: 60px;
+  height: 64px;
   padding: 0 5%;
   transition: box-shadow var(--transition);
 
@@ -135,7 +135,7 @@ header {
 
   svg {
     position: relative;
-    width: 60px;
+    width: 70px;
     margin-right: 1em;
     fill: var(--c-primary);
     transition: margin var(--transition);

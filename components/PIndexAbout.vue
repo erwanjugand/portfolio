@@ -39,6 +39,7 @@ export default Vue.extend({
 
   &-profil {
     width: 240+12px;
+    max-width: 100%;
     height: 240+12px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;

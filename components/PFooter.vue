@@ -95,7 +95,7 @@ export default Vue.extend({
 
     a {
       display: inline-flex;
-      padding: 4px 0;
+      padding-top: 8px;
     }
   }
 
@@ -107,8 +107,8 @@ export default Vue.extend({
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 60px;
-      height: 60px;
+      width: 64px;
+      height: 64px;
 
       svg {
         width: 2.5em;
@@ -118,8 +118,8 @@ export default Vue.extend({
   }
 
   &-easter-egg-button {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
     padding: 8px;
     color: var(--c-text-secondary-1);
     fill: currentColor;
