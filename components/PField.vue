@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { TranslateResult } from 'vue-i18n'
+import type { TranslateResult } from 'vue-i18n'
 import uniqueId from '~/utils/uniqueId'
 
 export default Vue.extend({

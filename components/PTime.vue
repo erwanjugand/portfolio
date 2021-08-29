@@ -3,8 +3,9 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue'
-import { Locale } from 'date-fns'
+import Vue from 'vue'
+import type { PropOptions } from 'vue'
+import type { Locale } from 'date-fns'
 import { fr, enGB } from 'date-fns/locale'
 import { LocaleDate } from '~/models'
 

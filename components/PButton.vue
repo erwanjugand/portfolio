@@ -14,8 +14,9 @@
 </template>
 
 <script lang="ts">
-import Vue, { PropOptions } from 'vue'
-import { RawLocation } from 'vue-router'
+import Vue from 'vue'
+import type { PropOptions } from 'vue'
+import type { RawLocation } from 'vue-router'
 
 export default Vue.extend({
   props: {

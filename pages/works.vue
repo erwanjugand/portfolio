@@ -39,7 +39,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Work, WorkFilter } from 'models'
-import { MetaInfo } from 'vue-meta'
+import type { MetaInfo } from 'vue-meta'
 
 export default Vue.extend({
   async asyncData ({ app: { $accessor } }) {

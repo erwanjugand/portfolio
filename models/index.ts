@@ -1,4 +1,4 @@
-import { Locale } from 'date-fns'
+import type { Locale } from 'date-fns'
 
 // Global
 
@@ -31,6 +31,8 @@ export interface Work extends Model {
 // Skills
 
 export interface Skill extends Model {
+  level: number
+  name: string
 }
 
 // Experience
