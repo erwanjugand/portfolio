@@ -1,37 +1,46 @@
 <template>
   <main v-if="work">
-    <section class="container">
+    <article class="container">
       <h1 v-text="work.title" />
 
       <div class="row">
-        <PCard class="work-description xs12 l9">
+        <PCard class="work-information xs12 l9">
           <template #header>
             {{ $t('work.description.title') }}
           </template>
-          <p v-if="isOnlyFrenchContent" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p v-html="work.description" />
         </PCard>
+
         <PCard class="work-gallery xs12 l9">
           <template #header>
             {{ $t('work.screenshots.title') }}
           </template>
-          <div class="work-gallery-row" :style="galleryStyles" />
+          <div class="work-gallery-row">
+            <img v-for="(image, index) of work.images" :key="image.id" :src="image.url" :alt="image.alt" :class="{'work-gallery-big-image': !index && hasOddImages}">
+          </div>
         </PCard>
-        <PCard class="work-tags xs12 l3">
+
+        <PCard class="work-informations xs12 l3">
           <template #header>
-            {{ $t('work.tags.title') }}
+            {{ $t('work.informations.title') }}
           </template>
+          {{ realisationDate }}
           <nuxt-link v-for="filter of filters" :key="filter.id" :to="localePath({ name: 'works', query: { filterId: filter.id } })">
             {{ filter.name }}
           </nuxt-link>
         </PCard>
       </div>
-    </section>
+    </article>
+    <PFooter />
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import { Work, WorkFilter } from 'models'
+import { fr, enGB } from 'date-fns/locale'
+import { LocaleDate } from '~/models'
 
 export default Vue.extend({
   nuxtI18n: {
@@ -71,12 +80,17 @@ export default Vue.extend({
       return this.$accessor.workFilters.items.filter(f => this.work.filters.some(wf => wf.id === f.id))
     },
 
-    isOnlyFrenchContent (): boolean {
-      return this.$i18n.locale !== 'fr'
+    hasOddImages (): boolean {
+      return !!(this.work.images.length % 2)
     },
 
-    galleryStyles (): Partial<CSSStyleDeclaration> {
-      return {}
+    currentLocale (): Locale {
+      const locales: LocaleDate = { fr, en: enGB }
+      return locales[this.$i18n.locale]
+    },
+
+    realisationDate (): string {
+      return this.$dateFns.format(this.work.dateRealization, 'PPP', { locale: this.currentLocale })
     }
   }
 })
@@ -84,7 +98,7 @@ export default Vue.extend({
 
 <style lang="scss" >
 .work {
-  &-description {
+  &-information {
     @media #{$large-and-up} {
       grid-row: 1 / 2;
     }
@@ -94,9 +108,23 @@ export default Vue.extend({
     @media #{$large-and-up} {
       grid-row: 2 / 3;
     }
+
+    &-row {
+      display: grid;
+      grid-column: repeat(2, 1fr);
+    }
+
+    &-big-image {
+      grid-column: 1 / 3;
+      width: 100%;
+    }
+
+    &-image {
+      width: 100%;
+    }
   }
 
-  &-tags {
+  &-informations {
     @media #{$large-and-up} {
       grid-row: 1 / 3;
     }

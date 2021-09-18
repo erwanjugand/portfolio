@@ -98,8 +98,8 @@
     "description": {
       "title": "Description"
     },
-    "tags": {
-      "title": "Tags"
+    "informations": {
+      "title": "Informations"
     },
     "screenshots": {
       "title": "Captures d'écran"

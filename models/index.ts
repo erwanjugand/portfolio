@@ -14,6 +14,11 @@ export interface LocaleDate {
 
 // Works
 
+export interface Image extends Model {
+  alt: string
+  url: string
+}
+
 export interface WorkFilter extends Model {
   name: string
   works: Array<{ id: number }>
@@ -24,6 +29,7 @@ export interface Work extends Model {
   filters: Array<{ id: number }>
   slug: string
   title: string
+  images: Image[]
   updated: Date
 }
 
