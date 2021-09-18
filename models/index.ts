@@ -19,7 +19,6 @@ export interface WorkFilter extends Model {
   works: Array<{ id: number }>
 }
 export interface Work extends Model {
-  created: Date
   dateRealization: Date
   description: string
   filters: Array<{ id: number }>

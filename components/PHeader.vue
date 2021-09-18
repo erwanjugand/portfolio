@@ -122,7 +122,7 @@ header {
   color: $white;
   transition: font-size var(--transition);
 
-  @media #{$small} {
+  @media #{$small-and-down} {
     font-size: 0;
   }
 }

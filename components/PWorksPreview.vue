@@ -1,5 +1,5 @@
 <template>
-  <li class="work-preview s12 m6 l4">
+  <li class="work-preview xs12 m6 l4">
     <nuxt-link v-ripple :to="localePath({ name: 'work-slug', params: { slug: work.slug } })">
       <PCard tag="article">
         <template #header>

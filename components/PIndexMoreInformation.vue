@@ -2,7 +2,7 @@
   <section class="container information">
     <h2 v-text="$t('home.moreInformation.title')" />
     <ul class="row">
-      <li class="s12 l4 information-content">
+      <li class="xs12 l4 information-content">
         <PHexagon turned>
           <PIcon name="phone" />
         </PHexagon>
@@ -15,7 +15,7 @@
           <span v-text="'06 18 07 30 23'" />
         </a>
       </li>
-      <li class="s12 l4 information-content">
+      <li class="xs12 l4 information-content">
         <PHexagon turned>
           <PIcon name="mapMarkedAlt" />
         </PHexagon>
@@ -30,7 +30,7 @@
           <span v-text="'35000 Rennes, France'" />
         </a>
       </li>
-      <li class="s12 l4 information-content">
+      <li class="xs12 l4 information-content">
         <PHexagon turned>
           <PIcon name="envelope" />
         </PHexagon>

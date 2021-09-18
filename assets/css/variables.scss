@@ -32,7 +32,8 @@ $white-10: mix($black, $white, 10%);
 $white-2: mix($black, $white, 2%);
 
 // Media Query
-$small: '(max-width: 575px)';
+$small-and-up: '(min-width: 384px)';
+$small-and-down: '(max-width: 575px)';
 $medium-and-up: '(min-width: 576px)';
 $medium-and-down: '(max-width: 1023px)';
 $medium-only: '(min-width: 576px) and (max-width: 1023px)';

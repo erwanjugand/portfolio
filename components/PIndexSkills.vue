@@ -48,7 +48,7 @@ $hexagon-space-to-remove: ceil(div($bw-out, sin(60deg)));
   background: url('/images/bee.svg') center top;
   overflow: hidden;
 
-  @media #{$small} {
+  @media #{$small-and-down} {
     background-position-x: calc(50% - #{div($hexagon-width, 4) + div($hexagon-space-to-remove, 2)});
   }
 
@@ -73,7 +73,7 @@ $hexagon-space-to-remove: ceil(div($bw-out, sin(60deg)));
       margin: 0 #{$hexagon-width * 1.5 - div($hexagon-space-to-remove, 2)} #{div(-$hexagon-height, 2) - div($bw-out, 2)} #{div($hexagon-width, 2) - div($hexagon-space-to-remove, 2)};
     }
 
-    @media #{$small} {
+    @media #{$small-and-down} {
       width: $hexagon-width * 3.5 - $hexagon-space-to-remove;
 
       > *:nth-child(even) {

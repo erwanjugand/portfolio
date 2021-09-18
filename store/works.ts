@@ -39,6 +39,7 @@ export const actions = actionTree(
           commit('setFetchedStatus', true)
           state.fetched = true
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.error('Failed to download Works')
         }
       }
@@ -50,6 +51,7 @@ export const actions = actionTree(
           const work: Work = await this.$axios.$get(`${this.app.$config.apiUrl}/works/${id}`)
           commit('setWork', work)
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.error('Failed to download Work')
         }
       }

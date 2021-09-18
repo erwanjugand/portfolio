@@ -1,13 +1,37 @@
 <template>
   <main v-if="work">
-    <pre v-text="work" />
-    <p v-if="isOnlyFrenchContent" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
+    <section class="container">
+      <h1 v-text="work.title" />
+
+      <div class="row">
+        <PCard class="work-description xs12 l9">
+          <template #header>
+            {{ $t('work.description.title') }}
+          </template>
+          <p v-if="isOnlyFrenchContent" v-text="$t('global.noTranslationAvailable', { lang: $t('global.lang.' + $i18n.locale) })" />
+        </PCard>
+        <PCard class="work-gallery xs12 l9">
+          <template #header>
+            {{ $t('work.screenshots.title') }}
+          </template>
+          <div class="work-gallery-row" :style="galleryStyles" />
+        </PCard>
+        <PCard class="work-tags xs12 l3">
+          <template #header>
+            {{ $t('work.tags.title') }}
+          </template>
+          <nuxt-link v-for="filter of filters" :key="filter.id" :to="localePath({ name: 'works', query: { filterId: filter.id } })">
+            {{ filter.name }}
+          </nuxt-link>
+        </PCard>
+      </div>
+    </section>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { Work } from 'models'
+import { Work, WorkFilter } from 'models'
 
 export default Vue.extend({
   nuxtI18n: {
@@ -24,8 +48,10 @@ export default Vue.extend({
     const work = $accessor.works.items.find(w => w.id === id)
 
     if (work) {
+      await $accessor.workFilters.fetchAll()
       return {
-        work
+        work,
+        workFilters: $accessor.workFilters.items
       }
     } else {
       error({ statusCode: 404, message: 'Work not found' })
@@ -34,14 +60,46 @@ export default Vue.extend({
 
   data () {
     return {
-      work: {} as Work
+      work: {} as Work,
+      workFilters: [] as WorkFilter[]
+
     }
   },
 
   computed: {
+    filters (): WorkFilter[] {
+      return this.$accessor.workFilters.items.filter(f => this.work.filters.some(wf => wf.id === f.id))
+    },
+
     isOnlyFrenchContent (): boolean {
       return this.$i18n.locale !== 'fr'
+    },
+
+    galleryStyles (): Partial<CSSStyleDeclaration> {
+      return {}
     }
   }
 })
 </script>
+
+<style lang="scss" >
+.work {
+  &-description {
+    @media #{$large-and-up} {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &-gallery {
+    @media #{$large-and-up} {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &-tags {
+    @media #{$large-and-up} {
+      grid-row: 1 / 3;
+    }
+  }
+}
+</style>

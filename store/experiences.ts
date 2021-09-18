@@ -40,6 +40,7 @@ export const actions = actionTree(
           commit('setFetchedStatus', true)
           state.fetched = true
         } catch (e) {
+          // eslint-disable-next-line no-console
           console.error('Failed to download Experiences')
         }
       }

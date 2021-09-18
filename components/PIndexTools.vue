@@ -3,7 +3,7 @@
     <h2 v-text="$t('home.tools.title')" />
 
     <div class="row">
-      <figure v-for="icon in icons" :key="icon.name" tabindex="0" class="s6 m2 l1 tools-item">
+      <figure v-for="icon in icons" :key="icon.name" tabindex="0" class="xs6 s4 m2 l1 tools-item">
         <PIcon class="tools-icon" type="custom" :title="icon.title" :name="icon.name" />
         <figcaption class="tools-text" v-text="icon.title" />
       </figure>

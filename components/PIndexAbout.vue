@@ -3,10 +3,10 @@
     <h2 v-text="$t('home.about.title')" />
 
     <div class="row">
-      <div class="s12 l4 about-profil-container">
+      <div class="xs12 l4 about-profil-container">
         <img class="about-profil elevation-1" src="/images/profil/erwan-jugand-x1.webp" srcset="/images/profil/erwan-jugand-x1.webp 1x, /images/profil/erwan-jugand-x2.webp 2x, /images/profil/erwan-jugand-x3.webp 3x" alt="">
       </div>
-      <div class="s12 l8 about-content">
+      <div class="xs12 l8 about-content">
         <!-- eslint-disable vue/no-v-html -->
         <p class="about-text" v-html="$t('home.about.text1', { year: age })" />
         <p class="about-text" v-html="$t('home.about.text2')" />

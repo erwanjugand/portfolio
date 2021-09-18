@@ -3,7 +3,7 @@
     <section>
       <h1 :background="$t('works.mainTitle')" v-text="$t('works.mainTitle')" />
       <div class="row works-filters-container">
-        <PCard class="s12">
+        <PCard class="xs12">
           <template #header>
             <h2>
               <PIcon name="filter" />

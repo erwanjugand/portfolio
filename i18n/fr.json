@@ -94,6 +94,17 @@
   "loader": {
     "label": "Chargement en cours..."
   },
+  "work": {
+    "description": {
+      "title": "Description"
+    },
+    "tags": {
+      "title": "Tags"
+    },
+    "screenshots": {
+      "title": "Captures d'écran"
+    }
+  },
   "works": {
     "allWorksButton": "Tous",
     "formTitle": "Filtres",
