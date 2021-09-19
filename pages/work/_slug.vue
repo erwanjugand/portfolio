@@ -19,6 +19,13 @@
           <div class="work-gallery-row">
             <img v-for="(image, index) of work.images" :key="image.id" :src="image.url" :alt="image.alt" :class="{'work-gallery-big-image': !index && hasOddImages}">
           </div>
+          <iframe
+            v-for="video of work.videos"
+            :key="video.id"
+            :src="'https://www.youtube.com/embed/' + video.link"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
         </PCard>
 
         <PCard class="work-informations xs12 l3">

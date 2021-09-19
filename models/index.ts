@@ -19,6 +19,10 @@ export interface Image extends Model {
   url: string
 }
 
+export interface Video extends Model {
+  link: string
+}
+
 export interface WorkFilter extends Model {
   name: string
   works: Array<{ id: number }>
@@ -30,6 +34,7 @@ export interface Work extends Model {
   slug: string
   title: string
   images: Image[]
+  videos: Video[]
   updated: Date
 }
 
