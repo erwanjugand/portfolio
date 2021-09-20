@@ -83,7 +83,7 @@ export default Vue.extend({
     align-items: center;
     width: 100%;
     padding: 1rem;
-    font-weight: 300;
+    font-weight: $fw-light;
     text-decoration: none;
     text-transform: uppercase;
     color: $white;

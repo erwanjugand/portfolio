@@ -99,7 +99,9 @@
       "title": "Description"
     },
     "informations": {
-      "title": "Informations"
+      "title": "Informations",
+      "dateTitle": "Date de réalisation",
+      "categoriesTitle": "Catégories"
     },
     "screenshots": {
       "title": "Captures d'écran"

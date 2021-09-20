@@ -135,7 +135,7 @@ export default Vue.extend({
   &-input, &-textarea {
     padding: .875em 1em;
     font-size: var(--fs-regular);
-    font-weight: 300;
+    font-weight: $fw-light;
     line-height: 1.25;
     color: var(--c-text);
     background-color: transparent;

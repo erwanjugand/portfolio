@@ -29,7 +29,7 @@ $white-35: mix($black, $white, 35%);
 $white-25: mix($black, $white, 25%);
 $white-15: mix($black, $white, 15%);
 $white-10: mix($black, $white, 10%);
-$white-2: mix($black, $white, 2%);
+$white-5: mix($black, $white, 5%);
 
 // Media Query
 $small-and-up: '(min-width: 384px)';
@@ -44,6 +44,8 @@ $extra-large: '(min-width: 1400px)';
 $touchscreen: (hover: none) and (pointer: coarse);
 
 // Font
+$fw-light: 300;
+$fw-regular: 400;
 $fw-bold: 500;
 
 // Border

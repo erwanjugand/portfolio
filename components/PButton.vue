@@ -43,7 +43,7 @@ export default Vue.extend({
   align-items: center;
   min-height: 3em;
   padding: .5em 1.5em;
-  font-weight: 500;
+  font-weight: $fw-bold;
   line-height: 1.25em;
   text-decoration: none;
   text-transform: uppercase;

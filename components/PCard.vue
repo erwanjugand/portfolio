@@ -45,7 +45,7 @@ export default Vue.extend({
       display: flex;
       align-items: center;
       font-size: 1.5em;
-      font-weight: 400;
+      font-weight: $fw-regular;
       transition: margin var(--transition);
 
       svg {
@@ -64,7 +64,7 @@ export default Vue.extend({
 
   &-content {
     padding: 0 24px 16px;
-    font-weight: 300;
+    font-weight: $fw-light;
     transition: padding var(--transition);
 
     @media #{$medium-and-up} {

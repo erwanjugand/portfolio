@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 300;
+  font-weight: $fw-light;
   src: local('Roboto Light'), local('Roboto-Light'),
     url('/fonts/roboto-v20-latin-300.woff2') format('woff2'),
     url('/fonts/roboto-v20-latin-300.woff') format('woff');
@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 400;
+  font-weight: $fw-regular;
   src: local('Roboto'), local('Roboto-Regular'),
     url('/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
     url('/fonts/roboto-v20-latin-regular.woff') format('woff');
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: 500;
+  font-weight: $fw-bold;
   src: local('Roboto Medium'), local('Roboto-Medium'),
     url('/fonts/roboto-v20-latin-500.woff2') format('woff2'),
     url('/fonts/roboto-v20-latin-500.woff') format('woff');

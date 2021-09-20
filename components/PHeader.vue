@@ -116,7 +116,7 @@ header {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  font-weight: 300;
+  font-weight: $fw-light;
   text-decoration: none;
   text-transform: uppercase;
   color: $white;
