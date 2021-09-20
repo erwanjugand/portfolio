@@ -13,12 +13,12 @@
           <div class="works-filters">
             <ul>
               <li>
-                <PButton :outlined="!!activeFilterId" @click="changeFilter(null)">
+                <PButton :outlined="!!activeFilterId" :to="localePath('works')">
                   {{ $t('works.allWorksButton') }}
                 </PButton>
               </li>
               <li v-for="filter of workFilters" :key="filter.id">
-                <PButton :outlined="filter.id !== activeFilterId" @click="changeFilter(filter.id)">
+                <PButton :outlined="filter.id !== activeFilterId" :to="localePath({ name: 'works', query: { filterId: filter.id } })">
                   {{ filter.name }}
                 </PButton>
               </li>
@@ -76,13 +76,6 @@ export default Vue.extend({
 
     activeWorks (): Work[] {
       return this.works.filter(w => !this.activeFilter || this.activeFilter.works.some(fw => fw.id === w.id))
-    }
-  },
-  methods: {
-    changeFilter (filterId: number | null) {
-      if ((this.$route.query.filterId ? +this.$route.query.filterId : null) !== filterId) {
-        this.$router.replace({ path: this.$route.path, query: { filterId: filterId?.toString() } })
-      }
     }
   },
 
