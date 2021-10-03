@@ -1,5 +1,4 @@
 import type { Locale } from 'date-fns'
-import type { TranslateResult } from 'vue-i18n'
 
 // Global
 
@@ -25,8 +24,7 @@ export interface Video extends Model {
 }
 
 export interface WorkFilter extends Model {
-  identifier: string
-  name: TranslateResult
+  name: string
   works: Array<{ id: number }>
 }
 export interface Work extends Model {
