@@ -30,6 +30,7 @@ export const actions = actionTree(
         try {
           const workFilters: WorkFilter[] = await this.$axios.$get(`${this.app.$config.apiUrl}/work_filters`)
           for (const workFilter of workFilters) {
+            workFilter.name = this.$i18n.t('works.filters.' + workFilter.identifier)
             commit('setWorkFilter', workFilter)
           }
           commit('setFetchedStatus', true)
