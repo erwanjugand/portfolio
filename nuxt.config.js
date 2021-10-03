@@ -50,7 +50,7 @@ export default {
   ],
   // Nuxt.js modules
   modules: [
-    'nuxt-i18n',
+    '@nuxtjs/i18n',
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/svg',

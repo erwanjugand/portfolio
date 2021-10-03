@@ -30,7 +30,7 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@nuxtjs/pwa",
-      "nuxt-i18n",
+      "@nuxtjs/i18n",
       "@nuxtjs/date-fns",
       "@nuxtjs/color-mode"
     ]

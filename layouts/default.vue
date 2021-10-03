@@ -20,7 +20,11 @@ export default Vue.extend({
       titleTemplate: (titleChunk) => {
         return this.$config.siteTitle + (titleChunk && ` - ${titleChunk}`)
       },
-      ...this.$nuxtI18nSeo()
+      ...this.$nuxtI18nHead(
+        {
+          addSeoAttributes: true
+        }
+      )
     }
   }
 })

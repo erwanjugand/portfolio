@@ -20,12 +20,12 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/i18n": "^7.0.3",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "directivue": "^0.1.5",
     "eslint": "^7.17.0",
     "nuxt": "^2.14.12",
-    "nuxt-i18n": "6.21.1",
     "nuxt-typed-vuex": "^0.1.22",
     "sass-loader": "^10.1.1",
     "ua-parser-js": "^0.7.23",
