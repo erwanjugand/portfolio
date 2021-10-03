@@ -109,6 +109,13 @@
   },
   "works": {
     "allWorksButton": "Tous",
+    "filters": {
+      "pao": "PAO",
+      "video": "Vidéo",
+      "webdesign": "Web Design",
+      "webIntegration": "Intégration Web",
+      "wordpress": "Wordpress"
+    },
     "formTitle": "Filtres",
     "mainTitle": "Mes travaux",
     "metaTitle": "Mes travaux"

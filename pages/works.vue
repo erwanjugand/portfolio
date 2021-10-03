@@ -19,7 +19,7 @@
               </li>
               <li v-for="filter of workFilters" :key="filter.id">
                 <PButton :outlined="filter.id !== activeFilterId" :to="localePath({ name: 'works', query: { filterId: filter.id } })">
-                  {{ filter.name }}
+                  {{ $t(`works.filters.${filter.identifier}`) }}
                 </PButton>
               </li>
             </ul>

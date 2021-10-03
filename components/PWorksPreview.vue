@@ -8,7 +8,7 @@
         </template>
         <img class="work-preview-image" src="/images/favicon-pwa.png" alt="">
         <ul v-if="filters.length" class="work-preview-tags">
-          <li v-for="filter of filters" :key="filter.id" class="work-preview-tag" v-text="filter.name" />
+          <li v-for="filter of filters" :key="filter.id" class="work-preview-tag" v-text="$t(`works.filters.${filter.identifier}`)" />
         </ul>
       </PCard>
     </nuxt-link>

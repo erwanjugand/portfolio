@@ -48,7 +48,7 @@
               <ul>
                 <li v-for="filter of filters" :key="filter.id">
                   <nuxt-link :to="localePath({ name: 'works', query: { filterId: filter.id } })">
-                    {{ filter.name }}
+                    {{ $t(`works.filters.${filter.identifier}`) }}
                   </nuxt-link>
                 </li>
               </ul>

@@ -24,7 +24,7 @@ export interface Video extends Model {
 }
 
 export interface WorkFilter extends Model {
-  name: string
+  identifier: string
   works: Array<{ id: number }>
 }
 export interface Work extends Model {
