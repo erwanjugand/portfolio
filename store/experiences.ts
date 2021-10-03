@@ -32,7 +32,7 @@ export const actions = actionTree(
     async fetchAll ({ state, commit }) {
       if (!state.fetched) {
         try {
-          const experiences: Experience[] = await this.$axios.$get(`${this.app.$config.apiUrl}/experiences`)
+          const experiences = await this.$axios.$get<Experience[]>(`${this.app.$config.apiUrl}/experiences`)
           experiences.sort((a, b) => compareDesc(new Date(a.dateRealization), new Date(b.dateRealization)))
           for (const experience of experiences) {
             commit('setExperience', experience)

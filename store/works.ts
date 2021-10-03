@@ -32,7 +32,7 @@ export const actions = actionTree(
     async fetchAll ({ commit, state }) {
       if (!state.fetched) {
         try {
-          const works: Work[] = await this.$axios.$get(`${this.app.$config.apiUrl}/works`)
+          const works = await this.$axios.$get<Work[]>(`${this.app.$config.apiUrl}/works`)
           for (const work of works) {
             commit('setWork', work)
           }
@@ -48,7 +48,7 @@ export const actions = actionTree(
     async fetch ({ state, commit }, id: number) {
       if (!state.items.some(w => w.id === id)) {
         try {
-          const work: Work = await this.$axios.$get(`${this.app.$config.apiUrl}/works/${id}`)
+          const work = await this.$axios.$get<Work>(`${this.app.$config.apiUrl}/works/${id}`)
           commit('setWork', work)
         } catch (e) {
           // eslint-disable-next-line no-console

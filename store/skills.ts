@@ -28,7 +28,7 @@ export const actions = actionTree(
     async fetchAll ({ state, commit }) {
       if (!state.fetched) {
         try {
-          const skills: Skill[] = await this.$axios.$get(`${this.app.$config.apiUrl}/skills`)
+          const skills = await this.$axios.$get<Skill[]>(`${this.app.$config.apiUrl}/skills`)
           for (const skill of skills) {
             commit('setSkill', skill)
           }

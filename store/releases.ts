@@ -30,7 +30,7 @@ export const actions = actionTree(
     async fetchAll ({ state, commit }) {
       if (!state.fetched) {
         try {
-          const releases: Release[] = await this.$axios.$get(`${this.app.$config.apiUrl}/versions`)
+          const releases = await this.$axios.$get<Release[]>(`${this.app.$config.apiUrl}/versions`)
           for (const release of releases) {
             commit('setRelease', release)
           }
