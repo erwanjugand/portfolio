@@ -1,5 +1,5 @@
 import { actionTree, mutationTree } from 'nuxt-typed-vuex'
-import { compareDesc, getYear } from 'date-fns'
+import { compareDesc } from '~/utils/date'
 import { Experience } from '~/models'
 
 export const state = () => ({
@@ -12,7 +12,7 @@ export const mutations = mutationTree(state, {
     const index = state.items.findIndex(wf => wf.id === experience.id)
 
     experience.dateRealization = new Date(experience.dateRealization)
-    experience.year = getYear(new Date(experience.dateRealization))
+    experience.year = new Date(experience.dateRealization).getFullYear()
 
     if (index < 0) {
       state.items.push(experience)

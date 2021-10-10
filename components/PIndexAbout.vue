@@ -21,11 +21,12 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { differenceInYears } from '~/utils/date'
 
 export default Vue.extend({
   computed: {
-    age () {
-      return this.$dateFns.differenceInYears(new Date(), new Date(1997, 7, 17))
+    age (): number {
+      return differenceInYears(new Date(), new Date(1997, 7, 17))
     }
   }
 })

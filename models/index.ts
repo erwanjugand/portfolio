@@ -1,15 +1,7 @@
-import type { Locale } from 'date-fns'
-
 // Global
 
 export interface Model {
   id: number
-}
-
-// DateFns
-
-export interface LocaleDate {
-  [type: string]: Locale
 }
 
 // Works

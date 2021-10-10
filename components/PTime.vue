@@ -1,13 +1,10 @@
 <template>
-  <time :datetime="$dateFns.formatISO(date)" v-text="$dateFns.format(date, format, { locale: currentLocale })" />
+  <time :datetime="datetime" v-text="$d(date, 'long')" />
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 import type { PropOptions } from 'vue'
-import type { Locale } from 'date-fns'
-import { fr, enGB } from 'date-fns/locale'
-import { LocaleDate } from '~/models'
 
 export default Vue.extend({
   props: {
@@ -17,14 +14,13 @@ export default Vue.extend({
     } as PropOptions<Date>,
     format: {
       type: String,
-      default: 'PPP'
+      default: 'long'
     }
   },
 
   computed: {
-    currentLocale (): Locale {
-      const locales: LocaleDate = { fr, en: enGB }
-      return locales[this.$i18n.locale]
+    datetime (): string {
+      return this.date.toISOString()
     }
   }
 })

@@ -36,11 +36,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Release } from 'models'
-import type { Locale } from 'date-fns'
-import { fr, enGB } from 'date-fns/locale'
 import type { MetaInfo } from 'vue-meta'
-
-const locale: {[key: string]: Locale} = { fr, en: enGB }
 
 export default Vue.extend({
   async asyncData ({ app: { $accessor } }) {
@@ -73,10 +69,6 @@ export default Vue.extend({
   },
 
   computed: {
-    currentLang (): Locale {
-      return locale[this.$i18n.locale]
-    },
-
     releasesFiltered (): Release[] {
       return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }

@@ -45,7 +45,6 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/date-fns',
     'nuxt-typed-vuex'
   ],
   // Nuxt.js modules
@@ -74,6 +73,22 @@ export default {
       messages: {
         en,
         fr
+      },
+      dateTimeFormats: {
+        fr: {
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          }
+        },
+        en: {
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          }
+        }
       }
     }
   },
@@ -130,10 +145,6 @@ export default {
       source: 'static/images/favicon-pwa.png',
       sizes: [64, 120, 144, 152, 192, 384, 512, 1024]
     }
-  },
-  dateFns: {
-    locales: ['en-US', 'fr'],
-    defaultLocale: 'fr'
   },
   googleAnalytics: {
     id: 'UA-89170994-1'
