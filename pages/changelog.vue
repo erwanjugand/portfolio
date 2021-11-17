@@ -104,7 +104,7 @@ export default Vue.extend({
     padding: 8px 16px;
     font-size: 14px;
     line-height: 1.2;
-    color: $white;
+    color: $grey-0;
     border-radius: $br-regular;
     transition: opacity var(--transition);
 

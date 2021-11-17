@@ -18,7 +18,7 @@
   --fs-small: .75rem;
 
   // Envelope
-  --c-enveloppe-shadow: #{rgba($black, .3)};
+  --c-enveloppe-shadow: #{rgba($grey-100, .3)};
 
   // Transition
   --transition: .3s cubic-bezier(.4, 0, .2, 1);
@@ -26,28 +26,28 @@
 
 .light-mode {
   // Text
-  --c-text: #{$black-100};
-  --c-text-secondary-1: #{$black-80};
-  --c-text-secondary-2: #{$black-65};
-  --c-text-secondary-3: #{$black-50};
-  --c-text-secondary-4: #{$black-35};
+  --c-text: #{$grey-100};
+  --c-text-secondary-1: #{$grey-20};
+  --c-text-secondary-2: #{$grey-35};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-65};
 
   // Background
-  --c-background-bg: #{$white-5};
-  --c-background-1: #{$white-100};
-  --c-background-2: #{$white-100};
-  --c-background-3: #{$white-100};
-  --c-secondary-hover: #{mix($secondary, $white, 90%)};
+  --c-background-bg: #{$grey-5};
+  --c-background-1: #{$grey-0};
+  --c-background-2: #{$grey-0};
+  --c-background-3: #{$grey-0};
+  --c-secondary-hover: #{mix($secondary, $grey-0, 90%)};
 
   // Scroll
-  --c-scroll-background: #{$white-25};
-  --c-scroll-hover: #{$white-35};
-  --c-scroll-active: #{$white-50};
+  --c-scroll-background: #{$grey-25};
+  --c-scroll-hover: #{$grey-35};
+  --c-scroll-active: #{$grey-50};
 
   // Envelope
-  --c-enveloppe-background-1: #{$white-10};
-  --c-enveloppe-background-2: #{$white-25};
-  --c-enveloppe-background-3: #{$white-35};
+  --c-enveloppe-background-1: #{$grey-10};
+  --c-enveloppe-background-2: #{$grey-25};
+  --c-enveloppe-background-3: #{$grey-35};
 
   // Border
   --c-border: transparent;
@@ -55,31 +55,31 @@
 
 .dark-mode {
   // Text
-  --c-text: #{$white};
-  --c-text-secondary-1: #{$white-80};
-  --c-text-secondary-2: #{$white-65};
-  --c-text-secondary-3: #{$white-50};
-  --c-text-secondary-4: #{$white-35};
+  --c-text: #{$grey-0};
+  --c-text-secondary-1: #{$grey-80};
+  --c-text-secondary-2: #{$grey-65};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-35};
 
   // Background
-  --c-background-bg: #{$black-93};
-  --c-background-1: #{$black-90};
-  --c-background-2: #{$black-87};
-  --c-background-3: #{$black-84};
-  --c-secondary-hover: #{mix($secondary, $black, 90%)};
+  --c-background-bg: #{$grey-93};
+  --c-background-1: #{$grey-90};
+  --c-background-2: #{$grey-87};
+  --c-background-3: #{$grey-84};
+  --c-secondary-hover: #{mix($secondary, $grey-100, 90%)};
 
   // Scroll
-  --c-scroll-background: #{$black-25};
-  --c-scroll-hover: #{$black-35};
-  --c-scroll-active: #{$black-50};
+  --c-scroll-background: #{$grey-75};
+  --c-scroll-hover: #{$grey-65};
+  --c-scroll-active: #{$grey-50};
 
   // Envelope
-  --c-enveloppe-background-1: #{$black-90};
-  --c-enveloppe-background-2: #{$black-87};
-  --c-enveloppe-background-3: #{$black-87};
+  --c-enveloppe-background-1: #{$grey-90};
+  --c-enveloppe-background-2: #{$grey-87};
+  --c-enveloppe-background-3: #{$grey-87};
 
   // Border
-  --c-border: #{rgba($white, .05)};
+  --c-border: #{rgba($grey-0, .05)};
 }
 
 .hacked-mode {
@@ -87,26 +87,26 @@
   --c-primary: #{$secondary};
   --c-secondary: #{$primary};
 
-  --c-text: #{$white};
-  --c-text-secondary-1: #{$white-80};
-  --c-text-secondary-2: #{$white-65};
-  --c-text-secondary-3: #{$white-50};
-  --c-text-secondary-4: #{$white-35};
+  --c-text: #{$grey-0};
+  --c-text-secondary-1: #{$grey-80};
+  --c-text-secondary-2: #{$grey-65};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-35};
 
   // Background
-  --c-background-bg: #{$black-93};
-  --c-background-1: #{$black-90};
-  --c-background-2: #{$black-87};
-  --c-background-3: #{$black-84};
-  --c-secondary-hover: #{mix($primary, $black, 90%)};
+  --c-background-bg: #{$grey-93};
+  --c-background-1: #{$grey-90};
+  --c-background-2: #{$grey-87};
+  --c-background-3: #{$grey-84};
+  --c-secondary-hover: #{mix($primary, $grey-100, 90%)};
 
   // Scroll
-  --c-scroll-background: #{$black-25};
-  --c-scroll-hover: #{$black-35};
-  --c-scroll-active: #{$black-50};
+  --c-scroll-background: #{$grey-75};
+  --c-scroll-hover: #{$grey-65};
+  --c-scroll-active: #{$grey-50};
 
   // Border
-  --c-border: #{rgba($white, .05)};
+  --c-border: #{rgba($grey-0, .05)};
 }
 
 // Accessibility : User prefers to delete all animations
@@ -165,7 +165,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba($white, .1);
+    background-color: rgba($grey-0, .1);
     transition: var(--transition);
   }
 
@@ -194,7 +194,7 @@ main {
   justify-content: space-between;
   padding-top: 60px;
   background-color: var(--c-background-bg);
-  box-shadow: 0 5px 5px 0 rgba($black, .5);
+  box-shadow: 0 5px 5px 0 rgba($grey-100, .5);
   overflow: hidden auto;
   overflow: hidden overlay;
 }
@@ -268,17 +268,17 @@ img {
 
 .elevation-1 {
   background-color: var(--c-background-1);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($black, .2), 0 1px 1px 0 rgba($black, .14), 0 1px 3px 0 rgba($black, .12);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($grey-100, .2), 0 1px 1px 0 rgba($grey-100, .14), 0 1px 3px 0 rgba($grey-100, .12);
 }
 
 .elevation-2 {
   background-color: var(--c-background-2);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 1px -2px rgba($black, .2), 0 2px 2px 0 rgba($black, .14), 0 1px 5px 0 rgba($black, .12);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 1px -2px rgba($grey-100, .2), 0 2px 2px 0 rgba($grey-100, .14), 0 1px 5px 0 rgba($grey-100, .12);
 }
 
 .elevation-3 {
   background-color: var(--c-background-3);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 3px -2px rgba($black, .2), 0 3px 4px 0 rgba($black, .14), 0 1px 8px 0 rgba($black, .12);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 3px 3px -2px rgba($grey-100, .2), 0 3px 4px 0 rgba($grey-100, .14), 0 1px 8px 0 rgba($grey-100, .12);
 }
 
 .message-success, .message-fail {

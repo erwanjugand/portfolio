@@ -63,8 +63,8 @@ export default Vue.extend({
 .footer {
   z-index: 1;
   position: relative;
-  color: $white;
-  background-color: $black-87;
+  color: $grey-0;
+  background-color: $grey-87;
 
   &-container {
     position: relative;

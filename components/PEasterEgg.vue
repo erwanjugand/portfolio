@@ -132,7 +132,7 @@ export default Vue.extend({
   width: 100%;
   height: 100%;
   color: var(--c-secondary);
-  background: $black-100;
+  background: $grey-100;
 
   &-animation {
     display: flex;
@@ -157,7 +157,7 @@ export default Vue.extend({
   &-progress {
     display: flex;
     height: 24px;
-    border: 1px solid $black-90;
+    border: 1px solid $grey-90;
     border-radius: $br-small;
     overflow: hidden;
 

@@ -6,30 +6,27 @@ $secondary: #A23FFD;
 $red: #AB0000;
 $green: #4CAF50;
 
-$black-100: $black;
-$black-93: mix($white, $black, 93%);
-$black-90: mix($white, $black, 90%);
-$black-87: mix($white, $black, 87%);
-$black-84: mix($white, $black, 84%);
-$black-80: mix($white, $black, 80%);
-$black-65: mix($white, $black, 65%);
-$black-50: mix($white, $black, 50%);
-$black-35: mix($white, $black, 35%);
-$black-25: mix($white, $black, 25%);
+$grey-100: $black;
+$grey-95: mix($black, $white, 95%);
+$grey-93: mix($black, $white, 93%);
+$grey-90: mix($black, $white, 90%);
+$grey-87: mix($black, $white, 87%);
+$grey-84: mix($black, $white, 84%);
 
-$white-100: $white;
-$white-80: mix($black, $white, 80%);
-$black-93: mix($black, $white, 93%);
-$black-90: mix($black, $white, 90%);
-$black-87: mix($black, $white, 87%);
-$black-84: mix($black, $white, 84%);
-$white-65: mix($black, $white, 65%);
-$white-50: mix($black, $white, 50%);
-$white-35: mix($black, $white, 35%);
-$white-25: mix($black, $white, 25%);
-$white-15: mix($black, $white, 15%);
-$white-10: mix($black, $white, 10%);
-$white-5: mix($black, $white, 5%);
+$grey-80: mix($black, $white, 80%);
+$grey-75: mix($black, $white, 75%);
+$grey-65: mix($black, $white, 65%);
+$grey-50: mix($black, $white, 50%);
+$grey-35: mix($black, $white, 35%);
+$grey-25: mix($black, $white, 25%);
+$grey-20: mix($black, $white, 20%);
+
+$grey-16: mix($black, $white, 16%);
+$grey-13: mix($black, $white, 13%);
+$grey-10: mix($black, $white, 10%);
+$grey-7: mix($black, $white, 7%);
+$grey-5: mix($black, $white, 5%);
+$grey-0: $white;
 
 // Media Query
 $small-and-up: '(min-width: 384px)';
@@ -56,5 +53,4 @@ $br-regular: 16px;
 $br-large: 32px;
 
 // Other
-
 $hexagon-height: 200px;

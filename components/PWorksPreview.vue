@@ -70,8 +70,8 @@ export default Vue.extend({
     display: flex;
     width: 100%;
     padding: 32px 24px 16px;
-    color: $white;
-    background: linear-gradient(transparent 0%, rgba($black, .5) 80%);
+    color: $grey-0;
+    background: linear-gradient(transparent 0%, rgba($grey-100, .5) 80%);
     transition: padding var(--transition);
 
     @media #{$medium-and-up} {

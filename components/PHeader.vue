@@ -104,7 +104,7 @@ header {
   transition: box-shadow var(--transition);
 
   &.elevation-2 {
-    background-color: $black-87;
+    background-color: $grey-87;
   }
 
   &.flat {
@@ -119,7 +119,7 @@ header {
   font-weight: $fw-light;
   text-decoration: none;
   text-transform: uppercase;
-  color: $white;
+  color: $grey-0;
   transition: font-size var(--transition);
 
   @media #{$small-and-down} {
@@ -148,12 +148,12 @@ header {
   display: flex;
   align-items: center;
   padding: 0 16px;
-  color: $white;
+  color: $grey-0;
 
   svg {
     width: 10px;
     margin-left: 8px;
-    fill: $white;
+    fill: $grey-0;
     transition: transform var(--transition);
   }
 
@@ -199,7 +199,7 @@ header {
     a {
       display: flex;
       padding: 8px;
-      color: $white;
+      color: $grey-0;
 
       &.nuxt-link-exact-active {
         background-color: var(--c-secondary);
@@ -223,7 +223,7 @@ header {
     display: flex;
     width: 32px;
     height: 3px;
-    background-color: $white;
+    background-color: $grey-0;
     border-radius: 2px;
     transition: margin var(--transition), transform var(--transition);
   }
