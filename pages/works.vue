@@ -38,8 +38,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Work, WorkFilter } from 'models'
 import type { MetaInfo } from 'vue-meta'
+import { Work, WorkFilter } from 'models'
 
 export default Vue.extend({
   async asyncData ({ app: { $accessor } }) {

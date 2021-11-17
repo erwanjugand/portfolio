@@ -1,4 +1,4 @@
-import { actionTree, mutationTree } from 'nuxt-typed-vuex'
+import { actionTree, mutationTree } from 'typed-vuex'
 import { compareDesc } from '~/utils/date'
 import { Experience } from '~/models'
 

@@ -35,8 +35,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Release } from 'models'
 import type { MetaInfo } from 'vue-meta'
+import { Release } from 'models'
 
 export default Vue.extend({
   async asyncData ({ app: { $accessor } }) {
