@@ -39,9 +39,11 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.3.0",
     "fibers": "^5.0.0",
+    "postcss": "^8.3.11",
+    "postcss-html": "^1.2.0",
     "sass": "^1.43.4",
     "sass-loader": "10",
-    "stylelint": "^13.13.1",
-    "stylelint-config-sass-guidelines": "^8.0.0"
+    "stylelint": "^14.1.0",
+    "stylelint-config-sass-guidelines": "^9.0.1"
   }
 }

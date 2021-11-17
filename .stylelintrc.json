@@ -1,4 +1,5 @@
 {
+  "customSyntax": "postcss-html",
   "extends": [
     "stylelint-config-sass-guidelines"
   ],
