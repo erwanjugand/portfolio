@@ -92,6 +92,8 @@ export default Vue.extend({
 .works {
   &-filters {
     display: flex;
+    margin: -4px;
+    padding: 4px;
     overflow: auto;
 
     &-container {

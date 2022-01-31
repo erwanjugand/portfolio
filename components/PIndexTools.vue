@@ -44,7 +44,7 @@ export default Vue.extend({
           name: 'atom'
         },
         {
-          title: 'Visual Studio Code',
+          title: 'VSCode',
           name: 'visualStudioCode'
         },
         {

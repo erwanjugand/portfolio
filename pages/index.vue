@@ -54,6 +54,7 @@ export default Vue.extend({
   h2 {
     margin-bottom: 2rem;
     font-size: 2em;
+    font-weight: 500;
     text-align: center;
   }
 }

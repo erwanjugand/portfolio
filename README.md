@@ -26,10 +26,10 @@ $ yarn generate
 
 Install : https://www.tecmint.com/convert-images-to-webp-format-in-linux/
 
-Quality 90 for x1  
-Quality 85 for x2  
-Quality 80 for x3  
+Quality 95 for x1  
+Quality 90 for x2  
+Quality 85 for x3  
 
 ``` bash
-cwebp -q 95 -resize 100 100 image.jpg -o image.webp --preset photo
+cwebp -q 95 -resize 100 100 image.jpg -o image.webp -preset photo
 ```

@@ -2,7 +2,7 @@
   <section class="container about">
     <h2 v-text="$t('home.about.title')" />
 
-    <div class="row">
+    <div class="row about-row">
       <div class="xs12 l4 about-profil-container">
         <img class="about-profil elevation-1" src="/images/profil/erwan-jugand-x1.webp" srcset="/images/profil/erwan-jugand-x1.webp 1x, /images/profil/erwan-jugand-x2.webp 2x, /images/profil/erwan-jugand-x3.webp 3x" alt="">
       </div>
@@ -34,23 +34,22 @@ export default Vue.extend({
 
 <style lang="scss">
 .about {
+  &-row {
+    row-gap: 32px;
+  }
+
   &-profil-container {
     display: flex;
     justify-content: center;
   }
 
   &-profil {
-    width: 240+12px;
+    width: 256+12px;
     max-width: 100%;
-    height: 240+12px;
+    height: 256+12px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;
     transition: width var(--transition), height var(--transition);
-
-    @media #{$medium-and-up} {
-      width: 320+12px;
-      height: 320+12px;
-    }
   }
 
   &-content {
