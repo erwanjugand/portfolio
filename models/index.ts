@@ -1,28 +1,30 @@
-// Global
+// Works
 
-export interface Model {
+export interface Id {
   id: number
 }
 
-// Works
-
-export interface Image extends Model {
+export interface Image {
+  id: number
   alt: string
   url: string
 }
 
-export interface Video extends Model {
+export interface Video {
+  id: number
   link: string
 }
 
-export interface WorkFilter extends Model {
+export interface WorkFilter {
+  id: number
   identifier: string
-  works: Array<{ id: number }>
+  works: Id[]
 }
-export interface Work extends Model {
+export interface Work {
+  id: number
   dateRealization: Date
   description: string
-  filters: Array<{ id: number }>
+  filters: Id[]
   slug: string
   title: string
   images: Image[]
@@ -32,14 +34,16 @@ export interface Work extends Model {
 
 // Skills
 
-export interface Skill extends Model {
+export interface Skill {
+  id: number
   level: number
   name: string
 }
 
 // Experience
 
-export interface Experience extends Model {
+export interface Experience {
+  id: number
   contract: string
   dateRealization: Date
   description: string
@@ -49,12 +53,14 @@ export interface Experience extends Model {
 
 // Releases
 
-export interface Tag extends Model {
+export interface Tag {
+  id: number
   color: string
   name: string
 }
 
-export interface Release extends Model {
+export interface Release {
+  id: number
   date: Date
   major: boolean
   name: string
