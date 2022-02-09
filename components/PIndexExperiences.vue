@@ -40,20 +40,20 @@ $diagonal: sqrt(3);
 .experience {
   &-container {
     position: relative;
-    max-width: min(100vw, 36em);
-    margin: .75em 1em 0;
+    max-width: min(100vw, 576px);
+    margin: 12px 16px 0;
     transition: var(--transition);
 
     @media #{$medium-and-up} {
-      margin-right: 9em + 1em;
-      transform: translateX(9em);
+      margin-right: 144+16px;
+      transform: translateX(144px);
     }
 
     &::before {
       content: '';
       position: absolute;
       top: 0;
-      left: calc(#{div(2rem * $diagonal, 2)} - #{div($bw-out, 2)});
+      left: calc(div(24px * $diagonal, 2) - div($bw-out, 2));
       width: $bw-out;
       height: 100%;
       background-image: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background-bg));
@@ -63,16 +63,16 @@ $diagonal: sqrt(3);
   .time {
     position: relative;
     display: flex;
-    width: 9em;
+    width: 240px;
     font-size: 1.25em;
 
     &::before {
       content: '';
       position: absolute;
-      top: -.225rem;
-      left: div((2rem * $diagonal) - 2rem , 2);
-      width: 2rem;
-      height: 2rem;
+      top: 0;
+      left: div((24px * $diagonal) - 24px , 2);
+      width: 24px;
+      height: 24px;
       background-color: var(--c-background-bg);
       border: $bw-out solid transparent;
       box-shadow: 0 0 0 $bw-out var(--c-primary), inset 0 0 0 $bw-in var(--c-primary);
@@ -83,21 +83,21 @@ $diagonal: sqrt(3);
     &-text {
       text-transform: uppercase;
       opacity: .5;
-      transform: translateX(2rem * $diagonal + 1rem);
+      transform: translateX(24px * $diagonal + 16px);
       transition: var(--transition);
 
       @media #{$medium-and-up} {
-        transform: translateX(calc(-100% - 1rem));
+        transform: translateX(calc(-100% - 16px));
       }
     }
   }
 
   &-content {
-    margin: 1rem 0 0 3rem;
+    margin: 16px 0 0 48px;
   }
 
   &-contract {
-    margin: 0 0 1rem 3rem;
+    margin: 0 0 16px 48px;
     font-size: .875em;
     color: var(--c-primary);
   }

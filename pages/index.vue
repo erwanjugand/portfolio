@@ -48,7 +48,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3em 0;
+    padding: 48px 0;
   }
 
   h2 {
