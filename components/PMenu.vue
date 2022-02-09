@@ -104,8 +104,6 @@ export default Vue.extend({
   }
 }
 
-// Animation
-
 .fade {
   &-enter-active, &-leave-active {
     transition: transform var(--transition), opacity var(--transition);

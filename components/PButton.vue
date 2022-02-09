@@ -77,13 +77,9 @@ export default Vue.extend({
     margin: 0 1em 0 -.25em;
   }
 
-  // Disabled
-
   &:disabled {
     opacity: .75;
   }
-
-  // Loading
 
   &-loading.button {
     color: transparent;

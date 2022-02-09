@@ -127,8 +127,6 @@ header {
   }
 }
 
-// Logo
-
 .logo {
   position: relative;
   margin-right: auto;
@@ -141,8 +139,6 @@ header {
     transition: margin var(--transition);
   }
 }
-
-// Switch Language
 
 .switch-language {
   display: flex;
@@ -211,8 +207,6 @@ header {
     transform: translateX(-50%) scale(0);
   }
 }
-
-// Burger
 
 .burger {
   &-icon {

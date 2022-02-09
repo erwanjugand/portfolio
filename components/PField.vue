@@ -130,8 +130,6 @@ export default Vue.extend({
   max-width: 100%;
   margin-bottom: 2em;
 
-  // Input / Textarea
-
   &-input, &-textarea {
     padding: .875em 1em;
     font-size: var(--fs-regular);
@@ -188,8 +186,6 @@ export default Vue.extend({
     }
   }
 
-  // Label
-
   .label {
     position: absolute;
     top: .875rem;
@@ -214,8 +210,6 @@ export default Vue.extend({
       transition: var(--transition);
     }
   }
-
-  // Message
 
   &-message-error {
     height: 1.25em;
