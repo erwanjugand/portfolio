@@ -39,19 +39,9 @@ import type { MetaInfo } from 'vue-meta'
 import { Release } from 'models'
 
 export default Vue.extend({
-  async asyncData ({ app: { $accessor } }) {
-    await $accessor.releases.fetchAll()
-    await $accessor.workFilters.fetchAll()
-
-    return {
-      releases: $accessor.releases.items
-    }
-  },
-
   data () {
     return {
-      filterTag: null as number | null,
-      releases: [] as Release[]
+      filterTag: null as number | null
     }
   },
 
@@ -70,6 +60,7 @@ export default Vue.extend({
 
   computed: {
     releasesFiltered (): Release[] {
+      return this.$state.releases.flatMap(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag) ? r : [])
       return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
   },

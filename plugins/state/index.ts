@@ -2,17 +2,20 @@ import { Context, Plugin } from '@nuxt/types'
 import Vue from 'vue'
 import skills from './skills'
 import tools from './tools'
-import { Skill, Tool } from '~/models'
+import experiences from './experiences'
+import { Experience, Skill, Tool } from '~/models'
 
 interface State {
-  skills: Skill[],
+  skills: Skill[]
   tools: Tool[]
+  experience: Experience[]
 }
 
 const statePlugin: Plugin = function (_ctx: Context, inject: Function) {
   const state = Vue.observable({
     skills,
-    tools
+    tools,
+    experiences
   })
 
   inject('state', state)

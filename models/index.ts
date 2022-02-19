@@ -15,6 +15,11 @@ export interface Video {
   link: string
 }
 
+export const enum workFilter {
+  PAO = 'pao',
+  DESIGN = 'design',
+  VIDEO = 'video'
+}
 export interface WorkFilter {
   id: number
   identifier: string
@@ -24,12 +29,11 @@ export interface Work {
   id: number
   dateRealization: Date
   description: string
-  filters: Id[]
+  filters: workFilter[]
   slug: string
   title: string
   images: Image[]
   videos: Video[]
-  updated: Date
 }
 
 // Skills
@@ -42,12 +46,18 @@ export interface Skill {
 
 // Experience
 
+export const enum ExperienceContract {
+  APPRENTICESHIP = 'apprenticeship',
+  CDI = 'cdi',
+  INTERNSHIP = 'internship'
+}
+
 export interface Experience {
   id: number
-  contract: string
+  contract: ExperienceContract
   dateRealization: Date
   description: string
-  name: string
+  title: string
   year: number
 }
 
@@ -64,6 +74,7 @@ export interface Release {
   date: Date
   major: boolean
   name: string
+  description: string
   tags: Tag[]
 }
 

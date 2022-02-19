@@ -20,6 +20,18 @@
     "browserNotSupported": "Navigateur non supporté"
   },
   "experiences": {
+    "contract": {
+      "apprenticeship": "Alternance",
+      "cdi": "CDI",
+      "internship": "Stage"
+    },
+    "title": {
+      "frontEndDevelopperSteeple": "Développeur Front-End chez Steeple",
+      "leadDevSteeple": "Lead Développeur Front-End chez Steeple",
+      "webIntegratorSteepleLPC": "Intégrateur Web chez Les Pingouins Connectés",
+      "webIntegratorSteepleVinci": "Intégrateur Web chez VINCI Energies",
+      "webIntegratorSteeple": "Intégrateur Web chez Steeple"
+    },
     "today": "Aujourd'hui"
   },
   "footer": {

@@ -4,7 +4,7 @@
     <PIndexAbout />
     <PIndexTools />
     <PIndexSkills />
-    <PIndexExperiences :experiences="experiences" />
+    <PIndexExperiences />
     <PIndexLastWorks :works="works" />
     <PIndexMoreInformation />
     <PIndexContact />
@@ -14,16 +14,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { Experience, Work, WorkFilter } from 'models'
+import { Work, WorkFilter } from 'models'
 
 export default Vue.extend({
   async asyncData ({ app: { $accessor } }) {
-    await $accessor.experiences.fetchAll()
     await $accessor.works.fetchAll()
     await $accessor.workFilters.fetchAll()
 
     return {
-      experiences: $accessor.experiences.items,
       works: $accessor.works.items,
       workFilters: $accessor.workFilters.items
     }
@@ -31,7 +29,6 @@ export default Vue.extend({
 
   data () {
     return {
-      experiences: [] as Experience[],
       works: [] as Work[],
       workFilters: [] as WorkFilter[]
     }

@@ -35,7 +35,8 @@ export default {
   ],
   // Plugins to load before mounting the App
   plugins: [
-    '~/plugins/directives.ts',
+    '@/plugins/state',
+    '@/plugins/directives',
     { src: '~/plugins/vue-masonry', ssr: false }
 
   ],
