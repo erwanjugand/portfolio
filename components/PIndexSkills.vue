@@ -3,10 +3,10 @@
     <h2 v-text="$t('home.skills.title')" />
     <div class="skills-container">
       <ul>
-        <PHexagon v-for="skill of skills" :key="`skill-${skill.id}`" tag="li" tabindex="0" class="skill">
+        <PHexagon v-for="skill of $state.skills" :key="skill.id" tag="li" tabindex="0" class="skill">
           <span class="skill-name" v-text="skill.name" />
           <div class="skill-score">
-            <PIcon v-for="n of 3" :key="`star-${n}`" :type="n > skill.level ? 'light' : 'solid'" name="star" />
+            <PIcon v-for="n of 3" :key="n" :type="n > skill.level ? 'light' : 'solid'" name="star" />
           </div>
         </PHexagon>
       </ul>
@@ -14,25 +14,10 @@
   </section>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import type { PropType } from 'vue'
-import { Skill } from 'models'
-
-export default Vue.extend({
-  props: {
-    skills: {
-      type: Array as PropType<Skill[]>
-    }
-  }
-})
-</script>
-
 <style lang="scss">
 @use 'sass:math' as *;
 
 $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
-
 $hexagon-space-to-remove: ceil(div($bw-out, sin(60deg)));
 
 @mixin show-content {

@@ -36,7 +36,7 @@ export interface Work {
 
 export interface Skill {
   id: number
-  level: number
+  level: 0 | 1 | 2 | 3
   name: string
 }
 
