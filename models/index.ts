@@ -91,6 +91,7 @@ export interface Link {
 // Tools
 
 export interface Tool {
+  id: number
   title: string
   name: string
 }
