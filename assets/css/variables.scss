@@ -1,32 +1,33 @@
+@use 'function' as *;
+
 // Colors
 $white: #FFF;
-$black: #000;
 $primary: #0077DB;
 $secondary: #A23FFD;
 $red: #AB0000;
 $green: #4CAF50;
 
-$grey-100: $black;
-$grey-95: mix($black, $white, 95%);
-$grey-93: mix($black, $white, 93%);
-$grey-90: mix($black, $white, 90%);
-$grey-87: mix($black, $white, 87%);
-$grey-84: mix($black, $white, 84%);
+$grey-100: grey-color($primary, 100%);
+$grey-95: grey-color($primary, 95%);
+$grey-93: grey-color($primary, 93%);
+$grey-90: grey-color($primary, 90%);
+$grey-87: grey-color($primary, 87%);
+$grey-84: grey-color($primary, 84%);
 
-$grey-80: mix($black, $white, 80%);
-$grey-75: mix($black, $white, 75%);
-$grey-65: mix($black, $white, 65%);
-$grey-50: mix($black, $white, 50%);
-$grey-35: mix($black, $white, 35%);
-$grey-25: mix($black, $white, 25%);
-$grey-20: mix($black, $white, 20%);
+$grey-80: grey-color($primary, 80%);
+$grey-75: grey-color($primary, 75%);
+$grey-65: grey-color($primary, 65%);
+$grey-50: grey-color($primary, 50%);
+$grey-35: grey-color($primary, 35%);
+$grey-25: grey-color($primary, 25%);
+$grey-20: grey-color($primary, 20%);
 
-$grey-16: mix($black, $white, 16%);
-$grey-13: mix($black, $white, 13%);
-$grey-10: mix($black, $white, 10%);
-$grey-7: mix($black, $white, 7%);
-$grey-5: mix($black, $white, 5%);
-$grey-0: $white;
+$grey-16: grey-color($primary, 16%);
+$grey-13: grey-color($primary, 13%);
+$grey-10: grey-color($primary, 10%);
+$grey-7: grey-color($primary, 7%);
+$grey-5: grey-color($primary, 5%);
+$grey-0: grey-color($primary, 0%);
 
 // Media Query
 $small-and-up: '(min-width: 384px)';
