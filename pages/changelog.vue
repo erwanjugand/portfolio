@@ -19,12 +19,12 @@
                   :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
                   :style="{ backgroundColor: tag.color }"
                   @click.prevent="filter(tag.id)"
-                  v-text="tag.name"
+                  v-text="$t(`releaseTags.${tag.name}`)"
                 />
               </li>
             </ul>
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="release-content" v-html="release.description" />
+            <div class="release-content" v-html="$t(`releases.${release.name}`)" />
           </PCard>
         </li>
       </PTransitionFadeHeight>
@@ -61,7 +61,6 @@ export default Vue.extend({
   computed: {
     releasesFiltered (): Release[] {
       return this.$state.releases.flatMap(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag) ? r : [])
-      return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
     }
   },
 

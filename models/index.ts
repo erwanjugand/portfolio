@@ -29,7 +29,7 @@ export interface Work {
   id: number
   dateRealization: Date
   description: string
-  filters: workFilter[]
+  filters: Id[]
   slug: string
   title: string
   images: Image[]
@@ -74,7 +74,6 @@ export interface Release {
   date: Date
   major: boolean
   name: string
-  description: string
   tags: Tag[]
 }
 

@@ -3,19 +3,22 @@ import Vue from 'vue'
 import skills from './skills'
 import tools from './tools'
 import experiences from './experiences'
-import { Experience, Skill, Tool } from '~/models'
+import releases from './releases'
+import { Experience, Release, Skill, Tool } from '~/models'
 
 interface State {
   skills: Skill[]
   tools: Tool[]
   experience: Experience[]
+  releases: Release[]
 }
 
 const statePlugin: Plugin = function (_ctx: Context, inject: Function) {
   const state = Vue.observable({
     skills,
     tools,
-    experiences
+    experiences,
+    releases
   })
 
   inject('state', state)
