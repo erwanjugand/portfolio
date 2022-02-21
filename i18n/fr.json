@@ -1,8 +1,4 @@
 {
-  "changeLog": {
-    "mainTitle": "Journal de modifications",
-    "metaTitle": "Journal de modifications"
-  },
   "contact": {
     "email": "Email",
     "mainTitle": "Contact",
@@ -16,16 +12,13 @@
       "error": "Une erreur est survenue, le message n'a pas pu être transmis"
     }
   },
-  "errors": {
-    "browserNotSupported": "Navigateur non supporté"
-  },
   "experiences": {
     "contract": {
       "apprenticeship": "Alternance",
       "cdi": "CDI",
       "internship": "Stage"
     },
-    "title": {
+    "items": {
       "frontEndDevelopperSteeple": "Développeur Front-End chez Steeple",
       "leadDevSteeple": "Lead Développeur Front-End chez Steeple",
       "webIntegratorSteepleLPC": "Intégrateur Web chez Les Pingouins Connectés",
@@ -48,7 +41,8 @@
     "lang": {
       "fr": "Français",
       "en": "Anglais"
-    }
+    },
+    "loader": "Chargement en cours..."
   },
   "header": {
     "backToHome": "Revenir sur l'accueil",
@@ -75,7 +69,7 @@
     },
     "contact": {
       "action": "Me contacter",
-      "description": "Vous souhaitez me contacter ? Signaler un bug ? Dire des bétises ?",
+      "description": "Vous souhaitez me contacter ? Signaler un bug ? Dire des bêtises ?",
       "title": "Contact"
     },
     "experiences": {
@@ -98,55 +92,56 @@
     "mainTitle": "Mentions légales",
     "metaTitle": "Mentions légales"
   },
-  "loader": {
-    "label": "Chargement en cours..."
-  },
   "releases": {
-    "1": {
-      "0": {
-        "0": "Création et mise en ligne du portfolio :<ul><li>Création du profolio en html/ css et js</li><li>Utilisation de LESS</li><li>Migration vers OVH</li></ul>",
-        "2": "<ul><li>Correction de bugs</li><li>Ajout Google Recaptcha 2</li></ul>",
-        "1": "<ul><li>Ajout LazyLoad</li></ul>",
-        "3": "<ul><li>Optimisation du référencement</li><li>Optimisation des images</li><li>Redirection automatique vers le https</li></ul>"
-      },
+    "mainTitle": "Journal de modifications",
+    "metaTitle": "Journal de modifications",
+    "items": {
       "1": {
-        "0": "Dynamisation du site :<ul><li>Utilisation de PHP 5.6 & MySQL</li><li>Création d'une administration</li></ul>",
-        "1": "<ul><li>Correction de bugs</li></ul>",
-        "2": "<ul><li>Ajout d'un Easter Egg</li><li>Correction de bugs</li></ul>"
+        "0": {
+          "0": "Création et mise en ligne du portfolio :<ul><li>Création du profolio en html/ css et js</li><li>Utilisation de LESS</li><li>Migration vers OVH</li></ul>",
+          "2": "<ul><li>Correction de bugs</li><li>Ajout Google Recaptcha 2</li></ul>",
+          "1": "<ul><li>Ajout LazyLoad</li></ul>",
+          "3": "<ul><li>Optimisation du référencement</li><li>Optimisation des images</li><li>Redirection automatique vers le https</li></ul>"
+        },
+        "1": {
+          "0": "Dynamisation du site :<ul><li>Utilisation de PHP 5.6 & MySQL</li><li>Création d'une administration</li></ul>",
+          "1": "<ul><li>Correction de bugs</li></ul>",
+          "2": "<ul><li>Ajout d'un Easter Egg</li><li>Correction de bugs</li></ul>"
+        },
+        "2": {
+          "0": "Refonte de l'administration :<ul><li>Administration plus sécurisée</li><li>Nouveau design</li><li>Meilleur système d'upload pour les images</li></ul",
+          "1": "<ul><li>Correction de bugs</li><li>Inscription aux Services Workers</li></ul>",
+          "2": "<ul><li>Mise à jour des dépendances</li><li>Passage à PHP 7.1</li></ul>",
+          "3": "<ul><li>Correction de bugs</li><li>Optimisation du code</li></ul>"
+        }
       },
       "2": {
-        "0": "Refonte de l'administration :<ul><li>Administration plus sécurisée</li><li>Nouveau design</li><li>Meilleur système d'upload pour les images</li></ul",
-        "1": "<ul><li>Correction de bugs</li><li>Inscription aux Services Workers</li></ul>",
-        "2": "<ul><li>Mise à jour des dépendances</li><li>Passage à PHP 7.1</li></ul>",
-        "3": "<ul><li>Correction de bugs</li><li>Optimisation du code</li></ul>"
-      }
-    },
-    "2": {
-      "0": {
-        "0": "Refonte totale du site :<ul><li>Refonte avec Symfony 4.1</li><li><a href='https://caniuse.com/#feat=css-variables' title='Liste des versions des navigateurs compatibles' target='_blank' rel='noopener'>Fin du support</a> d'Internet Explorer et des anciennes versions des navigateurs</li><li>Optimisation du code</li><li>Suppression de plusieurs dépendances javascript et css</li><li>Passage de LESS au SASS</li><li>Passage à PHP 7.2</li><li>Ajout du format .webp pour les images</li><li>Correction d'un bug dans le logo</li><li>Mise en place d'un thème sombre</li><li>Utilisation des cookies pour une meilleure expérience</li><li>Désactivation des Services Workers</li><li>Abandon de OVH et migration vers online.net (Merci à <a href='https://www.linkedin.com/in/rouxcedric/' title='Profil Linkedin' target='_blank' rel='noopener'>Cédric Roux</a>)</li></ul>",
-        "1": "<ul><li>Mise à jour vers Symfony 4.2</li><li>Création d'une page <em>Contact</em></li><li>Passage vers reCAPTCHA v3</li></ul>"
+        "0": {
+          "0": "Refonte totale du site :<ul><li>Refonte avec Symfony 4.1</li><li><a href='https://caniuse.com/#feat=css-variables' title='Liste des versions des navigateurs compatibles' target='_blank' rel='noopener'>Fin du support</a> d'Internet Explorer et des anciennes versions des navigateurs</li><li>Optimisation du code</li><li>Suppression de plusieurs dépendances javascript et css</li><li>Passage de LESS au SASS</li><li>Passage à PHP 7.2</li><li>Ajout du format .webp pour les images</li><li>Correction d'un bug dans le logo</li><li>Mise en place d'un thème sombre</li><li>Utilisation des cookies pour une meilleure expérience</li><li>Désactivation des Services Workers</li><li>Abandon de OVH et migration vers online.net (Merci à <a href='https://www.linkedin.com/in/rouxcedric/' title='Profil Linkedin' target='_blank' rel='noopener'>Cédric Roux</a>)</li></ul>",
+          "1": "<ul><li>Mise à jour vers Symfony 4.2</li><li>Création d'une page <em>Contact</em></li><li>Passage vers reCAPTCHA v3</li></ul>"
+        },
+        "1": {
+          "0": "Refonte du javascript :<ul><li>Suppression de Jquery</li><li>Meilleures performances</li><li>Mise à jour des dépendances</li></ul>Autre :<ul><li>Meilleur support de Firefox</li><li>Correction de bugs</li></ul>",
+          "1": "<ul><li>Mise à jour et amélioration de la sécurité de l'administration</li><li>Passage à PHP 7.3</li><li>Correction de bugs</li></ul>",
+          "2": "<ul><li>Création et génération automatique du sitemap du site</li></ul>",
+          "3": "<ul><li>Migration vers HTTP/2</li><li>Amélioration de la sécurité du site (HSTS, XSS, ...)</li><li>Amélioration du mode sombre</li></ul>",
+          "4": "<ul><li>Mise à jour des dépendances</li></ul>",
+          "5": "<ul><li>Mise à jour vers Symfony 4.4</li><li>Passage à PHP 7.4</li><li>Mise à jour des dépendances</li><li>Refactor du code javascript</li></ul>",
+          "6": "<ul><li>Ajout d'un chargement paresseux pour les images (<a href='https://caniuse.com/#search=loading' target='_blank' rel='noopener'>Support</a>)</li><li>Mise à jour des dépendances</li></ul>"
+        }
       },
-      "1": {
-        "0": "Refonte du javascript :<ul><li>Suppression de Jquery</li><li>Meilleures performances</li><li>Mise à jour des dépendances</li></ul>Autre :<ul><li>Meilleur support de Firefox</li><li>Correction de bugs</li></ul>",
-        "1": "<ul><li>Mise à jour et amélioration de la sécurité de l'administration</li><li>Passage à PHP 7.3</li><li>Correction de bugs</li></ul>",
-        "2": "<ul><li>Création et génération automatique du sitemap du site</li></ul>",
-        "3": "<ul><li>Migration vers HTTP/2</li><li>Amélioration de la sécurité du site (HSTS, XSS, ...)</li><li>Amélioration du mode sombre</li></ul>",
-        "4": "<ul><li>Mise à jour des dépendances</li></ul>",
-        "5": "<ul><li>Mise à jour vers Symfony 4.4</li><li>Passage à PHP 7.4</li><li>Mise à jour des dépendances</li><li>Refactor du code javascript</li></ul>",
-        "6": "<ul><li>Ajout d'un chargement paresseux pour les images (<a href='https://caniuse.com/#search=loading' target='_blank' rel='noopener'>Support</a>)</li><li>Mise à jour des dépendances</li></ul>"
+      "3": {
+        "0": {
+          "0": ""
+        }
       }
     },
-    "3": {
-      "0": {
-        "0": ""
-      }
+    "tags": {
+      "dependencies": "Dépendances",
+      "feature": "Fonctionnalité",
+      "fix": "Correctif",
+      "overhaul": "Refonte",
+      "security": "Sécurité"
     }
-  },
-  "releaseTags": {
-    "dependencies": "Dépendances",
-    "feature": "Fonctionnalité",
-    "fix": "Correctif",
-    "overhaul": "Refonte",
-    "security": "Sécurité"
   }
 }

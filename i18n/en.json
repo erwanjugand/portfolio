@@ -1,20 +1,12 @@
 {
-  "changeLog": {
-    "mainTitle": "Changelog",
-    "metaTitle": "Changelog"
-  },
   "contact": {
     "email": "Email",
     "mainTitle": "Contact",
     "message": "Message",
     "metaTitle": "Contact",
     "send": "Send",
-    "title": null,
     "titleMessage": "Title",
-    "validation": {
-      "sent": null,
-      "error": null
-    }
+    "validation": {}
   },
   "errors": {
     "browserNotSupported": "Browser not supported"
@@ -42,5 +34,9 @@
     "menu": "Menu",
     "portfolioEvolution": "Portfolio evolution"
   },
-  "home": {}
+  "home": {},
+  "releases": {
+    "mainTitle": "Changelog",
+    "metaTitle": "Changelog"
+  }
 }

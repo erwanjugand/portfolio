@@ -10,7 +10,7 @@
         <time v-show="!index || $state.experiences[index - 1].year !== experience.year" class="time" :datetime="experience.dateRealization">
           <span class="time-text" v-text="!index ? $t('experiences.today') : experience.year" />
         </time>
-        <div class="experience-content" v-text="$t(`experiences.title.${experience.title}`)" />
+        <div class="experience-content" v-text="$t(`experiences.items.${experience.title}`)" />
         <div class="experience-contract" v-text="$t(`experiences.contract.${experience.contract}`)" />
       </li>
     </ul>

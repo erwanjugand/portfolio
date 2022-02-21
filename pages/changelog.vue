@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="container">
-      <h1 :background="$t('changeLog.mainTitle')" v-text="$t('changeLog.mainTitle')" />
+      <h1 :background="$t('releases.mainTitle')" v-text="$t('releases.mainTitle')" />
       <PTransitionFadeHeight group tag="ul">
         <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
           <PCard tag="article" class="release">
@@ -19,12 +19,12 @@
                   :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
                   :style="{ backgroundColor: tag.color }"
                   @click.prevent="filter(tag.id)"
-                  v-text="$t(`releaseTags.${tag.name}`)"
+                  v-text="$t(`releases.tags.${tag.name}`)"
                 />
               </li>
             </ul>
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="release-content" v-html="$t(`releases.${release.name}`)" />
+            <div class="release-content" v-html="$t(`releases.items.${release.name}`)" />
           </PCard>
         </li>
       </PTransitionFadeHeight>
@@ -47,7 +47,7 @@ export default Vue.extend({
 
   head (): MetaInfo {
     return {
-      title: this.$t('changeLog.metaTitle').toString()
+      title: this.$t('releases.metaTitle').toString()
     }
   },
 
