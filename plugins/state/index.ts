@@ -10,7 +10,7 @@ interface State {
   menuOpened: boolean
   skills: Skill[]
   tools: Tool[]
-  experience: Experience[]
+  experiences: Experience[]
   releases: Release[]
   setMenuState(value: boolean): void
 

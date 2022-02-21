@@ -1,28 +1,25 @@
 <template>
   <section class="container tools">
     <h2 v-text="$t('home.tools.title')" />
-
     <div class="row">
-      <figure v-for="tool in $state.tools" :key="tool.id" tabindex="0" class="xs6 s4 m2 l1 tools-item">
-        <PIcon class="tools-icon" type="custom" :name="tool.name" />
-        <figcaption class="tools-text" v-text="tool.title" />
+      <figure v-for="tool in $state.tools" :key="tool.id" tabindex="0" class="xs6 s4 m2 l1 tool">
+        <PIcon class="tool-icon" type="custom" :name="tool.name" />
+        <figcaption class="tool-text" v-text="tool.title" />
       </figure>
     </div>
   </section>
 </template>
 
 <style lang="scss">
-.tools {
-  .row {
-    width: 100%;
-    row-gap: 32px;
-  }
+.tools .row {
+  width: 100%;
+  row-gap: 32px;
+}
 
-  &-item {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
+.tool {
+  position: relative;
+  display: flex;
+  justify-content: center;
 
   &-icon {
     width: min(100%, 80px);

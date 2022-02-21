@@ -2,7 +2,7 @@
   <section class="container about">
     <h2 v-text="$t('home.about.title')" />
 
-    <div class="row about-row">
+    <div class="row">
       <div class="xs12 l4 about-profil-container">
         <img class="about-profil elevation-1" src="/images/profil/erwan-jugand-x1.webp" srcset="/images/profil/erwan-jugand-x1.webp 1x, /images/profil/erwan-jugand-x2.webp 2x, /images/profil/erwan-jugand-x3.webp 3x" alt="">
       </div>
@@ -34,7 +34,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .about {
-  &-row {
+  .row {
     row-gap: 32px;
   }
 
