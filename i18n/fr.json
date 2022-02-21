@@ -62,8 +62,7 @@
     },
     "lightMode": "Thème clair",
     "menu": "Menu",
-    "portfolioEvolution": "Évolution du portfolio",
-    "works": "Mes travaux"
+    "portfolioEvolution": "Évolution du portfolio"
   },
   "home": {
     "about": {
@@ -93,10 +92,6 @@
     },
     "tools": {
       "title": "Les outils que j'utilise"
-    },
-    "works": {
-      "title": "Mes derniers travaux",
-      "cta": "Afficher plus de travaux"
     }
   },
   "legalMentions": {
@@ -153,31 +148,5 @@
     "fix": "Correctif",
     "overhaul": "Refonte",
     "security": "Sécurité"
-  },
-  "work": {
-    "description": {
-      "title": "Description"
-    },
-    "informations": {
-      "title": "Informations",
-      "dateTitle": "Date de réalisation",
-      "categoriesTitle": "Catégories"
-    },
-    "screenshots": {
-      "title": "Captures d'écran"
-    }
-  },
-  "works": {
-    "allWorksButton": "Tous",
-    "filters": {
-      "pao": "PAO",
-      "video": "Vidéo",
-      "webdesign": "Web Design",
-      "webIntegration": "Intégration Web",
-      "wordpress": "Wordpress"
-    },
-    "formTitle": "Filtres",
-    "mainTitle": "Mes travaux",
-    "metaTitle": "Mes travaux"
   }
 }

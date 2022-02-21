@@ -7,6 +7,7 @@ import releases from './releases'
 import { Experience, Release, Skill, Tool } from '~/models'
 
 interface State {
+  menuOpened: boolean
   skills: Skill[]
   tools: Tool[]
   experience: Experience[]
@@ -15,6 +16,7 @@ interface State {
 
 const statePlugin: Plugin = function (_ctx: Context, inject: Function) {
   const state = Vue.observable({
+    menuOpened: false,
     skills,
     tools,
     experiences,

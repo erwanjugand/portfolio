@@ -1,13 +1,13 @@
 <template>
   <nav id="menu">
     <transition-group tag="ul" name="fade">
-      <li v-for="link of links" v-show="$accessor.menuOpened" :key="link.name">
+      <li v-for="link of links" v-show="$state.menuOpened" :key="link.name">
         <nuxt-link v-ripple :to="localePath(link.route)" @click.native="closeMenu">
           <PIcon :name="link.icon" />
           {{ $t(`header.${link.name}`) }}
         </nuxt-link>
       </li>
-      <li v-show="$accessor.menuOpened" key="darkMode">
+      <li v-show="$state.menuOpened" key="darkMode">
         <button v-ripple type="button" @click="toggleDarkMode">
           <PIcon :name="`lightbulb${$colorMode.value === 'dark' ? 'Slash' : 'On'}`" />
           {{ $t(`header.${$colorMode.value === 'dark' ? 'dark' : 'light'}Mode`) }}
@@ -26,7 +26,6 @@ export default Vue.extend({
     links (): Link[] {
       return [
         { name: 'home', icon: 'homeAlt', route: 'index' },
-        { name: 'works', icon: 'folderOpen', route: 'works' },
         { name: 'contactMe', icon: 'envelopeOpenText', route: 'contact' },
         { name: 'portfolioEvolution', icon: 'sparkles', route: 'changelog' }
       ]
@@ -35,7 +34,7 @@ export default Vue.extend({
 
   methods: {
     closeMenu () {
-      this.$accessor.setMenuOpening(false)
+      this.$state.menuOpened = false
     },
 
     toggleDarkMode () {

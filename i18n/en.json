@@ -40,11 +40,7 @@
     },
     "lightMode": "Light mode",
     "menu": "Menu",
-    "portfolioEvolution": "Portfolio evolution",
-    "works": "My works"
+    "portfolioEvolution": "Portfolio evolution"
   },
-  "home": {},
-  "works": {
-    "metaTitle": "My works"
-  }
+  "home": {}
 }
