@@ -1,0 +1,15 @@
+@use 'sass:color' as *;
+@use 'sass:math' as *;
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function grey-color($color, $darknen) {
+  $lightness: 100% - $darknen;
+  $saturation: div(pow(strip-unit($darknen), 3), pow(100, 2) * 10) * 1%;
+  @return change(complement($color), $lightness: $lightness, $saturation: $saturation);
+}
