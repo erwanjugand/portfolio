@@ -2,7 +2,7 @@
   <nav id="menu">
     <transition-group tag="ul" name="fade">
       <li v-for="link of links" v-show="$state.menuOpened" :key="link.name">
-        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="closeMenu">
+        <nuxt-link v-ripple :to="localePath(link.route)" @click.native="$state.setMenuState(false)">
           <PIcon :name="link.icon" />
           {{ $t(`header.${link.name}`) }}
         </nuxt-link>
@@ -33,10 +33,6 @@ export default Vue.extend({
   },
 
   methods: {
-    closeMenu () {
-      this.$state.menuOpened = false
-    },
-
     toggleDarkMode () {
       this.$colorMode.preference = this.$colorMode.value === 'dark' ? 'light' : 'dark'
     }

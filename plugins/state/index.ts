@@ -12,6 +12,8 @@ interface State {
   tools: Tool[]
   experience: Experience[]
   releases: Release[]
+  setMenuState(value: boolean): void
+
 }
 
 const statePlugin: Plugin = function (_ctx: Context, inject: Function) {
@@ -20,8 +22,12 @@ const statePlugin: Plugin = function (_ctx: Context, inject: Function) {
     skills,
     tools,
     experiences,
-    releases
-  })
+    releases,
+    setMenuState (value: boolean) {
+      this.menuOpened = value
+    }
+  }
+  )
 
   inject('state', state)
 }

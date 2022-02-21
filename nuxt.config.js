@@ -162,7 +162,7 @@ export default {
   pageTransition: {
     name: 'page',
     afterEnter () {
-      this.$state.menuOpening = false
+      this.$state.setMenuState(false)
     }
   }
 }

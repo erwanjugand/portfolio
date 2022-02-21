@@ -5,7 +5,7 @@
       class="logo"
       :to="localePath('index')"
       :title="$t('header.backToHome')"
-      @click.native="setMenu(false)"
+      @click.native="$state.setMenuState(false)"
     >
       <PLogo />
       {{ $config.siteTitle }}
@@ -48,7 +48,7 @@
       :aria-expanded="$state.menuOpened"
       aria-controls="menu"
       class="burger"
-      @click="setMenu(!$state.menuOpened)"
+      @click="$state.setMenuState(!$state.menuOpened)"
     >
       {{ $t('header.menu') }}
       <span aria-hidden="true" class="burger-icon">
@@ -82,14 +82,10 @@ export default Vue.extend({
   },
 
   methods: {
-    setMenu (value: boolean) {
-      this.$state.menuOpened = value
-    },
-
     closeMenu (e: KeyboardEvent) {
       if (this.$state.menuOpened && e.key === 'Escape') {
         (this.$refs.menuButton as HTMLButtonElement).focus()
-        this.setMenu(false)
+        this.$state.setMenuState(false)
       }
     }
   }

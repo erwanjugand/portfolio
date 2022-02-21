@@ -2,7 +2,7 @@
   <div id="page">
     <PHeader />
     <PMenu />
-    <div id="page-content" :class="{'minimized': $state.menuOpened}" v-on="$state.menuOpened ? { click: () => $state.menuOpened = false } : {}">
+    <div id="page-content" :class="{'minimized': $state.menuOpened}" v-on="$state.menuOpened ? { click: () => $state.setMenuState(false) } : {}">
       <nuxt />
     </div>
     <PEasterEgg />
