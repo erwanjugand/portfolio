@@ -36,8 +36,7 @@ export default {
   // Plugins to load before mounting the App
   plugins: [
     '@/plugins/state',
-    '@/plugins/directives',
-    { src: '~/plugins/vue-masonry', ssr: false }
+    '@/plugins/directives'
 
   ],
   // Nuxt.js dev-modules
