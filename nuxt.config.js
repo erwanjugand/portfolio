@@ -35,7 +35,8 @@ export default {
   ],
   // Plugins to load before mounting the App
   plugins: [
-    '~/plugins/directives.ts',
+    '@/plugins/state',
+    '@/plugins/directives',
     { src: '~/plugins/vue-masonry', ssr: false }
 
   ],
@@ -44,8 +45,7 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/pwa',
     '@nuxtjs/color-mode',
-    '@nuxtjs/google-analytics',
-    'nuxt-typed-vuex'
+    '@nuxtjs/google-analytics'
   ],
   // Nuxt.js modules
   modules: [
@@ -156,14 +156,13 @@ export default {
   build: {
     // You can extend webpack config here
     transpile: [
-      'directivue',
-      /typed-vuex/
+      'directivue'
     ]
   },
   pageTransition: {
     name: 'page',
     afterEnter () {
-      this.$accessor.setMenuOpening(false)
+      this.$state.setMenuState(false)
     }
   }
 }

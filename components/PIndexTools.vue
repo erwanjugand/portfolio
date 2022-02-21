@@ -3,75 +3,13 @@
     <h2 v-text="$t('home.tools.title')" />
 
     <div class="row">
-      <figure v-for="icon in icons" :key="icon.name" tabindex="0" class="xs6 s4 m2 l1 tools-item">
-        <PIcon class="tools-icon" type="custom" :title="icon.title" :name="icon.name" />
-        <figcaption class="tools-text" v-text="icon.title" />
+      <figure v-for="tool in $state.tools" :key="tool.id" tabindex="0" class="xs6 s4 m2 l1 tools-item">
+        <PIcon class="tools-icon" type="custom" :name="tool.name" />
+        <figcaption class="tools-text" v-text="tool.title" />
       </figure>
     </div>
   </section>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import { Tool } from '~/models'
-
-export default Vue.extend({
-  data () {
-    return {
-      icons: [
-        {
-          title: 'Git',
-          name: 'git'
-        },
-        {
-          title: 'Bash',
-          name: 'bash'
-        },
-        {
-          title: 'PhpStorm',
-          name: 'phpStorm'
-        },
-        {
-          title: 'EazyPHP',
-          name: 'easyphp'
-        },
-        {
-          title: 'Filezilla',
-          name: 'filezilla'
-        },
-        {
-          title: 'Atom',
-          name: 'atom'
-        },
-        {
-          title: 'VSCode',
-          name: 'visualStudioCode'
-        },
-        {
-          title: 'Photoshop',
-          name: 'photoshop'
-        },
-        {
-          title: 'Illustrator',
-          name: 'illustrator'
-        },
-        {
-          title: 'Premiere Pro',
-          name: 'premierePro'
-        },
-        {
-          title: 'After Effects',
-          name: 'afterEffects'
-        },
-        {
-          title: 'InDesign',
-          name: 'indesign'
-        }
-      ] as Tool[]
-    }
-  }
-})
-</script>
 
 <style lang="scss">
 .tools {

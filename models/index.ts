@@ -1,53 +1,25 @@
-// Works
-
-export interface Id {
-  id: number
-}
-
-export interface Image {
-  id: number
-  alt: string
-  url: string
-}
-
-export interface Video {
-  id: number
-  link: string
-}
-
-export interface WorkFilter {
-  id: number
-  identifier: string
-  works: Id[]
-}
-export interface Work {
-  id: number
-  dateRealization: Date
-  description: string
-  filters: Id[]
-  slug: string
-  title: string
-  images: Image[]
-  videos: Video[]
-  updated: Date
-}
-
 // Skills
 
 export interface Skill {
   id: number
-  level: number
+  level: 0 | 1 | 2 | 3
   name: string
 }
 
 // Experience
 
+export const enum ExperienceContract {
+  APPRENTICESHIP = 'apprenticeship',
+  CDI = 'cdi',
+  INTERNSHIP = 'internship'
+}
+
 export interface Experience {
   id: number
-  contract: string
+  contract: ExperienceContract
   dateRealization: Date
   description: string
-  name: string
+  title: string
   year: number
 }
 
@@ -91,6 +63,7 @@ export interface Link {
 // Tools
 
 export interface Tool {
+  id: number
   title: string
   name: string
 }

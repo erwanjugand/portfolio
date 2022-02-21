@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="container">
-      <h1 :background="$t('changeLog.mainTitle')" v-text="$t('changeLog.mainTitle')" />
+      <h1 :background="$t('releases.mainTitle')" v-text="$t('releases.mainTitle')" />
       <PTransitionFadeHeight group tag="ul">
         <li v-for="release of releasesFiltered" :key="`release-${release.id}`" class="release-wrapper">
           <PCard tag="article" class="release">
@@ -19,12 +19,12 @@
                   :class="['release-tag', 'elevation-2', { 'release-tag-darken': filterTag && tag.id !== filterTag }]"
                   :style="{ backgroundColor: tag.color }"
                   @click.prevent="filter(tag.id)"
-                  v-text="tag.name"
+                  v-text="$t(`releases.tags.${tag.name}`)"
                 />
               </li>
             </ul>
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="release-content" v-html="release.description" />
+            <div class="release-content" v-html="$t(`releases.items.${release.name}`)" />
           </PCard>
         </li>
       </PTransitionFadeHeight>
@@ -39,25 +39,15 @@ import type { MetaInfo } from 'vue-meta'
 import { Release } from 'models'
 
 export default Vue.extend({
-  async asyncData ({ app: { $accessor } }) {
-    await $accessor.releases.fetchAll()
-    await $accessor.workFilters.fetchAll()
-
-    return {
-      releases: $accessor.releases.items
-    }
-  },
-
   data () {
     return {
-      filterTag: null as number | null,
-      releases: [] as Release[]
+      filterTag: null as number | null
     }
   },
 
   head (): MetaInfo {
     return {
-      title: this.$t('changeLog.metaTitle').toString()
+      title: this.$t('releases.metaTitle').toString()
     }
   },
 
@@ -70,7 +60,7 @@ export default Vue.extend({
 
   computed: {
     releasesFiltered (): Release[] {
-      return this.releases.filter(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag))
+      return this.$state.releases.flatMap(r => !this.filterTag || r.tags.some(t => t.id === this.filterTag) ? r : [])
     }
   },
 

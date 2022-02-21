@@ -3,34 +3,19 @@
     <h2 v-text="$t('home.experiences.title')" />
     <ul class="experience-container">
       <li
-        v-for="(experience, index) of experiences"
+        v-for="(experience, index) of $state.experiences"
         :key="experience.id"
         class="experience"
       >
-        <time v-show="!index || experiences[index - 1].year !== experience.year" class="time" :datetime="experience.dateRealization">
+        <time v-show="!index || $state.experiences[index - 1].year !== experience.year" class="time" :datetime="experience.dateRealization">
           <span class="time-text" v-text="!index ? $t('experiences.today') : experience.year" />
         </time>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <div class="experience-content" v-html="experience.description" />
-        <div class="experience-contract" v-text="experience.contract" />
+        <div class="experience-content" v-text="$t(`experiences.items.${experience.title}`)" />
+        <div class="experience-contract" v-text="$t(`experiences.contract.${experience.contract}`)" />
       </li>
     </ul>
   </section>
 </template>
-
-<script lang="ts">
-import Vue from 'vue'
-import type { PropType } from 'vue'
-import { Experience } from 'models'
-
-export default Vue.extend({
-  props: {
-    experiences: {
-      type: Array as PropType<Experience[]>
-    }
-  }
-})
-</script>
 
 <style lang="scss">
 @use 'sass:math' as *;

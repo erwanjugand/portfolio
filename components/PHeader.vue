@@ -1,11 +1,11 @@
 <template>
-  <header :class="['elevation-2', { 'flat': $accessor.menuOpened }]">
+  <header :class="['elevation-2', { 'flat': $state.menuOpened }]">
     <nuxt-link
       v-ripple
       class="logo"
       :to="localePath('index')"
       :title="$t('header.backToHome')"
-      @click.native="$accessor.setMenuOpening(false)"
+      @click.native="$state.setMenuState(false)"
     >
       <PLogo />
       {{ $config.siteTitle }}
@@ -45,10 +45,10 @@
     <button
       ref="menuButton"
       v-ripple
-      :aria-expanded="$accessor.menuOpened"
+      :aria-expanded="$state.menuOpened"
       aria-controls="menu"
       class="burger"
-      @click="$accessor.setMenuOpening(!$accessor.menuOpened)"
+      @click="$state.setMenuState(!$state.menuOpened)"
     >
       {{ $t('header.menu') }}
       <span aria-hidden="true" class="burger-icon">
@@ -83,9 +83,9 @@ export default Vue.extend({
 
   methods: {
     closeMenu (e: KeyboardEvent) {
-      if (this.$accessor.menuOpened && e.key === 'Escape') {
+      if (this.$state.menuOpened && e.key === 'Escape') {
         (this.$refs.menuButton as HTMLButtonElement).focus()
-        this.$accessor.setMenuOpening(false)
+        this.$state.setMenuState(false)
       }
     }
   }
