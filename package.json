@@ -23,7 +23,8 @@
     "@nuxtjs/i18n": "^7.2.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "directivue": "^0.1.5",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "nuxt-mail": "^3.0.23"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.8",

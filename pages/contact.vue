@@ -81,17 +81,22 @@ export default Vue.extend({
 
   methods: {
     async sendEmail () {
+      this.loading = true
+      try {
+        await this.$axios.$post('/mail/send', {
+          subject: `${this.$config.siteTitle} - ${this.form.title}`,
+          html: `<p><b>Email :</b><br>${this.form.email}</p><p><b>Message :</b><br>${this.form.message}</p>`
+        })
+        this.emailStatus = 'sent'
+      } catch (e) {
+        this.emailStatus = 'error'
+      }
       this.form = {
         email: '',
         title: '',
         message: ''
       }
-
-      this.loading = true
-      // TODO : POST email datas
-      await new Promise(resolve => setTimeout(resolve, 5000))
       this.loading = false
-      this.emailStatus = 'sent'
       setTimeout(() => { this.emailStatus = null }, 5000)
     }
   }

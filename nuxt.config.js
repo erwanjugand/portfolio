@@ -4,7 +4,6 @@ import fr from './i18n/fr.json'
 export default {
   // .env
   publicRuntimeConfig: {
-    apiUrl: process.env.API_URL,
     siteTitle: process.env.SITE_TITLE,
     siteDescription: process.env.SITE_DESCRIPTION,
     shortName: process.env.SHORT_NAME
@@ -52,7 +51,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/sitemap',
     '@nuxtjs/svg',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-mail'
   ],
   i18n: {
     baseUrl: process.env.SITE_URL,
@@ -92,6 +92,7 @@ export default {
     }
   },
   axios: {
+    baseURL: process.env.SITE_URL,
     progress: false
   },
   pwa: {
@@ -150,6 +151,18 @@ export default {
   },
   styleResources: {
     scss: '~/assets/css/variables.scss'
+  },
+  mail: {
+    message: {
+      to: process.env.SMTP_EMAIL
+    },
+    smtp: {
+      service: process.env.SMTP_SERVICE,
+      auth: {
+        user: process.env.SMTP_EMAIL,
+        pass: process.env.SMTP_PASSWORD
+      }
+    }
   },
   // Build configuration
   build: {
