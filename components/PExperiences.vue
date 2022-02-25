@@ -3,10 +3,9 @@
     <h2 v-text="$t('home.experiences.title')" />
     <ul class="experiences-container">
       <PExperience
-        v-for="(experience, index) of $state.experiences"
+        v-for="experience of $state.experiences"
         :key="experience.id"
         :experience="experience"
-        :index="index"
       />
     </ul>
   </section>
@@ -19,14 +18,10 @@ $diagonal: sqrt(3);
 
 .experiences-container {
   position: relative;
-  max-width: min(100vw, 576px);
-  margin: 12px 16px 0;
-  transition: var(--transition);
-
-  @media #{$medium-and-up} {
-    margin-right: 144+16px;
-    transform: translateX(144px);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(90vw, 576px);
 
   &::before {
     content: '';

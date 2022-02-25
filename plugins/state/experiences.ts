@@ -1,43 +1,57 @@
-import { Experience, ExperienceContract } from '~/models'
+import { ExperienceContract, Experience } from '~/models'
 import uniqueId from '~/utils/uniqueId'
 
-const experienceDatas: Omit<Experience, 'id' | 'year'>[] = [
+const experienceDatas: Omit<Experience, 'id'>[] = [
   {
-    title: 'leadDevSteeple',
-    description: '',
-    contract: ExperienceContract.CDI,
-    dateRealization: new Date(2021, 2)
+    enterprise: 'Steeple',
+    jobs: [
+      {
+        key: 'steepleLeadDev',
+        contract: ExperienceContract.CDI,
+        startedAt: new Date(2021, 2),
+        finishedAt: new Date()
+      },
+      {
+        key: 'steepleFrontEndDev',
+        contract: ExperienceContract.CDI,
+        startedAt: new Date(2018, 8),
+        finishedAt: new Date(2021, 1)
+      },
+      {
+        key: 'steepleWebIntegrator',
+        contract: ExperienceContract.APPRENTICESHIP,
+        startedAt: new Date(2017, 8),
+        finishedAt: new Date(2018, 7)
+      }
+    ]
   },
   {
-    title: 'frontEndDevelopperSteeple',
-    description: '',
-    contract: ExperienceContract.CDI,
-    dateRealization: new Date(2018, 8)
+    enterprise: 'VINCI Energies',
+    jobs: [
+      {
+        key: 'vinciWebIntegrator',
+        contract: ExperienceContract.INTERNSHIP,
+        startedAt: new Date(2017, 2),
+        finishedAt: new Date(2017, 6)
+      }
+    ]
   },
   {
-    title: 'webIntegratorSteeple',
-    description: '',
-    contract: ExperienceContract.APPRENTICESHIP,
-    dateRealization: new Date(2017, 8)
-  },
-  {
-    title: 'webIntegratorSteepleVinci',
-    description: '',
-    contract: ExperienceContract.INTERNSHIP,
-    dateRealization: new Date(2017, 2)
-  },
-  {
-    title: 'webIntegratorSteepleLPC',
-    description: '',
-    contract: ExperienceContract.INTERNSHIP,
-    dateRealization: new Date(2017, 2)
+    enterprise: 'Les Pingouins Connectés',
+    jobs: [
+      {
+        key: 'lpcWebIntegrator',
+        contract: ExperienceContract.INTERNSHIP,
+        startedAt: new Date(2016, 3),
+        finishedAt: new Date(2016, 4)
+      }
+    ]
   }
 ]
 
 const experiences: Experience[] = experienceDatas.map(experience => ({
   ...{
-    id: +uniqueId(),
-    year: experience.dateRealization.getFullYear()
+    id: +uniqueId()
   },
   ...experience
 }))

@@ -79,6 +79,10 @@ export default {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+          },
+          short: {
+            year: 'numeric',
+            month: 'short'
           }
         },
         en: {
@@ -86,6 +90,10 @@ export default {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+          },
+          short: {
+            year: 'numeric',
+            month: 'short'
           }
         }
       }

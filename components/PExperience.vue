@@ -1,30 +1,29 @@
 <template>
   <li class="experience">
-    <time v-show="showYear" class="time" :datetime="experience.dateRealization">
-      <span class="time-text" v-text="textYear" />
-    </time>
-    <div class="experience-content" v-text="$t(`experiences.items.${experience.title}`)" />
-    <div class="experience-contract" v-text="$t(`experiences.contract.${experience.contract}`)" />
+    <h3 class="experience-header" v-text="experience.enterprise" />
+    <PJob
+      v-for="job of experience.jobs"
+      :key="job.key"
+      :job="job"
+      :single="hasOneJob"
+    />
   </li>
 </template>
 
 <script lang="ts">
 import Vue, { PropOptions } from 'vue'
 import { Experience } from '~/models'
+
 export default Vue.extend({
   props: {
     experience: {
       type: Object
-    } as PropOptions<Experience>,
-    index: Number
+    } as PropOptions<Experience>
   },
 
   computed: {
-    showYear (): boolean {
-      return !this.index || this.$state.experiences[this.index - 1].year !== this.experience.year
-    },
-    textYear (): string {
-      return (!this.index ? this.$t('experiences.today') : this.experience.year).toString()
+    hasOneJob (): boolean {
+      return this.experience.jobs.length === 1
     }
   }
 })
@@ -36,16 +35,20 @@ export default Vue.extend({
 $diagonal: sqrt(3);
 
 .experience {
-  .time {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &-header {
     position: relative;
-    display: flex;
-    width: 240px;
-    font-size: 1.25em;
+    padding-left: 64px;
+    font-size: 1.5em;
+    font-weight: $fw-bold;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: calc(50% - 12px);
       left: div((24px * $diagonal) - 24px , 2);
       width: 24px;
       height: 24px;
@@ -55,31 +58,6 @@ $diagonal: sqrt(3);
       transform: rotate(45deg);
       box-sizing: border-box;
     }
-
-    &-text {
-      text-transform: uppercase;
-      opacity: .5;
-      transform: translateX(24px * $diagonal + 16px);
-      transition: var(--transition);
-
-      @media #{$medium-and-up} {
-        transform: translateX(calc(-100% - 16px));
-      }
-    }
-  }
-
-  &-content {
-    margin: 16px 0 0 48px;
-  }
-
-  &-contract {
-    margin: 0 0 16px 48px;
-    font-size: .875em;
-    color: var(--c-primary);
-  }
-
-  &:first-child time::before {
-    box-shadow: 0 0 0 3px var(--c-primary), inset 0 0 0 20px var(--c-primary);
   }
 }
 </style>

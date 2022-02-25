@@ -23,7 +23,7 @@
   h2 {
     margin-bottom: 2rem;
     font-size: 2em;
-    font-weight: 500;
+    font-weight: $fw-bold;
     text-align: center;
   }
 }

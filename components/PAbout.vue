@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { differenceInYears } from '~/utils/date'
+import { differenceInYears } from 'date-fns'
 
 export default Vue.extend({
   computed: {

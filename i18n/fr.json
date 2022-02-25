@@ -12,21 +12,6 @@
       "error": "Une erreur est survenue, le message n'a pas pu être transmis"
     }
   },
-  "experiences": {
-    "contract": {
-      "apprenticeship": "Alternance",
-      "cdi": "CDI",
-      "internship": "Stage"
-    },
-    "items": {
-      "frontEndDevelopperSteeple": "Développeur Front-End chez Steeple",
-      "leadDevSteeple": "Lead Développeur Front-End chez Steeple",
-      "webIntegratorSteepleLPC": "Intégrateur Web chez Les Pingouins Connectés",
-      "webIntegratorSteepleVinci": "Intégrateur Web chez VINCI Energies",
-      "webIntegratorSteeple": "Intégrateur Web chez Steeple"
-    },
-    "today": "Aujourd'hui"
-  },
   "footer": {
     "copyright": "Copyright© {year} : Tout droits réservés.",
     "github": "Mon compte Github",
@@ -87,6 +72,38 @@
     "tools": {
       "title": "Les outils que j'utilise"
     }
+  },
+  "jobs": {
+    "contract": {
+      "apprenticeship": "Alternance",
+      "cdi": "CDI",
+      "internship": "Stage"
+    },
+    "items": {
+      "steepleLeadDev": {
+        "title": "Lead développeur Front-end",
+        "description": "Missions en complémentarité de celles de développeur : \n - Faire grandir chaque développeur \n - Piloter l'équipe \n - Faciliter la communication en interne"
+      },
+      "steepleFrontEndDev": {
+        "title": "Développeur Front-end",
+        "description": "Missions : \n - Refonte et mise à jour continue du site web \n - Maintenance de l'application Android et de l'application Chrome \n - Conception des interfaces web sur Adobe XD \n - Création et maintenance du Wordpress \n - Tests utilisateurs \n\n Langages utilisés : Nuxt.js basé sur Vue.js, TypeScript, SASS"
+      },
+      "steepleWebIntegrator": {
+        "title": "Intégrateur Web",
+        "description": "Missions : \n - Intégration Web \n - Conception des interfaces web sur Adobe XD \n - Gestion de projet \n - Optimisation des médias \n - Support d'IE 11 \n\n Langages utilisés : Ruby and Rails, HTML, SCSS"
+      },
+      "vinciWebIntegrator": {
+        "title": "Intégrateur Web",
+        "description": "Missions : \n - Audit des sites web des entreprises dans le groupe VEFTGO \n - Recensement des contenus existants \n - Migration des sites existants à travers WordPress \n - Remontée de bugs auprès de la DSI"
+      },
+      "lpcWebIntegrator": {
+        "title": "Intégrateur Web",
+        "description": "Missions : \n - Réalisation du site web spécialisé dans l'affiliation domotique \n - Site web conçut sur Wordpress \n\n Langages utilisés : PHP, HTML, LESS"
+      }
+    },
+    "today": "aujourd'hui",
+    "years": " | 1 an | {n} ans",
+    "months": " | 1 mois | {n} mois"
   },
   "legalMentions": {
     "mainTitle": "Mentions légales",

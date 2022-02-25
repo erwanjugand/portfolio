@@ -14,13 +14,17 @@ export const enum ExperienceContract {
   INTERNSHIP = 'internship'
 }
 
+export interface Job {
+  key: string
+  contract: ExperienceContract
+  startedAt: Date
+  finishedAt: Date
+}
+
 export interface Experience {
   id: number
-  contract: ExperienceContract
-  dateRealization: Date
-  description: string
-  title: string
-  year: number
+  enterprise: string
+  jobs: Job[]
 }
 
 // Releases
