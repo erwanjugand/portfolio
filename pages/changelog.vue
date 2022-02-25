@@ -23,8 +23,7 @@
                 />
               </li>
             </ul>
-            <!-- eslint-disable-next-line vue/no-v-html -->
-            <div class="release-content" v-html="$t(`releases.items.${release.name}`)" />
+            <p class="release-content" v-text="$t(`releases.items.${release.name}`)" />
           </PCard>
         </li>
       </PTransitionFadeHeight>
@@ -101,6 +100,10 @@ export default Vue.extend({
     &-darken {
       opacity: .25;
     }
+  }
+
+  &-content {
+    white-space: pre-line;
   }
 
   .release-content li::before {
