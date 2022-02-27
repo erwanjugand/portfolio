@@ -33,7 +33,7 @@
           <PTransitionFadeHeight tag="ul">
             <div v-if="emailStatus === 'sent' || emailStatus === 'error'">
               <div :class="emailStatus === 'sent' ? 'message-success' : 'message-fail'">
-                <PIcon :name="emailStatus === 'sent' ? 'checkCircle' : 'timesCircle'" />
+                <PIcon :name="emailStatus === 'sent' ? 'circleCheck' : 'circleXmark'" />
                 {{ $t(`contact.validation.${emailStatus}`) }}
               </div>
             </div>

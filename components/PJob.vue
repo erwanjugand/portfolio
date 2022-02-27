@@ -39,7 +39,6 @@ export default Vue.extend({
 
     duration (): string {
       const interval = intervalToDuration({ start: this.job.startedAt, end: addMonths(this.job.finishedAt, 1) })
-      console.log(interval)
       return this.$tc('jobs.years', interval.years) + ' ' + this.$tc('jobs.months', interval.months)
     },
 

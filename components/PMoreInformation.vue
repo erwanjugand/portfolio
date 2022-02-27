@@ -17,7 +17,7 @@
       </li>
       <li class="xs12 l4 information-content">
         <PHexagon turned>
-          <PIcon name="mapMarkedAlt" />
+          <PIcon name="mapLocationDot" />
         </PHexagon>
         <a
           v-ripple
