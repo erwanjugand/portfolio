@@ -1,3 +1,5 @@
+import { IconPathData } from '@fortawesome/fontawesome-common-types'
+
 // Skills
 
 export interface Skill {
@@ -46,8 +48,9 @@ export interface Release {
 // Icons
 
 export interface Icon {
-  path: string
-  viewBox: string
+  path: IconPathData
+  width: number
+  height: number
 }
 
 export interface Icons {
