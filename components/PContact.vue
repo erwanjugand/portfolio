@@ -86,3 +86,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss">
+.form-contact {
+  max-width: 100%;
+}
+</style>
