@@ -143,11 +143,5 @@ export default {
     transpile: [
       'directivue'
     ]
-  },
-  pageTransition: {
-    name: 'page',
-    afterEnter () {
-      this.$state.setMenuState(false)
-    }
   }
 }

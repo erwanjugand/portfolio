@@ -1,12 +1,12 @@
 import { IconDefinition } from '@fortawesome/fontawesome-common-types'
 import {
-  faHouse as farHouse,
   faBoxFull as farBoxFull,
   faCircleCheck as farCircleCheck,
+  faComputer as farComputer,
   faEnvelope as farEnvelope,
   faEnvelopeOpenText as farEnvelopeOpenText,
-  faLightbulbOn as farLightbulbOn,
-  faLightbulbSlash as farLightbulbSlash,
+  faBrightness as farBrightness,
+  faMoon as farMoon,
   faPenRuler as farPenRuler,
   faPhone as farPhone,
   faMapLocationDot as farMapLocationDot,
@@ -109,15 +109,15 @@ export const icons: Icons = {
 
   light: {
     boxFull: formatIcon(farBoxFull),
+    brightness: formatIcon(farBrightness),
     circleCheck: formatIcon(farCircleCheck),
+    computer: formatIcon(farComputer),
     envelope: formatIcon(farEnvelope),
     envelopeOpenText: formatIcon(farEnvelopeOpenText),
-    house: formatIcon(farHouse),
-    lightbulbOn: formatIcon(farLightbulbOn),
-    lightbulbSlash: formatIcon(farLightbulbSlash),
     penRuler: formatIcon(farPenRuler),
     phone: formatIcon(farPhone),
     mapLocationDot: formatIcon(farMapLocationDot),
+    moon: formatIcon(farMoon),
     sparkles: formatIcon(farSparkles),
     star: formatIcon(farStar),
     circleXmark: formatIcon(farCircleXmark)

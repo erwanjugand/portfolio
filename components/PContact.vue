@@ -91,4 +91,32 @@ export default Vue.extend({
 .form-contact {
   max-width: 100%;
 }
+
+.message-success, .message-fail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  padding: 13px 16px;
+  border-radius: $br-small;
+
+  svg {
+    flex: 0 0 20px;
+    height: 20px;
+    margin-right: 16px;
+  }
+}
+
+.message-success {
+  color: var(--c-success);
+  fill: var(--c-success);
+  background-color: var(--c-success-background);
+  border: 1px solid var(--c-success);
+}
+
+.message-fail {
+  color: var(--c-error);
+  fill: var(--c-error);
+  background-color: var(--c-error-background);
+  border: 1px solid var(--c-error);
+}
 </style>

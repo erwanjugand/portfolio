@@ -1,11 +1,10 @@
 <template>
-  <header :class="['elevation-2', { 'flat': $state.menuOpened }]">
+  <header class="elevation-2">
     <nuxt-link
       v-ripple
       class="logo"
       :to="localePath('index')"
       :title="$t('header.backToHome')"
-      @click.native="$state.setMenuState(false)"
     >
       <PLogo />
       {{ $config.siteTitle }}
@@ -43,17 +42,14 @@
     </div>
 
     <button
-      ref="menuButton"
       v-ripple
-      :aria-expanded="$state.menuOpened"
-      aria-controls="menu"
-      class="burger"
-      @click="$state.setMenuState(!$state.menuOpened)"
+      class="switch-theme"
+      type="button"
+      :aria-label="themeText"
+      :title="themeText"
+      @click="toggleDarkMode"
     >
-      {{ $t('header.menu') }}
-      <span aria-hidden="true" class="burger-icon">
-        <span v-for="n of 3" :key="n" :class="'burger-path-' + n" />
-      </span>
+      <PIcon :name="themeIcon" />
     </button>
   </header>
 </template>
@@ -73,20 +69,23 @@ export default Vue.extend({
     }
   },
 
-  mounted () {
-    document.documentElement.addEventListener('keyup', this.closeMenu)
-  },
+  computed: {
+    themeText (): string {
+      return this.$t(`header.${this.$colorMode.value}Mode`).toString()
+    },
 
-  beforeDestroy () {
-    document.documentElement.removeEventListener('keyup', this.closeMenu)
+    themeIcon (): string {
+      return this.$colorMode.value === 'dark'
+        ? 'moon'
+        : this.$colorMode.value === 'light'
+          ? 'brightness'
+          : 'computer'
+    }
   },
 
   methods: {
-    closeMenu (e: KeyboardEvent) {
-      if (this.$state.menuOpened && e.key === 'Escape') {
-        (this.$refs.menuButton as HTMLButtonElement).focus()
-        this.$state.setMenuState(false)
-      }
+    toggleDarkMode () {
+      this.$colorMode.preference = this.$colorMode.value === 'dark' ? 'light' : 'dark'
     }
   }
 })
@@ -104,15 +103,12 @@ header {
   transition: box-shadow var(--transition);
 
   &.elevation-2 {
-    background-color: $grey-87;
-  }
-
-  &.flat {
-    box-shadow: none;
+    background-color: rgba($grey-87, 90%);
+    backdrop-filter: blur(20px);
   }
 }
 
-.logo, .burger {
+.logo {
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -140,6 +136,17 @@ header {
   }
 }
 
+.switch-theme {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+
+  svg {
+    width: 2rem;
+    fill: $grey-0;
+  }
+}
+
 .switch-language {
   display: flex;
   align-items: center;
@@ -161,10 +168,6 @@ header {
     position: relative;
     display: flex;
     transition: margin var(--transition);
-
-    @media #{$medium-and-up} {
-      margin-right: 16px;
-    }
 
     img {
       position: relative;
@@ -205,39 +208,6 @@ header {
 
   &-enter, &-leave-to {
     transform: translateX(-50%) scale(0);
-  }
-}
-
-.burger {
-  &-icon {
-    margin-left: 1em;
-  }
-
-  &-path-1, &-path-2, &-path-3 {
-    display: flex;
-    width: 32px;
-    height: 3px;
-    background-color: $grey-0;
-    border-radius: 2px;
-    transition: margin var(--transition), transform var(--transition);
-  }
-
-  &-path-2, &-path-3 {
-    margin-top: 8px;
-  }
-
-  &[aria-expanded='true'] .burger {
-    &-path-1 {
-      transform: rotate(45deg) translate3d(8px, 8px, 0);
-    }
-
-    &-path-2 {
-      transform: rotate(45deg);
-    }
-
-    &-path-3 {
-      transform: rotate(135deg) translate3d(-8px, 8px, 0);
-    }
   }
 }
 </style>

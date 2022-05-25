@@ -13,7 +13,7 @@ export default Vue.extend({
   props: {
     name: {
       type: String,
-      default: 'house'
+      required: true
     },
     type: {
       type: String,
