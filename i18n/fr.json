@@ -1,10 +1,8 @@
 {
   "contact": {
     "email": "Email",
-    "mainTitle": "Contact",
     "message": "Message",
-    "metaTitle": "Contact",
-    "send": "Envoyer",
+    "submit": "Envoyer",
     "title": "Envie de me contacter ? C'est par ici !",
     "titleMessage": "Titre",
     "validation": {
@@ -32,7 +30,6 @@
   "header": {
     "backToHome": "Revenir sur l'accueil",
     "changeLanguage": "Changer de langue",
-    "contactMe": "Me contacter",
     "darkMode": "Thème sombre",
     "home": "Accueil",
     "lang": {

@@ -112,42 +112,7 @@ export default {
       background_color: '#212121',
       display: 'standalone',
       lang: 'fr',
-      start_url: '/?source=pwa',
-      shortcuts: [
-        {
-          name: 'Mes travaux',
-          url: '/travaux?source=pwa',
-          icons: [
-            {
-              src: '/images/projects-shortcut.png',
-              sizes: '512x512',
-              type: 'image/png'
-            }
-          ]
-        },
-        {
-          name: 'Me contacter',
-          url: '/contact?source=pwa',
-          icons: [
-            {
-              src: '/images/contact-shortcut.png',
-              sizes: '512x512',
-              type: 'image/png'
-            }
-          ]
-        },
-        {
-          name: 'Évolution du portfolio',
-          url: '/journal-des-modifications?source=pwa',
-          icons: [
-            {
-              src: '/images/changelog-shortcut.png',
-              sizes: '512x512',
-              type: 'image/png'
-            }
-          ]
-        }
-      ]
+      start_url: '/?source=pwa'
     },
     icon: {
       source: 'static/images/favicon-pwa.png',

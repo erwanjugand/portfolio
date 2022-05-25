@@ -75,6 +75,14 @@ export interface Tool {
   name: string
 }
 
+// Contact
+
+export interface Form {
+  email?: string
+  title?: string
+  message?: string
+}
+
 // Easter Egg
 
 export interface EasterEggStep {

@@ -26,7 +26,6 @@ export default Vue.extend({
     links (): Link[] {
       return [
         { name: 'home', icon: 'house', route: 'index' },
-        { name: 'contactMe', icon: 'envelopeOpenText', route: 'contact' },
         { name: 'portfolioEvolution', icon: 'sparkles', route: 'changelog' }
       ]
     }
