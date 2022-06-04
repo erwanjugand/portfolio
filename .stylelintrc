@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "stylelint-config-property-sort-order-smacss",
+    "stylelint-config-standard-scss"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.vue"
+      ],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+:root {
+  // Color
+  --c-primary: #{$primary};
+
+  // Font
+
+  // Transition
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-mode {
+  // Text
+  --c-text: #{$grey-90};
+
+  // Background
+  --c-background-bg: #{$grey-5};
+}
+
+.dark-mode {
+  // Text
+  --c-text: #{$grey-0};
+
+  // Background
+  --c-background-bg: #{$grey-93};
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0s;
+  }
+}
+
+html {
+  background-color: var(--c-background-bg);
+  color: var(--c-text);
+  font-family: Roboto, sans-serif;
+}

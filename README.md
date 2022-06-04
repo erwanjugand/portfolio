@@ -1,35 +1,42 @@
-# portfolio-front
+# Nuxt 3 Minimal Starter
 
-> My personal portfolio
+Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
 
-## Build Setup
+## Setup
 
-``` bash
-# install dependencies
-$ yarn install
+Make sure to install the dependencies:
 
-# serve with hot reload at localhost:3000
-$ yarn dev
+```bash
+# yarn
+yarn install
 
-# build for production and launch server
-$ yarn build
-$ yarn start
+# npm
+npm install
 
-# generate static project
-$ yarn generate
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
+## Development Server
 
-## Encoding images
+Start the development server on http://localhost:3000
 
-### Webp
-
-Install : https://www.tecmint.com/convert-images-to-webp-format-in-linux/
-
-Quality 95 for x1  
-Quality 90 for x2  
-Quality 85 for x3  
-
-``` bash
-cwebp -q 95 -resize 100 100 image.jpg -o image.webp -preset photo
+```bash
+npm run dev
 ```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

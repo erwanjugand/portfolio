@@ -1,9 +1,0 @@
-{
-  "plugins": [
-    {
-      "convertPathData": {
-        "noSpaceAfterFlags": false
-      }
-    }
-  ]
-}
