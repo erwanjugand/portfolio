@@ -12,36 +12,36 @@
       </button>
     </div>
     <footer class="footer elevation-1">
-      <div class="container">
-        <div class="footer-copyright">
-          <p v-text="$t('footer.copyright', { year: currentYear })" />
-          <nuxt-link :to="localePath('legal-mentions')">
-            {{ $t('legalMentions.mainTitle') }}
-          </nuxt-link>
-        </div>
-
-        <div class="footer-social-networks">
-          <a
-            v-ripple
-            target="_blank"
-            rel="noopener"
-            href="https://github.com/erwanjugand"
-            aria-label="Github"
-            :title="$t('footer.github')"
-          >
-            <PIcon type="brand" name="github" />
-          </a>
-          <a
-            v-ripple
-            target="_blank"
-            rel="noopener"
-            href="https://www.linkedin.com/in/erwan-jugand/"
-            aria-label="Linkedin"
-            :title="$t('footer.linkedin')"
-          >
-            <PIcon type="brand" name="linkedin" />
-          </a>
-        </div>
+      <div class="container footer-content">
+        <p class="footer-copyright" v-text="$t('footer.copyright', { year: currentYear })" />
+        <nuxt-link class="footer-legal-mentions" :to="localePath('legal-mentions')">
+          {{ $t('legalMentions.mainTitle') }}
+        </nuxt-link>
+        <a
+          v-ripple
+          target="_blank"
+          rel="noopener"
+          class="footer-social-network footer-github"
+          href="https://github.com/erwanjugand"
+          aria-label="Github"
+          :title="$t('footer.github')"
+        >
+          <PIcon type="brand" name="github" />
+        </a>
+        <a
+          v-ripple
+          target="_blank"
+          rel="noopener"
+          class="footer-social-network footer-linkedin"
+          href="https://www.linkedin.com/in/erwan-jugand/"
+          aria-label="Linkedin"
+          :title="$t('footer.linkedin')"
+        >
+          <PIcon type="brand" name="linkedin" />
+        </a>
+        <nuxt-link class="footer-last-version" :to="localePath('changelog')">
+          {{ lastVersion }}
+        </nuxt-link>
       </div>
     </footer>
   </div>
@@ -54,6 +54,10 @@ export default Vue.extend({
   computed: {
     currentYear (): number {
       return new Date().getFullYear()
+    },
+
+    lastVersion (): string {
+      return this.$state.releases[0].name
     }
   }
 })
@@ -65,58 +69,6 @@ export default Vue.extend({
   position: relative;
   color: $grey-0;
   background-color: $grey-87;
-
-  &-container {
-    position: relative;
-    margin-top: 16px;
-
-    @media #{$medium-and-up} {
-      margin-top: 32px;
-    }
-  }
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: center;
-
-    @media #{$medium-and-up} {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &-copyright {
-    padding-top: 16px;
-
-    @media #{$medium-and-up} {
-      padding: 0;
-    }
-
-    a {
-      display: inline-flex;
-      padding-top: 8px;
-    }
-  }
-
-  &-social-networks {
-    display: flex;
-    gap: 16px;
-
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 64px;
-      height: 64px;
-
-      svg {
-        width: 2.5em;
-        fill: currentColor;
-      }
-    }
-  }
 
   &-easter-egg-button {
     width: 64px;
@@ -137,6 +89,76 @@ export default Vue.extend({
       position: absolute;
       top: 0;
       right: 10%;
+    }
+  }
+
+  &-container {
+    position: relative;
+    margin-top: 16px;
+
+    @media #{$medium-and-up} {
+      margin-top: 32px;
+    }
+  }
+
+  &-content {
+    display: grid;
+    gap: 16px 0;
+    padding: 16px 0;
+    align-items: center;
+    justify-content: center;
+    grid-template:
+      'a a'
+      'e e'
+      'b c'
+      'd d';
+
+    @media #{$medium-and-up} {
+      padding: 8px 0;
+      gap: 0 16px;
+      grid-template:
+        'a b c d'
+        'e b c d' / 1fr auto auto 1fr;
+    }
+  }
+
+  &-copyright {
+    grid-area: a;
+  }
+
+  &-legal-mentions {
+    justify-self: start;
+    grid-area: e;
+  }
+
+  &-social-network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    justify-self: center;
+    border-radius: $br-small;
+
+    svg {
+      width: 2.5em;
+      fill: currentColor;
+    }
+  }
+
+  &-github {
+    grid-area: b;
+  }
+
+  &-linkedin {
+    grid-area: c;
+  }
+
+  &-last-version {
+    grid-area: d;
+
+    @media #{$medium-and-up} {
+      justify-self: end;
     }
   }
 }

@@ -34,6 +34,7 @@
 
   // Background
   --c-background-bg: #{$grey-5};
+  --c-background-bg-alt: #{$grey-10};
   --c-background-1: #{$grey-0};
   --c-background-2: #{$grey-0};
   --c-background-3: #{$grey-0};
@@ -63,6 +64,7 @@
 
   // Background
   --c-background-bg: #{$grey-93};
+  --c-background-bg-alt: #{$grey-87};
   --c-background-1: #{$grey-90};
   --c-background-2: #{$grey-87};
   --c-background-3: #{$grey-84};
@@ -95,6 +97,7 @@
 
   // Background
   --c-background-bg: #{$grey-93};
+  --c-background-bg-alt: #{$grey-87};
   --c-background-1: #{$grey-90};
   --c-background-2: #{$grey-87};
   --c-background-3: #{$grey-84};
@@ -150,7 +153,7 @@ html {
 }
 
 main {
-  padding-top: 60px;
+  padding-top: 64px;
 }
 
 h1 {

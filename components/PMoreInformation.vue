@@ -1,7 +1,7 @@
 <template>
-  <section class="container information">
-    <h2 v-text="$t('home.moreInformation.title')" />
-    <ul class="row">
+  <section class="information">
+    <h2 class="container" v-text="$t('home.moreInformation.title')" />
+    <ul class="row container">
       <li class="xs12 l4 information-content">
         <PHexagon turned>
           <PIcon name="phone" />
@@ -49,9 +49,10 @@
 
 <style lang="scss">
 .information {
+  background-color: var(--c-background-bg-alt);
+
   .row {
     row-gap: 32px;
-    width: 100%;
   }
 
   &-content {

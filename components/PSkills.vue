@@ -19,6 +19,10 @@
 $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 $hexagon-space-to-remove: ceil(div($bw-out, sin(60deg)));
 
+.skills {
+  background-color: var(--c-background-bg-alt);
+}
+
 .skills-container {
   display: flex;
   justify-content: center;
