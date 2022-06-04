@@ -1,56 +1,58 @@
 <template>
-  <header class="elevation-2">
-    <nuxt-link
-      v-ripple
-      class="logo"
-      :to="localePath('index')"
-      :title="$t('header.backToHome')"
-    >
-      <PLogo />
-      {{ $config.siteTitle }}
-    </nuxt-link>
+  <header class="header elevation-2">
+    <div class="header-content container">
+      <nuxt-link
+        v-ripple
+        class="logo"
+        :to="localePath('index')"
+        :title="$t('header.backToHome')"
+      >
+        <PLogo />
+        {{ $config.siteTitle }}
+      </nuxt-link>
 
-    <div v-click-outside="() => switchLanguage = false" class="switch-language-container">
+      <div v-click-outside="() => switchLanguage = false" class="switch-language-container">
+        <button
+          v-ripple
+          class="switch-language"
+          aria-controls="menu-languages"
+          :aria-expanded="switchLanguage"
+          :aria-label="$t('header.changeLanguage')"
+          :title="$t('header.changeLanguage')"
+          @click="switchLanguage = !switchLanguage"
+        >
+          <img :src="`/images/flag-${$i18n.locale}.svg`" :alt="$t(`header.lang.${$i18n.locale}`)">
+          <PIcon type="solid" name="caretDown" />
+        </button>
+        <transition name="switch-language">
+          <ul v-show="switchLanguage" id="menu-languages" role="menu" class="switch-language-list elevation-3">
+            <li v-for="lang of $i18n.locales" :key="lang.iso">
+              <nuxt-link
+                v-ripple
+                role="menuitem"
+                :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
+                :aria-label="$t(`header.lang.${lang.iso}`)"
+                :title="$t(`header.lang.${lang.iso}`)"
+                @click.native="switchLanguage = false"
+              >
+                <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
+              </nuxt-link>
+            </li>
+          </ul>
+        </transition>
+      </div>
+
       <button
         v-ripple
-        class="switch-language"
-        aria-controls="menu-languages"
-        :aria-expanded="switchLanguage"
-        :aria-label="$t('header.changeLanguage')"
-        :title="$t('header.changeLanguage')"
-        @click="switchLanguage = !switchLanguage"
+        class="switch-theme"
+        type="button"
+        :aria-label="themeText"
+        :title="themeText"
+        @click="toggleDarkMode"
       >
-        <img :src="`/images/flag-${$i18n.locale}.svg`" :alt="$t(`header.lang.${$i18n.locale}`)">
-        <PIcon type="solid" name="caretDown" />
+        <PIcon :name="themeIcon" />
       </button>
-      <transition name="switch-language">
-        <ul v-show="switchLanguage" id="menu-languages" role="menu" class="switch-language-list elevation-3">
-          <li v-for="lang of $i18n.locales" :key="lang.iso">
-            <nuxt-link
-              v-ripple
-              role="menuitem"
-              :to="localePath($route.name ? $route.name.split('__')[0] : 'index', lang.iso)"
-              :aria-label="$t(`header.lang.${lang.iso}`)"
-              :title="$t(`header.lang.${lang.iso}`)"
-              @click.native="switchLanguage = false"
-            >
-              <img loading="lazy" :src="`/images/flag-${lang.iso}.svg`" :alt="$t(`header.lang.${lang.iso}`)">
-            </nuxt-link>
-          </li>
-        </ul>
-      </transition>
     </div>
-
-    <button
-      v-ripple
-      class="switch-theme"
-      type="button"
-      :aria-label="themeText"
-      :title="themeText"
-      @click="toggleDarkMode"
-    >
-      <PIcon :name="themeIcon" />
-    </button>
   </header>
 </template>
 
@@ -92,19 +94,21 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-header {
+.header {
   z-index: 10;
   position: fixed;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  width: 100%;
-  height: 64px;
-  padding: 0 5%;
   transition: box-shadow var(--transition);
+  width: 100%;
 
   &.elevation-2 {
-    background-color: rgba($grey-87, 90%);
+    background-color: rgba($grey-87, 80%);
     backdrop-filter: blur(20px);
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    height: 64px;
   }
 }
 
