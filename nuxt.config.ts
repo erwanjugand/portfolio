@@ -16,11 +16,18 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@intlify/nuxt3'
   ],
 
   css: [
     '@/assets/scss/style.scss',
     'the-new-css-reset'
-  ]
+  ],
+
+  intlify: {
+    vueI18n: {
+      locale: 'fr'
+    }
+  }
 })

@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "home": {
+      "title": "Accueil",
+      "description": "Description 1"
+    },
+    "changelog": {
+      "title": "Journal de modifications",
+      "description": "Description 2"
+    }
+  }
+}

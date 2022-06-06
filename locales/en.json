@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "Description 1"
+    },
+    "changelog": {
+      "title": "Changelog",
+      "description": "Description 2"
+    }
+  }
+}
