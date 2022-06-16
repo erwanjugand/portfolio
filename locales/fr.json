@@ -8,5 +8,16 @@
       "title": "Journal de modifications",
       "description": "Description 2"
     }
+  },
+  "PHeader": {
+    "darkMode": "Thème sombre",
+    "homeAction": "Revenir sur l'accueil",
+    "home": "Accueil",
+    "lang": {
+      "fr": "Français",
+      "en": "English"
+    },
+    "langAction": "Changer de langue",
+    "lightMode": "Thème clair"
   }
 }

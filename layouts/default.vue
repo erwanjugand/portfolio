@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 useHead({
   title: '',
   titleTemplate: title => 'Erwan Jugand' + (title && ` - ${title}`)
