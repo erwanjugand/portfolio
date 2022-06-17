@@ -17,7 +17,7 @@ html {
   color: var(--c-text);
   font-family: Roboto, sans-serif;
 
-  &.light {
+  &.light-mode {
     // Text
     --c-text: #{$grey-90};
 
@@ -28,7 +28,7 @@ html {
     --c-border: transparent;
   }
 
-  &.dark {
+  &.dark-mode {
     // Text
     --c-text: #{$grey-0};
 

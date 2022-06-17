@@ -6,7 +6,7 @@
         Erwan Jugand
       </NuxtLink>
 
-      <button class="header-toggle-theme" :aria-label="themeText" :title="themeText" @click="toggleDark()">
+      <button v-if="!isSystem" class="header-toggle-theme" :aria-label="themeText" :title="themeText" @click="toggleTheme()">
         <PIcon class="header-toggle-theme-icon" :name="themeIcon" />
       </button>
     </div>
@@ -16,13 +16,13 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
 const theme = useColorMode()
-
 const isDark = computed(() => theme.value === 'dark')
+const isSystem = computed(() => theme.value === 'system')
+const { t } = useI18n()
 const themeText = computed(() => t(`PHeader.${theme.value}Mode`).toString())
 const themeIcon = computed(() => isDark.value ? 'moon' : 'brightness')
-const toggleDark = () => theme.value = isDark.value ? 'light' : 'dark'
+const toggleTheme = () => theme.preference = isDark.value ? 'light' : 'dark'
 </script>
 
 <style lang="scss">
