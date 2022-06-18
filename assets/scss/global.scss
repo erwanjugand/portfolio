@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
   // Color
   --c-primary: #{$primary};
@@ -18,6 +20,9 @@ html {
   font-family: Roboto, sans-serif;
 
   &.light-mode {
+    // Color
+    --c-primary-hover: #{color.mix($primary, $grey-0, 90%)};
+
     // Text
     --c-text: #{$grey-90};
 
@@ -29,6 +34,9 @@ html {
   }
 
   &.dark-mode {
+    // Color
+    --c-primary-hover: #{color.mix($primary, $grey-100, 90%)};
+
     // Text
     --c-text: #{$grey-0};
 

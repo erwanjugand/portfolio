@@ -5,6 +5,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "image": "sh parse-image.sh",
     "eslint": "eslint --ext .ts,.js,.vue",
     "eslint:fix": "yarn eslint --fix",
     "stylelint": "stylelint **/*.{scss,vue}",
@@ -28,5 +29,7 @@
     "stylelint-config-standard-scss": "^4.0.0",
     "the-new-css-reset": "^1.6.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue-typical": "^2.1.0"
+  }
 }

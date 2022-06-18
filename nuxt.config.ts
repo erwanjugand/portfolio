@@ -15,6 +15,10 @@ export default defineNuxtConfig({
     strict: true
   },
 
+  plugins: [
+    'vue-typical'
+  ],
+
   modules: [
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
