@@ -1,48 +1,69 @@
 <template>
-  <section class="introduction">
-    <div class="introduction-content">
-      <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
-      <PButton href="/cv" outlined>
-        Afficher mon CV
-      </PButton>
-    </div>
+  <section class="introduction" :style="style">
+    <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
+    <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf"  outlined>
+      <PIcon type="regular" name="download" />
+      {{ $t('PIntroduction.action') }}
+    </PButton>
+    <a href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" aria-hidden>
+      <img src="/images/mouse.svg" alt="" />
+    </a>
   </section>
 </template>
 
 <script setup lang="ts">
-
+const { y } = useWindowScroll()
+const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 3}px`}))
 </script>
 
 <style lang="scss">
 .introduction {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100vh;
-  padding-top: 64px;
-  background: no-repeat center bottom/cover;
+  padding: 128px 0 64px;
   background-image:
     image-set(
       url("/images/background-mobile-x1.webp") 1x,
-      url("/images/background-mobile-x1.webp") 2x
+      url("/images/background-mobile-x2.webp") 2x
     );
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 64px;
 
   @media #{$large-and-up} {
     background-image:
       image-set(
         url("/images/background-desktop-x1.webp") 1x,
-        url("/images/background-desktop-x1.webp") 2x
+        url("/images/background-desktop-x2.webp") 2x
       );
   }
 
-  &-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20vh;
+  // Only Firefox support "type" in image-set
+  @supports (background-image: image-set(url("/images/background-mobile-x1.avif") type("image/avif"))) {
+    background-image:
+      image-set(
+        url("/images/background-mobile-x1.avif") type("image/avif") 1x,
+        url("/images/background-mobile-x2.avif") type("image/avif") 2x,
+        url("/images/background-mobile-x1.webp") type("image/webp") 1x,
+        url("/images/background-mobile-x2.webp") type("image/webp") 2x
+      );
+
+    @media #{$large-and-up} {
+      background-image:
+        image-set(
+          url("/images/background-desktop-x1.avif") type("image/avif") 1x,
+          url("/images/background-desktop-x2.avif") type("image/avif") 2x,
+          url("/images/background-desktop-x1.webp") type("image/webp") 1x,
+          url("/images/background-desktop-x2.webp") type("image/webp") 2x
+        );
+    }
   }
 
   &-title {
+    color: $grey-0;
     font-size: 2em;
 
     @media #{$medium-and-up} {
@@ -58,6 +79,15 @@
       animation: blink 1s infinite step-start;
       font-weight: $fw-light;
     }
+  }
+
+  &-cv {
+    backdrop-filter: blur(20px);
+  }
+
+  &-scroll {
+    width: 48px;
+    opacity: 0.75;
   }
 }
 

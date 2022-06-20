@@ -27,6 +27,7 @@ const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button'
   font-weight: $fw-bold;
   line-height: 1.25em;
   text-transform: uppercase;
+  gap: 16px;
 
   &-outlined {
     box-shadow: inset 0 0 0 2px var(--c-primary);

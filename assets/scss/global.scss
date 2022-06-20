@@ -18,6 +18,8 @@ html {
   background-color: var(--c-background-bg);
   color: var(--c-text);
   font-family: Roboto, sans-serif;
+  scroll-padding-top: 64px;
+  scroll-behavior: smooth;
 
   &.light-mode {
     // Color

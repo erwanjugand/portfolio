@@ -17,6 +17,10 @@ import {
 } from '@fortawesome/pro-light-svg-icons'
 
 import {
+  faDownload as farDownload
+} from '@fortawesome/pro-regular-svg-icons'
+
+import {
   faCaretDown as fasCaretDown,
   faStar as fasStar
 } from '@fortawesome/pro-solid-svg-icons'
@@ -121,6 +125,10 @@ export const icons: Icons = {
     sparkles: formatIcon(falSparkles),
     star: formatIcon(falStar),
     circleXmark: formatIcon(falCircleXmark)
+  },
+
+  regular: {
+    download: formatIcon(farDownload)
   },
 
   solid: {

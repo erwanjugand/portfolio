@@ -8,5 +8,15 @@
       "title": "Changelog",
       "description": "Description 2"
     }
+  },
+  "PIntroduction": {
+    "action": "Show my CV",
+    "scroll": "Scroll to bottom"
+  },
+  "PHeader": {
+    "darkMode": "Dark mode",
+    "homeAction": "Back to home",
+    "langAction": "Change lang",
+    "lightMode": "Light mode"
   }
 }

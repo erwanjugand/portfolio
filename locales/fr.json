@@ -9,14 +9,13 @@
       "description": "Description 2"
     }
   },
+  "PIntroduction": {
+    "action": "Afficher mon CV",
+    "scroll": "Défiler en bas"
+  },
   "PHeader": {
     "darkMode": "Thème sombre",
     "homeAction": "Revenir sur l'accueil",
-    "home": "Accueil",
-    "lang": {
-      "fr": "Français",
-      "en": "English"
-    },
     "langAction": "Changer de langue",
     "lightMode": "Thème clair"
   }

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="container header-content">
-      <NuxtLink to="/" title="" class="header-home">
+      <NuxtLink to="/" title="" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
         Erwan Jugand
       </NuxtLink>
