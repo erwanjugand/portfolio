@@ -2,7 +2,7 @@
 
 $columns: (
   "xs": (
-    "values": (),
+    "values": (12),
     "media-query": null
   ),
   "s": (
@@ -14,7 +14,7 @@ $columns: (
     "media-query": $medium-and-up
   ),
   "l": (
-    "values": (),
+    "values": (4,8),
     "media-query": $large-and-up
   ),
   "xl": (
@@ -31,7 +31,7 @@ $columns: (
 .row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 32px 16px;
 }
 
 @mixin col($prefix, $values) {

@@ -9,6 +9,14 @@
       "description": "Description 2"
     }
   },
+  "PAbout": {
+    "text1": "I am Erwan Jugand, I am {year} years old and I am a <strong>Front-End developer</strong> since my training at <strong>Digital Campus Rennes</strong>.",
+    "text2": "I like to develop websites with the latest technologies that can offer the browsers with a great interest in <strong>web integration</strong> often underestimated!",
+    "text3": "Whether it is the compression of images or the minification of code, <strong>optimization is my second nature!</strong>",
+    "text4": "<strong>Good practices are one of my directives</strong> to work well in team or sharing code.",
+    "text5": "I am passionate about computer science, new technologies and high-tech products.",
+    "title": "About"
+  },
   "PIntroduction": {
     "action": "Show my CV",
     "scroll": "Scroll to bottom"
@@ -18,5 +26,8 @@
     "homeAction": "Back to home",
     "langAction": "Change lang",
     "lightMode": "Light mode"
+  },
+  "PEnvironments": {
+    "title": "Environment"
   }
 }

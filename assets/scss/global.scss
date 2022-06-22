@@ -30,6 +30,9 @@ html {
 
     // Background
     --c-background-bg: #{$grey-5};
+    --c-background-1: #{$grey-0};
+    --c-background-2: #{$grey-0};
+    --c-background-3: #{$grey-0};
 
     // Border
     --c-border: transparent;
@@ -44,8 +47,15 @@ html {
 
     // Background
     --c-background-bg: #{$grey-93};
+    --c-background-1: #{$grey-90};
+    --c-background-2: #{$grey-87};
+    --c-background-3: #{$grey-84};
 
     // Border
     --c-border: #{rgba($grey-0, 0.05)};
   }
+}
+
+button {
+  cursor: pointer;
 }

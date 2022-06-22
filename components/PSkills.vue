@@ -1,7 +1,7 @@
 <template>
-  <section>
+  <PSection>
     <div class="container">
       Section 3
     </div>
-  </section>
+  </PSection>
 </template>

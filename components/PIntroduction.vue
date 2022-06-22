@@ -1,5 +1,5 @@
 <template>
-  <section class="introduction" :style="style">
+  <PSection class="introduction" :style="style">
     <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
     <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf"  outlined>
       <PIcon type="regular" name="download" />
@@ -8,7 +8,7 @@
     <a href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" aria-hidden>
       <img src="/images/mouse.svg" alt="" />
     </a>
-  </section>
+  </PSection>
 </template>
 
 <script setup lang="ts">
@@ -18,9 +18,6 @@ const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 
 
 <style lang="scss">
 .introduction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
   min-height: 100vh;
   padding: 128px 0 64px;

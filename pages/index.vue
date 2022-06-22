@@ -4,7 +4,7 @@
     <PAbout />
     <PSkills />
     <PExperiences />
-    <PEnvironnements />
+    <PEnvironments />
     <PMoreInformations />
   </main>
 </template>
