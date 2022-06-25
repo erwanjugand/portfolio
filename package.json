@@ -31,6 +31,8 @@
     "the-new-css-reset": "^1.6.1"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.1.9",
+    "pinia": "^2.0.14",
     "vue-typical": "^2.1.0"
   }
 }

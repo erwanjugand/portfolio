@@ -2,15 +2,15 @@
 
 $columns: (
   "xs": (
-    "values": (12),
+    "values": (12,6),
     "media-query": null
   ),
   "s": (
-    "values": (),
+    "values": (4),
     "media-query": $small-and-up
   ),
   "m": (
-    "values": (),
+    "values": (2),
     "media-query": $medium-and-up
   ),
   "l": (
@@ -25,6 +25,16 @@ $columns: (
 
 .container {
   width: min(90vw, 1280px);
+  margin: 0 auto;
+}
+
+.medium-container {
+  width: min(90vw, 960px);
+  margin: 0 auto;
+}
+
+.small-container {
+  width: min(90vw, 640px);
   margin: 0 auto;
 }
 
