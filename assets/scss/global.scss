@@ -27,9 +27,14 @@ html {
 
     // Text
     --c-text: #{$grey-90};
+    --c-text-secondary-1: #{$grey-20};
+    --c-text-secondary-2: #{$grey-35};
+    --c-text-secondary-3: #{$grey-50};
+    --c-text-secondary-4: #{$grey-65};
 
     // Background
     --c-background-bg: #{$grey-5};
+    --c-background-alt: #{$grey-13};
     --c-background-1: #{$grey-0};
     --c-background-2: #{$grey-0};
     --c-background-3: #{$grey-0};
@@ -44,9 +49,14 @@ html {
 
     // Text
     --c-text: #{$grey-0};
+    --c-text-secondary-1: #{$grey-80};
+    --c-text-secondary-2: #{$grey-65};
+    --c-text-secondary-3: #{$grey-50};
+    --c-text-secondary-4: #{$grey-35};
 
     // Background
     --c-background-bg: #{$grey-93};
+    --c-background-alt: #{$grey-90};
     --c-background-1: #{$grey-90};
     --c-background-2: #{$grey-87};
     --c-background-3: #{$grey-84};

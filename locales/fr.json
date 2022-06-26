@@ -7,6 +7,10 @@
     "changelog": {
       "title": "Journal de modifications",
       "description": "Description 2"
+    },
+    "legalMentions": {
+      "title": "Mentions légales",
+      "description": "Description 2"
     }
   },
   "PAbout": {
@@ -16,6 +20,11 @@
     "text4": "<strong>Les bonnes pratiques sont l’une de mes lignes directives</strong> pour aussi bien travailler en équipe que partager du code.",
     "text5": "Je suis passionné d’informatique, des nouvelles technologies et des produits High-Tech.",
     "title": "À propos"
+  },
+  "PFooter": {
+    "copyright": "Copyright© {year} : Tout droits réservés.",
+    "github": "Mon compte Github",
+    "linkedin": "Mon compte Linkedin"
   },
   "PIntroduction": {
     "action": "Afficher mon CV",

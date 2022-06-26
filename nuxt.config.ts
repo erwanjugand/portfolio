@@ -27,8 +27,7 @@ export default defineNuxtConfig({
   ],
 
   css: [
-    '@/assets/scss/style.scss',
-    'the-new-css-reset'
+    '@/assets/scss/style.scss'
   ],
 
   intlify: {
