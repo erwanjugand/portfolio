@@ -76,7 +76,6 @@ const currentYear = new Date().getFullYear()
       "d";
     align-items: center;
     padding: 16px 0;
-    background-color: var(--c-background-alt);
     gap: 16px 0;
 
     @media #{$medium-and-up} {
