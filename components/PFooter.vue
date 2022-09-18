@@ -1,5 +1,15 @@
 <template>
-  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-easter-egg-container">
+      <button
+        class="footer-easter-egg"
+        title="?????"
+        aria-label="?????"
+      >
+        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
+      </button>
+    </div>
+    <footer class="footer">
     <div class="container footer-content">
       <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
 
@@ -35,17 +45,8 @@
         {{ lastVersion }}
       </NuxtLink>
     </div>
-
-    <div class="footer-easter-egg-container">
-      <button
-        class="footer-easter-egg"
-        title="?????"
-        aria-label="?????"
-      >
-        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
-      </button>
-    </div>
   </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -59,6 +60,10 @@ const currentYear = new Date().getFullYear()
 .footer {
   position: relative;
   background-color: var(--c-background-alt);
+
+  &-container {
+    position: relative;
+  }
 
   &-content {
     display: grid;
