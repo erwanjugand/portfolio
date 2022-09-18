@@ -6,9 +6,11 @@
         Erwan Jugand
       </NuxtLink>
 
-      <button v-if="!isSystem" class="header-toggle-theme" :aria-label="themeText" :title="themeText" @click="toggleTheme()">
-        <PIcon class="header-toggle-theme-icon" :name="themeIcon" />
-      </button>
+      <ClientOnly>
+        <button v-if="!isSystem" class="header-toggle-theme" :aria-label="themeText" :title="themeText" @click="toggleTheme()">
+          <PIcon class="header-toggle-theme-icon" :name="themeIcon" />
+        </button>
+      </ClientOnly>
     </div>
   </header>
 </template>

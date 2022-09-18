@@ -1,5 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
-
 export default defineNuxtConfig({
   vite: {
     css: {
@@ -14,10 +12,6 @@ export default defineNuxtConfig({
   typescript: {
     strict: true
   },
-
-  plugins: [
-    'vue-typical'
-  ],
 
   modules: [
     '@pinia/nuxt',

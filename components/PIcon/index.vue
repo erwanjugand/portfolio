@@ -18,7 +18,7 @@ const props = defineProps({
     type: String,
     default: 'light',
     validator (value: string) {
-      return ['light', 'solid', 'brand', 'custom'].includes(value)
+      return ['light', 'regular', 'solid', 'brand', 'custom'].includes(value)
     }
   }
 })
