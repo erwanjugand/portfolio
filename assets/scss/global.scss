@@ -69,3 +69,7 @@ html {
 button {
   cursor: pointer;
 }
+
+li::marker {
+  display: none;
+}

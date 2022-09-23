@@ -17,16 +17,58 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
-    '@intlify/nuxt3'
+    '@nuxtjs/i18n'
   ],
 
   css: [
     '@/assets/scss/style.scss'
   ],
 
-  intlify: {
+  i18n: {
+    baseUrl: process.env.SITE_URL,
+    locales: [
+      {
+        code: 'fr',
+        iso: 'fr',
+        name: 'Français',
+        file: 'fr.json'
+      },
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'English',
+        file: 'en.json'
+      }
+    ],
+    langDir: 'locales/',
+    defaultLocale: 'fr',
     vueI18n: {
-      locale: 'fr'
+      legacy: false,
+      fallbackLocale: 'fr',
+      datetimeFormats: {
+        fr: {
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          },
+          short: {
+            year: 'numeric',
+            month: 'short'
+          }
+        },
+        en: {
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          },
+          short: {
+            year: 'numeric',
+            month: 'short'
+          }
+        }
+      }
     }
   }
 })

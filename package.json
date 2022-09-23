@@ -16,7 +16,6 @@
     "@fortawesome/pro-light-svg-icons": "^6.2.0",
     "@fortawesome/pro-regular-svg-icons": "^6.2.0",
     "@fortawesome/pro-solid-svg-icons": "^6.2.0",
-    "@intlify/nuxt3": "^0.2.4",
     "@nuxtjs/color-mode": "^3.1.5",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@vueuse/core": "^9.2.0",
@@ -31,6 +30,7 @@
     "the-new-css-reset": "^1.7.3"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "^8.0.0-alpha.1",
     "@pinia/nuxt": "^0.4.2",
     "pinia": "^2.0.22",
     "vue-typical": "^2.1.0"
