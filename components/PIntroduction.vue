@@ -3,7 +3,7 @@
     <ClientOnly placeholderTag="h1" placeholder="Erwan Jugand">
       <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
     </ClientOnly>
-    <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf" outlined>
+    <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf" target="_blank" outlined>
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>

@@ -40,6 +40,7 @@ $columns: (
 
 .row {
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(12, 1fr);
   gap: 32px 16px;
 }

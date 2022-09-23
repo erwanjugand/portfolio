@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :to="to" :class="['button', outlined ? 'button-outlined': 'button-filled']">
+  <component :is="type" :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
     <slot />
   </component>
 </template>
@@ -10,7 +10,6 @@ const props = defineProps({
   to: String
 })
 const attrs = useAttrs()
-
 
 const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button' )
 </script>

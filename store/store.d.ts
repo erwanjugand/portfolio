@@ -3,6 +3,18 @@ export interface Environment {
   name: string
 }
 
+export interface Job {
+  key: string
+  contract: 'apprenticeship' | 'cdi' | 'internship'
+  startedAt: Date
+  finishedAt: Date
+}
+
+export interface Experience {
+  enterprise: string
+  jobs: Job[]
+}
+
 export interface Tag {
   name: string
   color: string
