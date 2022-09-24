@@ -40,6 +40,10 @@ const skills: Skill[] = [
   {
     level: 1,
     name: 'Mysql'
+  },
+  {
+    level: 1,
+    name: 'Rails'
   }
 ]
 

@@ -45,6 +45,12 @@
   "PSkills": {
     "title": "Mes compétences"
   },
+  "PMoreInformations": {
+    "address": "Adresse",
+    "email": "Email",
+    "phone": "Téléphone",
+    "title": "Plus d'informations"
+  },
   "PJob": {
     "contract": {
       "apprenticeship": "Alternance",
