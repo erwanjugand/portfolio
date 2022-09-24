@@ -45,11 +45,14 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { onClickOutside } from '@vueuse/core'
+import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
+import { ComputedRef } from 'nuxt/dist/app/compat/vue-demi'
 
-const { t, locale, locales } = useI18n()
+const locales = useI18n().locales as ComputedRef<LocaleObject[]>
+const { t, locale } = useI18n()
 // Theme
 const theme = useColorMode()
 const isDark = computed(() => theme.value === 'dark')
@@ -61,7 +64,7 @@ const toggleTheme = () => theme.preference = isDark.value ? 'light' : 'dark'
 // Local
 const switchLocaleContainer = ref(null)
 const localMenuIsOpen = ref(false)
-const currentLocal = computed(() => locales.value.find((l) => l.code === locale.value))
+const currentLocal = computed(() => locales.value.find((l) => l.code === locale.value)!)
 const switchLocalePath = useSwitchLocalePath()
 onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
 
