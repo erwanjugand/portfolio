@@ -15,55 +15,60 @@
 }
 
 html {
-  background-color: var(--c-background-bg);
-  color: var(--c-text);
   font-family: Roboto, sans-serif;
   scroll-padding-top: 64px;
   scroll-behavior: smooth;
+  line-height: 1.25;
+}
 
-  &.light-mode {
-    // Color
-    --c-primary-hover: #{color.mix($primary, $grey-0, 90%)};
+.light-mode {
+  background-color: var(--c-background-bg);
+  color: var(--c-text);
 
-    // Text
-    --c-text: #{$grey-90};
-    --c-text-secondary-1: #{$grey-20};
-    --c-text-secondary-2: #{$grey-35};
-    --c-text-secondary-3: #{$grey-50};
-    --c-text-secondary-4: #{$grey-65};
+  // Color
+  --c-primary-hover: #{color.mix($primary, $grey-0, 90%)};
 
-    // Background
-    --c-background-bg: #{$grey-5};
-    --c-background-alt: #{$grey-13};
-    --c-background-1: #{$grey-0};
-    --c-background-2: #{$grey-0};
-    --c-background-3: #{$grey-0};
+  // Text
+  --c-text: #{$grey-90};
+  --c-text-secondary-1: #{$grey-20};
+  --c-text-secondary-2: #{$grey-35};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-65};
 
-    // Border
-    --c-border: transparent;
-  }
+  // Background
+  --c-background-bg: #{$grey-5};
+  --c-background-alt: #{$grey-16};
+  --c-background-1: #{$grey-0};
+  --c-background-2: #{$grey-0};
+  --c-background-3: #{$grey-0};
 
-  &.dark-mode {
-    // Color
-    --c-primary-hover: #{color.mix($primary, $grey-100, 90%)};
+  // Border
+  --c-border: transparent;
+}
 
-    // Text
-    --c-text: #{$grey-0};
-    --c-text-secondary-1: #{$grey-80};
-    --c-text-secondary-2: #{$grey-65};
-    --c-text-secondary-3: #{$grey-50};
-    --c-text-secondary-4: #{$grey-35};
+.dark-mode {
+  background-color: var(--c-background-bg);
+  color: var(--c-text);
 
-    // Background
-    --c-background-bg: #{$grey-93};
-    --c-background-alt: #{$grey-90};
-    --c-background-1: #{$grey-90};
-    --c-background-2: #{$grey-87};
-    --c-background-3: #{$grey-84};
+  // Color
+  --c-primary-hover: #{color.mix($primary, $grey-100, 90%)};
 
-    // Border
-    --c-border: #{rgba($grey-0, 0.05)};
-  }
+  // Text
+  --c-text: #{$grey-5};
+  --c-text-secondary-1: #{$grey-80};
+  --c-text-secondary-2: #{$grey-65};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-35};
+
+  // Background
+  --c-background-bg: #{$grey-93};
+  --c-background-alt: #{$grey-87};
+  --c-background-1: #{$grey-90};
+  --c-background-2: #{$grey-87};
+  --c-background-3: #{$grey-84};
+
+  // Border
+  --c-border: #{rgba($grey-0, 0.05)};
 }
 
 button {

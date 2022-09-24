@@ -27,7 +27,7 @@ const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
 <style lang="scss">
 .about {
   &-profil {
-    flex: 0 1 256 + 12px;
+    flex: 0 1 300px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;
     background-color: var(--c-background-1);
@@ -51,8 +51,14 @@ const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
     justify-content: center;
   }
 
-  &-text strong {
-    font-weight: $fw-bold;
+  &-text {
+    @media #{$medium-and-up} {
+      font-size: 1.125em;
+    }
+
+    strong {
+      font-weight: $fw-bold;
+    }
   }
 }
 </style>

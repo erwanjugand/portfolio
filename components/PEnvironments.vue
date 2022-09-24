@@ -33,7 +33,8 @@ const { environments } = useStore()
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: calc(100% + 32px);
+    margin: 0 -16px;
     transform: translateY(-100%);
     transition: transform var(--transition), opacity var(--transition);
     opacity: 0;

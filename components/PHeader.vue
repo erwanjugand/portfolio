@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header dark-mode">
     <div class="container header-content">
       <NuxtLink to="/" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
@@ -94,7 +94,6 @@ onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
     align-items: center;
     padding: 0 16px;
     transition: font-size var(--transition);
-    color: $grey-0;
     font-weight: $fw-light;
     text-decoration: none;
     text-transform: uppercase;
@@ -114,7 +113,6 @@ onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
     display: flex;
     align-items: center;
     padding: 0 16px;
-    color: $grey-0;
 
     &-container {
       display: flex;
@@ -125,7 +123,7 @@ onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
       width: 10px;
       margin-left: 8px;
       transition: transform var(--transition);
-      fill: $grey-0;
+      fill: var(--c-text);
     }
 
     &-image {
@@ -151,7 +149,6 @@ onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
         display: flex;
         width: max-content;
         padding: 8px;
-        color: $grey-0;
 
         &.nuxt-link-exact-active {
           background-color: var(--c-secondary);
@@ -182,7 +179,7 @@ onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
 
     &-icon {
       height: 2rem;
-      fill: $grey-0;
+      fill: var(--c-text);
     }
   }
 }

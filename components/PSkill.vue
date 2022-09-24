@@ -28,7 +28,7 @@ const { skill } = defineProps({
   }
 
   .skill {
-    font-size: 1.25em;
+    font-size: 1.5em;
 
     &-name {
       transform: translateY(0);

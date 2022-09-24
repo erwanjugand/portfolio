@@ -30,7 +30,7 @@ const hasOneJob = computed(() => experience.jobs.length === 1)
   .experience {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
 
     &-header {
       position: relative;

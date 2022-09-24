@@ -1,5 +1,5 @@
 <template>
-  <PSection>
+  <PSection banner>
     <div class="container">
       <PH2 class="xs12">
         {{ $t('PSkills.title') }}
@@ -32,7 +32,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border, sin(60deg)));
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 32px;
+  margin-top: 64px;
   overflow: hidden;
   background: url("/images/bee.svg") center top;
   background-position-x: calc(50% - #{div($hexagon-width, 4) + div($hexagon-space-to-remove, 2)});

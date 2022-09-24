@@ -40,13 +40,13 @@ $grey-0: grey-color($primary, 0%);
 
 // Media Query
 $small-and-up: "(min-width: 384px)";
-$small-and-down: "(max-width: 575.9px)";
+$small-and-down: "(max-width: 575px)";
 $medium-and-up: "(min-width: 576px)";
 $medium-and-down: "(max-width: 1023px)";
-$medium-only: "(min-width: 576px) and (max-width: 1023.9px)";
+$medium-only: "(min-width: 576px) and (max-width: 1023px)";
 $large-and-up: "(min-width: 1024px)";
 $large-and-down: "(max-width: 1399px)";
-$large-only: "(min-width: 1024px) and (max-width: 1399.9px)";
+$large-only: "(min-width: 1024px) and (max-width: 1399px)";
 $extra-large: "(min-width: 1400px)";
 $touchscreen: (hover: none) and (pointer: coarse);
 

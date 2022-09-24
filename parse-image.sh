@@ -19,15 +19,15 @@ convert assets/images/background-original.jpg -gravity center -resize 1536x2048^
 echo -n "Background Mobile : 4/4\n"
 
 echo -n "Profil : 0/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 256x256^ -extent 256x256 -quality 90 public/images/erwan-jugand-x1.webp
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 300x300^ -extent 300x300 -quality 90 public/images/erwan-jugand-x1.webp
 echo -n "Profil : 1/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 256x256^ -extent 256x256 -quality 85 public/images/erwan-jugand-x1.avif
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 300x300^ -extent 300x300 -quality 85 public/images/erwan-jugand-x1.avif
 echo -n "Profil : 2/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 512x512^ -extent 512x512 -quality 90 public/images/erwan-jugand-x2.webp
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 600x600^ -extent 600x600 -quality 90 public/images/erwan-jugand-x2.webp
 echo -n "Profil : 3/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 512x512^ -extent 512x512 -quality 85 public/images/erwan-jugand-x2.avif
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 600x600^ -extent 600x600 -quality 85 public/images/erwan-jugand-x2.avif
 echo -n "Profil : 4/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 1024x1024^ -extent 1024x1024 -quality 85 public/images/erwan-jugand-x3.webp
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 1200x1200^ -extent 1200x1200 -quality 85 public/images/erwan-jugand-x3.webp
 echo -n "Profil : 5/6\r"
-convert assets/images/erwan-jugand-original.jpg -gravity center -resize 1024x1024^ -extent 1024x1024 -quality 80 public/images/erwan-jugand-x3.avif
+convert assets/images/erwan-jugand-original.jpg -gravity center -resize 1200x1200^ -extent 1200x1200 -quality 80 public/images/erwan-jugand-x3.avif
 echo -n "Profil : 6/6\n"

@@ -48,14 +48,14 @@ $diagonal: sqrt(3);
 .job {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 
   &-header {
     display: grid;
     grid: "a b" "c c";
     grid-template-columns: auto 1fr;
     align-items: center;
-    column-gap: 0.3em;
+    gap: 4px 0.3em;
   }
 
   &-title {

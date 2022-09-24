@@ -1,5 +1,5 @@
 <template>
-  <PSection>
+  <PSection banner>
     <div class="container row">
       <PH2 class="xs12">
         {{ $t('PMoreInformations.title') }}
