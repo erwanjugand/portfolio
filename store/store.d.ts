@@ -20,6 +20,11 @@ export interface Tag {
   color: string
 }
 
+export interface Skill {
+  name: string
+  level: 0 | 1 | 2 | 3
+}
+
 export interface Release {
   name: string
   date: Date

@@ -42,6 +42,9 @@
   "PExperiences": {
     "title": "Mes experiences"
   },
+  "PSkills": {
+    "title": "Mes compétences"
+  },
   "PJob": {
     "contract": {
       "apprenticeship": "Alternance",
@@ -73,5 +76,5 @@
     "today": "aujourd'hui",
     "years": "\r | 1 an | {n} ans",
     "months": "\r | 1 mois | {n} mois"
-  },
+  }
 }

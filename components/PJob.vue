@@ -13,7 +13,7 @@
 import { PropType } from "nuxt/dist/app/compat/vue-demi";
 import { useI18n } from "vue-i18n";
 import { intervalToDuration, addMonths } from 'date-fns'
-import { Job } from "~~/store/store";
+import { Job } from "~/store/store";
 const {d, t} = useI18n()
 
 const props = defineProps({

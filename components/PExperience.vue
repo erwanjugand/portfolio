@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { PropType } from "nuxt/dist/app/compat/vue-demi";
-import { Experience } from "~~/store/store";
+import { Experience } from "~/store/store";
 
 const { experience } = defineProps({
   experience: {
