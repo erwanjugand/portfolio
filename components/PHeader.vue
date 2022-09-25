@@ -1,13 +1,14 @@
 <template>
   <header class="header dark-mode">
     <div class="container header-content">
-      <NuxtLink to="/" class="header-home" :title="$t('PHeader.homeAction')">
+      <NuxtLink v-ripple to="/" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
         Erwan Jugand
       </NuxtLink>
 
       <div ref="switchLocaleContainer" class="header-switch-locale-container">
         <button
+          v-ripple
           class="header-switch-locale"
           aria-controls="menu-locales"
           :aria-expanded="localeMenuIsOpen"
@@ -22,6 +23,7 @@
           <ul v-show="localeMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
             <li v-for="otherLocale of locales" :key="otherLocale.code" class="header-switch-locale-list-item">
               <NuxtLink
+                v-ripple
                 class="header-switch-locale-list-link"
                 role="menuitem"
                 :to="switchLocalePath(otherLocale.code)"
@@ -37,7 +39,14 @@
       </div>
 
       <ClientOnly>
-        <button v-if="!isSystem" class="header-toggle-theme" :aria-label="themeText" :title="themeText" @click="toggleTheme()">
+        <button
+          v-if="!isSystem"
+          v-ripple
+          class="header-toggle-theme"
+          :aria-label="themeText"
+          :title="themeText"
+          @click="toggleTheme()"
+        >
           <PIcon class="header-toggle-theme-icon" :name="themeIcon" />
         </button>
       </ClientOnly>
@@ -94,6 +103,7 @@ onClickOutside(switchLocaleContainer, () => {
   }
 
   &-home {
+    justify-self: flex-start;
     display: flex;
     align-items: center;
     padding: 0 16px;

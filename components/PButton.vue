@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
+  <component :is="type" v-ripple :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
     <slot />
   </component>
 </template>

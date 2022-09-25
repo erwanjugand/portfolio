@@ -20,6 +20,10 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
 
+  plugins: [
+    '@/plugins/ripple'
+  ],
+
   css: [
     '@/assets/scss/style.scss'
   ],

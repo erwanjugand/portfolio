@@ -2,6 +2,7 @@
   <div class="footer-container">
     <div class="footer-easter-egg-container">
       <button
+        v-ripple
         class="footer-easter-egg"
         title="?????"
         aria-label="?????"
@@ -19,6 +20,7 @@
 
         <div class="footer-social-networks">
           <a
+            v-ripple
             target="_blank"
             rel="noopener"
             class="footer-github"
@@ -30,6 +32,7 @@
           </a>
 
           <a
+            v-ripple
             target="_blank"
             rel="noopener"
             class="footer-linkedin"
@@ -114,8 +117,8 @@ const currentYear = new Date().getFullYear()
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     border-radius: $br-small;
     justify-self: center;
 

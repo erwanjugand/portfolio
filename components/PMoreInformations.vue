@@ -9,7 +9,7 @@
         <PHexagon turned>
           <PIcon name="phone" class="information-icon" />
         </PHexagon>
-        <a href="tel:0618073023" class="information-link">
+        <a v-ripple href="tel:0618073023" class="information-link">
           <span v-text="$t('PMoreInformations.phone')" />
           <span v-text="'06 18 07 30 23'" />
         </a>
@@ -19,7 +19,7 @@
         <PHexagon turned>
           <PIcon name="mapLocationDot" class="information-icon" />
         </PHexagon>
-        <a target="_blank" rel="noopener" href="https://goo.gl/maps/x2VLbukCJ4L2" class="information-link">
+        <a v-ripple target="_blank" rel="noopener" href="https://goo.gl/maps/x2VLbukCJ4L2" class="information-link">
           <span v-text="$t('PMoreInformations.address')" />
           <span v-text="'35000 Rennes, France'" />
         </a>
@@ -29,7 +29,7 @@
         <PHexagon turned>
           <PIcon name="envelope" class="information-icon" />
         </PHexagon>
-        <a href="mailto:erwan.jugand@gmail.com" class="information-link">
+        <a v-ripple href="mailto:erwan.jugand@gmail.com" class="information-link">
           <span v-text="$t('PMoreInformations.email')" />
           <span v-text="'erwan.jugand@gmail.com'" />
         </a>
