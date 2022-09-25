@@ -7,11 +7,14 @@
 <script setup lang="ts">
 const props = defineProps({
   outlined: Boolean,
-  to: String
+  to: {
+    type: String,
+    default: undefined
+  }
 })
 const attrs = useAttrs()
 
-const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button' )
+const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button')
 </script>
 
 <style lang="scss">

@@ -9,11 +9,13 @@
         <img class="about-profil" src="/images/erwan-jugand-x1.webp" srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x" alt="Erwan Jugand">
       </picture>
       <div class="xs12 l8 about-content">
+        <!-- eslint-disable vue/no-v-html -->
         <p class="about-text" v-html="$t('PAbout.text1', { year: age })" />
         <p class="about-text" v-html="$t('PAbout.text2')" />
         <p class="about-text" v-html="$t('PAbout.text3')" />
         <p class="about-text" v-html="$t('PAbout.text4')" />
         <p class="about-text" v-html="$t('PAbout.text5')" />
+        <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
   </PSection>
@@ -31,6 +33,7 @@ const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
     border: 6px solid var(--c-background-3);
     border-radius: 50%;
     background-color: var(--c-background-1);
+    object-fit: cover;
     box-shadow:
       inset 0 0 0 1px var(--c-border),
       0 2px 1px -1px rgba($grey-100, 0.2),
@@ -52,7 +55,9 @@ const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
   }
 
   &-text {
-    @media #{$medium-and-up} {
+    transition: font-size var(--transition);
+
+    @media #{$large-and-up} {
       font-size: 1.125em;
     }
 

@@ -1,5 +1,4 @@
 import type { IconDefinition } from '@fortawesome/fontawesome-common-types'
-import type { Icon, Icons } from './icon.d'
 import {
   faBoxFull as falBoxFull,
   faCircleCheck as falCircleCheck,
@@ -28,6 +27,7 @@ import {
   faGithub as fabGithub,
   faLinkedin as fabLinkedin
 } from '@fortawesome/free-brands-svg-icons'
+import type { Icon, Icons } from './icon.d'
 
 const formatIcon = (faIcon: IconDefinition): Icon => {
   return {

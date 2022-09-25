@@ -9,7 +9,7 @@
         <PHexagon turned>
           <PIcon name="phone" class="information-icon" />
         </PHexagon>
-        <a href="tel:0618073023" class="information-link" >
+        <a href="tel:0618073023" class="information-link">
           <span v-text="$t('PMoreInformations.phone')" />
           <span v-text="'06 18 07 30 23'" />
         </a>
@@ -39,24 +39,24 @@
 </template>
 
 <style lang="scss">
-  .information {
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-icon {
+    height: 4em;
+  }
+
+  &-link {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    &-icon {
-      height: 4em;
-    }
-
-    &-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 24px;
-      padding: 8px 16px;
-      border-radius: $br-regular;
-      text-decoration: none;
-      gap: 8px;
-    }
+    margin-top: 24px;
+    padding: 8px 16px;
+    border-radius: $br-regular;
+    text-decoration: none;
+    gap: 8px;
   }
-  </style>
+}
+</style>

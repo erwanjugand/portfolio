@@ -9,10 +9,10 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "nuxt/dist/app/compat/vue-demi";
-import { Skill } from "~/store/store";
+import { PropType } from 'nuxt/dist/app/compat/vue-demi'
+import { Skill } from '~/store/store'
 
-const { skill } = defineProps({
+defineProps({
   skill: {
     type: Object as PropType<Skill>,
     required: true
@@ -21,49 +21,49 @@ const { skill } = defineProps({
 </script>
 
 <style lang="scss">
-  @mixin show-content {
-    transform: translateY(-2.5rem);
-    outline: none;
-    opacity: 1;
-  }
+@mixin show-content {
+  transform: translateY(-2.5rem);
+  outline: none;
+  opacity: 1;
+}
 
-  .skill {
-    font-size: 1.5em;
+.skill {
+  font-size: 1.5em;
 
-    &-name {
-      transform: translateY(0);
-      transition: transform var(--transition);
+  &-name {
+    transform: translateY(0);
+    transition: transform var(--transition);
 
-      .skill:hover &,
-      .skill:focus & {
-        transform: translateY(-2.5rem);
-      }
-    }
-
-    &-score {
-      display: flex;
-      position: absolute;
-      top: 60%;
-      flex-wrap: wrap;
-      justify-content: center;
-      transform: translateY(0);
-      transition: var(--transition);
-      opacity: 0;
-
-      @media #{touchscreen} {
-        @include show-content;
-      }
-
-      .skill:hover &,
-      .skill:focus & {
-        @include show-content;
-      }
-
-      .icon {
-        width: 50%;
-        height: 1.75rem;
-        margin-top: 0.75rem;
-      }
+    .skill:hover &,
+    .skill:focus & {
+      transform: translateY(-2.5rem);
     }
   }
-  </style>
+
+  &-score {
+    display: flex;
+    position: absolute;
+    top: 60%;
+    flex-wrap: wrap;
+    justify-content: center;
+    transform: translateY(0);
+    transition: var(--transition);
+    opacity: 0;
+
+    @media #{touchscreen} {
+      @include show-content;
+    }
+
+    .skill:hover &,
+    .skill:focus & {
+      @include show-content;
+    }
+
+    .icon {
+      width: 50%;
+      height: 1.75rem;
+      margin-top: 0.75rem;
+    }
+  }
+}
+</style>

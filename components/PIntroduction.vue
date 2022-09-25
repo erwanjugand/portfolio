@@ -1,6 +1,6 @@
 <template>
   <PSection class="introduction" :style="style">
-    <ClientOnly placeholderTag="h1" placeholder="Erwan Jugand">
+    <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
       <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
     </ClientOnly>
     <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf" target="_blank" outlined>
@@ -8,15 +8,15 @@
       {{ $t('PIntroduction.action') }}
     </PButton>
     <a href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" aria-hidden>
-      <img src="/images/mouse.svg" alt="" />
+      <img src="/images/mouse.svg" alt="">
     </a>
   </PSection>
 </template>
 
 <script setup lang="ts">
-import VTypical from 'vue-typical'
+import { VTypical } from 'vue-typical'
 const { y } = useWindowScroll()
-const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 3}px`}))
+const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 3}px` }))
 </script>
 
 <style lang="scss">
@@ -63,6 +63,7 @@ const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 
   }
 
   h1 {
+    transition: font-size var(--transition);
     color: $grey-0;
     font-size: 2em;
 

@@ -10,15 +10,15 @@
       </button>
     </div>
     <footer class="footer">
-    <div class="container footer-content">
-      <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
+      <div class="container footer-content">
+        <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
 
-      <NuxtLink class="footer-legal-mentions" to="/legal-mentions">
+        <NuxtLink class="footer-legal-mentions" to="/legal-mentions">
           {{ $t('pages.legalMentions.title') }}
-      </NuxtLink>
+        </NuxtLink>
 
-      <div class="footer-social-networks">
-        <a
+        <div class="footer-social-networks">
+          <a
             target="_blank"
             rel="noopener"
             class="footer-github"
@@ -39,13 +39,13 @@
           >
             <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
           </a>
-      </div>
+        </div>
 
-      <NuxtLink class="footer-last-version" to="/changelog">
-        {{ lastVersion }}
-      </NuxtLink>
-    </div>
-  </footer>
+        <NuxtLink class="footer-last-version" to="/changelog">
+          {{ lastVersion }}
+        </NuxtLink>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -135,7 +135,8 @@ const currentYear = new Date().getFullYear()
 
   &-last-version,
   &-legal-mentions {
-    &:hover {
+    &:hover,
+    &:focus-visible {
       text-decoration: underline;
     }
   }

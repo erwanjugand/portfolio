@@ -10,26 +10,26 @@
         <button
           class="header-switch-locale"
           aria-controls="menu-locales"
-          :aria-expanded="localMenuIsOpen"
+          :aria-expanded="localeMenuIsOpen"
           :aria-label="$t('PHeader.langAction')"
           :title="$t('PHeader.langAction')"
-          @click="localMenuIsOpen = !localMenuIsOpen"
+          @click="localeMenuIsOpen = !localeMenuIsOpen"
         >
-          <img class="header-switch-locale-image" :src="`/images/flag-${currentLocal.code}.svg`" :alt="currentLocal.name">
+          <img class="header-switch-locale-image" :src="`/images/flag-${currentLocale.code}.svg`" :alt="currentLocale.name">
           <PIcon class="header-switch-locale-icon" type="solid" name="caretDown" />
         </button>
         <Transition name="header-switch-locale">
-          <ul v-show="localMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
-            <li class="header-switch-locale-list-item" v-for="locale of locales" :key="locale.code">
+          <ul v-show="localeMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
+            <li v-for="otherLocale of locales" :key="otherLocale.code" class="header-switch-locale-list-item">
               <NuxtLink
                 class="header-switch-locale-list-link"
                 role="menuitem"
-                :to="switchLocalePath(locale.code)"
-                :aria-label="locale.name"
-                :title="locale.name"
-                @click="localMenuIsOpen = false"
+                :to="switchLocalePath(otherLocale.code)"
+                :aria-label="otherLocale.name"
+                :title="otherLocale.name"
+                @click="localeMenuIsOpen = false"
               >
-                <img class="header-switch-locale-image" loading="lazy" :src="`/images/flag-${locale.iso}.svg`" :alt="locale.name">
+                <img class="header-switch-locale-image" loading="lazy" :src="`/images/flag-${otherLocale.iso}.svg`" :alt="otherLocale.name">
               </NuxtLink>
             </li>
           </ul>
@@ -59,14 +59,18 @@ const isDark = computed(() => theme.value === 'dark')
 const isSystem = computed(() => theme.value === 'system')
 const themeText = computed(() => t(`PHeader.${theme.value}Mode`).toString())
 const themeIcon = computed(() => isDark.value ? 'moon' : 'brightness')
-const toggleTheme = () => theme.preference = isDark.value ? 'light' : 'dark'
+const toggleTheme = () => {
+  theme.preference = isDark.value ? 'light' : 'dark'
+}
 
-// Local
+// Locale
 const switchLocaleContainer = ref(null)
-const localMenuIsOpen = ref(false)
-const currentLocal = computed(() => locales.value.find((l) => l.code === locale.value)!)
+const localeMenuIsOpen = ref(false)
+const currentLocale = computed(() => locales.value.find(l => l.code === locale.value)!)
 const switchLocalePath = useSwitchLocalePath()
-onClickOutside(switchLocaleContainer, (event) => localMenuIsOpen.value = false)
+onClickOutside(switchLocaleContainer, () => {
+  localeMenuIsOpen.value = false
+})
 
 </script>
 

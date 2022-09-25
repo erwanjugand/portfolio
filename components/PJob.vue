@@ -10,11 +10,11 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "nuxt/dist/app/compat/vue-demi";
-import { useI18n } from "vue-i18n";
+import { PropType } from 'nuxt/dist/app/compat/vue-demi'
+import { useI18n } from 'vue-i18n'
 import { intervalToDuration, addMonths } from 'date-fns'
-import { Job } from "~/store/store";
-const {d, t} = useI18n()
+import { Job } from '~/store/store'
+const { d, t } = useI18n()
 
 const props = defineProps({
   job: {
@@ -31,13 +31,11 @@ const contract = computed(() => '· ' + t(`PJob.contract.${props.job.contract}`)
 const duration = computed(() => {
   const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
   return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
-
 })
 const startedAt = computed(() => d(props.job.startedAt, 'short'))
 const finishedAt = computed(() => {
   const isToday = new Date().getTime() - props.job.finishedAt.getTime() < 100_000
   return isToday ? t('PJob.today') : d(props.job.finishedAt, 'short')
-
 })
 const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' + duration.value)
 </script>

@@ -1,7 +1,8 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <svg class="icon" role="img" :viewBox="viewBox" :aria-hidden="true">
     <path v-if="typeof icon.path === 'string'" :d="icon.path" />
-    <path v-else v-for="(path, index) of icon.path" :d="path" :key="index" />
+    <path v-for="(path, index) of icon.path" v-else :key="index" :d="path" />
   </svg>
 </template>
 

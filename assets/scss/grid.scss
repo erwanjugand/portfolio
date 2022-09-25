@@ -43,6 +43,11 @@ $columns: (
   justify-items: center;
   grid-template-columns: repeat(12, 1fr);
   gap: 64px 16px;
+  transition: gap var(--transition);
+
+  @media #{$large-and-up} {
+    gap: 96px 16px;
+  }
 }
 
 @mixin col($prefix, $values) {
