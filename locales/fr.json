@@ -108,19 +108,19 @@
     },
     "items": {
       "steepleLeadFrontEndDev": {
-        "title": "Lead développeur Front-end",
+        "title": "Lead développeur front-end",
         "description": "Missions en complémentarité de celles de développeur : \n - Piloter l'équipe \n - Faire grandir chaque développeur \n - Structurer le pôle"
       },
       "steepleFrontEndDev": {
-        "title": "Développeur Front-end",
+        "title": "Développeur front-end",
         "description": "Missions : \n - Refonte et mise à jour continue du site web \n - Maintenance de l'application Android et de l'application Chrome \n - Conception des interfaces web sur Adobe XD \n - Création et maintenance du Wordpress \n - Tests utilisateurs \n\n Langages utilisés : Nuxt.js basé sur Vue.js, TypeScript, SASS"
       },
       "steepleWebIntegrator": {
-        "title": "Intégrateur Web",
+        "title": "Intégrateur web",
         "description": "Missions : \n - Intégration Web \n - Conception des interfaces web sur Adobe XD \n - Gestion de projet \n - Optimisation des médias \n - Support d'IE 11 \n\n Langages utilisés : Ruby and Rails, HTML, SCSS"
       },
       "vinciWebIntegrator": {
-        "title": "Intégrateur Web",
+        "title": "Intégrateur web",
         "description": "Missions : \n - Audit des sites web des entreprises dans le groupe VEFTGO \n - Recensement des contenus existants \n - Migration des sites existants à travers WordPress \n - Remontée de bugs auprès de la DSI"
       },
       "lpcWebIntegrator": {
