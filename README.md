@@ -40,3 +40,12 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+
+## Image optimization
+
+Required : Install `ImageMagick`
+
+```bash
+# Optimize images
+yarn image
+```

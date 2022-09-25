@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <header class="header dark-mode">
     <div class="container header-content">
@@ -40,14 +41,13 @@
 
       <ClientOnly>
         <button
-          v-if="!isSystem"
           v-ripple
           class="header-toggle-theme"
           :aria-label="themeText"
           :title="themeText"
           @click="toggleTheme()"
         >
-          <PIcon class="header-toggle-theme-icon" :name="themeIcon" />
+          <PIcon class="header-toggle-theme-icon" :type="currentThemeIcon.type" :name="currentThemeIcon.name" />
         </button>
       </ClientOnly>
     </div>
@@ -60,19 +60,23 @@ import { onClickOutside } from '@vueuse/core'
 import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
 import { ComputedRef } from 'nuxt/dist/app/compat/vue-demi'
 
-const locales = useI18n().locales as ComputedRef<LocaleObject[]>
-const { t, locale } = useI18n()
 // Theme
+const themeIcon: headerIcons = {
+  light: { type: 'light', name: 'brightness' },
+  dark: { type: 'light', name: 'moon' },
+  hacked: { type: 'custom', name: 'easterEgg' }
+}
 const theme = useColorMode()
 const isDark = computed(() => theme.value === 'dark')
-const isSystem = computed(() => theme.value === 'system')
 const themeText = computed(() => t(`PHeader.${theme.value}Mode`).toString())
-const themeIcon = computed(() => isDark.value ? 'moon' : 'brightness')
+const currentThemeIcon = computed(() => themeIcon[theme.value])
 const toggleTheme = () => {
   theme.preference = isDark.value ? 'light' : 'dark'
 }
 
 // Locale
+const locales = useI18n().locales as ComputedRef<LocaleObject[]>
+const { t, locale } = useI18n()
 const switchLocaleContainer = ref(null)
 const localeMenuIsOpen = ref(false)
 const currentLocale = computed(() => locales.value.find(l => l.code === locale.value)!)
@@ -164,8 +168,8 @@ onClickOutside(switchLocaleContainer, () => {
         width: max-content;
         padding: 8px;
 
-        &.nuxt-link-exact-active {
-          background-color: var(--c-secondary);
+        &.router-link-exact-active {
+          background-color: var(--c-primary);
         }
       }
 

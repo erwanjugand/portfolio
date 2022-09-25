@@ -31,3 +31,9 @@ export interface Release {
   major: boolean
   tags: Tag[]
 }
+
+export interface EasterEggStep {
+  text: string
+  value: number
+  duration: number
+}

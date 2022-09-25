@@ -6,6 +6,7 @@
         class="footer-easter-egg"
         title="?????"
         aria-label="?????"
+        @click="openEasterEgg"
       >
         <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
@@ -49,6 +50,7 @@
         </NuxtLink>
       </div>
     </footer>
+    <PEasterEgg v-if="isVisible" @close="closeEasterEgg" />
   </div>
 </template>
 
@@ -57,6 +59,10 @@ import { useStore } from '~/store'
 const { releases } = useStore()
 const lastVersion = releases[0].name
 const currentYear = new Date().getFullYear()
+
+const isVisible = ref(false)
+const openEasterEgg = () => { isVisible.value = true }
+const closeEasterEgg = () => { isVisible.value = false }
 </script>
 
 <style lang="scss">
@@ -85,7 +91,6 @@ const currentYear = new Date().getFullYear()
       grid-template:
         "a c d"
         "b c d";
-      padding: 8px 0;
       gap: 0 16px;
     }
 
