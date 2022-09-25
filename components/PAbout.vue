@@ -1,55 +1,50 @@
 <template>
-  <section class="container about">
-    <h2 v-text="$t('home.about.title')" />
-
-    <div class="row">
-      <div class="xs12 l4 about-profil-container">
-        <img class="about-profil elevation-1" src="/images/profil/erwan-jugand-x1.webp" srcset="/images/profil/erwan-jugand-x1.webp 1x, /images/profil/erwan-jugand-x2.webp 2x, /images/profil/erwan-jugand-x3.webp 3x" alt="">
-      </div>
+  <PSection id="about">
+    <div class="container row">
+      <PH2 class="xs12">
+        {{ $t('PAbout.title') }}
+      </PH2>
+      <picture class="xs12 l4 about-profil-container">
+        <source srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x" type="image/avif">
+        <img class="about-profil" src="/images/erwan-jugand-x1.webp" srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x" alt="Erwan Jugand">
+      </picture>
       <div class="xs12 l8 about-content">
         <!-- eslint-disable vue/no-v-html -->
-        <p class="about-text" v-html="$t('home.about.text1', { year: age })" />
-        <p class="about-text" v-html="$t('home.about.text2')" />
-        <p class="about-text" v-html="$t('home.about.text3')" />
-        <p class="about-text" v-html="$t('home.about.text4')" />
-        <p class="about-text" v-html="$t('home.about.text5')" />
+        <p class="about-text" v-html="$t('PAbout.text1', { year: age })" />
+        <p class="about-text" v-html="$t('PAbout.text2')" />
+        <p class="about-text" v-html="$t('PAbout.text3')" />
+        <p class="about-text" v-html="$t('PAbout.text4')" />
+        <p class="about-text" v-html="$t('PAbout.text5')" />
         <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
-  </section>
+  </PSection>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import { differenceInYears } from 'date-fns'
-
-export default Vue.extend({
-  computed: {
-    age (): number {
-      return differenceInYears(new Date(), new Date(1997, 7, 17))
-    }
-  }
-})
+<script setup lang="ts">
+const diff = new Date().getTime() - new Date('1997-07-17').getTime()
+const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
 </script>
 
 <style lang="scss">
 .about {
-  .row {
-    row-gap: 32px;
-  }
-
-  &-profil-container {
-    display: flex;
-    justify-content: center;
-  }
-
   &-profil {
-    width: 256+12px;
-    max-width: 100%;
-    height: 256+12px;
+    flex: 0 1 300px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;
-    transition: width var(--transition), height var(--transition);
+    background-color: var(--c-background-1);
+    object-fit: cover;
+    box-shadow:
+      inset 0 0 0 1px var(--c-border),
+      0 2px 1px -1px rgba($grey-100, 0.2),
+      0 1px 1px 0 rgba($grey-100, 0.14),
+      0 1px 3px 0 rgba($grey-100, 0.12);
+    aspect-ratio: 1/1;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &-content {
@@ -59,8 +54,16 @@ export default Vue.extend({
     justify-content: center;
   }
 
-  &-text strong {
-    font-weight: $fw-bold;
+  &-text {
+    transition: font-size var(--transition);
+
+    @media #{$large-and-up} {
+      font-size: 1.125em;
+    }
+
+    strong {
+      font-weight: $fw-bold;
+    }
   }
 }
 </style>

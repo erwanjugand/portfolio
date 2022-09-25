@@ -1,7 +1,7 @@
 <template>
   <div class="job">
     <div class="job-header">
-      <h4 :class="['job-title', {'job-title-anchor': !single}]" v-text="title" />
+      <h4 :class="['job-title', { 'job-title-anchor': !single }]" v-text="title" />
       <p class="job-contract" v-text="contract" />
       <p class="job-time" v-text="time" />
     </div>
@@ -9,109 +9,90 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue, { PropOptions } from 'vue'
-import { TranslateResult } from 'vue-i18n'
+<script setup lang="ts">
+import { PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { intervalToDuration, addMonths } from 'date-fns'
-import { Job } from '~/models'
+import { Job } from '~/store/store'
+const { d, t } = useI18n()
 
-export default Vue.extend({
-  props: {
-    job: {
-      type: Object
-    } as PropOptions<Job>,
-
-    single: Boolean
+const props = defineProps({
+  job: {
+    type: Object as PropType<Job>,
+    required: true
   },
 
-  computed: {
-    title (): TranslateResult {
-      return this.$t(`jobs.items.${this.job.key}.title`)
-    },
-
-    description (): TranslateResult {
-      return this.$t(`jobs.items.${this.job.key}.description`)
-    },
-
-    contract (): TranslateResult {
-      return '· ' + this.$t(`jobs.contract.${this.job.contract}`)
-    },
-
-    duration (): string {
-      const interval = intervalToDuration({ start: this.job.startedAt, end: addMonths(this.job.finishedAt, 1) })
-      return this.$tc('jobs.years', interval.years) + ' ' + this.$tc('jobs.months', interval.months)
-    },
-
-    startedAt (): string {
-      return this.$d(this.job.startedAt, 'short')
-    },
-
-    finishedAt (): TranslateResult | string {
-      const isToday = new Date().getTime() - this.job.finishedAt.getTime() < 100_000
-      return isToday ? this.$t('jobs.today') : this.$d(this.job.finishedAt, 'short')
-    },
-
-    time (): string {
-      return this.startedAt + ' - ' + this.finishedAt + ' · ' + this.duration
-    }
-  }
+  single: Boolean
 })
+
+const title = computed(() => t(`PJob.items.${props.job.key}.title`))
+const description = computed(() => t(`PJob.items.${props.job.key}.description`))
+const contract = computed(() => '· ' + t(`PJob.contract.${props.job.contract}`))
+
+const startedAt = computed(() => d(props.job.startedAt, 'short'))
+const finishedAt = computed(() => {
+  const isToday = new Date().getTime() - props.job.finishedAt.getTime() < 100_000
+  return isToday ? t('PJob.today') : d(props.job.finishedAt, 'short')
+})
+const duration = computed(() => {
+  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
+  return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
+})
+const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' + duration.value)
 </script>
 
 <style lang="scss">
-@use 'sass:math' as *;
-
 $diagonal: sqrt(3);
 
 .job {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 
   &-header {
     display: grid;
-    grid: 'a b' 'c c';
+    grid: "a b" "c c";
     grid-template-columns: auto 1fr;
-    column-gap: .3em;
     align-items: center;
+    gap: 4px 0.3em;
   }
 
   &-title {
     grid-area: a;
     padding-left: 48px;
-    font-weight: $fw-bold;
     color: var(--c-primary);
+    font-weight: $fw-bold;
 
     &-anchor {
       position: relative;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: calc(50% - 6px);
-        left: div((12px * $diagonal) + 8px , 2);
+        left: div((12px * $diagonal) + 8px, 2);
+        box-sizing: border-box;
         width: 12px;
         height: 12px;
-        background-color: var(--c-background-bg);
-        border: $bw-out solid transparent;
-        box-shadow: 0 0 0 $bw-out var(--c-primary);
         transform: rotate(45deg);
-        box-sizing: border-box;
+        border: 3px solid transparent;
+        background-color: var(--c-background-bg);
+        box-shadow: 0 0 0 3px var(--c-primary);
       }
     }
   }
 
   &-contract {
     grid-area: b;
-    font-weight: $fw-light;
     color: var(--c-primary);
+    font-weight: $fw-light;
   }
 
   &-time {
     grid-area: c;
     padding-left: 48px;
-    font-size: .875rem;
     color: var(--c-text-secondary-3);
+    font-size: 0.875rem;
   }
 
   &-description {

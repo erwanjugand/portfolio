@@ -1,35 +1,37 @@
-# portfolio-front
+# Portfolio based on [Nuxt 3](https://v3.nuxtjs.org)
 
-> My personal portfolio
+## Setup
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+install the dependencies  
+```bash
+yarn install
 ```
 
+## Development Server
 
-## Encoding images
+Start the development server on http://localhost:3000  
+```bash
+yarn dev
+```
 
-### Webp
+## Production
 
-Install : https://www.tecmint.com/convert-images-to-webp-format-in-linux/
+Build the application for production:  
 
-Quality 95 for x1  
-Quality 90 for x2  
-Quality 85 for x3  
+```bash
+yarn build
+```
 
-``` bash
-cwebp -q 95 -resize 100 100 image.jpg -o image.webp -preset photo
+Locally preview production build:  
+
+```bash
+yarn preview
+```
+
+## Image optimization
+
+Required : Install `ImageMagick`  
+```bash
+# Optimize images
+yarn image
 ```

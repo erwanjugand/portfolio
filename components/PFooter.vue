@@ -1,142 +1,183 @@
 <template>
   <div class="footer-container">
-    <div class="footer-easter-egg-button-container">
+    <div class="footer-easter-egg-container">
       <button
         v-ripple
-        class="footer-easter-egg-button"
+        class="footer-easter-egg"
         title="?????"
         aria-label="?????"
-        @click="$nuxt.$emit('launchEasterEgg')"
+        @click="openEasterEgg"
       >
-        <PIcon type="custom" name="easterEgg" />
+        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
     </div>
-    <footer class="footer elevation-1">
-      <div class="container">
-        <div class="footer-copyright">
-          <p v-text="$t('footer.copyright', { year: currentYear })" />
-          <nuxt-link :to="localePath('legal-mentions')">
-            {{ $t('legalMentions.mainTitle') }}
-          </nuxt-link>
-        </div>
+    <footer class="footer">
+      <div class="container footer-content">
+        <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
+
+        <NuxtLink class="footer-legal-mentions" :to="localePath('legal-mentions')">
+          {{ $t('pages.legalMentions.title') }}
+        </NuxtLink>
 
         <div class="footer-social-networks">
           <a
             v-ripple
             target="_blank"
             rel="noopener"
+            class="footer-github"
             href="https://github.com/erwanjugand"
             aria-label="Github"
-            :title="$t('footer.github')"
+            :title="$t('PFooter.github')"
           >
-            <PIcon type="brand" name="github" />
+            <PIcon type="brand" name="github" class="footer-github-icon" />
           </a>
+
           <a
             v-ripple
             target="_blank"
             rel="noopener"
+            class="footer-linkedin"
             href="https://www.linkedin.com/in/erwan-jugand/"
             aria-label="Linkedin"
-            :title="$t('footer.linkedin')"
+            :title="$t('PFooter.linkedin')"
           >
-            <PIcon type="brand" name="linkedin" />
+            <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
           </a>
         </div>
+
+        <NuxtLink class="footer-last-version" :to="localePath('changelog')">
+          {{ lastVersion }}
+        </NuxtLink>
       </div>
     </footer>
+    <PEasterEgg v-if="isVisible" @close="closeEasterEgg" />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script setup lang="ts">
+import { useStore } from '~/store'
+const localePath = useLocalePath()
+const { releases } = useStore()
+const lastVersion = releases[0].name
+const currentYear = new Date().getFullYear()
 
-export default Vue.extend({
-  computed: {
-    currentYear (): number {
-      return new Date().getFullYear()
-    }
-  }
-})
+const isVisible = ref(false)
+const openEasterEgg = () => { isVisible.value = true }
+const closeEasterEgg = () => { isVisible.value = false }
 </script>
 
 <style lang="scss">
 .footer {
-  z-index: 1;
   position: relative;
-  color: $grey-0;
-  background-color: $grey-87;
+  background-color: var(--c-background-alt);
 
   &-container {
     position: relative;
-    margin-top: 16px;
-
-    @media #{$medium-and-up} {
-      margin-top: 32px;
-    }
   }
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  &-content {
+    display: grid;
+    position: relative;
+    z-index: 1;
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d";
     align-items: center;
+    padding: 16px 0;
+    gap: 16px 0;
 
     @media #{$medium-and-up} {
-      flex-direction: row;
-      justify-content: space-between;
+      grid-template:
+        "a c d"
+        "b c d";
+      gap: 0 16px;
+    }
+
+    @media #{$large-and-up} {
+      grid-template-columns: 1fr auto 1fr;
     }
   }
 
   &-copyright {
-    padding-top: 16px;
+    grid-area: a;
+  }
 
-    @media #{$medium-and-up} {
-      padding: 0;
-    }
-
-    a {
-      display: inline-flex;
-      padding-top: 8px;
-    }
+  &-legal-mentions {
+    grid-area: b;
   }
 
   &-social-networks {
     display: flex;
     gap: 16px;
+    grid-area: c;
 
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 64px;
-      height: 64px;
-
-      svg {
-        width: 2.5em;
-        fill: currentColor;
-      }
+    @media #{$medium-and-up} {
+      justify-self: center;
     }
   }
 
-  &-easter-egg-button {
+  &-github,
+  &-linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: $br-small;
+    justify-self: center;
+
+    &-icon {
+      height: 2.5em;
+      fill: currentcolor;
+    }
+  }
+
+  &-last-version {
+    grid-area: d;
+
+    @media #{$medium-and-up} {
+      justify-self: end;
+    }
+  }
+
+  &-last-version,
+  &-legal-mentions {
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  &-easter-egg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 64px;
     height: 64px;
     padding: 8px;
-    color: var(--c-text-secondary-1);
-    fill: currentColor;
-    border-radius: $br-small $br-small 0 0;
     transform: translateY(-50%);
     transition: transform var(--transition), color var(--transition);
+    border-radius: $br-small $br-small 0 0;
+    fill: currentcolor;
+    color: var(--c-text-secondary-1);
 
-    &:hover, &:focus {
-      color: var(--c-text-secondary-2);
+    &:hover,
+    &:focus {
       transform: translateY(-100%);
+      color: var(--c-text-secondary-2);
     }
 
     &-container {
       position: absolute;
       top: 0;
       right: 10%;
+    }
+
+    &-icon {
+      height: 2.5em;
+      fill: currentcolor;
     }
   }
 }

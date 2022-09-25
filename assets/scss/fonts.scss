@@ -1,0 +1,22 @@
+$font-folder: "@/fonts/";
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url($font-folder + "roboto-v30-latin-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url($font-folder + "roboto-v30-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url($font-folder + "roboto-v30-latin-500.woff2") format("woff2");
+}

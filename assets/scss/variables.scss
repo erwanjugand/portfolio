@@ -1,0 +1,62 @@
+@use "sass:color" as *;
+@use "sass:math" as *;
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return div($number, $number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function grey-color($color, $darknen) {
+  $lightness: 100% - $darknen;
+  $saturation: div(pow(strip-unit($darknen), 3), pow(100, 2) * 10) * 1%;
+
+  @return change(complement($color), $lightness: $lightness, $saturation: $saturation);
+}
+
+// Colors
+$primary: #0077db;
+$primary-alt: #a23ffd;
+$grey-100: grey-color($primary, 100%);
+$grey-95: grey-color($primary, 95%);
+$grey-93: grey-color($primary, 93%);
+$grey-90: grey-color($primary, 90%);
+$grey-87: grey-color($primary, 87%);
+$grey-84: grey-color($primary, 84%);
+$grey-80: grey-color($primary, 80%);
+$grey-75: grey-color($primary, 75%);
+$grey-65: grey-color($primary, 65%);
+$grey-50: grey-color($primary, 50%);
+$grey-35: grey-color($primary, 35%);
+$grey-25: grey-color($primary, 25%);
+$grey-20: grey-color($primary, 20%);
+$grey-16: grey-color($primary, 16%);
+$grey-13: grey-color($primary, 13%);
+$grey-10: grey-color($primary, 10%);
+$grey-7: grey-color($primary, 7%);
+$grey-5: grey-color($primary, 5%);
+$grey-0: grey-color($primary, 0%);
+
+// Media Query
+$small-and-up: "(min-width: 384px)";
+$small-and-down: "(max-width: 575px)";
+$medium-and-up: "(min-width: 576px)";
+$medium-and-down: "(max-width: 1023px)";
+$medium-only: "(min-width: 576px) and (max-width: 1023px)";
+$large-and-up: "(min-width: 1024px)";
+$large-and-down: "(max-width: 1399px)";
+$large-only: "(min-width: 1024px) and (max-width: 1399px)";
+$extra-large: "(min-width: 1400px)";
+$touchscreen: (hover: none) and (pointer: coarse);
+
+// // Font
+$fw-light: 300;
+$fw-regular: 400;
+$fw-bold: 500;
+
+// Border
+$br-small: 8px;
+$br-regular: 16px;
+$br-large: 32px;

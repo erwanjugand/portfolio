@@ -1,0 +1,86 @@
+@use "sass:color";
+
+:root {
+  // Color
+  --c-primary: #{$primary};
+  --c-primary-alt: #{$primary-alt};
+
+  // Transition
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0s;
+  }
+}
+
+html {
+  font-family: Roboto, sans-serif;
+  scroll-padding-top: 64px;
+  scroll-behavior: smooth;
+  line-height: 1.25;
+}
+
+.light-mode {
+  background-color: var(--c-background-bg);
+  color: var(--c-text);
+
+  // Color
+  --c-primary-hover: #{color.mix($primary, $grey-0, 90%)};
+
+  // Text
+  --c-text: #{$grey-90};
+  --c-text-secondary-1: #{$grey-20};
+  --c-text-secondary-2: #{$grey-35};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-65};
+
+  // Background
+  --c-background-bg: #{$grey-5};
+  --c-background-alt: #{$grey-16};
+  --c-background-1: #{$grey-0};
+  --c-background-2: #{$grey-0};
+  --c-background-3: #{$grey-0};
+
+  // Border
+  --c-border: transparent;
+}
+
+.dark-mode,
+.hacked-mode {
+  background-color: var(--c-background-bg);
+  color: var(--c-text);
+
+  // Color
+  --c-primary-hover: #{color.mix($primary, $grey-100, 90%)};
+
+  // Text
+  --c-text: #{$grey-5};
+  --c-text-secondary-1: #{$grey-80};
+  --c-text-secondary-2: #{$grey-65};
+  --c-text-secondary-3: #{$grey-50};
+  --c-text-secondary-4: #{$grey-35};
+
+  // Background
+  --c-background-bg: #{$grey-93};
+  --c-background-alt: #{$grey-87};
+  --c-background-1: #{$grey-90};
+  --c-background-2: #{$grey-87};
+  --c-background-3: #{$grey-84};
+
+  // Border
+  --c-border: #{rgba($grey-0, 0.05)};
+}
+
+.hacked-mode {
+  --c-primary: #{$primary-alt};
+}
+
+button {
+  cursor: pointer;
+}
+
+li::marker {
+  display: none;
+}

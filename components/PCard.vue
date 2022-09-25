@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" class="card elevation-1">
+  <component :is="tag" class="card">
     <div v-if="$slots.header" class="card-header">
       <slot name="header" />
     </div>
@@ -9,15 +9,11 @@
   </component>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    tag: {
-      type: String,
-      default: 'div'
-    }
+<script setup lang="ts">
+defineProps({
+  tag: {
+    type: String,
+    default: 'div'
   }
 })
 </script>
@@ -26,8 +22,10 @@ export default Vue.extend({
 .card {
   display: flex;
   flex-direction: column;
-  border-radius: $br-large $br-small;
   overflow: hidden;
+  border-radius: $br-large $br-small;
+  background-color: var(--c-background-1);
+  box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($grey-100, 0.2), 0 1px 1px 0 rgba($grey-100, 0.14), 0 1px 3px 0 rgba($grey-100, 0.12);
 
   &-header {
     display: flex;
@@ -41,12 +39,13 @@ export default Vue.extend({
       padding: 24px 32px;
     }
 
-    h2, h3 {
+    h2,
+    h3 {
       display: flex;
       align-items: center;
+      transition: margin var(--transition);
       font-size: 1.5em;
       font-weight: $fw-regular;
-      transition: margin var(--transition);
 
       svg {
         flex-shrink: 0;
@@ -64,8 +63,8 @@ export default Vue.extend({
 
   &-content {
     padding: 0 24px 16px;
-    font-weight: $fw-light;
     transition: padding var(--transition);
+    font-weight: $fw-light;
 
     @media #{$medium-and-up} {
       padding: 0 32px 32px;

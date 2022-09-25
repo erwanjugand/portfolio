@@ -7,59 +7,61 @@
   </PHexagon>
 </template>
 
-<script lang="ts">
-import Vue, { PropOptions } from 'vue'
-import { Skill } from '~/models'
-export default Vue.extend({
-  props: {
-    skill: {
-      type: Object
-    } as PropOptions<Skill>
+<script setup lang="ts">
+import { PropType } from 'vue'
+import { Skill } from '~/store/store'
+
+defineProps({
+  skill: {
+    type: Object as PropType<Skill>,
+    required: true
   }
 })
 </script>
 
 <style lang="scss">
 @mixin show-content {
+  transform: translateY(-2.5rem);
   outline: none;
   opacity: 1;
-  transform: translateY(-2.5rem);
 }
 
 .skill {
-  font-size: 1.25em;
+  font-size: 1.5em;
 
   &-name {
     transform: translateY(0);
     transition: transform var(--transition);
 
-    .skill:hover &, .skill:focus & {
+    .skill:hover &,
+    .skill:focus & {
       transform: translateY(-2.5rem);
     }
   }
 
   &-score {
+    display: flex;
     position: absolute;
     top: 60%;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0;
     transform: translateY(0);
     transition: var(--transition);
+    opacity: 0;
 
     @media #{touchscreen} {
-      @include show-content();
+      @include show-content;
     }
 
-    .skill:hover &, .skill:focus & {
-      @include show-content();
+    .skill:hover &,
+    .skill:focus & {
+      @include show-content;
     }
 
     .icon {
       width: 50%;
       height: 1.75rem;
-      margin-top: .75rem;
+      margin-top: 0.75rem;
     }
   }
 }

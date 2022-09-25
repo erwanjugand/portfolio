@@ -10,34 +10,26 @@
   </li>
 </template>
 
-<script lang="ts">
-import Vue, { PropOptions } from 'vue'
-import { Experience } from '~/models'
+<script setup lang="ts">
+import { PropType } from 'vue'
+import { Experience } from '~/store/store'
 
-export default Vue.extend({
-  props: {
-    experience: {
-      type: Object
-    } as PropOptions<Experience>
-  },
-
-  computed: {
-    hasOneJob (): boolean {
-      return this.experience.jobs.length === 1
-    }
+const props = defineProps({
+  experience: {
+    type: Object as PropType<Experience>,
+    required: true
   }
 })
+const hasOneJob = computed(() => props.experience.jobs.length === 1)
 </script>
 
 <style lang="scss">
-@use 'sass:math' as *;
-
 $diagonal: sqrt(3);
 
 .experience {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 
   &-header {
     position: relative;
@@ -46,17 +38,17 @@ $diagonal: sqrt(3);
     font-weight: $fw-bold;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: calc(50% - 12px);
-      left: div((24px * $diagonal) - 24px , 2);
+      left: div((24px * $diagonal) - 24px, 2);
+      box-sizing: border-box;
       width: 24px;
       height: 24px;
-      background-color: var(--c-background-bg);
-      border: $bw-out solid transparent;
-      box-shadow: 0 0 0 $bw-out var(--c-primary), inset 0 0 0 $bw-in var(--c-primary);
       transform: rotate(45deg);
-      box-sizing: border-box;
+      border: 3px solid transparent;
+      background-color: var(--c-background-bg);
+      box-shadow: 0 0 0 3px var(--c-primary), inset 0 0 0 1px var(--c-primary);
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <transition-group
+  <TransitionGroup
     v-if="group"
     name="fade-height"
     :tag="tag"
@@ -10,8 +10,8 @@
     @after-leave="afterEnterLeave"
   >
     <slot />
-  </transition-group>
-  <transition
+  </TransitionGroup>
+  <Transition
     v-else
     name="fade-height"
     @enter="beforeEnterLeave"
@@ -20,44 +20,36 @@
     @after-leave="afterEnterLeave"
   >
     <slot />
-  </transition>
+  </Transition>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    group: Boolean,
-    tag: {
-      type: String,
-      default: 'div'
-    }
-  },
-
-  methods: {
-    afterEnterLeave (el:HTMLElement) {
-      el.style.removeProperty('height')
-    },
-    beforeEnterLeave (el:HTMLElement) {
-      el.style.height = el.scrollHeight + 'px'
-    }
+<script setup lang="ts">
+defineProps({
+  group: Boolean,
+  tag: {
+    type: String,
+    default: 'div'
   }
 })
+
+const beforeEnterLeave = (el: any) => { el.style.height = el.scrollHeight + 'px' }
+const afterEnterLeave = (el: any) => { el.style.removeProperty('height') }
 </script>
 
 <style lang="scss">
 .fade-height {
-  &-enter-active, &-leave-active {
+  &-enter-active,
+  &-leave-active {
     overflow: hidden;
-    transition: opacity .25s ease, height .25s ease;
+    transition: opacity 0.25s ease, height 0.25s ease;
 
     @media (prefers-reduced-motion: reduce) {
       transition: 0s;
     }
   }
 
-  &-enter, &-leave-to {
+  &-enter-from,
+  &-leave-to {
     height: 0;
     opacity: 0;
   }

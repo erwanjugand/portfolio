@@ -1,0 +1,135 @@
+{
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "TODO"
+    },
+    "changelog": {
+      "title": "Changelog",
+      "description": "TODO",
+      "items": {
+        "1": {
+          "0": {
+            "0": "TODO",
+            "2": "TODO",
+            "1": "TODO",
+            "3": "TODO"
+          },
+          "1": {
+            "0": "TODO",
+            "1": "TODO",
+            "2": "TODO"
+          },
+          "2": {
+            "0": "TODO",
+            "2": "TODO",
+            "1": "TODO",
+            "3": "TODO"
+          }
+        },
+        "2": {
+          "0": {
+            "0": "TODO",
+            "1": "TODO"
+          },
+          "1": {
+            "0": "TODO",
+            "2": "TODO",
+            "1": "TODO",
+            "3": "TODO",
+            "4": "TODO",
+            "5": "TODO",
+            "6": "TODO"
+          }
+        },
+        "3": {
+          "0": {
+            "0": ""
+          }
+        }
+      },
+      "tags": {
+        "dependencies": "Dependencies",
+        "feature": "Feature",
+        "fix": "Fix",
+        "overhaul": "Overhaul",
+        "security": "Security"
+      }
+    },
+    "legalMentions": {
+      "title": "Legal mentions",
+      "description": "TODO"
+    }
+  },
+  "PAbout": {
+    "text1": "I am Erwan Jugand, I am {year} years old and I am a <strong>Front-End developer</strong> since my training at <strong>Digital Campus Rennes</strong>.",
+    "text2": "I like to develop websites with the latest technologies that can offer the browsers with a great interest in <strong>web integration</strong> often underestimated!",
+    "text3": "Whether it is the compression of images or the minification of code, <strong>optimization is my second nature!</strong>",
+    "text4": "<strong>Good practices are one of my directives</strong> to work well in team or sharing code.",
+    "text5": "I am passionate about computer science, new technologies and high-tech products.",
+    "title": "About"
+  },
+  "PFooter": {
+    "copyright": "Copyright© {year} : All rights reserved.",
+    "github": "My Github account",
+    "linkedin": "My Linkedin account"
+  },
+  "PIntroduction": {
+    "action": "Show my CV",
+    "scroll": "Scroll to bottom"
+  },
+  "PHeader": {
+    "hackedMode": "Hacked mode",
+    "darkMode": "Dark mode",
+    "homeAction": "Back to home",
+    "langAction": "Change lang",
+    "lightMode": "Light mode"
+  },
+  "PEnvironments": {
+    "title": "Environment"
+  },
+  "PExperiences": {
+    "title": "Experiences"
+  },
+  "PSkills": {
+    "title": "Skills"
+  },
+  "PMoreInformations": {
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "title": "More information"
+  },
+  "PJob": {
+    "contract": {
+      "apprenticeship": "Apprenticeship",
+      "cdi": "Permanent contract",
+      "internship": "Internship"
+    },
+    "items": {
+      "steepleLeadFrontEndDev": {
+        "title": "Lead front-end developer",
+        "description": "TODO"
+      },
+      "steepleFrontEndDev": {
+        "title": "Front-end developer",
+        "description": "TODO"
+      },
+      "steepleWebIntegrator": {
+        "title": "Web Integrator",
+        "description": "TODO"
+      },
+      "vinciWebIntegrator": {
+        "title": "Web Integrator",
+        "description": "TODO"
+      },
+      "lpcWebIntegrator": {
+        "title": "Web Integrator",
+        "description": "TODO"
+      }
+    },
+    "today": "today",
+    "years": "\r | 1 year | {n} years",
+    "months": "\r | 1 month | {n} months"
+  }
+}

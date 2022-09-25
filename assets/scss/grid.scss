@@ -1,0 +1,72 @@
+@use "sass:map" as map;
+
+$columns: (
+  "xs": (
+    "values": (12,6),
+    "media-query": null
+  ),
+  "s": (
+    "values": (4),
+    "media-query": $small-and-up
+  ),
+  "m": (
+    "values": (2,6),
+    "media-query": $medium-and-up
+  ),
+  "l": (
+    "values": (4,8),
+    "media-query": $large-and-up
+  ),
+  "xl": (
+    "values": (),
+    "media-query": $extra-large
+  )
+);
+
+.container {
+  width: min(90vw, 1280px);
+  margin: 0 auto;
+}
+
+.medium-container {
+  width: min(90vw, 960px);
+  margin: 0 auto;
+}
+
+.small-container {
+  width: min(90vw, 640px);
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 64px 16px;
+  transition: gap var(--transition);
+
+  @media #{$large-and-up} {
+    gap: 96px 16px;
+  }
+}
+
+@mixin col($prefix, $values) {
+  @each $value in $values {
+    .#{$prefix + $value} {
+      grid-column: $value span;
+    }
+  }
+}
+
+@each $prefix, $data in $columns {
+  $media-query: map.get($data, "media-query");
+  $values: map.get($data, "values");
+
+  @if $media-query {
+    @media #{$media-query} {
+      @include col($prefix, $values);
+    }
+  } @else {
+    @include col($prefix, $values);
+  }
+}

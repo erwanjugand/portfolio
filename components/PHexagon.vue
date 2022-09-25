@@ -1,57 +1,58 @@
 <template>
-  <component :is="tag" :class="['hexagon', { 'hexagon-turned': turned }]">
+  <component :is="tag" :class="{ 'hexagon': true, 'hexagon-turned': turned }">
     <div class="hexagon-content">
       <slot />
     </div>
   </component>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
-  props: {
-    tag: {
-      type: String,
-      default: 'div'
-    },
-    turned: Boolean
-  }
+<script setup lang="ts">
+defineProps({
+  tag: {
+    type: String,
+    default: 'div'
+  },
+  turned: Boolean
 })
 </script>
 
 <style lang="scss">
-@use 'sass:math' as *;
-
+$hexagon-height: 200px;
+$hexagon-border-out: 3px;
+$hexagon-border-in: 1px;
 $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 
-@mixin dynamic-border ($width, $height, $border-size) {
+@mixin dynamic-border($width, $height, $border-size) {
   width: $width;
   height: $height;
-  border: solid currentColor;
+  border: solid currentcolor;
   border-width: $border-size 0;
 
-  &::before, &::after {
+  &::before,
+  &::after {
     top: -$border-size;
     width: $width;
     height: $height;
-    border: solid currentColor;
+    border: solid currentcolor;
     border-width: $border-size 0;
   }
 }
 
 .hexagon {
-  @include dynamic-border($hexagon-width, $hexagon-height, $bw-out);
+  @include dynamic-border($hexagon-width, $hexagon-height, $hexagon-border-out);
+
   display: flex;
   padding: 3px;
+  fill: currentcolor;
   color: var(--c-primary);
-  fill: currentColor;
 
-  &, &-content {
+  &,
+  &-content {
     position: relative;
 
-    &::before, &::after {
-      content: '';
+    &::before,
+    &::after {
+      content: "";
       position: absolute;
       left: 0;
       box-sizing: border-box;
@@ -67,12 +68,13 @@ $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
   }
 
   &-content {
-    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $bw-in);
+    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $hexagon-border-in);
+
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 
   &-turned {

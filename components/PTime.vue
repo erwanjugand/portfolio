@@ -2,26 +2,22 @@
   <time :datetime="datetime" v-text="$d(date, 'long')" />
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import type { PropOptions } from 'vue'
+<script setup lang="ts">
+import { PropType } from 'vue'
 
-export default Vue.extend({
-  props: {
-    date: {
-      type: Date,
-      required: true
-    } as PropOptions<Date>,
-    format: {
-      type: String,
-      default: 'long'
-    }
+const props = defineProps({
+  date: {
+    type: Date as PropType<Date>,
+    required: true
   },
-
-  computed: {
-    datetime (): string {
-      return this.date.toISOString()
+  format: {
+    type: String,
+    default: 'long',
+    validator (value: string) {
+      return ['short', 'long'].includes(value)
     }
   }
 })
+
+const datetime = computed(() => props.date.toISOString())
 </script>

@@ -1,8 +1,13 @@
 {
   "plugins": [
     {
-      "convertPathData": {
-        "noSpaceAfterFlags": false
+      "name": "preset-default",
+      "params": {
+        "overrides": {
+          "convertPathData": {
+            "noSpaceAfterFlags": false
+          }
+        }
       }
     }
   ]
