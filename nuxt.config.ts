@@ -73,6 +73,17 @@ export default defineNuxtConfig({
           }
         }
       }
+    },
+    parsePages: false,
+    pages: {
+      changelog: {
+        en: '/changelog',
+        fr: '/journal-des-modifications'
+      },
+      'legal-mentions': {
+        en: '/legal-mentions',
+        fr: '/mentions-legales'
+      }
     }
   }
 })

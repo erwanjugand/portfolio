@@ -15,7 +15,7 @@
       <div class="container footer-content">
         <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
 
-        <NuxtLink class="footer-legal-mentions" to="/legal-mentions">
+        <NuxtLink class="footer-legal-mentions" :to="localePath('legal-mentions')">
           {{ $t('pages.legalMentions.title') }}
         </NuxtLink>
 
@@ -45,7 +45,7 @@
           </a>
         </div>
 
-        <NuxtLink class="footer-last-version" to="/changelog">
+        <NuxtLink class="footer-last-version" :to="localePath('changelog')">
           {{ lastVersion }}
         </NuxtLink>
       </div>
@@ -56,6 +56,7 @@
 
 <script setup lang="ts">
 import { useStore } from '~/store'
+const localePath = useLocalePath()
 const { releases } = useStore()
 const lastVersion = releases[0].name
 const currentYear = new Date().getFullYear()

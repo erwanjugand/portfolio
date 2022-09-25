@@ -2,7 +2,7 @@
 <template>
   <header class="header dark-mode">
     <div class="container header-content">
-      <NuxtLink v-ripple to="/" class="header-home" :title="$t('PHeader.homeAction')">
+      <NuxtLink v-ripple :to="localePath('index')" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
         Erwan Jugand
       </NuxtLink>
@@ -75,6 +75,7 @@ const toggleTheme = () => {
 }
 
 // Locale
+const localePath = useLocalePath()
 const locales = useI18n().locales as ComputedRef<LocaleObject[]>
 const { t, locale } = useI18n()
 const switchLocaleContainer = ref(null)
