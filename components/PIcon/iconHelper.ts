@@ -23,6 +23,7 @@ import {
   faCaretDown as fasCaretDown,
   faStar as fasStar
 } from '@fortawesome/pro-solid-svg-icons'
+
 import {
   faGithub as fabGithub,
   faLinkedin as fabLinkedin

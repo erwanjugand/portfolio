@@ -12,8 +12,8 @@ const props = defineProps({
     default: undefined
   }
 })
-const attrs = useAttrs()
 
+const attrs = useAttrs()
 const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button')
 </script>
 

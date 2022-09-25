@@ -24,9 +24,9 @@ const { skills } = useStore()
 
 <style lang="scss">
 $hexagon-height: 200px;
-$hexagon-border: 3px;
+$hexagon-border-out: 3px;
 $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
-$hexagon-space-to-remove: ceil(div($hexagon-border, sin(60deg)));
+$hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
 
 .skills-container {
   display: flex;
@@ -52,12 +52,12 @@ $hexagon-space-to-remove: ceil(div($hexagon-border, sin(60deg)));
 .skills-content {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: div($hexagon-height, 2) + div($hexagon-border, 2);
+  padding-bottom: div($hexagon-height, 2) + div($hexagon-border-out, 2);
 
   > * {
     $margin-top: 0;
     $margin-right: $hexagon-width * 1.5 - div($hexagon-space-to-remove, 2);
-    $margin-bottom: div(-$hexagon-height, 2) - div($hexagon-border, 2);
+    $margin-bottom: div(-$hexagon-height, 2) - div($hexagon-border-out, 2);
     $margin-left: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
 
     margin: $margin-top $margin-right $margin-bottom $margin-left;

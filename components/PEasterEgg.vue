@@ -10,7 +10,7 @@
       />
       <div
         role="progressbar"
-        :aria-valuenow="value"
+        :aria-valuenow="progressBarValue"
         aria-valuemin="0"
         aria-valuemax="100"
         class="easter-egg-progress"
@@ -44,8 +44,8 @@ easterEggSteps.forEach((step, index) => {
   }, step.duration)
 })
 
-const value = computed(() => easterEggSteps[lastStepIndex.value].value)
-const progressBarStyle = computed(() => { return { flexBasis: `${value.value}%` } })
+const progressBarValue = computed(() => easterEggSteps[lastStepIndex.value].value)
+const progressBarStyle = computed(() => { return { flexBasis: `${progressBarValue.value}%` } })
 </script>
 
 <style lang="scss">

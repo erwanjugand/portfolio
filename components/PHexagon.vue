@@ -18,7 +18,7 @@ defineProps({
 
 <style lang="scss">
 $hexagon-height: 200px;
-$hexagon-border: 3px;
+$hexagon-border-out: 3px;
 $hexagon-border-in: 1px;
 $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 
@@ -39,7 +39,7 @@ $hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
 }
 
 .hexagon {
-  @include dynamic-border($hexagon-width, $hexagon-height, $hexagon-border);
+  @include dynamic-border($hexagon-width, $hexagon-height, $hexagon-border-out);
 
   display: flex;
   padding: 3px;
