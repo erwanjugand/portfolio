@@ -6,7 +6,7 @@
       </PH2>
     </div>
     <div class="skills-container">
-      <ul class="skills-content">
+      <ul class="skills-wrapper">
         <PSkill
           v-for="skill of skills"
           :key="skill.name"
@@ -49,7 +49,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
   }
 }
 
-.skills-content {
+.skills-wrapper {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: div($hexagon-height, 2) + div($hexagon-border-out, 2);

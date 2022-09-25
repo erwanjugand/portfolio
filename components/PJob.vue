@@ -28,14 +28,15 @@ const props = defineProps({
 const title = computed(() => t(`PJob.items.${props.job.key}.title`))
 const description = computed(() => t(`PJob.items.${props.job.key}.description`))
 const contract = computed(() => '· ' + t(`PJob.contract.${props.job.contract}`))
-const duration = computed(() => {
-  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
-  return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
-})
+
 const startedAt = computed(() => d(props.job.startedAt, 'short'))
 const finishedAt = computed(() => {
   const isToday = new Date().getTime() - props.job.finishedAt.getTime() < 100_000
   return isToday ? t('PJob.today') : d(props.job.finishedAt, 'short')
+})
+const duration = computed(() => {
+  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
+  return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
 })
 const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' + duration.value)
 </script>

@@ -4,7 +4,7 @@
       <PH2 class="xs12">
         {{ $t('PExperiences.title') }}
       </PH2>
-      <ul class="experiences-content xs12">
+      <ul class="experiences-wrapper xs12">
         <PExperience
           v-for="(experience, index) of experiences"
           :key="index"
@@ -23,7 +23,7 @@ const { experiences } = useStore()
 <style lang="scss">
 $diagonal: sqrt(3);
 
-.experiences-content {
+.experiences-wrapper {
   display: flex;
   position: relative;
   flex-direction: column;

@@ -1,4 +1,3 @@
-
 <template>
   <PHexagon tag="li" tabindex="0" class="skill">
     <span class="skill-name" v-text="skill.name" />
