@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'nuxt/dist/app/compat/vue-demi'
+import { PropType } from 'vue'
 import { Skill } from '~/store/store'
 
 defineProps({

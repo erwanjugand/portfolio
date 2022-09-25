@@ -58,7 +58,7 @@
 import { useI18n } from 'vue-i18n'
 import { onClickOutside } from '@vueuse/core'
 import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
-import { ComputedRef } from 'nuxt/dist/app/compat/vue-demi'
+import { ComputedRef } from 'vue'
 
 // Theme
 const themeIcon: headerIcons = {

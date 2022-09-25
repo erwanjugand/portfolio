@@ -39,9 +39,9 @@ export interface EasterEggStep {
 }
 
 export interface State {
-  environmentsList: Environment[],
-  experiencesList: Experience[],
-  skillsList: Skill[],
-  releasesList: Release[],
-  easterEggStepsList: EasterEggStep[],
+  environmentsList: Environment[]
+  experiencesList: Experience[]
+  skillsList: Skill[]
+  releasesList: Release[]
+  easterEggStepsList: EasterEggStep[]
 }

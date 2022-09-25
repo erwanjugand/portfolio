@@ -124,11 +124,6 @@ useHead({
 .legal-mentions {
   align-items: flex-start;
 
-  .h1 {
-    font-size: 3em;
-    text-align: center;
-  }
-
   .h2 {
     margin: 32px 0;
   }

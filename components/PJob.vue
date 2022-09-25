@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'nuxt/dist/app/compat/vue-demi'
+import { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { intervalToDuration, addMonths } from 'date-fns'
 import { Job } from '~/store/store'
