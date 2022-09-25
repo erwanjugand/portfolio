@@ -2,11 +2,11 @@
   "pages": {
     "home": {
       "title": "Accueil",
-      "description": "Description 1"
+      "description": "TODO"
     },
     "changelog": {
       "title": "Journal de modifications",
-      "description": "Description 2",
+      "description": "TODO",
       "items": {
         "1": {
           "0": {
