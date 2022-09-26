@@ -14,10 +14,11 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/color-mode',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    '@pinia/nuxt'
   ],
 
   plugins: [
@@ -84,6 +85,12 @@ export default defineNuxtConfig({
         en: '/legal-mentions',
         fr: '/mentions-legales'
       }
+    }
+  },
+
+  googleFonts: {
+    families: {
+      Roboto: [300, 400, 500]
     }
   }
 })
