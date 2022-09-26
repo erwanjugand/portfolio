@@ -1,7 +1,7 @@
 <template>
-  <component :is="type" v-ripple :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
+  <Component :is="type" v-ripple :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
     <slot />
-  </component>
+  </Component>
 </template>
 
 <script setup lang="ts">

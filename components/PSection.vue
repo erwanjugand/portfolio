@@ -1,5 +1,5 @@
 <template>
-  <section :class="{'section': true, 'dark-mode': banner}">
+  <section :class="{ 'section': true, 'dark-mode': banner }">
     <slot />
   </section>
 </template>

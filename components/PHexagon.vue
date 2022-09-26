@@ -1,9 +1,9 @@
 <template>
-  <component :is="tag" :class="{ 'hexagon': true, 'hexagon-turned': turned }">
+  <Component :is="tag" :class="{ 'hexagon': true, 'hexagon-turned': turned }">
     <div class="hexagon-content">
       <slot />
     </div>
-  </component>
+  </Component>
 </template>
 
 <script setup lang="ts">

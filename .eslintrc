@@ -1,5 +1,21 @@
 {
   "extends": [
     "@nuxtjs/eslint-config-typescript"
-  ]
+  ],
+  "rules": {
+    "vue/component-name-in-template-casing": [1, "PascalCase", {
+      "registeredComponentsOnly": false
+    }],
+    "vue/block-lang": [1, {
+        "script": {
+          "lang": "ts"
+        },
+        "style": {
+          "lang": "scss"
+        }
+      }
+    ],
+    "vue/prefer-template": 1,
+    "vue/object-curly-spacing": [1, "always"]
+  }
 }

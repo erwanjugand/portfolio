@@ -1,12 +1,12 @@
 <template>
-  <component :is="tag" class="card">
+  <Component :is="tag" class="card">
     <div v-if="$slots.header" class="card-header">
       <slot name="header" />
     </div>
     <div class="card-content">
       <slot />
     </div>
-  </component>
+  </Component>
 </template>
 
 <script setup lang="ts">

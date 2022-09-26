@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "image": "sh parse-image.sh && svgo --config=svgo.json public/ -r --indent=2 --pretty --multipass",
-    "eslint": "eslint --ext .ts,.js,.vue",
+    "eslint": "eslint ./ --ext .ts,.js,.vue",
     "eslint:fix": "yarn eslint --fix",
     "stylelint": "stylelint **/*.{scss,vue}",
     "stylelint:fix": "yarn stylelint --fix"
