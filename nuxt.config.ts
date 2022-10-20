@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
+    '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@pinia/nuxt'
   ],
@@ -87,6 +88,11 @@ export default defineNuxtConfig({
         fr: '/mentions-legales'
       }
     }
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: '/'
   },
 
   googleFonts: {
