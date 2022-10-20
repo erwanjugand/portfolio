@@ -7,8 +7,15 @@
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
-    <a v-ripple href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" aria-hidden>
-      <img src="/images/mouse.svg" alt="">
+    <a v-ripple href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')">
+      <img
+        width="48"
+        height="80"
+        aria-hidden="true"
+        class="introduction-scroll-image"
+        src="/images/mouse.svg"
+        alt=""
+      >
     </a>
   </PSection>
 </template>
@@ -87,10 +94,13 @@ const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 
   }
 
   &-scroll {
-    width: 48px;
     border-radius: 99px;
     opacity: 0.75;
     color: $grey-0;
+
+    &-image {
+      display: flex;
+    }
   }
 }
 

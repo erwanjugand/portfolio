@@ -6,7 +6,14 @@
       </PH2>
       <picture class="xs12 l4 about-profil-container">
         <source srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x" type="image/avif">
-        <img class="about-profil" src="/images/erwan-jugand-x1.webp" srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x" alt="Erwan Jugand">
+        <img
+          width="312"
+          height="312"
+          class="about-profil"
+          src="/images/erwan-jugand-x1.webp"
+          srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
+          alt="Erwan Jugand"
+        >
       </picture>
       <div class="xs12 l8 about-content">
         <!-- eslint-disable vue/no-v-html -->
@@ -29,7 +36,7 @@ const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
 <style lang="scss">
 .about {
   &-profil {
-    flex: 0 1 300px;
+    flex: 0 1 312px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;
     background-color: var(--c-background-1);

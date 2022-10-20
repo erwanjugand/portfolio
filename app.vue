@@ -9,6 +9,9 @@ useColorMode()
 
 useHead({
   title: '',
-  titleTemplate: title => 'Erwan Jugand' + (title && ` - ${title}`)
+  titleTemplate: title => 'Erwan Jugand' + (title && ` - ${title}`),
+  meta: [
+    { name: 'viewport', content: 'width=320, initial-scale=1' }
+  ]
 })
 </script>

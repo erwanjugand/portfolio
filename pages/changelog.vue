@@ -18,7 +18,7 @@
               <li v-for="tag of release.tags" :key="tag.name">
                 <button
                   v-ripple
-                  :class="{ 'release-tag': true, 'release-tag-darken': filterTag && tag.name !== filterTag }"
+                  :class="{ 'release-tag': true, 'release-tag-darken': route.query.filter !== tag.name }"
                   :style="{ 'backgroundColor': tag.color }"
                   @click.prevent="filter(tag.name)"
                   v-text="$t(`pages.changelog.tags.${tag.name}`)"
@@ -39,19 +39,27 @@ import { useStore } from '~/store'
 
 const { t } = useI18n()
 useHead({
-  title: t('pages.changelog.title')
+  title: t('pages.home.title'),
+  meta: [
+    { name: 'description', content: () => t('pages.home.description') }
+  ]
 })
 
 const { releases } = useStore()
-const filterTag = ref(null as string | null)
-const releasesFiltered = computed(() => releases.filter(release => !filterTag.value || release.tags.some(tag => tag.name === filterTag.value))!)
-const filter = (name: string) => { filterTag.value = (filterTag.value === name ? null : name) }
+const route = useRoute()
+const router = useRouter()
+
+const releasesFiltered = computed(() => releases.filter(release => !route.query.filter || release.tags.some(tag => route.query.filter === tag.name))!)
+const filter = (name: string) => {
+  const queryValue = route.query.filter === name ? undefined : name
+  router.replace({ query: { filter: queryValue } })
+}
 </script>
 
 <style lang="scss">
 .release {
   max-width: 640px;
-  margin: 0 auto 16px;
+  margin: 0 32px 16px;
 
   &-wrapper:last-child {
     margin-bottom: 48px;
@@ -59,6 +67,7 @@ const filter = (name: string) => { filterTag.value = (filterTag.value === name ?
 
   &-tags {
     display: flex;
+    flex-wrap: wrap;
 
     li:not(:last-of-type) {
       margin-right: 16px;
