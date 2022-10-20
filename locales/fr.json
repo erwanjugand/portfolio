@@ -2,18 +2,18 @@
   "pages": {
     "home": {
       "title": "Accueil",
-      "description": "TODO"
+      "description": "Découvrez mon portfolio et amusez-vous à le tester :)"
     },
     "changelog": {
       "title": "Journal de modifications",
-      "description": "TODO",
+      "description": "Curieux de voir l'évolution du portfolio ? C'est par ici !",
       "items": {
         "1": {
           "0": {
-            "0": "Création et mise en ligne du portfolio : \n - Création du profolio en html/css et js \n - Utilisation de LESS \n - Migration vers OVH",
+            "0": "Création et mise en ligne du portfolio : \n - Création du portfolio en html/css et js \n - Utilisation de LESS",
             "2": "- Correction de bugs \n - Ajout Google Recaptcha 2",
-            "1": "- Ajout LazyLoad",
-            "3": "- Optimisation du référencement \n - Optimisation des images \n - Redirection automatique vers le https"
+            "1": "- Ajout de LazyLoad",
+            "3": "- Optimisation du référencement \n - Optimisation des images"
           },
           "1": {
             "0": "Dynamisation du site : \n - Utilisation de PHP 5.6 & MySQL \n - Création d'une administration",
@@ -21,22 +21,22 @@
             "2": "- Ajout d'un Easter Egg \n - Correction de bugs"
           },
           "2": {
-            "0": "Refonte de l'administration : \n - Administration plus sécurisée \n - Nouveau design \n - Meilleur système d'upload pour les images",
-            "1": "- Correction de bugs \n - Inscription aux Services Workers",
+            "0": "Refonte de l'administration : \n - Renforcement de la sécurité \n - Nouveau design \n - Meilleur système d'upload pour les images",
+            "1": "- Correction de bugs \n - Migration vers une Progressive Web App",
             "2": "- Mise à jour des dépendances \n - Passage à PHP 7.1",
             "3": "- Correction de bugs \n - Optimisation du code"
           }
         },
         "2": {
           "0": {
-            "0": "Refonte totale du site : \n - Refonte avec Symfony 4.1 \n - Fin du support d'Internet Explorer et des anciennes versions des navigateurs \n - Optimisation du code \n - Suppression de plusieurs dépendances javascript et css \n - Passage de LESS au SCSS \n - Passage à PHP 7.2 \n - Ajout du format webp pour les images \n - Correction d'un bug dans le logo \n - Mise en place d'un thème sombre \n - Utilisation des cookies pour une meilleure expérience \n - Désactivation des Services Workers \n - Abandon de OVH et migration vers online.net (Merci à Cédric Roux)",
+            "0": "Refonte totale du site : \n - Refonte avec Symfony 4.1 \n - Fin du support d'Internet Explorer et des anciennes versions des navigateurs \n - Optimisation du code \n - Suppression de plusieurs dépendances javascript et css \n - Passage de LESS au SCSS \n - Passage à PHP 7.2 \n - Ajout du format webp pour les images \n - Correction de bugs \n - Mise en place d'un thème sombre \n - Utilisation des cookies pour une meilleure expérience \n - Désactivation des Services Workers",
             "1": "- Mise à jour vers Symfony 4.2 \n - Création d'une page « Contact » \n - Passage vers Recaptcha 3"
           },
           "1": {
             "0": "Refonte du javascript : \n - Suppression de Jquery \n - Meilleures performances \n - Mise à jour des dépendances \n\n Autre : \n - Meilleur support de Firefox \n - Correction de bugs",
             "1": "- Mise à jour et amélioration de la sécurité de l'administration \n - Passage à PHP 7.3 \n - Correction de bugs",
             "2": "- Création et génération automatique du sitemap du site",
-            "3": "- Migration vers HTTP/2 \n - Amélioration de la sécurité du site (HSTS, XSS, ...) \n - Amélioration du mode sombre",
+            "3": "- Renforcement de la sécurité \n - Amélioration du mode sombre",
             "4": "- Mise à jour des dépendances",
             "5": "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à jour des dépendances \n - Refactor du code javascript",
             "6": "- Ajout d'un chargement paresseux pour les images \n - Mise à jour des dépendances"
@@ -44,7 +44,7 @@
         },
         "3": {
           "0": {
-            "0": ""
+            "0": "Refonte totale du site : \n - Utilisation de Nuxt 3 \n - Internationalisation \n"
           }
         }
       },
@@ -58,7 +58,7 @@
     },
     "legalMentions": {
       "title": "Mentions légales",
-      "description": "Description 2"
+      "description": "En vrai, tout le monde s'en fiche de ce genre de page..."
     }
   },
   "PAbout": {

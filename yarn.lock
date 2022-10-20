@@ -560,7 +560,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.11":
+"@nuxt/kit@3.0.0-rc.12", "@nuxt/kit@^3.0.0-rc.11", "@nuxt/kit@^3.0.0-rc.12":
   version "3.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.0.0-rc.12.tgz#637ab3e63d4213b886ab3cda19632bd08bc5ccb6"
   integrity sha512-d/6SeNVL1OPdru5aKjjUIWIwqIjbYN/VYGCrZs5gddkzJ5202DsMxyn2rs/ZyT8+oBbbVTYcCK6M+G0945mQdA==
@@ -755,24 +755,27 @@
     google-fonts-helper "^3.1.0"
     pathe "^0.3.2"
 
-"@nuxtjs/i18n@8.0.0-alpha.2":
-  version "8.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-alpha.2.tgz#6b044e154b8eb0caec6166f4b8b4810c86eec1b1"
-  integrity sha512-F8WphTRKlA8UxAqYpBV9Vp0VDFta1C7Cb8spBjEozWZhUUteHz50nlEZ6/+gFov5OwQXN7ywnGVKITW1Ptz0Xg==
+"@nuxtjs/i18n@^8.0.0-beta.1":
+  version "8.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-beta.1.tgz#af0157423d4645a6fb13c60d55886afe2a7df41e"
+  integrity sha512-gpxaZharrFZDR70wm5X/MqrNn7h98wG8W7R4Np/8/mzrZ517CqUhAKi3lvsM67uSGKuEroEolrhXKD1j1WTjoA==
   dependencies:
     "@intlify/bundle-utils" "^3.2.1"
     "@intlify/shared" "9.3.0-beta.6"
     "@intlify/unplugin-vue-i18n" "^0.7.0"
-    "@nuxt/kit" "^3.0.0-rc.9"
+    "@nuxt/kit" "^3.0.0-rc.12"
     cookie-es "^0.5.0"
     debug "^4.3.2"
-    defu "^6.0.0"
+    is-https "^4.0.0"
     js-cookie "^3.0.1"
     knitwork "^0.1.2"
+    magic-string "^0.26.5"
     mlly "^0.5.4"
     pathe "^0.3.2"
+    ufo "^0.8.5"
+    unplugin "^0.9.6"
     vue-i18n "^9.3.0-beta.6"
-    vue-i18n-routing "^0.3.0"
+    vue-i18n-routing "^0.7.0"
 
 "@pinia/nuxt@^0.4.3":
   version "0.4.3"
@@ -3612,6 +3615,11 @@ is-glob@^4.0.0, is-glob@^4.0.1, is-glob@^4.0.3, is-glob@~4.0.1:
   dependencies:
     is-extglob "^2.1.1"
 
+is-https@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/is-https/-/is-https-4.0.0.tgz#9ee725a334fb517b988278d2674efc96e4f348ed"
+  integrity sha512-FeMLiqf8E5g6SdiVJsPcNZX8k4h2fBs1wp5Bb6uaNxn58ufK1axBqQZdmAQsqh0t9BuwFObybrdVJh6MKyPlyg==
+
 is-interactive@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-interactive/-/is-interactive-2.0.0.tgz#40c57614593826da1100ade6059778d597f16e90"
@@ -4036,7 +4044,7 @@ magic-string@^0.26.2:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-magic-string@^0.26.4, magic-string@^0.26.7:
+magic-string@^0.26.4, magic-string@^0.26.5, magic-string@^0.26.7:
   version "0.26.7"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.26.7.tgz#caf7daf61b34e9982f8228c4527474dac8981d6f"
   integrity sha512-hX9XH3ziStPoPhJxLq1syWuZMxbDvGNbVchfrdCtanC7D13888bMFow61x8axrx+GfHLtVeAx2kxL7tTGRl+Ow==
@@ -6385,10 +6393,10 @@ vue-eslint-parser@^9.0.1:
     lodash "^4.17.21"
     semver "^7.3.6"
 
-vue-i18n-routing@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/vue-i18n-routing/-/vue-i18n-routing-0.3.0.tgz#20bd4a2158d81085992a83a5d31ebdcd22079498"
-  integrity sha512-LHZzohbF6nC22vjextgv0GE9VSifRtBv8FzQlqKqDUUBLQIL4fauzyVW4MgtuPeL9HiWN6wlRSjFpjda0IJxag==
+vue-i18n-routing@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n-routing/-/vue-i18n-routing-0.7.0.tgz#656583233615121c4b73be9fdeb57b8e36e385d2"
+  integrity sha512-bbePATep5qxDqR2J8ghu1FB59mHHX5c0zmVmvcgjKDRLdRIEfVwskWWz5p1E3gITtl403a8jr/KtHyuyJLLAsg==
   dependencies:
     "@intlify/shared" next
     "@intlify/vue-i18n-bridge" "^0.7.0"
