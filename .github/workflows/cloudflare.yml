@@ -22,9 +22,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-        env:
-          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
-
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -42,6 +39,7 @@ jobs:
         run: yarn build
         env:
           NITRO_PRESET: cloudflare
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
