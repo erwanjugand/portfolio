@@ -22,6 +22,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+        env:
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v3
 
