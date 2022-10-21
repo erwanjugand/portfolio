@@ -42,6 +42,7 @@ jobs:
         run: yarn build
         env:
           NITRO_PRESET: cloudflare
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
