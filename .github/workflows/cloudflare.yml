@@ -34,12 +34,14 @@ jobs:
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn
+        env:
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
 
       - name: Build
         run: yarn build
         env:
           NITRO_PRESET: cloudflare
-          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@2.0.0
