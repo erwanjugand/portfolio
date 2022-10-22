@@ -39,17 +39,19 @@
         </Transition>
       </div>
 
-      <ClientOnly>
-        <button
-          v-ripple
-          class="header-toggle-theme"
-          :aria-label="themeText"
-          :title="themeText"
-          @click="toggleTheme()"
-        >
-          <PIcon class="header-toggle-theme-icon" :type="currentThemeIcon.type" :name="currentThemeIcon.name" />
-        </button>
-      </ClientOnly>
+      <div class="header-toggle-theme-container">
+        <ClientOnly>
+          <button
+            v-ripple
+            class="header-toggle-theme"
+            :aria-label="themeText"
+            :title="themeText"
+            @click="toggleTheme()"
+          >
+            <PIcon class="header-toggle-theme-icon" :type="currentThemeIcon.type" :name="currentThemeIcon.name" />
+          </button>
+        </ClientOnly>
+      </div>
     </div>
   </header>
 </template>
@@ -195,6 +197,10 @@ onClickOutside(switchLocaleContainer, () => {
     display: flex;
     align-items: center;
     padding: 16px;
+
+    &-container {
+      width: 64px;
+    }
 
     &-icon {
       height: 2rem;

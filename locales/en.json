@@ -75,7 +75,8 @@
   },
   "PIntroduction": {
     "action": "Show my CV",
-    "scroll": "Scroll to bottom"
+    "scroll": "Scroll to bottom",
+    "titleAlt": "Front-End developer"
   },
   "PHeader": {
     "hackedMode": "Hacked mode",
@@ -107,11 +108,11 @@
     },
     "items": {
       "steepleLeadFrontEndDev": {
-        "title": "Lead front-end developer",
+        "title": "Lead Front-End developer",
         "description": "TODO"
       },
       "steepleFrontEndDev": {
-        "title": "Front-end developer",
+        "title": "Front-End developer",
         "description": "TODO"
       },
       "steepleWebIntegrator": {

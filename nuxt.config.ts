@@ -32,7 +32,6 @@ export default defineNuxtConfig({
   ],
 
   i18n: {
-    baseUrl: process.env.SITE_URL,
     locales: [
       {
         code: 'fr',

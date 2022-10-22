@@ -1,7 +1,7 @@
 <template>
   <PSection class="introduction" :style="style">
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
-      <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, 'Developpeur Front-End', 4000]" />
+      <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]" />
     </ClientOnly>
     <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf" target="_blank" outlined>
       <PIcon type="regular" name="download" />
@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { VTypical } from 'vue-typical'
 const { y } = useWindowScroll()
-const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 3}px` }))
+const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
 </script>
 
 <style lang="scss">
@@ -37,6 +37,7 @@ const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 
       url("/images/background-mobile-x2.webp") 2x
     );
   background-repeat: no-repeat;
+  background-position: center bottom var(--background-position-y);
   background-size: cover;
   gap: 64px;
 
@@ -73,6 +74,7 @@ const style = computed(() => ({ backgroundPosition: `center bottom -${y.value / 
     transition: font-size var(--transition);
     color: $grey-0;
     font-size: 2em;
+    text-shadow: 0 0 10px  $grey-100;
 
     @media #{$medium-and-up} {
       font-size: 3em;

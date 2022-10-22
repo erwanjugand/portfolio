@@ -18,7 +18,7 @@
               <li v-for="tag of release.tags" :key="tag.name">
                 <button
                   v-ripple
-                  :class="{ 'release-tag': true, 'release-tag-darken': route.query.filter !== tag.name }"
+                  :class="{ 'release-tag': true, 'release-tag-darken': route.query.filter && route.query.filter !== tag.name }"
                   :style="{ 'backgroundColor': tag.color }"
                   @click.prevent="filter(tag.name)"
                   v-text="$t(`pages.changelog.tags.${tag.name}`)"

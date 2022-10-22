@@ -76,7 +76,8 @@
   },
   "PIntroduction": {
     "action": "Afficher mon CV",
-    "scroll": "Défiler en bas"
+    "scroll": "Défiler en bas",
+    "titleAlt": "Développeur Front-End"
   },
   "PHeader": {
     "hackedMode": "Thème hacké",
@@ -108,11 +109,11 @@
     },
     "items": {
       "steepleLeadFrontEndDev": {
-        "title": "Lead développeur front-end",
+        "title": "Lead développeur Front-End",
         "description": "Missions en complémentarité de celles de développeur : \n - Piloter l'équipe \n - Faire grandir chaque développeur \n - Structurer le pôle"
       },
       "steepleFrontEndDev": {
-        "title": "Développeur front-end",
+        "title": "Développeur Front-End",
         "description": "Missions : \n - Refonte et mise à jour continue du site web \n - Maintenance de l'application Android et de l'application Chrome \n - Conception des interfaces web sur Adobe XD \n - Création et maintenance du Wordpress \n - Tests utilisateurs \n\n Langages utilisés : Nuxt.js basé sur Vue.js, TypeScript, SASS"
       },
       "steepleWebIntegrator": {
