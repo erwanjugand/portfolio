@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve">
+  <path d="M99.46 20H60.5v15h23.75C80.76 52.1 65.61 65 47.5 65v15C76.49 80 100 56.49 100 27.5c0-2.55-.19-5.05-.54-7.5z" style="opacity:.5;fill:#0077db"/>
+  <path d="M15.75 65c.57-2.79 1.45-5.47 2.61-8H47.5c10.41 0 19.82-5.52 25.09-14h-43.2c6.37-5.01 14.4-8 23.11-8V20C23.51 20 0 43.51 0 72.5c0 2.55.19 5.05.54 7.5H39.5V65H15.75z" style="fill:#0077db"/>
+</svg>
