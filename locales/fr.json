@@ -59,6 +59,17 @@
     "legalMentions": {
       "title": "Mentions légales",
       "description": "En vrai, tout le monde s'en fiche de ce genre de page..."
+    },
+    "error": {
+      "cta": "Revenir sur l'accueil",
+      "4xx": {
+        "title": "Page introuvable !",
+        "text": "Oups, il semblerait que la page que vous cherchez n'existe plus"
+      },
+      "5xx": {
+        "title": "Une erreur est survenue !",
+        "text": "Je vais rectifier ça au plus vite :)"
+      }
     }
   },
   "PAbout": {

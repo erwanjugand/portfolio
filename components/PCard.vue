@@ -39,6 +39,7 @@ defineProps({
       padding: 24px 32px;
     }
 
+    h1,
     h2,
     h3 {
       display: flex;

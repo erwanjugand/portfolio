@@ -58,6 +58,17 @@
     "legalMentions": {
       "title": "Legal mentions",
       "description": "TODO"
+    },
+    "error": {
+      "cta": "Back to homepage",
+      "4xx": {
+        "title": "Page not found !",
+        "text": "TODO"
+      },
+      "5xx": {
+        "title": "TODO",
+        "text": "TODO"
+      }
     }
   },
   "PAbout": {
