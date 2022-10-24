@@ -1,5 +1,8 @@
 export default defineNuxtConfig({
   vite: {
+    build: {
+      assetsInlineLimit: 16192
+    },
     css: {
       preprocessorOptions: {
         scss: {
