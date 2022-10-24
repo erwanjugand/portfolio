@@ -22,6 +22,7 @@ const { environments } = useStore()
   display: flex;
   position: relative;
   justify-content: center;
+  cursor: pointer;
 
   &-icon {
     width: 100%;

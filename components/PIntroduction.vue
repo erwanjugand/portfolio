@@ -7,7 +7,7 @@
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
-    <a v-ripple href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')">
+    <a v-ripple href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')">
       <img
         width="48"
         height="80"

@@ -28,6 +28,7 @@ defineProps({
 
 .skill {
   font-size: 1.5em;
+  cursor: pointer;
 
   &-name {
     transform: translateY(0);

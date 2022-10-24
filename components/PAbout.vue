@@ -17,21 +17,15 @@
       </picture>
       <div class="xs12 l8 about-content">
         <!-- eslint-disable vue/no-v-html -->
-        <p class="about-text" v-html="$t('PAbout.text1', { year: age })" />
+        <p class="about-text" v-html="$t('PAbout.text1')" />
         <p class="about-text" v-html="$t('PAbout.text2')" />
         <p class="about-text" v-html="$t('PAbout.text3')" />
         <p class="about-text" v-html="$t('PAbout.text4')" />
-        <p class="about-text" v-html="$t('PAbout.text5')" />
         <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
   </PSection>
 </template>
-
-<script setup lang="ts">
-const diff = new Date().getTime() - new Date('1997-07-17').getTime()
-const age = Math.floor(diff / (365 * 24 * 60 * 60 * 1000))
-</script>
 
 <style lang="scss">
 .about {

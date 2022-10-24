@@ -73,11 +73,10 @@
     }
   },
   "PAbout": {
-    "text1": "Je suis Erwan Jugand, j’ai {year} ans et je suis <strong>développeur Front-End</strong> depuis ma formation de Chef de Projet effectué à <strong>Digital Campus Rennes</strong>.",
-    "text2": "J’apprécie développer des sites web de manière efficace avec les dernières technologies que peuvent offrir les navigateurs avec une grande appétence sur <strong>l’intégration web</strong> souvent sous-estimée !",
-    "text3": "Que ce soit la compression des images ou la minification du code, <strong>l’optimisation est ma seconde nature !</strong>",
-    "text4": "<strong>Les bonnes pratiques sont l’une de mes lignes directives</strong> pour aussi bien travailler en équipe que partager du code.",
-    "text5": "Je suis passionné d’informatique, des nouvelles technologies et des produits High-Tech.",
+    "text1": "Salut, je m'appelle <strong>Erwan Jugand</strong> et suis un <strong>développeur Front-End</strong> passionné et sensible aux bonnes pratiques de code.",
+    "text2": "Mon cursus à <strong>Digital Campus</strong> et mon expérience chez <strong>Steeple</strong> m'ont permis d'affiner ma sensibilité sur le design, la gestion de projet, UX/UI et le management.",
+    "text3": "Le métier de développeur Front-End est un métier en constante évolution, offrant toujours plus d'outil pour concevoir des sites toujours plus performant.",
+    "text4": "Je suis aussi passionné d'informatique, de nouvelles technologies et surtout curieux 😉!",
     "title": "À propos"
   },
   "PFooter": {
