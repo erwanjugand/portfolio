@@ -34,6 +34,10 @@ defineProps({
     transform: translateY(0);
     transition: transform var(--transition);
 
+    @media #{$touchscreen} {
+      transform: translateY(-2.5rem);
+    }
+
     .skill:hover &,
     .skill:focus & {
       transform: translateY(-2.5rem);
@@ -50,7 +54,7 @@ defineProps({
     transition: var(--transition);
     opacity: 0;
 
-    @media #{touchscreen} {
+    @media #{$touchscreen} {
       @include show-content;
     }
 

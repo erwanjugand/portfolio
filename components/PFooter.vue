@@ -77,8 +77,6 @@ const closeEasterEgg = () => { isVisible.value = false }
 
   &-content {
     display: grid;
-    position: relative;
-    z-index: 1;
     grid-template:
       "a"
       "b"
@@ -86,9 +84,11 @@ const closeEasterEgg = () => { isVisible.value = false }
       "d";
     align-items: center;
     padding: 16px 0;
+    justify-items: center;
     gap: 16px 0;
 
     @media #{$medium-and-up} {
+      justify-items: start;
       grid-template:
         "a c d"
         "b c d";

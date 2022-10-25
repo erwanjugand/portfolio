@@ -49,7 +49,7 @@ $large-and-up: "(min-width: 1024px)";
 $large-and-down: "(max-width: 1399px)";
 $large-only: "(min-width: 1024px) and (max-width: 1399px)";
 $extra-large: "(min-width: 1400px)";
-$touchscreen: (hover: none) and (pointer: coarse);
+$touchscreen: "(hover: none) and (pointer: coarse)";
 
 // // Font
 $fw-light: 300;

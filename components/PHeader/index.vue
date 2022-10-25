@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="header dark-mode">
+  <header class="header">
     <div class="container header-content">
       <NuxtLink v-ripple :to="localePath('index')" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
@@ -95,13 +95,20 @@ onClickOutside(switchLocaleContainer, () => {
   position: fixed;
   z-index: 10;
   width: 100%;
-  background-color: rgba($grey-87, 80%);
   backdrop-filter: blur(20px);
   box-shadow:
     inset 0 -1px 0 0 var(--c-border),
     0 3px 1px -2px rgba($grey-100, 0.2),
     0 2px 2px 0 rgba($grey-100, 0.14),
     0 1px 5px 0 rgba($grey-100, 0.12);
+
+  .dark-mode & {
+    background-color: rgba($grey-87, 80%);
+  }
+
+  .light-mode & {
+    background-color: rgba($grey-0, 80%);
+  }
 
   &-content {
     display: grid;
