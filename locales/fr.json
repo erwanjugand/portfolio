@@ -10,7 +10,7 @@
       "items": {
         "1": {
           "0": {
-            "0": "Création et mise en ligne du portfolio : \n - Création du portfolio en html/css et js \n - Utilisation de LESS",
+            "0": "- Création et mise en ligne du portfolio en HTML/CSS/JS \n - Utilisation de LESS",
             "2": "- Correction de bugs \n - Ajout Google Recaptcha 2",
             "1": "- Ajout de LazyLoad",
             "3": "- Optimisation du référencement \n - Optimisation des images"
@@ -38,13 +38,13 @@
             "2": "- Création et génération automatique du sitemap du site",
             "3": "- Renforcement de la sécurité \n - Amélioration du mode sombre",
             "4": "- Mise à jour des dépendances",
-            "5": "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à jour des dépendances \n - Refactor du code javascript",
+            "5": "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à jour des dépendances",
             "6": "- Ajout d'un chargement paresseux pour les images \n - Mise à jour des dépendances"
           }
         },
         "3": {
           "0": {
-            "0": "Refonte totale du site : \n - Utilisation de Nuxt 3 \n - Internationalisation \n"
+            "0": "Refonte totale du site : \n - Utilisation de Nuxt 3 \n - Support de l'anglais \n - Architecture serverless"
           }
         }
       },
@@ -64,7 +64,7 @@
       "cta": "Revenir sur l'accueil",
       "4xx": {
         "title": "Page introuvable !",
-        "text": "Oups, il semblerait que la page que vous cherchez n'existe plus"
+        "text": "Oups, Cette page n'existe pas"
       },
       "5xx": {
         "title": "Une erreur est survenue !",
@@ -85,7 +85,7 @@
     "linkedin": "Mon compte Linkedin"
   },
   "PIntroduction": {
-    "action": "Afficher mon CV",
+    "action": "Afficher le CV",
     "scroll": "Défiler en bas",
     "titleAlt": "Développeur Front-End"
   },
@@ -136,7 +136,7 @@
       },
       "lpcWebIntegrator": {
         "title": "Intégrateur Web",
-        "description": "Missions : \n - Réalisation du site web spécialisé dans l'affiliation domotique \n - Site web conçut sur Wordpress \n\n Langages utilisés : PHP, HTML, LESS"
+        "description": "Missions : \n - Réalisation du site web spécialisé dans l'affiliation domotique \n - Site web développé sur Wordpress \n\n Langages utilisés : PHP, HTML, LESS"
       }
     },
     "today": "aujourd'hui",

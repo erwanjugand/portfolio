@@ -1,49 +1,50 @@
 {
   "pages": {
     "home": {
-      "description": "TODO"
+      "title": "Home",
+      "description": "Discover my portfolio and have fun testing it :)"
     },
     "changelog": {
       "title": "Changelog",
-      "description": "TODO",
+      "description": "Curious to see the evolution of the portfolio? It's this way !",
       "items": {
         "1": {
           "0": {
-            "0": "TODO",
-            "2": "TODO",
-            "1": "TODO",
-            "3": "TODO"
+            "0": "- Creation and lauching of the portfolio with HTML/CSS/JS \n - Use LESS",
+            "2": "- Bugs fixes \n - Add Google Recaptcha 2",
+            "1": "- Added de LazyLoad",
+            "3": "- SEO Optimization \n - Image optimization"
           },
           "1": {
-            "0": "TODO",
-            "1": "TODO",
-            "2": "TODO"
+            "0": "Dynamization of the website: \n - Using PHP 5.6 & MySQL \n - Creation of back-office",
+            "1": "- Bugs fixes",
+            "2": "- Added Easter Egg \n - Bugs fixes"
           },
           "2": {
-            "0": "TODO",
-            "2": "TODO",
-            "1": "TODO",
-            "3": "TODO"
+            "0": "Back-office overhaul: \n - Security enhancement \n - new design \n - Improved upload system for images",
+            "2": "- Bugs fixes \n - Migration to a Progressive Web App",
+            "1": "- Update dependencies \n - Update to PHP 7.1",
+            "3": "- Bugs fixes \n - Clean code"
           }
         },
         "2": {
           "0": {
-            "0": "TODO",
-            "1": "TODO"
+            "0": "The website overhaul:  \n - Use Symfony 4.1 \n - End of support for Internet Explorer and older versions of browsers \n - Clean code \n - Removed several javascript and css dependencies \n - Switch LESS to SCSS \n - Update to PHP 7.2 \n - Added webp format for images \n - Bugs fixes \n - Added dark mode \n - Use of cookies for a better experience \n - Disabling Service Workers",
+            "1": "- Update Symfony 4.2 \n - New “Contact” page \n - Switch to Recaptcha 3"
           },
           "1": {
-            "0": "TODO",
-            "2": "TODO",
-            "1": "TODO",
-            "3": "TODO",
-            "4": "TODO",
-            "5": "TODO",
-            "6": "TODO"
+            "0": "JavaScript overhaul : \n - Removing Jquery \n - Performance improvement \n - Update dependencies \n\n Other : \n - Improved Firefox support \n - Bugs fixes",
+            "1": "- Updated and improved administration security \n - Update to PHP 7.3 \n - Bugs fixes",
+            "2": "- Creation and automatic generation of the sitemap of the website",
+            "3": "- Security enhancement \n - Improved dark mode",
+            "4": "- Update dependencies",
+            "5": "- Update to Symfony 4.4 \n - Update to PHP 7.4 \n - Update dependencies",
+            "6": "- Added lazy loading for images \n - Update dependencies"
           }
         },
         "3": {
           "0": {
-            "0": ""
+            "0": "The website overhaul: \n - Use Nuxt 3 \n - English support \n - Serverless Architecture"
           }
         }
       },
@@ -57,35 +58,35 @@
     },
     "legalMentions": {
       "title": "Legal mentions",
-      "description": "TODO"
+      "description": "Nobody cares about this kind of page..."
     },
     "error": {
       "cta": "Back to homepage",
       "4xx": {
         "title": "Page not found !",
-        "text": "TODO"
+        "text": "Oops, this page doesn't exist"
       },
       "5xx": {
-        "title": "TODO",
-        "text": "TODO"
+        "title": "An error has occurred !",
+        "text": "I will rectify this as soon as possible :)"
       }
     }
   },
   "PAbout": {
-    "text1": "TODO",
-    "text2": "TODO",
-    "text3": "TODO",
-    "text4": "TODO",
+    "text1": "Hello, my name is <strong>Erwan Jugand</strong> and I am a passionate <strong>Front-End developer</strong> and sensitive to good practices.",
+    "text2": "My experience at <strong>Digital Campus</strong> and at <strong>Steeple</strong> helped me to refine my sensibility on design, project management, UX/UI and management.",
+    "text3": "The job of Front-End developer is a job in constant evolution, always offering more tools to design ever more efficient wesites.",
+    "text4": "I am also passionate about IT, new technologies and above all curious 😉!",
     "title": "About"
   },
   "PFooter": {
-    "copyright": "Copyright© {year} : All rights reserved.",
+    "copyright": "Copyright© {year}: All rights reserved.",
     "github": "Github account",
     "linkedin": "Linkedin account"
   },
   "PIntroduction": {
-    "action": "Show my CV",
-    "scroll": "Scroll to bottom",
+    "action": "Show CV",
+    "scroll": "Scroll down",
     "titleAlt": "Front-End developer"
   },
   "PHeader": {
@@ -119,23 +120,23 @@
     "items": {
       "steepleLeadFrontEndDev": {
         "title": "Lead Front-End developer",
-        "description": "TODO"
+        "description": "Missions in addition to those of developer: \n - Managing the team \n - Growing each developer \n - Structure the pole"
       },
       "steepleFrontEndDev": {
         "title": "Front-End developer",
-        "description": "TODO"
+        "description": "Missions: \n - Redesign and continuous update of the website \n - Maintenance of the Android application and the Chrome application \n - Design of web interfaces on Adobe XD \n - Creation and maintenance of Wordpress \n - User tests \n\n Languages used: Nuxt.js based on Vue.js, TypeScript, SASS"
       },
       "steepleWebIntegrator": {
         "title": "Web Integrator",
-        "description": "TODO"
+        "description": "Missions : \n - Web integration \n - Design of web interfaces on Adobe XD \n - Project management \n - Media Optimization \n - IE 11 support \n\n Languages used: Ruby and Rails, HTML, SCSS"
       },
       "vinciWebIntegrator": {
         "title": "Web Integrator",
-        "description": "TODO"
+        "description": "Missions: \n - Audit of company websites in the VEFTGO group \n - Inventory of existing content \n - Migration of existing sites to WordPress \n - Bugs reporting to the IT Department"
       },
       "lpcWebIntegrator": {
         "title": "Web Integrator",
-        "description": "TODO"
+        "description": "Missions: \n - Creation of the website specializing in home automation affiliation \n - Website developped on Wordpress \n\n Languages used: PHP, HTML, LESS"
       }
     },
     "today": "today",
