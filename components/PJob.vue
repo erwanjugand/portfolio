@@ -31,8 +31,9 @@ const contract = computed(() => '· ' + t(`PJob.contract.${props.job.contract}`)
 
 const startedAt = computed(() => d(props.job.startedAt, 'short'))
 const finishedAt = computed(() => {
-  const isToday = new Date().getTime() - props.job.finishedAt.getTime() < 100_000
-  return isToday ? t('PJob.today') : d(props.job.finishedAt, 'short')
+  const finishedAt = props.job.finishedAt.getTime() < 2_000_000_000 ? new Date() : props.job.finishedAt // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
+  const isToday = new Date().getTime() - finishedAt.getTime() < 100_000
+  return isToday ? t('PJob.today') : d(finishedAt, 'short')
 })
 const duration = computed(() => {
   const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
