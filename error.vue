@@ -34,7 +34,7 @@ const errorStatus = computed(() => {
 })
 
 useHead({
-  title: t(`pages.error.${errorStatus}.title`)
+  title: t(`pages.error.${errorStatus.value}.title`)
 })
 
 const handleError = () => clearError({ redirect: '/' })
