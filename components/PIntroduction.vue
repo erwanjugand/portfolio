@@ -7,7 +7,7 @@
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
-    <a v-ripple href="#about" class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')">
+    <button v-ripple class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')" @click="scroll">
       <img
         width="48"
         height="80"
@@ -16,7 +16,7 @@
         src="/images/mouse.svg"
         alt=""
       >
-    </a>
+    </button>
   </PSection>
 </template>
 
@@ -24,6 +24,14 @@
 import { VTypical } from 'vue-typical'
 const { y } = useWindowScroll()
 const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
+
+const scroll = () => {
+  window.scrollTo({
+    top: window.innerHeight - 64,
+    behavior: 'smooth'
+  })
+}
+
 </script>
 
 <style lang="scss">

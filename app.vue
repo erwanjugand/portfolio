@@ -9,11 +9,7 @@ const nuxtApp = useNuxtApp()
 
 // TODO : remove hook to scroll top
 nuxtApp.hook('page:finish', () => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'auto'
-  })
+  window.scrollTo({ top: 0 })
 })
 
 useColorMode()
