@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <style lang="scss">
-.section {
+section.section {
   display: flex;
   flex-direction: column;
   align-items: center;
