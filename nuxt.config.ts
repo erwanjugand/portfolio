@@ -27,10 +27,6 @@ export default defineNuxtConfig({
     '@/plugins/ripple'
   ],
 
-  css: [
-    '@/assets/scss/style.scss'
-  ],
-
   i18n: {
     baseUrl: process.env.SITE_URL,
     locales: [
