@@ -122,6 +122,13 @@ useHead({
     { name: 'description', content: () => t('pages.legalMentions.description') }
   ]
 })
+
+defineI18nRoute({
+  paths: {
+    en: '/legal-mentions',
+    fr: '/mentions-legales'
+  }
+})
 </script>
 
 <style lang="scss">

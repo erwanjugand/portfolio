@@ -45,6 +45,13 @@ useHead({
   ]
 })
 
+defineI18nRoute({
+  paths: {
+    en: '/changelog',
+    fr: '/journal-des-modifications'
+  }
+})
+
 const { releases } = useStore()
 const route = useRoute()
 const router = useRouter()

@@ -32,6 +32,7 @@ export default defineNuxtConfig({
   ],
 
   i18n: {
+    baseUrl: process.env.SITE_URL,
     locales: [
       {
         code: 'fr',
@@ -74,17 +75,6 @@ export default defineNuxtConfig({
             month: 'short'
           }
         }
-      }
-    },
-    parsePages: false,
-    pages: {
-      changelog: {
-        en: '/changelog',
-        fr: '/journal-des-modifications'
-      },
-      'legal-mentions': {
-        en: '/legal-mentions',
-        fr: '/mentions-legales'
       }
     }
   },
