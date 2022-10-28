@@ -2,7 +2,7 @@ import type { EasterEggStep } from '../store.d'
 
 const easterEggSteps: EasterEggStep[] = [
   {
-    text: 'Launch mpl.exe',
+    text: 'Launch mlp.exe',
     value: 0,
     duration: 500
   },
