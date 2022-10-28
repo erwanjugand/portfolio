@@ -25,18 +25,21 @@ const props = defineProps({
   single: Boolean
 })
 
+// Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
+const currentDate = new Date()
+const finishedAtValue = props.job.finishedAt ?? currentDate
+
 const title = computed(() => t(`PJob.items.${props.job.key}.title`))
 const description = computed(() => t(`PJob.items.${props.job.key}.description`))
 const contract = computed(() => '· ' + t(`PJob.contract.${props.job.contract}`))
 
 const startedAt = computed(() => d(props.job.startedAt, 'short'))
 const finishedAt = computed(() => {
-  const finishedAt = props.job.finishedAt.getTime() < 2_000_000_000 ? new Date() : props.job.finishedAt // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
-  const isToday = new Date().getTime() - finishedAt.getTime() < 100_000
-  return isToday ? t('PJob.today') : d(finishedAt, 'short')
+  const isToday = finishedAtValue === currentDate
+  return isToday ? t('PJob.today') : d(finishedAtValue, 'short')
 })
 const duration = computed(() => {
-  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(props.job.finishedAt, 1) })
+  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(finishedAtValue, 1) })
   return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
 })
 const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' + duration.value)

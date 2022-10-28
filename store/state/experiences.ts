@@ -7,8 +7,7 @@ const experiences: Experience[] = [
       {
         key: 'steepleLeadFrontEndDev',
         contract: 'cdi',
-        startedAt: new Date(2021, 2),
-        finishedAt: new Date()
+        startedAt: new Date(2021, 2)
       },
       {
         key: 'steepleFrontEndDev',

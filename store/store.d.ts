@@ -7,7 +7,7 @@ export interface Job {
   key: string
   contract: 'apprenticeship' | 'cdi' | 'internship'
   startedAt: Date
-  finishedAt: Date
+  finishedAt?: Date
 }
 
 export interface Experience {
