@@ -104,6 +104,10 @@ onClickOutside(switchLocaleContainer, () => {
 
   .dark-mode & {
     background-color: rgba($grey-87, 80%);
+
+    @media (prefers-contrast: more) {
+      background-color: rgba($grey-90, 90%);
+    }
   }
 
   .light-mode & {
@@ -117,14 +121,14 @@ onClickOutside(switchLocaleContainer, () => {
   }
 
   &-home {
-    justify-self: flex-start;
     display: flex;
     align-items: center;
     padding: 0 16px;
     transition: font-size var(--transition);
-    font-weight: $fw-light;
+    font-size: 1.125em;
     text-decoration: none;
     text-transform: uppercase;
+    justify-self: flex-start;
 
     @media #{$small-and-down} {
       font-size: 0;

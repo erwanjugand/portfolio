@@ -44,6 +44,19 @@ html {
 
   // Border
   --c-border: transparent;
+
+  @media (prefers-contrast: more) {
+    // Text
+    --c-text: #{$grey-100};
+    --c-text-secondary-1: #{$grey-50};
+    --c-text-secondary-2: #{$grey-75};
+    --c-text-secondary-3: #{$grey-90};
+    --c-text-secondary-4: #{$grey-100};
+
+    // Background
+    --c-background-bg: #{$grey-0};
+    --c-background-alt: #{$grey-5};
+  }
 }
 
 .dark-mode,
@@ -70,6 +83,22 @@ html {
 
   // Border
   --c-border: #{rgba($grey-0, 0.05)};
+
+  @media (prefers-contrast: more) {
+    // Text
+    --c-text: #{$grey-0};
+    --c-text-secondary-1: #{$grey-50};
+    --c-text-secondary-2: #{$grey-25};
+    --c-text-secondary-3: #{$grey-10};
+    --c-text-secondary-4: #{$grey-0};
+
+    // Background
+    --c-background-bg: #{$grey-95};
+    --c-background-alt: #{$grey-93};
+    --c-background-1: #{$grey-93};
+    --c-background-2: #{$grey-90};
+    --c-background-3: #{$grey-87};
+  }
 }
 
 .hacked-mode {

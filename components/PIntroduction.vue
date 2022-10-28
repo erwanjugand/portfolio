@@ -21,14 +21,17 @@
 </template>
 
 <script setup lang="ts">
+import { usePreferredReducedMotion } from '@vueuse/core'
 import { VTypical } from 'vue-typical'
+
+const preferredMotion = usePreferredReducedMotion()
 const { y } = useWindowScroll()
 const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
 
 const scroll = () => {
   window.scrollTo({
     top: window.innerHeight - 64,
-    behavior: 'smooth'
+    behavior: preferredMotion.value === 'reduce' ? 'auto' : 'smooth'
   })
 }
 
