@@ -56,6 +56,9 @@
         "security": "Sécurité"
       }
     },
+    "pdf": {
+      "download": "Télécharger"
+    },
     "legalMentions": {
       "title": "Mentions légales",
       "description": "En vrai, tout le monde s'en fiche de ce genre de page..."

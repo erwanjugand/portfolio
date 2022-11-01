@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.SITE_URL,
+      rapidApiKey: process.env.RAPID_API_KEY
+    }
+  },
+
   vite: {
     css: {
       preprocessorOptions: {

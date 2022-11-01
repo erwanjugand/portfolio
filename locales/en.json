@@ -56,6 +56,9 @@
         "security": "Security"
       }
     },
+    "pdf": {
+      "download": "Download"
+    },
     "legalMentions": {
       "title": "Legal mentions",
       "description": "Nobody cares about this kind of page..."
