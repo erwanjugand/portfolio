@@ -1,6 +1,7 @@
 
 <template>
   <div class="pdf-container">
+    <PHeader />
     <div class="pdf">
       <slot />
     </div>
@@ -82,10 +83,11 @@ const download = async () => {
   }
 
   &-container {
+    padding: 64px 0;
     transition: padding var(--transition);
 
     @media #{$large-and-up} {
-      padding: 8px 8px 72px;
+      padding: 72px 8px;
     }
 
     @media print {
@@ -101,6 +103,7 @@ const download = async () => {
     justify-content: center;
     width: 100%;
     padding: 8px 16px;
+    backdrop-filter: blur(20px);
     background-color: var(--c-background-3);
     box-shadow:
       inset 0 1px 0 0 var(--c-border),
@@ -110,6 +113,22 @@ const download = async () => {
 
     @media print {
       display: none;
+    }
+
+    .dark-mode & {
+      background-color: rgba($grey-87, 80%);
+
+      @media (prefers-contrast: more) {
+        background-color: rgba($grey-90, 90%);
+      }
+    }
+
+    .light-mode & {
+      background-color: rgba($grey-0, 80%);
+
+      @media (prefers-contrast: more) {
+        background-color: rgba($grey-0, 90%);
+      }
     }
   }
 }
