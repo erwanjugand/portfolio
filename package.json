@@ -32,7 +32,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^8.0.0-beta.2",
+    "@nuxtjs/i18n": "^8.0.0-beta.3",
     "@nuxtjs/robots": "^2.5.0",
     "@pinia/nuxt": "^0.4.3",
     "date-fns": "^2.29.3",
