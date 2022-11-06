@@ -3,7 +3,7 @@
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
       <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]" />
     </ClientOnly>
-    <PButton class="introduction-cv" href="/cv-erwan-jugand.pdf" target="_blank" outlined>
+    <PButton class="introduction-cv" :to="localePath('resume')" outlined>
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
@@ -24,6 +24,7 @@
 import { usePreferredReducedMotion } from '@vueuse/core'
 import { VTypical } from 'vue-typical'
 
+const localePath = useLocalePath()
 const preferredMotion = usePreferredReducedMotion()
 const { y } = useWindowScroll()
 const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
