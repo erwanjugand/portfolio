@@ -27,6 +27,7 @@ const download = async () => {
   const options: object = {
     method: 'POST',
     headers: {
+      'Access-Control-Allow-Origin': '*',
       'content-type': 'application/json',
       'X-RapidAPI-Key': runtimeConfig.public.rapidApiKey,
       'X-RapidAPI-Host': runtimeConfig.public.rapidApiHost
@@ -40,7 +41,7 @@ const download = async () => {
     }
   }
 
-  const request = await useFetch<{pdf: string}>('https://api2pdf-api2pdf-v1.p.rapidapi.com/chrome/url', options)
+  const request = await useFetch<{pdf: string}>(`https://${runtimeConfig.public.rapidApiHost}/chrome/url`, options)
     .then(response => response)
     .catch(() => undefined)
 
