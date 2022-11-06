@@ -315,9 +315,13 @@ defineI18nRoute({
     &-skills {
       display: grid;
       grid-auto-flow: column;
-      grid-template-rows: repeat(4, 1fr);
+      grid-template-rows: repeat(12, 1fr);
       font-size: 0.875em;
       gap: 8px 16px;
+
+      @media #{$medium-and-up} {
+        grid-template-rows: repeat(4, 1fr);
+      }
     }
 
     &-skill {
