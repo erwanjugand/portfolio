@@ -83,9 +83,11 @@ const scroll = () => {
   }
 
   h1 {
+    padding: 0 1em;
     transition: font-size var(--transition);
     color: $grey-0;
     font-size: 2em;
+    text-align: center;
     text-shadow: 0 0 10px  $grey-100;
 
     @media #{$medium-and-up} {
