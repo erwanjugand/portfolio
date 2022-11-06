@@ -57,7 +57,28 @@
       }
     },
     "pdf": {
+      "title": "Resume",
+      "description": "Find all informations in a resume",
       "download": "Download"
+    },
+    "cv": {
+      "personalInformations": {
+        "title": "Personal info"
+      },
+      "environments": {
+        "title": "Environment"
+      },
+      "hobbies": {
+        "title": "Hobbies",
+        "videoGame": "Video games",
+        "highTech": "new technologies"
+      },
+      "additionalSkill": {
+        "title": "Additional Skills",
+        "management": "Management",
+        "webDesign": "Webdesign",
+        "productManagment": "Project management"
+      }
     },
     "legalMentions": {
       "title": "Legal mentions",
@@ -90,7 +111,7 @@
   "PIntroduction": {
     "action": "Show CV",
     "scroll": "Scroll down",
-    "titleAlt": "Front-End developer"
+    "titleAlt": "Lead Front-End developer"
   },
   "PHeader": {
     "hackedMode": "Hacked mode",

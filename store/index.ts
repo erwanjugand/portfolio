@@ -4,6 +4,7 @@ import experiences from './state/experiences'
 import skills from './state/skills'
 import releases from './state/releases'
 import easterEggSteps from './state/easter-egg'
+import informations from './state/informations'
 import { State } from './store'
 
 export const useStore = defineStore({
@@ -14,7 +15,8 @@ export const useStore = defineStore({
       experiencesList: experiences,
       skillsList: skills,
       releasesList: releases,
-      easterEggStepsList: easterEggSteps
+      easterEggStepsList: easterEggSteps,
+      informationsList: informations
     }
   },
   actions: {},
@@ -23,6 +25,7 @@ export const useStore = defineStore({
     experiences: (state: State) => state.experiencesList,
     skills: (state: State) => state.skillsList,
     releases: (state: State) => state.releasesList,
-    easterEggSteps: (state: State) => state.easterEggStepsList
+    easterEggSteps: (state: State) => state.easterEggStepsList,
+    informations: (state: State) => state.informationsList
   }
 })

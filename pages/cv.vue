@@ -16,11 +16,84 @@
         Erwan Jugand
       </h1>
       <p class="cv-header-post" v-text="$t('PIntroduction.titleAlt')" />
-      <a class="cv-header-link" target="_blank" :href="siteUrl" v-text="siteUrl" />
     </header>
+
     <aside class="cv-aside">
-      Aside
+      <div class="cv-aside-title">
+        <h2 class="cv-aside-title-text" v-text="$t('pages.cv.personalInformations.title')" />
+        <hr class="cv-aside-title-separator">
+      </div>
+
+      <div class="cv-aside-content">
+        <a
+          v-for="information of informations"
+          :key="information.title"
+          :href="information.cta"
+          class="cv-aside-content-text"
+        >
+          <PIcon class="cv-aside-content-text-icon" :name="information.icon" />
+          <span v-text="information.content" />
+        </a>
+        <NuxtLink :href="siteUrl" class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="link" />
+          <span v-text="siteUrl" />
+        </NuxtLink>
+      </div>
+
+      <div class="cv-aside-title">
+        <h2 class="cv-aside-title-text" v-text="$t('pages.cv.environments.title')" />
+        <hr class="cv-aside-title-separator">
+      </div>
+
+      <div class="cv-aside-content">
+        <div class="cv-aside-content-icons">
+          <PIcon
+            v-for="environment of environments"
+            :key="environment.name"
+            class="cv-aside-content-icon"
+            type="custom"
+            :name="environment.name"
+          />
+        </div>
+      </div>
+
+      <div class="cv-aside-title">
+        <h2 class="cv-aside-title-text" v-text="$t('pages.cv.hobbies.title')" />
+        <hr class="cv-aside-title-separator">
+      </div>
+
+      <div class="cv-aside-content">
+        <p class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="gamepadModern" />
+          <span v-text="$t('pages.cv.hobbies.videoGame')" />
+        </p>
+        <p class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="newspaper" />
+          <span v-text="$t('pages.cv.hobbies.highTech')" />
+        </p>
+      </div>
+
+      <div class="cv-aside-title">
+        <h2 class="cv-aside-title-text" v-text="$t('pages.cv.additionalSkill.title')" />
+        <hr class="cv-aside-title-separator">
+      </div>
+
+      <div class="cv-aside-content">
+        <p class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="users" />
+          <span v-text="$t('pages.cv.additionalSkill.management')" />
+        </p>
+        <p class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="paintbrushPencil" />
+          <span v-text="$t('pages.cv.additionalSkill.webDesign')" />
+        </p>
+        <p class="cv-aside-content-text">
+          <PIcon class="cv-aside-content-text-icon" name="listCheck" />
+          <span v-text="$t('pages.cv.additionalSkill.productManagment')" />
+        </p>
+      </div>
     </aside>
+
     <main class="cv-main">
       Main
     </main>
@@ -28,8 +101,11 @@
 </template>
 
 <script setup lang="ts">
+import { useStore } from '~/store'
+
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = runtimeConfig.public.siteUrl
+const { environments, informations } = useStore()
 
 definePageMeta({
   layout: 'pdf'
@@ -48,19 +124,18 @@ definePageMeta({
 
   &-header {
     display: grid;
-    grid: "i" "t" "p" "l";
+    grid: "i" "t" "p";
     grid-area: h;
-    align-items: center;
     justify-content: center;
-    padding: 32px 16px;
+    padding: 24px 16px;
     background: $grey-84;
     color: $grey-0;
     gap: 16px;
 
     @media #{$medium-and-up} {
-      grid: "i t" "i p" "i l" / 208px  auto;
+      grid: "i t" "i p" / 208px  auto;
       justify-content: flex-start;
-      gap: 0 64px;
+      gap: 16px 64px;
     }
 
     &-profil {
@@ -83,33 +158,89 @@ definePageMeta({
 
     &-title {
       grid-area: t;
+      align-self: flex-end;
       font-size: 3em;
       font-weight: $fw-light;
     }
 
     &-post {
       grid-area: p;
+      align-self: flex-start;
       opacity: 0.8;
       font-weight: $fw-light;
       text-transform: uppercase;
     }
-
-    &-link {
-      grid-area: l;
-      color: var(--c-primary);
-    }
   }
 
   &-aside {
+    display: flex;
     grid-area: a;
-    padding: 16px;
-    background: $grey-87;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 16px;
+    background-color: $grey-87;
     color: $grey-0;
+
+    &-title {
+      display: flex;
+      position: relative;
+      justify-content: center;
+
+      &-text {
+        position: relative;
+        z-index: 1;
+        padding: 0 8px;
+        background-color: $grey-87;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      &-separator {
+        position: absolute;
+        top: calc(50% - 1px);
+        width: 100%;
+        height: 1px;
+        background-color: $grey-75;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &-text {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $grey-25;
+        font-size: 0.875em;
+
+        &-icon {
+          width: 1.25rem;
+          height: 1rem;
+          fill: $grey-35;
+        }
+      }
+
+      &-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 32px;
+        gap: 16px;
+        justify-items: center;
+      }
+
+      &-icon {
+        height: 2em;
+        fill: $grey-25;
+      }
+    }
   }
 
   &-main {
     grid-area: m;
-    padding: 16px;
+    padding: 24px 16px;
     color: $grey-90;
   }
 }

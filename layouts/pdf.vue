@@ -71,7 +71,6 @@ const download = async () => {
     0 3px 1px -2px rgba($grey-100, 0.2),
     0 2px 2px 0 rgba($grey-100, 0.14),
     0 1px 5px 0 rgba($grey-100, 0.12);
-  aspect-ratio: 210 / 297;
 
   @media #{$large-and-up} {
     width: 960px;
@@ -79,6 +78,7 @@ const download = async () => {
   }
 
   @media print {
+    aspect-ratio: 210 / 297;
     border-radius: 0;
   }
 

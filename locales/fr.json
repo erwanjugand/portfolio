@@ -57,7 +57,28 @@
       }
     },
     "pdf": {
+      "title": "CV",
+      "description": "Retrouvez toutes mes informations sous forme d'un CV",
       "download": "Télécharger"
+    },
+    "cv": {
+      "personalInformations": {
+        "title": "Infos personnelles"
+      },
+      "environments": {
+        "title": "Environnement"
+      },
+      "hobbies": {
+        "title": "Loisirs",
+        "videoGame": "Jeux vidéos",
+        "highTech": "Nouvelles technologies"
+      },
+      "additionalSkill": {
+        "title": "Autres compétences",
+        "management": "Management",
+        "webDesign": "Webdesign",
+        "productManagment": "Gestion de projet"
+      }
     },
     "legalMentions": {
       "title": "Mentions légales",
@@ -90,7 +111,7 @@
   "PIntroduction": {
     "action": "Afficher le CV",
     "scroll": "Défiler en bas",
-    "titleAlt": "Développeur Front-End"
+    "titleAlt": "Lead développeur Front-End"
   },
   "PHeader": {
     "hackedMode": "Thème hacké",
