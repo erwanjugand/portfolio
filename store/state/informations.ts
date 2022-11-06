@@ -12,7 +12,8 @@ const informations: Information[] = [
     icon: 'mapLocationDot',
     content: '35000 Rennes, France',
     cta: 'https://goo.gl/maps/x2VLbukCJ4L2',
-    target: '_blank'
+    target: '_blank',
+    rel: 'noopener'
   },
   {
     title: 'email',

@@ -29,11 +29,11 @@ const download = async () => {
     headers: {
       'content-type': 'application/json',
       'X-RapidAPI-Key': runtimeConfig.public.rapidApiKey,
-      'X-RapidAPI-Host': 'api2pdf-api2pdf-v1.p.rapidapi.com'
+      'X-RapidAPI-Host': runtimeConfig.public.rapidApiHost
     },
     body: {
       url: runtimeConfig.public.siteUrl + route.path,
-      fileName: `CV Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
+      fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
       options: {
         landscape: false
       }

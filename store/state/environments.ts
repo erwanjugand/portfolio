@@ -2,33 +2,27 @@ import type { Environment } from '../store.d'
 
 const environements: Environment[] = [
   {
-    title: 'Visual Studio Code',
-    shortTitle: 'VSCode',
+    title: 'VSCode',
     name: 'visualStudioCode'
   },
   {
     title: 'Git',
-    shortTitle: 'Git',
     name: 'git'
   },
   {
     title: 'Ubuntu (WSL)',
-    shortTitle: 'Ubuntu (WSL)',
     name: 'ubuntu'
   },
   {
-    title: 'Windows Terminal',
-    shortTitle: 'Terminal',
+    title: 'Terminal',
     name: 'terminal'
   },
   {
-    title: 'Adobe Creative Cloud',
-    shortTitle: 'Adobe',
+    title: 'Adobe',
     name: 'adobe'
   },
   {
     title: 'Docker',
-    shortTitle: 'Docker',
     name: 'docker'
   }
 ]

@@ -46,8 +46,6 @@ const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' 
 </script>
 
 <style lang="scss">
-$diagonal: sqrt(3);
-
 .cv-job {
   display: flex;
   flex-direction: column;
