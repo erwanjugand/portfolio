@@ -57,13 +57,14 @@
       }
     },
     "pdf": {
-      "title": "CV",
-      "description": "Retrouvez toutes mes informations sous forme d'un CV",
       "download": "Télécharger"
     },
-    "cv": {
+    "resume": {
+      "title": "CV",
+      "description": "Retrouvez toutes mes informations sous forme d'un CV",
       "personalInformations": {
-        "title": "Infos personnelles"
+        "title": "Infos personnelles",
+        "car": "Permis B"
       },
       "environments": {
         "title": "Environnement"
@@ -78,6 +79,12 @@
         "management": "Management",
         "webDesign": "Webdesign",
         "productManagment": "Gestion de projet"
+      },
+      "experiences": {
+        "title": "Expériences professionnelles",
+      },
+      "skills": {
+        "title": "Compétences"
       }
     },
     "legalMentions": {
@@ -144,23 +151,23 @@
     "items": {
       "steepleLeadFrontEndDev": {
         "title": "Lead développeur Front-End",
-        "description": "Missions en complémentarité de celles de développeur : \n - Piloter l'équipe \n - Faire grandir chaque développeur \n - Structurer le pôle"
+        "description": "Structuration du pôle, pilotage des équipes techniques et développement continue du site Steeple."
       },
       "steepleFrontEndDev": {
         "title": "Développeur Front-End",
-        "description": "Missions : \n - Refonte et mise à jour continue du site web \n - Maintenance de l'application Android et de l'application Chrome \n - Conception des interfaces web sur Adobe XD \n - Création et maintenance du Wordpress \n - Tests utilisateurs \n\n Langages utilisés : Nuxt.js basé sur Vue.js, TypeScript, SASS"
+        "description": "Refonte et mise à jour continue du site Steeple avec Nuxt.js, SCSS et TypeScript. Maintenance de l'application Android et de l'application Chrome. Conception et création du site vitrine sur WordPress."
       },
       "steepleWebIntegrator": {
         "title": "Intégrateur web",
-        "description": "Missions : \n - Intégration Web \n - Conception des interfaces web sur Adobe XD \n - Gestion de projet \n - Optimisation des médias \n - Support d'IE 11 \n\n Langages utilisés : Ruby and Rails, HTML, SCSS"
+        "description": "Réalisation des maquettes du site Steeple sur Adobe XD suivit de l'intégration de celles-ci sur Ruby on Rails and SCSS. Planification et gestion de projet."
       },
       "vinciWebIntegrator": {
         "title": "Intégrateur web",
-        "description": "Missions : \n - Audit des sites web des entreprises dans le groupe VEFTGO \n - Recensement des contenus existants \n - Migration des sites existants à travers WordPress \n - Remontée de bugs auprès de la DSI"
+        "description": "Recensement des contenus existants des entreprises du groupe VEFTGO pour préparer leurs migrations sur WordPress. Remontée de bugs auprès du chef de projet."
       },
       "lpcWebIntegrator": {
         "title": "Intégrateur Web",
-        "description": "Missions : \n - Réalisation du site web spécialisé dans l'affiliation domotique \n - Site web développé sur Wordpress \n\n Langages utilisés : PHP, HTML, LESS"
+        "description": "Réalisation d'un site spécialisé dans l'affiliation domotique avec WordPress."
       }
     },
     "today": "aujourd'hui",

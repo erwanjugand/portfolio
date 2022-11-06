@@ -1,5 +1,6 @@
 export interface Environment {
   title: string
+  shortTitle: string
   name: string
 }
 
@@ -43,6 +44,7 @@ export interface Information {
   icon: string
   content: string
   cta: string
+  target?: string
 }
 
 export interface State {

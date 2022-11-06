@@ -14,10 +14,6 @@ const skills: Skill[] = [
     name: 'JavaScript'
   },
   {
-    level: 2,
-    name: 'TypeScript'
-  },
-  {
     level: 3,
     name: 'HTML'
   },
@@ -28,6 +24,10 @@ const skills: Skill[] = [
   {
     level: 3,
     name: 'SCSS'
+  },
+  {
+    level: 2,
+    name: 'TypeScript'
   },
   {
     level: 1,

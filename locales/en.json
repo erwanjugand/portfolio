@@ -57,11 +57,11 @@
       }
     },
     "pdf": {
-      "title": "Resume",
-      "description": "Find all informations in a resume",
       "download": "Download"
     },
-    "cv": {
+    "resume": {
+      "title": "Resume",
+      "description": "Find all informations in a resume",
       "personalInformations": {
         "title": "Personal info"
       },
@@ -78,6 +78,12 @@
         "management": "Management",
         "webDesign": "Webdesign",
         "productManagment": "Project management"
+      },
+      "experiences": {
+        "title": "Professional experiences"
+      },
+      "skills": {
+        "title": "Skills"
       }
     },
     "legalMentions": {
@@ -144,23 +150,23 @@
     "items": {
       "steepleLeadFrontEndDev": {
         "title": "Lead Front-End developer",
-        "description": "Missions in addition to those of developer: \n - Managing the team \n - Growing each developer \n - Structure the pole"
+        "description": "Structuring of the division, technical teams management and continuous development of Steeple website."
       },
       "steepleFrontEndDev": {
         "title": "Front-End developer",
-        "description": "Missions: \n - Redesign and continuous update of the website \n - Maintenance of the Android application and the Chrome application \n - Design of web interfaces on Adobe XD \n - Creation and maintenance of Wordpress \n - User tests \n\n Languages used: Nuxt.js based on Vue.js, TypeScript, SASS"
+        "description": "Steeple website redesign and continuous update with Nuxt.js, SCSS and TypeScript. Android app and Chrome app maintenance. Conception and creation of the showcase site on WordPress."
       },
       "steepleWebIntegrator": {
         "title": "Web Integrator",
-        "description": "Missions : \n - Web integration \n - Design of web interfaces on Adobe XD \n - Project management \n - Media Optimization \n - IE 11 support \n\n Languages used: Ruby and Rails, HTML, SCSS"
+        "description": "Creation of models on Adobe XD followed by their integration on Ruby on Rails and SCSS. Planning and project management."
       },
       "vinciWebIntegrator": {
         "title": "Web Integrator",
-        "description": "Missions: \n - Audit of company websites in the VEFTGO group \n - Inventory of existing content \n - Migration of existing sites to WordPress \n - Bugs reporting to the IT Department"
+        "description": "Inventory of existing content from VEFTGO group companies to prepare their migrations to WordPress. Bugs reporting to the project manager."
       },
       "lpcWebIntegrator": {
         "title": "Web Integrator",
-        "description": "Missions: \n - Creation of the website specializing in home automation affiliation \n - Website developped on Wordpress \n\n Languages used: PHP, HTML, LESS"
+        "description": "Creation of a website specialized in home automation affiliation with WordPress"
       }
     },
     "today": "today",

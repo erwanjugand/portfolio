@@ -13,7 +13,7 @@
         <PHexagon turned>
           <PIcon :name="information.icon" class="information-icon" />
         </PHexagon>
-        <a v-ripple :href="information.cta" class="information-link">
+        <a v-ripple :href="information.cta" rel="noopener" :target="information.target" class="information-link">
           <span v-text="$t(`PMoreInformations.${information.title}`)" />
           <span v-text="information.content" />
         </a>
