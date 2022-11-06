@@ -223,7 +223,7 @@ onClickOutside(switchLocaleContainer, () => {
       width: 64px;
     }
 
-    &-icon {
+    &-icon.icon {
       height: 2rem;
       fill: var(--c-text);
     }
