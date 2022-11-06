@@ -1,5 +1,5 @@
 <template>
-  <Component :is="type" v-ripple :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
+  <Component :is="type" v-ripple="!$attrs.disabled" :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
     <slot />
   </Component>
 </template>
@@ -13,8 +13,9 @@ const props = defineProps({
   }
 })
 
+const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
-const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button')
+const type = computed(() => props.to ? nuxtLink : attrs.href ? 'a' : 'button')
 </script>
 
 <style lang="scss">
@@ -31,12 +32,17 @@ const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button'
   text-transform: uppercase;
   gap: 16px;
 
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
   &-outlined {
     box-shadow: inset 0 0 0 2px var(--c-primary);
     fill: var(--c-primary);
     color: var(--c-primary);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: rgba($primary, 0.1);
     }
   }
@@ -46,7 +52,7 @@ const type = computed(() => props.to ? 'nuxt-link' : attrs.href ? 'a' : 'button'
     fill: var(--c-background-bg);
     color: var(--c-background-bg);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--c-primary-hover);
     }
   }

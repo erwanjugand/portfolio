@@ -38,10 +38,20 @@ export interface EasterEggStep {
   duration: number
 }
 
+export interface Information {
+  title: string
+  icon: string
+  content: string
+  cta: string
+  target?: string
+  rel?: string
+}
+
 export interface State {
   environmentsList: Environment[]
   experiencesList: Experience[]
   skillsList: Skill[]
   releasesList: Release[]
   easterEggStepsList: EasterEggStep[]
+  informationsList: Information[]
 }

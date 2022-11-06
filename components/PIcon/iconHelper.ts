@@ -9,9 +9,16 @@ import {
   faMoon as falMoon,
   faPenRuler as falPenRuler,
   faPhone as falPhone,
+  faLink as falLink,
+  faGamepadModern as falGamepadModern,
+  faNewspaper as falNewspaper,
   faMapLocationDot as falMapLocationDot,
   faSparkles as falSparkles,
+  faCarSide as falCarSide,
   faStar as falStar,
+  faPaintbrushPencil as falPaintbrushPencil,
+  faListCheck as falListCheck,
+  faUsers as falUsers,
   faCircleXmark as falCircleXmark
 } from '@fortawesome/pro-light-svg-icons'
 
@@ -89,12 +96,19 @@ export const icons: Icons = {
     computer: formatIcon(falComputer),
     envelope: formatIcon(falEnvelope),
     envelopeOpenText: formatIcon(falEnvelopeOpenText),
+    gamepadModern: formatIcon(falGamepadModern),
+    newspaper: formatIcon(falNewspaper),
     penRuler: formatIcon(falPenRuler),
+    carSide: formatIcon(falCarSide),
     phone: formatIcon(falPhone),
+    link: formatIcon(falLink),
     mapLocationDot: formatIcon(falMapLocationDot),
     moon: formatIcon(falMoon),
     sparkles: formatIcon(falSparkles),
     star: formatIcon(falStar),
+    paintbrushPencil: formatIcon(falPaintbrushPencil),
+    listCheck: formatIcon(falListCheck),
+    users: formatIcon(falUsers),
     circleXmark: formatIcon(falCircleXmark)
   },
 

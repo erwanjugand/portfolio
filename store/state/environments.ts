@@ -2,7 +2,7 @@ import type { Environment } from '../store.d'
 
 const environements: Environment[] = [
   {
-    title: 'Visual Studio Code',
+    title: 'VSCode',
     name: 'visualStudioCode'
   },
   {
@@ -14,11 +14,11 @@ const environements: Environment[] = [
     name: 'ubuntu'
   },
   {
-    title: 'Windows Terminal',
+    title: 'Terminal',
     name: 'terminal'
   },
   {
-    title: 'Adobe Creative Cloud',
+    title: 'Adobe',
     name: 'adobe'
   },
   {
