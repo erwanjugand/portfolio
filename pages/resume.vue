@@ -288,6 +288,7 @@ defineI18nRoute({
     padding: 32px 24px;
     color: $grey-90;
     gap: 32px;
+    container-type: inline-size;
 
     &-title {
       color: var(--c-primary);
@@ -319,7 +320,15 @@ defineI18nRoute({
       font-size: 0.875em;
       gap: 8px 16px;
 
-      @media #{$medium-and-up} {
+      @container (min-width: 400px) {
+        grid-template-rows: repeat(6, 1fr);
+      }
+
+      @container (min-width: 600px) {
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      @media print {
         grid-template-rows: repeat(4, 1fr);
       }
     }
