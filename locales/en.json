@@ -106,7 +106,7 @@
     "text1": "Hello, my name is <strong>Erwan Jugand</strong> and I am a passionate <strong>Front-End developer</strong> and sensitive to good practices.",
     "text2": "My experience at <strong>Digital Campus</strong> and at <strong>Steeple</strong> helped me to refine my sensibility on design, project management, UX/UI and team management.",
     "text3": "The job of Front-End developer is a constantly evolving job, always offering more tools to design ever more efficient wesites.",
-    "text4": "I am also passionate about IT, new technologies and above all curious 😉!",
+    "text4": "I am also passionate about IT, New technologies and above all curious 😉!",
     "title": "About"
   },
   "PFooter": {
@@ -150,7 +150,7 @@
     "items": {
       "steepleLeadFrontEndDev": {
         "title": "Lead Front-End developer",
-        "description": "Structuring of the division, technical teams management and continuous development of Steeple website."
+        "description": "Structuring of the division, technical team management and continuous development of Steeple website."
       },
       "steepleFrontEndDev": {
         "title": "Front-End developer",
