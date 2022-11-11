@@ -20,7 +20,7 @@
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "@vueuse/core": "^9.4.0",
-    "@vueuse/nuxt": "^9.4.0",
+    "@vueuse/nuxt": "^9.5.0",
     "eslint": "^8.26.0",
     "nuxt": "3.0.0-rc.13",
     "postcss-html": "^1.5.0",
