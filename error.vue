@@ -1,5 +1,3 @@
-import { NuxtError } from "nuxt/dist/app/composables"
-
 <template>
   <main class="error">
     <PCard class="error-content">
@@ -18,6 +16,7 @@ import { NuxtError } from "nuxt/dist/app/composables"
 import { NuxtError } from 'nuxt/dist/app/composables/error'
 import { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
+const localePath = useLocalePath()
 
 const props = defineProps({
   error: {
@@ -37,7 +36,7 @@ useHead({
   title: t(`pages.error.${errorStatus.value}.title`)
 })
 
-const handleError = () => clearError({ redirect: '/' })
+const handleError = () => clearError({ redirect: localePath('index') })
 </script>
 
 <style lang="scss">
