@@ -247,7 +247,7 @@ defineI18nRoute({
         font-size: 0.875em;
 
         &-icon {
-          width: 1.25rem;
+          flex: 0 0 1.25rem;
           height: 1rem;
           fill: $grey-35;
         }

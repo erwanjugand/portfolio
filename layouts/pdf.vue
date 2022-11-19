@@ -33,8 +33,7 @@ const download = async () => {
       'X-RapidAPI-Host': runtimeConfig.public.rapidApiHost
     },
     body: {
-      // url: runtimeConfig.public.siteUrl + route.path,
-      url: 'https://portfolio.erwan-jugand.workers.dev/cv',
+      url: runtimeConfig.public.siteUrl + route.path,
       fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
       options: {
         landscape: false
