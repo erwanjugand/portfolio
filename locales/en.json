@@ -63,7 +63,8 @@
       "title": "Resume",
       "description": "Find all informations in a resume",
       "personalInformations": {
-        "title": "Personal info"
+        "title": "Personal info",
+        "car": "Driving licence"
       },
       "environments": {
         "title": "Environment"
