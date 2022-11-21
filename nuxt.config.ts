@@ -83,11 +83,6 @@ export default defineNuxtConfig({
     }
   },
 
-  robots: {
-    UserAgent: '*',
-    Disallow: '/'
-  },
-
   googleFonts: {
     families: {
       Roboto: [300, 400, 500]
