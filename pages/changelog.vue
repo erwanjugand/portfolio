@@ -39,9 +39,9 @@ import { useStore } from '~/store'
 
 const { t } = useI18n()
 useHead({
-  title: t('pages.home.title'),
+  title: t('pages.changelog.title'),
   meta: [
-    { name: 'description', content: () => t('pages.home.description') }
+    { name: 'description', content: () => t('pages.changelog.description') }
   ]
 })
 
