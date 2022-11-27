@@ -3,7 +3,7 @@ main = "./.output/server/index.mjs"
 workers_dev = true
 compatibility_date = "2022-10-21"
 routes = [
-	{ pattern = "beta.erwan-jugand.fr", custom_domain = true, zone_name = "erwan-jugand.fr" }
+	{ pattern = "erwan-jugand.fr", custom_domain = true, zone_name = "erwan-jugand.fr" }
 ]
 
 [site]
