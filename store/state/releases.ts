@@ -3,23 +3,23 @@ import { Tag, Release } from '../store'
 const tags: Tag[] = [
   {
     name: 'overhaul',
-    color: '#44c0ff'
+    color: '#0277BD'
   },
   {
     name: 'feature',
-    color: '#44c0ff'
+    color: '#2E7D32'
   },
   {
     name: 'fix',
-    color: '#44c0ff'
+    color: '#FF8F00'
   },
   {
     name: 'dependencies',
-    color: '#44c0ff'
+    color: '#EF6C00'
   },
   {
     name: 'security',
-    color: '#44c0ff'
+    color: '#BF360C'
   }
 ]
 
@@ -28,7 +28,7 @@ const releases: Release[] = [
     name: '3.0.0',
     date: new Date(2022, 11, 30),
     major: true,
-    tags: [tags[0], tags[1]]
+    tags: [tags[0], tags[1], tags[3]]
   },
   {
     name: '2.1.6',

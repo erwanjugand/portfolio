@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <svg class="icon" role="img" :viewBox="viewBox" :aria-hidden="true">
     <path v-if="typeof icon.path === 'string'" :d="icon.path" />
