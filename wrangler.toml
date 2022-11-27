@@ -1,9 +1,7 @@
 name = "portfolio"
 main = "./.output/server/index.mjs"
 compatibility_date = "2022-11-27"
-routes = [
-	{ pattern = "erwan-jugand.fr", custom_domain = true, zone_name = "erwan-jugand.fr" }
-]
+route = "erwan-jugand.fr/*"
 
 [site]
 bucket = ".output/public"
