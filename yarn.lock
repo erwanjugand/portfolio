@@ -692,10 +692,10 @@
     google-fonts-helper "^3.2.1"
     pathe "^0.3.9"
 
-"@nuxtjs/i18n@^8.0.0-beta.6":
-  version "8.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-beta.6.tgz#6133ab3bf7eb7b7b859902b2c374b522f6fcce9a"
-  integrity sha512-aZJ1cYmRR/r92O33PTmL8czMq2lBMliyPFzLCOB5BA3oFKY0WafTAPxi8f/VYtlWf+8JT22oZ2UeZRhpxdFPuw==
+"@nuxtjs/i18n@^8.0.0-beta.7":
+  version "8.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/i18n/-/i18n-8.0.0-beta.7.tgz#0e946d315137805565ab3f4db1d98e2840682717"
+  integrity sha512-TH0cQz2XDSOdBsO3ZBjWC107IaPNTezPwDFPdUwCU0wCP7JfB1kwke4mkCLeizUijFbKTTlAsFnGkyyvQe7UmQ==
   dependencies:
     "@intlify/bundle-utils" "^3.4.0"
     "@intlify/shared" "9.3.0-beta.10"
