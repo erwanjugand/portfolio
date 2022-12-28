@@ -40,45 +40,51 @@ const scroll = () => {
 
 <style lang="scss">
 .introduction {
-  justify-content: space-around;
-  min-height: 100vh;
-  padding: 128px 0 64px;
-  background-image:
-    image-set(
-      url("/images/background-mobile-x1.webp") 1x,
-      url("/images/background-mobile-x2.webp") 2x
-    );
-  background-repeat: no-repeat;
-  background-position: center bottom var(--background-position-y);
-  background-size: cover;
-  gap: 64px;
-
-  @media #{$large-and-up} {
+  &.section {
+    justify-content: space-around;
+    min-height: 100vh;
+    padding: 128px 0 64px;
     background-image:
       image-set(
-        url("/images/background-desktop-x1.webp") 1x,
-        url("/images/background-desktop-x2.webp") 2x
+        url("/images/background-mobile-x1.webp") 1x,
+        url("/images/background-mobile-x2.webp") 2x
       );
-  }
+    background-repeat: no-repeat;
+    background-position: center bottom var(--background-position-y);
+    background-size: cover;
+    gap: 64px;
 
-  // Only Firefox support "type" in image-set
-  @supports (background-image: image-set(url("/images/background-mobile-x1.avif") type("image/avif"))) {
-    background-image:
-      image-set(
-        url("/images/background-mobile-x1.avif") type("image/avif") 1x,
-        url("/images/background-mobile-x2.avif") type("image/avif") 2x,
-        url("/images/background-mobile-x1.webp") type("image/webp") 1x,
-        url("/images/background-mobile-x2.webp") type("image/webp") 2x
-      );
+    @supports (min-height: 100svh) {
+      min-height: 100svh;
+    }
 
     @media #{$large-and-up} {
       background-image:
         image-set(
-          url("/images/background-desktop-x1.avif") type("image/avif") 1x,
-          url("/images/background-desktop-x2.avif") type("image/avif") 2x,
-          url("/images/background-desktop-x1.webp") type("image/webp") 1x,
-          url("/images/background-desktop-x2.webp") type("image/webp") 2x
+          url("/images/background-desktop-x1.webp") 1x,
+          url("/images/background-desktop-x2.webp") 2x
         );
+    }
+
+    // Only Firefox support "type" in image-set
+    @supports (background-image: image-set(url("/images/background-mobile-x1.avif") type("image/avif"))) {
+      background-image:
+        image-set(
+          url("/images/background-mobile-x1.avif") type("image/avif") 1x,
+          url("/images/background-mobile-x2.avif") type("image/avif") 2x,
+          url("/images/background-mobile-x1.webp") type("image/webp") 1x,
+          url("/images/background-mobile-x2.webp") type("image/webp") 2x
+        );
+
+      @media #{$large-and-up} {
+        background-image:
+          image-set(
+            url("/images/background-desktop-x1.avif") type("image/avif") 1x,
+            url("/images/background-desktop-x2.avif") type("image/avif") 2x,
+            url("/images/background-desktop-x1.webp") type("image/webp") 1x,
+            url("/images/background-desktop-x2.webp") type("image/webp") 2x
+          );
+      }
     }
   }
 
