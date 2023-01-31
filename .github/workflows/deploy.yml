@@ -39,13 +39,13 @@ jobs:
           NITRO_PRESET: cloudflare
           FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
-      - name: Cache build
+      - name: Cache output
         uses: actions/cache@v3
         with:
           path: .output
           key: nuxt-${{ github.sha }}
 
-      - name: Cache build
+      - name: Cache wrangler
         uses: actions/cache@v3
         with:
           path: wrangler.toml
@@ -56,13 +56,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cache build
+      - name: Get output
         uses: actions/cache@v3
         with:
           path: .output
           key: nuxt-${{ github.sha }}
 
-      - name: Cache build
+      - name: Get wrangler
         uses: actions/cache@v3
         with:
           path: wrangler.toml
