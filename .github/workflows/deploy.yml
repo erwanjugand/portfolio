@@ -1,4 +1,4 @@
-name: cloudflare
+name: deploy
 
 on:
   push:
@@ -45,15 +45,27 @@ jobs:
           path: .nuxt
           key: nuxt-${{ github.sha }}
 
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: wrangler.toml
+          key: nuxt-${{ github.sha }}
+
   deploy:
     needs: build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Cache build
         uses: actions/cache@v3
         with:
           path: .nuxt
+          key: nuxt-${{ github.sha }}
+
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: wrangler.toml
           key: nuxt-${{ github.sha }}
 
       - name: Publish to Cloudflare
