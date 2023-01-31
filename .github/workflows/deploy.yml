@@ -1,0 +1,63 @@
+name: cloudflare
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download project from git
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+        env:
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
+      - name: Build
+        run: yarn build
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
+          NITRO_PRESET: cloudflare
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: .nuxt
+          key: nuxt-${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: .nuxt
+          key: nuxt-${{ github.sha }}
+
+      - name: Publish to Cloudflare
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
