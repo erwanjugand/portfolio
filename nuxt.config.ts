@@ -35,6 +35,10 @@ export default defineNuxtConfig({
     '@/plugins/ripple'
   ],
 
+  imports: {
+    dirs: ['./store']
+  },
+
   i18n: {
     baseUrl: process.env.SITE_URL,
     locales: [

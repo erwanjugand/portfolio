@@ -5,8 +5,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  banner: Boolean
+interface Props {
+  banner?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  banner: false
 })
 </script>
 

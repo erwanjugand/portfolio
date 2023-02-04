@@ -23,7 +23,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useStore } from '~/store'
 const { informations } = useStore()
 </script>
 

@@ -55,11 +55,12 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '~/store'
-const localePath = useLocalePath()
 const { releases } = useStore()
-const lastVersion = releases[0].name
-const currentYear = new Date().getFullYear()
+const localePath = useLocalePath()
+const currentYear = useDateFormat(useNow(), 'YYYY')
+const lastVersion = computed(() => {
+  return releases[0].name
+})
 
 const isVisible = ref(false)
 const openEasterEgg = () => { isVisible.value = true }

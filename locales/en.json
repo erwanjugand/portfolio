@@ -1,4 +1,9 @@
 {
+  "useTheme": {
+    "darkMode": "Dark mode",
+    "hackedMode": "Hacked mode",
+    "lightMode": "Light mode"
+  },
   "pages": {
     "home": {
       "title": "Home",
@@ -121,11 +126,8 @@
     "titleAlt": "Lead Front-End developer"
   },
   "PHeader": {
-    "hackedMode": "Hacked mode",
-    "darkMode": "Dark mode",
     "homeAction": "Back to home",
-    "langAction": "Change language",
-    "lightMode": "Light mode"
+    "langAction": "Change language"
   },
   "PEnvironments": {
     "title": "Environment"
@@ -170,8 +172,6 @@
         "description": "Creation of a website specialized in home automation affiliation with WordPress"
       }
     },
-    "today": "today",
-    "years": "\r | 1 year | {n} years",
-    "months": "\r | 1 month | {n} months"
+    "today": "today"
   }
 }

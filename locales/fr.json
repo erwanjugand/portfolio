@@ -1,4 +1,9 @@
 {
+  "useTheme": {
+    "darkMode": "Thème sombre",
+    "hackedMode": "Thème hacké",
+    "lightMode": "Thème clair"
+  },
   "pages": {
     "home": {
       "title": "Accueil",
@@ -121,11 +126,8 @@
     "titleAlt": "Lead développeur Front-End"
   },
   "PHeader": {
-    "hackedMode": "Thème hacké",
-    "darkMode": "Thème sombre",
     "homeAction": "Revenir sur l'accueil",
-    "langAction": "Changer de langue",
-    "lightMode": "Thème clair"
+    "langAction": "Changer de langue"
   },
   "PEnvironments": {
     "title": "Mon environnement"
@@ -170,8 +172,6 @@
         "description": "Réalisation d'un site spécialisé dans l'affiliation domotique avec WordPress."
       }
     },
-    "today": "aujourd'hui",
-    "years": "\r | 1 an | {n} ans",
-    "months": "\r | 1 mois | {n} mois"
+    "today": "aujourd'hui"
   }
 }

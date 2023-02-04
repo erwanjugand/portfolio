@@ -10,11 +10,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  tag: {
-    type: String,
-    default: 'div'
-  }
+interface Props {
+  tag?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  tag: 'div'
 })
 </script>
 

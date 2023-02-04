@@ -43,11 +43,11 @@
           <button
             v-ripple
             class="header-toggle-theme"
-            :aria-label="themeText"
-            :title="themeText"
-            @click="toggleTheme()"
+            :aria-label="currentModeName"
+            :title="currentModeName"
+            @click="toggleMode()"
           >
-            <PIcon class="header-toggle-theme-icon" :type="currentThemeIcon.type" :name="currentThemeIcon.name" />
+            <PIcon class="header-toggle-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />
           </button>
         </ClientOnly>
       </div>
@@ -56,37 +56,19 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { onClickOutside } from '@vueuse/core'
-import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
-import { ComputedRef } from 'vue'
 
-// Theme
-const themeIcon: headerIcons = {
-  light: { type: 'light', name: 'brightness' },
-  dark: { type: 'light', name: 'moon' },
-  hacked: { type: 'custom', name: 'easterEgg' }
-}
-const theme = useColorMode()
-const isDark = computed(() => theme.value === 'dark')
-const themeText = computed(() => t(`PHeader.${theme.value}Mode`).toString())
-const currentThemeIcon = computed(() => themeIcon[theme.value])
-const toggleTheme = () => {
-  theme.preference = isDark.value ? 'light' : 'dark'
-}
-
-// Locale
+const { currentModeIcon, currentModeName, toggleMode } = useTheme()
+const { currentLocale, locales } = useLocale()
 const localePath = useLocalePath()
-const locales = useI18n().locales as ComputedRef<LocaleObject[]>
-const { t, locale } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
+// Menu
 const switchLocaleContainer = ref(null)
 const localeMenuIsOpen = ref(false)
-const currentLocale = computed(() => locales.value.find(l => l.code === locale.value)!)
-const switchLocalePath = useSwitchLocalePath()
 onClickOutside(switchLocaleContainer, () => {
   localeMenuIsOpen.value = false
 })
-
 </script>
 
 <style lang="scss">

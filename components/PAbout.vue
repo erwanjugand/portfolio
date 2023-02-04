@@ -5,7 +5,10 @@
         {{ $t('PAbout.title') }}
       </PH2>
       <picture class="xs12 l4 about-profil-container">
-        <source srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x" type="image/avif">
+        <source
+          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
+          type="image/avif"
+        >
         <img
           width="312"
           height="312"

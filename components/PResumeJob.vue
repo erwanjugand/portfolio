@@ -10,39 +10,41 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { intervalToDuration, addMonths } from 'date-fns'
 import { Job } from '~/store/store'
 const { d, t } = useI18n()
 
-const props = defineProps({
-  job: {
-    type: Object as PropType<Job>,
-    required: true
-  },
+interface Props {
+  job: Job
+}
 
-  single: Boolean
-})
+const props = defineProps<Props>()
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
 const currentDate = new Date()
 const finishedAtValue = props.job.finishedAt ?? currentDate
+const { formatDurationDate } = useDateFns()
 
-const title = computed(() => t(`PJob.items.${props.job.key}.title`))
-const description = computed(() => t(`PJob.items.${props.job.key}.description`))
-const contract = computed(() => ' · ' + t(`PJob.contract.${props.job.contract}`))
-
-const startedAt = computed(() => d(props.job.startedAt, 'short'))
+const title = computed(() => {
+  return t(`PJob.items.${props.job.key}.title`)
+})
+const description = computed(() => {
+  return t(`PJob.items.${props.job.key}.description`)
+})
+const contract = computed(() => {
+  return `. ${t(`PJob.contract.${props.job.contract}`)}`
+})
+const startedAt = computed(() => {
+  return d(props.job.startedAt, 'short')
+})
 const finishedAt = computed(() => {
   const isToday = finishedAtValue === currentDate
   return isToday ? t('PJob.today') : d(finishedAtValue, 'short')
 })
-const duration = computed(() => {
-  const interval = intervalToDuration({ start: props.job.startedAt, end: addMonths(finishedAtValue, 1) })
-  return t('PJob.years', interval.years!) + ' ' + t('PJob.months', interval.months!)
+const duration = formatDurationDate(props.job.startedAt, finishedAtValue)
+const time = computed(() => {
+  return `${startedAt.value} - ${finishedAt.value} . ${duration.value}`
 })
-const time = computed(() => startedAt.value + ' - ' + finishedAt.value + ' · ' + duration.value)
 </script>
 
 <style lang="scss">

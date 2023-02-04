@@ -11,16 +11,17 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { Experience } from '~/store/store'
+import { Experience } from '~~/store/store'
 
-const props = defineProps({
-  experience: {
-    type: Object as PropType<Experience>,
-    required: true
-  }
+interface Props {
+  experience: Experience
+}
+
+const props = defineProps<Props>()
+
+const hasOneJob = computed(() => {
+  return props.experience.jobs.length === 1
 })
-const hasOneJob = computed(() => props.experience.jobs.length === 1)
 </script>
 
 <style lang="scss">

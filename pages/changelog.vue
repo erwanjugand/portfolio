@@ -35,7 +35,6 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useStore } from '~/store'
 
 const { t } = useI18n()
 useHead({
@@ -56,7 +55,7 @@ const { releases } = useStore()
 const route = useRoute()
 const router = useRouter()
 
-const releasesFiltered = computed(() => releases.filter(release => !route.query.filter || release.tags.some(tag => route.query.filter === tag.name))!)
+const releasesFiltered = computed(() => releases.filter(release => !route.query.filter || release.tags.some(tag => route.query.filter === tag.name)))
 const filter = (name: string) => {
   const queryValue = route.query.filter === name ? undefined : name
   router.replace({ query: { filter: queryValue } })

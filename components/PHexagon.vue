@@ -7,12 +7,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  tag: {
-    type: String,
-    default: 'div'
-  },
-  turned: Boolean
+interface Props {
+  tag?: string
+  turned?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  tag: 'div',
+  turned: false
 })
 </script>
 

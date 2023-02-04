@@ -8,15 +8,13 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
 import { Skill } from '~/store/store'
 
-defineProps({
-  skill: {
-    type: Object as PropType<Skill>,
-    required: true
-  }
-})
+interface Props {
+  skill: Skill
+}
+
+defineProps<Props>()
 </script>
 
 <style lang="scss">

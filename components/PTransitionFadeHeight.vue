@@ -24,16 +24,23 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  group: Boolean,
-  tag: {
-    type: String,
-    default: 'div'
-  }
+interface Props {
+  group?: boolean
+  tag?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  group: false,
+  tag: 'div'
 })
 
-const beforeEnterLeave = (el: any) => { el.style.height = el.scrollHeight + 'px' }
-const afterEnterLeave = (el: any) => { el.style.removeProperty('height') }
+const beforeEnterLeave = (el: any) => {
+  el.style.height = el.scrollHeight + 'px'
+}
+
+const afterEnterLeave = (el: any) => {
+  el.style.removeProperty('height')
+}
 </script>
 
 <style lang="scss">

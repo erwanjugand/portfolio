@@ -116,7 +116,6 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useStore } from '~/store'
 
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = runtimeConfig.public.siteUrl

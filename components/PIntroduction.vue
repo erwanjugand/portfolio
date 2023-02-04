@@ -21,21 +21,20 @@
 </template>
 
 <script setup lang="ts">
-import { usePreferredReducedMotion } from '@vueuse/core'
+import { defaultWindow } from '@vueuse/core'
+import { CSSProperties } from 'vue'
 import { VTypical } from 'vue-typical'
 
 const localePath = useLocalePath()
-const preferredMotion = usePreferredReducedMotion()
-const { y } = useWindowScroll()
-const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
+const behavior = useScrollBehavior()
+const { y } = useScroll(defaultWindow, { behavior })
+const style = computed<CSSProperties>(() => {
+  return { '--background-position-y': `-${y.value / 3}px` }
+})
 
 const scroll = () => {
-  window.scrollTo({
-    top: window.innerHeight - 64,
-    behavior: preferredMotion.value === 'reduce' ? 'auto' : 'smooth'
-  })
+  y.value = window.innerHeight - 64
 }
-
 </script>
 
 <style lang="scss">
