@@ -5,7 +5,7 @@
       <slot />
     </div>
     <div class="pdf-action">
-      <PButton :disabled="loading" @click="download">
+      <PButton :disabled="isLoading" @click="download">
         <PIcon :style="IconStyle.regular" name="download" />
         {{ $t('pages.pdf.download') }}
       </PButton>
@@ -19,39 +19,19 @@ const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const { d, locale } = useI18n()
 
-const loading = ref(false)
+const { isLoading, pdfUrl, generate } = useGeneratePdf({
+  url: runtimeConfig.public.siteUrl + route.path,
+  fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
+  options: {
+    landscape: false
+  }
+})
 
 const download = async () => {
-  loading.value = true
-  const options: object = {
-    method: 'POST',
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'content-type': 'application/json',
-      'X-RapidAPI-Key': runtimeConfig.public.rapidApiKey,
-      'X-RapidAPI-Host': runtimeConfig.public.rapidApiHost
-    },
-    body: {
-      url: runtimeConfig.public.siteUrl + route.path,
-      fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
-      options: {
-        landscape: false
-      }
-    }
-  }
-
-  const request = await useFetch<{pdf: string}>(`https://${runtimeConfig.public.rapidApiHost}/chrome/url`, options)
-    .then(response => response)
-    .catch(() => undefined)
-
-  const pdfUrl = request?.data.value?.pdf
-  if (pdfUrl) {
-    window.open(pdfUrl, '_blank')
-  }
-
-  loading.value = false
+  await generate()
+  if (!pdfUrl.value) { return }
+  window.open(pdfUrl.value, '_blank')
 }
-
 </script>
 
 <style lang="scss">
