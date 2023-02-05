@@ -26,6 +26,9 @@ export const useStore = defineStore({
     skills: (state: State) => state.skillsList,
     releases: (state: State) => state.releasesList,
     lastRelease: (state: State) => state.releasesList[0],
+    releasesWithTagName: (state: State) => (tagName: string) => {
+      return state.releasesList.filter(release => release.tags.some(tag => tag.name === tagName))
+    },
     easterEggSteps: (state: State) => state.easterEggStepsList,
     informations: (state: State) => state.informationsList
   }
