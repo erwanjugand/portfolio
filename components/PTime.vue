@@ -1,5 +1,5 @@
 <template>
-  <time :datetime="datetime" v-text="$d(date, 'long')" />
+  <time :datetime="datetime" v-text="$d(date, format)" />
 </template>
 
 <script setup lang="ts">
