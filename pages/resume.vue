@@ -32,15 +32,15 @@
           :target="information.target"
           class="cv-aside-content-text"
         >
-          <PIcon class="cv-aside-content-text-icon" :name="information.icon" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" :name="information.icon" />
           <span v-text="information.content" />
         </a>
         <NuxtLink :href="siteUrl" target="_blank" class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="link" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="link" />
           <span v-text="siteUrl" />
         </NuxtLink>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="carSide" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="carSide" />
           <span v-text="$t('pages.resume.personalInformations.car')" />
         </p>
       </div>
@@ -66,15 +66,15 @@
 
       <div class="cv-aside-content">
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="users" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="users" />
           <span v-text="$t('pages.resume.additionalSkill.management')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="paintbrushPencil" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="paintbrushPencil" />
           <span v-text="$t('pages.resume.additionalSkill.webDesign')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="listCheck" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="listCheck" />
           <span v-text="$t('pages.resume.additionalSkill.productManagment')" />
         </p>
       </div>
@@ -86,11 +86,11 @@
 
       <div class="cv-aside-content">
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="gamepadModern" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="gamepadModern" />
           <span v-text="$t('pages.resume.hobbies.videoGame')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" name="newspaper" />
+          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="newspaper" />
           <span v-text="$t('pages.resume.hobbies.highTech')" />
         </p>
       </div>
@@ -107,7 +107,7 @@
       <div class="cv-main-skills">
         <div v-for="skill of skills" :key="skill.name" class="cv-main-skill">
           <p class="cv-main-skill-text" v-text="skill.name" />
-          <PIcon v-for="n of 3" :key="n" class="cv-main-skill-level" :type="n > skill.level ? IconStyle.light : IconStyle.solid" name="star" />
+          <PIcon v-for="n of 3" :key="n" class="cv-main-skill-level" :style="n > skill.level ? IconStyle.light : IconStyle.solid" name="star" />
         </div>
       </div>
     </main>

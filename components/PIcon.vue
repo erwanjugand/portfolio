@@ -10,12 +10,10 @@ import { IconStyle } from '~/composables/useIcon'
 
 interface Props {
   name: string
-  style?: IconStyle
+  style: IconStyle
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  style: IconStyle.light
-})
+const props = defineProps<Props>()
 
 const reactiveIconName = computed(() => props.name)
 const reactiveIconStyle = computed(() => props.style)

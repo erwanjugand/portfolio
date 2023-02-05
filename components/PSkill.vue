@@ -5,7 +5,7 @@
       <PIcon
         v-for="n of 3"
         :key="n"
-        :type="n > skill.level ? IconStyle.light : IconStyle.solid"
+        :style="n > skill.level ? IconStyle.light : IconStyle.solid"
         name="star"
       />
     </div>
