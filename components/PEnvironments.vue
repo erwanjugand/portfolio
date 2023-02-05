@@ -5,7 +5,7 @@
         {{ $t('PEnvironments.title') }}
       </PH2>
       <figure v-for="(environment, index) in environments" :key="index" tabindex="0" class="xs6 s4 m2 tool">
-        <PIcon class="tool-icon" type="custom" :name="environment.name" />
+        <PIcon class="tool-icon" :style="IconStyle.custom" :name="environment.name" />
         <figcaption class="tool-text" v-text="environment.title" />
       </figure>
     </div>
@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '~/store'
 const { environments } = useStore()
 </script>
 

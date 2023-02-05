@@ -1,4 +1,4 @@
-import type { EasterEggStep } from '../store.d'
+import type { EasterEggStep } from '../store'
 
 const easterEggSteps: EasterEggStep[] = [
   {

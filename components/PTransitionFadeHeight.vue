@@ -24,16 +24,23 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  group: Boolean,
-  tag: {
-    type: String,
-    default: 'div'
-  }
+interface Props {
+  group?: boolean
+  tag?: keyof HTMLElementTagNameMap
+}
+
+withDefaults(defineProps<Props>(), {
+  group: false,
+  tag: 'div'
 })
 
-const beforeEnterLeave = (el: any) => { el.style.height = el.scrollHeight + 'px' }
-const afterEnterLeave = (el: any) => { el.style.removeProperty('height') }
+const beforeEnterLeave = (el: any) => {
+  el.style.height = el.scrollHeight + 'px'
+}
+
+const afterEnterLeave = (el: any) => {
+  el.style.removeProperty('height')
+}
 </script>
 
 <style lang="scss">
@@ -41,11 +48,7 @@ const afterEnterLeave = (el: any) => { el.style.removeProperty('height') }
   &-enter-active,
   &-leave-active {
     overflow: hidden;
-    transition: opacity 0.25s ease, height 0.25s ease;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: 0s;
-    }
+    transition: opacity var(--transition), height var(--transition);
   }
 
   &-enter-from,

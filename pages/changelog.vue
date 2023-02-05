@@ -9,7 +9,7 @@
           <PCard tag="article" class="release">
             <template #header>
               <h2>
-                <PIcon :name="release.major ? 'boxFull' : 'penRuler'" />
+                <PIcon :style="IconStyle.light" :name="release.major ? 'boxFull' : 'penRuler'" />
                 {{ release.name }}
               </h2>
               <PTime :date="release.date" />
@@ -35,7 +35,6 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { useStore } from '~/store'
 
 const { t } = useI18n()
 useHead({
@@ -52,11 +51,17 @@ defineI18nRoute({
   }
 })
 
-const { releases } = useStore()
 const route = useRoute()
 const router = useRouter()
+const { releases, releasesWithTagName } = useStore()
 
-const releasesFiltered = computed(() => releases.filter(release => !route.query.filter || release.tags.some(tag => route.query.filter === tag.name))!)
+const releasesFiltered = computed(() => {
+  const query = route.query.filter as string | undefined
+  return query
+    ? releasesWithTagName(query)
+    : releases
+})
+
 const filter = (name: string) => {
   const queryValue = route.query.filter === name ? undefined : name
   router.replace({ query: { filter: queryValue } })

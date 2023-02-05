@@ -8,7 +8,7 @@
         aria-label="?????"
         @click="openEasterEgg"
       >
-        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
+        <PIcon :style="IconStyle.custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
     </div>
     <footer class="footer">
@@ -29,7 +29,7 @@
             aria-label="Github"
             :title="$t('PFooter.github')"
           >
-            <PIcon type="brand" name="github" class="footer-github-icon" />
+            <PIcon :style="IconStyle.brand" name="github" class="footer-github-icon" />
           </a>
 
           <a
@@ -41,12 +41,12 @@
             aria-label="Linkedin"
             :title="$t('PFooter.linkedin')"
           >
-            <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
+            <PIcon :style="IconStyle.brand" name="linkedin" class="footer-linkedin-icon" />
           </a>
         </div>
 
         <NuxtLink class="footer-last-version" :to="localePath('changelog')">
-          {{ lastVersion }}
+          {{ lastRelease.name }}
         </NuxtLink>
       </div>
     </footer>
@@ -55,11 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '~/store'
+const { lastRelease } = useStore()
 const localePath = useLocalePath()
-const { releases } = useStore()
-const lastVersion = releases[0].name
-const currentYear = new Date().getFullYear()
+const currentYear = useDateFormat(useNow(), 'YYYY')
 
 const isVisible = ref(false)
 const openEasterEgg = () => { isVisible.value = true }

@@ -1,23 +1,16 @@
 <template>
-  <time :datetime="datetime" v-text="$d(date, 'long')" />
+  <time :datetime="datetime" v-text="$d(date, format)" />
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
+interface Props {
+  date: Date
+  format?: 'short' | 'long'
+}
 
-const props = defineProps({
-  date: {
-    type: Date as PropType<Date>,
-    required: true
-  },
-  format: {
-    type: String,
-    default: 'long',
-    validator (value: string) {
-      return ['short', 'long'].includes(value)
-    }
-  }
+const props = withDefaults(defineProps<Props>(), {
+  format: 'long'
 })
 
-const datetime = computed(() => props.date.toISOString())
+const datetime = dateFormatIso(props.date)
 </script>

@@ -2,21 +2,24 @@
   <PHexagon tag="li" tabindex="0" class="skill">
     <span class="skill-name" v-text="skill.name" />
     <div class="skill-score">
-      <PIcon v-for="n of 3" :key="n" :type="n > skill.level ? 'light' : 'solid'" name="star" />
+      <PIcon
+        v-for="n of 3"
+        :key="n"
+        :style="n > skill.level ? IconStyle.light : IconStyle.solid"
+        name="star"
+      />
     </div>
   </PHexagon>
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
 import { Skill } from '~/store/store'
 
-defineProps({
-  skill: {
-    type: Object as PropType<Skill>,
-    required: true
-  }
-})
+interface Props {
+  skill: Skill
+}
+
+defineProps<Props>()
 </script>
 
 <style lang="scss">

@@ -4,7 +4,7 @@
       <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]" />
     </ClientOnly>
     <PButton class="introduction-cv" :to="localePath('resume')" outlined>
-      <PIcon type="regular" name="download" />
+      <PIcon :style="IconStyle.regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
     <button v-ripple class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')" @click="scroll">
@@ -21,21 +21,20 @@
 </template>
 
 <script setup lang="ts">
-import { usePreferredReducedMotion } from '@vueuse/core'
+import { defaultWindow } from '@vueuse/core'
+import { CSSProperties } from 'vue'
 import { VTypical } from 'vue-typical'
 
 const localePath = useLocalePath()
-const preferredMotion = usePreferredReducedMotion()
-const { y } = useWindowScroll()
-const style = computed(() => ({ '--background-position-y': `-${y.value / 3}px` }))
+const behavior = useScrollBehavior()
+const { y } = useScroll(defaultWindow, { behavior })
+const style = computed<CSSProperties>(() => {
+  return { '--background-position-y': `-${y.value / 3}px` }
+})
 
 const scroll = () => {
-  window.scrollTo({
-    top: window.innerHeight - 64,
-    behavior: preferredMotion.value === 'reduce' ? 'auto' : 'smooth'
-  })
+  y.value = window.innerHeight - 64
 }
-
 </script>
 
 <style lang="scss">

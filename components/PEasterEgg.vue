@@ -5,7 +5,7 @@
       <p
         v-for="(step, index) of easterEggSteps"
         :key="step.text"
-        :class="['easter-egg-step', { 'visible': index <= lastStepIndex }]"
+        :class="['easter-egg-step', { 'visible': index <= count }]"
         v-text="step.text"
       />
       <div
@@ -22,30 +22,36 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from '~/store'
+import { CSSProperties } from 'vue'
 
-const page = document.documentElement
-page.style.overflow = CSS.supports('overflow: clip') ? 'clip' : 'hidden'
+interface Emit {
+  (e: 'close'): void
+}
 
+const emit = defineEmits<Emit>()
 const { easterEggSteps } = useStore()
-const emit = defineEmits(['close'])
-const theme = useColorMode()
-const lastStepIndex = ref(0)
+const isLocked = useScrollLock(document.documentElement, true)
+const { changeMode } = useTheme()
+const { count, inc } = useCounter(0, { max: easterEggSteps.length - 1 })
 
 easterEggSteps.forEach((step, index) => {
   setTimeout(() => {
     if (index + 1 < easterEggSteps.length) {
-      lastStepIndex.value += 1
+      inc()
     } else {
-      page.style.removeProperty('overflow')
-      theme.preference = 'hacked'
+      isLocked.value = false
+      changeMode('hacked')
       emit('close')
     }
   }, step.duration)
 })
 
-const progressBarValue = computed(() => easterEggSteps[lastStepIndex.value].value)
-const progressBarStyle = computed(() => { return { flexBasis: `${progressBarValue.value}%` } })
+const progressBarValue = computed(() => {
+  return easterEggSteps[count.value].value
+})
+const progressBarStyle = computed<CSSProperties>(() => {
+  return { flexBasis: `${progressBarValue.value}%` }
+})
 </script>
 
 <style lang="scss">

@@ -1,21 +1,32 @@
 <template>
-  <Component :is="type" v-ripple="!$attrs.disabled" :to="to" :class="['button', outlined ? 'button-outlined' : 'button-filled']">
+  <Component
+    :is="type"
+    v-ripple="!$attrs.disabled"
+    :to="to"
+    :class="['button', outlined ? 'button-outlined' : 'button-filled']"
+  >
     <slot />
   </Component>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  outlined: Boolean,
-  to: {
-    type: String,
-    default: undefined
-  }
+import { RouteLocationRaw } from 'vue-router'
+
+interface Props {
+  outlined?: boolean
+  to?: RouteLocationRaw
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  outlined: false,
+  to: undefined
 })
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
-const type = computed(() => props.to ? nuxtLink : attrs.href ? 'a' : 'button')
+const type = computed(() => {
+  return props.to ? nuxtLink : attrs.href ? 'a' : 'button'
+})
 </script>
 
 <style lang="scss">
