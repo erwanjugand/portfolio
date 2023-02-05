@@ -26,7 +26,7 @@
 <script setup lang="ts">
 interface Props {
   group?: boolean
-  tag?: string
+  tag?: keyof HTMLElementTagNameMap
 }
 
 withDefaults(defineProps<Props>(), {
@@ -48,11 +48,7 @@ const afterEnterLeave = (el: any) => {
   &-enter-active,
   &-leave-active {
     overflow: hidden;
-    transition: opacity 0.25s ease, height 0.25s ease;
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: 0s;
-    }
+    transition: opacity var(--transition), height var(--transition);
   }
 
   &-enter-from,

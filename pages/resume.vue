@@ -53,7 +53,7 @@
       <div class="cv-aside-content">
         <div class="cv-aside-environments">
           <figure v-for="(environment, index) in environments" :key="index" class="cv-aside-environment">
-            <PIcon class="cv-aside-environment-icon" type="custom" :name="environment.name" />
+            <PIcon class="cv-aside-environment-icon" :style="IconStyle.custom" :name="environment.name" />
             <figcaption class="cv-aside-environment-text" v-text="environment.title" />
           </figure>
         </div>
@@ -107,7 +107,7 @@
       <div class="cv-main-skills">
         <div v-for="skill of skills" :key="skill.name" class="cv-main-skill">
           <p class="cv-main-skill-text" v-text="skill.name" />
-          <PIcon v-for="n of 3" :key="n" class="cv-main-skill-level" :type="n > skill.level ? 'light' : 'solid'" name="star" />
+          <PIcon v-for="n of 3" :key="n" class="cv-main-skill-level" :type="n > skill.level ? IconStyle.light : IconStyle.solid" name="star" />
         </div>
       </div>
     </main>

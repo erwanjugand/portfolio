@@ -10,9 +10,11 @@
 </template>
 
 <script setup lang="ts">
+import { RouteLocationRaw } from 'vue-router'
+
 interface Props {
   outlined?: boolean
-  to?: string
+  to?: RouteLocationRaw
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -22,7 +24,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
-
 const type = computed(() => {
   return props.to ? nuxtLink : attrs.href ? 'a' : 'button'
 })

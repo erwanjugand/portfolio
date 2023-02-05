@@ -3,6 +3,10 @@ import { intervalToDuration, formatDuration, addMonths } from 'date-fns'
 import { fr, enGB } from 'date-fns/locale'
 import { Ref } from 'vue'
 
+export interface Locales {
+  [key: string]: Locale
+}
+
 const locales: Locales = {
   fr,
   en: enGB
@@ -17,12 +21,7 @@ export default () => {
     return ref(formatDuration(interval, { format: ['years', 'months'], locale }))
   }
 
-  const formatIso = (date: Date): Ref<string> => {
-    return ref(date.toISOString())
-  }
-
   return {
-    formatDurationDate,
-    formatIso
+    formatDurationDate
   }
 }

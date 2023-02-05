@@ -17,7 +17,7 @@
           @click="localeMenuIsOpen = !localeMenuIsOpen"
         >
           <img class="header-switch-locale-image" :src="`/images/flag-${currentLocale.code}.svg`" :alt="currentLocale.name">
-          <PIcon class="header-switch-locale-icon" type="solid" name="caretDown" />
+          <PIcon class="header-switch-locale-icon" :style="IconStyle.solid" name="caretDown" />
         </button>
         <Transition name="header-switch-locale">
           <ul v-show="localeMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
@@ -29,7 +29,7 @@
                 :to="switchLocalePath(otherLocale.code)"
                 :aria-label="otherLocale.name"
                 :title="otherLocale.name"
-                @click="localeMenuIsOpen = false"
+                @click="closeMenu"
               >
                 <img class="header-switch-locale-image" loading="lazy" :src="`/images/flag-${otherLocale.iso}.svg`" :alt="otherLocale.name">
               </NuxtLink>
@@ -47,7 +47,7 @@
             :title="currentModeName"
             @click="toggleMode()"
           >
-            <PIcon class="header-toggle-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />
+            <PIcon class="header-toggle-theme-icon" :style="currentModeIcon.style" :name="currentModeIcon.name" />
           </button>
         </ClientOnly>
       </div>
@@ -66,9 +66,10 @@ const switchLocalePath = useSwitchLocalePath()
 // Menu
 const switchLocaleContainer = ref(null)
 const localeMenuIsOpen = ref(false)
-onClickOutside(switchLocaleContainer, () => {
+const closeMenu = () => {
   localeMenuIsOpen.value = false
-})
+}
+onClickOutside(switchLocaleContainer, closeMenu)
 </script>
 
 <style lang="scss">

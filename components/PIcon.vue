@@ -1,25 +1,25 @@
 <template>
-  <svg class="icon" role="img" :viewBox="viewBox" aria-hidden>
+  <svg v-if="icon" class="icon" role="img" :viewBox="viewbox" aria-hidden>
     <path v-if="typeof icon.path === 'string'" :d="icon.path" />
     <path v-for="(path, index) of icon.path" v-else :key="index" :d="path" />
   </svg>
 </template>
 
 <script setup lang="ts">
+import { IconStyle } from '~/composables/useIcon'
+
 interface Props {
   name: string
-  type?: IconType
+  style?: IconStyle
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  type: 'light'
+  style: IconStyle.light
 })
 
-const { getIcon } = useIcon()
-const icon = computed(() => getIcon(props.type, props.name))
-const viewBox = computed(() => {
-  return `0 0 ${icon.value.width} ${icon.value.height}`
-})
+const reactiveIconName = computed(() => props.name)
+const reactiveIconStyle = computed(() => props.style)
+const { icon, viewbox } = useIcon(reactiveIconStyle, reactiveIconName)
 </script>
 
 <style lang="scss">

@@ -4,7 +4,7 @@
       <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]" />
     </ClientOnly>
     <PButton class="introduction-cv" :to="localePath('resume')" outlined>
-      <PIcon type="regular" name="download" />
+      <PIcon :style="IconStyle.regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
     <button v-ripple class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')" @click="scroll">

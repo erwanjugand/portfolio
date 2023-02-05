@@ -1,8 +1,19 @@
+import { IconStyle } from './useIcon'
+
+export interface ThemeIcon {
+  style: IconStyle
+  name: string
+}
+
+export interface ThemeIcons {
+  [key: string]: ThemeIcon
+}
+
 export default () => {
   const themeIcons: ThemeIcons = {
-    light: { type: 'light', name: 'brightness' },
-    dark: { type: 'light', name: 'moon' },
-    hacked: { type: 'custom', name: 'easterEgg' }
+    light: { style: IconStyle.light, name: 'brightness' },
+    dark: { style: IconStyle.light, name: 'moon' },
+    hacked: { style: IconStyle.custom, name: 'easterEgg' }
   }
   const currentMode = useColorMode()
   const { t } = useI18n()

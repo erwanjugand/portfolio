@@ -6,7 +6,7 @@
     </div>
     <div class="pdf-action">
       <PButton :disabled="loading" @click="download">
-        <PIcon type="regular" name="download" />
+        <PIcon :style="IconStyle.regular" name="download" />
         {{ $t('pages.pdf.download') }}
       </PButton>
     </div>

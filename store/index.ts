@@ -25,6 +25,7 @@ export const useStore = defineStore({
     experiences: (state: State) => state.experiencesList,
     skills: (state: State) => state.skillsList,
     releases: (state: State) => state.releasesList,
+    lastRelease: (state: State) => state.releasesList[0],
     easterEggSteps: (state: State) => state.easterEggStepsList,
     informations: (state: State) => state.informationsList
   }

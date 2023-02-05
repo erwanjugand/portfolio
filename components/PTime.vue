@@ -12,6 +12,5 @@ const props = withDefaults(defineProps<Props>(), {
   format: 'long'
 })
 
-const { formatIso } = useDateFns()
-const datetime = formatIso(props.date)
+const datetime = dateFormatIso(props.date)
 </script>

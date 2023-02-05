@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 interface Props {
-  tag?: string
+  tag?: keyof HTMLElementTagNameMap
   turned?: boolean
 }
 
