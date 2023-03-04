@@ -206,6 +206,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
     }
 
     &-icon.icon {
+      width: 2rem;
       height: 2rem;
       fill: var(--c-text);
     }
