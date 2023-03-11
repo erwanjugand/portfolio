@@ -6,6 +6,7 @@ compatibility_date = "2023-03-01"
 bucket = ".output/public"
 
 [env.dev]
+name = "portfoliod-dev"
 workers_dev = true
 
 [env.prod]
