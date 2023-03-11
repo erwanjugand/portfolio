@@ -40,6 +40,7 @@ jobs:
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
           RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
           NITRO_PRESET: cloudflare
+          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
       - name: Cache output
         uses: actions/cache@v3
