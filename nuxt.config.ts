@@ -90,7 +90,7 @@ export default defineNuxtConfig({
   robots: {
     rules: {
       UserAgent: '*',
-      Disallow: process.env.NUXT_PUBLIC_ROBOTS_DISALLOW_VALUE
+      Disallow: process.env.ROBOTS_DISALLOW_VALUE ?? ''
     }
   },
 
