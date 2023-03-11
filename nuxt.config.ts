@@ -2,8 +2,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: '',
-      rapidApiKey: process.env.RAPID_API_KEY,
-      rapidApiHost: process.env.RAPID_API_HOST
+      rapidApiKey: '',
+      rapidApiHost: ''
     }
   },
 
