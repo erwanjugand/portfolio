@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - master
+      - dev
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
 
     steps:
       - name: Download project from git
@@ -34,6 +36,7 @@ jobs:
         run: yarn build
         env:
           SITE_URL: ${{ secrets.SITE_URL }}
+          ROBOTS_DISALLOW_VALUE: ${{ secrets.ROBOTS_DISALLOW_VALUE }}
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
           RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
           NITRO_PRESET: cloudflare
@@ -54,6 +57,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment: ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
 
     steps:
       - name: Get output
@@ -73,3 +77,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: publish --env ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
