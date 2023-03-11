@@ -1,24 +1,3 @@
-// export default defineEventHandler(() => {
-//   // const body = await readBody(event)
-//   // const config = useRuntimeConfig()
-
-//   console.log('body', 'test')
-
-//   return {
-//     test: 'coucou'
-//   }
-//   // return $fetch(`https://${config.rapidApiHost}/chrome/url`, {
-//   //   method: 'POST',
-//   //   headers: {
-//   //     'Access-Control-Allow-Origin': '*',
-//   //     'content-type': 'application/json',
-//   //     'X-RapidAPI-Key': config.rapidApiKey,
-//   //     'X-RapidAPI-Host': config.rapidApiHost
-//   //   },
-//   //   body
-//   // })
-// })
-
 interface pdfResponse {
   pdf?: string
   mbIn?: number
