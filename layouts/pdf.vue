@@ -19,6 +19,8 @@ const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const { d, locale } = useI18n()
 
+console.log(runtimeConfig.public)
+
 const { isLoading, pdfUrl, generate } = useGeneratePdf({
   url: runtimeConfig.public.siteUrl + route.path,
   fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
