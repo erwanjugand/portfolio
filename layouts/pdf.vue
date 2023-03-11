@@ -4,6 +4,7 @@
     <div class="pdf">
       <slot />
     </div>
+    <pre v-text="runtimeConfig.public" />
     <div class="pdf-action">
       <PButton :disabled="isLoading" @click="download">
         <PIcon :style="IconStyle.regular" name="download" />
@@ -18,8 +19,6 @@ import { useI18n } from 'vue-i18n'
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const { d, locale } = useI18n()
-
-console.log(runtimeConfig.public)
 
 const { isLoading, pdfUrl, generate } = useGeneratePdf({
   url: runtimeConfig.public.siteUrl + route.path,
