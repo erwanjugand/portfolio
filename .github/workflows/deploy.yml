@@ -35,11 +35,10 @@ jobs:
       - name: Build
         run: yarn build
         env:
-          NUXT_PUBLIC_SITE_URL: ${{ secrets.NUXT_PUBLIC_SITE_URL }}
-          NUXT_PUBLIC_RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
-          NUXT_PUBLIC_RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
           NITRO_PRESET: cloudflare
-          FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
       - name: Cache output
         uses: actions/cache@v3
