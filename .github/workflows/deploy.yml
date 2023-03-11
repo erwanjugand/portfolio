@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
+    environment: ${{ github.ref_name == 'master' && 'prod' || 'dev' }}
 
     steps:
       - name: Download project from git
@@ -57,7 +57,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment: ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
+    environment: ${{ github.ref_name == 'master' && 'prod' || 'dev' }}
 
     steps:
       - name: Get output
@@ -77,4 +77,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: publish --env ${{  github.ref_branch == 'master' && 'prod' || 'dev' }}
+          command: publish --env ${{ github.ref_name == 'master' && 'prod' || 'dev' }}
