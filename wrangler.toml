@@ -1,14 +1,12 @@
 name = "portfolio"
 main = "./.output/server/index.mjs"
 compatibility_date = "2023-03-01"
-route = "erwan-jugand.fr/*"
 
 [site]
 bucket = ".output/public"
 
 [env.dev]
-name = "portfolio-dev"
-
+workers_dev = true
 
 [env.prod]
-name = "portfolio-prod"
+route = "erwan-jugand.fr/*"
