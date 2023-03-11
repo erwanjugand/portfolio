@@ -4,6 +4,7 @@
     <div class="pdf">
       <slot />
     </div>
+    <pre v-text="runtimeConfig" />
     <div class="pdf-action">
       <PButton :disabled="isLoading" @click="download">
         <PIcon :style="IconStyle.regular" name="download" />
