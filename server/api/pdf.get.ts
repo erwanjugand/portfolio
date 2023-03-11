@@ -1,4 +1,4 @@
-interface pdfResponse {
+interface PdfResponse {
   pdf?: string
   mbIn?: number
   mbOut?: number
@@ -8,13 +8,13 @@ interface pdfResponse {
   responseId?: string
 }
 
-export default defineEventHandler<pdfResponse | null>((event) => {
+export default defineEventHandler<PdfResponse>((event) => {
   const config = useRuntimeConfig()
   const query = getQuery(event)
   const url = query.url
   const fileName = query.fileName
 
-  const response = $fetch<pdfResponse>(`https://${config.rapidApiHost}/chrome/url`, {
+  const response = $fetch<PdfResponse>(`https://${config.rapidApiHost}/chrome/url`, {
     method: 'POST',
     headers: {
       'Access-Control-Allow-Origin': '*',

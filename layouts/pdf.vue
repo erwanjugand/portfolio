@@ -4,7 +4,6 @@
     <div class="pdf">
       <slot />
     </div>
-    <pre v-text="runtimeConfig" />
     <div class="pdf-action">
       <PButton :disabled="isLoading" @click="download">
         <PIcon :style="IconStyle.regular" name="download" />
@@ -23,17 +22,18 @@ const isLoading = ref(false)
 
 const download = async () => {
   isLoading.value = true
-  const { data } = await useFetch('/api/pdf', {
+
+  const { data: pdfUrl } = await useFetch('/api/pdf', {
     query: {
       url: runtimeConfig.public.siteUrl + route.path,
       fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`
     }
   })
 
-  const pdfUrl = computed(() => data.value?.pdf)
-  if (pdfUrl.value) {
-    window.open(pdfUrl.value, '_blank')
+  if (pdfUrl.value?.pdf) {
+    window.open(pdfUrl.value.pdf, '_blank')
   }
+
   isLoading.value = false
 }
 </script>

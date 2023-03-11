@@ -1,7 +1,8 @@
 <template>
   <Component
     :is="type"
-    v-ripple="!$attrs.disabled"
+    v-ripple="!disabled"
+    :disabled="disabled"
     :to="to"
     :class="['button', outlined ? 'button-outlined' : 'button-filled']"
   >
@@ -14,11 +15,13 @@ import { RouteLocationRaw } from 'vue-router'
 
 interface Props {
   outlined?: boolean
+  disabled?: boolean
   to?: RouteLocationRaw
 }
 
 const props = withDefaults(defineProps<Props>(), {
   outlined: false,
+  disabled: false,
   to: undefined
 })
 
