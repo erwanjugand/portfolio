@@ -19,6 +19,7 @@ html {
   font-family: Roboto, sans-serif;
   line-height: 1.25;
   -webkit-tap-highlight-color: transparent;
+  color-scheme: var(--c-theme);
 }
 
 .light-mode {
@@ -27,6 +28,7 @@ html {
 
   // Color
   --c-primary-hover: #{color.mix($primary, $grey-0, 90%)};
+  --c-theme: light;
 
   // Text
   --c-text: #{$grey-90};
@@ -66,6 +68,7 @@ html {
 
   // Color
   --c-primary-hover: #{color.mix($primary, $grey-100, 90%)};
+  --c-theme: dark;
 
   // Text
   --c-text: #{$grey-5};
