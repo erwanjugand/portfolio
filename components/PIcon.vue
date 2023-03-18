@@ -1,5 +1,5 @@
 <template>
-  <svg v-if="icon" class="icon" role="img" :viewBox="viewbox" aria-hidden>
+  <svg v-if="icon" class="icon" role="img" :viewBox="viewbox" aria-hidden="true">
     <path v-if="typeof icon.path === 'string'" :d="icon.path" />
     <path v-for="(path, index) of icon.path" v-else :key="index" :d="path" />
   </svg>
