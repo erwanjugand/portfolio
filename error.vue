@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtError } from 'nuxt/dist/app/composables/error'
+import { NuxtError } from 'nuxt/app'
 import { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 const localePath = useLocalePath()

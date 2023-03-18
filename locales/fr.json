@@ -86,7 +86,7 @@
         "productManagment": "Gestion de projet"
       },
       "experiences": {
-        "title": "Expériences professionnelles",
+        "title": "Expériences professionnelles"
       },
       "skills": {
         "title": "Compétences"
@@ -100,7 +100,7 @@
       "cta": "Revenir sur l'accueil",
       "4xx": {
         "title": "Page introuvable !",
-        "text": "Oups, Cette page n'existe pas"
+        "text": "Oups, cette page n'existe pas"
       },
       "5xx": {
         "title": "Une erreur est survenue !",
