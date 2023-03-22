@@ -13,6 +13,9 @@
       "matchUpdateTypes": [
         "minor",
         "patch"
+      ],
+      "extends": [
+        ":semanticCommitTypeAll(chore)"
       ]
     }
   ]
