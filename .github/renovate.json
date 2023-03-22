@@ -3,6 +3,10 @@
   "extends": [
     "config:base"
   ],
+  "timezone": "Europe/Paris",
+  "schedule": [
+    "after 4am and before 8am on Saturday"
+  ],
   "packageRules": [
     {
       "groupName": "all non-major dependencies",
