@@ -19,7 +19,7 @@ useHead(() =>
     title: '',
     titleTemplate: title => 'Erwan Jugand' + (title && ` - ${title}`),
     htmlAttrs: {
-      lang: i18nHead.value.htmlAttrs!.lang
+      lang: i18nHead.value.htmlAttrs?.lang
     },
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
