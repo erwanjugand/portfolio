@@ -8,6 +8,7 @@
     "preview": "nuxt preview",
     "image": "sh parse-image.sh && svgo --config=svgo.json public/ -r --indent=2 --pretty --multipass",
     "lint": "yarn lint:js && yarn lint:style && yarn lint:tsc",
+    "lint:ci": "yarn nuxi prepare && yarn lint",
     "lint:js": "eslint ./ --ext .ts,.js,.vue --fix",
     "lint:style": "stylelint **/*.{scss,vue} --fix",
     "lint:tsc": "vue-tsc --noEmit"
