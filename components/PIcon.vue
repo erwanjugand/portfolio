@@ -1,5 +1,5 @@
 <template>
-  <svg v-if="icon" class="icon" role="img" :viewBox="viewbox" aria-hidden="true">
+  <svg v-if="icon" class="icon" role="img" :viewBox="icon.viewbox" aria-hidden="true">
     <path v-if="typeof icon.path === 'string'" :d="icon.path" />
     <path v-for="(path, index) of icon.path" v-else :key="index" :d="path" />
   </svg>
@@ -17,7 +17,7 @@ const props = defineProps<Props>()
 
 const reactiveIconName = computed(() => props.name)
 const reactiveIconStyle = computed(() => props.style)
-const { icon, viewbox } = useIcon(reactiveIconStyle, reactiveIconName)
+const icon = useIcon(reactiveIconStyle, reactiveIconName)
 </script>
 
 <style lang="scss">
