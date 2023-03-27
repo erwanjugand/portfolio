@@ -21,14 +21,20 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   outlined: false,
-  disabled: false,
+  disabled: undefined,
   to: undefined
 })
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
 const type = computed(() => {
-  return props.to ? nuxtLink : attrs.href ? 'a' : 'button'
+  return props.to
+    ? nuxtLink
+    : attrs.href
+      ? 'a'
+      : attrs.click
+        ? 'button'
+        : 'div'
 })
 </script>
 
