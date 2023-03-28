@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    environment: ${{ github.ref_name == 'master' && 'prod' || 'dev' }}
+    environment: ${{ github.ref_name == 'master' && 'prod' || github.ref_name == 'dev' && 'dev' || 'default' }}
     env:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
