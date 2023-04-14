@@ -21,6 +21,24 @@
       "extends": [
         ":semanticCommitTypeAll(chore)"
       ]
+    },
+    {
+      "groupName": "Font Awesome",
+      "matchPackagePrefixes": [
+        "@fortawesome/"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    },
+    {
+      "groupName": "Vueuse",
+      "matchPackagePrefixes": [
+        "@vueuse/"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
     }
   ]
 }
