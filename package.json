@@ -25,9 +25,9 @@
     "@vueuse/core": "9.13.0",
     "@vueuse/nuxt": "9.13.0",
     "eslint": "8.38.0",
-    "nuxt": "3.3.3",
+    "nuxt": "3.4.1",
     "postcss-html": "1.5.0",
-    "sass": "1.61.0",
+    "sass": "1.62.0",
     "stylelint": "15.4.0",
     "stylelint-config-property-sort-order-smacss": "9.1.0",
     "stylelint-config-standard-scss": "7.0.1",
@@ -36,7 +36,7 @@
     "vue-tsc": "1.2.0"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "8.0.0-beta.10",
+    "@nuxtjs/i18n": "8.0.0-beta.11",
     "@nuxtjs/robots": "3.0.0",
     "@pinia/nuxt": "0.4.8",
     "date-fns": "2.29.3",
