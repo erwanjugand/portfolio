@@ -23,7 +23,8 @@
 <script setup lang="ts">
 import { defaultWindow } from '@vueuse/core'
 import { CSSProperties } from 'vue'
-import { VTypical } from 'vue-typical'
+// eslint-disable-next-line import/no-named-as-default
+import VTypical from 'vue-typical'
 
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
