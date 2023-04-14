@@ -57,34 +57,8 @@ export default defineNuxtConfig({
     ],
     langDir: 'locales/',
     defaultLocale: 'fr',
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: 'fr',
-      datetimeFormats: {
-        fr: {
-          long: {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          },
-          short: {
-            year: 'numeric',
-            month: 'short'
-          }
-        },
-        en: {
-          long: {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-          },
-          short: {
-            year: 'numeric',
-            month: 'short'
-          }
-        }
-      }
-    }
+    lazy: true,
+    vueI18n: './i18n.config.ts'
   },
 
   robots: {

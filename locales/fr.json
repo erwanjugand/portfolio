@@ -109,8 +109,9 @@
     }
   },
   "PAbout": {
-    "text1": "Salut, je m'appelle <strong>Erwan Jugand</strong> et suis un <strong>développeur Front-End</strong> passionné et sensible aux bonnes pratiques de code.",
-    "text2": "Mon cursus à <strong>Digital Campus</strong> et mon expérience chez <strong>Steeple</strong> m'ont permis d'affiner ma sensibilité sur le design, la gestion de projet, UX/UI et le management.",
+    "text1": "Salut, je m'appelle {name} et suis un {job} passionné et sensible aux bonnes pratiques de code.",
+    "text1Job": "développeur Front-End",
+    "text2": "Mon cursus à {school} et mon expérience chez {enterprise} m'ont permis d'affiner ma sensibilité sur le design, la gestion de projet, UX/UI et le management.",
     "text3": "Le métier de développeur Front-End est un métier en constante évolution, offrant toujours plus d'outil pour concevoir des sites toujours plus performant.",
     "text4": "Je suis aussi passionné d'informatique, de nouvelles technologies et surtout curieux 😉!",
     "title": "À propos"
