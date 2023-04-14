@@ -19,26 +19,12 @@
         >
       </picture>
       <div class="xs12 l8 about-content">
-        <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
-        <i18n-t tag="p" class="about-text" keypath="PAbout.text1" scope="global">
-          <template #name>
-            <strong>Erwan Jugand</strong>
-          </template>
-          <template #job>
-            <strong>{{ $t('PAbout.text1Job') }}</strong>
-          </template>
-        </i18n-t>
-        <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
-        <i18n-t tag="p" class="about-text" keypath="PAbout.text2" scope="global">
-          <template #school>
-            <strong>Digital Campus</strong>
-          </template>
-          <template #enterprise>
-            <strong>Steeple</strong>
-          </template>
-        </i18n-t>
-        <p class="about-text" v-text="$t('PAbout.text3')" />
-        <p class="about-text" v-text="$t('PAbout.text4')" />
+        <!-- eslint-disable vue/no-v-html -->
+        <p class="about-text" v-html="$t('PAbout.text1')" />
+        <p class="about-text" v-html="$t('PAbout.text2')" />
+        <p class="about-text" v-html="$t('PAbout.text3')" />
+        <p class="about-text" v-html="$t('PAbout.text4')" />
+        <!-- eslint-enable vue/no-v-html -->
       </div>
     </div>
   </PSection>
