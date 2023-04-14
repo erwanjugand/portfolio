@@ -25,7 +25,7 @@ const hasOneJob = computed(() => {
 </script>
 
 <style lang="scss">
-$diagonal: sqrt(3);
+$diagonal: math.sqrt(3);
 
 .experience {
   display: flex;
@@ -42,7 +42,7 @@ $diagonal: sqrt(3);
       content: "";
       position: absolute;
       top: calc(50% - 12px);
-      left: div((24px * $diagonal) - 24px, 2);
+      left: math.div((24px * $diagonal) - 24px, 2);
       box-sizing: border-box;
       width: 24px;
       height: 24px;

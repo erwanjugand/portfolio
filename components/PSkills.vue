@@ -24,8 +24,8 @@ const { skills } = useStore()
 <style lang="scss">
 $hexagon-height: 200px;
 $hexagon-border-out: 3px;
-$hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
-$hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
+$hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3))), 100);
+$hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg)));
 
 .skills-container {
   display: flex;
@@ -33,31 +33,31 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
   width: 100%;
   overflow: hidden;
   background: url("/images/bee.svg") center top;
-  background-position-x: calc(50% - #{div($hexagon-width, 4) + div($hexagon-space-to-remove, 2)});
+  background-position-x: calc(50% - #{math.div($hexagon-width, 4) + math.div($hexagon-space-to-remove, 2)});
 
   @media #{$medium-and-up} {
-    background-position-x: calc(50% - #{$hexagon-width + div($hexagon-space-to-remove, 2)});
+    background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
   }
 
   @media #{$large-and-up} {
-    background-position-x: calc(50% + #{div($hexagon-width, 2) - div($hexagon-space-to-remove, 2)});
+    background-position-x: calc(50% + #{math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2)});
   }
 
   @media #{$extra-large} {
-    background-position-x: calc(50% - #{$hexagon-width + div($hexagon-space-to-remove, 2)});
+    background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
   }
 }
 
 .skills-wrapper {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: div($hexagon-height, 2) + div($hexagon-border-out, 2);
+  padding-bottom: math.div($hexagon-height, 2) + math.div($hexagon-border-out, 2);
 
   > * {
     $margin-top: 0;
-    $margin-right: $hexagon-width * 1.5 - div($hexagon-space-to-remove, 2);
-    $margin-bottom: div(-$hexagon-height, 2) - div($hexagon-border-out, 2);
-    $margin-left: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
+    $margin-right: $hexagon-width * 1.5 - math.div($hexagon-space-to-remove, 2);
+    $margin-bottom: math.div(-$hexagon-height, 2) - math.div($hexagon-border-out, 2);
+    $margin-left: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
 
     margin: $margin-top $margin-right $margin-bottom $margin-left;
   }
@@ -66,7 +66,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
     width: $hexagon-width * 3.5 - $hexagon-space-to-remove;
 
     > *:nth-child(even) {
-      margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
+      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
       margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
     }
   }
@@ -75,7 +75,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
     width: $hexagon-width * 5 - $hexagon-space-to-remove;
 
     > *:nth-child(3n + 2) {
-      margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
+      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
     }
 
     > *:nth-child(3n + 3) {
@@ -87,7 +87,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
     width: $hexagon-width * 8 - $hexagon-space-to-remove * 3;
 
     > *:nth-child(5n + 3) {
-      margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
+      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
     }
 
     > *:nth-child(5n + 4) {
@@ -99,7 +99,7 @@ $hexagon-space-to-remove: ceil(div($hexagon-border-out, sin(60deg)));
     width: $hexagon-width * 11 - $hexagon-space-to-remove * 3;
 
     > *:nth-child(7n + 4) {
-      margin-right: div($hexagon-width, 2) - div($hexagon-space-to-remove, 2);
+      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
     }
 
     > *:nth-child(7n + 5) {

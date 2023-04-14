@@ -3,9 +3,6 @@
     "stylelint-config-property-sort-order-smacss",
     "stylelint-config-standard-scss"
   ],
-  "rules": {
-    "scss/no-global-function-names": null
-  },
   "overrides": [
     {
       "files": [

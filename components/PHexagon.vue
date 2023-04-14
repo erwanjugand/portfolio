@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
 $hexagon-height: 200px;
 $hexagon-border-out: 3px;
 $hexagon-border-in: 1px;
-$hexagon-width: div(round(div($hexagon-height * 100, sqrt(3))), 100);
+$hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3))), 100);
 
 @mixin dynamic-border($width, $height, $border-size) {
   width: $width;

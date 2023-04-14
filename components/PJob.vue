@@ -51,7 +51,7 @@ const time = computed(() => {
 </script>
 
 <style lang="scss">
-$diagonal: sqrt(3);
+$diagonal: math.sqrt(3);
 
 .job {
   display: flex;
@@ -79,7 +79,7 @@ $diagonal: sqrt(3);
         content: "";
         position: absolute;
         top: calc(50% - 6px);
-        left: div((12px * $diagonal) + 8px, 2);
+        left: math.div((12px * $diagonal) + 8px, 2);
         box-sizing: border-box;
         width: 12px;
         height: 12px;

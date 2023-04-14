@@ -1,8 +1,6 @@
-/* eslint-disable import/no-duplicates */
 import { intervalToDuration, formatDuration, addMonths } from 'date-fns'
 import fr from 'date-fns/locale/fr/index'
 import enGB from 'date-fns/locale/en-GB/index'
-/* eslint-enable import/no-duplicates */
 import { Ref } from 'vue'
 
 export interface DateFnsLocales {
