@@ -2,6 +2,7 @@ useTheme:
   darkMode: Dark mode
   hackedMode: Hacked mode
   lightMode: Light mode
+
 pages:
   home:
     title: Home
@@ -10,49 +11,39 @@ pages:
     title: Changelog
     description: Curious to see the evolution of the portfolio? It's this way !
     items:
-      '1':
-        '0':
-          '0': "- Creation and lauching of the portfolio with HTML/CSS/JS \n - Use
-            LESS"
-          '1': "- Added de LazyLoad"
-          '2': "- Bugs fixes \n - Add Google Recaptcha 2"
-          '3': "- SEO Optimization \n - Image optimization"
-        '1':
-          '0': "Dynamization of the website: \n - Using PHP 5.6 & MySQL \n - Creation
-            of back-office"
-          '1': "- Bugs fixes"
-          '2': "- Added Easter Egg \n - Bugs fixes"
-        '2':
-          '0': "Back-office overhaul: \n - Security enhancement \n - new design \n
-            - Improved upload system for images"
-          '1': "- Update dependencies \n - Update to PHP 7.1"
-          '2': "- Bugs fixes \n - Migration to a Progressive Web App"
-          '3': "- Bugs fixes \n - Clean code"
-      '2':
-        '0':
-          '0': "The website overhaul:  \n - Use Symfony 4.1 \n - End of support for
-            Internet Explorer and older versions of browsers \n - Clean code \n -
-            Removed several javascript and css dependencies \n - Switch LESS to SCSS
-            \n - Update to PHP 7.2 \n - Added webp format for images \n - Bugs fixes
-            \n - Added dark mode \n - Use of cookies for a better experience \n -
-            Disabling Service Workers"
-          '1': "- Update Symfony 4.2 \n - New “Contact” page \n - Switch to Recaptcha
-            3"
-        '1':
-          '0': "JavaScript overhaul : \n - Removing Jquery \n - Performance improvement
-            \n - Update dependencies \n\n Other : \n - Improved Firefox support \n
-            - Bugs fixes"
-          '1': "- Updated and improved administration security \n - Update to PHP
-            7.3 \n - Bugs fixes"
-          '2': "- Creation and automatic generation of the sitemap of the website"
-          '3': "- Security enhancement \n - Improved dark mode"
-          '4': "- Update dependencies"
-          '5': "- Update to Symfony 4.4 \n - Update to PHP 7.4 \n - Update dependencies"
-          '6': "- Added lazy loading for images \n - Update dependencies"
-      '3':
-        '0':
-          '0': "The website overhaul: \n - Use Nuxt 3 \n - English support \n - Serverless
-            Architecture"
+      1:
+        0:
+          0: "- Creation and lauching of the portfolio with HTML/CSS/JS \n - Use LESS"
+          1: "- Added de LazyLoad"
+          2: "- Bugs fixes \n - Add Google Recaptcha 2"
+          3: "- SEO Optimization \n - Image optimization"
+        1:
+          0: "Dynamization of the website: \n - Using PHP 5.6 & MySQL \n - Creation of back-office"
+          1: "- Bugs fixes"
+          2: "- Added Easter Egg \n - Bugs fixes"
+        2:
+          0: "Back-office overhaul: \n - Security enhancement \n - new design \n - Improved upload system for images"
+          1: "- Update dependencies \n - Update to PHP 7.1"
+          2: "- Bugs fixes \n - Migration to a Progressive Web App"
+          3: "- Bugs fixes \n - Clean code"
+      2:
+        0:
+          0: "The website overhaul:  \n - Use Symfony 4.1 \n - End of support for Internet Explorer and older versions of browsers \n - Clean code \n - Removed several javascript and css dependencies \n - Switch LESS to SCSS \n - Update to PHP 7.2 \n - Added webp format for images \n - Bugs fixes \n - Added dark mode \n - Use of cookies for a better experience \n - Disabling Service Workers"
+          1: "- Update Symfony 4.2 \n - New “Contact” page \n - Switch to Recaptcha 3"
+        1:
+          0: "JavaScript overhaul : \n - Removing Jquery \n - Performance improvement \n - Update dependencies \n\n Other : \n - Improved Firefox support \n - Bugs fixes"
+          1: "- Updated and improved administration security \n - Update to PHP 7.3 \n - Bugs fixes"
+          2: "- Creation and automatic generation of the sitemap of the website"
+          3: "- Security enhancement \n - Improved dark mode"
+          4: "- Update dependencies"
+          5: "- Update to Symfony 4.4 \n - Update to PHP 7.4 \n - Update dependencies"
+          6: "- Added lazy loading for images \n - Update dependencies"
+      3:
+        0:
+          0: "The website overhaul: \n - Use Nuxt 3 \n - English support"
+        1:
+          0: "- Creation of an internal API to no longer expose the rapidApi api key \n - Update dependencies"
+          1: "- Improve accessibility \n - Improve Dark mode \n - Update dependencies"
     tags:
       dependencies: Dependencies
       feature: Feature
@@ -84,7 +75,7 @@ pages:
       title: Skills
   legalMentions:
     title: Legal mentions
-    description: Nobody cares about this kind of page...
+    description: Nobody cares about this kind of page…
   error:
     cta: Back to homepage
     4xx:
@@ -93,38 +84,44 @@ pages:
     5xx:
       title: An error has occurred !
       text: I will rectify this as soon as possible :)
+
 PAbout:
-  text1: Hello, my name is {name} and I am a passionate {job} and sensitive to good
-    practices.
+  text1: Hello, my name is {name} and I am a passionate {job} and sensitive to good practices.
   text1Job: Front-End developer
-  text2: My experience at {school} and at {enterprise} helped me to refine my sensibility
-    on design, project management, UX/UI and team management.
-  text3: The job of Front-End developer is a constantly evolving job, always offering
-    more tools to design ever more efficient wesites.
+  text2: My experience at {school} and at {enterprise} helped me to refine my sensibility on design, project management, UX/UI and team management.
+  text3: The job of Front-End developer is a constantly evolving job, always offering more tools to design ever more efficient wesites.
   text4: "I am also passionate about IT, New technologies and above all curious \U0001F609!"
   title: About
+
 PFooter:
   copyright: 'Copyright© {year}: All rights reserved.'
   github: Github account
   linkedin: Linkedin account
+
 PIntroduction:
   action: Show CV
   scroll: Scroll down
   titleAlt: Lead Front-End developer
+
 PHeader:
   homeAction: Back to home
   langAction: Change language
+
 PEnvironments:
   title: Environment
+
 PExperiences:
   title: Experiences
+
 PSkills:
   title: Skills
+
 PMoreInformations:
   address: Address
   email: Email
   phone: Phone
   title: More information
+
 PJob:
   contract:
     apprenticeship: Apprenticeship
@@ -133,23 +130,17 @@ PJob:
   items:
     steepleLeadFrontEndDev:
       title: Lead Front-End developer
-      description: Structuring of the division, technical team management and continuous
-        development of Steeple website.
+      description: Structuring of the division, technical team management and continuous development of Steeple website.
     steepleFrontEndDev:
       title: Front-End developer
-      description: Steeple website redesign and continuous update with Nuxt.js, SCSS
-        and TypeScript. Android app and Chrome app maintenance. Conception and creation
-        of the showcase site on WordPress.
+      description: Steeple website redesign and continuous update with Nuxt.js, SCSS and TypeScript. Android app and Chrome app maintenance. Conception and creation of the showcase site on WordPress.
     steepleWebIntegrator:
       title: Web Integrator
-      description: Creation of models on Adobe XD followed by their integration on
-        Ruby on Rails and SCSS. Planning and project management.
+      description: Creation of models on Adobe XD followed by their integration on Ruby on Rails and SCSS. Planning and project management.
     vinciWebIntegrator:
       title: Web Integrator
-      description: Inventory of existing content from VEFTGO group companies to prepare
-        their migrations to WordPress. Bugs reporting to the project manager.
+      description: Inventory of existing content from VEFTGO group companies to prepare their migrations to WordPress. Bugs reporting to the project manager.
     lpcWebIntegrator:
       title: Web Integrator
-      description: Creation of a website specialized in home automation affiliation
-        with WordPress
+      description: Creation of a website specialized in home automation affiliation with WordPress
   today: today
