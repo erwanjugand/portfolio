@@ -17,7 +17,7 @@ export interface Experience {
 
 export interface Tag {
   name: string
-  color: string
+  color: `#${string}`
 }
 
 export interface Skill {
@@ -26,7 +26,7 @@ export interface Skill {
 }
 
 export interface Release {
-  name: string
+  name: `${number}.${number}.${number}`
   date: Date
   major: boolean
   tags: Tag[]
