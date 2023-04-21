@@ -30,15 +30,6 @@
       "matchUpdateTypes": [
         "major"
       ]
-    },
-    {
-      "groupName": "Vueuse",
-      "matchPackagePrefixes": [
-        "@vueuse/"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ]
     }
   ]
 }
