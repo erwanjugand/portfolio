@@ -1,0 +1,161 @@
+useTheme:
+  darkMode: Thème sombre
+  hackedMode: Thème hacké
+  lightMode: Thème clair
+pages:
+  home:
+    title: Accueil
+    description: Découvrez mon portfolio et amusez-vous à le tester :)
+  changelog:
+    title: Journal de modifications
+    description: Curieux de voir l'évolution du portfolio ? C'est par ici !
+    items:
+      '1':
+        '0':
+          '0': "- Création et mise en ligne du portfolio en HTML/CSS/JS \n - Utilisation
+            de LESS"
+          '1': "- Ajout de LazyLoad"
+          '2': "- Correction de bugs \n - Ajout Google Recaptcha 2"
+          '3': "- Optimisation du référencement \n - Optimisation des images"
+        '1':
+          '0': "Dynamisation du site : \n - Utilisation de PHP 5.6 & MySQL \n - Création
+            d'une administration"
+          '1': "- Correction de bugs"
+          '2': "- Ajout d'un Easter Egg \n - Correction de bugs"
+        '2':
+          '0': "Refonte de l'administration : \n - Renforcement de la sécurité \n
+            - Nouveau design \n - Meilleur système d'upload pour les images"
+          '1': "- Correction de bugs \n - Migration vers une Progressive Web App"
+          '2': "- Mise à jour des dépendances \n - Passage à PHP 7.1"
+          '3': "- Correction de bugs \n - Optimisation du code"
+      '2':
+        '0':
+          '0': "Refonte totale du site : \n - Refonte avec Symfony 4.1 \n - Fin du
+            support d'Internet Explorer et des anciennes versions des navigateurs
+            \n - Optimisation du code \n - Suppression de plusieurs dépendances javascript
+            et css \n - Passage de LESS au SCSS \n - Passage à PHP 7.2 \n - Ajout
+            du format webp pour les images \n - Correction de bugs \n - Mise en place
+            d'un thème sombre \n - Utilisation des cookies pour une meilleure expérience
+            \n - Désactivation des Services Workers"
+          '1': "- Mise à jour vers Symfony 4.2 \n - Création d'une page « Contact
+            » \n - Passage vers Recaptcha 3"
+        '1':
+          '0': "Refonte du javascript : \n - Suppression de Jquery \n - Meilleures
+            performances \n - Mise à jour des dépendances \n\n Autre : \n - Meilleur
+            support de Firefox \n - Correction de bugs"
+          '1': "- Mise à jour et amélioration de la sécurité de l'administration \n
+            - Passage à PHP 7.3 \n - Correction de bugs"
+          '2': "- Création et génération automatique du sitemap du site"
+          '3': "- Renforcement de la sécurité \n - Amélioration du mode sombre"
+          '4': "- Mise à jour des dépendances"
+          '5': "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à
+            jour des dépendances"
+          '6': "- Ajout d'un chargement paresseux pour les images \n - Mise à jour
+            des dépendances"
+      '3':
+        '0':
+          '0': "Refonte totale du site : \n - Utilisation de Nuxt 3 \n - Support de
+            l'anglais \n - Architecture serverless"
+    tags:
+      dependencies: Dépendances
+      feature: Fonctionnalité
+      fix: Correctif
+      overhaul: Refonte
+      security: Sécurité
+  pdf:
+    download: Télécharger le CV
+  resume:
+    title: CV
+    description: Retrouvez toutes mes informations sous forme d'un CV
+    personalInformations:
+      title: Infos personnelles
+      car: Permis B
+    environments:
+      title: Environnement
+    hobbies:
+      title: Loisirs
+      videoGame: Jeux vidéos
+      highTech: Nouvelles technologies
+    additionalSkill:
+      title: Autres compétences
+      management: Management
+      webDesign: Webdesign
+      productManagment: Gestion de projet
+    experiences:
+      title: Expériences professionnelles
+    skills:
+      title: Compétences
+  legalMentions:
+    title: Mentions légales
+    description: En vrai, tout le monde s'en fiche de ce genre de page...
+  error:
+    cta: Revenir sur l'accueil
+    4xx:
+      title: Page introuvable !
+      text: Oups, cette page n'existe pas
+    5xx:
+      title: Une erreur est survenue !
+      text: Je vais rectifier ça au plus vite :)
+PAbout:
+  text1: Salut, je m'appelle {name} et suis un {job} passionné et sensible aux bonnes
+    pratiques de code.
+  text1Job: développeur Front-End
+  text2: Mon cursus à {school} et mon expérience chez {enterprise} m'ont permis d'affiner
+    ma sensibilité sur le design, la gestion de projet, UX/UI et le management.
+  text3: Le métier de développeur Front-End est un métier en constante évolution,
+    offrant toujours plus d'outil pour concevoir des sites toujours plus performant.
+  text4: "Je suis aussi passionné d'informatique, de nouvelles technologies et surtout
+    curieux \U0001F609!"
+  title: À propos
+PFooter:
+  copyright: 'Copyright© {year} : Tout droits réservés.'
+  github: Mon compte Github
+  linkedin: Mon compte Linkedin
+PIntroduction:
+  action: Afficher le CV
+  scroll: Défiler en bas
+  titleAlt: Lead développeur Front-End
+PHeader:
+  homeAction: Revenir sur l'accueil
+  langAction: Changer de langue
+PEnvironments:
+  title: Mon environnement
+PExperiences:
+  title: Mes experiences
+PSkills:
+  title: Mes compétences
+PMoreInformations:
+  address: Adresse
+  email: Email
+  phone: Téléphone
+  title: Plus d'informations
+PJob:
+  contract:
+    apprenticeship: Alternance
+    cdi: CDI
+    internship: Stage
+  items:
+    steepleLeadFrontEndDev:
+      title: Lead développeur Front-End
+      description: Structuration du pôle, pilotage des équipes techniques et développement
+        continue du site Steeple.
+    steepleFrontEndDev:
+      title: Développeur Front-End
+      description: Refonte et mise à jour continue du site Steeple avec Nuxt.js, SCSS
+        et TypeScript. Maintenance de l'application Android et de l'application Chrome.
+        Conception et création du site vitrine sur WordPress.
+    steepleWebIntegrator:
+      title: Intégrateur web
+      description: Réalisation des maquettes du site Steeple sur Adobe XD suivit de
+        l'intégration de celles-ci sur Ruby on Rails and SCSS. Planification et gestion
+        de projet.
+    vinciWebIntegrator:
+      title: Intégrateur web
+      description: Recensement des contenus existants des entreprises du groupe VEFTGO
+        pour préparer leurs migrations sur WordPress. Remontée de bugs auprès du chef
+        de projet.
+    lpcWebIntegrator:
+      title: Intégrateur Web
+      description: Réalisation d'un site spécialisé dans l'affiliation domotique avec
+        WordPress.
+  today: aujourd'hui
