@@ -46,13 +46,13 @@ export default defineNuxtConfig({
         code: 'fr',
         iso: 'fr',
         name: 'Français',
-        file: 'fr.json'
+        file: 'fr.yml'
       },
       {
         code: 'en',
         iso: 'en',
         name: 'English',
-        file: 'en.json'
+        file: 'en.yml'
       }
     ],
     langDir: 'locales/',
