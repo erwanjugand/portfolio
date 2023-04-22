@@ -30,6 +30,12 @@
       "matchUpdateTypes": [
         "major"
       ]
+    },
+    {
+      "matchPackageNames": [
+        "@nuxtjs/i18n"
+      ],
+      "allowedVersions": "!/8.0.0-beta.11$/"
     }
   ]
 }
