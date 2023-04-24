@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    'nuxt-cloudflare-analytics'
   ],
 
   plugins: [
@@ -92,6 +93,10 @@ export default defineNuxtConfig({
       UserAgent: '*',
       Disallow: process.env.ROBOTS_DISALLOW_VALUE ?? ''
     }
+  },
+
+  cloudflareAnalytics: {
+    token: process.env.CLOUDFLARE_ANALYTICS_TOKEN
   },
 
   googleFonts: {
