@@ -6,6 +6,9 @@
     ":semanticCommitTypeAll(chore)"
   ],
   "timezone": "Europe/Paris",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "schedule": [
     "after 2am and before 10am every saturday"
   ],
