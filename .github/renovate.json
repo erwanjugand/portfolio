@@ -5,7 +5,7 @@
     "group:allNonMajor",
     ":semanticCommitTypeAll(chore)"
   ],
-  "rangeStrategy": "bump",
+  "rangeStrategy": "update-lockfile",
   "timezone": "Europe/Paris",
   "schedule": [
     "after 2am and before 10am every saturday"
