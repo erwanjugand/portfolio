@@ -1,41 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "group:allNonMajor",
-    ":semanticCommitTypeAll(chore)"
-  ],
-  "timezone": "Europe/Paris",
-  "lockFileMaintenance": {
-    "enabled": true
-  },
-  "schedule": [
-    "after 2am and before 10am every saturday"
+    "github>erwanjugand/renovate-config"
   ],
   "packageRules": [
-    {
-      "groupName": "Font Awesome",
-      "matchPackagePrefixes": [
-        "@fortawesome/"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ]
-    },
     {
       "matchPackageNames": [
         "@nuxtjs/i18n"
       ],
       "allowedVersions": "!/8.0.0-beta.11$/"
-    }
-  ],
-  "hostRules": [
-    {
-      "matchHost": "https://npm.fontawesome.com/",
-      "hostType": "npm",
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ//e/h2nOBxtyqKGxUy75EEsx8NLOOEcdBdfuS3/qpSk+9uunPmvYFSGGMfoqoIZYwPKysbHZ55QnOZ2HzkudFVFH/qNYyTJ87v/wYbNrzjhrt2tzzHdNeVl13AN71tQ30IvOwzDYT/S29qXTfLRJLW8peEMCUg2QpV3f2JnlEQC9iLw/XGeRIt6kDp+qi4woMP30ismm/V1yK7pAaK9X4mRsI6zlZtqwcOddCdvDJ4Jy296Cgvlx6zAkY9qTJq9aancb/2bw6C56tlZUCXiqw28Q+RRaKkSO3C6KIJfNcmQPr3fx94GtfTHl73hG2bq+ZMOuk/+uqaICEsXjld0huWjxyQS5Nah2RqiamRgDn1ddGpaypbLVAU9YG1Ur9ZQZM9CaHz2lo0SMpNH/84rJOuoFnGyFafSvoKUefWrE9U/GWAOT4bGCDPK1esOpvPEOFuJqmeQfdxLqzR6eZ53Db/QVT2SkNtbGm1bt/avkI3SKkVZM2fi5tcOJyVuSNeAZXsoI/c0M5wvUeMbo6yxS0WRxUs+mQYBz4X9nP3T4jCMyc7EgJlfU4C7UKQAZlURPDxNW/GNgM6XFAOy3FzdCQ+DUtVsq2KaxTws0RM0YX8Skb+JGZXwFdMX8tfU32wVrivZFAqe5sJ8PYrRnlZgwZAfrFnI1uuM8GN7cXTX786f3PSfwGWxePeie7h8uJH2ev8MOnVBQJOst22gDbTmbAM++meitT/kch7ZtGPxWW9lzoLuOy0iTuC2cX3k/xj5wyaIoYxEVerVrC8kfBGbuHinx7r8pxHhE5DYdp8/Za60HhF66uMef7B57set8ISnd9+0K/tHRaBzTytPPlzvFajeTE"
-      }
     }
   ]
 }
