@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "stylelint-config-property-sort-order-smacss",
-    "stylelint-config-standard-scss"
-  ],
+  "extends": ["stylelint-config-property-sort-order-smacss", "stylelint-config-standard-scss"],
   "overrides": [
     {
-      "files": [
-        "**/*.vue"
-      ],
+      "files": ["**/*.vue"],
       "customSyntax": "postcss-html"
     }
   ]

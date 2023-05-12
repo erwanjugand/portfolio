@@ -1,11 +1,11 @@
 <template>
   <div class="easter-egg">
     <div class="easter-egg-wrapper">
-      <img class="easter-egg-animation" src="/images/logo-hack.gif" alt="">
+      <img class="easter-egg-animation" src="/images/logo-hack.gif" alt="" />
       <p
         v-for="(step, index) of easterEggSteps"
         :key="step.text"
-        :class="['easter-egg-step', { 'visible': index <= count }]"
+        :class="['easter-egg-step', { visible: index <= count }]"
         v-text="step.text"
       />
       <div

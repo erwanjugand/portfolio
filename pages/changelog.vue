@@ -18,8 +18,11 @@
               <li v-for="tag of release.tags" :key="tag.name">
                 <button
                   v-ripple
-                  :class="{ 'release-tag': true, 'release-tag-darken': route.query.filter && route.query.filter !== tag.name }"
-                  :style="{ 'backgroundColor': tag.color }"
+                  :class="{
+                    'release-tag': true,
+                    'release-tag-darken': route.query.filter && route.query.filter !== tag.name,
+                  }"
+                  :style="{ backgroundColor: tag.color }"
                   @click.prevent="filter(tag.name)"
                   v-text="$t(`pages.changelog.tags.${tag.name}`)"
                 />
@@ -39,16 +42,14 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 useHead({
   title: t('pages.changelog.title'),
-  meta: [
-    { name: 'description', content: () => t('pages.changelog.description') }
-  ]
+  meta: [{ name: 'description', content: () => t('pages.changelog.description') }],
 })
 
 defineI18nRoute({
   paths: {
     en: '/changelog',
-    fr: '/journal-des-modifications'
-  }
+    fr: '/journal-des-modifications',
+  },
 })
 
 const route = useRoute()
@@ -57,9 +58,7 @@ const { releases, releasesWithTagName } = useStore()
 
 const releasesFiltered = computed(() => {
   const query = route.query.filter as string | undefined
-  return query
-    ? releasesWithTagName(query)
-    : releases
+  return query ? releasesWithTagName(query) : releases
 })
 
 const filter = (name: string) => {
@@ -105,7 +104,7 @@ const filter = (name: string) => {
   }
 
   .release-content li::before {
-    content: "-";
+    content: '-';
     padding: 0 8px;
   }
 }

@@ -1,13 +1,7 @@
 <template>
   <div class="footer-container">
     <div class="footer-easter-egg-container">
-      <button
-        v-ripple
-        class="footer-easter-egg"
-        title="?????"
-        aria-label="?????"
-        @click="openEasterEgg"
-      >
+      <button v-ripple class="footer-easter-egg" title="?????" aria-label="?????" @click="openEasterEgg">
         <PIcon :style="IconStyle.custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
     </div>
@@ -60,8 +54,12 @@ const localePath = useLocalePath()
 const currentYear = useDateFormat(useNow(), 'YYYY')
 
 const isVisible = ref(false)
-const openEasterEgg = () => { isVisible.value = true }
-const closeEasterEgg = () => { isVisible.value = false }
+const openEasterEgg = () => {
+  isVisible.value = true
+}
+const closeEasterEgg = () => {
+  isVisible.value = false
+}
 </script>
 
 <style lang="scss">
@@ -76,10 +74,10 @@ const closeEasterEgg = () => { isVisible.value = false }
   &-content {
     display: grid;
     grid-template:
-      "a"
-      "b"
-      "c"
-      "d";
+      'a'
+      'b'
+      'c'
+      'd';
     align-items: center;
     padding: 16px 0;
     justify-items: center;
@@ -88,8 +86,8 @@ const closeEasterEgg = () => { isVisible.value = false }
     @media #{$medium-and-up} {
       justify-items: start;
       grid-template:
-        "a c d"
-        "b c d";
+        'a c d'
+        'b c d';
       gap: 0 16px;
     }
 

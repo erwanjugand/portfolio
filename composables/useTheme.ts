@@ -13,7 +13,7 @@ export default () => {
   const themeIcons: ThemeIcons = {
     light: { style: IconStyle.light, name: 'brightness' },
     dark: { style: IconStyle.light, name: 'moon' },
-    hacked: { style: IconStyle.custom, name: 'easterEgg' }
+    hacked: { style: IconStyle.custom, name: 'easterEgg' },
   }
   const currentMode = useColorMode()
   const { t } = useI18n()
@@ -43,6 +43,6 @@ export default () => {
     currentModeName,
     isDarkMode,
     toggleMode,
-    changeMode
+    changeMode,
   }
 }

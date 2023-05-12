@@ -13,6 +13,6 @@ export default () => {
 
   return {
     locales,
-    currentLocale
+    currentLocale,
   }
 }

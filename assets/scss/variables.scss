@@ -1,8 +1,8 @@
-@use "sass:color";
-@use "sass:math";
+@use 'sass:color';
+@use 'sass:math';
 
 @function strip-unit($number) {
-  @if type-of($number) == "number" and not unitless($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
     @return math.div($number, $number * 0 + 1);
   }
 
@@ -40,16 +40,16 @@ $grey-5: grey-color($primary, 5%);
 $grey-0: grey-color($primary, 0%);
 
 // Media Query
-$small-and-up: "(min-width: 384px)";
-$small-and-down: "(max-width: 575px)";
-$medium-and-up: "(min-width: 576px)";
-$medium-and-down: "(max-width: 1023px)";
-$medium-only: "(min-width: 576px) and (max-width: 1023px)";
-$large-and-up: "(min-width: 1024px)";
-$large-and-down: "(max-width: 1399px)";
-$large-only: "(min-width: 1024px) and (max-width: 1399px)";
-$extra-large: "(min-width: 1400px)";
-$touchscreen: "(hover: none) and (pointer: coarse)";
+$small-and-up: '(min-width: 384px)';
+$small-and-down: '(max-width: 575px)';
+$medium-and-up: '(min-width: 576px)';
+$medium-and-down: '(max-width: 1023px)';
+$medium-only: '(min-width: 576px) and (max-width: 1023px)';
+$large-and-up: '(min-width: 1024px)';
+$large-and-down: '(max-width: 1399px)';
+$large-only: '(min-width: 1024px) and (max-width: 1399px)';
+$extra-large: '(min-width: 1400px)';
+$touchscreen: '(hover: none) and (pointer: coarse)';
 
 // // Font
 $fw-light: 300;

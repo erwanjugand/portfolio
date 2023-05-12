@@ -21,8 +21,8 @@ const localePath = useLocalePath()
 const props = defineProps({
   error: {
     type: Object as PropType<NuxtError>,
-    required: true
-  }
+    required: true,
+  },
 })
 
 const { t } = useI18n()
@@ -33,7 +33,7 @@ const errorStatus = computed(() => {
 })
 
 useHead({
-  title: t(`pages.error.${errorStatus.value}.title`)
+  title: t(`pages.error.${errorStatus.value}.title`),
 })
 
 const handleError = () => clearError({ redirect: localePath('index') })
@@ -45,7 +45,7 @@ const handleError = () => clearError({ redirect: localePath('index') })
   place-items: center;
   height: 100vh;
   padding: 32px;
-  background: url("/images/bee.svg") center center;
+  background: url('/images/bee.svg') center center;
 
   &-content {
     background-color: transparent;

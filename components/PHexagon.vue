@@ -1,5 +1,5 @@
 <template>
-  <Component :is="tag" :class="{ 'hexagon': true, 'hexagon-turned': turned }">
+  <Component :is="tag" :class="{ hexagon: true, 'hexagon-turned': turned }">
     <div class="hexagon-content">
       <slot />
     </div>
@@ -14,7 +14,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   tag: 'div',
-  turned: false
+  turned: false,
 })
 </script>
 
@@ -54,7 +54,7 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       box-sizing: border-box;

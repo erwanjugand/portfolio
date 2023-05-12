@@ -5,11 +5,7 @@
         {{ $t('PExperiences.title') }}
       </PH2>
       <ul class="experiences-wrapper xs12">
-        <PExperience
-          v-for="(experience, index) of experiences"
-          :key="index"
-          :experience="experience"
-        />
+        <PExperience v-for="(experience, index) of experiences" :key="index" :experience="experience" />
       </ul>
     </div>
   </PSection>
@@ -30,7 +26,7 @@ $diagonal: math.sqrt(3);
   gap: 32px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: calc(math.div(24px * $diagonal, 2) - math.div(3px, 2));
