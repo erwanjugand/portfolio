@@ -7,9 +7,7 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "[json]": {
-    "editor.formatOnSave": true
-  },
+  "editor.formatOnSave": true,
   "peacock.remoteColor": "#42b883",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#65c89b",

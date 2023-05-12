@@ -8,7 +8,7 @@ interface PdfResponse {
   responseId?: string
 }
 
-export default defineEventHandler<PdfResponse>((event) => {
+export default defineEventHandler<PdfResponse>(event => {
   const config = useRuntimeConfig()
   const query = getQuery(event)
   const url = query.url
@@ -20,15 +20,15 @@ export default defineEventHandler<PdfResponse>((event) => {
       'Access-Control-Allow-Origin': '*',
       'content-type': 'application/json',
       'X-RapidAPI-Key': config.rapidApiKey,
-      'X-RapidAPI-Host': config.rapidApiHost
+      'X-RapidAPI-Host': config.rapidApiHost,
     },
     body: {
       url,
       fileName,
       options: {
-        landscape: false
-      }
-    }
+        landscape: false,
+      },
+    },
   })
 
   return response

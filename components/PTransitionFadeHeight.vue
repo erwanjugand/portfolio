@@ -31,7 +31,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   group: false,
-  tag: 'div'
+  tag: 'div',
 })
 
 const beforeEnterLeave = (el: any) => {

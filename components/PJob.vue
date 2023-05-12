@@ -19,7 +19,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  single: false
+  single: false,
 })
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
@@ -60,7 +60,7 @@ $diagonal: math.sqrt(3);
 
   &-header {
     display: grid;
-    grid: "a b" "c c";
+    grid: 'a b' 'c c';
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 4px 0.3em;
@@ -76,7 +76,7 @@ $diagonal: math.sqrt(3);
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: calc(50% - 6px);
         left: math.div((12px * $diagonal) + 8px, 2);

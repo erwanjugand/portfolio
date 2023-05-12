@@ -1,5 +1,5 @@
 <template>
-  <section :class="{ 'section': true, 'dark-mode': banner }">
+  <section :class="{ section: true, 'dark-mode': banner }">
     <slot />
   </section>
 </template>
@@ -10,7 +10,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  banner: false
+  banner: false,
 })
 </script>
 

@@ -3,23 +3,23 @@ export default defineNuxtConfig({
     rapidApiKey: process.env.RAPID_API_KEY,
     rapidApiHost: process.env.RAPID_API_HOST,
     public: {
-      siteUrl: process.env.SITE_URL
-    }
+      siteUrl: process.env.SITE_URL,
+    },
   },
 
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "sass:math"; @import "@/assets/scss/variables.scss";'
-        }
-      }
-    }
+          additionalData: '@use "sass:math"; @import "@/assets/scss/variables.scss";',
+        },
+      },
+    },
   },
 
   typescript: {
     shim: false,
-    strict: true
+    strict: true,
   },
 
   modules: [
@@ -29,15 +29,13 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    'nuxt-cloudflare-analytics'
+    'nuxt-cloudflare-analytics',
   ],
 
-  plugins: [
-    '@/plugins/ripple'
-  ],
+  plugins: ['@/plugins/ripple'],
 
   imports: {
-    dirs: ['./store']
+    dirs: ['./store'],
   },
 
   i18n: {
@@ -47,14 +45,14 @@ export default defineNuxtConfig({
         code: 'fr',
         iso: 'fr',
         name: 'Français',
-        file: 'fr.yml'
+        file: 'fr.yml',
       },
       {
         code: 'en',
         iso: 'en',
         name: 'English',
-        file: 'en.yml'
-      }
+        file: 'en.yml',
+      },
     ],
     langDir: 'locales/',
     defaultLocale: 'fr',
@@ -66,42 +64,42 @@ export default defineNuxtConfig({
           long: {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
           },
           short: {
             year: 'numeric',
-            month: 'short'
-          }
+            month: 'short',
+          },
         },
         en: {
           long: {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
           },
           short: {
             year: 'numeric',
-            month: 'short'
-          }
-        }
-      }
-    }
+            month: 'short',
+          },
+        },
+      },
+    },
   },
 
   robots: {
     rules: {
       UserAgent: '*',
-      Disallow: process.env.ROBOTS_DISALLOW_VALUE ?? ''
-    }
+      Disallow: process.env.ROBOTS_DISALLOW_VALUE ?? '',
+    },
   },
 
   cloudflareAnalytics: {
-    token: process.env.CLOUDFLARE_ANALYTICS_TOKEN
+    token: process.env.CLOUDFLARE_ANALYTICS_TOKEN,
   },
 
   googleFonts: {
     families: {
-      Roboto: [300, 400, 500]
-    }
-  }
+      Roboto: [300, 400, 500],
+    },
+  },
 })

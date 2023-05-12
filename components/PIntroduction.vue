@@ -1,21 +1,25 @@
 <template>
   <PSection class="introduction" :style="style">
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
-      <VTypical class="introduction-title" wrapper="h1" :loop="Infinity" :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]" />
+      <VTypical
+        class="introduction-title"
+        wrapper="h1"
+        :loop="Infinity"
+        :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]"
+      />
     </ClientOnly>
     <PButton class="introduction-cv" :to="localePath('resume')" outlined>
       <PIcon :style="IconStyle.regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
-    <button v-ripple class="introduction-scroll" :aria-label="$t('PIntroduction.scroll')" :title="$t('PIntroduction.scroll')" @click="scroll">
-      <img
-        width="48"
-        height="80"
-        aria-hidden="true"
-        class="introduction-scroll-image"
-        src="/images/mouse.svg"
-        alt=""
-      >
+    <button
+      v-ripple
+      class="introduction-scroll"
+      :aria-label="$t('PIntroduction.scroll')"
+      :title="$t('PIntroduction.scroll')"
+      @click="scroll"
+    >
+      <img width="48" height="80" aria-hidden="true" class="introduction-scroll-image" src="/images/mouse.svg" alt="" />
     </button>
   </PSection>
 </template>
@@ -44,11 +48,10 @@ const scroll = () => {
     justify-content: space-around;
     min-height: 100vh;
     padding: 128px 0 64px;
-    background-image:
-      image-set(
-        url("/images/background-mobile-x1.webp") 1x,
-        url("/images/background-mobile-x2.webp") 2x
-      );
+    background-image: image-set(
+      url('/images/background-mobile-x1.webp') 1x,
+      url('/images/background-mobile-x2.webp') 2x
+    );
     background-repeat: no-repeat;
     background-position: center bottom var(--background-position-y);
     background-size: cover;
@@ -59,31 +62,28 @@ const scroll = () => {
     }
 
     @media #{$large-and-up} {
-      background-image:
-        image-set(
-          url("/images/background-desktop-x1.webp") 1x,
-          url("/images/background-desktop-x2.webp") 2x
-        );
+      background-image: image-set(
+        url('/images/background-desktop-x1.webp') 1x,
+        url('/images/background-desktop-x2.webp') 2x
+      );
     }
 
     // Only Firefox support "type" in image-set
-    @supports (background-image: image-set(url("/images/background-mobile-x1.avif") type("image/avif"))) {
-      background-image:
-        image-set(
-          url("/images/background-mobile-x1.avif") type("image/avif") 1x,
-          url("/images/background-mobile-x2.avif") type("image/avif") 2x,
-          url("/images/background-mobile-x1.webp") type("image/webp") 1x,
-          url("/images/background-mobile-x2.webp") type("image/webp") 2x
-        );
+    @supports (background-image: image-set(url('/images/background-mobile-x1.avif') type('image/avif'))) {
+      background-image: image-set(
+        url('/images/background-mobile-x1.avif') type('image/avif') 1x,
+        url('/images/background-mobile-x2.avif') type('image/avif') 2x,
+        url('/images/background-mobile-x1.webp') type('image/webp') 1x,
+        url('/images/background-mobile-x2.webp') type('image/webp') 2x
+      );
 
       @media #{$large-and-up} {
-        background-image:
-          image-set(
-            url("/images/background-desktop-x1.avif") type("image/avif") 1x,
-            url("/images/background-desktop-x2.avif") type("image/avif") 2x,
-            url("/images/background-desktop-x1.webp") type("image/webp") 1x,
-            url("/images/background-desktop-x2.webp") type("image/webp") 2x
-          );
+        background-image: image-set(
+          url('/images/background-desktop-x1.avif') type('image/avif') 1x,
+          url('/images/background-desktop-x2.avif') type('image/avif') 2x,
+          url('/images/background-desktop-x1.webp') type('image/webp') 1x,
+          url('/images/background-desktop-x2.webp') type('image/webp') 2x
+        );
       }
     }
   }
@@ -94,7 +94,7 @@ const scroll = () => {
     color: $grey-0;
     font-size: 2em;
     text-align: center;
-    text-shadow: 0 0 10px  $grey-100;
+    text-shadow: 0 0 10px $grey-100;
 
     @media #{$medium-and-up} {
       font-size: 3em;
@@ -105,7 +105,7 @@ const scroll = () => {
     }
 
     &::after {
-      content: "|";
+      content: '|';
       animation: blink 1s infinite step-start;
       font-weight: $fw-light;
     }
@@ -127,6 +127,8 @@ const scroll = () => {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 </style>

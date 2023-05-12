@@ -16,7 +16,11 @@
           :title="$t('PHeader.langAction')"
           @click="localeMenuIsOpen = !localeMenuIsOpen"
         >
-          <img class="header-switch-locale-image" :src="`/images/flag-${currentLocale.code}.svg`" :alt="currentLocale.name">
+          <img
+            class="header-switch-locale-image"
+            :src="`/images/flag-${currentLocale.code}.svg`"
+            :alt="currentLocale.name"
+          />
           <PIcon class="header-switch-locale-icon" :style="IconStyle.solid" name="caretDown" />
         </button>
         <Transition name="header-switch-locale">
@@ -31,7 +35,12 @@
                 :title="otherLocale.name"
                 @click="closeMenu"
               >
-                <img class="header-switch-locale-image" loading="lazy" :src="`/images/flag-${otherLocale.iso}.svg`" :alt="otherLocale.name">
+                <img
+                  class="header-switch-locale-image"
+                  loading="lazy"
+                  :src="`/images/flag-${otherLocale.iso}.svg`"
+                  :alt="otherLocale.name"
+                />
               </NuxtLink>
             </li>
           </ul>
@@ -80,10 +89,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
   left: 0;
   width: 100%;
   backdrop-filter: blur(20px);
-  box-shadow:
-    inset 0 -1px 0 0 var(--c-border),
-    0 3px 1px -2px rgba($grey-100, 0.2),
-    0 2px 2px 0 rgba($grey-100, 0.14),
+  box-shadow: inset 0 -1px 0 0 var(--c-border), 0 3px 1px -2px rgba($grey-100, 0.2), 0 2px 2px 0 rgba($grey-100, 0.14),
     0 1px 5px 0 rgba($grey-100, 0.12);
 
   @media print {
@@ -155,7 +161,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
       height: 32px;
     }
 
-    &[aria-expanded="true"] &-icon {
+    &[aria-expanded='true'] &-icon {
       transform: rotate(180deg);
     }
 

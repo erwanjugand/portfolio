@@ -2,7 +2,10 @@
   <div class="cv">
     <header class="cv-header">
       <picture class="cv-header-profil-container">
-        <source srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x" type="image/avif">
+        <source
+          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
+          type="image/avif"
+        />
         <img
           width="160"
           height="160"
@@ -10,18 +13,16 @@
           src="/images/erwan-jugand-x1.webp"
           srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
           alt="Erwan Jugand"
-        >
+        />
       </picture>
-      <h1 class="cv-header-title">
-        Erwan Jugand
-      </h1>
+      <h1 class="cv-header-title">Erwan Jugand</h1>
       <p class="cv-header-post" v-text="$t('PIntroduction.titleAlt')" />
     </header>
 
     <aside class="cv-aside">
       <div class="cv-aside-title">
         <h2 class="cv-aside-title-text" v-text="$t('pages.resume.personalInformations.title')" />
-        <hr class="cv-aside-title-separator">
+        <hr class="cv-aside-title-separator" />
       </div>
 
       <div class="cv-aside-content">
@@ -47,7 +48,7 @@
 
       <div class="cv-aside-title">
         <h2 class="cv-aside-title-text" v-text="$t('pages.resume.environments.title')" />
-        <hr class="cv-aside-title-separator">
+        <hr class="cv-aside-title-separator" />
       </div>
 
       <div class="cv-aside-content">
@@ -61,7 +62,7 @@
 
       <div class="cv-aside-title">
         <h2 class="cv-aside-title-text" v-text="$t('pages.resume.additionalSkill.title')" />
-        <hr class="cv-aside-title-separator">
+        <hr class="cv-aside-title-separator" />
       </div>
 
       <div class="cv-aside-content">
@@ -81,7 +82,7 @@
 
       <div class="cv-aside-title">
         <h2 class="cv-aside-title-text" v-text="$t('pages.resume.hobbies.title')" />
-        <hr class="cv-aside-title-separator">
+        <hr class="cv-aside-title-separator" />
       </div>
 
       <div class="cv-aside-content">
@@ -107,7 +108,13 @@
       <div class="cv-main-skills">
         <div v-for="skill of skills" :key="skill.name" class="cv-main-skill">
           <p class="cv-main-skill-text" v-text="skill.name" />
-          <PIcon v-for="n of 3" :key="n" class="cv-main-skill-level" :style="n > skill.level ? IconStyle.light : IconStyle.solid" name="star" />
+          <PIcon
+            v-for="n of 3"
+            :key="n"
+            class="cv-main-skill-level"
+            :style="n > skill.level ? IconStyle.light : IconStyle.solid"
+            name="star"
+          />
         </div>
       </div>
     </main>
@@ -124,36 +131,34 @@ const { informations, environments, experiences, skills } = useStore()
 const { t } = useI18n()
 useHead({
   title: t('pages.resume.title'),
-  meta: [
-    { name: 'description', content: () => t('pages.resume.description') }
-  ]
+  meta: [{ name: 'description', content: () => t('pages.resume.description') }],
 })
 
 definePageMeta({
-  layout: 'pdf'
+  layout: 'pdf',
 })
 
 defineI18nRoute({
   paths: {
     en: '/resume',
-    fr: '/cv'
-  }
+    fr: '/cv',
+  },
 })
 </script>
 
 <style lang="scss">
 .cv {
   display: grid;
-  grid: "h" "a" "m" 1fr;
+  grid: 'h' 'a' 'm' 1fr;
   height: 100%;
 
   @media #{$medium-and-up} {
-    grid: "h h" "a m" 1fr / minmax(240px, 30%) 1fr;
+    grid: 'h h' 'a m' 1fr / minmax(240px, 30%) 1fr;
   }
 
   &-header {
     display: grid;
-    grid: "i" "t" "p";
+    grid: 'i' 't' 'p';
     grid-area: h;
     justify-content: center;
     padding: 24px 16px;
@@ -162,22 +167,14 @@ defineI18nRoute({
     gap: 16px;
 
     @media #{$medium-and-up} {
-      grid: "i t" "i p" / minmax(208px, calc(30% - 32px))  auto;
+      grid: 'i t' 'i p' / minmax(208px, calc(30% - 32px)) auto;
       justify-content: flex-start;
       gap: 16px 64px;
     }
 
     &-profil {
       display: flex;
-      clip-path:
-        polygon(
-          50% 0%,
-          93% 25%,
-          93% 75%,
-          50% 100%,
-          7% 75%,
-          7% 25%
-        );
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 
       &-container {
         grid-area: i;

@@ -8,7 +8,7 @@
         <source
           srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
           type="image/avif"
-        >
+        />
         <img
           width="312"
           height="312"
@@ -16,7 +16,7 @@
           src="/images/erwan-jugand-x1.webp"
           srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
           alt="Erwan Jugand"
-        >
+        />
       </picture>
       <div class="xs12 l8 about-content">
         <!-- eslint-disable-next-line vue/component-name-in-template-casing -->
@@ -52,10 +52,7 @@
     border-radius: 50%;
     background-color: var(--c-background-1);
     object-fit: cover;
-    box-shadow:
-      inset 0 0 0 1px var(--c-border),
-      0 2px 1px -1px rgba($grey-100, 0.2),
-      0 1px 1px 0 rgba($grey-100, 0.14),
+    box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($grey-100, 0.2), 0 1px 1px 0 rgba($grey-100, 0.14),
       0 1px 3px 0 rgba($grey-100, 0.12);
     aspect-ratio: 1/1;
 

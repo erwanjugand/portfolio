@@ -2,27 +2,29 @@
 
 ## Setup
 
-install the dependencies  
+install the dependencies
+
 ```bash
 yarn install
 ```
 
 ## Development Server
 
-Start the development server on http://localhost:3000  
+Start the development server on http://localhost:3000
+
 ```bash
 yarn dev
 ```
 
 ## Production
 
-Build the application for production:  
+Build the application for production:
 
 ```bash
 yarn build
 ```
 
-Locally preview production build:  
+Locally preview production build:
 
 ```bash
 yarn preview
@@ -30,7 +32,8 @@ yarn preview
 
 ## Image optimization
 
-Required : Install `ImageMagick`  
+Required : Install `ImageMagick`
+
 ```bash
 # Optimize images
 yarn image

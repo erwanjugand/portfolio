@@ -1,13 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>erwanjugand/renovate-config"
-  ],
+  "extends": ["github>erwanjugand/renovate-config"],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "@nuxtjs/i18n"
-      ],
+      "matchPackageNames": ["@nuxtjs/i18n"],
       "allowedVersions": "!/8.0.0-beta.1(1|2)$/"
     }
   ]

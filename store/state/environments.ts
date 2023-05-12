@@ -3,28 +3,28 @@ import type { Environment } from '../store'
 const environements: Environment[] = [
   {
     title: 'VSCode',
-    name: 'visualStudioCode'
+    name: 'visualStudioCode',
   },
   {
     title: 'Git',
-    name: 'git'
+    name: 'git',
   },
   {
     title: 'Ubuntu (WSL)',
-    name: 'ubuntu'
+    name: 'ubuntu',
   },
   {
     title: 'Terminal',
-    name: 'terminal'
+    name: 'terminal',
   },
   {
     title: 'Adobe',
-    name: 'adobe'
+    name: 'adobe',
   },
   {
     title: 'Docker',
-    name: 'docker'
-  }
+    name: 'docker',
+  },
 ]
 
 export default environements

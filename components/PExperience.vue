@@ -1,12 +1,7 @@
 <template>
   <li class="experience">
     <h3 class="experience-header" v-text="experience.enterprise" />
-    <PJob
-      v-for="job of experience.jobs"
-      :key="job.key"
-      :job="job"
-      :single="hasOneJob"
-    />
+    <PJob v-for="job of experience.jobs" :key="job.key" :job="job" :single="hasOneJob" />
   </li>
 </template>
 
@@ -39,7 +34,7 @@ $diagonal: math.sqrt(3);
     font-weight: $fw-bold;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: calc(50% - 12px);
       left: math.div((24px * $diagonal) - 24px, 2);

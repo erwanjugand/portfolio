@@ -14,12 +14,12 @@ pages:
       1:
         0:
           0: "- Creation and lauching of the portfolio with HTML/CSS/JS \n - Use LESS"
-          1: "- Added de LazyLoad"
+          1: '- Added de LazyLoad'
           2: "- Bugs fixes \n - Add Google Recaptcha 2"
           3: "- SEO Optimization \n - Image optimization"
         1:
           0: "Dynamization of the website: \n - Using PHP 5.6 & MySQL \n - Creation of back-office"
-          1: "- Bugs fixes"
+          1: '- Bugs fixes'
           2: "- Added Easter Egg \n - Bugs fixes"
         2:
           0: "Back-office overhaul: \n - Security enhancement \n - new design \n - Improved upload system for images"
@@ -33,9 +33,9 @@ pages:
         1:
           0: "JavaScript overhaul : \n - Removing Jquery \n - Performance improvement \n - Update dependencies \n\n Other : \n - Improved Firefox support \n - Bugs fixes"
           1: "- Updated and improved administration security \n - Update to PHP 7.3 \n - Bugs fixes"
-          2: "- Creation and automatic generation of the sitemap of the website"
+          2: '- Creation and automatic generation of the sitemap of the website'
           3: "- Security enhancement \n - Improved dark mode"
-          4: "- Update dependencies"
+          4: '- Update dependencies'
           5: "- Update to Symfony 4.4 \n - Update to PHP 7.4 \n - Update dependencies"
           6: "- Added lazy loading for images \n - Update dependencies"
       3:

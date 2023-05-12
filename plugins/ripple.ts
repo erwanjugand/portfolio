@@ -6,19 +6,19 @@
 
 import VWave from 'v-wave'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(nuxtApp => {
   const { vWave, vWaveTrigger } = VWave.createLocalWaveDirective({}, nuxtApp.vueApp)
 
   nuxtApp.vueApp.directive('ripple', {
     ...vWave,
-    getSSRProps (_binding, _vnode) {
+    getSSRProps(_binding, _vnode) {
       return {}
-    }
+    },
   })
   nuxtApp.vueApp.directive('ripple-trigger', {
     ...vWaveTrigger,
-    getSSRProps (_binding, _vnode) {
+    getSSRProps(_binding, _vnode) {
       return {}
-    }
+    },
   })
 })

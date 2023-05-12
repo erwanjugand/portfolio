@@ -9,7 +9,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  format: 'long'
+  format: 'long',
 })
 
 const datetime = dateFormatIso(props.date)

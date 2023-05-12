@@ -56,7 +56,7 @@ const time = computed(() => {
 
   &-header {
     display: grid;
-    grid: "a b" "c c";
+    grid: 'a b' 'c c';
     grid-template-columns: auto 1fr;
     font-size: 0.875em;
     gap: 0 0.3em;

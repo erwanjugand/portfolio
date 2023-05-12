@@ -14,12 +14,12 @@ pages:
       1:
         0:
           0: "- Création et mise en ligne du portfolio en HTML/CSS/JS \n - Utilisation de LESS"
-          1: "- Ajout de LazyLoad"
+          1: '- Ajout de LazyLoad'
           2: "- Correction de bugs \n - Ajout Google Recaptcha 2"
           3: "- Optimisation du référencement \n - Optimisation des images"
         1:
           0: "Dynamisation du site : \n - Utilisation de PHP 5.6 & MySQL \n - Création d'une administration"
-          1: "- Correction de bugs"
+          1: '- Correction de bugs'
           2: "- Ajout d'un Easter Egg \n - Correction de bugs"
         2:
           0: "Refonte de l'administration : \n - Renforcement de la sécurité \n - Nouveau design \n - Meilleur système d'upload pour les images"
@@ -33,9 +33,9 @@ pages:
         1:
           0: "Refonte du javascript : \n - Suppression de Jquery \n - Meilleures performances \n - Mise à jour des dépendances \n\n Autre : \n - Meilleur support de Firefox \n - Correction de bugs"
           1: "- Mise à jour et amélioration de la sécurité de l'administration \n - Passage à PHP 7.3 \n - Correction de bugs"
-          2: "- Création et génération automatique du sitemap du site"
+          2: '- Création et génération automatique du sitemap du site'
           3: "- Renforcement de la sécurité \n - Amélioration du mode sombre"
-          4: "- Mise à jour des dépendances"
+          4: '- Mise à jour des dépendances'
           5: "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à jour des dépendances"
           6: "- Ajout d'un chargement paresseux pour les images \n - Mise à jour des dépendances"
       3:

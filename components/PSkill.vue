@@ -2,12 +2,7 @@
   <PHexagon tag="li" tabindex="0" class="skill">
     <span class="skill-name" v-text="skill.name" />
     <div class="skill-score">
-      <PIcon
-        v-for="n of 3"
-        :key="n"
-        :style="n > skill.level ? IconStyle.light : IconStyle.solid"
-        name="star"
-      />
+      <PIcon v-for="n of 3" :key="n" :style="n > skill.level ? IconStyle.light : IconStyle.solid" name="star" />
     </div>
   </PHexagon>
 </template>

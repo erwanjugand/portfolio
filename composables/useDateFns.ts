@@ -9,7 +9,7 @@ export interface DateFnsLocales {
 
 const locales: DateFnsLocales = {
   fr,
-  en: enGB
+  en: enGB,
 }
 
 export default () => {
@@ -22,6 +22,6 @@ export default () => {
   }
 
   return {
-    formatDurationDate
+    formatDurationDate,
   }
 }
