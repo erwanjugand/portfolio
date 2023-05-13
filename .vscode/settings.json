@@ -1,13 +1,5 @@
 {
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "stylelint.validate": ["scss", "vue"],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "peacock.remoteColor": "#42b883",
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#65c89b",
