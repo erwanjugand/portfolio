@@ -27,7 +27,7 @@
     "@nuxtjs/color-mode": "3.2.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/google-fonts": "3.0.0",
-    "@types/node": "18.16.5",
+    "@types/node": "18.16.8",
     "@vueuse/nuxt": "10.1.2",
     "eslint": "8.40.0",
     "eslint-config-prettier": "^8.8.0",
@@ -46,10 +46,10 @@
   "dependencies": {
     "@nuxtjs/i18n": "8.0.0-beta.10",
     "@nuxtjs/robots": "3.0.0",
-    "@pinia/nuxt": "0.4.9",
+    "@pinia/nuxt": "0.4.10",
     "date-fns": "2.30.0",
     "nuxt-cloudflare-analytics": "1.0.8",
-    "v-wave": "1.5.0",
+    "v-wave": "1.5.1",
     "vue-typical": "2.1.0"
   }
 }
