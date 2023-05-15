@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { IconStyle } from '~/composables/useIcon'
 const { environments } = useStore()
 </script>
 

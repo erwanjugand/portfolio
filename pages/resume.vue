@@ -123,6 +123,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { IconStyle } from '~/composables/useIcon'
 
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = runtimeConfig.public.siteUrl

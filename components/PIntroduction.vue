@@ -29,6 +29,7 @@ import { defaultWindow } from '@vueuse/core'
 import { CSSProperties } from 'vue'
 // eslint-disable-next-line import/no-named-as-default
 import VTypical from 'vue-typical'
+import { IconStyle } from '~/composables/useIcon'
 
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
