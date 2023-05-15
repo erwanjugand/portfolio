@@ -66,6 +66,7 @@
 
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
+import { IconStyle } from '~/composables/useIcon'
 
 const { currentModeIcon, currentModeName, toggleMode } = useTheme()
 const { currentLocale, locales } = useLocale()

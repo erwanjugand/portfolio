@@ -38,6 +38,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { IconStyle } from '~/composables/useIcon'
 
 const { t } = useI18n()
 useHead({

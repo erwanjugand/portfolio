@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+import { IconStyle } from '~/composables/useIcon'
 import { Skill } from '~/store/store'
 
 interface Props {
