@@ -28,7 +28,7 @@ import { faDownload as farDownload } from '@fortawesome/pro-regular-svg-icons'
 import { faCaretDown as fasCaretDown, faStar as fasStar } from '@fortawesome/pro-solid-svg-icons'
 
 import { faGithub as fabGithub, faLinkedin as fabLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { MaybeRef } from '@vueuse/core'
+import { MaybeRefOrGetter } from 'vue'
 
 export const enum IconStyle {
   light = 'light',
@@ -124,9 +124,9 @@ const icons: Icons = {
   },
 }
 
-export default (style: MaybeRef<IconStyle>, name: MaybeRef<string>) => {
+export default (style: MaybeRefOrGetter<IconStyle>, name: MaybeRefOrGetter<string>) => {
   const icon = computed<Icon | undefined>(() => {
-    return icons[unref(style)][unref(name)]
+    return icons[toValue(style)][toValue(name)]
   })
 
   return icon
