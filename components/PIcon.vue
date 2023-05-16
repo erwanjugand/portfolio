@@ -15,9 +15,10 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const reactiveIconName = computed(() => props.name)
-const reactiveIconStyle = computed(() => props.style)
-const icon = useIcon(reactiveIconStyle, reactiveIconName)
+const icon = useIcon(
+  toRef(() => props.style),
+  toRef(() => props.name)
+)
 </script>
 
 <style lang="scss">
