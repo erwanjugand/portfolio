@@ -5,6 +5,11 @@
     {
       "matchPackageNames": ["@nuxtjs/i18n"],
       "allowedVersions": "!/8.0.0-beta.1(1|2)$/"
+    },
+    {
+      "matchPackageNames": ["node"],
+      "description": "Nuxt 3 require node 18 or newer",
+      "allowedVersions": "18|20"
     }
   ]
 }
