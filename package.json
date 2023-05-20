@@ -51,5 +51,8 @@
     "nuxt-cloudflare-analytics": "1.0.8",
     "v-wave": "1.5.1",
     "vue-typical": "2.1.0"
+  },
+  "resolutions": {
+    "@types/node": "18"
   }
 }
