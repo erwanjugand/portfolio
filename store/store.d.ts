@@ -1,6 +1,8 @@
+import { Icon } from '~/composables/useIcon'
+
 export interface Environment {
   title: string
-  name: string
+  icon: Icon
 }
 
 export interface Job {

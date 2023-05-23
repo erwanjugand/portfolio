@@ -1,12 +1,7 @@
-import { IconStyle } from './useIcon'
-
-export interface ThemeIcon {
-  style: IconStyle
-  name: string
-}
+import { Icon, IconStyle } from './useIcon'
 
 export interface ThemeIcons {
-  [key: string]: ThemeIcon
+  [key: string]: Icon
 }
 
 export default () => {
@@ -18,7 +13,7 @@ export default () => {
   const currentMode = useColorMode()
   const { t } = useI18n()
 
-  const currentModeIcon = computed<ThemeIcon>(() => {
+  const currentModeIcon = computed<Icon>(() => {
     return themeIcons[currentMode.value]
   })
 

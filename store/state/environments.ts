@@ -3,27 +3,45 @@ import type { Environment } from '../store'
 const environements: Environment[] = [
   {
     title: 'VSCode',
-    name: 'visualStudioCode',
+    icon: {
+      style: IconStyle.custom,
+      name: 'visualStudioCode',
+    },
   },
   {
     title: 'Git',
-    name: 'git',
+    icon: {
+      style: IconStyle.brand,
+      name: 'gitAlt',
+    },
   },
   {
     title: 'Ubuntu (WSL)',
-    name: 'ubuntu',
+    icon: {
+      style: IconStyle.brand,
+      name: 'ubuntu',
+    },
   },
   {
     title: 'Terminal',
-    name: 'terminal',
+    icon: {
+      style: IconStyle.solid,
+      name: 'rectangleTerminal',
+    },
   },
   {
     title: 'Adobe',
-    name: 'adobe',
+    icon: {
+      style: IconStyle.custom,
+      name: 'adobe',
+    },
   },
   {
     title: 'Docker',
-    name: 'docker',
+    icon: {
+      style: IconStyle.brand,
+      name: 'docker',
+    },
   },
 ]
 

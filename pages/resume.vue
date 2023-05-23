@@ -54,7 +54,7 @@
       <div class="cv-aside-content">
         <div class="cv-aside-environments">
           <figure v-for="(environment, index) in environments" :key="index" class="cv-aside-environment">
-            <PIcon class="cv-aside-environment-icon" :style="IconStyle.custom" :name="environment.name" />
+            <PIcon class="cv-aside-environment-icon" :style="environment.icon.style" :name="environment.icon.name" />
             <figcaption class="cv-aside-environment-text" v-text="environment.title" />
           </figure>
         </div>
