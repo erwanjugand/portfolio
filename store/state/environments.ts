@@ -1,4 +1,4 @@
-import type { Environment } from '../store'
+import { Environment } from '../store'
 
 const environements: Environment[] = [
   {

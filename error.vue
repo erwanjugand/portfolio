@@ -14,16 +14,14 @@
 
 <script setup lang="ts">
 import { NuxtError } from 'nuxt/app'
-import { PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 const localePath = useLocalePath()
 
-const props = defineProps({
-  error: {
-    type: Object as PropType<NuxtError>,
-    required: true,
-  },
-})
+interface Props {
+  error: NuxtError
+}
+
+const props = defineProps<Props>()
 
 const { t } = useI18n()
 

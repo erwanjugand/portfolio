@@ -1,4 +1,4 @@
-import type { Skill } from '../store'
+import { Skill } from '../store'
 
 const skills: Skill[] = [
   {

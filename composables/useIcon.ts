@@ -1,4 +1,4 @@
-import type { IconPathData, IconDefinition } from '@fortawesome/fontawesome-common-types'
+import { IconPathData, IconDefinition } from '@fortawesome/fontawesome-common-types'
 
 import * as fal from '@fortawesome/pro-light-svg-icons'
 import * as far from '@fortawesome/pro-regular-svg-icons'

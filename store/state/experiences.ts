@@ -1,4 +1,4 @@
-import type { Experience } from '../store'
+import { Experience } from '../store'
 
 const experiences: Experience[] = [
   {

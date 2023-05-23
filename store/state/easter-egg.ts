@@ -1,4 +1,4 @@
-import type { EasterEggStep } from '../store'
+import { EasterEggStep } from '../store'
 
 const easterEggSteps: EasterEggStep[] = [
   {
