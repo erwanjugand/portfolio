@@ -18,11 +18,15 @@ jobs:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
     steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
       - name: Download project from git
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          # cache: 'pnpm'
+          cache: 'pnpm'
 
       - name: Checkout
         uses: actions/checkout@v3
