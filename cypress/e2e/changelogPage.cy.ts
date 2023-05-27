@@ -3,7 +3,6 @@ import releases from '~/store/state/releases'
 describe('Changelog page', () => {
   beforeEach(() => {
     cy.visit('/en/changelog')
-    cy.scrollTo(0, 0)
   })
 
   it('should have a title', () => {

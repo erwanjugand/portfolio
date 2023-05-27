@@ -13,7 +13,7 @@ describe('Home page', () => {
     cy.get('h1').should('contain', 'Erwan Jugand')
   })
 
-  it('should have skills with ', () => {
+  it('should have skills with svg', () => {
     const lastSkill = skills[0]
     cy.get('.skill')
       .should('have.length', skills.length)
@@ -24,7 +24,6 @@ describe('Home page', () => {
 
   it('should have jobs with content', () => {
     const lastJob = experiences[0].jobs[0]
-    lastJob.startedAt.getFullYear()
 
     cy.get('.job')
       .first()
@@ -34,7 +33,7 @@ describe('Home page', () => {
       .contains('months')
   })
 
-  it('should have 3 informations with svg and link', () => {
+  it('should have informations with svg and link', () => {
     cy.get('.information')
       .should('have.length', informations.length)
       .last()
@@ -44,7 +43,7 @@ describe('Home page', () => {
       })
   })
 
-  it('should have 6 environments svg with figcaption', () => {
+  it('should have environments svg with figcaption', () => {
     cy.get('svg.tool-icon')
       .should('have.length', environements.length)
       .and('have.descendants', 'path')
