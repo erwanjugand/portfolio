@@ -22,13 +22,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
+          # cache: 'pnpm'
 
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Install Dependencies
-        run: pnpm --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Check
         run: pnpm check:ci
