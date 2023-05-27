@@ -59,7 +59,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Cypress install
-        run: cypress install
+        run: yarn cypress install
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
