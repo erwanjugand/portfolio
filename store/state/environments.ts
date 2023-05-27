@@ -1,4 +1,5 @@
 import { Environment } from '../store'
+import { IconStyle } from '~/composables/useIcon'
 
 const environements: Environment[] = [
   {
