@@ -6,8 +6,6 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open",
     "check:prettier": "prettier --check . --ignore-path .gitignore",
     "check:eslint": "eslint --ext .ts,.js,.vue .",
     "check:stylelint": "stylelint **/*.{scss,vue}",

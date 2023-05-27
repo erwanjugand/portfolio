@@ -18,7 +18,7 @@ jobs:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
     steps:
-      - name: Download project from git
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -61,11 +61,43 @@ jobs:
           path: wrangler.toml
           key: nuxt-${{ github.sha }}
 
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn build
+          start: yarn preview
+          browser: chrome
+
   deploy:
     if: |
       github.event_name == 'push' &&
       !contains(github.event.head_commit.message, '[skip-deploy]')
-    needs: build
+    needs: [build, tests]
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
