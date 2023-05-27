@@ -9,35 +9,102 @@ on:
     branches:
       - master
 
+env:
+  FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment: ${{ github.ref_name == 'master' && 'prod' || github.ref_name == 'dev' && 'dev' || 'default' }}
-    env:
-      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        # if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Check
+        run: yarn check:ci
+
+  tests:
+    runs-on: ubuntu-latest
+    needs: checks
+
+    steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Cache node_modules
         uses: actions/cache@v3
+        id: yarn-cache
         with:
           path: node_modules
-          key: ${{ runner.os }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          build: yarn build
+          start: yarn preview
+          browser: chrome
 
-      - name: Check
-        run: yarn check:ci
+      - name: Archive Cypress Screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Archive Cypress Videos
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
+
+  build:
+    if: |
+      github.event_name == 'push' &&
+      !contains(github.event.head_commit.message, '[skip-deploy]')
+    runs-on: ubuntu-latest
+    needs: checks
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: Build
         run: yarn build
@@ -49,70 +116,27 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
-      - name: Cache output
-        uses: actions/cache@v3
+      - name: Archive Build
+        uses: actions/upload-artifact@v3
         with:
+          name: nuxt-cloudflare-build
           path: .output
-          key: nuxt-${{ github.sha }}
-
-      - name: Cache wrangler
-        uses: actions/cache@v3
-        with:
-          path: wrangler.toml
-          key: nuxt-${{ github.sha }}
-
-  tests:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    env:
-      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
-
-    steps:
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: yarn --frozen-lockfile
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: yarn build
-          start: yarn preview
-          browser: chrome
 
   deploy:
     if: |
       github.event_name == 'push' &&
       !contains(github.event.head_commit.message, '[skip-deploy]')
-    needs: [build, tests]
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    needs: [checks, tests, build]
 
     steps:
-      - name: Get output
-        uses: actions/cache@v3
-        with:
-          path: .output
-          key: nuxt-${{ github.sha }}
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Get wrangler
-        uses: actions/cache@v3
+      - name: Download Build
+        uses: actions/download-artifact@v3
         with:
-          path: wrangler.toml
-          key: nuxt-${{ github.sha }}
+          name: nuxt-cloudflare-build
 
       - name: Publish to Cloudflare
         if: ${{ !env.ACT }}
