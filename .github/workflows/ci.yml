@@ -22,18 +22,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: 'pnpm'
 
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/pnpm-lock.lock')) }}
-
       - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
         run: pnpm --frozen-lockfile
 
       - name: Check
