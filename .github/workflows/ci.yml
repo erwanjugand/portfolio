@@ -18,6 +18,9 @@ jobs:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - uses: pnpm/action-setup@v2
         with:
           version: latest
@@ -27,9 +30,6 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-
-      - name: Checkout
-        uses: actions/checkout@v3
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
