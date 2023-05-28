@@ -31,7 +31,7 @@
     "@vueuse/nuxt": "10.1.2",
     "cypress": "12.13.0",
     "eslint": "8.41.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "8.8.0",
     "nuxt": "3.5.1",
     "postcss-html": "1.5.0",
     "prettier": "2.8.8",
