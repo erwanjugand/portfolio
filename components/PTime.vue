@@ -12,5 +12,5 @@ const props = withDefaults(defineProps<Props>(), {
   format: 'long',
 })
 
-const datetime = dateFormatIso(props.date)
+const datetime = computed(() => props.date.toISOString())
 </script>

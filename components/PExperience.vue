@@ -14,9 +14,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const hasOneJob = computed(() => {
-  return props.experience.jobs.length === 1
-})
+const hasOneJob = computed(() => props.experience.jobs.length === 1)
 </script>
 
 <style lang="scss">

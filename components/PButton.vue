@@ -27,9 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
-const type = computed(() => {
-  return props.to ? nuxtLink : attrs.href ? 'a' : attrs.click ? 'button' : 'div'
-})
+const type = computed(() => (props.to ? nuxtLink : attrs.href ? 'a' : 'button'))
 </script>
 
 <style lang="scss">
