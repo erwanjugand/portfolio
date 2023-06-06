@@ -23,6 +23,10 @@ export default defineNuxtConfig({
     },
   },
 
+  experimental: {
+    writeEarlyHints: true,
+  },
+
   typescript: {
     shim: false,
     strict: true,
