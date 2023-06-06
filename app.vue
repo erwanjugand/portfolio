@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-// TODO : remove hook to scroll top
+// TODO : https://nuxt.com/docs/migration/component-options#scrolltotop
 const nuxtApp = useNuxtApp()
 nuxtApp.hook('page:finish', () => {
   window.scrollTo({ top: 0 })
