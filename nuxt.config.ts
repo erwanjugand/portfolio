@@ -17,6 +17,12 @@ export default defineNuxtConfig({
     },
   },
 
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+    },
+  },
+
   typescript: {
     shim: false,
     strict: true,
