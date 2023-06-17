@@ -27,7 +27,6 @@
     "@nuxtjs/color-mode": "3.2.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/google-fonts": "3.0.1",
-    "@types/node": "18.16.18",
     "@vueuse/nuxt": "10.2.0",
     "cypress": "12.14.0",
     "eslint": "8.43.0",
