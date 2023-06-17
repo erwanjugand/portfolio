@@ -27,22 +27,22 @@
     "@nuxtjs/color-mode": "3.2.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/google-fonts": "3.0.1",
-    "@types/node": "18.16.17",
-    "@vueuse/nuxt": "10.1.2",
+    "@types/node": "18.16.18",
+    "@vueuse/nuxt": "10.2.0",
     "cypress": "12.14.0",
-    "eslint": "8.42.0",
+    "eslint": "8.43.0",
     "eslint-config-prettier": "8.8.0",
     "nuxt": "3.5.3",
     "postcss-html": "1.5.0",
     "prettier": "2.8.8",
-    "sass": "1.63.3",
+    "sass": "1.63.4",
     "stylelint": "15.7.0",
     "stylelint-config-property-sort-order-smacss": "9.1.0",
     "stylelint-config-standard-scss": "9.0.0",
     "svgo": "3.0.2",
-    "the-new-css-reset": "1.8.4",
+    "the-new-css-reset": "1.8.6",
     "typescript": "5.1.3",
-    "vue-tsc": "1.6.5"
+    "vue-tsc": "1.8.0"
   },
   "dependencies": {
     "@nuxtjs/i18n": "8.0.0-beta.10",
@@ -54,6 +54,6 @@
     "vue-typical": "2.1.0"
   },
   "resolutions": {
-    "@types/node": "18.16.17"
+    "@types/node": "18.16.18"
   }
 }
