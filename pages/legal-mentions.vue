@@ -153,7 +153,7 @@ const { t } = useI18n()
 
 useHead({
   title: t('pages.legalMentions.title'),
-  meta: [{ name: 'description', content: () => t('pages.legalMentions.description') }],
+  meta: [{ name: 'description', content: t('pages.legalMentions.description') }],
 })
 
 defineI18nRoute({

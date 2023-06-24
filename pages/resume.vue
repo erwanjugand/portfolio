@@ -132,7 +132,7 @@ const { informations, environments, experiences, skills } = useStore()
 const { t } = useI18n()
 useHead({
   title: t('pages.resume.title'),
-  meta: [{ name: 'description', content: () => t('pages.resume.description') }],
+  meta: [{ name: 'description', content: t('pages.resume.description') }],
 })
 
 definePageMeta({

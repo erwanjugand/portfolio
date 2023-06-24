@@ -43,7 +43,7 @@ import { IconStyle } from '~/composables/useIcon'
 const { t } = useI18n()
 useHead({
   title: t('pages.changelog.title'),
-  meta: [{ name: 'description', content: () => t('pages.changelog.description') }],
+  meta: [{ name: 'description', content: t('pages.changelog.description') }],
 })
 
 defineI18nRoute({
