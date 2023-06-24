@@ -1,4 +1,4 @@
-# Portfolio based on [Nuxt 3](https://v3.nuxtjs.org)
+# Portfolio based on [Nuxt 3](https://nuxt.com)
 
 ## Setup
 

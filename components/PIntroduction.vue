@@ -69,7 +69,6 @@ const scroll = () => {
       );
     }
 
-    // Only Firefox support "type" in image-set
     @supports (background-image: image-set(url('/images/background-mobile-x1.avif') type('image/avif'))) {
       background-image: image-set(
         url('/images/background-mobile-x1.avif') type('image/avif') 1x,

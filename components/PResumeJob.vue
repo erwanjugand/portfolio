@@ -12,7 +12,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { Job } from '~/store/store'
-const { d, t } = useI18n()
 
 interface Props {
   job: Job
@@ -25,6 +24,7 @@ const currentDate = new Date()
 const finishedAtValue = props.job.finishedAt ?? currentDate
 const { formatDurationDate } = useDateFns()
 
+const { d, t } = useI18n()
 const title = computed(() => t(`PJob.items.${props.job.key}.title`))
 const description = computed(() => t(`PJob.items.${props.job.key}.description`))
 const contract = computed(() => `. ${t(`PJob.contract.${props.job.contract}`)}`)

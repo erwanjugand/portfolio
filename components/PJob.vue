@@ -23,11 +23,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
-const { d, t } = useI18n()
 const currentDate = new Date()
 const finishedAtValue = props.job.finishedAt ?? currentDate
 const { formatDurationDate } = useDateFns()
 
+const { d, t } = useI18n()
 const title = computed(() => t(`PJob.items.${props.job.key}.title`))
 const description = computed(() => t(`PJob.items.${props.job.key}.description`))
 const contract = computed(() => `. ${t(`PJob.contract.${props.job.contract}`)}`)
