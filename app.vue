@@ -5,12 +5,6 @@
 </template>
 
 <script setup lang="ts">
-// TODO : https://nuxt.com/docs/migration/component-options#scrolltotop
-const nuxtApp = useNuxtApp()
-nuxtApp.hook('page:finish', () => {
-  window.scrollTo({ top: 0 })
-})
-
 useColorMode()
 
 const i18nHead = useLocaleHead({ addSeoAttributes: true })
