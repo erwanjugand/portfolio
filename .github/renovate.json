@@ -7,10 +7,6 @@
       "allowedVersions": "!/8.0.0-beta.1(1|2)$/"
     },
     {
-      "matchPackageNames": ["nuxt"],
-      "allowedVersions": "!/3.6.0$/"
-    },
-    {
       "matchPackageNames": ["node"],
       "description": "Nuxt 3 require node 18 or newer",
       "allowedVersions": "18|20"
