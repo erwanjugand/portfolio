@@ -10,14 +10,14 @@
     "check:eslint": "eslint --ext .ts,.js,.vue .",
     "check:stylelint": "stylelint **/*.{scss,vue}",
     "check:ts": "vue-tsc --noEmit",
-    "check:all": "yarn check:prettier && yarn check:eslint && yarn check:stylelint && yarn check:ts",
-    "check:ci": "yarn nuxi prepare && yarn check:all",
+    "check:all": "pnpm check:prettier && pnpm check:eslint && pnpm check:stylelint && pnpm check:ts",
+    "check:ci": "pnpm nuxi prepare && pnpm check:all",
     "fix:prettier": "prettier --loglevel warn --write . --ignore-path .gitignore",
-    "fix:eslint": "yarn check:eslint --fix",
-    "fix:stylelint": "yarn check:stylelint --fix",
+    "fix:eslint": "pnpm check:eslint --fix",
+    "fix:stylelint": "pnpm check:stylelint --fix",
     "fix:svg": "svgo public --recursive --quiet",
     "fix:image": "sh parse-image.sh",
-    "fix:all": "yarn fix:prettier && yarn fix:eslint && yarn fix:stylelint && yarn fix:svg"
+    "fix:all": "pnpm fix:prettier && pnpm fix:eslint && pnpm fix:stylelint && pnpm fix:svg"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "6.4.0",

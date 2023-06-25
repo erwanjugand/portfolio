@@ -21,26 +21,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Check
-        run: yarn check:ci
+        run: pnpm check:ci
 
   tests:
     runs-on: ubuntu-latest
@@ -51,23 +46,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          node-version: 18
+          cache: 'pnpm'
 
       - name: Cypress install
-        run: yarn cypress install
+        run: pnpm cypress install
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: yarn build
-          start: yarn preview
+          build: pnpm build
+          start: pnpm preview
           browser: chrome
 
       - name: Archive Cypress Screenshots
@@ -102,18 +94,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cache: 'pnpm'
 
       - name: Build
-        run: yarn build
+        run: pnpm build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           ROBOTS_DISALLOW_VALUE: ${{ vars.ROBOTS_DISALLOW_VALUE }}
