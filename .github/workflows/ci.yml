@@ -32,7 +32,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Check
         run: pnpm check:ci
@@ -46,11 +46,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Cypress install
         run: pnpm cypress install
@@ -89,6 +96,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: Setup Node
         uses: actions/setup-node@v3
