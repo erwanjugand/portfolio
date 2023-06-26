@@ -9,111 +9,37 @@ on:
     branches:
       - master
 
-env:
-  FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
-
 jobs:
-  checks:
+  build:
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
+
+    env:
+      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          cache: 'pnpm'
 
       - name: Install Dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
+        run: pnpm install
 
       - name: Check
-        run: yarn check:ci
-
-  tests:
-    runs-on: ubuntu-latest
-    environment: ${{ github.ref_name }}
-    needs: checks
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
-      - name: Cypress install
-        run: yarn cypress install
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: yarn build
-          start: yarn preview
-          browser: chrome
-
-      - name: Archive Cypress Screenshots
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-          if-no-files-found: ignore
-
-      - name: Archive Cypress Videos
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          if-no-files-found: ignore
-
-  build:
-    if: |
-      github.event_name == 'push' &&
-      !contains(github.event.head_commit.message, '[skip-deploy]')
-    runs-on: ubuntu-latest
-    environment: ${{ github.ref_name }}
-    needs: checks
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Cache node_modules
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+        run: pnpm check:ci
 
       - name: Build
-        run: yarn build
+        run: pnpm build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
           ROBOTS_DISALLOW_VALUE: ${{ vars.ROBOTS_DISALLOW_VALUE }}
@@ -122,7 +48,32 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
-      - name: Archive Build
+      - name: Install Cypress
+        run: pnpm cypress install
+
+      - name: Run Cypress
+        uses: cypress-io/github-action@v5
+        with:
+          start: npx wrangler dev .output/server/index.mjs --site .output/public --local --port 3000
+          browser: chrome
+
+      - name: Upload Cypress Screenshots
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Upload Cypress Videos
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
+
+      - name: Upload Build
         uses: actions/upload-artifact@v3
         with:
           name: nuxt-cloudflare-build
@@ -132,9 +83,9 @@ jobs:
     if: |
       github.event_name == 'push' &&
       !contains(github.event.head_commit.message, '[skip-deploy]')
+    needs: build
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
-    needs: [checks, tests, build]
 
     steps:
       - name: Checkout
