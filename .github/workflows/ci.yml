@@ -54,8 +54,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v5
         with:
-          config: baseUrl=http://localhost:8787
-          start: npx wrangler dev .output/server/index.mjs --site .output/public --local
+          start: npx wrangler dev .output/server/index.mjs --site .output/public --local --port 3000
           browser: chrome
 
       - name: Upload Cypress Screenshots
