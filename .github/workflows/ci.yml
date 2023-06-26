@@ -16,7 +16,6 @@ jobs:
 
     env:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
-      CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
 
     steps:
       - name: Checkout
@@ -46,6 +45,7 @@ jobs:
           ROBOTS_DISALLOW_VALUE: ${{ vars.ROBOTS_DISALLOW_VALUE }}
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
           RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
       - name: Install Cypress
