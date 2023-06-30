@@ -3,11 +3,11 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
       - dev
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -104,4 +104,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: deploy ${{ github.ref_name == 'master' && ' ' || '--env dev' }}
+          command: deploy ${{ github.ref_name == 'main' && ' ' || '--env dev' }}
