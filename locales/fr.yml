@@ -67,8 +67,8 @@ pages:
     additionalSkill:
       title: Autres compétences
       management: Management
-      webDesign: Webdesign
-      productManagment: Gestion de projet
+      webDesign: WebDesign
+      productManagement: Gestion de projet
     experiences:
       title: Expériences professionnelles
     skills:

@@ -1,7 +1,7 @@
 <template>
   <div class="cv">
     <header class="cv-header">
-      <picture class="cv-header-profil-container">
+      <picture class="cv-header-profile-container">
         <source
           srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
           type="image/avif"
@@ -9,7 +9,7 @@
         <img
           width="160"
           height="160"
-          class="cv-header-profil"
+          class="cv-header-profile"
           src="/images/erwan-jugand-x1.webp"
           srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
           alt="Erwan Jugand"
@@ -76,7 +76,7 @@
         </p>
         <p class="cv-aside-content-text">
           <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="listCheck" />
-          <span v-text="$t('pages.resume.additionalSkill.productManagment')" />
+          <span v-text="$t('pages.resume.additionalSkill.productManagement')" />
         </p>
       </div>
 
@@ -173,7 +173,7 @@ defineI18nRoute({
       gap: 16px 64px;
     }
 
-    &-profil {
+    &-profile {
       display: flex;
       clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 

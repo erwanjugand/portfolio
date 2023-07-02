@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import environements from './state/environments'
+import environments from './state/environments'
 import experiences from './state/experiences'
 import skills from './state/skills'
 import releases from './state/releases'
@@ -11,7 +11,7 @@ export const useStore = defineStore({
   id: 'store',
   state: (): State => {
     return {
-      environmentsList: environements,
+      environmentsList: environments,
       experiencesList: experiences,
       skillsList: skills,
       releasesList: releases,
