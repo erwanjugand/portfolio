@@ -13,7 +13,7 @@ pages:
     items:
       1:
         0:
-          0: "- Creation and lauching of the portfolio with HTML/CSS/JS \n - Use LESS"
+          0: "- Creation and launching of the portfolio with HTML/CSS/JS \n - Use LESS"
           1: '- Added de LazyLoad'
           2: "- Bugs fixes \n - Add Google Recaptcha 2"
           3: "- SEO Optimization \n - Image optimization"
@@ -54,10 +54,10 @@ pages:
     download: Download resume
   resume:
     title: Resume
-    description: Find all informations in a resume
+    description: Find all information in a resume
     personalInformations:
       title: Personal info
-      car: Driving licence
+      car: Driving license
     environments:
       title: Environment
     hobbies:
@@ -67,8 +67,8 @@ pages:
     additionalSkill:
       title: Additional Skills
       management: Management
-      webDesign: Webdesign
-      productManagment: Project management
+      webDesign: WebDesign
+      productManagement: Project management
     experiences:
       title: Professional experiences
     skills:
@@ -89,7 +89,7 @@ PAbout:
   text1: Hello, my name is {name} and I am a passionate {job} and sensitive to good practices.
   text1Job: Front-End developer
   text2: My experience at {school} and at {enterprise} helped me to refine my sensibility on design, project management, UX/UI and team management.
-  text3: The job of Front-End developer is a constantly evolving job, always offering more tools to design ever more efficient wesites.
+  text3: The job of Front-End developer is a constantly evolving job, always offering more tools to design ever more efficient websites.
   text4: "I am also passionate about IT, New technologies and above all curious \U0001F609!"
   title: About
 

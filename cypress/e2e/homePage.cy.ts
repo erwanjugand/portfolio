@@ -1,4 +1,4 @@
-import environements from '~/store/state/environments'
+import environments from '~/store/state/environments'
 import experiences from '~/store/state/experiences'
 import informations from '~/store/state/informations'
 import releases from '~/store/state/releases'
@@ -45,7 +45,7 @@ describe('Home page', () => {
 
   it('should have environments svg with figcaption', () => {
     cy.get('svg.tool-icon')
-      .should('have.length', environements.length)
+      .should('have.length', environments.length)
       .and('have.descendants', 'path')
       .siblings('figcaption')
       .should('have.length', 6)

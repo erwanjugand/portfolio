@@ -4,7 +4,7 @@
       <PH2 class="xs12">
         {{ $t('PAbout.title') }}
       </PH2>
-      <picture class="xs12 l4 about-profil-container">
+      <picture class="xs12 l4 about-profile-container">
         <source
           srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
           type="image/avif"
@@ -12,7 +12,7 @@
         <img
           width="312"
           height="312"
-          class="about-profil"
+          class="about-profile"
           src="/images/erwan-jugand-x1.webp"
           srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
           alt="Erwan Jugand"
@@ -46,7 +46,7 @@
 
 <style lang="scss">
 .about {
-  &-profil {
+  &-profile {
     flex: 0 1 312px;
     border: 6px solid var(--c-background-3);
     border-radius: 50%;

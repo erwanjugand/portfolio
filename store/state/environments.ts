@@ -1,7 +1,7 @@
 import { Environment } from '../store'
 import { IconStyle } from '~/composables/useIcon'
 
-const environements: Environment[] = [
+const environments: Environment[] = [
   {
     title: 'VSCode',
     icon: {
@@ -46,4 +46,4 @@ const environements: Environment[] = [
   },
 ]
 
-export default environements
+export default environments
