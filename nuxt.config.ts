@@ -50,6 +50,7 @@ export default defineNuxtConfig({
 
   i18n: {
     baseUrl: process.env.SITE_URL,
+    lazy: true,
     locales: [
       {
         code: 'fr',
@@ -64,36 +65,8 @@ export default defineNuxtConfig({
         file: 'en.yml',
       },
     ],
-    langDir: 'locales/',
+    langDir: 'locales',
     defaultLocale: 'fr',
-    vueI18n: {
-      legacy: false,
-      fallbackLocale: 'fr',
-      datetimeFormats: {
-        fr: {
-          long: {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          },
-          short: {
-            year: 'numeric',
-            month: 'short',
-          },
-        },
-        en: {
-          long: {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          },
-          short: {
-            year: 'numeric',
-            month: 'short',
-          },
-        },
-      },
-    },
   },
 
   robots: {

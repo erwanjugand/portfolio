@@ -27,6 +27,7 @@
     "@nuxtjs/color-mode": "3.3.0",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/google-fonts": "3.0.1",
+    "@nuxtjs/i18n": "8.0.0-beta.13",
     "@vueuse/nuxt": "10.2.1",
     "cypress": "12.16.0",
     "eslint": "8.44.0",
@@ -44,7 +45,6 @@
     "vue-tsc": "1.8.3"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "8.0.0-beta.10",
     "@nuxtjs/robots": "3.0.0",
     "@pinia/nuxt": "0.4.11",
     "date-fns": "2.30.0",
