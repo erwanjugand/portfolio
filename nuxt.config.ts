@@ -50,6 +50,7 @@ export default defineNuxtConfig({
 
   i18n: {
     baseUrl: process.env.SITE_URL,
+    lazy: true,
     locales: [
       {
         code: 'fr',
@@ -64,9 +65,8 @@ export default defineNuxtConfig({
         file: 'en.yml',
       },
     ],
-    langDir: 'locales/',
+    langDir: 'locales',
     defaultLocale: 'fr',
-    vueI18n: './i18n.config.ts',
   },
 
   robots: {
