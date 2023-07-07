@@ -44,6 +44,9 @@ pages:
         1:
           0: "- Création d'une API interne pour ne plus exposer la clé api de rapidApi \n - Mise à jour des dépendances"
           1: "- Amélioration de l'accessibilité \n - Amélioration du thème sombre \n - Mise à jour des dépendances"
+          2: "- Mise en place de CloudFlare Analytics \n - Mise à jour des dépendances"
+        2:
+          0: "- Amélioration de la vitesse de chargement des pages \n - Mise à jour des dépendances"
     tags:
       dependencies: Dépendances
       feature: Fonctionnalité

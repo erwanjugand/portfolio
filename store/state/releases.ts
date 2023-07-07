@@ -25,15 +25,27 @@ const tags: Tag[] = [
 
 const releases: Release[] = [
   {
+    name: '3.2.0',
+    date: new Date(2023, 5, 6),
+    major: false,
+    tags: [tags[1], tags[3]],
+  },
+  {
+    name: '3.1.2',
+    date: new Date(2023, 3, 24),
+    major: false,
+    tags: [tags[1], tags[3]],
+  },
+  {
     name: '3.1.1',
     date: new Date(2023, 2, 18),
-    major: true,
+    major: false,
     tags: [tags[1], tags[3]],
   },
   {
     name: '3.1.0',
     date: new Date(2023, 2, 11),
-    major: true,
+    major: false,
     tags: [tags[4], tags[3]],
   },
   {

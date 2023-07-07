@@ -44,6 +44,9 @@ pages:
         1:
           0: "- Creation of an internal API to no longer expose the rapidApi api key \n - Update dependencies"
           1: "- Improve accessibility \n - Improve Dark mode \n - Update dependencies"
+          2: "- Setup Cloudflare Analytics \n - Update dependencies"
+        2:
+          0: "- Improve page loading speed \n - Update dependencies"
     tags:
       dependencies: Dependencies
       feature: Feature
