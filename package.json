@@ -53,6 +53,6 @@
     "vue-typical": "2.1.0"
   },
   "resolutions": {
-    "@types/node": "18.16.19"
+    "@types/node": "20"
   }
 }
