@@ -42,7 +42,9 @@ $diagonal: math.sqrt(3);
       transform: rotate(45deg);
       border: 3px solid transparent;
       background-color: var(--c-background-bg);
-      box-shadow: 0 0 0 3px var(--c-primary), inset 0 0 0 1px var(--c-primary);
+      box-shadow:
+        0 0 0 3px var(--c-primary),
+        inset 0 0 0 1px var(--c-primary);
     }
   }
 }

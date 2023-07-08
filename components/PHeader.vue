@@ -90,7 +90,10 @@ onClickOutside(switchLocaleContainer, closeMenu)
   left: 0;
   width: 100%;
   backdrop-filter: blur(20px);
-  box-shadow: inset 0 -1px 0 0 var(--c-border), 0 3px 1px -2px rgba($grey-100, 0.2), 0 2px 2px 0 rgba($grey-100, 0.14),
+  box-shadow:
+    inset 0 -1px 0 0 var(--c-border),
+    0 3px 1px -2px rgba($grey-100, 0.2),
+    0 2px 2px 0 rgba($grey-100, 0.14),
     0 1px 5px 0 rgba($grey-100, 0.12);
 
   @media print {

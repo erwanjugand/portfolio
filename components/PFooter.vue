@@ -155,7 +155,9 @@ const closeEasterEgg = () => {
     height: 64px;
     padding: 8px;
     transform: translateY(-50%);
-    transition: transform var(--transition), color var(--transition);
+    transition:
+      transform var(--transition),
+      color var(--transition);
     border-radius: $br-small $br-small 0 0;
     fill: currentcolor;
     color: var(--c-text-secondary-1);
