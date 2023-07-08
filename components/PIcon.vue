@@ -17,7 +17,7 @@ const props = defineProps<Props>()
 
 const icon = useIcon(
   toRef(() => props.style),
-  toRef(() => props.name)
+  toRef(() => props.name),
 )
 </script>
 

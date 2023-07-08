@@ -36,7 +36,9 @@ const { environments } = useStore()
     width: calc(100% + 32px);
     margin: 0 -16px;
     transform: translateY(-100%);
-    transition: transform var(--transition), opacity var(--transition);
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
     opacity: 0;
     color: var(--c-primary);
     text-align: center;

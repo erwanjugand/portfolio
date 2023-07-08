@@ -26,7 +26,10 @@ withDefaults(defineProps<Props>(), {
   overflow: hidden;
   border-radius: $br-large $br-small;
   background-color: var(--c-background-1);
-  box-shadow: inset 0 0 0 1px var(--c-border), 0 2px 1px -1px rgba($grey-100, 0.2), 0 1px 1px 0 rgba($grey-100, 0.14),
+  box-shadow:
+    inset 0 0 0 1px var(--c-border),
+    0 2px 1px -1px rgba($grey-100, 0.2),
+    0 1px 1px 0 rgba($grey-100, 0.14),
     0 1px 3px 0 rgba($grey-100, 0.12);
 
   &-header {

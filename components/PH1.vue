@@ -8,7 +8,9 @@
 .h1 {
   align-self: center;
   margin: 64px 0;
-  transition: margin var(--transition), font-size var(--transition);
+  transition:
+    margin var(--transition),
+    font-size var(--transition);
   color: var(--c-primary);
   font-size: 2.5em;
   font-weight: $fw-bold;

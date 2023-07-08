@@ -48,7 +48,9 @@ const afterEnterLeave = (el: any) => {
   &-enter-active,
   &-leave-active {
     overflow: hidden;
-    transition: opacity var(--transition), height var(--transition);
+    transition:
+      opacity var(--transition),
+      height var(--transition);
   }
 
   &-enter-from,
