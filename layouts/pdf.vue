@@ -101,7 +101,8 @@ const download = async () => {
       display: none;
     }
 
-    .dark-mode & {
+    .dark-mode &,
+    .hacked-mode & {
       background-color: rgba($grey-87, 80%);
 
       @media (prefers-contrast: more) {

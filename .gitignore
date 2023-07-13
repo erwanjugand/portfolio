@@ -9,3 +9,4 @@ node_modules
 dist
 cypress/videos
 cypress/screenshots
+public/_ca
