@@ -1,4 +1,4 @@
-import { Icon } from '~/composables/useIcon'
+import { type Icon } from '~/composables/useIcon'
 
 export interface Environment {
   title: string

@@ -1,4 +1,4 @@
-import { Icon, IconStyle } from './useIcon'
+import { type Icon, IconStyle } from './useIcon'
 
 export interface ThemeIcons {
   [key: string]: Icon

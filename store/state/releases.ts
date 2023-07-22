@@ -1,4 +1,4 @@
-import { Tag, Release } from '../store'
+import { type Tag, type Release } from '../store'
 
 const tags: Tag[] = [
   {

@@ -1,10 +1,9 @@
-import { IconPathData, IconDefinition } from '@fortawesome/fontawesome-common-types'
-
 import * as fal from '@fortawesome/pro-light-svg-icons'
 import * as far from '@fortawesome/pro-regular-svg-icons'
 import * as fas from '@fortawesome/pro-solid-svg-icons'
 import * as fab from '@fortawesome/free-brands-svg-icons'
-import { MaybeRefOrGetter } from 'vue'
+import { type IconPathData, type IconDefinition } from '@fortawesome/fontawesome-common-types'
+import { type MaybeRefOrGetter } from 'vue'
 
 export const enum IconStyle {
   light = 'light',

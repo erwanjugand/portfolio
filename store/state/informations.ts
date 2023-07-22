@@ -1,4 +1,4 @@
-import { Information } from '../store'
+import { type Information } from '../store'
 
 const informations: Information[] = [
   {

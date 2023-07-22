@@ -29,7 +29,6 @@ export default defineNuxtConfig({
 
   typescript: {
     shim: false,
-    strict: true,
   },
 
   modules: [
@@ -45,7 +44,7 @@ export default defineNuxtConfig({
   plugins: ['@/plugins/ripple'],
 
   imports: {
-    dirs: ['./store'],
+    dirs: ['store'],
   },
 
   i18n: {

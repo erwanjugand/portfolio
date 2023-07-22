@@ -26,6 +26,7 @@
 
 <script lang="ts" setup>
 import { IconStyle } from '~/composables/useIcon'
+
 const { informations } = useStore()
 </script>
 

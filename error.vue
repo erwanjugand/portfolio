@@ -13,8 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import { NuxtError } from 'nuxt/app'
+import { type NuxtError } from 'nuxt/app'
 import { useI18n } from 'vue-i18n'
+
 const localePath = useLocalePath()
 
 interface Props {

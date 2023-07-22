@@ -1,7 +1,7 @@
 import { intervalToDuration, formatDuration, addMonths } from 'date-fns'
 import fr from 'date-fns/locale/fr/index'
 import enGB from 'date-fns/locale/en-GB/index'
-import { Ref } from 'vue'
+import { type Ref } from 'vue'
 
 export interface DateFnsLocales {
   [key: string]: Locale

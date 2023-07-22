@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { Experience } from '~/store/store'
+import { type Experience } from '~/store/store'
 
 interface Props {
   experience: Experience

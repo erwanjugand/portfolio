@@ -16,6 +16,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import { IconStyle } from '~/composables/useIcon'
+
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const { d, locale } = useI18n()

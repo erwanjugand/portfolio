@@ -50,6 +50,7 @@
 
 <script setup lang="ts">
 import { IconStyle } from '~/composables/useIcon'
+
 const { lastRelease } = useStore()
 const localePath = useLocalePath()
 const currentYear = useDateFormat(useNow(), 'YYYY')

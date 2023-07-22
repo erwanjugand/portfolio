@@ -5,7 +5,7 @@ import skills from './state/skills'
 import releases from './state/releases'
 import easterEggSteps from './state/easter-egg'
 import informations from './state/informations'
-import { State } from './store'
+import { type State } from './store'
 
 export const useStore = defineStore({
   id: 'store',

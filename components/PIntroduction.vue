@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { defaultWindow } from '@vueuse/core'
-import { CSSProperties } from 'vue'
+import { type CSSProperties } from 'vue'
 // eslint-disable-next-line import/no-named-as-default
 import VTypical from 'vue-typical'
 import { IconStyle } from '~/composables/useIcon'
