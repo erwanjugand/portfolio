@@ -1,5 +1,6 @@
-import { type LocaleObject } from 'vue-i18n-routing'
-import { type ComputedRef } from 'vue'
+import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
+import { ComputedRef } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 export default () => {
   const i18n = useI18n()
