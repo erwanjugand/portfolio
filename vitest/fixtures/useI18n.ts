@@ -9,18 +9,14 @@ const i18nLocaleObjects: LocaleObject[] = i18nLocales.map(locale => ({
   code: locale,
 }))
 
-const mockUseI18n = (locale = 'en') => {
-  const i18nLocaleObjects = ['en', 'fr'].map(locale => ({
-    code: locale,
-  }))
+const mockUseI18n = (locale = 'en') =>
   // @ts-ignore
-  return vi.spyOn(vueI18n, 'useI18n').mockImplementation(() => {
+  vi.spyOn(vueI18n, 'useI18n').mockImplementation(() => {
     return {
       locale: computed(() => locale),
       locales: computed(() => i18nLocaleObjects),
       t: (key: string) => key,
     }
   })
-}
 
 export { i18nLocales, i18nLocaleObjects, mockUseI18n }
