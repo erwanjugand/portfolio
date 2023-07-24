@@ -1,7 +1,14 @@
 import { describe, expect, test } from 'vitest'
 import { mockUseI18n } from '../vitest/fixtures/useI18n'
 
-const formatDurationDateTests = [
+type Test = {
+  startedAt: string
+  finishedAt: string
+  locale: 'fr' | 'en'
+  expected: string
+}
+
+const formatDurationDateTests: Test[] = [
   {
     startedAt: '2021-01-10',
     finishedAt: '2021-02-01',
