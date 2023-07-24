@@ -25,7 +25,7 @@ const useThemeTests = [
 
 describe('useTheme', () => {
   describe.each(useThemeTests)('$theme', ({ theme, iconName, keyName, darkMode }) => {
-    test('should return mode, given new theme', () => {
+    test('should return current mode', () => {
       mockUseColorMode(theme)
       mockUseI18n('en')
       const { currentModeName, currentModeIcon, isDarkMode } = useTheme()
