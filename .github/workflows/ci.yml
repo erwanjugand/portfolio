@@ -38,6 +38,9 @@ jobs:
       - name: Check
         run: pnpm check:ci
 
+      - name: Unit testing
+        run: pnpm test:unit
+
       - name: Build
         run: pnpm build
         env:

@@ -1,3 +1,4 @@
+import { useI18n } from 'vue-i18n'
 import { type Icon, IconStyle } from './useIcon'
 
 export interface ThemeIcons {

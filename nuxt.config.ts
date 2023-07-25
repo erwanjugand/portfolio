@@ -39,6 +39,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     'nuxt-cloudflare-analytics',
+    'nuxt-vitest',
   ],
 
   plugins: ['@/plugins/ripple'],
