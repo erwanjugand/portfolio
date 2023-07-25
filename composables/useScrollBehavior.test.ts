@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { ReducedMotionType } from '@vueuse/core'
-import { mockUsePreferredReducedMotion } from '../vitest/fixtures/usePreferredReducedMotion'
+import { mockUsePreferredReducedMotion } from '~/vitest/fixtures/usePreferredReducedMotion'
 
 type Test = {
   prefersReducedMotion: ReducedMotionType

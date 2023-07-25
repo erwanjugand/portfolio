@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { i18nLocaleObjects, i18nLocales, mockUseI18n } from 'vitest/fixtures/useI18n'
+import { i18nLocaleObjects, i18nLocales, mockUseI18n } from '~/vitest/fixtures/useI18n'
 
 describe('useLocale', () => {
   describe.each(i18nLocales)('%s', i18nCurrentLocale => {
