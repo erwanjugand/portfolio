@@ -35,7 +35,7 @@ const formatDurationDateTests: Test[] = [
   },
 ]
 
-describe('useDateFns', () => {
+describe('useDateFormatDuration', () => {
   describe('formatDurationDate', () => {
     test.each(formatDurationDateTests)(
       'should return $expected, given the start date $startedAt and the end date $finishedAt with $locale locale',
