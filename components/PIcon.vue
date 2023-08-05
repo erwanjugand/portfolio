@@ -16,8 +16,8 @@ interface Props {
 const props = defineProps<Props>()
 
 const icon = useIcon(
-  toRef(() => props.style),
-  toRef(() => props.name),
+  () => props.style,
+  () => props.name,
 )
 </script>
 
