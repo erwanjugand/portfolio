@@ -41,8 +41,7 @@ describe('useDateFns', () => {
       'should return $expected, given the start date $startedAt and the end date $finishedAt with $locale locale',
       ({ startedAt, finishedAt, locale, expected }) => {
         mockUseI18n(locale)
-        const { formatDurationDate } = useDateFns()
-        const formattedDate = formatDurationDate(new Date(startedAt), new Date(finishedAt))
+        const formattedDate = useDateFormatDuration(new Date(startedAt), new Date(finishedAt))
         expect(formattedDate.value).toBe(expected)
       },
     )
