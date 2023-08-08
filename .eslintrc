@@ -19,7 +19,6 @@
         }
       }
     ],
-    "vue/prefer-template": 1,
-    "vue/object-curly-spacing": [1, "always"]
+    "vue/prefer-template": 1
   }
 }
