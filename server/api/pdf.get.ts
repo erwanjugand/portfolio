@@ -8,7 +8,7 @@ interface PdfResponse {
   responseId?: string
 }
 
-export default defineEventHandler<PdfResponse>(event => {
+export default defineEventHandler(event => {
   const config = useRuntimeConfig()
   const query = getQuery(event)
   const url = query.url
