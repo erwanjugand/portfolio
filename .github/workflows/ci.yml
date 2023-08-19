@@ -57,7 +57,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v5
         with:
-          start: npx wrangler dev .output/server/index.mjs --site .output/public --local --port 3000
+          start: npx wrangler dev .output/server/index.mjs --site .output/public --port 3000
           wait-on: 'http://localhost:3000'
           browser: chrome
 
@@ -91,6 +91,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
 
+    env:
+      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -103,7 +106,7 @@ jobs:
 
       - name: Publish to Cloudflare
         if: ${{ !env.ACT }}
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
