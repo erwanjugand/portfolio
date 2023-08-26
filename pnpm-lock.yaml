@@ -6,6 +6,7 @@ settings:
 
 overrides:
   '@types/node': '20'
+  nitropack: 2.5.2
 
 dependencies:
   '@nuxtjs/robots':

@@ -57,6 +57,7 @@
     "vue-typical": "2.1.0"
   },
   "resolutions": {
-    "@types/node": "20"
+    "@types/node": "20",
+    "nitropack": "2.5.2"
   }
 }
