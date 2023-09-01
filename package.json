@@ -51,13 +51,11 @@
   "dependencies": {
     "@nuxtjs/robots": "3.0.0",
     "@pinia/nuxt": "0.4.11",
-    "date-fns": "2.30.0",
     "nuxt-cloudflare-analytics": "1.0.8",
     "v-wave": "1.5.1",
     "vue-typical": "2.1.0"
   },
   "resolutions": {
-    "@types/node": "20",
-    "nitropack": "2.5.2"
+    "@types/node": "20"
   }
 }
