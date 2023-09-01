@@ -1,3 +1,7 @@
+useDateFormatDuration:
+  months: 1 mois | {n} mois
+  years: 1 an | {n} ans
+
 useTheme:
   darkMode: Thème sombre
   hackedMode: Thème hacké

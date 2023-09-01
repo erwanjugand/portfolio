@@ -32,7 +32,7 @@ const finishedAt = computed(() => {
   const isToday = finishedAtValue.value === currentDate
   return isToday ? t('PJob.today') : d(finishedAtValue.value, 'short')
 })
-const duration = useDateFormatDuration(() => props.job.startedAt, finishedAtValue)
+const { duration } = useDateFormatDuration(() => props.job.startedAt, finishedAtValue)
 const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${duration.value}`)
 </script>
 
