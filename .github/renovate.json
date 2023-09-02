@@ -3,11 +3,6 @@
   "extends": ["github>erwanjugand/renovate-config"],
   "packageRules": [
     {
-      "matchPackageNames": ["node"],
-      "description": "Nuxt 3 require node 18 or newer",
-      "allowedVersions": "18|20"
-    },
-    {
       "matchPackageNames": ["vitest"],
       "description": "0.34 and higher are not compatible nuxt-vitest",
       "allowedVersions": "<0.34"
