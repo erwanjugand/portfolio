@@ -30,7 +30,7 @@
     "@nuxtjs/google-fonts": "3.0.2",
     "@nuxtjs/i18n": "8.0.0-rc.4",
     "@vueuse/nuxt": "10.4.1",
-    "cypress": "12.17.4",
+    "cypress": "13.1.0",
     "eslint": "8.48.0",
     "eslint-config-prettier": "9.0.0",
     "happy-dom": "10.11.2",
