@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@types/node': '20.8'
+  '@types/node': '20'
 
 dependencies:
   '@nuxtjs/robots':
@@ -1567,6 +1567,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -5742,6 +5743,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
@@ -6008,7 +6013,7 @@ packages:
     hasBin: true
     peerDependencies:
       '@parcel/watcher': ^2.1.0
-      '@types/node': '20.8'
+      '@types/node': '20'
     peerDependenciesMeta:
       '@parcel/watcher':
         optional: true
@@ -8290,7 +8295,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
-      '@types/node': '20.8'
+      '@types/node': '20'
       less: '*'
       lightningcss: ^1.21.0
       sass: '*'
