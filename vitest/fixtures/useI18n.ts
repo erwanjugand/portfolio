@@ -1,4 +1,4 @@
-import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
+import { type LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
 import { vi } from 'vitest'
 import { computed } from 'vue'
 import * as vueI18n from 'vue-i18n'
