@@ -80,9 +80,8 @@ const closeEasterEgg = () => {
       'b'
       'c'
       'd';
-    align-items: center;
+    place-items: center;
     padding: 16px 0;
-    justify-items: center;
     gap: 16px 0;
 
     @media #{$medium-and-up} {
