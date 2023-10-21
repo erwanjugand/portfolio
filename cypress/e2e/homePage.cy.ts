@@ -1,8 +1,8 @@
-import environments from '~/store/state/environments'
-import experiences from '~/store/state/experiences'
-import informations from '~/store/state/informations'
-import releases from '~/store/state/releases'
-import skills from '~/store/state/skills'
+import { environments } from '~/store/state/environments'
+import { experiences } from '~/store/state/experiences'
+import { informations } from '~/store/state/informations'
+import { releases } from '~/store/state/releases'
+import { skills } from '~/store/state/skills'
 
 describe('Home page', () => {
   beforeEach(() => {

@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { type Job } from '~/store/store'
+import { type Job } from '~/store/state/experiences'
 
 interface Props {
   job: Job

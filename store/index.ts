@@ -1,11 +1,19 @@
 import { defineStore } from 'pinia'
-import environments from './state/environments'
-import experiences from './state/experiences'
-import skills from './state/skills'
-import releases from './state/releases'
-import easterEggSteps from './state/easter-egg'
-import informations from './state/informations'
-import { type State } from './store'
+import { environments, type Environment } from './state/environments'
+import { experiences, type Experience } from './state/experiences'
+import { skills, type Skill } from './state/skills'
+import { releases, type Release } from './state/releases'
+import { easterEggSteps, type EasterEggStep } from './state/easter-egg'
+import { informations, type Information } from './state/informations'
+
+interface State {
+  environmentsList: Environment[]
+  experiencesList: Experience[]
+  skillsList: Skill[]
+  releasesList: Release[]
+  easterEggStepsList: EasterEggStep[]
+  informationsList: Information[]
+}
 
 export const useStore = defineStore({
   id: 'store',

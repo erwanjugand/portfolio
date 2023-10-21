@@ -1,6 +1,10 @@
-import { type EasterEggStep } from '../store'
+export interface EasterEggStep {
+  text: string
+  value: number
+  duration: number
+}
 
-const easterEggSteps: EasterEggStep[] = [
+export const easterEggSteps: EasterEggStep[] = [
   {
     text: 'Launch mlp.exe',
     value: 0,
@@ -32,5 +36,3 @@ const easterEggSteps: EasterEggStep[] = [
     duration: 6500,
   },
 ]
-
-export default easterEggSteps

@@ -1,6 +1,13 @@
-import { type Information } from '../store'
+export interface Information {
+  title: string
+  icon: string
+  content: string
+  cta: string
+  target?: string
+  rel?: string
+}
 
-const informations: Information[] = [
+export const informations: Information[] = [
   {
     title: 'phone',
     icon: 'phone',
@@ -22,5 +29,3 @@ const informations: Information[] = [
     cta: 'mailto:erwan.jugand+portfolio@gmail.com',
   },
 ]
-
-export default informations

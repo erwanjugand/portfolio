@@ -1,6 +1,9 @@
-import { type Skill } from '../store'
+export interface Skill {
+  name: string
+  level: 0 | 1 | 2 | 3
+}
 
-const skills: Skill[] = [
+export const skills: Skill[] = [
   {
     level: 3,
     name: 'Vue.js',
@@ -46,5 +49,3 @@ const skills: Skill[] = [
     name: 'Rails',
   },
 ]
-
-export default skills

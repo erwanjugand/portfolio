@@ -1,6 +1,16 @@
-import { type Experience } from '../store'
+export interface Job {
+  key: string
+  contract: 'apprenticeship' | 'cdi' | 'internship'
+  startedAt: Date
+  finishedAt?: Date
+}
 
-const experiences: Experience[] = [
+export interface Experience {
+  enterprise: string
+  jobs: Job[]
+}
+
+export const experiences: Experience[] = [
   {
     enterprise: 'Steeple',
     jobs: [
@@ -46,5 +56,3 @@ const experiences: Experience[] = [
     ],
   },
 ]
-
-export default experiences

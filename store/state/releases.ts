@@ -1,4 +1,14 @@
-import { type Tag, type Release } from '../store'
+export interface Tag {
+  name: string
+  color: `#${string}`
+}
+
+export interface Release {
+  name: `${number}.${number}.${number}`
+  date: Date
+  major: boolean
+  tags: Tag[]
+}
 
 const tags: Tag[] = [
   {
@@ -23,7 +33,7 @@ const tags: Tag[] = [
   },
 ]
 
-const releases: Release[] = [
+export const releases: Release[] = [
   {
     name: '3.2.0',
     date: new Date(2023, 5, 6),
@@ -176,5 +186,3 @@ const releases: Release[] = [
     tags: [tags[0]],
   },
 ]
-
-export default releases
