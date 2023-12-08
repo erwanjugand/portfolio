@@ -52,7 +52,7 @@
     "@nuxtjs/robots": "3.0.0",
     "@pinia/nuxt": "0.5.1",
     "nuxt-cloudflare-analytics": "1.0.8",
-    "v-wave": "1.5.1",
+    "v-wave": "2.0.0",
     "vue-typical": "2.1.0"
   },
   "resolutions": {
