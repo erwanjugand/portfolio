@@ -40,9 +40,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-cloudflare-analytics',
     'nuxt-vitest',
+    'v-wave/nuxt',
   ],
-
-  plugins: ['@/plugins/ripple'],
 
   imports: {
     dirs: ['store'],
@@ -79,6 +78,10 @@ export default defineNuxtConfig({
 
   cloudflareAnalytics: {
     token: process.env.CLOUDFLARE_ANALYTICS_TOKEN,
+  },
+
+  vWave: {
+    directive: 'ripple',
   },
 
   googleFonts: {
