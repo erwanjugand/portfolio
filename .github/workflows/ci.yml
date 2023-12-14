@@ -62,7 +62,7 @@ jobs:
           browser: chrome
 
       - name: Upload Cypress Screenshots
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots
@@ -70,7 +70,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Upload Build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuxt-cloudflare-build
           path: |
@@ -98,7 +98,7 @@ jobs:
           version: 8
 
       - name: Download Build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: nuxt-cloudflare-build
 
