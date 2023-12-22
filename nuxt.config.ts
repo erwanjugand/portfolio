@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     'nuxt-cloudflare-analytics',
-    'nuxt-vitest',
+    '@nuxt/test-utils/module',
     'v-wave/nuxt',
   ],
 
