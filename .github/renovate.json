@@ -1,11 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>erwanjugand/renovate-config"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["vitest"],
-      "description": "0.34 and higher are not compatible nuxt-vitest",
-      "allowedVersions": "<0.34"
-    }
-  ]
+  "extends": ["github>erwanjugand/renovate-config"]
 }
