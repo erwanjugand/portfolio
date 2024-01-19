@@ -85,8 +85,8 @@ export const icons: Icons = {
   },
 }
 
-export default (style: MaybeRefOrGetter<IconType>, name: MaybeRefOrGetter<string>) => {
+export default (type: MaybeRefOrGetter<IconType>, name: MaybeRefOrGetter<string>) => {
   return computed<IconData | undefined>(() => {
-    return icons[toValue(style)][toValue(name)]
+    return icons[toValue(type)][toValue(name)]
   })
 }
