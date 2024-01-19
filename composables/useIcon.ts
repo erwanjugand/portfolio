@@ -17,9 +17,7 @@ export interface IconData {
   viewbox: `0 0 ${number} ${number}`
 }
 
-export type Icons = {
-  [key in IconType]: GenericObject<IconData>
-}
+export type Icons = Record<IconType, Record<string, IconData>>
 
 const formatIcon = (faIcon: IconDefinition): IconData => {
   return {
