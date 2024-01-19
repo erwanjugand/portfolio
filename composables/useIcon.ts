@@ -63,6 +63,7 @@ export const icons: Icons = {
     brightness: formatIcon(fal.faBrightness),
     circleCheck: formatIcon(fal.faCircleCheck),
     computer: formatIcon(fal.faComputer),
+    display: formatIcon(fal.faDisplay),
     envelope: formatIcon(fal.faEnvelope),
     envelopeOpenText: formatIcon(fal.faEnvelopeOpenText),
     gamepadModern: formatIcon(fal.faGamepadModern),

@@ -5,7 +5,7 @@ import * as nuxtColor from '~/node_modules/@nuxtjs/color-mode/dist/runtime/compo
 const mockUseColorMode = (value: string) =>
   vi.spyOn(nuxtColor, 'useColorMode').mockImplementation(() => {
     return reactive({
-      preference: 'system',
+      preference: value,
       value,
       unknown: false,
       forced: false,

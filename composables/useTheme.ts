@@ -1,12 +1,11 @@
 import { useI18n } from 'vue-i18n'
 import { type Icon, IconStyle } from './useIcon'
 
-export interface ThemeIcons {
-  [key: string]: Icon
-}
+export type ThemeIcons = Record<string, Icon>
 
 export default () => {
   const themeIcons: ThemeIcons = {
+    system: { style: IconStyle.light, name: 'display' },
     light: { style: IconStyle.light, name: 'brightness' },
     dark: { style: IconStyle.light, name: 'moon' },
     hacked: { style: IconStyle.custom, name: 'easterEgg' },
@@ -15,19 +14,16 @@ export default () => {
   const { t } = useI18n()
 
   const currentModeIcon = computed<Icon>(() => {
-    return themeIcons[currentMode.value]
+    return themeIcons[currentMode.preference]
   })
 
   const currentModeName = computed<string>(() => {
-    return t(`useTheme.${currentMode.value}Mode`)
-  })
-
-  const isDarkMode = computed<boolean>(() => {
-    return currentMode.value === 'dark'
+    return t(`useTheme.${currentMode.preference}Mode`)
   })
 
   const toggleMode = (): void => {
-    currentMode.preference = isDarkMode.value ? 'light' : 'dark'
+    currentMode.preference =
+      currentMode.preference === 'system' ? 'light' : currentMode.preference === 'light' ? 'dark' : 'system'
   }
 
   const changeMode = (mode: string): void => {
@@ -37,7 +33,6 @@ export default () => {
   return {
     currentModeIcon,
     currentModeName,
-    isDarkMode,
     toggleMode,
     changeMode,
   }

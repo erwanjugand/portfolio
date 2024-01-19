@@ -6,6 +6,7 @@ useTheme:
   darkMode: Thème sombre
   hackedMode: Thème hacké
   lightMode: Thème clair
+  systemMode: Thème du système
 
 pages:
   home:

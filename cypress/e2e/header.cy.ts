@@ -4,9 +4,13 @@ describe('Header', () => {
   })
 
   it('should switch theme, click on button', () => {
-    cy.get('html').should('have.class', 'light-mode')
+    cy.get('html').should('have.class', 'light-mode') // System
     cy.get('.header-toggle-theme').click()
-    cy.get('html').should('have.class', 'dark-mode')
+    cy.get('html').should('have.class', 'light-mode') // Light
+    cy.get('.header-toggle-theme').click()
+    cy.get('html').should('have.class', 'dark-mode') // Dark
+    cy.get('.header-toggle-theme').click()
+    cy.get('html').should('have.class', 'light-mode') // System
   })
 
   it('should switch the language, click on button', () => {

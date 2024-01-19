@@ -6,6 +6,7 @@ useTheme:
   darkMode: Dark mode
   hackedMode: Hacked mode
   lightMode: Light mode
+  systemMode: System mode
 
 pages:
   home:
