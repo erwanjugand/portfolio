@@ -9,7 +9,7 @@
           <PCard tag="article" class="release">
             <template #header>
               <h2>
-                <PIcon type="regular" :name="release.major ? 'boxFull' : 'penRuler'" />
+                <PIcon type="light" :name="release.major ? 'boxFull' : 'penRuler'" />
                 {{ release.name }}
               </h2>
               <PTime :date="release.date" />
