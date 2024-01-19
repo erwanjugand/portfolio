@@ -1,5 +1,3 @@
-import { IconStyle } from '~/composables/useIcon'
-
 export interface Environment {
   title: string
   icon: Icon
@@ -9,42 +7,42 @@ export const environments: Environment[] = [
   {
     title: 'VSCode',
     icon: {
-      style: IconStyle.custom,
+      type: 'custom',
       name: 'visualStudioCode',
     },
   },
   {
     title: 'Git',
     icon: {
-      style: IconStyle.brand,
+      type: 'brand',
       name: 'gitAlt',
     },
   },
   {
     title: 'Ubuntu (WSL)',
     icon: {
-      style: IconStyle.brand,
+      type: 'brand',
       name: 'ubuntu',
     },
   },
   {
     title: 'Terminal',
     icon: {
-      style: IconStyle.solid,
+      type: 'solid',
       name: 'rectangleTerminal',
     },
   },
   {
     title: 'Adobe',
     icon: {
-      style: IconStyle.custom,
+      type: 'custom',
       name: 'adobe',
     },
   },
   {
     title: 'Docker',
     icon: {
-      style: IconStyle.brand,
+      type: 'brand',
       name: 'docker',
     },
   },

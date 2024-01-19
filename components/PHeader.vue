@@ -21,7 +21,7 @@
             :src="`/images/flag-${currentLocale.code}.svg`"
             :alt="currentLocale.name"
           />
-          <PIcon class="header-switch-locale-icon" :style="IconStyle.solid" name="caretDown" />
+          <PIcon class="header-switch-locale-icon" type="solid" name="caretDown" />
         </button>
         <Transition name="header-switch-locale">
           <ul v-show="localeMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
@@ -56,7 +56,7 @@
             :title="currentModeName"
             @click="toggleMode()"
           >
-            <PIcon class="header-toggle-theme-icon" :style="currentModeIcon.style" :name="currentModeIcon.name" />
+            <PIcon class="header-toggle-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />
           </button>
         </ClientOnly>
       </div>
@@ -66,7 +66,6 @@
 
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { IconStyle } from '~/composables/useIcon'
 
 const { currentModeIcon, currentModeName, toggleMode } = useTheme()
 const { currentLocale, locales } = useLocale()

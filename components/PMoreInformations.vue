@@ -7,7 +7,7 @@
 
       <div v-for="information of informations" :key="information.title" class="information xs12 m6 l4">
         <PHexagon turned>
-          <PIcon :style="IconStyle.light" :name="information.icon" class="information-icon" />
+          <PIcon type="light" :name="information.icon" class="information-icon" />
         </PHexagon>
         <a
           v-ripple
@@ -25,8 +25,6 @@
 </template>
 
 <script lang="ts" setup>
-import { IconStyle } from '~/composables/useIcon'
-
 const { informations } = useStore()
 </script>
 

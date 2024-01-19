@@ -6,7 +6,7 @@
     </div>
     <div class="pdf-action">
       <PButton :disabled="isLoading" @click="download">
-        <PIcon :style="IconStyle.regular" name="download" />
+        <PIcon type="regular" name="download" />
         {{ $t('pages.pdf.download') }}
       </PButton>
     </div>
@@ -15,7 +15,6 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { IconStyle } from '~/composables/useIcon'
 
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()

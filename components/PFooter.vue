@@ -2,7 +2,7 @@
   <div class="footer-container">
     <div class="footer-easter-egg-container">
       <button v-ripple class="footer-easter-egg" title="?????" aria-label="?????" @click="openEasterEgg">
-        <PIcon :style="IconStyle.custom" name="easterEgg" class="footer-easter-egg-icon" />
+        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
     </div>
     <footer class="footer">
@@ -23,7 +23,7 @@
             aria-label="Github"
             :title="$t('PFooter.github')"
           >
-            <PIcon :style="IconStyle.brand" name="github" class="footer-github-icon" />
+            <PIcon type="brand" name="github" class="footer-github-icon" />
           </a>
 
           <a
@@ -35,7 +35,7 @@
             aria-label="Linkedin"
             :title="$t('PFooter.linkedin')"
           >
-            <PIcon :style="IconStyle.brand" name="linkedin" class="footer-linkedin-icon" />
+            <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
           </a>
         </div>
 
@@ -49,8 +49,6 @@
 </template>
 
 <script setup lang="ts">
-import { IconStyle } from '~/composables/useIcon'
-
 const { lastRelease } = useStore()
 const localePath = useLocalePath()
 const currentYear = useDateFormat(useNow(), 'YYYY')

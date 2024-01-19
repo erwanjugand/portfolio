@@ -33,15 +33,15 @@
           :target="information.target"
           class="cv-aside-content-text"
         >
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" :name="information.icon" />
+          <PIcon class="cv-aside-content-text-icon" type="light" :name="information.icon" />
           <span v-text="information.content" />
         </a>
         <NuxtLink :href="siteUrl" target="_blank" class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="link" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="link" />
           <span v-text="siteUrl" />
         </NuxtLink>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="carSide" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="carSide" />
           <span v-text="$t('pages.resume.personalInformations.car')" />
         </p>
       </div>
@@ -54,7 +54,7 @@
       <div class="cv-aside-content">
         <div class="cv-aside-environments">
           <figure v-for="(environment, index) in environments" :key="index" class="cv-aside-environment">
-            <PIcon class="cv-aside-environment-icon" :style="environment.icon.style" :name="environment.icon.name" />
+            <PIcon class="cv-aside-environment-icon" :type="environment.icon.type" :name="environment.icon.name" />
             <figcaption class="cv-aside-environment-text" v-text="environment.title" />
           </figure>
         </div>
@@ -67,15 +67,15 @@
 
       <div class="cv-aside-content">
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="users" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="users" />
           <span v-text="$t('pages.resume.additionalSkill.management')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="paintbrushPencil" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="paintbrushPencil" />
           <span v-text="$t('pages.resume.additionalSkill.webDesign')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="listCheck" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="listCheck" />
           <span v-text="$t('pages.resume.additionalSkill.productManagement')" />
         </p>
       </div>
@@ -87,11 +87,11 @@
 
       <div class="cv-aside-content">
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="gamepadModern" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="gamepadModern" />
           <span v-text="$t('pages.resume.hobbies.videoGame')" />
         </p>
         <p class="cv-aside-content-text">
-          <PIcon class="cv-aside-content-text-icon" :style="IconStyle.light" name="newspaper" />
+          <PIcon class="cv-aside-content-text-icon" type="light" name="newspaper" />
           <span v-text="$t('pages.resume.hobbies.highTech')" />
         </p>
       </div>
@@ -112,7 +112,7 @@
             v-for="n of 3"
             :key="n"
             class="cv-main-skill-level"
-            :style="n > skill.level ? IconStyle.light : IconStyle.solid"
+            :type="n > skill.level ? 'light' : 'solid'"
             name="star"
           />
         </div>
@@ -123,7 +123,6 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { IconStyle } from '~/composables/useIcon'
 
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = runtimeConfig.public.siteUrl
