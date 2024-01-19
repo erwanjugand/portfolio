@@ -5,7 +5,7 @@
         {{ $t('PEnvironments.title') }}
       </PH2>
       <figure v-for="(environment, index) in environments" :key="index" tabindex="0" class="xs6 s4 m2 tool">
-        <PIcon class="tool-icon" :style="environment.icon.style" :name="environment.icon.name" />
+        <PIcon class="tool-icon" :type="environment.icon.type" :name="environment.icon.name" />
         <figcaption class="tool-text" v-text="environment.title" />
       </figure>
     </div>

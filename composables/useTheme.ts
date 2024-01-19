@@ -1,14 +1,14 @@
 import { useI18n } from 'vue-i18n'
-import { type Icon, IconStyle } from './useIcon'
+import { type Icon } from './useIcon'
 
 export type ThemeIcons = Record<string, Icon>
 
 export default () => {
   const themeIcons: ThemeIcons = {
-    system: { style: IconStyle.light, name: 'display' },
-    light: { style: IconStyle.light, name: 'brightness' },
-    dark: { style: IconStyle.light, name: 'moon' },
-    hacked: { style: IconStyle.custom, name: 'easterEgg' },
+    system: { type: 'light', name: 'display' },
+    light: { type: 'light', name: 'brightness' },
+    dark: { type: 'light', name: 'moon' },
+    hacked: { type: 'custom', name: 'easterEgg' },
   }
   const currentMode = useColorMode()
   const { t } = useI18n()

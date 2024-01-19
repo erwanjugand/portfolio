@@ -5,16 +5,10 @@ import * as fab from '@fortawesome/free-brands-svg-icons'
 import { type IconPathData, type IconDefinition } from '@fortawesome/fontawesome-common-types'
 import { type MaybeRefOrGetter } from 'vue'
 
-export const enum IconStyle {
-  light = 'light',
-  regular = 'regular',
-  solid = 'solid',
-  brand = 'brand',
-  custom = 'custom',
-}
+export type IconType = 'light' | 'regular' | 'solid' | 'brand' | 'custom'
 
 export interface Icon {
-  style: IconStyle
+  type: IconType
   name: string
 }
 
@@ -23,9 +17,7 @@ export interface IconData {
   viewbox: `0 0 ${number} ${number}`
 }
 
-export type Icons = {
-  [key in IconStyle]: GenericObject<IconData>
-}
+export type Icons = Record<IconType, Record<string, IconData>>
 
 const formatIcon = (faIcon: IconDefinition): IconData => {
   return {
@@ -93,8 +85,8 @@ export const icons: Icons = {
   },
 }
 
-export default (style: MaybeRefOrGetter<IconStyle>, name: MaybeRefOrGetter<string>) => {
+export default (type: MaybeRefOrGetter<IconType>, name: MaybeRefOrGetter<string>) => {
   return computed<IconData | undefined>(() => {
-    return icons[toValue(style)][toValue(name)]
+    return icons[toValue(type)][toValue(name)]
   })
 }

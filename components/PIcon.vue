@@ -6,17 +6,15 @@
 </template>
 
 <script setup lang="ts">
-import { IconStyle } from '~/composables/useIcon'
-
 interface Props {
   name: string
-  style: IconStyle
+  type: IconType
 }
 
 const props = defineProps<Props>()
 
 const icon = useIcon(
-  () => props.style,
+  () => props.type,
   () => props.name,
 )
 </script>
