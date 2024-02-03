@@ -30,7 +30,7 @@ describe('Home page', () => {
       .find('.job-time')
       .contains(lastJob.startedAt.getFullYear())
       .contains('today')
-      .contains('months')
+      .contains('years')
   })
 
   it('should have informations with svg and link', () => {
