@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": "..",
     "paths": {
-      "~/*": ["*"],
+      "~/*": ["*"]
     },
-    "types": ["cypress", "node"],
+    "types": ["cypress", "node"]
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts"]
 }
