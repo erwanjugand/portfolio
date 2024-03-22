@@ -7,15 +7,15 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  tag?: keyof HTMLElementTagNameMap
-  turned?: boolean
-}
-
-withDefaults(defineProps<Props>(), {
-  tag: 'div',
-  turned: false,
-})
+withDefaults(
+  defineProps<{
+    tag?: keyof HTMLElementTagNameMap
+    turned?: boolean
+  }>(),
+  {
+    tag: 'div',
+  },
+)
 </script>
 
 <style lang="scss">

@@ -10,11 +10,9 @@
 <script setup lang="ts">
 import { type Skill } from '~/store/state/skills'
 
-interface Props {
+defineProps<{
   skill: Skill
-}
-
-defineProps<Props>()
+}>()
 </script>
 
 <style lang="scss">

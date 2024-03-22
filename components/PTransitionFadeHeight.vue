@@ -2,7 +2,7 @@
   <TransitionGroup
     v-if="group"
     name="fade-height"
-    :tag="tag"
+    :tag
     v-bind="$attrs"
     @enter="beforeEnterLeave"
     @after-enter="afterEnterLeave"
@@ -24,15 +24,15 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  group?: boolean
-  tag?: keyof HTMLElementTagNameMap
-}
-
-withDefaults(defineProps<Props>(), {
-  group: false,
-  tag: 'div',
-})
+withDefaults(
+  defineProps<{
+    group?: boolean
+    tag?: keyof HTMLElementTagNameMap
+  }>(),
+  {
+    tag: 'div',
+  },
+)
 
 const beforeEnterLeave = (el: any) => {
   el.style.height = el.scrollHeight + 'px'

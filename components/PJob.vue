@@ -13,14 +13,10 @@
 import { useI18n } from 'vue-i18n'
 import { type Job } from '~/store/state/experiences'
 
-interface Props {
+const props = defineProps<{
   job: Job
   single?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  single: false,
-})
+}>()
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
 const currentDate = new Date()

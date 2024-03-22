@@ -6,12 +6,10 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+const props = defineProps<{
   name: string
   type: IconType
-}
-
-const props = defineProps<Props>()
+}>()
 
 const icon = useIcon(
   () => props.type,

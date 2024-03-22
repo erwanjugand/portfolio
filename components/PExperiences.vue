@@ -5,7 +5,7 @@
         {{ $t('PExperiences.title') }}
       </PH2>
       <ul class="experiences-wrapper xs12">
-        <PExperience v-for="(experience, index) of experiences" :key="index" :experience="experience" />
+        <PExperience v-for="(experience, index) of experiences" :key="index" :experience />
       </ul>
     </div>
   </PSection>

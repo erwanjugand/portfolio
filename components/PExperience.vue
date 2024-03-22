@@ -1,18 +1,16 @@
 <template>
   <li class="experience">
     <h3 class="experience-header" v-text="experience.enterprise" />
-    <PJob v-for="job of experience.jobs" :key="job.key" :job="job" :single="hasOneJob" />
+    <PJob v-for="job of experience.jobs" :key="job.key" :job :single="hasOneJob" />
   </li>
 </template>
 
 <script setup lang="ts">
 import { type Experience } from '~/store/state/experiences'
 
-interface Props {
+const props = defineProps<{
   experience: Experience
-}
-
-const props = defineProps<Props>()
+}>()
 
 const hasOneJob = computed(() => props.experience.jobs.length === 1)
 </script>

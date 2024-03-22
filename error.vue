@@ -18,11 +18,9 @@ import { useI18n } from 'vue-i18n'
 
 const localePath = useLocalePath()
 
-interface Props {
+const props = defineProps<{
   error: NuxtError
-}
-
-const props = defineProps<Props>()
+}>()
 
 const { t } = useI18n()
 

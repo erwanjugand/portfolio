@@ -2,8 +2,8 @@
   <Component
     :is="type"
     v-ripple="!disabled"
-    :disabled="disabled"
-    :to="to"
+    :disabled="disabled || undefined"
+    :to
     :class="['button', outlined ? 'button-outlined' : 'button-filled']"
   >
     <slot />
@@ -13,17 +13,11 @@
 <script setup lang="ts">
 import { type RouteLocationRaw } from 'vue-router'
 
-interface Props {
+const props = defineProps<{
   outlined?: boolean
   disabled?: boolean
   to?: RouteLocationRaw
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  outlined: false,
-  disabled: undefined,
-  to: undefined,
-})
+}>()
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()

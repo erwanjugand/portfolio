@@ -10,13 +10,14 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
-  tag?: keyof HTMLElementTagNameMap
-}
-
-withDefaults(defineProps<Props>(), {
-  tag: 'div',
-})
+withDefaults(
+  defineProps<{
+    tag?: keyof HTMLElementTagNameMap
+  }>(),
+  {
+    tag: 'div',
+  },
+)
 </script>
 
 <style lang="scss">

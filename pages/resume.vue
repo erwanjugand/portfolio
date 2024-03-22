@@ -101,7 +101,7 @@
       <h2 class="cv-main-title" v-text="$t('pages.resume.experiences.title')" />
       <div v-for="experience of experiences" :key="experience.enterprise" class="cv-main-experience">
         <h3 class="cv-main-experience-enterprise" v-text="experience.enterprise" />
-        <PResumeJob v-for="job of experience.jobs" :key="job.key" :job="job" />
+        <PResumeJob v-for="job of experience.jobs" :key="job.key" :job />
       </div>
 
       <h2 class="cv-main-title" v-text="$t('pages.resume.skills.title')" />

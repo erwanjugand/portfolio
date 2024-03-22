@@ -5,13 +5,9 @@
 </template>
 
 <script setup lang="ts">
-interface Props {
+defineProps<{
   banner?: boolean
-}
-
-withDefaults(defineProps<Props>(), {
-  banner: false,
-})
+}>()
 </script>
 
 <style lang="scss">

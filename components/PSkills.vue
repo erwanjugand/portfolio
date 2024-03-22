@@ -7,7 +7,7 @@
     </div>
     <div class="skills-container">
       <ul class="skills-wrapper">
-        <PSkill v-for="skill of skills" :key="skill.name" :skill="skill" />
+        <PSkill v-for="skill of skills" :key="skill.name" :skill />
       </ul>
     </div>
   </PSection>
