@@ -32,6 +32,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/eslint',
     '@nuxtjs/google-fonts',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',

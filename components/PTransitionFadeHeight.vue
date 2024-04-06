@@ -34,11 +34,13 @@ withDefaults(
   },
 )
 
-const beforeEnterLeave = (el: any) => {
+const beforeEnterLeave = (el: Element) => {
+  if (!(el instanceof HTMLElement)) return
   el.style.height = el.scrollHeight + 'px'
 }
 
-const afterEnterLeave = (el: any) => {
+const afterEnterLeave = (el: Element) => {
+  if (!(el instanceof HTMLElement)) return
   el.style.removeProperty('height')
 }
 </script>
