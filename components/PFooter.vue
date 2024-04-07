@@ -139,13 +139,17 @@ const closeEasterEgg = () => {
 
   &-last-version,
   &-legal-mentions {
-    &:hover,
-    &:focus-visible {
+    --focus-radius: #{$br-small};
+    --focus-offset: 4px;
+
+    &:hover {
       text-decoration: underline;
     }
   }
 
   &-easter-egg {
+    --focus-radius: #{$br-small $br-small} 0 0;
+
     display: flex;
     align-items: center;
     justify-content: center;

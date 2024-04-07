@@ -26,11 +26,16 @@ const type = computed(() => (props.to ? nuxtLink : attrs.href ? 'a' : 'button'))
 
 <style lang="scss">
 .button {
+  --focus-radius: #{$br-small};
+  --focus-offset: 2px;
+
   display: flex;
   align-items: center;
   min-height: 3em;
   padding: 0.5em 1.5em;
-  transition: var(--transition);
+  transition:
+    background-color var(--transition),
+    opacity var(--transition);
   border-radius: $br-small;
   box-shadow: inset 0 0 0 2px transparent;
   font-weight: $fw-bold;

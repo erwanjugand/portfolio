@@ -27,10 +27,6 @@ export default defineNuxtConfig({
     writeEarlyHints: true,
   },
 
-  typescript: {
-    shim: false,
-  },
-
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/google-fonts',

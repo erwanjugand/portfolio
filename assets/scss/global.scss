@@ -115,3 +115,12 @@ button {
 li::marker {
   display: none;
 }
+
+a,
+button {
+  &:focus-visible {
+    border-radius: var(--focus-radius, $br-regular);
+    outline: 2px solid var(--c-text);
+    outline-offset: var(--focus-offset, -2px);
+  }
+}

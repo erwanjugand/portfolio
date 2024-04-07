@@ -236,6 +236,8 @@ defineI18nRoute({
       gap: 12px;
 
       &-text {
+        --focus-offset: 4px;
+
         display: flex;
         align-items: center;
         gap: 8px;

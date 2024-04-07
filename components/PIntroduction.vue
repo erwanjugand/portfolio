@@ -114,6 +114,9 @@ const scroll = () => {
   }
 
   &-scroll {
+    --focus-radius: 99px;
+    --focus-offset: 2px;
+
     border-radius: 99px;
     opacity: 0.75;
     color: $grey-0;
