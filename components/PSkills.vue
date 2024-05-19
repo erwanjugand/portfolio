@@ -7,7 +7,7 @@
     </div>
     <div class="skills-container">
       <ul class="skills-wrapper">
-        <PSkill v-for="skill of skills" :key="skill.name" :skill />
+        <PSkill v-for="skill of skills" :key="skill.name" :skill class="scroll-animation-fade" />
       </ul>
     </div>
   </PSection>
@@ -27,7 +27,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
   display: flex;
   justify-content: center;
   width: 100%;
-  overflow: hidden;
+  overflow: clip;
   background: url('/images/bee.svg') center top;
   background-position-x: calc(50% - #{math.div($hexagon-width, 4) + math.div($hexagon-space-to-remove, 2)});
 

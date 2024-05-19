@@ -5,7 +5,11 @@
         {{ $t('PMoreInformations.title') }}
       </PH2>
 
-      <div v-for="information of informations" :key="information.title" class="information xs12 m6 l4">
+      <div
+        v-for="information of informations"
+        :key="information.title"
+        class="information xs12 m6 l4 scroll-animation-fade"
+      >
         <PHexagon turned>
           <PIcon type="light" :name="information.icon" class="information-icon" />
         </PHexagon>
@@ -30,6 +34,8 @@ const { informations } = useStore()
 
 <style lang="scss">
 .information {
+  --scroll-animation-y: 48px;
+
   display: flex;
   flex-direction: column;
   align-items: center;

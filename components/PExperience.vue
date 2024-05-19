@@ -1,6 +1,6 @@
 <template>
   <li class="experience">
-    <h3 class="experience-header" v-text="experience.enterprise" />
+    <h3 class="experience-header scroll-animation-fade" v-text="experience.enterprise" />
     <PJob v-for="job of experience.jobs" :key="job.key" :job :single="hasOneJob" />
   </li>
 </template>
@@ -24,6 +24,8 @@ $diagonal: math.sqrt(3);
   gap: 32px;
 
   &-header {
+    --scroll-animation-y: 48px;
+
     position: relative;
     padding-left: 64px;
     font-size: 1.5em;

@@ -1,5 +1,5 @@
 <template>
-  <div class="job">
+  <div class="job scroll-animation-fade">
     <div class="job-header">
       <h4 :class="['job-title', { 'job-title-anchor': !single }]" v-text="title" />
       <p class="job-contract" v-text="contract" />
@@ -39,6 +39,8 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
 $diagonal: math.sqrt(3);
 
 .job {
+  --scroll-animation-y: 48px;
+
   display: flex;
   flex-direction: column;
   gap: 16px;

@@ -4,7 +4,7 @@
       <PH2 class="xs12">
         {{ $t('PAbout.title') }}
       </PH2>
-      <picture class="xs12 l4 about-profile-container">
+      <picture class="xs12 l4 about-profile-container scroll-animation-fade">
         <source
           srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
           type="image/avif"
@@ -18,7 +18,7 @@
           alt="Erwan Jugand"
         />
       </picture>
-      <div class="xs12 l8 about-content">
+      <div class="xs12 l8 about-content scroll-animation-fade">
         <I18nT tag="p" class="about-text" keypath="PAbout.text1" scope="global">
           <template #name>
             <strong>Erwan Jugand</strong>
@@ -60,6 +60,13 @@
     &-container {
       display: flex;
       justify-content: center;
+
+      --scroll-animation-y: 48px;
+
+      @media #{$large-and-up} {
+        --scroll-animation-y: 0;
+        --scroll-animation-x: -48px;
+      }
     }
   }
 
@@ -68,6 +75,13 @@
     flex-direction: column;
     gap: 16px;
     justify-content: center;
+
+    --scroll-animation-y: 48px;
+
+    @media #{$large-and-up} {
+      --scroll-animation-y: 0;
+      --scroll-animation-x: -48px;
+    }
   }
 
   &-text {
