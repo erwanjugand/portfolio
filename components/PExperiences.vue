@@ -32,7 +32,23 @@ $diagonal: math.sqrt(3);
     left: calc(math.div(24px * $diagonal, 2) - math.div(3px, 2));
     width: 3px;
     height: 100%;
-    background-image: linear-gradient(180deg, var(--c-primary) 90%, var(--c-background-bg));
+    background-image: linear-gradient(
+      180deg,
+      var(--c-primary) 2px,
+      var(--c-background-bg) 2px,
+      var(--c-background-bg) 6px,
+      var(--c-primary) 6px,
+      var(--c-primary) 12px,
+      var(--c-background-bg) 12px,
+      var(--c-background-bg) 16px,
+      var(--c-primary) 16px,
+      var(--c-primary) 28px,
+      var(--c-background-bg) 28px,
+      var(--c-background-bg) 32px,
+      var(--c-primary) 32px,
+      var(--c-primary) 90%,
+      var(--c-background-bg)
+    );
   }
 }
 </style>

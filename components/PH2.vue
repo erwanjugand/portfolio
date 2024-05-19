@@ -1,5 +1,5 @@
 <template>
-  <h2 class="h2">
+  <h2 class="h2 scroll-animation-scale">
     <slot />
   </h2>
 </template>

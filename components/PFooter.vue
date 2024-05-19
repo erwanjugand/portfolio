@@ -79,7 +79,7 @@ const closeEasterEgg = () => {
       'c'
       'd';
     place-items: center;
-    padding: 16px 0;
+    padding: 32px 0;
     gap: 16px 0;
 
     @media #{$medium-and-up} {

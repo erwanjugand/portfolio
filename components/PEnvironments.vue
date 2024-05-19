@@ -4,7 +4,12 @@
       <PH2 class="xs12">
         {{ $t('PEnvironments.title') }}
       </PH2>
-      <figure v-for="(environment, index) in environments" :key="index" tabindex="0" class="xs6 s4 m2 tool">
+      <figure
+        v-for="(environment, index) in environments"
+        :key="index"
+        tabindex="0"
+        class="xs6 s4 m2 tool scroll-animation-fade"
+      >
         <PIcon class="tool-icon" :type="environment.icon.type" :name="environment.icon.name" />
         <figcaption class="tool-text" v-text="environment.title" />
       </figure>
@@ -18,6 +23,8 @@ const { environments } = useStore()
 
 <style lang="scss">
 .tool {
+  --scroll-animation-y: 64px;
+
   display: flex;
   position: relative;
   justify-content: center;

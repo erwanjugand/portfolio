@@ -1,0 +1,42 @@
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-animation-fade,
+    .scroll-animation-scale {
+      animation-fill-mode: backwards;
+      animation-timeline: view();
+      animation-range: cover 15% contain 25%;
+    }
+
+    .scroll-animation-fade {
+      animation-name: scroll-fade;
+    }
+
+    .scroll-animation-scale {
+      animation-name: scroll-scale;
+    }
+
+    @keyframes scroll-fade {
+      0% {
+        transform: translate(var(--scroll-animation-x, 0), var(--scroll-animation-y, 0));
+        opacity: 0;
+      }
+
+      100% {
+        transform: translate(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scroll-scale {
+      0% {
+        transform: scale(0.75);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}
