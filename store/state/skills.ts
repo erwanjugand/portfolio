@@ -3,7 +3,7 @@ export interface Skill {
   level: 0 | 1 | 2 | 3
 }
 
-export const skills: Skill[] = [
+export const skills: ReadonlyTuple<Skill, 11> = [
   {
     level: 3,
     name: 'Vue.js',

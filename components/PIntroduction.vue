@@ -32,9 +32,7 @@ import VTypical from 'vue-typical'
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
 const { y } = useScroll(defaultWindow, { behavior })
-const style = computed<CSSProperties>(() => {
-  return { '--background-position-y': `-${y.value / 3}px` }
-})
+const style = computed<CSSProperties>(() => ({ '--background-position-y': `-${y.value / 3}px` }))
 
 const scroll = () => {
   y.value = window.innerHeight - 64

@@ -10,7 +10,7 @@ export interface Release {
   tags: Tag[]
 }
 
-const tags: Tag[] = [
+const tags: ReadonlyTuple<Tag, 5> = [
   {
     name: 'overhaul',
     color: '#0277BD',
@@ -33,7 +33,7 @@ const tags: Tag[] = [
   },
 ]
 
-export const releases: Release[] = [
+export const releases: ReadonlyTuple<Release, 25> = [
   {
     name: '3.2.0',
     date: new Date(2023, 5, 6),

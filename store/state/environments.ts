@@ -3,7 +3,7 @@ export interface Environment {
   icon: Icon
 }
 
-export const environments: Environment[] = [
+export const environments: ReadonlyTuple<Environment, 6> = [
   {
     title: 'VSCode',
     icon: {

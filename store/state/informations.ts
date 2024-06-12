@@ -7,7 +7,7 @@ export interface Information {
   rel?: string
 }
 
-export const informations: Information[] = [
+export const informations: ReadonlyTuple<Information, 3> = [
   {
     title: 'phone',
     icon: 'phone',

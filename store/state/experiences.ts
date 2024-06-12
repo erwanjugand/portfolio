@@ -7,10 +7,10 @@ export interface Job {
 
 export interface Experience {
   enterprise: string
-  jobs: Job[]
+  jobs: Job[] | [Job]
 }
 
-export const experiences: Experience[] = [
+export const experiences: ReadonlyTuple<Experience, 3> = [
   {
     enterprise: 'Steeple',
     jobs: [
