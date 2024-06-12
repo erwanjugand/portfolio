@@ -18,8 +18,8 @@
         >
           <img
             class="header-switch-locale-image"
-            :src="`/images/flag-${currentLocale.code}.svg`"
-            :alt="currentLocale.name"
+            :src="`/images/flag-${currentLocale?.code}.svg`"
+            :alt="currentLocale?.name"
           />
           <PIcon class="header-switch-locale-icon" type="solid" name="caretDown" />
         </button>

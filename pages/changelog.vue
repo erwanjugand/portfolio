@@ -57,7 +57,7 @@ const router = useRouter()
 const { releases, releasesWithTagName } = useStore()
 
 const releasesFiltered = computed(() => {
-  const query = route.query.filter as string | undefined
+  const query = route.query.filter?.toString()
   return query ? releasesWithTagName(query) : releases
 })
 

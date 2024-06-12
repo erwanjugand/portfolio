@@ -46,7 +46,7 @@ easterEggSteps.forEach((step, index) => {
   }, step.duration)
 })
 
-const progressBarValue = computed(() => easterEggSteps[count.value].value)
+const progressBarValue = computed(() => easterEggSteps[count.value]?.value)
 const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progressBarValue.value}%` }))
 </script>
 

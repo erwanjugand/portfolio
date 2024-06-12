@@ -49,7 +49,8 @@
 </template>
 
 <script setup lang="ts">
-const { lastRelease } = useStore()
+const { releases } = useStore()
+const lastRelease = releases[0]
 const localePath = useLocalePath()
 const currentYear = useDateFormat(useNow(), 'YYYY')
 
