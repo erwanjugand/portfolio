@@ -49,7 +49,8 @@
     "vite": "5.3.1",
     "vitest": "1.6.0",
     "vue": "3.4.29",
-    "vue-tsc": "2.0.21"
+    "vue-tsc": "2.0.21",
+    "wrangler": "3.61.0"
   },
   "dependencies": {
     "@nuxtjs/robots": "3.0.0",
