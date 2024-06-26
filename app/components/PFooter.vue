@@ -1,7 +1,7 @@
 <template>
   <div class="footer-container">
     <div class="footer-easter-egg-container">
-      <button v-ripple class="footer-easter-egg" title="?????" aria-label="?????" @click="openEasterEgg">
+      <button v-ripple class="footer-easter-egg" title="?????" @click="openEasterEgg">
         <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
       </button>
     </div>
@@ -20,8 +20,7 @@
             rel="noopener"
             class="footer-github"
             href="https://github.com/erwanjugand"
-            aria-label="Github"
-            :title="$t('PFooter.github')"
+            title="Github"
           >
             <PIcon type="brand" name="github" class="footer-github-icon" />
           </a>
@@ -32,8 +31,7 @@
             rel="noopener"
             class="footer-linkedin"
             href="https://www.linkedin.com/in/erwan-jugand/"
-            aria-label="Linkedin"
-            :title="$t('PFooter.linkedin')"
+            title="Linkedin"
           >
             <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
           </a>

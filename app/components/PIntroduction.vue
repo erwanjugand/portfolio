@@ -5,6 +5,7 @@
         class="introduction-title"
         wrapper="h1"
         :loop="Infinity"
+        :aria-label="`Erwan Jugand | ${$t('PIntroduction.titleAlt')}`"
         :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]"
       />
     </ClientOnly>
@@ -12,13 +13,7 @@
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}
     </PButton>
-    <button
-      v-ripple
-      class="introduction-scroll"
-      :aria-label="$t('PIntroduction.scroll')"
-      :title="$t('PIntroduction.scroll')"
-      @click="scroll"
-    >
+    <button v-ripple class="introduction-scroll" :title="$t('PIntroduction.scroll')" @click="scroll">
       <img width="48" height="80" aria-hidden="true" class="introduction-scroll-image" src="/images/mouse.svg" alt="" />
     </button>
   </PSection>

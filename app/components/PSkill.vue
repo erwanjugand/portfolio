@@ -1,8 +1,8 @@
 <template>
   <PHexagon tag="li" tabindex="0" class="skill">
     <span class="skill-name" v-text="skill.name" />
-    <div class="skill-score">
-      <PIcon v-for="n of 3" :key="n" :type="n > skill.level ? 'light' : 'solid'" name="star" />
+    <div class="skill-score" :aria-label="$t('PSkills.level', { current: skill.level, max: MAX_LEVEL })">
+      <PIcon v-for="n of MAX_LEVEL" :key="n" :type="n > skill.level ? 'light' : 'solid'" name="star" />
     </div>
   </PHexagon>
 </template>
@@ -13,6 +13,8 @@ import { type Skill } from '~/store/state/skills'
 defineProps<{
   skill: Skill
 }>()
+
+const MAX_LEVEL = 3
 </script>
 
 <style lang="scss">

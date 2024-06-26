@@ -94,6 +94,7 @@ pages:
       text: Je vais rectifier ça au plus vite :)
 
 PAbout:
+  profileAlt: Photo de profil de Erwan Jugand
   text1: Salut, je m'appelle {name} et suis un {job} passionné et sensible aux bonnes pratiques de code.
   text1Job: développeur Front-End
   text2: Mon cursus à {school} et mon expérience chez {enterprise} m'ont permis d'affiner ma sensibilité sur le design, la gestion de projet, UX/UI et le management.
@@ -103,8 +104,6 @@ PAbout:
 
 PFooter:
   copyright: 'Copyright© {year} : Tout droits réservés.'
-  github: Mon compte Github
-  linkedin: Mon compte Linkedin
 
 PIntroduction:
   action: Afficher le CV
@@ -113,7 +112,10 @@ PIntroduction:
 
 PHeader:
   homeAction: Revenir sur l'accueil
-  langAction: Changer de langue
+  langAction: Changer la langue du site
+  langActionLabel: "@:PHeader.langAction{','} langue actuelle : {lang}"
+  themeAction: Changer le thème du site
+  themeActionLabel: "@:PHeader.themeAction{','} thème actuel : {theme}"
 
 PEnvironments:
   title: Mon environnement
@@ -123,6 +125,7 @@ PExperiences:
 
 PSkills:
   title: Mes compétences
+  level: 'Niveau de compétence : {current} sur {max}'
 
 PMoreInformations:
   address: Adresse

@@ -87,6 +87,7 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
   &-progress {
     display: flex;
     height: 24px;
+    margin-top: 16px;
     overflow: hidden;
     border: 1px solid $grey-90;
     border-radius: $br-small;

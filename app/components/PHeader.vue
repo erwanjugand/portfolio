@@ -12,7 +12,7 @@
           class="header-switch-locale"
           aria-controls="menu-locales"
           :aria-expanded="localeMenuIsOpen"
-          :aria-label="$t('PHeader.langAction')"
+          :aria-label="$t('PHeader.langActionLabel', { lang: currentLocale?.name })"
           :title="$t('PHeader.langAction')"
           @click="localeMenuIsOpen = !localeMenuIsOpen"
         >
@@ -31,7 +31,6 @@
                 class="header-switch-locale-list-link"
                 role="menuitem"
                 :to="switchLocalePath(otherLocale.code)"
-                :aria-label="otherLocale.name"
                 :title="otherLocale.name"
                 @click="closeMenu"
               >
@@ -52,8 +51,8 @@
           <button
             v-ripple
             class="header-toggle-theme"
-            :aria-label="currentModeName"
-            :title="currentModeName"
+            :aria-label="$t('PHeader.themeActionLabel', { theme: currentModeName })"
+            :title="$t('PHeader.themeAction')"
             @click="toggleMode()"
           >
             <PIcon class="header-toggle-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />

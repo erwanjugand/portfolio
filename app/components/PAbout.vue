@@ -15,7 +15,7 @@
           class="about-profile"
           src="/images/erwan-jugand-x1.webp"
           srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
-          alt="Erwan Jugand"
+          :alt="$t('PAbout.profileAlt')"
         />
       </picture>
       <div class="xs12 l8 about-content scroll-animation-fade">

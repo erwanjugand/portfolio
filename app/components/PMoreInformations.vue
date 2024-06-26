@@ -19,6 +19,7 @@
           :rel="information.rel"
           :target="information.target"
           class="information-link"
+          :aria-label="`${$t(`PMoreInformations.${information.title}`)} : ${information.content}`"
         >
           <span v-text="$t(`PMoreInformations.${information.title}`)" />
           <span v-text="information.content" />

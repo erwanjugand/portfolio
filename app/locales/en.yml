@@ -94,6 +94,7 @@ pages:
       text: I will rectify this as soon as possible :)
 
 PAbout:
+  profileAlt: Profile picture of Erwan Jugand
   text1: Hello, my name is {name} and I am a passionate {job} and sensitive to good practices.
   text1Job: Front-End developer
   text2: My experience at {school} and at {enterprise} helped me to refine my sensibility on design, project management, UX/UI and team management.
@@ -103,8 +104,6 @@ PAbout:
 
 PFooter:
   copyright: 'Copyright© {year}: All rights reserved.'
-  github: Github account
-  linkedin: Linkedin account
 
 PIntroduction:
   action: Show CV
@@ -113,7 +112,10 @@ PIntroduction:
 
 PHeader:
   homeAction: Back to home
-  langAction: Change language
+  langAction: Change site language
+  langActionLabel: "@:PHeader.langAction{','} current language: {lang}"
+  themeAction: Change site theme
+  themeActionLabel: "@:PHeader.themeAction{','} current theme: {theme}"
 
 PEnvironments:
   title: Environment
@@ -123,6 +125,7 @@ PExperiences:
 
 PSkills:
   title: Skills
+  level: 'Skill level: {current} out of {max}'
 
 PMoreInformations:
   address: Address
