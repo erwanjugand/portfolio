@@ -41,8 +41,10 @@ const scroll = () => {
     min-height: 100vh;
     padding: 128px 0 64px;
     background-image: image-set(
-      url('/images/background-mobile-x1.webp') 1x,
-      url('/images/background-mobile-x2.webp') 2x
+      url('/images/background-mobile-x1.avif') type('image/avif') 1x,
+      url('/images/background-mobile-x2.avif') type('image/avif') 2x,
+      url('/images/background-mobile-x1.webp') type('image/webp') 1x,
+      url('/images/background-mobile-x2.webp') type('image/webp') 2x
     );
     background-repeat: no-repeat;
     background-position: center bottom var(--background-position-y);
@@ -55,27 +57,11 @@ const scroll = () => {
 
     @media #{$large-and-up} {
       background-image: image-set(
-        url('/images/background-desktop-x1.webp') 1x,
-        url('/images/background-desktop-x2.webp') 2x
+        url('/images/background-desktop-x1.avif') type('image/avif') 1x,
+        url('/images/background-desktop-x2.avif') type('image/avif') 2x,
+        url('/images/background-desktop-x1.webp') type('image/webp') 1x,
+        url('/images/background-desktop-x2.webp') type('image/webp') 2x
       );
-    }
-
-    @supports (background-image: image-set(url('/images/background-mobile-x1.avif') type('image/avif'))) {
-      background-image: image-set(
-        url('/images/background-mobile-x1.avif') type('image/avif') 1x,
-        url('/images/background-mobile-x2.avif') type('image/avif') 2x,
-        url('/images/background-mobile-x1.webp') type('image/webp') 1x,
-        url('/images/background-mobile-x2.webp') type('image/webp') 2x
-      );
-
-      @media #{$large-and-up} {
-        background-image: image-set(
-          url('/images/background-desktop-x1.avif') type('image/avif') 1x,
-          url('/images/background-desktop-x2.avif') type('image/avif') 2x,
-          url('/images/background-desktop-x1.webp') type('image/webp') 1x,
-          url('/images/background-desktop-x2.webp') type('image/webp') 2x
-        );
-      }
     }
   }
 
