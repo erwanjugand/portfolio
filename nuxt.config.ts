@@ -2,6 +2,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+
   runtimeConfig: {
     rapidApiKey: process.env.RAPID_API_KEY,
     rapidApiHost: process.env.RAPID_API_HOST,
@@ -89,4 +90,6 @@ export default defineNuxtConfig({
       Roboto: [300, 400, 500],
     },
   },
+
+  compatibilityDate: '2024-07-07',
 })
