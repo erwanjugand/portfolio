@@ -52,7 +52,7 @@
     "vue-tsc": "2.0.26"
   },
   "dependencies": {
-    "@nuxtjs/robots": "3.0.0",
+    "@nuxtjs/robots": "4.0.1",
     "@pinia/nuxt": "0.5.1",
     "nuxt-cloudflare-analytics": "1.0.8",
     "v-wave": "2.0.0",
