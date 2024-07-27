@@ -30,7 +30,7 @@
     "@nuxt/test-utils": "3.14.0",
     "@nuxtjs/color-mode": "3.4.2",
     "@nuxtjs/google-fonts": "3.2.0",
-    "@nuxtjs/i18n": "8.3.1",
+    "@nuxtjs/i18n": "8.3.2",
     "@vueuse/nuxt": "10.11.0",
     "cypress": "13.13.1",
     "eslint": "9.8.0",
