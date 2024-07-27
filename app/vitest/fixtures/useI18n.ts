@@ -12,7 +12,6 @@ const i18nLocaleObjects: LocaleObject[] = i18nLocales.map(locale => ({
 }))
 
 const mockUseI18n = (locale: locale) =>
-  // @ts-expect-error vue-i18n is not typed
   vi.spyOn(vueI18n, 'useI18n').mockImplementation(() => {
     return {
       locale: computed(() => locale),
