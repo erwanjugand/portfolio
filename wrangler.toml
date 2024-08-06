@@ -1,5 +1,5 @@
 main = ".output/server/index.mjs"
-compatibility_date = "2024-05-13"
+compatibility_date = "2024-06-03"
 
 [site]
 bucket = ".output/public"

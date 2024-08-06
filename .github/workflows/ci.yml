@@ -106,6 +106,7 @@ jobs:
         if: ${{ !env.ACT }}
         uses: cloudflare/wrangler-action@v3
         with:
+          wranglerVersion: '3.69'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --env ${{ github.ref_name == 'main' && 'prod' || 'dev' }}
