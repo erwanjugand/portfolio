@@ -1,4 +1,4 @@
-import { type LocaleObject } from '@nuxtjs/i18n'
+import type { LocaleObject } from '@nuxtjs/i18n'
 import { vi } from 'vitest'
 import { computed } from 'vue'
 import * as vueI18n from 'vue-i18n'

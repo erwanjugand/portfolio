@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { type Skill } from '~/store/state/skills'
+import type { Skill } from '~/store/state/skills'
 
 defineProps<{
   skill: Skill

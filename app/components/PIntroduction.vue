@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { defaultWindow } from '@vueuse/core'
-import { type CSSProperties } from 'vue'
+import type { CSSProperties } from 'vue'
 import VTypical from 'vue-typical'
 
 const localePath = useLocalePath()
