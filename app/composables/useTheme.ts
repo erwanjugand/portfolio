@@ -1,8 +1,7 @@
 import { useI18n } from 'vue-i18n'
-import { type Icon } from './useIcon'
+import type { Icon } from './useIcon'
 
-const modeName = ['system', 'light', 'dark', 'hacked'] as const
-type ModeName = (typeof modeName)[number]
+type ModeName = 'system' | 'light' | 'dark' | 'hacked'
 type ModeIcons = Record<ModeName, Icon>
 
 const modeIcons: ModeIcons = {

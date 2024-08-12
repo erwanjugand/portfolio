@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { type Experience } from '~/store/state/experiences'
+import type { Experience } from '~/store/state/experiences'
 
 const props = defineProps<{
   experience: Experience
