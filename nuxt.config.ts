@@ -91,5 +91,10 @@ export default defineNuxtConfig({
     },
   },
 
+  // Nuxt disabled props destructuring by default
+  vue: {
+    propsDestructure: true,
+  },
+
   compatibilityDate: '2024-07-07',
 })

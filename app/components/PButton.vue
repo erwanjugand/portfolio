@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 
-const props = defineProps<{
+const { to } = defineProps<{
   outlined?: boolean
   disabled?: boolean
   to?: RouteLocationRaw
@@ -21,7 +21,7 @@ const props = defineProps<{
 
 const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
-const type = computed(() => (props.to ? nuxtLink : attrs.href ? 'a' : 'button'))
+const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
 </script>
 
 <style lang="scss">

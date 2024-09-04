@@ -8,11 +8,11 @@
 <script setup lang="ts">
 import type { Experience } from '~/store/state/experiences'
 
-const props = defineProps<{
+const { experience } = defineProps<{
   experience: Experience
 }>()
 
-const hasOneJob = computed(() => props.experience.jobs.length === 1)
+const hasOneJob = computed(() => experience.jobs.length === 1)
 </script>
 
 <style lang="scss">

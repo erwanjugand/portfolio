@@ -10,14 +10,9 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    tag?: keyof HTMLElementTagNameMap
-  }>(),
-  {
-    tag: 'div',
-  },
-)
+const { tag = 'div' } = defineProps<{
+  tag?: keyof HTMLElementTagNameMap
+}>()
 </script>
 
 <style lang="scss">

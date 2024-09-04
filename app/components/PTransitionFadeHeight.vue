@@ -24,15 +24,10 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    group?: boolean
-    tag?: keyof HTMLElementTagNameMap
-  }>(),
-  {
-    tag: 'div',
-  },
-)
+const { tag = 'div' } = defineProps<{
+  group?: boolean
+  tag?: keyof HTMLElementTagNameMap
+}>()
 
 const beforeEnterLeave = (el: Element) => {
   if (!(el instanceof HTMLElement)) return

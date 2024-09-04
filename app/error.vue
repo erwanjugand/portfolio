@@ -18,14 +18,14 @@ import { useI18n } from 'vue-i18n'
 
 const localePath = useLocalePath()
 
-const props = defineProps<{
+const { error } = defineProps<{
   error: NuxtError
 }>()
 
 const { t } = useI18n()
 
 const errorStatus = computed(() => {
-  const is4xxError = /4\d{2}/.test(props.error.statusCode.toString())
+  const is4xxError = /4\d{2}/.test(error.statusCode.toString())
   return is4xxError ? '4xx' : '5xx'
 })
 

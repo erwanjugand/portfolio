@@ -13,24 +13,24 @@
 import { useI18n } from 'vue-i18n'
 import type { Job } from '~/store/state/experiences'
 
-const props = defineProps<{
+const { job } = defineProps<{
   job: Job
 }>()
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
 const currentDate = new Date()
-const finishedAtValue = computed(() => props.job.finishedAt ?? currentDate)
+const finishedAtValue = computed(() => job.finishedAt ?? currentDate)
 
 const { d, t } = useI18n()
-const title = computed(() => t(`PJob.items.${props.job.key}.title`))
-const description = computed(() => t(`PJob.items.${props.job.key}.description`))
-const contract = computed(() => `. ${t(`PJob.contract.${props.job.contract}`)}`)
-const startedAt = computed(() => d(props.job.startedAt, 'short'))
+const title = computed(() => t(`PJob.items.${job.key}.title`))
+const description = computed(() => t(`PJob.items.${job.key}.description`))
+const contract = computed(() => `. ${t(`PJob.contract.${job.contract}`)}`)
+const startedAt = computed(() => d(job.startedAt, 'short'))
 const finishedAt = computed(() => {
   const isToday = finishedAtValue.value === currentDate
   return isToday ? t('PJob.today') : d(finishedAtValue.value, 'short')
 })
-const { duration } = useDateFormatDuration(() => props.job.startedAt, finishedAtValue)
+const { duration } = useDateFormatDuration(() => job.startedAt, finishedAtValue)
 const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${duration.value}`)
 </script>
 
