@@ -3,15 +3,10 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(
-  defineProps<{
-    date: Date
-    format?: 'short' | 'long'
-  }>(),
-  {
-    format: 'long',
-  },
-)
+const { date, format = 'long' } = defineProps<{
+  date: Date
+  format?: 'short' | 'long'
+}>()
 
-const datetime = computed(() => props.date.toISOString())
+const datetime = computed(() => date.toISOString())
 </script>

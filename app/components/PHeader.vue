@@ -72,7 +72,7 @@ const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
 // Menu
-const switchLocaleContainer = ref(null)
+const switchLocaleContainer = ref<HTMLDivElement | null>(null)
 const localeMenuIsOpen = ref(false)
 const closeMenu = () => {
   localeMenuIsOpen.value = false
