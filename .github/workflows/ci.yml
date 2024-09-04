@@ -73,6 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nuxt-cloudflare-build
+          include-hidden-files: true
           path: |
             .output
             .nuxt/tsconfig.json
