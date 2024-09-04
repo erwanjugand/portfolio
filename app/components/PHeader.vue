@@ -37,7 +37,7 @@
                 <img
                   class="header-switch-locale-image"
                   loading="lazy"
-                  :src="`/images/flag-${otherLocale.iso}.svg`"
+                  :src="`/images/flag-${otherLocale.language}.svg`"
                   :alt="otherLocale.name"
                 />
               </NuxtLink>
