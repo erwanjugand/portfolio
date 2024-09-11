@@ -1,7 +1,7 @@
 <template>
   <Component
     :is="type"
-    v-ripple="!disabled"
+    v-ripple
     :disabled="disabled || undefined"
     :to
     :class="['button', outlined ? 'button-outlined' : 'button-filled']"
