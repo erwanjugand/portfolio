@@ -56,7 +56,7 @@
     "@nuxtjs/robots": "4.1.6",
     "@pinia/nuxt": "0.5.4",
     "nuxt-cloudflare-analytics": "1.0.8",
-    "v-wave": "2.0.0",
+    "v-wave": "3.0.2",
     "vue-typical": "2.1.0"
   }
 }

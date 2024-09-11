@@ -18,8 +18,8 @@ importers:
         specifier: 1.0.8
         version: 1.0.8(magicast@0.3.5)(rollup@4.21.2)
       v-wave:
-        specifier: 2.0.0
-        version: 2.0.0(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.3(typescript@5.5.4))
+        specifier: 3.0.2
+        version: 3.0.2(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.3(typescript@5.5.4))
       vue-typical:
         specifier: 2.1.0
         version: 2.1.0
@@ -4730,8 +4730,8 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
-  v-wave@2.0.0:
-    resolution: {integrity: sha512-AFr1kUvSDyInqUHqR+cVtBKAr6s1w9X13abxHUUtCHvhpLYZhnjyDynJ1HqLH6sNwXxJqvGx/dh2Z2tkgu2I5w==}
+  v-wave@3.0.2:
+    resolution: {integrity: sha512-o1KcUr5y6pL/TR/V7SuzDdHcL8+qkxSCwdUuBiLULs1wfRL7kvGUsxmuKQwvB94Ee9QEwz/zR5O1TwKJ87bWzQ==}
     peerDependencies:
       vue: ^2.0.0 || ^3.0.0
 
@@ -10291,7 +10291,7 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  v-wave@2.0.0(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.3(typescript@5.5.4)):
+  v-wave@3.0.2(magicast@0.3.5)(rollup@4.21.2)(vue@3.5.3(typescript@5.5.4)):
     dependencies:
       '@nuxt/kit': 3.13.1(magicast@0.3.5)(rollup@4.21.2)
       vue: 3.5.3(typescript@5.5.4)
