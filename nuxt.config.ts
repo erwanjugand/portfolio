@@ -15,6 +15,9 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
+          // TODO: Replace `silenceDeprecations` by `api`: https://github.com/nuxt/nuxt/issues/28723
+          // api: 'modern-compiler'
+          silenceDeprecations: ['legacy-js-api'],
           additionalData: '@use "sass:math"; @import "@/assets/scss/variables.scss";',
         },
       },
@@ -55,13 +58,13 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'fr',
-        iso: 'fr',
+        language: 'fr',
         name: 'Français',
         file: 'fr.yml',
       },
       {
         code: 'en',
-        iso: 'en',
+        language: 'en',
         name: 'English',
         file: 'en.yml',
       },
@@ -71,10 +74,7 @@ export default defineNuxtConfig({
   },
 
   robots: {
-    rules: {
-      UserAgent: '*',
-      Disallow: process.env.ROBOTS_DISALLOW_VALUE ?? '',
-    },
+    disallow: process.env.ROBOTS_DISALLOW_VALUE,
   },
 
   cloudflareAnalytics: {
