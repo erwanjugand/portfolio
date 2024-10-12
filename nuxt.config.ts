@@ -15,9 +15,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          // TODO: Replace `silenceDeprecations` by `api`: https://github.com/nuxt/nuxt/issues/28723
-          // api: 'modern-compiler'
-          silenceDeprecations: ['legacy-js-api'],
+          api: 'modern-compiler',
           additionalData: '@use "sass:math"; @import "@/assets/scss/variables.scss";',
         },
       },
