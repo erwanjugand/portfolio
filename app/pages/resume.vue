@@ -152,7 +152,7 @@ defineI18nRoute({
   grid: 'h' 'a' 'm' 1fr;
   height: 100%;
 
-  @media #{$medium-and-up} {
+  @media #{variables.$medium-and-up} {
     grid: 'h h' 'a m' 1fr / minmax(240px, 30%) 1fr;
   }
 
@@ -162,11 +162,11 @@ defineI18nRoute({
     grid-area: h;
     justify-content: center;
     padding: 24px 16px;
-    background: $grey-84;
-    color: $grey-0;
+    background: variables.$grey-84;
+    color: variables.$grey-0;
     gap: 16px;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       grid: 'i t' 'i p' / minmax(208px, calc(30% - 32px)) auto;
       justify-content: flex-start;
       gap: 16px 64px;
@@ -186,14 +186,14 @@ defineI18nRoute({
       grid-area: t;
       align-self: flex-end;
       font-size: 3em;
-      font-weight: $fw-light;
+      font-weight: variables.$fw-light;
     }
 
     &-post {
       grid-area: p;
       align-self: flex-start;
       opacity: 0.8;
-      font-weight: $fw-light;
+      font-weight: variables.$fw-light;
       text-transform: uppercase;
     }
   }
@@ -204,8 +204,8 @@ defineI18nRoute({
     flex-direction: column;
     gap: 32px;
     padding: 32px 16px;
-    background-color: $grey-87;
-    color: $grey-0;
+    background-color: variables.$grey-87;
+    color: variables.$grey-0;
 
     &-title {
       display: flex;
@@ -216,7 +216,7 @@ defineI18nRoute({
         position: relative;
         z-index: 1;
         padding: 0 8px;
-        background-color: $grey-87;
+        background-color: variables.$grey-87;
         text-align: center;
         text-transform: uppercase;
       }
@@ -226,7 +226,7 @@ defineI18nRoute({
         top: calc(50% - 1px);
         width: 100%;
         height: 1px;
-        background-color: $grey-75;
+        background-color: variables.$grey-75;
       }
     }
 
@@ -241,13 +241,13 @@ defineI18nRoute({
         display: flex;
         align-items: center;
         gap: 8px;
-        color: $grey-25;
+        color: variables.$grey-25;
         font-size: 0.875em;
 
         &-icon {
           flex: 0 0 1.25rem;
           height: 1rem;
-          fill: $grey-35;
+          fill: variables.$grey-35;
         }
       }
     }
@@ -267,13 +267,13 @@ defineI18nRoute({
 
       &-icon {
         height: 2em;
-        fill: $grey-25;
+        fill: variables.$grey-25;
       }
 
       &-text {
-        color: $grey-25;
+        color: variables.$grey-25;
         font-size: 0.75rem;
-        font-weight: $fw-light;
+        font-weight: variables.$fw-light;
         text-align: center;
       }
     }
@@ -284,14 +284,14 @@ defineI18nRoute({
     grid-area: m;
     flex-direction: column;
     padding: 32px 24px;
-    color: $grey-90;
+    color: variables.$grey-90;
     gap: 32px;
     container-type: inline-size;
 
     &-title {
       color: var(--c-primary);
       font-size: 1.25em;
-      font-weight: $fw-bold;
+      font-weight: variables.$fw-bold;
       text-transform: uppercase;
     }
 
@@ -303,7 +303,7 @@ defineI18nRoute({
       &-enterprise {
         color: var(--c-primary);
         font-size: 1.125em;
-        font-weight: $fw-bold;
+        font-weight: variables.$fw-bold;
       }
 
       &-job-title {

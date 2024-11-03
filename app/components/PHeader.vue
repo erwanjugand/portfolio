@@ -90,9 +90,9 @@ onClickOutside(switchLocaleContainer, closeMenu)
   backdrop-filter: blur(20px);
   box-shadow:
     inset 0 -1px 0 0 var(--c-border),
-    0 3px 1px -2px rgba($grey-100, 0.2),
-    0 2px 2px 0 rgba($grey-100, 0.14),
-    0 1px 5px 0 rgba($grey-100, 0.12);
+    0 3px 1px -2px rgba(variables.$grey-100, 0.2),
+    0 2px 2px 0 rgba(variables.$grey-100, 0.14),
+    0 1px 5px 0 rgba(variables.$grey-100, 0.12);
 
   @media print {
     display: none;
@@ -100,18 +100,18 @@ onClickOutside(switchLocaleContainer, closeMenu)
 
   .dark-mode &,
   .hacked-mode & {
-    background-color: rgba($grey-87, 80%);
+    background-color: rgba(variables.$grey-87, 80%);
 
     @media (prefers-contrast: more) {
-      background-color: rgba($grey-90, 90%);
+      background-color: rgba(variables.$grey-90, 90%);
     }
   }
 
   .light-mode & {
-    background-color: rgba($grey-0, 80%);
+    background-color: rgba(variables.$grey-0, 80%);
 
     @media (prefers-contrast: more) {
-      background-color: rgba($grey-0, 90%);
+      background-color: rgba(variables.$grey-0, 90%);
     }
   }
 
@@ -131,7 +131,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
     text-transform: uppercase;
     justify-self: flex-start;
 
-    @media #{$small-and-down} {
+    @media #{variables.$small-and-down} {
       font-size: 0;
     }
   }
@@ -175,7 +175,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
       left: 50%;
       transform: translateX(-50%);
       transition: transform var(--transition);
-      border-radius: $br-small;
+      border-radius: variables.$br-small;
       background-color: var(--c-background-3);
 
       &-link {
@@ -190,11 +190,11 @@ onClickOutside(switchLocaleContainer, closeMenu)
 
       &-item {
         &:first-child .header-switch-locale-list-link {
-          border-radius: $br-small 0 0 $br-small;
+          border-radius: variables.$br-small 0 0 variables.$br-small;
         }
 
         &:last-child .header-switch-locale-list-link {
-          border-radius: 0 $br-small $br-small 0;
+          border-radius: 0 variables.$br-small variables.$br-small 0;
         }
       }
     }

@@ -55,7 +55,7 @@ const scroll = () => {
       min-height: 100svh;
     }
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       background-image: image-set(
         url('/images/background-desktop-x1.avif') type('image/avif') 1x,
         url('/images/background-desktop-x2.avif') type('image/avif') 2x,
@@ -68,23 +68,23 @@ const scroll = () => {
   h1 {
     padding: 0 1em;
     transition: font-size var(--transition);
-    color: $grey-0;
+    color: variables.$grey-0;
     font-size: 2em;
     text-align: center;
-    text-shadow: 0 0 10px $grey-100;
+    text-shadow: 0 0 10px variables.$grey-100;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       font-size: 3em;
     }
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       font-size: 4em;
     }
 
     &::after {
       content: '|';
       animation: blink 1s infinite step-start;
-      font-weight: $fw-light;
+      font-weight: variables.$fw-light;
     }
   }
 
@@ -98,7 +98,7 @@ const scroll = () => {
 
     border-radius: 99px;
     opacity: 0.75;
-    color: $grey-0;
+    color: variables.$grey-0;
 
     &-image {
       display: flex;

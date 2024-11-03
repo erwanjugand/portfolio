@@ -26,7 +26,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
 
 <style lang="scss">
 .button {
-  --focus-radius: #{$br-small};
+  --focus-radius: #{variables.$br-small};
   --focus-offset: 2px;
 
   display: flex;
@@ -36,9 +36,9 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
   transition:
     background-color var(--transition),
     opacity var(--transition);
-  border-radius: $br-small;
+  border-radius: variables.$br-small;
   box-shadow: inset 0 0 0 2px transparent;
-  font-weight: $fw-bold;
+  font-weight: variables.$fw-bold;
   line-height: 1.25em;
   text-transform: uppercase;
   gap: 16px;
@@ -54,7 +54,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
     color: var(--c-primary);
 
     &:hover:not(:disabled) {
-      background-color: rgba($primary, 0.1);
+      background-color: rgba(variables.$primary, 0.1);
     }
   }
 

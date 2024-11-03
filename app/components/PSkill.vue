@@ -32,7 +32,7 @@ const MAX_LEVEL = 3
     transform: translateY(0);
     transition: transform var(--transition);
 
-    @media #{$touchscreen} {
+    @media #{variables.$touchscreen} {
       transform: translateY(-2.5rem);
     }
 
@@ -52,7 +52,7 @@ const MAX_LEVEL = 3
     transition: var(--transition);
     opacity: 0;
 
-    @media #{$touchscreen} {
+    @media #{variables.$touchscreen} {
       @include show-content;
     }
 

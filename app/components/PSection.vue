@@ -18,7 +18,7 @@ section.section {
   padding: 64px 0;
   transition: padding var(--transition);
 
-  @media #{$large-and-up} {
+  @media #{variables.$large-and-up} {
     padding: 96px 0;
   }
 

@@ -1,5 +1,8 @@
-@import 'the-new-css-reset';
-@import './variables';
-@import './grid';
-@import './global';
-@import './animations';
+@use 'sass:meta';
+
+// @import 'the-new-css-reset/css/reset.css';
+@include meta.load-css('the-new-css-reset');
+@include meta.load-css('variables');
+@include meta.load-css('grid');
+@include meta.load-css('global');
+@include meta.load-css('animations');

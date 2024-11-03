@@ -7,7 +7,7 @@
 <style lang="scss">
 .h2 {
   font-size: 2em;
-  font-weight: $fw-bold;
+  font-weight: variables.$fw-bold;
   text-align: center;
 }
 </style>
