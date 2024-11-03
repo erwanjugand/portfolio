@@ -20,7 +20,7 @@ const { tag = 'div' } = defineProps<{
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: variables.$br-large variables.$br-small;
+  border-radius: var(--border-radius-large) var(--border-radius-small);
   background-color: var(--c-background-1);
   box-shadow:
     inset 0 0 0 1px var(--c-border),
@@ -47,7 +47,7 @@ const { tag = 'div' } = defineProps<{
       align-items: center;
       transition: margin var(--transition);
       font-size: 1.5em;
-      font-weight: variables.$fw-regular;
+      font-weight: var(--font-weight-regular);
 
       svg {
         flex-shrink: 0;
@@ -66,7 +66,7 @@ const { tag = 'div' } = defineProps<{
   &-content {
     padding: 0 24px 16px;
     transition: padding var(--transition);
-    font-weight: variables.$fw-light;
+    font-weight: var(--font-weight-light);
 
     @media #{variables.$medium-and-up} {
       padding: 0 32px 32px;

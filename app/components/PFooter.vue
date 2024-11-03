@@ -119,7 +119,7 @@ const closeEasterEgg = () => {
     justify-content: center;
     width: 64px;
     height: 64px;
-    border-radius: variables.$br-small;
+    border-radius: var(--border-radius-small);
     justify-self: center;
 
     &-icon {
@@ -138,7 +138,7 @@ const closeEasterEgg = () => {
 
   &-last-version,
   &-legal-mentions {
-    --focus-radius: #{variables.$br-small};
+    --focus-radius: var(--border-radius-small);
     --focus-offset: 4px;
 
     &:hover {
@@ -147,7 +147,7 @@ const closeEasterEgg = () => {
   }
 
   &-easter-egg {
-    --focus-radius: #{variables.$br-small variables.$br-small} 0 0;
+    --focus-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
 
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@ const closeEasterEgg = () => {
     transition:
       transform var(--transition),
       color var(--transition);
-    border-radius: variables.$br-small variables.$br-small 0 0;
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
     fill: currentcolor;
     color: var(--c-text-secondary-1);
 

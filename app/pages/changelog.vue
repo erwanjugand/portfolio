@@ -89,7 +89,7 @@ const filter = (name: string) => {
     margin-bottom: 16px;
     padding: 8px 16px;
     transition: opacity var(--transition);
-    border-radius: variables.$br-regular;
+    border-radius: var(--border-radius-regular);
     color: variables.$grey-0;
     font-size: 14px;
     line-height: 1.2;

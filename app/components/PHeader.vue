@@ -175,7 +175,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
       left: 50%;
       transform: translateX(-50%);
       transition: transform var(--transition);
-      border-radius: variables.$br-small;
+      border-radius: var(--border-radius-small);
       background-color: var(--c-background-3);
 
       &-link {
@@ -190,11 +190,11 @@ onClickOutside(switchLocaleContainer, closeMenu)
 
       &-item {
         &:first-child .header-switch-locale-list-link {
-          border-radius: variables.$br-small 0 0 variables.$br-small;
+          border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
         }
 
         &:last-child .header-switch-locale-list-link {
-          border-radius: 0 variables.$br-small variables.$br-small 0;
+          border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
         }
       }
     }

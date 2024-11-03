@@ -84,7 +84,7 @@ const scroll = () => {
     &::after {
       content: '|';
       animation: blink 1s infinite step-start;
-      font-weight: variables.$fw-light;
+      font-weight: var(--font-weight-light);
     }
   }
 

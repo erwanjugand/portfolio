@@ -26,7 +26,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
 
 <style lang="scss">
 .button {
-  --focus-radius: #{variables.$br-small};
+  --focus-radius: var(--border-radius-small);
   --focus-offset: 2px;
 
   display: flex;
@@ -36,9 +36,9 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
   transition:
     background-color var(--transition),
     opacity var(--transition);
-  border-radius: variables.$br-small;
+  border-radius: var(--border-radius-small);
   box-shadow: inset 0 0 0 2px transparent;
-  font-weight: variables.$fw-bold;
+  font-weight: var(--font-weight-bold);
   line-height: 1.25em;
   text-transform: uppercase;
   gap: 16px;

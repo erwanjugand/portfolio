@@ -8,6 +8,16 @@
 
   // Transition
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Border
+  --border-radius-small: 8px;
+  --border-radius-regular: 16px;
+  --border-radius-large: 32px;
+
+  // Font
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 500;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -120,7 +130,7 @@ li::marker {
 a,
 button {
   &:focus-visible {
-    border-radius: var(--focus-radius, variables.$br-regular);
+    border-radius: var(--focus-radius, var(--border-radius-regular));
     outline: 2px solid var(--c-text);
     outline-offset: var(--focus-offset, -2px);
   }

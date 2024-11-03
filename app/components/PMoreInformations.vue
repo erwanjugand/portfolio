@@ -51,7 +51,7 @@ const { informations } = useStore()
     align-items: center;
     margin-top: 24px;
     padding: 8px 16px;
-    border-radius: variables.$br-regular;
+    border-radius: var(--border-radius-regular);
     text-decoration: none;
     gap: 8px;
   }

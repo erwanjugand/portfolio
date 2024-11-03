@@ -51,7 +51,7 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
 
   &-title {
     grid-area: a;
-    font-weight: variables.$fw-bold;
+    font-weight: var(--font-weight-bold);
   }
 
   &-contract {

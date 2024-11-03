@@ -186,14 +186,14 @@ defineI18nRoute({
       grid-area: t;
       align-self: flex-end;
       font-size: 3em;
-      font-weight: variables.$fw-light;
+      font-weight: var(--font-weight-light);
     }
 
     &-post {
       grid-area: p;
       align-self: flex-start;
       opacity: 0.8;
-      font-weight: variables.$fw-light;
+      font-weight: var(--font-weight-light);
       text-transform: uppercase;
     }
   }
@@ -273,7 +273,7 @@ defineI18nRoute({
       &-text {
         color: variables.$grey-25;
         font-size: 0.75rem;
-        font-weight: variables.$fw-light;
+        font-weight: var(--font-weight-light);
         text-align: center;
       }
     }
@@ -291,7 +291,7 @@ defineI18nRoute({
     &-title {
       color: var(--c-primary);
       font-size: 1.25em;
-      font-weight: variables.$fw-bold;
+      font-weight: var(--font-weight-bold);
       text-transform: uppercase;
     }
 
@@ -303,7 +303,7 @@ defineI18nRoute({
       &-enterprise {
         color: var(--c-primary);
         font-size: 1.125em;
-        font-weight: variables.$fw-bold;
+        font-weight: var(--font-weight-bold);
       }
 
       &-job-title {

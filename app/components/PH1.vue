@@ -13,7 +13,7 @@
     font-size var(--transition);
   color: var(--c-primary);
   font-size: 2.5em;
-  font-weight: variables.$fw-bold;
+  font-weight: var(--font-weight-bold);
   text-align: center;
 
   @media #{variables.$large-and-up} {

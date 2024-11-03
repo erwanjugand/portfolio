@@ -29,7 +29,7 @@ $diagonal: math.sqrt(3);
     position: relative;
     padding-left: 64px;
     font-size: 1.5em;
-    font-weight: variables.$fw-bold;
+    font-weight: var(--font-weight-bold);
 
     &::before {
       content: '';
