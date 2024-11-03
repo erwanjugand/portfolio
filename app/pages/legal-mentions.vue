@@ -170,11 +170,11 @@ defineI18nRoute({
   align-items: flex-start;
 
   .h2 {
-    margin: 32px 0;
+    margin-block: 32px;
   }
 
   p {
-    margin: 16px 0;
+    margin-block: 16px;
   }
 
   strong {

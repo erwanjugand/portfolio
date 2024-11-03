@@ -37,17 +37,17 @@ $columns: (
 
 .container {
   width: min(90vw, 1280px);
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .medium-container {
   width: min(90vw, 960px);
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .small-container {
   width: min(90vw, 640px);
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .row {

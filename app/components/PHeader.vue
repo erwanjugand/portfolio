@@ -124,7 +124,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
   &-home {
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding-inline: 16px;
     transition: font-size var(--transition);
     font-size: 1.125em;
     text-decoration: none;
@@ -145,7 +145,7 @@ onClickOutside(switchLocaleContainer, closeMenu)
   &-switch-locale {
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding-inline: 16px;
 
     &-container {
       display: flex;

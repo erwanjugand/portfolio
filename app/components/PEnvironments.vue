@@ -41,7 +41,7 @@ const { environments } = useStore()
     top: 100%;
     left: 0;
     width: calc(100% + 32px);
-    margin: 0 -16px;
+    margin-inline: -16px;
     transform: translateY(-100%);
     transition:
       transform var(--transition),

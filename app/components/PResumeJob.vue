@@ -39,7 +39,7 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 0 8px;
+  padding-inline: 8px;
 
   &-header {
     display: grid;

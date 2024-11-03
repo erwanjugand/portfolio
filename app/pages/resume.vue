@@ -215,7 +215,7 @@ defineI18nRoute({
       &-text {
         position: relative;
         z-index: 1;
-        padding: 0 8px;
+        padding-inline: 8px;
         background-color: variables.$grey-87;
         text-align: center;
         text-transform: uppercase;
@@ -255,7 +255,7 @@ defineI18nRoute({
     &-environments {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      padding: 0 16px;
+      padding-inline: 16px;
       gap: 16px;
       justify-items: center;
     }

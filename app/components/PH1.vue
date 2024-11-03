@@ -7,7 +7,7 @@
 <style lang="scss">
 .h1 {
   align-self: center;
-  margin: 64px 0;
+  margin-block: 64px;
   transition:
     margin var(--transition),
     font-size var(--transition);
@@ -17,7 +17,7 @@
   text-align: center;
 
   @media #{variables.$large-and-up} {
-    margin: 32px 0 64px;
+    margin-block: 32px 64px;
     font-size: 3em;
   }
 }

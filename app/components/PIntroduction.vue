@@ -39,7 +39,7 @@ const scroll = () => {
   &.section {
     justify-content: space-around;
     min-height: 100vh;
-    padding: 128px 0 64px;
+    padding-block: 128px 64px;
     background-image: image-set(
       url('/images/background-mobile-x1.avif') type('image/avif') 1x,
       url('/images/background-mobile-x2.avif') type('image/avif') 2x,
@@ -66,7 +66,7 @@ const scroll = () => {
   }
 
   h1 {
-    padding: 0 1em;
+    padding-inline: 1em;
     transition: font-size var(--transition);
     color: variables.$grey-0;
     font-size: 2em;

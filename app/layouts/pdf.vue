@@ -68,7 +68,7 @@ const download = async () => {
   }
 
   &-container {
-    padding: 64px 0;
+    padding-block: 64px;
     transition: padding var(--transition);
 
     @media #{variables.$large-and-up} {

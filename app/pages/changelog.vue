@@ -102,10 +102,5 @@ const filter = (name: string) => {
   &-content {
     white-space: pre-line;
   }
-
-  .release-content li::before {
-    content: '-';
-    padding: 0 8px;
-  }
 }
 </style>

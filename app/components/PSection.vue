@@ -15,11 +15,11 @@ section.section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 64px 0;
+  padding-block: 64px;
   transition: padding var(--transition);
 
   @media #{variables.$large-and-up} {
-    padding: 96px 0;
+    padding-block: 96px;
   }
 
   &.dark-mode {
