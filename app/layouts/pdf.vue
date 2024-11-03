@@ -50,14 +50,14 @@ const download = async () => {
   margin: auto;
   overflow: hidden;
   transition: width var(--transition);
-  background-color: $grey-0;
+  background-color: variables.$grey-0;
   box-shadow:
     inset 0 1px 0 0 var(--c-border),
-    0 3px 1px -2px rgba($grey-100, 0.2),
-    0 2px 2px 0 rgba($grey-100, 0.14),
-    0 1px 5px 0 rgba($grey-100, 0.12);
+    0 3px 1px -2px rgba(variables.$grey-100, 0.2),
+    0 2px 2px 0 rgba(variables.$grey-100, 0.14),
+    0 1px 5px 0 rgba(variables.$grey-100, 0.12);
 
-  @media #{$large-and-up} {
+  @media #{variables.$large-and-up} {
     width: 960px;
     border-radius: 4px;
   }
@@ -71,7 +71,7 @@ const download = async () => {
     padding: 64px 0;
     transition: padding var(--transition);
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       padding: 72px 8px;
     }
 
@@ -92,9 +92,9 @@ const download = async () => {
     background-color: var(--c-background-3);
     box-shadow:
       inset 0 1px 0 0 var(--c-border),
-      0 3px 1px -2px rgba($grey-100, 0.2),
-      0 2px 2px 0 rgba($grey-100, 0.14),
-      0 1px 5px 0 rgba($grey-100, 0.12);
+      0 3px 1px -2px rgba(variables.$grey-100, 0.2),
+      0 2px 2px 0 rgba(variables.$grey-100, 0.14),
+      0 1px 5px 0 rgba(variables.$grey-100, 0.12);
     backdrop-filter: blur(20px);
 
     @media print {
@@ -103,18 +103,18 @@ const download = async () => {
 
     .dark-mode &,
     .hacked-mode & {
-      background-color: rgba($grey-87, 80%);
+      background-color: rgba(variables.$grey-87, 80%);
 
       @media (prefers-contrast: more) {
-        background-color: rgba($grey-90, 90%);
+        background-color: rgba(variables.$grey-90, 90%);
       }
     }
 
     .light-mode & {
-      background-color: rgba($grey-0, 80%);
+      background-color: rgba(variables.$grey-0, 80%);
 
       @media (prefers-contrast: more) {
-        background-color: rgba($grey-0, 90%);
+        background-color: rgba(variables.$grey-0, 90%);
       }
     }
   }

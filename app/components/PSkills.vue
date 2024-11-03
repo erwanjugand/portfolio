@@ -31,15 +31,15 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
   background: url('/images/bee.svg') center top;
   background-position-x: calc(50% - #{math.div($hexagon-width, 4) + math.div($hexagon-space-to-remove, 2)});
 
-  @media #{$medium-and-up} {
+  @media #{variables.$medium-and-up} {
     background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
   }
 
-  @media #{$large-and-up} {
+  @media #{variables.$large-and-up} {
     background-position-x: calc(50% + #{math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2)});
   }
 
-  @media #{$extra-large} {
+  @media #{variables.$extra-large} {
     background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
   }
 }
@@ -58,7 +58,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
     margin: $margin-top $margin-right $margin-bottom $margin-left;
   }
 
-  @media #{$small-and-down} {
+  @media #{variables.$small-and-down} {
     width: $hexagon-width * 3.5 - $hexagon-space-to-remove;
 
     > *:nth-child(even) {
@@ -67,7 +67,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
     }
   }
 
-  @media #{$medium-only} {
+  @media #{variables.$medium-only} {
     width: $hexagon-width * 5 - $hexagon-space-to-remove;
 
     > *:nth-child(3n + 2) {
@@ -79,7 +79,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
     }
   }
 
-  @media #{$large-only} {
+  @media #{variables.$large-only} {
     width: $hexagon-width * 8 - $hexagon-space-to-remove * 3;
 
     > *:nth-child(5n + 3) {
@@ -91,7 +91,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
     }
   }
 
-  @media #{$extra-large} {
+  @media #{variables.$extra-large} {
     width: $hexagon-width * 11 - $hexagon-space-to-remove * 3;
 
     > *:nth-child(7n + 4) {

@@ -1,4 +1,5 @@
 @use 'sass:map' as map;
+@use './variables' as variables;
 
 $columns: (
   'xs': (
@@ -12,25 +13,25 @@ $columns: (
     'values': (
       4,
     ),
-    'media-query': $small-and-up,
+    'media-query': variables.$small-and-up,
   ),
   'm': (
     'values': (
       2,
       6,
     ),
-    'media-query': $medium-and-up,
+    'media-query': variables.$medium-and-up,
   ),
   'l': (
     'values': (
       4,
       8,
     ),
-    'media-query': $large-and-up,
+    'media-query': variables.$large-and-up,
   ),
   'xl': (
     'values': (),
-    'media-query': $extra-large,
+    'media-query': variables.$extra-large,
   ),
 );
 
@@ -56,7 +57,7 @@ $columns: (
   gap: 64px 16px;
   transition: gap var(--transition);
 
-  @media #{$large-and-up} {
+  @media #{variables.$large-and-up} {
     gap: 96px 16px;
   }
 }

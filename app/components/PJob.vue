@@ -57,7 +57,7 @@ $diagonal: math.sqrt(3);
     grid-area: a;
     padding-left: 48px;
     color: var(--c-primary);
-    font-weight: $fw-bold;
+    font-weight: variables.$fw-bold;
 
     &-anchor {
       position: relative;
@@ -81,7 +81,7 @@ $diagonal: math.sqrt(3);
   &-contract {
     grid-area: b;
     color: var(--c-primary);
-    font-weight: $fw-light;
+    font-weight: variables.$fw-light;
   }
 
   &-time {

@@ -52,9 +52,9 @@
     object-fit: cover;
     box-shadow:
       inset 0 0 0 1px var(--c-border),
-      0 2px 1px -1px rgba($grey-100, 0.2),
-      0 1px 1px 0 rgba($grey-100, 0.14),
-      0 1px 3px 0 rgba($grey-100, 0.12);
+      0 2px 1px -1px rgba(variables.$grey-100, 0.2),
+      0 1px 1px 0 rgba(variables.$grey-100, 0.14),
+      0 1px 3px 0 rgba(variables.$grey-100, 0.12);
     aspect-ratio: 1/1;
 
     &-container {
@@ -63,7 +63,7 @@
 
       --scroll-animation-y: 48px;
 
-      @media #{$large-and-up} {
+      @media #{variables.$large-and-up} {
         --scroll-animation-y: 0;
         --scroll-animation-x: -48px;
       }
@@ -78,7 +78,7 @@
 
     --scroll-animation-y: 48px;
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       --scroll-animation-y: 0;
       --scroll-animation-x: -48px;
     }
@@ -87,12 +87,12 @@
   &-text {
     transition: font-size var(--transition);
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       font-size: 1.125em;
     }
 
     strong {
-      font-weight: $fw-bold;
+      font-weight: variables.$fw-bold;
     }
   }
 }

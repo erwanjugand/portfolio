@@ -81,7 +81,7 @@ const closeEasterEgg = () => {
     padding: 32px 0;
     gap: 16px 0;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       justify-items: start;
       grid-template:
         'a c d'
@@ -89,7 +89,7 @@ const closeEasterEgg = () => {
       gap: 0 16px;
     }
 
-    @media #{$large-and-up} {
+    @media #{variables.$large-and-up} {
       grid-template-columns: 1fr auto 1fr;
     }
   }
@@ -107,7 +107,7 @@ const closeEasterEgg = () => {
     gap: 16px;
     grid-area: c;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       justify-self: center;
     }
   }
@@ -119,7 +119,7 @@ const closeEasterEgg = () => {
     justify-content: center;
     width: 64px;
     height: 64px;
-    border-radius: $br-small;
+    border-radius: variables.$br-small;
     justify-self: center;
 
     &-icon {
@@ -131,14 +131,14 @@ const closeEasterEgg = () => {
   &-last-version {
     grid-area: d;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       justify-self: end;
     }
   }
 
   &-last-version,
   &-legal-mentions {
-    --focus-radius: #{$br-small};
+    --focus-radius: #{variables.$br-small};
     --focus-offset: 4px;
 
     &:hover {
@@ -147,7 +147,7 @@ const closeEasterEgg = () => {
   }
 
   &-easter-egg {
-    --focus-radius: #{$br-small $br-small} 0 0;
+    --focus-radius: #{variables.$br-small variables.$br-small} 0 0;
 
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@ const closeEasterEgg = () => {
     transition:
       transform var(--transition),
       color var(--transition);
-    border-radius: $br-small $br-small 0 0;
+    border-radius: variables.$br-small variables.$br-small 0 0;
     fill: currentcolor;
     color: var(--c-text-secondary-1);
 

@@ -178,7 +178,7 @@ defineI18nRoute({
   }
 
   strong {
-    font-weight: $fw-bold;
+    font-weight: variables.$fw-bold;
   }
 
   a {

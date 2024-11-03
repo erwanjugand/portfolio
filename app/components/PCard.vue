@@ -20,13 +20,13 @@ const { tag = 'div' } = defineProps<{
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: $br-large $br-small;
+  border-radius: variables.$br-large variables.$br-small;
   background-color: var(--c-background-1);
   box-shadow:
     inset 0 0 0 1px var(--c-border),
-    0 2px 1px -1px rgba($grey-100, 0.2),
-    0 1px 1px 0 rgba($grey-100, 0.14),
-    0 1px 3px 0 rgba($grey-100, 0.12);
+    0 2px 1px -1px rgba(variables.$grey-100, 0.2),
+    0 1px 1px 0 rgba(variables.$grey-100, 0.14),
+    0 1px 3px 0 rgba(variables.$grey-100, 0.12);
 
   &-header {
     display: flex;
@@ -36,7 +36,7 @@ const { tag = 'div' } = defineProps<{
     padding: 16px 24px;
     transition: padding var(--transition);
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       padding: 24px 32px;
     }
 
@@ -47,7 +47,7 @@ const { tag = 'div' } = defineProps<{
       align-items: center;
       transition: margin var(--transition);
       font-size: 1.5em;
-      font-weight: $fw-regular;
+      font-weight: variables.$fw-regular;
 
       svg {
         flex-shrink: 0;
@@ -66,9 +66,9 @@ const { tag = 'div' } = defineProps<{
   &-content {
     padding: 0 24px 16px;
     transition: padding var(--transition);
-    font-weight: $fw-light;
+    font-weight: variables.$fw-light;
 
-    @media #{$medium-and-up} {
+    @media #{variables.$medium-and-up} {
       padding: 0 32px 32px;
     }
   }

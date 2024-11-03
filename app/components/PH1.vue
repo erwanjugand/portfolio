@@ -13,10 +13,10 @@
     font-size var(--transition);
   color: var(--c-primary);
   font-size: 2.5em;
-  font-weight: $fw-bold;
+  font-weight: variables.$fw-bold;
   text-align: center;
 
-  @media #{$large-and-up} {
+  @media #{variables.$large-and-up} {
     margin: 32px 0 64px;
     font-size: 3em;
   }

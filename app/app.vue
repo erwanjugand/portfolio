@@ -21,5 +21,6 @@ useHead(() => ({
 </script>
 
 <style lang="scss">
-@import './assets/scss/style';
+@use 'sass:meta';
+@include meta.load-css('@/assets/scss/style');
 </style>
