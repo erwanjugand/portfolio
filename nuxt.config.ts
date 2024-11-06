@@ -67,7 +67,6 @@ export default defineNuxtConfig({
         file: 'en.yml',
       },
     ],
-    langDir: 'locales',
     defaultLocale: 'fr',
   },
 
