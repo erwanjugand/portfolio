@@ -7,7 +7,7 @@
 <script setup lang="ts">
 useColorMode()
 
-const i18nHead = useLocaleHead({ addSeoAttributes: true })
+const i18nHead = useLocaleHead()
 useHead(() => ({
   titleTemplate: title => 'Erwan Jugand' + (title ? ` - ${title}` : ''),
   htmlAttrs: i18nHead.value.htmlAttrs,
