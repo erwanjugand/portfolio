@@ -29,9 +29,12 @@ interface Emit {
 }
 
 const emit = defineEmits<Emit>()
+
+const { changeMode } = useTheme()
+changeMode('hacked')
+
 const { easterEggSteps } = useStore()
 const isLocked = useScrollLock(document.documentElement, true)
-const { changeMode } = useTheme()
 const { count, inc } = useCounter(0, { max: easterEggSteps.length - 1 })
 
 easterEggSteps.forEach((step, index) => {
@@ -40,7 +43,6 @@ easterEggSteps.forEach((step, index) => {
       inc()
     } else {
       isLocked.value = false
-      changeMode('hacked')
       emit('close')
     }
   }, step.duration)
@@ -62,7 +64,7 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
   width: 100%;
   height: 100%;
   background: variables.$grey-100;
-  color: var(--c-primary-alt);
+  color: var(--c-primary);
 
   &-animation {
     display: flex;
@@ -95,7 +97,7 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
     &-bar {
       flex: 0;
       transition: flex var(--transition);
-      background-color: var(--c-primary-alt);
+      background-color: var(--c-primary);
     }
   }
 }

@@ -4,7 +4,7 @@
 :root {
   // Color
   --c-primary: #{variables.$primary};
-  --c-primary-alt: #{variables.$primary-alt};
+  --c-primary-alt: #5627ff;
 
   // Transition
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -116,7 +116,7 @@ html {
 }
 
 .hacked-mode {
-  --c-primary: #{variables.$primary-alt};
+  --c-primary: #a23ffd;
 }
 
 button {
