@@ -16,8 +16,8 @@
         <a
           v-ripple
           :href="information.cta"
-          :rel="information.rel"
-          :target="information.target"
+          :rel="information.externalLink ? 'noopener' : undefined"
+          :target="information.externalLink ? '_blank' : undefined"
           class="information-link"
           :aria-label="`${$t(`PMoreInformation.${information.title}`)} : ${information.content}`"
         >

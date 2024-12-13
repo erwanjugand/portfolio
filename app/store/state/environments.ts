@@ -3,7 +3,7 @@ export interface Environment {
   icon: Icon
 }
 
-export const environments: ReadonlyTuple<Environment, 6> = [
+export const environments = [
   {
     title: 'VSCode',
     icon: {
@@ -46,4 +46,4 @@ export const environments: ReadonlyTuple<Environment, 6> = [
       name: 'docker',
     },
   },
-]
+] as const satisfies Environment[]

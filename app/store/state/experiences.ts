@@ -10,7 +10,7 @@ export interface Experience {
   jobs: Job[] | [Job]
 }
 
-export const experiences: ReadonlyTuple<Experience, 3> = [
+export const experiences = [
   {
     enterprise: 'Steeple',
     jobs: [
@@ -55,4 +55,4 @@ export const experiences: ReadonlyTuple<Experience, 3> = [
       },
     ],
   },
-]
+] as const satisfies Experience[]

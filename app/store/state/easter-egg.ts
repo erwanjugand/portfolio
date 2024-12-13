@@ -4,7 +4,7 @@ export interface EasterEggStep {
   duration: number
 }
 
-export const easterEggSteps: ReadonlyTuple<EasterEggStep, 6> = [
+export const easterEggSteps = [
   {
     text: 'Launch mlp.exe',
     value: 0,
@@ -35,4 +35,4 @@ export const easterEggSteps: ReadonlyTuple<EasterEggStep, 6> = [
     value: 100,
     duration: 6500,
   },
-]
+] as const satisfies EasterEggStep[]

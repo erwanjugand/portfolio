@@ -30,7 +30,8 @@
           v-for="information of informations"
           :key="information.title"
           :href="information.cta"
-          :target="information.target"
+          :rel="information.externalLink ? 'noopener' : undefined"
+          :target="information.externalLink ? '_blank' : undefined"
           class="cv-aside-content-text"
         >
           <PIcon class="cv-aside-content-text-icon" type="light" :name="information.icon" />
