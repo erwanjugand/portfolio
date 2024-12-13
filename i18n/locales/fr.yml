@@ -121,13 +121,13 @@ PEnvironments:
   title: Mon environnement
 
 PExperiences:
-  title: Mes experiences
+  title: Mes expériences
 
 PSkills:
   title: Mes compétences
   level: 'Niveau de compétence : {current} sur {max}'
 
-PMoreInformations:
+PMoreInformation:
   address: Adresse
   email: Email
   phone: Téléphone

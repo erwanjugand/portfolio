@@ -2,7 +2,7 @@
   <PSection banner>
     <div class="container row">
       <PH2 class="xs12">
-        {{ $t('PMoreInformations.title') }}
+        {{ $t('PMoreInformation.title') }}
       </PH2>
 
       <div
@@ -19,9 +19,9 @@
           :rel="information.rel"
           :target="information.target"
           class="information-link"
-          :aria-label="`${$t(`PMoreInformations.${information.title}`)} : ${information.content}`"
+          :aria-label="`${$t(`PMoreInformation.${information.title}`)} : ${information.content}`"
         >
-          <span v-text="$t(`PMoreInformations.${information.title}`)" />
+          <span v-text="$t(`PMoreInformation.${information.title}`)" />
           <span v-text="information.content" />
         </a>
       </div>

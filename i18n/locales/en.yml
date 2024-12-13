@@ -127,7 +127,7 @@ PSkills:
   title: Skills
   level: 'Skill level: {current} out of {max}'
 
-PMoreInformations:
+PMoreInformation:
   address: Address
   email: Email
   phone: Phone
