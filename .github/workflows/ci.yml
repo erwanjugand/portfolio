@@ -51,23 +51,18 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
-      - name: Install Cypress
-        run: pnpm cypress install
+      - name: Install Playwright Browsers
+        run: test:e2e:install
 
-      - name: Run Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          start: npx wrangler dev .output/server/index.mjs --site .output/public --port 3000
-          wait-on: 'http://localhost:3000'
-          browser: chrome
+      - name: Run Playwright tests
+        run: pnpm test:e2e
 
-      - name: Upload Cypress Screenshots
-        uses: actions/upload-artifact@v4
-        if: failure()
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-          if-no-files-found: ignore
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
       - name: Upload Build
         uses: actions/upload-artifact@v4
