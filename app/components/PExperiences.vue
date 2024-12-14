@@ -1,5 +1,5 @@
 <template>
-  <PSection>
+  <PSection id="experiences">
     <div class="container row">
       <PH2 class="xs12">
         {{ $t('PExperiences.title') }}

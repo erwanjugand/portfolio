@@ -7,6 +7,8 @@ node_modules
 .env
 .actrc
 dist
-cypress/videos
-cypress/screenshots
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 public/_ca
