@@ -35,6 +35,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install
 
+      - name: Build
+        run: pnpm build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ROBOTS_DISALLOW_VALUE: ${{ vars.ROBOTS_DISALLOW_VALUE }}
+          RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
+          RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
+          NITRO_PRESET: cloudflare
+
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
 
