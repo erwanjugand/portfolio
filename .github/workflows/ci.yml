@@ -53,7 +53,7 @@ jobs:
           NITRO_PRESET: cloudflare
 
       - name: Install Playwright Browsers
-        run: test:e2e:install
+        run: pnpm test:e2e:install
 
       - name: Run Playwright tests
         run: pnpm test:e2e
