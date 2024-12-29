@@ -31,8 +31,10 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: process.env.CI ? 'npx wrangler dev .output/server/index.mjs --site .output/public' : 'pnpm preview',
-    port: 8787,
+    command: process.env.CI
+      ? 'pnpm wrangler dev .output/server/index.mjs --site .output/public --port 3000'
+      : 'pnpm preview',
+    port: 3000,
     reuseExistingServer: !process.env.CI,
   },
 })
