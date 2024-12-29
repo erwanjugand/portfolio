@@ -53,7 +53,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'pnpm preview',
+    command: !process.env.CI
+      ? 'pnpm preview'
+      : 'npx wrangler dev .output/server/index.mjs --site .output/public --port 3000',
     port: 3000,
     reuseExistingServer: !process.env.CI,
   },
