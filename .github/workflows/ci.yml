@@ -16,7 +16,6 @@ jobs:
 
     env:
       FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
-      CI: true
 
     steps:
       - name: Checkout
@@ -52,8 +51,48 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
-      - name: Install Playwright Browsers
-        run: pnpm test:e2e:install
+      - name: Upload Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuxt-cloudflare-build
+          include-hidden-files: true
+          path: |
+            .output
+            .nuxt/tsconfig.json
+
+  e2e:
+    needs: build
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.49.1-noble
+      options: --user 1001
+
+    env:
+      FONT_AWESOME_TOKEN: ${{ secrets.FONT_AWESOME_TOKEN }}
+      CI: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Download Build
+        uses: actions/download-artifact@v4
+        with:
+          name: nuxt-cloudflare-build
+
+      - name: Install Dependencies
+        run: pnpm install
 
       - name: Run Playwright tests
         run: pnpm test:e2e
@@ -65,20 +104,11 @@ jobs:
           name: playwright-report
           path: playwright-report
 
-      - name: Upload Build
-        uses: actions/upload-artifact@v4
-        with:
-          name: nuxt-cloudflare-build
-          include-hidden-files: true
-          path: |
-            .output
-            .nuxt/tsconfig.json
-
   deploy:
     if: |
       github.event_name == 'push' &&
       !contains(github.event.head_commit.message, '[skip-deploy]')
-    needs: build
+    needs: [build, e2e]
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
 
