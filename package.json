@@ -47,7 +47,7 @@
     "svgo": "3.3.2",
     "the-new-css-reset": "1.11.3",
     "typescript": "5.7.3",
-    "vite": "6.0.7",
+    "vite": "6.0.9",
     "vitest": "3.0.2",
     "vue": "3.5.13",
     "vue-tsc": "2.2.0"
