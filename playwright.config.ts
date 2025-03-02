@@ -1,6 +1,9 @@
 import { defineConfig, devices } from '@playwright/test'
+import type { ConfigOptions } from '@nuxt/test-utils/playwright'
 
-export default defineConfig({
+import { fileURLToPath } from 'url'
+
+export default defineConfig<ConfigOptions>({
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -8,9 +11,13 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
-    screenshot: 'on',
     trace: 'on-first-retry',
+    nuxt: {
+      build: false,
+      server: false,
+      rootDir: fileURLToPath(new URL('.', import.meta.url)),
+      host: 'localhost:3000',
+    },
   },
 
   projects: [

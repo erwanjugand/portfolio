@@ -1,13 +1,15 @@
-import { expect, test } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 import { environments } from '~/store/state/environments'
 import { experiences } from '~/store/state/experiences'
 import { skills } from '~/store/state/skills'
 
-test.beforeEach(async ({ page }) => {
-  await page.goto('/')
-})
+// test.beforeEach(async ({ goto }) => {
+//   await goto('localhost:3000/', { waitUntil: 'hydration' })
+// })
 
-test('should have a title', async ({ page }) => {
+test('should have a title', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
+
   const title = await page.title()
   expect(title).toContain('Erwan Jugand')
 
@@ -15,7 +17,8 @@ test('should have a title', async ({ page }) => {
   expect(titleElement).toBeVisible()
 })
 
-test('should have a introduction section', async ({ page }) => {
+test('should have a introduction section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#introduction')
 
   const linkElement = sectionElement.getByRole('link', { name: 'Afficher le CV' })
@@ -25,7 +28,8 @@ test('should have a introduction section', async ({ page }) => {
   expect(buttonElement).toBeVisible()
 })
 
-test('should have a about section', async ({ page }) => {
+test('should have a about section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#about')
 
   const titleElement = sectionElement.getByRole('heading', { level: 2, name: 'À propos' })
@@ -35,7 +39,8 @@ test('should have a about section', async ({ page }) => {
   expect(imageElement).toBeVisible()
 })
 
-test('should have a skills section', async ({ page }) => {
+test('should have a skills section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#skills')
 
   const titleElement = sectionElement.getByRole('heading', { level: 2, name: 'Mes compétences' })
@@ -50,7 +55,8 @@ test('should have a skills section', async ({ page }) => {
   })
 })
 
-test('should have a experiences section', async ({ page }) => {
+test('should have a experiences section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#experiences')
 
   const titleElement = sectionElement.getByRole('heading', { level: 2, name: 'Mes expériences' })
@@ -65,7 +71,8 @@ test('should have a experiences section', async ({ page }) => {
   })
 })
 
-test('should have a more information section', async ({ page }) => {
+test('should have a more information section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#more-information')
 
   const titleElement = sectionElement.getByRole('heading', { level: 2, name: "Plus d'informations" })
@@ -81,7 +88,8 @@ test('should have a more information section', async ({ page }) => {
   expect(emailLinkElement).toHaveAttribute('href', 'mailto:erwan.jugand+portfolio@gmail.com')
 })
 
-test('should have a environments section', async ({ page }) => {
+test('should have a environments section', async ({ page, goto }) => {
+  await goto('localhost:3000/', { waitUntil: 'hydration' })
   const sectionElement = page.locator('section#environments')
 
   const titleElement = sectionElement.getByRole('heading', { level: 2, name: 'Mon environnement' })
