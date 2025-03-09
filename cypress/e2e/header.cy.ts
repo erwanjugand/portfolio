@@ -4,19 +4,19 @@ describe('Header', () => {
   })
 
   it('should switch theme, click on button', () => {
-    cy.get('html').should('have.class', 'light-mode') // System
-    cy.get('.header-toggle-theme').click()
-    cy.get('html').should('have.class', 'light-mode') // Light
-    cy.get('.header-toggle-theme').click()
-    cy.get('html').should('have.class', 'dark-mode') // Dark
-    cy.get('.header-toggle-theme').click()
-    cy.get('html').should('have.class', 'light-mode') // System
+    cy.get('html').should('have.class', 'light-mode')
+    cy.findByRole('button', { name: 'Change site theme, current theme: System mode' }).click()
+    cy.get('html').should('have.class', 'light-mode')
+    cy.findByRole('button', { name: 'Change site theme, current theme: Light mode' }).click()
+    cy.get('html').should('have.class', 'dark-mode')
+    cy.findByRole('button', { name: 'Change site theme, current theme: Dark mode' }).click()
+    cy.get('html').should('have.class', 'light-mode')
   })
 
   it('should switch the language, click on button', () => {
-    cy.wait(750).get('.header-switch-locale').click()
-    cy.get('.header-switch-locale-list-link').first().click()
+    cy.wait(500).findByRole('button', { name: 'Change site language, current language: English' }).click()
+    cy.findByRole('menuitem', { name: 'Français' }).click()
     cy.get('html').should('have.attr', 'lang', 'fr')
-    cy.get('.introduction-cv').contains('Afficher le CV')
+    cy.findByRole('link', { name: 'Afficher le CV' }).should('have.attr', 'href', '/cv')
   })
 })

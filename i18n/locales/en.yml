@@ -59,10 +59,10 @@ pages:
       overhaul: Overhaul
       security: Security
   pdf:
-    download: Download resume
+    download: Download CV
   resume:
     title: Resume
-    description: Find all information in a resume
+    description: Find all information in a CV
     personalInformations:
       title: Personal info
       car: Driving license

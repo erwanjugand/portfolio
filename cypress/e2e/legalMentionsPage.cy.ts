@@ -4,6 +4,7 @@ describe('Legal mentions page', () => {
   })
 
   it('should have a title', () => {
-    cy.get('h1').should('contain', 'Legal mentions')
+    cy.title().should('eq', 'Erwan Jugand - Legal mentions')
+    cy.findByRole('heading', { level: 1 }).should('contain', 'Legal mentions')
   })
 })
