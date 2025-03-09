@@ -1,5 +1,5 @@
 <template>
-  <PSection class="introduction" :style>
+  <PSection id="introduction" class="introduction" :style>
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
       <VTypical
         class="introduction-title"

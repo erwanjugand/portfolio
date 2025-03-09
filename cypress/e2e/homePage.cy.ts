@@ -1,7 +1,6 @@
 import { environments } from '~/store/state/environments'
 import { experiences } from '~/store/state/experiences'
 import { informations } from '~/store/state/informations'
-import { releases } from '~/store/state/releases'
 import { skills } from '~/store/state/skills'
 
 describe('Home page', () => {
@@ -10,55 +9,60 @@ describe('Home page', () => {
   })
 
   it('should have a title', () => {
-    cy.get('h1').should('contain', 'Erwan Jugand')
+    cy.title().should('eq', 'Erwan Jugand')
+    cy.findByRole('heading', { level: 1 }).should('contain', 'Erwan Jugand')
   })
 
-  it('should have skills with svg', () => {
-    const lastSkill = skills[0]
-    cy.get('.skill')
-      .should('have.length', skills.length)
-      .first()
-      .should('contain', lastSkill.name)
-      .and('have.descendants', 'svg')
+  it('should have a introduction section', () => {
+    cy.get('section#introduction').as('section')
+    cy.get('@section').findByRole('link', { name: 'Show CV' }).should('have.attr', 'href', '/en/resume')
+    cy.get('@section').findByRole('button', { name: 'Scroll down' }).should('be.exist')
   })
 
-  it('should have jobs with content', () => {
-    const lastJob = experiences[0].jobs[0]
-
-    cy.get('.job')
-      .first()
-      .find('.job-time')
-      .contains(lastJob.startedAt.getFullYear())
-      .contains('today')
-      .contains('years')
+  it('should have a about section', () => {
+    cy.get('section#about').as('section')
+    cy.get('@section').findByRole('heading', { level: 2, name: 'About' }).should('be.exist')
+    cy.get('@section').findByRole('img', { name: 'Profile picture of Erwan Jugand' }).should('be.exist')
   })
 
-  it('should have informations with svg and link', () => {
-    cy.get('.information')
-      .should('have.length', informations.length)
-      .last()
-      .each(() => {
-        cy.get('svg').should('exist')
-        cy.get('a').should('exist').and('have.attr', 'href')
-      })
+  it('should have a skills section', () => {
+    cy.get('section#skills').as('section')
+    cy.get('@section').findByRole('heading', { level: 2, name: 'Skills' }).should('be.exist')
+    cy.get('@section').findAllByRole('listitem').should('have.length', skills.length).as('skills')
+    cy.get('@skills').each((skill, index) => {
+      cy.wrap(skill).should('have.attr', 'tabindex', '0').should('have.text', skills[index]?.name)
+    })
   })
 
-  it('should have environments svg with figcaption', () => {
-    cy.get('svg.tool-icon')
-      .should('have.length', environments.length)
-      .and('have.descendants', 'path')
-      .siblings('figcaption')
-      .should('have.length', 6)
+  it('should have a experiences section', () => {
+    cy.get('section#experiences').as('section')
+    cy.get('@section').findByRole('heading', { level: 2, name: 'Experiences' }).should('be.exist')
+    cy.get('@section').findAllByRole('listitem').should('have.length', experiences.length).as('experiences')
+    cy.get('@experiences').each((experience, index) => {
+      cy.wrap(experience).findByRole('heading', { level: 3 }).should('have.text', experiences[index]?.enterprise)
+    })
   })
 
-  it('should have current year for copyright', () => {
-    const currentYear = new Date().getFullYear()
-    cy.get('.footer-copyright').should('contain', currentYear)
+  it('should have a more information section', () => {
+    cy.get('section#more-information').as('section')
+    cy.get('@section').findByRole('heading', { level: 2, name: 'More information' }).should('be.exist')
+    cy.get('@section')
+      .findByRole('link', { name: 'Phone : 06 18 07 30 23' })
+      .should('have.attr', 'href', informations.find(info => info.title === 'phone')?.cta)
+    cy.get('@section')
+      .findByRole('link', { name: 'Address : 35000 Rennes, France' })
+      .should('have.attr', 'href', informations.find(info => info.title === 'address')?.cta)
+    cy.get('@section')
+      .findByRole('link', { name: 'Email : erwan.jugand@gmail.com' })
+      .should('have.attr', 'href', informations.find(info => info.title === 'email')?.cta)
   })
 
-  it('should have last release version in footer', () => {
-    const releaseName = releases[0].name
-    cy.get('.footer-last-version').should('contain', releaseName).click()
-    cy.url().should('include', '/en/changelog')
+  it('should have a environments section', () => {
+    cy.get('section#environments').as('section')
+    cy.get('@section').findByRole('heading', { level: 2, name: 'Environment' }).should('be.exist')
+    cy.get('@section').findAllByRole('figure').should('have.length', environments.length).as('environments')
+    cy.get('@environments').each((environment, index) => {
+      cy.wrap(environment).should('have.attr', 'tabindex', '0').should('have.text', environments[index]?.title)
+    })
   })
 })
