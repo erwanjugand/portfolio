@@ -1,3 +1,10 @@
+<script setup lang="ts">
+const { tag = 'div' } = defineProps<{
+  tag?: keyof HTMLElementTagNameMap
+  turned?: boolean
+}>()
+</script>
+
 <template>
   <Component :is="tag" :class="{ hexagon: true, 'hexagon-turned': turned }">
     <div class="hexagon-content">
@@ -5,13 +12,6 @@
     </div>
   </Component>
 </template>
-
-<script setup lang="ts">
-const { tag = 'div' } = defineProps<{
-  tag?: keyof HTMLElementTagNameMap
-  turned?: boolean
-}>()
-</script>
 
 <style lang="scss">
 $hexagon-height: 200px;

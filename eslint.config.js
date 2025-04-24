@@ -11,6 +11,12 @@ export default withNuxt(eslintConfigPrettier, {
         registeredComponentsOnly: false,
       },
     ],
+    'vue/block-order': [
+      'error',
+      {
+        order: ['script', 'template', 'style'],
+      },
+    ],
     'vue/block-lang': [
       1,
       {

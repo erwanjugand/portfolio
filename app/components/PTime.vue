@@ -1,7 +1,3 @@
-<template>
-  <time :datetime v-text="$d(date, format)" />
-</template>
-
 <script setup lang="ts">
 const { date, format = 'long' } = defineProps<{
   date: Date
@@ -10,3 +6,7 @@ const { date, format = 'long' } = defineProps<{
 
 const datetime = computed(() => date.toISOString())
 </script>
+
+<template>
+  <time :datetime v-text="$d(date, format)" />
+</template>

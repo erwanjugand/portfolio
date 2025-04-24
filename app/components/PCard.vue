@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const { tag = 'div' } = defineProps<{
+  tag?: keyof HTMLElementTagNameMap
+}>()
+</script>
+
 <template>
   <Component :is="tag" class="card">
     <div v-if="$slots.header" class="card-header">
@@ -8,12 +14,6 @@
     </div>
   </Component>
 </template>
-
-<script setup lang="ts">
-const { tag = 'div' } = defineProps<{
-  tag?: keyof HTMLElementTagNameMap
-}>()
-</script>
 
 <style lang="scss">
 .card {

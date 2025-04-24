@@ -1,14 +1,3 @@
-<template>
-  <div class="job scroll-animation-fade">
-    <div class="job-header">
-      <h4 :class="['job-title', { 'job-title-anchor': !single }]" v-text="title" />
-      <p class="job-contract" v-text="contract" />
-      <p class="job-time" v-text="time" />
-    </div>
-    <p class="job-description" v-text="description" />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { Job } from '~/store/state/experiences'
@@ -34,6 +23,17 @@ const finishedAt = computed(() => {
 const { duration } = useDateFormatDuration(() => job.startedAt, finishedAtValue)
 const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${duration.value}`)
 </script>
+
+<template>
+  <div class="job scroll-animation-fade">
+    <div class="job-header">
+      <h4 :class="['job-title', { 'job-title-anchor': !single }]" v-text="title" />
+      <p class="job-contract" v-text="contract" />
+      <p class="job-time" v-text="time" />
+    </div>
+    <p class="job-description" v-text="description" />
+  </div>
+</template>
 
 <style lang="scss">
 $diagonal: math.sqrt(3);

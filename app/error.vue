@@ -1,17 +1,3 @@
-<template>
-  <main class="error">
-    <PCard class="error-content">
-      <template #header>
-        <h1 v-text="$t(`pages.error.${errorStatus}.title`)" />
-      </template>
-      <p v-text="$t(`pages.error.${errorStatus}.text`)" />
-      <PButton class="error-cta" @click="handleError">
-        {{ $t('pages.error.cta') }}
-      </PButton>
-    </PCard>
-  </main>
-</template>
-
 <script setup lang="ts">
 import type { NuxtError } from 'nuxt/app'
 import { useI18n } from 'vue-i18n'
@@ -35,6 +21,20 @@ useHead({
 
 const handleError = () => clearError({ redirect: localePath('index') })
 </script>
+
+<template>
+  <main class="error">
+    <PCard class="error-content">
+      <template #header>
+        <h1 v-text="$t(`pages.error.${errorStatus}.title`)" />
+      </template>
+      <p v-text="$t(`pages.error.${errorStatus}.text`)" />
+      <PButton class="error-cta" @click="handleError">
+        {{ $t('pages.error.cta') }}
+      </PButton>
+    </PCard>
+  </main>
+</template>
 
 <style lang="scss">
 .error {

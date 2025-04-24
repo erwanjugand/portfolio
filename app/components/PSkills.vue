@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { skills } = useStore()
+</script>
+
 <template>
   <PSection id="skills" banner class="row">
     <div class="container">
@@ -12,10 +16,6 @@
     </div>
   </PSection>
 </template>
-
-<script setup lang="ts">
-const { skills } = useStore()
-</script>
 
 <style lang="scss">
 $hexagon-height: 200px;

@@ -1,3 +1,20 @@
+<script setup lang="ts">
+const { tag = 'div' } = defineProps<{
+  group?: boolean
+  tag?: keyof HTMLElementTagNameMap
+}>()
+
+const beforeEnterLeave = (el: Element) => {
+  if (!(el instanceof HTMLElement)) return
+  el.style.height = el.scrollHeight + 'px'
+}
+
+const afterEnterLeave = (el: Element) => {
+  if (!(el instanceof HTMLElement)) return
+  el.style.removeProperty('height')
+}
+</script>
+
 <template>
   <TransitionGroup
     v-if="group"
@@ -22,23 +39,6 @@
     <slot />
   </Transition>
 </template>
-
-<script setup lang="ts">
-const { tag = 'div' } = defineProps<{
-  group?: boolean
-  tag?: keyof HTMLElementTagNameMap
-}>()
-
-const beforeEnterLeave = (el: Element) => {
-  if (!(el instanceof HTMLElement)) return
-  el.style.height = el.scrollHeight + 'px'
-}
-
-const afterEnterLeave = (el: Element) => {
-  if (!(el instanceof HTMLElement)) return
-  el.style.removeProperty('height')
-}
-</script>
 
 <style lang="scss">
 .fade-height {

@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import { onClickOutside } from '@vueuse/core'
+
+const { currentModeIcon, currentModeName, toggleMode } = useTheme()
+const { currentLocale, locales } = useLocale()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
+
+// Menu
+const switchLocaleContainer = useTemplateRef('switchLocaleContainer')
+const localeMenuIsOpen = ref(false)
+const closeMenu = () => {
+  localeMenuIsOpen.value = false
+}
+onClickOutside(switchLocaleContainer, closeMenu)
+</script>
+
 <template>
   <header class="header">
     <div class="container header-content">
@@ -62,23 +79,6 @@
     </div>
   </header>
 </template>
-
-<script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
-
-const { currentModeIcon, currentModeName, toggleMode } = useTheme()
-const { currentLocale, locales } = useLocale()
-const localePath = useLocalePath()
-const switchLocalePath = useSwitchLocalePath()
-
-// Menu
-const switchLocaleContainer = useTemplateRef('switchLocaleContainer')
-const localeMenuIsOpen = ref(false)
-const closeMenu = () => {
-  localeMenuIsOpen.value = false
-}
-onClickOutside(switchLocaleContainer, closeMenu)
-</script>
 
 <style lang="scss">
 .header {

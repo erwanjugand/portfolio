@@ -1,14 +1,3 @@
-<template>
-  <div class="cv-job">
-    <div class="cv-job-header">
-      <h4 class="cv-job-title" v-text="title" />
-      <p class="cv-job-contract" v-text="contract" />
-      <p class="cv-job-time" v-text="time" />
-    </div>
-    <p class="cv-job-description" v-text="description" />
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import type { Job } from '~/store/state/experiences'
@@ -33,6 +22,17 @@ const finishedAt = computed(() => {
 const { duration } = useDateFormatDuration(() => job.startedAt, finishedAtValue)
 const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${duration.value}`)
 </script>
+
+<template>
+  <div class="cv-job">
+    <div class="cv-job-header">
+      <h4 class="cv-job-title" v-text="title" />
+      <p class="cv-job-contract" v-text="contract" />
+      <p class="cv-job-time" v-text="time" />
+    </div>
+    <p class="cv-job-description" v-text="description" />
+  </div>
+</template>
 
 <style lang="scss">
 .cv-job {

@@ -1,14 +1,14 @@
-<template>
-  <section :class="{ section: true, 'dark-mode': banner }">
-    <slot />
-  </section>
-</template>
-
 <script setup lang="ts">
 defineProps<{
   banner?: boolean
 }>()
 </script>
+
+<template>
+  <section :class="{ section: true, 'dark-mode': banner }">
+    <slot />
+  </section>
+</template>
 
 <style lang="scss">
 section.section {

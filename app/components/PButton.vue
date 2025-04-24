@@ -1,15 +1,3 @@
-<template>
-  <Component
-    :is="type"
-    v-ripple
-    :disabled="disabled || undefined"
-    :to
-    :class="['button', outlined ? 'button-outlined' : 'button-filled']"
-  >
-    <slot />
-  </Component>
-</template>
-
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 
@@ -23,6 +11,18 @@ const nuxtLink = resolveComponent('nuxt-link')
 const attrs = useAttrs()
 const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
 </script>
+
+<template>
+  <Component
+    :is="type"
+    v-ripple
+    :disabled="disabled || undefined"
+    :to
+    :class="['button', outlined ? 'button-outlined' : 'button-filled']"
+  >
+    <slot />
+  </Component>
+</template>
 
 <style lang="scss">
 .button {

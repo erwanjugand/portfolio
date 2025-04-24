@@ -1,3 +1,34 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+useHead({
+  title: t('pages.changelog.title'),
+  meta: [{ name: 'description', content: t('pages.changelog.description') }],
+})
+
+defineI18nRoute({
+  paths: {
+    en: '/changelog',
+    fr: '/journal-des-modifications',
+  },
+})
+
+const route = useRoute()
+const router = useRouter()
+const { releases, releasesWithTagName } = useStore()
+
+const releasesFiltered = computed(() => {
+  const query = route.query.filter?.toString()
+  return query ? releasesWithTagName(query) : releases
+})
+
+const filter = (name: string) => {
+  const queryValue = route.query.filter === name ? undefined : name
+  router.replace({ query: { filter: queryValue } })
+}
+</script>
+
 <template>
   <main>
     <PSection>
@@ -35,37 +66,6 @@
     </PSection>
   </main>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-useHead({
-  title: t('pages.changelog.title'),
-  meta: [{ name: 'description', content: t('pages.changelog.description') }],
-})
-
-defineI18nRoute({
-  paths: {
-    en: '/changelog',
-    fr: '/journal-des-modifications',
-  },
-})
-
-const route = useRoute()
-const router = useRouter()
-const { releases, releasesWithTagName } = useStore()
-
-const releasesFiltered = computed(() => {
-  const query = route.query.filter?.toString()
-  return query ? releasesWithTagName(query) : releases
-})
-
-const filter = (name: string) => {
-  const queryValue = route.query.filter === name ? undefined : name
-  router.replace({ query: { filter: queryValue } })
-}
-</script>
 
 <style lang="scss">
 .release {

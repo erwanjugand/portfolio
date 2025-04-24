@@ -1,18 +1,3 @@
-<template>
-  <div class="pdf-container">
-    <PHeader />
-    <div class="pdf">
-      <slot />
-    </div>
-    <div class="pdf-action">
-      <PButton :disabled="isLoading" @click="download">
-        <PIcon type="regular" name="download" />
-        {{ $t('pages.pdf.download') }}
-      </PButton>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
@@ -38,6 +23,21 @@ const download = async () => {
   isLoading.value = false
 }
 </script>
+
+<template>
+  <div class="pdf-container">
+    <PHeader />
+    <div class="pdf">
+      <slot />
+    </div>
+    <div class="pdf-action">
+      <PButton :disabled="isLoading" @click="download">
+        <PIcon type="regular" name="download" />
+        {{ $t('pages.pdf.download') }}
+      </PButton>
+    </div>
+  </div>
+</template>
 
 <style lang="scss">
 @page {

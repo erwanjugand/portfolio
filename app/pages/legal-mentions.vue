@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+useHead({
+  title: t('pages.legalMentions.title'),
+  meta: [{ name: 'description', content: t('pages.legalMentions.description') }],
+})
+
+defineI18nRoute({
+  paths: {
+    en: '/legal-mentions',
+    fr: '/mentions-legales',
+  },
+})
+</script>
+
 <template>
   <main>
     <PSection class="container legal-mentions">
@@ -146,24 +164,6 @@
     </PSection>
   </main>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
-const { t } = useI18n()
-
-useHead({
-  title: t('pages.legalMentions.title'),
-  meta: [{ name: 'description', content: t('pages.legalMentions.description') }],
-})
-
-defineI18nRoute({
-  paths: {
-    en: '/legal-mentions',
-    fr: '/mentions-legales',
-  },
-})
-</script>
 
 <style lang="scss">
 .legal-mentions {

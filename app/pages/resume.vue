@@ -1,3 +1,28 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+const runtimeConfig = useRuntimeConfig()
+const siteUrl = runtimeConfig.public.siteUrl
+const { informations, environments, experiences, skills } = useStore()
+
+const { t } = useI18n()
+useHead({
+  title: t('pages.resume.title'),
+  meta: [{ name: 'description', content: t('pages.resume.description') }],
+})
+
+definePageMeta({
+  layout: 'pdf',
+})
+
+defineI18nRoute({
+  paths: {
+    en: '/resume',
+    fr: '/cv',
+  },
+})
+</script>
+
 <template>
   <div class="cv">
     <header class="cv-header">
@@ -121,31 +146,6 @@
     </main>
   </div>
 </template>
-
-<script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
-const runtimeConfig = useRuntimeConfig()
-const siteUrl = runtimeConfig.public.siteUrl
-const { informations, environments, experiences, skills } = useStore()
-
-const { t } = useI18n()
-useHead({
-  title: t('pages.resume.title'),
-  meta: [{ name: 'description', content: t('pages.resume.description') }],
-})
-
-definePageMeta({
-  layout: 'pdf',
-})
-
-defineI18nRoute({
-  paths: {
-    en: '/resume',
-    fr: '/cv',
-  },
-})
-</script>
 
 <style lang="scss">
 .cv {

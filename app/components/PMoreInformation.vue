@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const { informations } = useStore()
+</script>
+
 <template>
   <PSection id="more-information" banner>
     <div class="container row">
@@ -28,10 +32,6 @@
     </div>
   </PSection>
 </template>
-
-<script lang="ts" setup>
-const { informations } = useStore()
-</script>
 
 <style lang="scss">
 .information {

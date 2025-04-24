@@ -1,26 +1,3 @@
-<template>
-  <div class="easter-egg">
-    <div class="easter-egg-wrapper">
-      <img class="easter-egg-animation" src="/images/logo-hack.gif" alt="" />
-      <p
-        v-for="(step, index) of easterEggSteps"
-        :key="step.text"
-        :class="['easter-egg-step', { visible: index <= count }]"
-        v-text="step.text"
-      />
-      <div
-        role="progressbar"
-        :aria-valuenow="progressBarValue"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        class="easter-egg-progress"
-      >
-        <div class="easter-egg-progress-bar" :style="progressBarStyle" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 
@@ -51,6 +28,29 @@ easterEggSteps.forEach((step, index) => {
 const progressBarValue = computed(() => easterEggSteps[count.value]?.value)
 const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progressBarValue.value}%` }))
 </script>
+
+<template>
+  <div class="easter-egg">
+    <div class="easter-egg-wrapper">
+      <img class="easter-egg-animation" src="/images/logo-hack.gif" alt="" />
+      <p
+        v-for="(step, index) of easterEggSteps"
+        :key="step.text"
+        :class="['easter-egg-step', { visible: index <= count }]"
+        v-text="step.text"
+      />
+      <div
+        role="progressbar"
+        :aria-valuenow="progressBarValue"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        class="easter-egg-progress"
+      >
+        <div class="easter-egg-progress-bar" :style="progressBarStyle" />
+      </div>
+    </div>
+  </div>
+</template>
 
 <style lang="scss">
 .easter-egg {

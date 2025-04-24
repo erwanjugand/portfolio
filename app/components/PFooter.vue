@@ -1,3 +1,18 @@
+<script setup lang="ts">
+const { releases } = useStore()
+const lastRelease = releases[0]
+const localePath = useLocalePath()
+const currentYear = useDateFormat(useNow(), 'YYYY')
+
+const isVisible = ref(false)
+const openEasterEgg = () => {
+  isVisible.value = true
+}
+const closeEasterEgg = () => {
+  isVisible.value = false
+}
+</script>
+
 <template>
   <div class="footer-container">
     <div class="footer-easter-egg-container">
@@ -45,21 +60,6 @@
     <PEasterEgg v-if="isVisible" @close="closeEasterEgg" />
   </div>
 </template>
-
-<script setup lang="ts">
-const { releases } = useStore()
-const lastRelease = releases[0]
-const localePath = useLocalePath()
-const currentYear = useDateFormat(useNow(), 'YYYY')
-
-const isVisible = ref(false)
-const openEasterEgg = () => {
-  isVisible.value = true
-}
-const closeEasterEgg = () => {
-  isVisible.value = false
-}
-</script>
 
 <style lang="scss">
 .footer {

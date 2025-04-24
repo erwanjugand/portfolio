@@ -1,9 +1,3 @@
-<template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
-</template>
-
 <script setup lang="ts">
 useColorMode()
 
@@ -19,6 +13,12 @@ useHead(() => ({
   meta: [{ name: 'viewport', content: 'width=320, initial-scale=1' }, ...(i18nHead.value.meta || [])],
 }))
 </script>
+
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>
 
 <style lang="scss">
 @use 'sass:meta';

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { experiences } = useStore()
+</script>
+
 <template>
   <PSection id="experiences">
     <div class="container row">
@@ -10,10 +14,6 @@
     </div>
   </PSection>
 </template>
-
-<script setup lang="ts">
-const { experiences } = useStore()
-</script>
 
 <style lang="scss">
 $diagonal: math.sqrt(3);

@@ -1,10 +1,3 @@
-<template>
-  <li class="experience">
-    <h3 class="experience-header scroll-animation-fade" v-text="experience.enterprise" />
-    <PJob v-for="job of experience.jobs" :key="job.key" :job :single="hasOneJob" />
-  </li>
-</template>
-
 <script setup lang="ts">
 import type { Experience } from '~/store/state/experiences'
 
@@ -14,6 +7,13 @@ const { experience } = defineProps<{
 
 const hasOneJob = computed(() => experience.jobs.length === 1)
 </script>
+
+<template>
+  <li class="experience">
+    <h3 class="experience-header scroll-animation-fade" v-text="experience.enterprise" />
+    <PJob v-for="job of experience.jobs" :key="job.key" :job :single="hasOneJob" />
+  </li>
+</template>
 
 <style lang="scss">
 $diagonal: math.sqrt(3);

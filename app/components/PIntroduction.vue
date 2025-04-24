@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { defaultWindow } from '@vueuse/core'
+import type { CSSProperties } from 'vue'
+import VTypical from 'vue-typical'
+
+const localePath = useLocalePath()
+const behavior = useScrollBehavior()
+const { y } = useScroll(defaultWindow, { behavior })
+const style = computed<CSSProperties>(() => ({ '--background-position-y': `-${y.value / 3}px` }))
+
+const scroll = () => {
+  y.value = window.innerHeight - 64
+}
+</script>
+
 <template>
   <PSection id="introduction" class="introduction" :style>
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
@@ -18,21 +33,6 @@
     </button>
   </PSection>
 </template>
-
-<script setup lang="ts">
-import { defaultWindow } from '@vueuse/core'
-import type { CSSProperties } from 'vue'
-import VTypical from 'vue-typical'
-
-const localePath = useLocalePath()
-const behavior = useScrollBehavior()
-const { y } = useScroll(defaultWindow, { behavior })
-const style = computed<CSSProperties>(() => ({ '--background-position-y': `-${y.value / 3}px` }))
-
-const scroll = () => {
-  y.value = window.innerHeight - 64
-}
-</script>
 
 <style lang="scss">
 .introduction {
