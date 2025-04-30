@@ -10,7 +10,10 @@ useHead(() => ({
     { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     ...(i18nHead.value.link || []),
   ],
-  meta: [{ name: 'viewport', content: 'width=320, initial-scale=1' }, ...(i18nHead.value.meta || [])],
+  meta: [
+    { name: 'viewport', content: 'width=320, initial-scale=1, viewport-fit=cover' },
+    ...(i18nHead.value.meta || []),
+  ],
 }))
 </script>
 

@@ -88,7 +88,7 @@ const download = async () => {
     left: 0;
     justify-content: center;
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 16px calc(8px + var(--safe-area-bottom));
     background-color: var(--c-background-3);
     box-shadow:
       inset 0 1px 0 0 var(--c-border),
