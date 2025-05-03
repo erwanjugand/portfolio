@@ -3,7 +3,6 @@ import { useI18n } from 'vue-i18n'
 
 const runtimeConfig = useRuntimeConfig()
 const siteUrl = runtimeConfig.public.siteUrl
-const { informations, environments, experiences, skills } = useStore()
 
 const { t } = useI18n()
 useHead({

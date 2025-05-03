@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { experiences } = useStore()
-</script>
-
 <template>
   <PSection id="experiences">
     <div class="container row">

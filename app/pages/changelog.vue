@@ -16,11 +16,13 @@ defineI18nRoute({
 
 const route = useRoute()
 const router = useRouter()
-const { releases, releasesWithTagName } = useStore()
+
+const getReleasesWithTagName = (tagName: string) =>
+  releases.filter(release => release.tags.some(tag => tag.name === tagName))
 
 const releasesFiltered = computed(() => {
   const query = route.query.filter?.toString()
-  return query ? releasesWithTagName(query) : releases
+  return query ? getReleasesWithTagName(query) : releases
 })
 
 const filter = (name: string) => {

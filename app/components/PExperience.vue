@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { Experience } from '~/store/state/experiences'
-
 const { experience } = defineProps<{
   experience: Experience
 }>()

@@ -3,6 +3,8 @@ export interface Skill {
   level: 0 | 1 | 2 | 3
 }
 
+export const MAX_LEVEL = 3
+
 export const skills = [
   {
     level: 3,

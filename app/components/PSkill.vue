@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import type { Skill } from '~/store/state/skills'
-
 defineProps<{
   skill: Skill
 }>()
-
-const MAX_LEVEL = 3
 </script>
 
 <template>

@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
-    '@pinia/nuxt',
     'nuxt-cloudflare-analytics',
     '@nuxt/test-utils/module',
     'v-wave/nuxt',

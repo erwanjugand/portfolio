@@ -10,7 +10,6 @@ const emit = defineEmits<Emit>()
 const { changeMode } = useTheme()
 changeMode('hacked')
 
-const { easterEggSteps } = useStore()
 const isLocked = useScrollLock(document.documentElement, true)
 const { count, inc } = useCounter(0, { max: easterEggSteps.length - 1 })
 
