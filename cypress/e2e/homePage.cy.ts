@@ -1,7 +1,7 @@
-import { environments } from '~/store/state/environments'
-import { experiences } from '~/store/state/experiences'
-import { informations } from '~/store/state/informations'
-import { skills } from '~/store/state/skills'
+import { environments } from '~/utils/environments'
+import { experiences } from '~/utils/experiences'
+import { informations } from '~/utils/informations'
+import { skills } from '~/utils/skills'
 
 describe('Home page', () => {
   beforeEach(() => {

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { environments } = useStore()
-</script>
-
 <template>
   <PSection id="environments">
     <div class="medium-container row">

@@ -56,7 +56,6 @@
   },
   "dependencies": {
     "@nuxtjs/robots": "5.2.10",
-    "@pinia/nuxt": "0.11.0",
     "nuxt-cloudflare-analytics": "1.0.8",
     "v-wave": "3.0.2",
     "vue-typical": "2.1.0"

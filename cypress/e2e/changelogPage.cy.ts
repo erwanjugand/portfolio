@@ -1,4 +1,4 @@
-import { releases } from '~/store/state/releases'
+import { releases } from '~/utils/releases'
 
 describe('Changelog page', () => {
   beforeEach(() => {
