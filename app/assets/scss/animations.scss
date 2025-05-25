@@ -1,4 +1,4 @@
-@supports (animation-timeline: view()) and (animation-range: cover 15% contain 25) {
+@supports (animation-timeline: view()) and (animation-range: cover 15% contain 25%) {
   @media (prefers-reduced-motion: no-preference) {
     .scroll-animation-fade,
     .scroll-animation-scale {
