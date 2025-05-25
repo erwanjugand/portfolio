@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
-
 const { currentModeIcon, currentModeName, toggleMode } = useTheme()
 const { currentLocale, locales } = useLocale()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
 // Menu
-const switchLocaleContainer = useTemplateRef('switchLocaleContainer')
-const localeMenuIsOpen = ref(false)
-const closeMenu = () => {
-  localeMenuIsOpen.value = false
-}
-onClickOutside(switchLocaleContainer, closeMenu)
+const switchMenu = useTemplateRef('switch-menu')
+const closeMenu = () => switchMenu.value?.hidePopover()
 </script>
 
 <template>
@@ -23,45 +17,40 @@ onClickOutside(switchLocaleContainer, closeMenu)
         Erwan Jugand
       </NuxtLink>
 
-      <div ref="switchLocaleContainer" class="header-switch-locale-container">
-        <button
-          v-ripple
-          class="header-switch-locale"
-          aria-controls="menu-locales"
-          :aria-expanded="localeMenuIsOpen"
-          :aria-label="$t('PHeader.langActionLabel', { lang: currentLocale?.name })"
-          :title="$t('PHeader.langAction')"
-          @click="localeMenuIsOpen = !localeMenuIsOpen"
-        >
-          <img
-            class="header-switch-locale-image"
-            :src="`/images/flag-${currentLocale?.code}.svg`"
-            :alt="currentLocale?.name"
-          />
-          <PIcon class="header-switch-locale-icon" type="solid" name="caretDown" />
-        </button>
-        <Transition name="header-switch-locale">
-          <ul v-show="localeMenuIsOpen" id="menu-locales" role="menu" class="header-switch-locale-list">
-            <li v-for="otherLocale of locales" :key="otherLocale.code" class="header-switch-locale-list-item">
-              <NuxtLink
-                v-ripple
-                class="header-switch-locale-list-link"
-                role="menuitem"
-                :to="switchLocalePath(otherLocale.code)"
-                :title="otherLocale.name"
-                @click="closeMenu"
-              >
-                <img
-                  class="header-switch-locale-image"
-                  loading="lazy"
-                  :src="`/images/flag-${otherLocale.language}.svg`"
-                  :alt="otherLocale.name"
-                />
-              </NuxtLink>
-            </li>
-          </ul>
-        </Transition>
-      </div>
+      <button
+        v-ripple
+        class="header-switch-cta"
+        popovertarget="switch-menu"
+        :aria-label="$t('PHeader.langActionLabel', { lang: currentLocale?.name })"
+        :title="$t('PHeader.langAction')"
+      >
+        <img
+          class="header-switch-cta-image"
+          :src="`/images/flag-${currentLocale?.code}.svg`"
+          :alt="currentLocale?.name"
+        />
+        <PIcon class="header-switch-cta-icon" type="solid" name="caretDown" />
+      </button>
+
+      <ul id="switch-menu" ref="switch-menu" role="menu" class="header-switch-menu" popover>
+        <li v-for="otherLocale of locales" :key="otherLocale.code" class="header-switch-menu-item">
+          <NuxtLink
+            v-ripple
+            role="menuitem"
+            class="header-switch-menu-link"
+            :to="switchLocalePath(otherLocale.code)"
+            :title="otherLocale.name"
+            @click="closeMenu"
+          >
+            <img
+              class="header-switch-menu-image"
+              loading="lazy"
+              :src="`/images/flag-${otherLocale.language}.svg`"
+              :alt="otherLocale.name"
+            />
+          </NuxtLink>
+        </li>
+      </ul>
 
       <div class="header-toggle-theme-container">
         <ClientOnly>
@@ -142,15 +131,11 @@ onClickOutside(switchLocaleContainer, closeMenu)
     fill: var(--c-primary);
   }
 
-  &-switch-locale {
+  &-switch-cta {
+    anchor-name: --header-switch-cta;
     display: flex;
     align-items: center;
     padding-inline: 16px;
-
-    &-container {
-      display: flex;
-      position: relative;
-    }
 
     &-icon {
       width: 10px;
@@ -164,44 +149,56 @@ onClickOutside(switchLocaleContainer, closeMenu)
       height: 32px;
     }
 
-    &[aria-expanded='true'] &-icon {
+    &:has(+ [popover]:popover-open) &-icon {
       transform: rotate(180deg);
     }
+  }
 
-    &-list {
+  &-switch-menu {
+    position: fixed;
+    border-radius: var(--border-radius-small);
+    background-color: var(--c-background-3);
+    position-anchor: --header-switch-cta;
+    position-area: bottom;
+    scale: 0;
+
+    @supports (transition-behavior: allow-discrete) {
+      transition:
+        scale var(--transition) allow-discrete,
+        display var(--transition) allow-discrete,
+        overlay var(--transition) allow-discrete;
+    }
+
+    &:popover-open {
       display: flex;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: transform var(--transition);
-      border-radius: var(--border-radius-small);
-      background-color: var(--c-background-3);
+      scale: 1;
 
-      &-link {
-        display: flex;
-        width: max-content;
-        padding: 8px;
-
-        &.router-link-exact-active {
-          background-color: var(--c-primary);
-        }
-      }
-
-      &-item {
-        &:first-child .header-switch-locale-list-link {
-          border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
-        }
-
-        &:last-child .header-switch-locale-list-link {
-          border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
-        }
+      @starting-style {
+        scale: 0;
       }
     }
 
-    &-enter-from,
-    &-leave-to {
-      transform: translateX(-50%) scale(0);
+    &-link {
+      display: flex;
+      width: max-content;
+      padding: 8px;
+
+      &.router-link-exact-active {
+        background-color: var(--c-primary);
+      }
+    }
+
+    &-item:first-child &-link {
+      border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+    }
+
+    &-item:last-child &-link {
+      border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+    }
+
+    &-image {
+      width: 32px;
+      height: 32px;
     }
   }
 
