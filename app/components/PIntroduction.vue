@@ -38,7 +38,7 @@ const scroll = () => {
 .introduction {
   &.section {
     justify-content: space-around;
-    min-height: 100vh;
+    min-height: 100svh;
     padding-block: 128px 64px;
     background-image: image-set(
       url('/images/background-mobile-x1.avif') type('image/avif') 1x,
@@ -50,10 +50,6 @@ const scroll = () => {
     background-position: center bottom var(--background-position-y);
     background-size: cover;
     gap: 64px;
-
-    @supports (min-height: 100svh) {
-      min-height: 100svh;
-    }
 
     @media #{variables.$large-and-up} {
       background-image: image-set(

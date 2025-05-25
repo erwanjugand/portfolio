@@ -1,9 +1,18 @@
 {
   "extends": ["stylelint-config-property-sort-order-smacss", "stylelint-config-standard-scss"],
+  "plugins": ["stylelint-plugin-use-baseline"],
   "overrides": [
     {
       "files": ["**/*.vue"],
       "customSyntax": "postcss-html"
     }
-  ]
+  ],
+  "rules": {
+    "plugin/use-baseline": [
+      true,
+      {
+        "available": "newly"
+      }
+    ]
+  }
 }

@@ -132,10 +132,13 @@ const closeMenu = () => switchMenu.value?.hidePopover()
   }
 
   &-switch-cta {
-    anchor-name: --header-switch-cta;
     display: flex;
     align-items: center;
     padding-inline: 16px;
+
+    @supports (anchor-name: --header-switch-cta) {
+      anchor-name: --header-switch-cta;
+    }
 
     &-icon {
       width: 10px;
@@ -158,15 +161,25 @@ const closeMenu = () => switchMenu.value?.hidePopover()
     position: fixed;
     border-radius: var(--border-radius-small);
     background-color: var(--c-background-3);
-    position-anchor: --header-switch-cta;
-    position-area: bottom;
     scale: 0;
+
+    @supports (position-anchor: --header-switch-cta) and (position-area: bottom) {
+      position-anchor: --header-switch-cta;
+      position-area: bottom;
+    }
 
     @supports (transition-behavior: allow-discrete) {
       transition:
         scale var(--transition) allow-discrete,
         display var(--transition) allow-discrete,
         overlay var(--transition) allow-discrete;
+    }
+
+    @supports not (
+      (anchor-name: --header-switch-cta) and (position-area: bottom) and (position-anchor: --header-switch-cta)
+    ) {
+      top: 64px;
+      right: 128px;
     }
 
     &:popover-open {

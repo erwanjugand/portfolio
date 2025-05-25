@@ -126,10 +126,6 @@ button {
   cursor: pointer;
 }
 
-li::marker {
-  display: none;
-}
-
 a,
 button {
   &:focus-visible {
