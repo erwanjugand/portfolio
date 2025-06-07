@@ -39,7 +39,7 @@
     "eslint": "9.28.0",
     "eslint-config-prettier": "10.1.5",
     "happy-dom": "17.6.3",
-    "nuxt": "3.17.5",
+    "nuxt": "v4.0.0-alpha.1",
     "postcss-html": "1.8.0",
     "prettier": "3.5.3",
     "sass": "1.89.1",
