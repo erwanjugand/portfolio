@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import { defaultWindow } from '@vueuse/core'
-import type { CSSProperties } from 'vue'
 import VTypical from 'vue-typical'
 
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
-const { y } = useScroll(defaultWindow, { behavior })
-const style = computed<CSSProperties>(() => ({ '--background-position-y': `-${y.value / 3}px` }))
-
 const scroll = () => {
-  y.value = window.innerHeight - 64
+  window.scrollTo({ top: window.innerHeight - 64, behavior: behavior.value })
 }
 </script>
 
 <template>
-  <PSection id="introduction" class="introduction" :style>
+  <PSection id="introduction" class="introduction">
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
       <VTypical
         class="introduction-title"
@@ -58,6 +53,14 @@ const scroll = () => {
         url('/images/background-desktop-x1.webp') type('image/webp') 1x,
         url('/images/background-desktop-x2.webp') type('image/webp') 2x
       );
+    }
+
+    @supports (animation-timeline: view()) and (animation-range: exit-crossing 0% exit 100%) {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-parallax linear both;
+        animation-timeline: view();
+        animation-range: exit-crossing 0% exit 100%;
+      }
     }
   }
 
@@ -105,6 +108,22 @@ const scroll = () => {
 @keyframes blink {
   50% {
     opacity: 0;
+  }
+}
+
+@property --background-position-y {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes scroll-parallax {
+  0% {
+    --background-position-y: 0px;
+  }
+
+  100% {
+    --background-position-y: calc(-100svh / 3);
   }
 }
 </style>
