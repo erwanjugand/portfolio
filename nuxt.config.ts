@@ -83,7 +83,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Inter: [300, 400, 500],
+      Inter: '300..500',
     },
   },
 
