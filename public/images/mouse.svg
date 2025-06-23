@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 80" style="enable-background:new 0 0 48 80" xml:space="preserve">
-  <path fill="#FFF" d="M24.5 2C36.36 2 46 11.64 46 23.5v33C46 68.36 36.36 78 24.5 78h-1C11.64 78 2 68.36 2 56.5v-33C2 11.64 11.64 2 23.5 2zm0-2h-1C10.52 0 0 10.52 0 23.5v33C0 69.48 10.52 80 23.5 80h1C37.48 80 48 69.48 48 56.5v-33C48 10.52 37.48 0 24.5 0"/>
-  <circle fill="#FFF" cx="24" cy="15" r="5">
-    <animate attributeName="cy" dur="1.5s" values="15; 50;" repeatCount="indefinite"/>
-    <animate attributeName="opacity" dur="1.5s" values="1;0" repeatCount="indefinite"/>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 48 80">
+  <path fill="#fff" d="M24.5 2C36.36 2 46 11.64 46 23.5v33C46 68.36 36.36 78 24.5 78h-1C11.64 78 2 68.36 2 56.5v-33C2 11.64 11.64 2 23.5 2zm0-2h-1C10.52 0 0 10.52 0 23.5v33C0 69.48 10.52 80 23.5 80h1C37.48 80 48 69.48 48 56.5v-33C48 10.52 37.48 0 24.5 0"/>
+  <circle cx="24" cy="15" r="5" fill="#fff">
+    <animate attributeName="cy" dur="1.5s" repeatCount="indefinite" values="15; 50;"/>
+    <animate attributeName="opacity" dur="1.5s" repeatCount="indefinite" values="1;0"/>
   </circle>
 </svg>

@@ -4,12 +4,4 @@ export default {
     indent: 2,
     pretty: true,
   },
-  plugins: [
-    {
-      name: 'convertPathData',
-      params: {
-        noSpaceAfterFlags: false,
-      },
-    },
-  ],
 }

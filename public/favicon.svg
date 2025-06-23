@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="gradient" x1="16.15" y1="30.45" x2="83.85" y2="69.55" gradientUnits="userSpaceOnUse">
+    <linearGradient id="a" x1="16.15" x2="83.85" y1="30.45" y2="69.55" gradientUnits="userSpaceOnUse">
       <stop offset=".1" stop-color="#4c31fb"/>
       <stop offset=".9" stop-color="#0077db"/>
     </linearGradient>
   </defs>
-  <path fill="url(#gradient)" d="M100,27.42s0,.05,0,.08c0,28.99-23.51,52.5-52.5,52.5v-15c18.11,0,33.26-12.9,36.75-30h-23.75v-15h31.94c4.12,0,7.56,3.3,7.56,7.42ZM52.5,43c-10.41,0-19.82,5.52-25.09,14h20.09c10.41,0,19.82-5.52,25.09-14h-20.09ZM7.56,80h31.94v-15H15.75c3.49-17.1,18.64-30,36.75-30v-15C23.51,20,0,43.51,0,72.5c0,.03,0,.05,0,.08,0,4.12,3.44,7.42,7.56,7.42Z"/>
+  <path fill="url(#a)" d="M100 27.42v.08C100 56.49 76.49 80 47.5 80V65c18.11 0 33.26-12.9 36.75-30H60.5V20h31.94c4.12 0 7.56 3.3 7.56 7.42M52.5 43c-10.41 0-19.82 5.52-25.09 14H47.5c10.41 0 19.82-5.52 25.09-14zM7.56 80H39.5V65H15.75c3.49-17.1 18.64-30 36.75-30V20C23.51 20 0 43.51 0 72.5v.08C0 76.7 3.44 80 7.56 80"/>
 </svg>
