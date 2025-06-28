@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 
-const { to } = defineProps<{
+const { to = undefined } = defineProps<{
   outlined?: boolean
   disabled?: boolean
   to?: RouteLocationRaw
@@ -13,13 +13,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
 </script>
 
 <template>
-  <Component
-    :is="type"
-    v-ripple
-    :disabled="disabled || undefined"
-    :to
-    :class="['button', outlined ? 'button-outlined' : 'button-filled']"
-  >
+  <Component :is="type" v-ripple :disabled :to :class="['button', outlined ? 'button-outlined' : 'button-filled']">
     <slot />
   </Component>
 </template>
