@@ -40,7 +40,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-cloudflare-analytics',
     '@nuxt/test-utils/module',
-    'v-wave/nuxt',
   ],
 
   imports: {
@@ -74,10 +73,6 @@ export default defineNuxtConfig({
 
   cloudflareAnalytics: {
     token: process.env.CLOUDFLARE_ANALYTICS_TOKEN,
-  },
-
-  vWave: {
-    directive: 'ripple',
   },
 
   googleFonts: {
