@@ -27,7 +27,7 @@
     "@fortawesome/pro-light-svg-icons": "6.7.2",
     "@fortawesome/pro-regular-svg-icons": "6.7.2",
     "@fortawesome/pro-solid-svg-icons": "6.7.2",
-    "@nuxt/eslint": "1.5.2",
+    "@nuxt/eslint": "1.6.0",
     "@nuxt/test-utils": "3.19.2",
     "@nuxtjs/color-mode": "3.5.2",
     "@nuxtjs/google-fonts": "3.2.0",
@@ -35,15 +35,15 @@
     "@testing-library/cypress": "10.0.3",
     "@types/node": "22",
     "@vueuse/nuxt": "13.5.0",
-    "cypress": "14.5.1",
+    "cypress": "14.5.2",
     "eslint": "9.31.0",
-    "eslint-config-prettier": "10.1.5",
+    "eslint-config-prettier": "10.1.8",
     "happy-dom": "18.0.1",
-    "nuxt": "3.17.6",
+    "nuxt": "3.17.7",
     "postcss-html": "1.8.0",
     "prettier": "3.6.2",
     "sass": "1.89.2",
-    "stylelint": "16.21.1",
+    "stylelint": "16.22.0",
     "stylelint-config-property-sort-order-smacss": "10.0.0",
     "stylelint-config-standard-scss": "15.0.1",
     "stylelint-plugin-use-baseline": "0.6.1",
@@ -53,12 +53,12 @@
     "vite": "6.3.5",
     "vitest": "3.2.4",
     "vue": "3.5.17",
-    "vue-tsc": "3.0.1"
+    "vue-tsc": "3.0.3"
   },
   "dependencies": {
     "@nuxtjs/robots": "5.4.0",
     "nuxt-cloudflare-analytics": "1.0.8",
-    "v-wave": "3.0.2",
+    "v-wave": "3.0.3",
     "vue-typical": "2.1.0"
   },
   "pnpm": {
