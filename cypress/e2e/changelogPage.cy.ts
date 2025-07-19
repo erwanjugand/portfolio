@@ -19,8 +19,13 @@ describe('Changelog page', () => {
 
   it('should contain filtered releases, click on a filter', () => {
     cy.findAllByRole('article').as('releases')
-    cy.wait(500).get('@releases').first().findByRole('button', { name: 'Feature' }).click()
-    cy.url().should('include', '/en/changelog?filter=feature')
+    const firstTagOfLastRelease = releases[0].tags[0].name
+    cy.wait(500)
+      .get('@releases')
+      .first()
+      .findByRole('button', { name: firstTagOfLastRelease.charAt(0).toUpperCase() + firstTagOfLastRelease.slice(1) })
+      .click()
+    cy.url().should('include', `/en/changelog?filter=${firstTagOfLastRelease}`)
     cy.get('@releases').should('have.length.of.at.most', releases.length - 1)
   })
 })
