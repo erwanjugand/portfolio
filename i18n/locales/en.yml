@@ -52,6 +52,8 @@ pages:
           2: "- Setup Cloudflare Analytics \n - Update dependencies"
         2:
           0: "- Improve page loading speed \n - Update dependencies"
+        3:
+          0: 'Migration to Nuxt 4'
     tags:
       dependencies: Dependencies
       feature: Feature

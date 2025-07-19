@@ -52,6 +52,8 @@ pages:
           2: "- Mise en place de CloudFlare Analytics \n - Mise à jour des dépendances"
         2:
           0: "- Amélioration de la vitesse de chargement des pages \n - Mise à jour des dépendances"
+        3:
+          0: 'Migration vers Nuxt 4'
     tags:
       dependencies: Dépendances
       feature: Fonctionnalité
