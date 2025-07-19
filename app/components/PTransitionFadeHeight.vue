@@ -16,18 +16,17 @@ const afterEnterLeave = (el: Element) => {
 </script>
 
 <template>
-  <TransitionGroup
-    v-if="group"
-    name="fade-height"
-    :tag
-    v-bind="$attrs"
-    @enter="beforeEnterLeave"
-    @after-enter="afterEnterLeave"
-    @leave="beforeEnterLeave"
-    @after-leave="afterEnterLeave"
-  >
-    <slot />
-  </TransitionGroup>
+  <component v-if="group" :is="tag">
+    <TransitionGroup
+      name="fade-height"
+      @enter="beforeEnterLeave"
+      @after-enter="afterEnterLeave"
+      @leave="beforeEnterLeave"
+      @after-leave="afterEnterLeave"
+    >
+      <slot />
+    </TransitionGroup>
+  </component>
   <Transition
     v-else
     name="fade-height"
