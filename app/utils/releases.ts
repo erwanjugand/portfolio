@@ -35,6 +35,12 @@ const tags = [
 
 export const releases = [
   {
+    name: '3.3.0',
+    date: new Date(2025, 6, 17),
+    major: false,
+    tags: [tags[3]],
+  },
+  {
     name: '3.2.0',
     date: new Date(2023, 5, 6),
     major: false,
