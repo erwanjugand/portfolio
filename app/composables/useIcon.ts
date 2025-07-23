@@ -2,10 +2,10 @@ import * as fal from '@fortawesome/pro-light-svg-icons'
 import * as far from '@fortawesome/pro-regular-svg-icons'
 import * as fas from '@fortawesome/pro-solid-svg-icons'
 import * as fab from '@fortawesome/free-brands-svg-icons'
-import type { IconPathData, IconDefinition } from '@fortawesome/fontawesome-common-types'
+import type { IconPathData, IconDefinition, IconStyle } from '@fortawesome/fontawesome-common-types'
 import type { MaybeRefOrGetter } from 'vue'
 
-export type IconType = 'light' | 'regular' | 'solid' | 'brand' | 'custom'
+export type IconType = IconStyle | 'custom'
 
 export interface Icon {
   type: IconType
@@ -17,8 +17,7 @@ export interface IconData {
   viewbox: `0 0 ${number} ${number}`
 }
 
-export type Icons = Record<IconType, Record<string, IconData>>
-
+export type Icons = Partial<Record<IconType, Record<string, IconData>>>
 const formatIcon = (faIcon: IconDefinition): IconData => {
   return {
     path: faIcon.icon[4],
@@ -42,7 +41,7 @@ export const icons: Icons = {
     },
   },
 
-  brand: {
+  brands: {
     docker: formatIcon(fab.faDocker),
     ubuntu: formatIcon(fab.faUbuntu),
     gitAlt: formatIcon(fab.faGitAlt),
@@ -86,5 +85,5 @@ export const icons: Icons = {
 }
 
 export default (type: MaybeRefOrGetter<IconType>, name: MaybeRefOrGetter<string>) => {
-  return computed<IconData | undefined>(() => icons[toValue(type)][toValue(name)])
+  return computed<IconData | undefined>(() => icons[toValue(type)]?.[toValue(name)])
 }

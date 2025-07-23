@@ -16,7 +16,7 @@ const afterEnterLeave = (el: Element) => {
 </script>
 
 <template>
-  <component v-if="group" :is="tag">
+  <component :is="tag" v-if="group">
     <TransitionGroup
       name="fade-height"
       @enter="beforeEnterLeave"
