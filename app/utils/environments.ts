@@ -14,14 +14,14 @@ export const environments = [
   {
     title: 'Git',
     icon: {
-      type: 'brand',
+      type: 'brands',
       name: 'gitAlt',
     },
   },
   {
     title: 'Ubuntu (WSL)',
     icon: {
-      type: 'brand',
+      type: 'brands',
       name: 'ubuntu',
     },
   },
@@ -42,7 +42,7 @@ export const environments = [
   {
     title: 'Docker',
     icon: {
-      type: 'brand',
+      type: 'brands',
       name: 'docker',
     },
   },

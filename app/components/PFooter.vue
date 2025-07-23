@@ -36,7 +36,7 @@ const closeEasterEgg = () => {
             href="https://github.com/erwanjugand"
             title="Github"
           >
-            <PIcon type="brand" name="github" class="footer-github-icon" />
+            <PIcon type="brands" name="github" class="footer-github-icon" />
           </a>
 
           <a
@@ -47,7 +47,7 @@ const closeEasterEgg = () => {
             href="https://www.linkedin.com/in/erwan-jugand/"
             title="Linkedin"
           >
-            <PIcon type="brand" name="linkedin" class="footer-linkedin-icon" />
+            <PIcon type="brands" name="linkedin" class="footer-linkedin-icon" />
           </a>
         </div>
 
