@@ -10,17 +10,17 @@
     "test:unit": "vitest run --silent",
     "test:e2e": "cypress open",
     "check:prettier": "prettier --check .",
-    "check:eslint": "eslint .",
+    "check:lint": "eslint .",
     "check:stylelint": "stylelint **/*.{scss,vue}",
     "check:ts": "vue-tsc --noEmit",
-    "check:all": "pnpm check:prettier && pnpm check:eslint && pnpm check:stylelint && pnpm check:ts",
+    "check:all": "pnpm check:prettier && pnpm check:lint && pnpm check:stylelint && pnpm check:ts",
     "check:ci": "pnpm nuxi prepare && pnpm check:all",
-    "fix:prettier": "prettier --loglevel warn --write .",
-    "fix:eslint": "pnpm check:eslint --fix",
+    "fix:prettier": "prettier --log-level warn --write .",
+    "fix:lint": "pnpm check:lint --fix",
     "fix:stylelint": "pnpm check:stylelint --fix",
     "fix:svg": "svgo public --recursive --quiet",
     "fix:image": "sh parse-image.sh",
-    "fix:all": "pnpm fix:prettier && pnpm fix:eslint && pnpm fix:stylelint && pnpm fix:svg"
+    "fix:all": "pnpm fix:prettier && pnpm fix:lint && pnpm fix:stylelint && pnpm fix:svg"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "7.0.0",
