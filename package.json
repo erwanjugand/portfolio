@@ -33,7 +33,7 @@
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "10.0.4",
     "@testing-library/cypress": "10.0.3",
-    "@types/node": "22",
+    "@types/node": "22.17.1",
     "@vitest/ui": "3.2.4",
     "@vueuse/nuxt": "13.6.0",
     "cypress": "14.5.4",
