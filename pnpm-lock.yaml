@@ -52,7 +52,7 @@ importers:
         specifier: 10.0.3
         version: 10.0.3(cypress@14.5.4)
       '@types/node':
-        specifier: '22'
+        specifier: 22.17.1
         version: 22.17.1
       '@vitest/ui':
         specifier: 3.2.4
