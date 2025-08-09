@@ -76,16 +76,16 @@ const closeEasterEgg = () => {
       'b'
       'c'
       'd';
+    gap: 16px 0;
     place-items: center;
     padding-block: 32px;
-    gap: 16px 0;
 
     @media #{variables.$medium-and-up} {
-      justify-items: start;
       grid-template:
         'a c d'
         'b c d';
       gap: 0 16px;
+      justify-items: start;
     }
 
     @media #{variables.$large-and-up} {
@@ -103,8 +103,8 @@ const closeEasterEgg = () => {
 
   &-social-networks {
     display: flex;
-    gap: 16px;
     grid-area: c;
+    gap: 16px;
 
     @media #{variables.$medium-and-up} {
       justify-self: center;
@@ -116,10 +116,10 @@ const closeEasterEgg = () => {
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: center;
     width: 64px;
     height: 64px;
     border-radius: var(--border-radius-small);
-    justify-self: center;
 
     &-icon {
       height: 2.5em;
@@ -154,18 +154,18 @@ const closeEasterEgg = () => {
     width: 64px;
     height: 64px;
     padding: 8px;
+    color: var(--c-text-secondary-1);
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    fill: currentcolor;
     transform: translateY(-50%);
     transition:
       transform var(--transition),
       color var(--transition);
-    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
-    fill: currentcolor;
-    color: var(--c-text-secondary-1);
 
     &:hover,
     &:focus {
-      transform: translateY(-100%);
       color: var(--c-text-secondary-2);
+      transform: translateY(-100%);
     }
 
     &-container {

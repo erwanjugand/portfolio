@@ -44,8 +44,8 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
     display: grid;
     grid: 'a b' 'c c';
     grid-template-columns: auto 1fr;
-    font-size: 0.875em;
     gap: 0 0.3em;
+    font-size: 0.875em;
   }
 
   &-title {
@@ -64,8 +64,8 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
   }
 
   &-description {
-    color: variables.$grey-75;
     font-size: 0.8125em;
+    color: variables.$grey-75;
   }
 }
 </style>

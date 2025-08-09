@@ -17,25 +17,25 @@
 
     @keyframes scroll-fade {
       0% {
-        transform: translate(var(--scroll-animation-x, 0), var(--scroll-animation-y, 0));
         opacity: 0;
+        transform: translate(var(--scroll-animation-x, 0), var(--scroll-animation-y, 0));
       }
 
       100% {
-        transform: translate(0);
         opacity: 1;
+        transform: translate(0);
       }
     }
 
     @keyframes scroll-scale {
       0% {
-        transform: scale(0.75);
         opacity: 0;
+        transform: scale(0.75);
       }
 
       100% {
-        transform: scale(1);
         opacity: 1;
+        transform: scale(1);
       }
     }
   }

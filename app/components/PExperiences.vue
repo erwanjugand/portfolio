@@ -15,19 +15,19 @@
 $diagonal: math.sqrt(3);
 
 .experiences-wrapper {
-  display: flex;
   position: relative;
+  display: flex;
   flex-direction: column;
-  width: min(90vw, 576px);
   gap: 32px;
+  width: min(90vw, 576px);
 
   &::before {
-    content: '';
     position: absolute;
     top: 0;
     left: calc(math.div(24px * $diagonal, 2) - math.div(3px, 2));
     width: 3px;
     height: 100%;
+    content: '';
     background-image: linear-gradient(
       180deg,
       var(--c-primary) 2px,

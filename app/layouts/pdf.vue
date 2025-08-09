@@ -49,13 +49,13 @@ const download = async () => {
   width: 100%;
   margin: auto;
   overflow: hidden;
-  transition: width var(--transition);
   background-color: variables.$grey-0;
   box-shadow:
     inset 0 1px 0 0 var(--c-border),
     0 3px 1px -2px rgba(variables.$grey-100, 0.2),
     0 2px 2px 0 rgba(variables.$grey-100, 0.14),
     0 1px 5px 0 rgba(variables.$grey-100, 0.12);
+  transition: width var(--transition);
 
   @media #{variables.$large-and-up} {
     width: 960px;
@@ -81,11 +81,11 @@ const download = async () => {
   }
 
   &-action {
-    display: flex;
     position: fixed;
-    z-index: 1;
     bottom: 0;
     left: 0;
+    z-index: 1;
+    display: flex;
     justify-content: center;
     width: 100%;
     padding: 8px 16px calc(8px + var(--safe-area-bottom));

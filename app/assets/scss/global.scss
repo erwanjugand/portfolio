@@ -37,8 +37,8 @@ html {
 }
 
 .light-mode {
-  background-color: var(--c-background-bg);
   color: var(--c-text);
+  background-color: var(--c-background-bg);
 
   // Color
   --c-primary-hover: #{color.mix(variables.$primary, variables.$grey-0, 90%)};
@@ -77,8 +77,8 @@ html {
 
 .dark-mode,
 .hacked-mode {
-  background-color: var(--c-background-bg);
   color: var(--c-text);
+  background-color: var(--c-background-bg);
 
   // Color
   --c-primary-hover: #{color.mix(variables.$primary, variables.$grey-100, 90%)};
@@ -129,8 +129,8 @@ button {
 a,
 button {
   &:focus-visible {
-    border-radius: var(--focus-radius, var(--border-radius-regular));
     outline: 2px solid var(--c-text);
     outline-offset: var(--focus-offset, -2px);
+    border-radius: var(--focus-radius, var(--border-radius-regular));
   }
 }

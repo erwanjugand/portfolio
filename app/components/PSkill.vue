@@ -15,9 +15,9 @@ defineProps<{
 
 <style lang="scss">
 @mixin show-content {
-  transform: translateY(-2.5rem);
   outline: none;
   opacity: 1;
+  transform: translateY(-2.5rem);
 }
 
 .skill {
@@ -39,14 +39,14 @@ defineProps<{
   }
 
   &-score {
-    display: flex;
     position: absolute;
     top: 60%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    opacity: 0;
     transform: translateY(0);
     transition: var(--transition);
-    opacity: 0;
 
     @media #{variables.$touchscreen} {
       @include show-content;

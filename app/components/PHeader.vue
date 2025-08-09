@@ -72,16 +72,16 @@ const closeMenu = () => switchMenu.value?.hidePopover()
 <style lang="scss">
 .header {
   position: fixed;
-  z-index: 10;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
-  backdrop-filter: blur(20px);
   box-shadow:
     inset 0 -1px 0 0 var(--c-border),
     0 3px 1px -2px rgba(variables.$grey-100, 0.2),
     0 2px 2px 0 rgba(variables.$grey-100, 0.14),
     0 1px 5px 0 rgba(variables.$grey-100, 0.12);
+  backdrop-filter: blur(20px);
 
   @media print {
     display: none;
@@ -113,12 +113,12 @@ const closeMenu = () => switchMenu.value?.hidePopover()
   &-home {
     display: flex;
     align-items: center;
-    padding-inline: 16px;
-    transition: font-size var(--transition);
-    font-size: 1.125em;
-    text-decoration: none;
-    text-transform: uppercase;
     justify-self: flex-start;
+    padding-inline: 16px;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: font-size var(--transition);
 
     @media #{variables.$small-and-down} {
       font-size: 0;
@@ -143,8 +143,8 @@ const closeMenu = () => switchMenu.value?.hidePopover()
     &-icon {
       width: 10px;
       margin-left: 8px;
-      transition: transform var(--transition);
       fill: var(--c-text);
+      transition: transform var(--transition);
     }
 
     &-image {
@@ -159,8 +159,8 @@ const closeMenu = () => switchMenu.value?.hidePopover()
 
   &-switch-menu {
     position: fixed;
-    border-radius: var(--border-radius-small);
     background-color: var(--c-background-3);
+    border-radius: var(--border-radius-small);
     scale: 0;
 
     @supports (position-anchor: --header-switch-cta) and (position-area: bottom) {

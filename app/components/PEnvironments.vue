@@ -21,8 +21,8 @@
 .tool {
   --scroll-animation-y: 64px;
 
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: center;
   cursor: pointer;
 
@@ -38,18 +38,18 @@
     left: 0;
     width: calc(100% + 32px);
     margin-inline: -16px;
+    color: var(--c-primary);
+    text-align: center;
+    opacity: 0;
     transform: translateY(-100%);
     transition:
       transform var(--transition),
       opacity var(--transition);
-    opacity: 0;
-    color: var(--c-primary);
-    text-align: center;
 
     .tool:hover &,
     .tool:focus & {
-      transform: translateY(20%);
       opacity: 1;
+      transform: translateY(20%);
     }
   }
 }

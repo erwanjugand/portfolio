@@ -32,6 +32,7 @@ const scroll = () => {
 <style lang="scss">
 .introduction {
   &.section {
+    gap: 64px;
     justify-content: space-around;
     min-height: 100svh;
     padding-block: 128px 64px;
@@ -44,7 +45,6 @@ const scroll = () => {
     background-repeat: no-repeat;
     background-position: center bottom var(--background-position-y);
     background-size: cover;
-    gap: 64px;
 
     @media #{variables.$large-and-up} {
       background-image: image-set(
@@ -66,11 +66,11 @@ const scroll = () => {
 
   h1 {
     padding-inline: 1em;
-    transition: font-size var(--transition);
-    color: variables.$grey-0;
     font-size: 2em;
+    color: variables.$grey-0;
     text-align: center;
     text-shadow: 0 0 10px variables.$grey-100;
+    transition: font-size var(--transition);
 
     @media #{variables.$medium-and-up} {
       font-size: 3em;
@@ -81,9 +81,9 @@ const scroll = () => {
     }
 
     &::after {
+      font-weight: var(--font-weight-light);
       content: '|';
       animation: blink 1s infinite step-start;
-      font-weight: var(--font-weight-light);
     }
   }
 
@@ -95,9 +95,9 @@ const scroll = () => {
     --focus-radius: 99px;
     --focus-offset: 2px;
 
+    color: variables.$grey-0;
     border-radius: 99px;
     opacity: 0.75;
-    color: variables.$grey-0;
 
     &-image {
       display: flex;

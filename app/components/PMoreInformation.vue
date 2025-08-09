@@ -44,12 +44,12 @@
   &-link {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 24px;
-    padding: 8px 16px;
-    border-radius: var(--border-radius-regular);
-    text-decoration: none;
     gap: 8px;
+    align-items: center;
+    padding: 8px 16px;
+    margin-top: 24px;
+    text-decoration: none;
+    border-radius: var(--border-radius-regular);
   }
 }
 </style>

@@ -38,8 +38,8 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
 .hexagon {
   display: flex;
   padding: 3px;
-  fill: currentcolor;
   color: var(--c-primary);
+  fill: currentcolor;
 
   @include dynamic-border($hexagon-width, $hexagon-height, $hexagon-border-out);
 
@@ -49,10 +49,10 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
 
     &::before,
     &::after {
-      content: '';
       position: absolute;
       left: 0;
       box-sizing: border-box;
+      content: '';
     }
 
     &::before {
@@ -66,8 +66,8 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
 
   &-content {
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 

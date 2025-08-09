@@ -53,17 +53,17 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
 
 <style lang="scss">
 .easter-egg {
-  display: flex;
   position: fixed;
-  z-index: 10;
   top: 0;
   left: 0;
+  z-index: 10;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: variables.$grey-100;
   color: var(--c-primary);
+  background: variables.$grey-100;
 
   &-animation {
     display: flex;
@@ -95,8 +95,8 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
 
     &-bar {
       flex: 0;
-      transition: flex var(--transition);
       background-color: var(--c-primary);
+      transition: flex var(--transition);
     }
   }
 }

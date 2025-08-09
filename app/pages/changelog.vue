@@ -88,13 +88,13 @@ const filter = (name: string) => {
   }
 
   &-tag {
-    margin-bottom: 16px;
     padding: 8px 16px;
-    transition: opacity var(--transition);
-    border-radius: var(--border-radius-regular);
-    color: variables.$grey-0;
+    margin-bottom: 16px;
     font-size: 14px;
     line-height: 1.2;
+    color: variables.$grey-0;
+    border-radius: var(--border-radius-regular);
+    transition: opacity var(--transition);
 
     &-darken {
       opacity: 0.25;

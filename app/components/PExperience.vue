@@ -30,19 +30,19 @@ $diagonal: math.sqrt(3);
     font-weight: var(--font-weight-bold);
 
     &::before {
-      content: '';
       position: absolute;
       top: calc(50% - 12px);
       left: math.div((24px * $diagonal) - 24px, 2);
       box-sizing: border-box;
       width: 24px;
       height: 24px;
-      transform: rotate(45deg);
-      border: 3px solid transparent;
+      content: '';
       background-color: var(--c-background-bg);
+      border: 3px solid transparent;
       box-shadow:
         0 0 0 3px var(--c-primary),
         inset 0 0 0 1px var(--c-primary);
+      transform: rotate(45deg);
     }
   }
 }

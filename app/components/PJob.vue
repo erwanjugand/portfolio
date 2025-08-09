@@ -48,46 +48,46 @@ $diagonal: math.sqrt(3);
     display: grid;
     grid: 'a b' 'c c';
     grid-template-columns: auto 1fr;
-    align-items: center;
     gap: 4px 0.3em;
+    align-items: center;
   }
 
   &-title {
     grid-area: a;
     padding-left: 48px;
-    color: var(--c-primary);
     font-weight: var(--font-weight-bold);
+    color: var(--c-primary);
 
     &-anchor {
       position: relative;
 
       &::before {
-        content: '';
         position: absolute;
         top: calc(50% - 6px);
         left: math.div((12px * $diagonal) + 8px, 2);
         box-sizing: border-box;
         width: 12px;
         height: 12px;
-        transform: rotate(45deg);
-        border: 3px solid transparent;
+        content: '';
         background-color: var(--c-background-bg);
+        border: 3px solid transparent;
         box-shadow: 0 0 0 3px var(--c-primary);
+        transform: rotate(45deg);
       }
     }
   }
 
   &-contract {
     grid-area: b;
-    color: var(--c-primary);
     font-weight: var(--font-weight-light);
+    color: var(--c-primary);
   }
 
   &-time {
     grid-area: c;
     padding-left: 48px;
-    color: var(--c-text-secondary-3);
     font-size: 0.875rem;
+    color: var(--c-text-secondary-3);
   }
 
   &-description {

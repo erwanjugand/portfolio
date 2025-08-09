@@ -52,9 +52,9 @@ $columns: (
 
 .row {
   display: grid;
-  justify-items: center;
   grid-template-columns: repeat(12, 1fr);
   gap: 64px 16px;
+  justify-items: center;
   transition: gap var(--transition);
 
   @media #{variables.$large-and-up} {

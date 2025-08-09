@@ -24,28 +24,28 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
   --focus-offset: 2px;
 
   display: flex;
+  gap: 16px;
   align-items: center;
   min-height: 3em;
   padding: 0.5em 1.5em;
-  transition:
-    background-color var(--transition),
-    opacity var(--transition);
-  border-radius: var(--border-radius-small);
-  box-shadow: inset 0 0 0 2px transparent;
   font-weight: var(--font-weight-bold);
   line-height: 1.25em;
   text-transform: uppercase;
-  gap: 16px;
+  border-radius: var(--border-radius-small);
+  box-shadow: inset 0 0 0 2px transparent;
+  transition:
+    background-color var(--transition),
+    opacity var(--transition);
 
   &:disabled {
-    opacity: 0.6;
     cursor: default;
+    opacity: 0.6;
   }
 
   &-outlined {
+    color: var(--c-primary);
     box-shadow: inset 0 0 0 2px var(--c-primary);
     fill: var(--c-primary);
-    color: var(--c-primary);
 
     &:hover:not(:disabled) {
       background-color: rgba(variables.$primary, 0.1);
@@ -53,9 +53,9 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
   }
 
   &-filled {
+    color: var(--c-background-bg);
     background-color: var(--c-primary);
     fill: var(--c-background-bg);
-    color: var(--c-background-bg);
 
     &:hover:not(:disabled) {
       background-color: var(--c-primary-hover);
