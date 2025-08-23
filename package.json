@@ -60,8 +60,7 @@
   "dependencies": {
     "@nuxtjs/robots": "5.5.0",
     "nuxt-cloudflare-analytics": "1.0.8",
-    "v-wave": "3.0.3",
-    "vue-typical": "2.1.0"
+    "v-wave": "3.0.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import VTypical from 'vue-typical'
-
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
 const scroll = () => {
@@ -10,15 +8,12 @@ const scroll = () => {
 
 <template>
   <PSection id="introduction" class="introduction">
-    <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
-      <VTypical
-        class="introduction-title"
-        wrapper="h1"
-        :loop="Infinity"
-        :aria-label="`Erwan Jugand | ${$t('PIntroduction.titleAlt')}`"
-        :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]"
-      />
-    </ClientOnly>
+    <PTyping
+      tag="h1"
+      class="introduction-title"
+      :texts="['Erwan Jugand', $t('PIntroduction.titleAlt')]"
+      :erase-delay="4000"
+    />
     <PButton class="introduction-cv" :to="localePath('resume')" outlined>
       <PIcon type="regular" name="download" />
       {{ $t('PIntroduction.action') }}

@@ -17,9 +17,6 @@ importers:
       v-wave:
         specifier: 3.0.3
         version: 3.0.3(magicast@0.3.5)(vue@3.5.19(typescript@5.9.2))
-      vue-typical:
-        specifier: 2.1.0
-        version: 2.1.0
     devDependencies:
       '@fortawesome/free-brands-svg-icons':
         specifier: 7.0.0
@@ -5870,9 +5867,6 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
-
-  vue-typical@2.1.0:
-    resolution: {integrity: sha512-vqfN08VgfhV8zuvf/UwDs4/P3VtQxHWK9ZshDwc1cEqWDUXzgwJwLiEUqYtksIug5wkhgoedyTAeEG6kJao6WA==}
 
   vue@3.5.19:
     resolution: {integrity: sha512-ZRh0HTmw6KChRYWgN8Ox/wi7VhpuGlvMPrHjIsdRbzKNgECFLzy+dKL5z9yGaBSjCpmcfJCbh3I1tNSRmBz2tg==}
@@ -12304,8 +12298,6 @@ snapshots:
       '@volar/typescript': 2.4.23
       '@vue/language-core': 3.0.6(typescript@5.9.2)
       typescript: 5.9.2
-
-  vue-typical@2.1.0: {}
 
   vue@3.5.19(typescript@5.9.2):
     dependencies:
