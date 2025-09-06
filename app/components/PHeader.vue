@@ -168,12 +168,10 @@ const closeMenu = () => switchMenu.value?.hidePopover()
       position-area: bottom;
     }
 
-    @supports (transition-behavior: allow-discrete) {
-      transition:
-        scale var(--transition) allow-discrete,
-        display var(--transition) allow-discrete,
-        overlay var(--transition) allow-discrete;
-    }
+    transition:
+      scale var(--transition) allow-discrete,
+      display var(--transition) allow-discrete,
+      overlay var(--transition) allow-discrete;
 
     @supports not (
       (anchor-name: --header-switch-cta) and (position-area: bottom) and (position-anchor: --header-switch-cta)
