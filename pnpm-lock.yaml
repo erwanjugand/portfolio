@@ -97,8 +97,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0(stylelint@16.24.0(typescript@5.9.2))
       stylelint-plugin-use-baseline:
-        specifier: 0.9.1
-        version: 0.9.1(stylelint@16.24.0(typescript@5.9.2))
+        specifier: 1.0.0
+        version: 1.0.0(stylelint@16.24.0(typescript@5.9.2))
       svgo:
         specifier: 4.0.0
         version: 4.0.0
@@ -4751,8 +4751,8 @@ packages:
     peerDependencies:
       stylelint: ^16.18.0
 
-  stylelint-plugin-use-baseline@0.9.1:
-    resolution: {integrity: sha512-L0I72+TCGhIn+6L9pRpKMlk9cvfhh7GnBQfPWFtx2ghRKIC7JO3RBW404zYxUgEGedeJPRIsVOWfVbde+kqmHQ==}
+  stylelint-plugin-use-baseline@1.0.0:
+    resolution: {integrity: sha512-f6zY5LNPSYDHTOOjOcXCJKC4Fl55+VmeGoma0AmkVwwhuu3MzX4KUe2i0DoK5Jpq3JRqDXACGxn+Msk655XUNA==}
     peerDependencies:
       stylelint: ^16.0.2
 
@@ -10489,9 +10489,10 @@ snapshots:
       postcss-sorting: 9.1.0(postcss@8.5.6)
       stylelint: 16.24.0(typescript@5.9.2)
 
-  stylelint-plugin-use-baseline@0.9.1(stylelint@16.24.0(typescript@5.9.2)):
+  stylelint-plugin-use-baseline@1.0.0(stylelint@16.24.0(typescript@5.9.2)):
     dependencies:
       css-tree: 3.1.0
+      is-plain-object: 5.0.0
       postcss: 8.5.6
       postcss-value-parser: 4.2.0
       stylelint: 16.24.0(typescript@5.9.2)
