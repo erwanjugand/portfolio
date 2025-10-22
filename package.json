@@ -34,7 +34,7 @@
     "@nuxtjs/i18n": "10.1.1",
     "@testing-library/cypress": "10.1.0",
     "@types/node": "22.18.11",
-    "@vitest/ui": "3.2.4",
+    "@vitest/ui": "4.0.1",
     "@vueuse/nuxt": "13.9.0",
     "cypress": "15.5.0",
     "eslint": "9.38.0",
@@ -53,7 +53,7 @@
     "the-new-css-reset": "1.11.3",
     "typescript": "5.9.3",
     "vite": "7.1.11",
-    "vitest": "3.2.4",
+    "vitest": "4.0.1",
     "vue": "3.5.22",
     "vue-tsc": "3.1.1"
   },
