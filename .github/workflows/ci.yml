@@ -62,7 +62,7 @@ jobs:
           browser: chrome
 
       - name: Upload Cypress Screenshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         if: failure()
         with:
           name: cypress-screenshots
@@ -70,7 +70,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Upload Build
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: nuxt-cloudflare-build
           include-hidden-files: true
@@ -99,7 +99,7 @@ jobs:
           version: 10
 
       - name: Download Build
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: nuxt-cloudflare-build
 
