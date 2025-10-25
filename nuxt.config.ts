@@ -25,6 +25,7 @@ export default defineNuxtConfig({
 
   experimental: {
     writeEarlyHints: true,
+    extractAsyncDataHandlers: true,
   },
 
   modules: [
