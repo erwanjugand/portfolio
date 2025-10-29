@@ -35,7 +35,7 @@
     "@testing-library/cypress": "10.1.0",
     "@types/node": "24.9.1",
     "@vitest/ui": "4.0.3",
-    "@vueuse/nuxt": "13.9.0",
+    "@vueuse/nuxt": "14.0.0",
     "cypress": "15.5.0",
     "eslint": "9.38.0",
     "eslint-config-prettier": "10.1.8",
