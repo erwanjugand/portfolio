@@ -72,6 +72,10 @@ export default defineNuxtConfig({
     token: process.env.CLOUDFLARE_ANALYTICS_TOKEN,
   },
 
+  colorMode: {
+    classSuffix: '-mode',
+  },
+
   vWave: {
     directive: 'ripple',
   },
