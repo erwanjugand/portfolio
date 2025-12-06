@@ -51,6 +51,24 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
+        - name: Get diff
+          id: get-diff
+          uses: NejcZdovc/bundle-size-diff@v1
+          with:
+            base_path: './base/stats.json'
+            pr_path: './pr/stats.json'
+
+        - name: Comment
+          uses: NejcZdovc/comment-pr@v1.1.1
+          with:
+            file: 'comment.md'
+          env:
+            GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+            OLD: ${{steps.get-diff.outputs.base_file_string}}
+            NEW: ${{steps.get-diff.outputs.pr_file_string}}
+            DIFF: ${{steps.get-diff.outputs.diff_file_string}}
+            DIFF_PERCENT: ${{steps.get-diff.outputs.percent}}
+
       - name: Install Cypress
         run: pnpm cypress install
 
