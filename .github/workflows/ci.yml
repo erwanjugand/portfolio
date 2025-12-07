@@ -51,6 +51,12 @@ jobs:
           CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           NITRO_PRESET: cloudflare
 
+      - name: Build size stats
+        if: github.event_name == 'pull_request'
+        uses: kevinmarrec/workflows/filesize-diff@main
+        with:
+          directories: .output/public,.output/server
+
       - name: Install Cypress
         run: pnpm cypress install
 
