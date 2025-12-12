@@ -52,7 +52,6 @@ jobs:
           NITRO_PRESET: cloudflare
 
       - name: Build size stats
-        if: github.event_name == 'pull_request'
         uses: kevinmarrec/workflows/filesize-diff@main
         with:
           directories: .output/public,.output/server
