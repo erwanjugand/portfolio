@@ -52,7 +52,7 @@ jobs:
           NITRO_PRESET: cloudflare
 
       - name: Build size stats
-        uses: kevinmarrec/workflows/filesize-diff@main
+        uses: kevinmarrec/workflows/filesize-diff@0c7d9f8e327cc05624d86a98e078b5e9f2e396ae # main
         with:
           directories: .output/public,.output/server
 
@@ -60,7 +60,7 @@ jobs:
         run: pnpm cypress install
 
       - name: Run Cypress
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@d842ab15a88774cf1311cc07f0e7112024c3dbd7 # v6.10.6
         with:
           start: npx wrangler dev .output/server/index.mjs --site .output/public --log-level error --port 3000
           wait-on: 'http://localhost:3000'
