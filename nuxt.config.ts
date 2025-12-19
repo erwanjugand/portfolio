@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  future: {
+    compatibilityVersion: 5,
+  },
+
   runtimeConfig: {
     rapidApiKey: process.env.RAPID_API_KEY,
     rapidApiHost: process.env.RAPID_API_HOST,
