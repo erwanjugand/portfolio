@@ -66,19 +66,11 @@ const scroll = () => {
 
   h1 {
     padding-inline: 1em;
-    font-size: 2em;
+    font-size: clamp(2em, 6vw, 4em);
     color: variables.$grey-0;
     text-align: center;
     text-shadow: 0 0 10px variables.$grey-100;
     transition: font-size var(--transition);
-
-    @media #{variables.$medium-and-up} {
-      font-size: 3em;
-    }
-
-    @media #{variables.$large-and-up} {
-      font-size: 4em;
-    }
 
     &::after {
       font-weight: var(--font-weight-light);
