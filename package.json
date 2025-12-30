@@ -23,6 +23,7 @@
     "fix:all": "pnpm fix:prettier && pnpm fix:lint && pnpm fix:stylelint && pnpm fix:svg"
   },
   "devDependencies": {
+    "@erwanjugand/eslint-config": "1.0.1",
     "@fortawesome/free-brands-svg-icons": "7.1.0",
     "@fortawesome/pro-light-svg-icons": "7.1.0",
     "@fortawesome/pro-regular-svg-icons": "7.1.0",
