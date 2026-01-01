@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const lastRelease = releases[0]
 const localePath = useLocalePath()
-const currentYear = useDateFormat(useNow(), 'YYYY')
+const CURRENT_YEAR = new Date().getFullYear()
 
 const isVisible = ref(false)
 const openEasterEgg = () => {
@@ -21,7 +21,7 @@ const closeEasterEgg = () => {
     </div>
     <footer class="footer">
       <div class="container footer-content">
-        <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: currentYear })" />
+        <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: CURRENT_YEAR })" />
 
         <NuxtLink class="footer-legal-mentions" :to="localePath('legal-mentions')">
           {{ $t('pages.legalMentions.title') }}
