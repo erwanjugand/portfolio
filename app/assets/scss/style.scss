@@ -1,8 +1,11 @@
 @use 'sass:meta';
+@layer reset, base;
+@import 'the-new-css-reset' layer(reset);
 
-// @import 'the-new-css-reset/css/reset.css';
-@include meta.load-css('the-new-css-reset');
+@layer base {
+  @include meta.load-css('grid');
+  @include meta.load-css('global');
+  @include meta.load-css('animations');
+}
+
 @include meta.load-css('variables');
-@include meta.load-css('grid');
-@include meta.load-css('global');
-@include meta.load-css('animations');
