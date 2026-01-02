@@ -2,11 +2,11 @@
 import type { NuxtError } from 'nuxt/app'
 import { useI18n } from 'vue-i18n'
 
-const localePath = useLocalePath()
-
 const { error } = defineProps<{
   error: NuxtError
 }>()
+
+const localePath = useLocalePath()
 
 const { t } = useI18n()
 
