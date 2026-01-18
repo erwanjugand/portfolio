@@ -10,7 +10,7 @@
     "test:unit": "vitest run --silent",
     "test:e2e": "cypress open",
     "check:prettier": "prettier --check .",
-    "check:lint": "eslint .",
+    "check:lint": "eslint",
     "check:stylelint": "stylelint **/*.{scss,vue}",
     "check:ts": "vue-tsc --noEmit",
     "check:all": "pnpm check:prettier && pnpm check:lint && pnpm check:stylelint && pnpm check:ts",
