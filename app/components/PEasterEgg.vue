@@ -31,7 +31,7 @@ const progressBarStyle = computed<CSSProperties>(() => ({ flexBasis: `${progress
 <template>
   <div class="easter-egg">
     <div class="easter-egg-wrapper">
-      <img class="easter-egg-animation" src="/images/logo-hack.gif" alt="" />
+      <NuxtImg class="easter-egg-animation" src="/images/logo-hack.gif" alt="" />
       <p
         v-for="(step, index) of easterEggSteps"
         :key="step.text"

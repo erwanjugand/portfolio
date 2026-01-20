@@ -4,20 +4,15 @@
       <PH2 class="xs12">
         {{ $t('PAbout.title') }}
       </PH2>
-      <picture class="xs12 l4 about-profile-container scroll-animation-fade">
-        <source
-          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
-          type="image/avif"
-        />
-        <img
-          width="312"
-          height="312"
-          class="about-profile"
-          src="/images/erwan-jugand-x1.webp"
-          srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
-          :alt="$t('PAbout.profileAlt')"
-        />
-      </picture>
+      <NuxtPicture
+        class="xs12 l4 about-profile-container scroll-animation-fade"
+        src="/images/erwan-jugand.jpg"
+        legacy-format="webp"
+        sizes="300px"
+        densities="x1 x2 x3"
+        :img-attrs="{ class: 'about-profile', width: 312, height: 312 }"
+        :alt="$t('PAbout.profileAlt')"
+      />
       <div class="xs12 l8 about-content scroll-animation-fade">
         <I18nT tag="p" class="about-text" keypath="PAbout.text1" scope="global">
           <template #name>

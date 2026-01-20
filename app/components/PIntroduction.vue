@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { CSSProperties } from 'vue'
 import VTypical from 'vue-typical'
 
 const localePath = useLocalePath()
@@ -6,10 +7,29 @@ const behavior = useScrollBehavior()
 const scroll = () => {
   window.scrollTo({ top: window.innerHeight - 64, behavior: behavior.value })
 }
+
+const img = useImage()
+
+const backgroundDesktopUrls = (format: 'avif' | 'webp', density: number) =>
+  img('/images/background.jpg', { format, resize: `${1920 * density}x${1080 * density}` })
+
+const backgroundMobileUrls = (format: 'avif' | 'webp', density: number) =>
+  img('/images/background.jpg', { format, resize: `${768 * density}x${1024 * density}` })
+
+const backgroundStyle: CSSProperties = {
+  '--background-desktop-x1-avif': `url('${backgroundDesktopUrls('avif', 1)}')`,
+  '--background-desktop-x2-avif': `url('${backgroundDesktopUrls('avif', 2)}')`,
+  '--background-desktop-x1-webp': `url('${backgroundDesktopUrls('webp', 1)}')`,
+  '--background-desktop-x2-webp': `url('${backgroundDesktopUrls('webp', 2)}')`,
+  '--background-mobile-x1-avif': `url('${backgroundMobileUrls('avif', 1)}')`,
+  '--background-mobile-x2-avif': `url('${backgroundMobileUrls('avif', 2)}')`,
+  '--background-mobile-x1-webp': `url('${backgroundMobileUrls('webp', 1)}')`,
+  '--background-mobile-x2-webp': `url('${backgroundMobileUrls('webp', 2)}')`,
+}
 </script>
 
 <template>
-  <PSection id="introduction" class="introduction">
+  <PSection id="introduction" class="introduction" :style="backgroundStyle">
     <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
       <VTypical
         class="introduction-title"
@@ -37,10 +57,10 @@ const scroll = () => {
     min-height: 100svh;
     padding-block: 128px 64px;
     background-image: image-set(
-      url('/images/background-mobile-x1.avif') type('image/avif') 1x,
-      url('/images/background-mobile-x2.avif') type('image/avif') 2x,
-      url('/images/background-mobile-x1.webp') type('image/webp') 1x,
-      url('/images/background-mobile-x2.webp') type('image/webp') 2x
+      var(--background-mobile-x1-avif) type('image/avif') 1x,
+      var(--background-mobile-x2-avif) type('image/avif') 2x,
+      var(--background-mobile-x1-webp) type('image/webp') 1x,
+      var(--background-mobile-x2-webp) type('image/webp') 2x
     );
     background-repeat: no-repeat;
     background-position: center bottom var(--background-position-y);
@@ -48,10 +68,10 @@ const scroll = () => {
 
     @media #{variables.$large-and-up} {
       background-image: image-set(
-        url('/images/background-desktop-x1.avif') type('image/avif') 1x,
-        url('/images/background-desktop-x2.avif') type('image/avif') 2x,
-        url('/images/background-desktop-x1.webp') type('image/webp') 1x,
-        url('/images/background-desktop-x2.webp') type('image/webp') 2x
+        var(--background-desktop-x1-avif) type('image/avif') 1x,
+        var(--background-desktop-x2-avif) type('image/avif') 2x,
+        var(--background-desktop-x1-webp) type('image/webp') 1x,
+        var(--background-desktop-x2-webp) type('image/webp') 2x
       );
     }
 

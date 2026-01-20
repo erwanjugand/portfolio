@@ -33,6 +33,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@nuxt/image',
     '@nuxt/eslint',
     '@nuxtjs/google-fonts',
     '@nuxtjs/color-mode',
@@ -46,6 +47,13 @@ export default defineNuxtConfig({
 
   imports: {
     dirs: ['store'],
+  },
+
+  image: {
+    format: ['avif'],
+    ipx: {
+      maxAge: 60 * 60 * 24 * 30,
+    },
   },
 
   i18n: {

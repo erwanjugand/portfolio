@@ -25,20 +25,15 @@ defineI18nRoute({
 <template>
   <div class="cv">
     <header class="cv-header">
-      <picture class="cv-header-profile-container">
-        <source
-          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
-          type="image/avif"
-        />
-        <img
-          width="160"
-          height="160"
-          class="cv-header-profile"
-          src="/images/erwan-jugand-x1.webp"
-          srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
-          alt="Erwan Jugand"
-        />
-      </picture>
+      <NuxtPicture
+        class="cv-header-profile-container"
+        src="/images/erwan-jugand.jpg"
+        legacy-format="webp"
+        sizes="160px"
+        densities="x1 x2 x3"
+        :img-attrs="{ class: 'cv-header-profile', width: 160, height: 160 }"
+        :alt="$t('PAbout.profileAlt')"
+      />
       <h1 class="cv-header-title">Erwan Jugand</h1>
       <p class="cv-header-post" v-text="$t('PIntroduction.titleAlt')" />
     </header>
