@@ -25,6 +25,13 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
     },
+    publicAssets: [
+      {
+        baseURL: '/images',
+        dir: 'public/images',
+        maxAge: 60 * 60 * 24 * 30, // 30 jours
+      },
+    ],
   },
 
   experimental: {
