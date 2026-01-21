@@ -60,7 +60,7 @@ jobs:
         run: pnpm cypress install
 
       - name: Run Cypress
-        uses: cypress-io/github-action@2ad32e649e4db26c07674ebae31a297601dbcbaf # v6.10.8
+        uses: cypress-io/github-action@dca986193e4336cb32820819b07e9ecacacaaaf6 # v7.0.0
         with:
           start: npx wrangler dev .output/server/index.mjs --site .output/public --log-level error --port 3000
           wait-on: 'http://localhost:3000'
