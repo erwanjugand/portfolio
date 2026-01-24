@@ -164,8 +164,8 @@ const closeMenu = () => switchMenu.value?.hidePopover()
     scale: 0;
 
     @supports (position-anchor: --header-switch-cta) and (position-area: bottom) {
-      position-anchor: --header-switch-cta;
       position-area: bottom;
+      position-anchor: --header-switch-cta;
     }
 
     transition:
