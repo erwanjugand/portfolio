@@ -12,12 +12,23 @@ export interface Experience {
 
 export const experiences = [
   {
+    enterprise: 'Sekost',
+    jobs: [
+      {
+        key: 'sekostFrontEndDev',
+        contract: 'cdi',
+        startedAt: new Date(2026, 1, 9),
+      },
+    ],
+  },
+  {
     enterprise: 'Steeple',
     jobs: [
       {
         key: 'steepleLeadFrontEndDev',
         contract: 'cdi',
         startedAt: new Date(2021, 2),
+        finishedAt: new Date(2026, 1, 6),
       },
       {
         key: 'steepleFrontEndDev',

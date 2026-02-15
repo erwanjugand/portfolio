@@ -141,6 +141,9 @@ PJob:
     cdi: CDI
     internship: Stage
   items:
+    sekostFrontEndDev:
+      title: Développeur Front-End
+      description: Maintenance et évolution des rapports et l'interface du SaaS.
     steepleLeadFrontEndDev:
       title: Lead développeur Front-End
       description: Structuration du pôle, pilotage des équipes techniques et développement continue du site Steeple.

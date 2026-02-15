@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 
 const { job } = defineProps<{
   job: Job
+  compact?: boolean
 }>()
 
 // Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
@@ -29,7 +30,7 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
       <p class="cv-job-contract" v-text="contract" />
       <p class="cv-job-time" v-text="time" />
     </div>
-    <p class="cv-job-description" v-text="description" />
+    <p v-if="!compact" class="cv-job-description" v-text="description" />
   </div>
 </template>
 

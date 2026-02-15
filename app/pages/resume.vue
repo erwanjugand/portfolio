@@ -126,7 +126,12 @@ defineI18nRoute({
       <h2 class="cv-main-title" v-text="$t('pages.resume.experiences.title')" />
       <div v-for="experience of experiences" :key="experience.enterprise" class="cv-main-experience">
         <h3 class="cv-main-experience-enterprise" v-text="experience.enterprise" />
-        <PResumeJob v-for="job of experience.jobs" :key="job.key" :job />
+        <PResumeJob
+          v-for="job of experience.jobs"
+          :key="job.key"
+          :job="job"
+          :compact="experience.jobs.every(job => job.contract === 'internship')"
+        />
       </div>
 
       <h2 class="cv-main-title" v-text="$t('pages.resume.skills.title')" />
@@ -283,7 +288,7 @@ defineI18nRoute({
     display: flex;
     flex-direction: column;
     grid-area: m;
-    gap: 32px;
+    gap: 24px;
     padding: 32px 24px;
     container-type: inline-size;
     color: variables.$grey-90;

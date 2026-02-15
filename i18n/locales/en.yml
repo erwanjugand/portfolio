@@ -141,6 +141,9 @@ PJob:
     cdi: Permanent contract
     internship: Internship
   items:
+    sekostFrontEndDev:
+      title: Front-End developer
+      description: Maintenance and evolution of reports and the SaaS interfaces.
     steepleLeadFrontEndDev:
       title: Lead Front-End developer
       description: Structuring of the division, technical team management and continuous development of Steeple website.
