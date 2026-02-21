@@ -39,9 +39,9 @@
     "@vue/test-utils": "2.4.6",
     "@vueuse/nuxt": "14.2.1",
     "cypress": "15.10.0",
-    "eslint": "9.38.0",
+    "eslint": "9.39.3",
     "eslint-config-prettier": "10.1.8",
-    "happy-dom": "20.6.1",
+    "happy-dom": "20.7.0",
     "nuxt": "4.3.1",
     "postcss-html": "1.8.1",
     "prettier": "3.8.1",
@@ -50,14 +50,14 @@
     "stylelint-config-recess-order": "7.6.1",
     "stylelint-config-standard-scss": "17.0.0",
     "stylelint-order": "7.0.1",
-    "stylelint-plugin-use-baseline": "1.2.2",
+    "stylelint-plugin-use-baseline": "1.2.3",
     "svgo": "4.0.0",
     "the-new-css-reset": "1.11.3",
     "typescript": "5.9.3",
     "vite": "7.3.1",
     "vitest": "4.0.18",
     "vue": "3.5.28",
-    "vue-tsc": "3.2.4"
+    "vue-tsc": "3.2.5"
   },
   "dependencies": {
     "@nuxtjs/robots": "5.7.0",
