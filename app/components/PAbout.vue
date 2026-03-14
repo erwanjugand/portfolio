@@ -6,15 +6,15 @@
       </PH2>
       <picture class="xs12 l4 about-profile-container scroll-animation-fade">
         <source
-          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
+          srcset="/img/erwan-jugand-x1.avif, /img/erwan-jugand-x2.avif 2x, /img/erwan-jugand-x3.avif 3x"
           type="image/avif"
         />
         <img
           width="312"
           height="312"
           class="about-profile"
-          src="/images/erwan-jugand-x1.webp"
-          srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
+          src="/img/erwan-jugand-x1.webp"
+          srcset="/img/erwan-jugand-x2.webp 2x, /img/erwan-jugand-x3.webp 3x"
           :alt="$t('PAbout.profileAlt')"
         />
       </picture>

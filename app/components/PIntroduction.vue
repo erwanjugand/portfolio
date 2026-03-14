@@ -24,7 +24,7 @@ const scroll = () => {
       {{ $t('PIntroduction.action') }}
     </PButton>
     <button v-ripple class="introduction-scroll" :title="$t('PIntroduction.scroll')" @click="scroll">
-      <img width="48" height="80" aria-hidden="true" class="introduction-scroll-image" src="/images/mouse.svg" alt="" />
+      <img width="48" height="80" aria-hidden="true" class="introduction-scroll-image" src="/img/mouse.svg" alt="" />
     </button>
   </PSection>
 </template>
@@ -37,10 +37,10 @@ const scroll = () => {
     min-height: 100svh;
     padding-block: 128px 64px;
     background-image: image-set(
-      url('/images/background-mobile-x1.avif') type('image/avif') 1x,
-      url('/images/background-mobile-x2.avif') type('image/avif') 2x,
-      url('/images/background-mobile-x1.webp') type('image/webp') 1x,
-      url('/images/background-mobile-x2.webp') type('image/webp') 2x
+      url('/img/background-mobile-x1.avif') type('image/avif') 1x,
+      url('/img/background-mobile-x2.avif') type('image/avif') 2x,
+      url('/img/background-mobile-x1.webp') type('image/webp') 1x,
+      url('/img/background-mobile-x2.webp') type('image/webp') 2x
     );
     background-repeat: no-repeat;
     background-position: center bottom var(--background-position-y);
@@ -48,10 +48,10 @@ const scroll = () => {
 
     @media #{variables.$large-and-up} {
       background-image: image-set(
-        url('/images/background-desktop-x1.avif') type('image/avif') 1x,
-        url('/images/background-desktop-x2.avif') type('image/avif') 2x,
-        url('/images/background-desktop-x1.webp') type('image/webp') 1x,
-        url('/images/background-desktop-x2.webp') type('image/webp') 2x
+        url('/img/background-desktop-x1.avif') type('image/avif') 1x,
+        url('/img/background-desktop-x2.avif') type('image/avif') 2x,
+        url('/img/background-desktop-x1.webp') type('image/webp') 1x,
+        url('/img/background-desktop-x2.webp') type('image/webp') 2x
       );
     }
 

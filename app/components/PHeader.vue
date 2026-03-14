@@ -24,11 +24,7 @@ const closeMenu = () => switchMenu.value?.hidePopover()
         :aria-label="$t('PHeader.langActionLabel', { lang: currentLocale?.name })"
         :title="$t('PHeader.langAction')"
       >
-        <img
-          class="header-switch-cta-image"
-          :src="`/images/flag-${currentLocale?.code}.svg`"
-          :alt="currentLocale?.name"
-        />
+        <img class="header-switch-cta-image" :src="`/img/flag-${currentLocale?.code}.svg`" :alt="currentLocale?.name" />
         <PIcon class="header-switch-cta-icon" type="solid" name="caretDown" />
       </button>
 
@@ -45,7 +41,7 @@ const closeMenu = () => switchMenu.value?.hidePopover()
             <img
               class="header-switch-menu-image"
               loading="lazy"
-              :src="`/images/flag-${otherLocale.language}.svg`"
+              :src="`/img/flag-${otherLocale.language}.svg`"
               :alt="otherLocale.name"
             />
           </NuxtLink>

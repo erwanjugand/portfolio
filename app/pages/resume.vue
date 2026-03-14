@@ -27,15 +27,15 @@ defineI18nRoute({
     <header class="cv-header">
       <picture class="cv-header-profile-container">
         <source
-          srcset="/images/erwan-jugand-x1.avif, /images/erwan-jugand-x2.avif 2x, /images/erwan-jugand-x3.avif 3x"
+          srcset="/img/erwan-jugand-x1.avif, /img/erwan-jugand-x2.avif 2x, /img/erwan-jugand-x3.avif 3x"
           type="image/avif"
         />
         <img
           width="160"
           height="160"
           class="cv-header-profile"
-          src="/images/erwan-jugand-x1.webp"
-          srcset="/images/erwan-jugand-x2.webp 2x, /images/erwan-jugand-x3.webp 3x"
+          src="/img/erwan-jugand-x1.webp"
+          srcset="/img/erwan-jugand-x2.webp 2x, /img/erwan-jugand-x3.webp 3x"
           alt="Erwan Jugand"
         />
       </picture>

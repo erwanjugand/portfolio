@@ -42,7 +42,7 @@ const handleError = () => clearError({ redirect: localePath('index') })
   place-items: center;
   height: 100vh;
   padding: 32px;
-  background: url('/images/bee.svg') center center;
+  background: url('/img/bee.svg') center center;
 
   &-content {
     background-color: transparent;

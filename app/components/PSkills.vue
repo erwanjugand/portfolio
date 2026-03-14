@@ -24,7 +24,7 @@ $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg
   justify-content: center;
   width: 100%;
   overflow: clip;
-  background: url('/images/bee.svg') center top;
+  background: url('/img/bee.svg') center top;
   background-position-x: calc(50% - #{math.div($hexagon-width, 4) + math.div($hexagon-space-to-remove, 2)});
 
   @media #{variables.$medium-and-up} {
