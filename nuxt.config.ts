@@ -46,7 +46,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
-    'nuxt-cloudflare-analytics',
+    'nuxt-umami',
     '@nuxt/test-utils/module',
     'v-wave/nuxt',
   ],
@@ -77,10 +77,6 @@ export default defineNuxtConfig({
 
   robots: {
     disallow: process.env.ROBOTS_DISALLOW_VALUE,
-  },
-
-  cloudflareAnalytics: {
-    token: process.env.CLOUDFLARE_ANALYTICS_TOKEN,
   },
 
   colorMode: {

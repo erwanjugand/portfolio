@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@nuxtjs/robots": "5.7.1",
-    "nuxt-cloudflare-analytics": "1.0.8",
+    "nuxt-umami": "3.2.1",
     "v-wave": "3.0.4",
     "vue-typical": "2.1.0"
   },

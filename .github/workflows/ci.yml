@@ -48,7 +48,8 @@ jobs:
           ROBOTS_DISALLOW_VALUE: ${{ vars.ROBOTS_DISALLOW_VALUE }}
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
           RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
-          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
+          NUXT_UMAMI_HOST: ${{ secrets.NUXT_UMAMI_HOST }}
+          NUXT_UMAMI_ID: ${{ secrets.NUXT_UMAMI_ID }}
           NITRO_PRESET: cloudflare
 
       - name: Build size stats
