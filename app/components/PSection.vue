@@ -18,7 +18,7 @@ section.section {
   padding-block: 64px;
   transition: padding var(--transition);
 
-  @media #{variables.$large-and-up} {
+  @media #{breakpoints.$large-and-up} {
     padding-block: 96px;
   }
 

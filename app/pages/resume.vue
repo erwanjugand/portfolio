@@ -157,7 +157,7 @@ defineI18nRoute({
   grid: 'h' 'a' 'm' 1fr;
   height: 100%;
 
-  @media #{variables.$medium-and-up} {
+  @media #{breakpoints.$medium-and-up} {
     grid: 'h h' 'a m' 1fr / minmax(240px, 30%) 1fr;
   }
 
@@ -168,10 +168,10 @@ defineI18nRoute({
     gap: 16px;
     justify-content: center;
     padding: 24px 16px;
-    color: variables.$grey-0;
-    background: variables.$grey-84;
+    color: #fff;
+    background: var(--c-gray-84);
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       grid: 'i t' 'i p' / minmax(208px, calc(30% - 32px)) auto;
       gap: 16px 64px;
       justify-content: flex-start;
@@ -209,8 +209,7 @@ defineI18nRoute({
     grid-area: a;
     gap: 32px;
     padding: 32px 16px;
-    color: variables.$grey-0;
-    background-color: variables.$grey-87;
+    background-color: var(--c-gray-87);
 
     &-title {
       position: relative;
@@ -223,7 +222,7 @@ defineI18nRoute({
         padding-inline: 8px;
         text-align: center;
         text-transform: uppercase;
-        background-color: variables.$grey-87;
+        background-color: var(--c-gray-87);
       }
 
       &-separator {
@@ -231,7 +230,7 @@ defineI18nRoute({
         top: calc(50% - 1px);
         width: 100%;
         height: 1px;
-        background-color: variables.$grey-75;
+        background-color: var(--c-gray-75);
       }
     }
 
@@ -247,12 +246,12 @@ defineI18nRoute({
         gap: 8px;
         align-items: center;
         font-size: 0.875em;
-        color: variables.$grey-25;
+        color: var(--c-gray-25);
 
         &-icon {
           flex: 0 0 1.25rem;
           height: 1rem;
-          fill: variables.$grey-35;
+          fill: var(--c-gray-35);
         }
       }
     }
@@ -272,13 +271,13 @@ defineI18nRoute({
 
       &-icon {
         height: 2em;
-        fill: variables.$grey-25;
+        fill: var(--c-gray-25);
       }
 
       &-text {
         font-size: 0.75rem;
         font-weight: var(--font-weight-light);
-        color: variables.$grey-25;
+        color: var(--c-gray-25);
         text-align: center;
       }
     }
@@ -291,7 +290,7 @@ defineI18nRoute({
     gap: 24px;
     padding: 32px 24px;
     container-type: inline-size;
-    color: variables.$grey-90;
+    color: var(--c-gray-90);
 
     &-title {
       font-size: 1.25em;

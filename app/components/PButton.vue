@@ -48,7 +48,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
     fill: var(--c-primary);
 
     &:hover:not(:disabled) {
-      background-color: rgba(variables.$primary, 0.1);
+      background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
     }
   }
 
@@ -58,7 +58,7 @@ const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
     fill: var(--c-background-bg);
 
     &:hover:not(:disabled) {
-      background-color: var(--c-primary-hover);
+      background-color: color-mix(in srgb, var(--c-primary) 90%, var(--c-white));
     }
   }
 }

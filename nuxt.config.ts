@@ -15,7 +15,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "sass:math"; @use "@/assets/scss/variables.scss" as variables;',
+          additionalData: '@use "sass:math"; @use "@/assets/scss/breakpoints.scss" as breakpoints;',
         },
       },
     },

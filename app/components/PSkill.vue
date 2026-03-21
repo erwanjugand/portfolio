@@ -28,7 +28,7 @@ defineProps<{
     transform: translateY(0);
     transition: transform var(--transition);
 
-    @media #{variables.$touchscreen} {
+    @media #{breakpoints.$touchscreen} {
       transform: translateY(-2.5rem);
     }
 
@@ -48,7 +48,7 @@ defineProps<{
     transform: translateY(0);
     transition: var(--transition);
 
-    @media #{variables.$touchscreen} {
+    @media #{breakpoints.$touchscreen} {
       @include show-content;
     }
 

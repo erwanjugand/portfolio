@@ -1,5 +1,5 @@
 @use 'sass:map' as map;
-@use './variables' as variables;
+@use './breakpoints' as breakpoints;
 
 $columns: (
   'xs': (
@@ -13,25 +13,25 @@ $columns: (
     'values': (
       4,
     ),
-    'media-query': variables.$small-and-up,
+    'media-query': breakpoints.$small-and-up,
   ),
   'm': (
     'values': (
       2,
       6,
     ),
-    'media-query': variables.$medium-and-up,
+    'media-query': breakpoints.$medium-and-up,
   ),
   'l': (
     'values': (
       4,
       8,
     ),
-    'media-query': variables.$large-and-up,
+    'media-query': breakpoints.$large-and-up,
   ),
   'xl': (
     'values': (),
-    'media-query': variables.$extra-large,
+    'media-query': breakpoints.$extra-large,
   ),
 );
 
@@ -57,7 +57,7 @@ $columns: (
   justify-items: center;
   transition: gap var(--transition);
 
-  @media #{variables.$large-and-up} {
+  @media #{breakpoints.$large-and-up} {
     gap: 96px 16px;
   }
 }

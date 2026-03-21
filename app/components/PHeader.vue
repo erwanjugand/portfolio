@@ -74,9 +74,9 @@ const closeMenu = () => switchMenu.value?.hidePopover()
   width: 100%;
   box-shadow:
     inset 0 -1px 0 0 var(--c-border),
-    0 3px 1px -2px rgba(variables.$grey-100, 0.2),
-    0 2px 2px 0 rgba(variables.$grey-100, 0.14),
-    0 1px 5px 0 rgba(variables.$grey-100, 0.12);
+    0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
   backdrop-filter: blur(20px);
 
   @media print {
@@ -85,18 +85,18 @@ const closeMenu = () => switchMenu.value?.hidePopover()
 
   .dark-mode &,
   .hacked-mode & {
-    background-color: rgba(variables.$grey-87, 80%);
+    background-color: color-mix(in srgb, var(--c-gray-87) 80%, transparent);
 
     @media (prefers-contrast: more) {
-      background-color: rgba(variables.$grey-90, 90%);
+      background-color: color-mix(in srgb, var(--c-gray-90) 90%, transparent);
     }
   }
 
   .light-mode & {
-    background-color: rgba(variables.$grey-0, 80%);
+    background-color: rgb(255 255 255 / 80%);
 
     @media (prefers-contrast: more) {
-      background-color: rgba(variables.$grey-0, 90%);
+      background-color: rgb(255 255 255 / 90%);
     }
   }
 
@@ -116,7 +116,7 @@ const closeMenu = () => switchMenu.value?.hidePopover()
     text-decoration: none;
     transition: font-size var(--transition);
 
-    @media #{variables.$small-and-down} {
+    @media #{breakpoints.$small-and-down} {
       font-size: 0;
     }
   }

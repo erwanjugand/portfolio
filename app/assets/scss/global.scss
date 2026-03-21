@@ -1,9 +1,9 @@
 @use 'sass:color';
-@use './variables' as variables;
+@use './breakpoints' as breakpoints;
 
 :root {
   // Color
-  --c-primary: #{variables.$primary};
+  --c-primary: #0077db;
   --c-primary-alt: #4c31fb;
 
   // Transition
@@ -21,6 +21,27 @@
 
   // Safe area
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+  // Gray
+  --c-white: #fff;
+  --c-gray-95: hsl(from var(--c-primary) calc(h + 180) calc(pow(95, 3) / 100000 * 1%) calc(100% - 95%));
+  --c-gray-93: hsl(from var(--c-primary) calc(h + 180) calc(pow(93, 3) / 100000 * 1%) calc(100% - 93%));
+  --c-gray-90: hsl(from var(--c-primary) calc(h + 180) calc(pow(90, 3) / 100000 * 1%) calc(100% - 90%));
+  --c-gray-87: hsl(from var(--c-primary) calc(h + 180) calc(pow(87, 3) / 100000 * 1%) calc(100% - 87%));
+  --c-gray-84: hsl(from var(--c-primary) calc(h + 180) calc(pow(84, 3) / 100000 * 1%) calc(100% - 84%));
+  --c-gray-80: hsl(from var(--c-primary) calc(h + 180) calc(pow(80, 3) / 100000 * 1%) calc(100% - 80%));
+  --c-gray-75: hsl(from var(--c-primary) calc(h + 180) calc(pow(75, 3) / 100000 * 1%) calc(100% - 75%));
+  --c-gray-65: hsl(from var(--c-primary) calc(h + 180) calc(pow(65, 3) / 100000 * 1%) calc(100% - 65%));
+  --c-gray-50: hsl(from var(--c-primary) calc(h + 180) calc(pow(50, 3) / 100000 * 1%) calc(100% - 50%));
+  --c-gray-35: hsl(from var(--c-primary) calc(h + 180) calc(pow(35, 3) / 100000 * 1%) calc(100% - 35%));
+  --c-gray-25: hsl(from var(--c-primary) calc(h + 180) calc(pow(25, 3) / 100000 * 1%) calc(100% - 25%));
+  --c-gray-20: hsl(from var(--c-primary) calc(h + 180) calc(pow(20, 3) / 100000 * 1%) calc(100% - 20%));
+  --c-gray-16: hsl(from var(--c-primary) calc(h + 180) calc(pow(16, 3) / 100000 * 1%) calc(100% - 16%));
+  --c-gray-13: hsl(from var(--c-primary) calc(h + 180) calc(pow(13, 3) / 100000 * 1%) calc(100% - 13%));
+  --c-gray-10: hsl(from var(--c-primary) calc(h + 180) calc(pow(10, 3) / 100000 * 1%) calc(100% - 10%));
+  --c-gray-7: hsl(from var(--c-primary) calc(h + 180) calc(pow(7, 3) / 100000 * 1%) calc(100% - 7%));
+  --c-gray-5: hsl(from var(--c-primary) calc(h + 180) calc(pow(5, 3) / 100000 * 1%) calc(100% - 5%));
+  --c-black: #000;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -41,37 +62,36 @@ html {
   background-color: var(--c-background-bg);
 
   // Color
-  --c-primary-hover: #{color.mix(variables.$primary, variables.$grey-0, 90%)};
   --c-theme: light;
 
   // Text
-  --c-text: #{variables.$grey-90};
-  --c-text-secondary-1: #{variables.$grey-20};
-  --c-text-secondary-2: #{variables.$grey-35};
-  --c-text-secondary-3: #{variables.$grey-50};
-  --c-text-secondary-4: #{variables.$grey-65};
+  --c-text: var(--c-gray-90);
+  --c-text-secondary-1: var(--c-gray-20);
+  --c-text-secondary-2: var(--c-gray-35);
+  --c-text-secondary-3: var(--c-gray-50);
+  --c-text-secondary-4: var(--c-gray-65);
 
   // Background
-  --c-background-bg: #{variables.$grey-5};
-  --c-background-alt: #{variables.$grey-13};
-  --c-background-1: #{variables.$grey-0};
-  --c-background-2: #{variables.$grey-0};
-  --c-background-3: #{variables.$grey-0};
+  --c-background-bg: var(--c-gray-5);
+  --c-background-alt: var(--c-gray-13);
+  --c-background-1: var(--c-white);
+  --c-background-2: var(--c-white);
+  --c-background-3: var(--c-white);
 
   // Border
   --c-border: transparent;
 
   @media (prefers-contrast: more) {
     // Text
-    --c-text: #{variables.$grey-100};
-    --c-text-secondary-1: #{variables.$grey-50};
-    --c-text-secondary-2: #{variables.$grey-75};
-    --c-text-secondary-3: #{variables.$grey-90};
-    --c-text-secondary-4: #{variables.$grey-100};
+    --c-text: var(--c-white);
+    --c-text-secondary-1: var(--c-gray-50);
+    --c-text-secondary-2: var(--c-gray-75);
+    --c-text-secondary-3: var(--c-gray-90);
+    --c-text-secondary-4: var(--c-white);
 
     // Background
-    --c-background-bg: #{variables.$grey-0};
-    --c-background-alt: #{variables.$grey-5};
+    --c-background-bg: var(--c-black);
+    --c-background-alt: var(--c-gray-5);
   }
 }
 
@@ -81,40 +101,41 @@ html {
   background-color: var(--c-background-bg);
 
   // Color
-  --c-primary-hover: #{color.mix(variables.$primary, variables.$grey-100, 90%)};
   --c-theme: dark;
+  --c-white: #000;
+  --c-black: #fff;
 
   // Text
-  --c-text: #{variables.$grey-5};
-  --c-text-secondary-1: #{variables.$grey-80};
-  --c-text-secondary-2: #{variables.$grey-65};
-  --c-text-secondary-3: #{variables.$grey-50};
-  --c-text-secondary-4: #{variables.$grey-35};
+  --c-text: var(--c-gray-5);
+  --c-text-secondary-1: var(--c-gray-80);
+  --c-text-secondary-2: var(--c-gray-65);
+  --c-text-secondary-3: var(--c-gray-50);
+  --c-text-secondary-4: var(--c-gray-35);
 
   // Background
-  --c-background-bg: #{variables.$grey-93};
-  --c-background-alt: #{variables.$grey-87};
-  --c-background-1: #{variables.$grey-90};
-  --c-background-2: #{variables.$grey-87};
-  --c-background-3: #{variables.$grey-84};
+  --c-background-bg: var(--c-gray-93);
+  --c-background-alt: var(--c-gray-87);
+  --c-background-1: var(--c-gray-90);
+  --c-background-2: var(--c-gray-87);
+  --c-background-3: var(--c-gray-84);
 
   // Border
-  --c-border: #{rgba(variables.$grey-0, 0.05)};
+  --c-border: color-mix(in srgb, var(--c-black) 5%, transparent);
 
   @media (prefers-contrast: more) {
     // Text
-    --c-text: #{variables.$grey-0};
-    --c-text-secondary-1: #{variables.$grey-50};
-    --c-text-secondary-2: #{variables.$grey-25};
-    --c-text-secondary-3: #{variables.$grey-10};
-    --c-text-secondary-4: #{variables.$grey-0};
+    --c-text: var(--c-black);
+    --c-text-secondary-1: var(--c-gray-50);
+    --c-text-secondary-2: var(--c-gray-25);
+    --c-text-secondary-3: var(--c-gray-10);
+    --c-text-secondary-4: var(--c-black);
 
     // Background
-    --c-background-bg: #{variables.$grey-95};
-    --c-background-alt: #{variables.$grey-93};
-    --c-background-1: #{variables.$grey-93};
-    --c-background-2: #{variables.$grey-90};
-    --c-background-3: #{variables.$grey-87};
+    --c-background-bg: var(--c-gray-95);
+    --c-background-alt: var(--c-gray-93);
+    --c-background-1: var(--c-gray-93);
+    --c-background-2: var(--c-gray-90);
+    --c-background-3: var(--c-gray-87);
   }
 }
 

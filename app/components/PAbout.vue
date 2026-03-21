@@ -53,9 +53,9 @@
     border-radius: 50%;
     box-shadow:
       inset 0 0 0 1px var(--c-border),
-      0 2px 1px -1px rgba(variables.$grey-100, 0.2),
-      0 1px 1px 0 rgba(variables.$grey-100, 0.14),
-      0 1px 3px 0 rgba(variables.$grey-100, 0.12);
+      0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%),
+      0 1px 3px 0 rgb(0 0 0 / 12%);
 
     &-container {
       display: flex;
@@ -63,7 +63,7 @@
 
       --scroll-animation-y: 48px;
 
-      @media #{variables.$large-and-up} {
+      @media #{breakpoints.$large-and-up} {
         --scroll-animation-y: 0;
         --scroll-animation-x: -48px;
       }
@@ -78,7 +78,7 @@
 
     --scroll-animation-y: 48px;
 
-    @media #{variables.$large-and-up} {
+    @media #{breakpoints.$large-and-up} {
       --scroll-animation-y: 0;
       --scroll-animation-x: -48px;
     }
@@ -87,7 +87,7 @@
   &-text {
     transition: font-size var(--transition);
 
-    @media #{variables.$large-and-up} {
+    @media #{breakpoints.$large-and-up} {
       font-size: 1.125em;
     }
 

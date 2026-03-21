@@ -16,7 +16,7 @@
     margin var(--transition),
     font-size var(--transition);
 
-  @media #{variables.$large-and-up} {
+  @media #{breakpoints.$large-and-up} {
     margin-block: 32px 64px;
     font-size: 3em;
   }

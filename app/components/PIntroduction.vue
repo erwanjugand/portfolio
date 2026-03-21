@@ -46,7 +46,7 @@ const scroll = () => {
     background-position: center bottom var(--background-position-y);
     background-size: cover;
 
-    @media #{variables.$large-and-up} {
+    @media #{breakpoints.$large-and-up} {
       background-image: image-set(
         url('/img/background-desktop-x1.avif') type('image/avif') 1x,
         url('/img/background-desktop-x2.avif') type('image/avif') 2x,
@@ -67,9 +67,9 @@ const scroll = () => {
   h1 {
     padding-inline: 1em;
     font-size: clamp(2em, 6vw, 4em);
-    color: variables.$grey-0;
+    color: #fff;
     text-align: center;
-    text-shadow: 0 0 10px variables.$grey-100;
+    text-shadow: 0 0 10px #000;
     transition: font-size var(--transition);
 
     &::after {
@@ -87,7 +87,6 @@ const scroll = () => {
     --focus-radius: 99px;
     --focus-offset: 2px;
 
-    color: variables.$grey-0;
     border-radius: 99px;
     opacity: 0.75;
 
