@@ -83,6 +83,7 @@ export default defineNuxtConfig({
     id: process.env.NUXT_UMAMI_ID,
     host: process.env.NUXT_UMAMI_HOST,
     autoTrack: true,
+    ignoreLocalhost: true,
   },
 
   colorMode: {
