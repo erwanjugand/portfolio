@@ -80,7 +80,7 @@ const closeEasterEgg = () => {
     place-items: center;
     padding-block: 32px;
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       grid-template:
         'a c d'
         'b c d';
@@ -88,7 +88,7 @@ const closeEasterEgg = () => {
       justify-items: start;
     }
 
-    @media #{variables.$large-and-up} {
+    @media #{breakpoints.$large-and-up} {
       grid-template-columns: 1fr auto 1fr;
     }
   }
@@ -106,7 +106,7 @@ const closeEasterEgg = () => {
     grid-area: c;
     gap: 16px;
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       justify-self: center;
     }
   }
@@ -130,7 +130,7 @@ const closeEasterEgg = () => {
   &-last-version {
     grid-area: d;
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       justify-self: end;
     }
   }

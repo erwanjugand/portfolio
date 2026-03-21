@@ -56,17 +56,17 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
 
   &-contract {
     grid-area: b;
-    color: variables.$grey-75;
+    color: var(--c-gray-75);
   }
 
   &-time {
     grid-area: c;
-    color: variables.$grey-50;
+    color: var(--c-gray-50);
   }
 
   &-description {
     font-size: 0.8125em;
-    color: variables.$grey-75;
+    color: var(--c-gray-75);
   }
 }
 </style>

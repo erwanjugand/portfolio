@@ -92,7 +92,7 @@ const filter = (name: string) => {
     margin-bottom: 16px;
     font-size: 14px;
     line-height: 1.2;
-    color: variables.$grey-0;
+    color: #fff;
     border-radius: var(--border-radius-regular);
     transition: opacity var(--transition);
 

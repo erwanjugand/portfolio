@@ -24,9 +24,9 @@ const { tag = 'div' } = defineProps<{
   border-radius: var(--border-radius-large) var(--border-radius-small);
   box-shadow:
     inset 0 0 0 1px var(--c-border),
-    0 2px 1px -1px rgba(variables.$grey-100, 0.2),
-    0 1px 1px 0 rgba(variables.$grey-100, 0.14),
-    0 1px 3px 0 rgba(variables.$grey-100, 0.12);
+    0 2px 1px -1px rgb(0 0 0 / 20%),
+    0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
 
   &-header {
     display: flex;
@@ -36,7 +36,7 @@ const { tag = 'div' } = defineProps<{
     padding: 16px 24px;
     transition: padding var(--transition);
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       padding: 24px 32px;
     }
 
@@ -68,7 +68,7 @@ const { tag = 'div' } = defineProps<{
     font-weight: var(--font-weight-light);
     transition: padding var(--transition);
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       padding: 0 32px 32px;
     }
   }

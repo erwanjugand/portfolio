@@ -52,7 +52,7 @@ const handleError = () => clearError({ redirect: localePath('index') })
   &-cta {
     margin: 16px auto 0;
 
-    @media #{variables.$medium-and-up} {
+    @media #{breakpoints.$medium-and-up} {
       margin: 24px auto 0;
     }
   }
