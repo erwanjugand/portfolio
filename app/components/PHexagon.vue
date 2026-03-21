@@ -15,9 +15,7 @@ const { tag = 'div' } = defineProps<{
 
 <style lang="scss">
 $hexagon-height: 200px;
-$hexagon-border-out: 3px;
-$hexagon-border-in: 1px;
-$hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3))), 100);
+$hexagon-width: calc(($hexagon-height * 100 / sqrt(3)) / 100);
 
 @mixin dynamic-border($width, $height, $border-size) {
   width: $width;
@@ -41,7 +39,7 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
   color: var(--c-primary);
   fill: currentcolor;
 
-  @include dynamic-border($hexagon-width, $hexagon-height, $hexagon-border-out);
+  @include dynamic-border($hexagon-width, $hexagon-height, 3px);
 
   &,
   &-content {
@@ -71,7 +69,7 @@ $hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3)
     align-items: center;
     justify-content: center;
 
-    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, $hexagon-border-in);
+    @include dynamic-border($hexagon-width - 6, $hexagon-height - 12, 1px);
   }
 
   &-turned {

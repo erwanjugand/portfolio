@@ -35,8 +35,6 @@ const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${durati
 </template>
 
 <style lang="scss">
-$diagonal: math.sqrt(3);
-
 .job {
   --scroll-animation-y: 48px;
 
@@ -64,7 +62,7 @@ $diagonal: math.sqrt(3);
       &::before {
         position: absolute;
         top: calc(50% - 6px);
-        left: math.div((12px * $diagonal) + 8px, 2);
+        left: calc(((12px * sqrt(3)) + 8px) / 2);
         box-sizing: border-box;
         width: 12px;
         height: 12px;

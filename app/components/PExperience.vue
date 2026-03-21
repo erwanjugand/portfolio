@@ -14,8 +14,6 @@ const hasOneJob = computed(() => experience.jobs.length === 1)
 </template>
 
 <style lang="scss">
-$diagonal: math.sqrt(3);
-
 .experience {
   display: flex;
   flex-direction: column;
@@ -32,7 +30,7 @@ $diagonal: math.sqrt(3);
     &::before {
       position: absolute;
       top: calc(50% - 12px);
-      left: math.div((24px * $diagonal) - 24px, 2);
+      left: calc((24px * sqrt(3) - 24px) / 2);
       box-sizing: border-box;
       width: 24px;
       height: 24px;

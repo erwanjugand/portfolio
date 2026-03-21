@@ -14,9 +14,11 @@
 </template>
 
 <style lang="scss">
+@use 'sass:math';
+
 $hexagon-height: 200px;
 $hexagon-border-out: 3px;
-$hexagon-width: math.div(math.round(math.div($hexagon-height * 100, math.sqrt(3))), 100);
+$hexagon-width: calc(($hexagon-height * 100 / sqrt(3)) / 100);
 $hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg)));
 
 .skills-container {
