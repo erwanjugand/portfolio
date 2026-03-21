@@ -12,8 +12,6 @@
 </template>
 
 <style lang="scss">
-$diagonal: math.sqrt(3);
-
 .experiences-wrapper {
   position: relative;
   display: flex;
@@ -24,7 +22,7 @@ $diagonal: math.sqrt(3);
   &::before {
     position: absolute;
     top: 0;
-    left: calc(math.div(24px * $diagonal, 2) - math.div(3px, 2));
+    left: calc((24px * sqrt(3) / 2) - (3px / 2));
     width: 3px;
     height: 100%;
     content: '';
