@@ -60,7 +60,7 @@
     "vue-tsc": "3.2.6"
   },
   "dependencies": {
-    "@nuxtjs/robots": "5.7.1",
+    "@nuxtjs/robots": "6.0.4",
     "nuxt-umami": "3.2.1",
     "v-wave": "3.0.4",
     "vue-typical": "2.1.0"
