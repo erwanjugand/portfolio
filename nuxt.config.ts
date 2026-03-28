@@ -1,6 +1,28 @@
+const STRICTNESS_TS_OPTIONS = {
+  noErrorTruncation: true,
+  erasableSyntaxOnly: true,
+  allowUnreachableCode: false,
+  noFallthroughCasesInSwitch: true,
+  noImplicitAny: true,
+  noImplicitReturns: true,
+  noUnusedLocals: true,
+  noUnusedParameters: true,
+  strictBindCallApply: true,
+  strictFunctionTypes: true,
+  strictNullChecks: true,
+  strictPropertyInitialization: true,
+  useUnknownInCatchVariables: true,
+}
+
 export default defineNuxtConfig({
   future: {
     compatibilityVersion: 5,
+  },
+
+  typescript: {
+    tsConfig: { compilerOptions: STRICTNESS_TS_OPTIONS },
+    nodeTsConfig: { compilerOptions: STRICTNESS_TS_OPTIONS },
+    sharedTsConfig: { compilerOptions: STRICTNESS_TS_OPTIONS },
   },
 
   runtimeConfig: {
