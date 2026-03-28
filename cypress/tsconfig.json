@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    // Cypress don't support TS 6 (https://github.com/cypress-io/cypress/issues/33511)
+    "ignoreDeprecations": "6.0",
     "baseUrl": "..",
     "paths": {
       "~/*": ["app/*"],
