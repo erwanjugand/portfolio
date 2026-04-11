@@ -57,9 +57,6 @@ jobs:
         with:
           directories: .output/public,.output/server
 
-      - name: Install Cypress
-        run: pnpm cypress install
-
       - name: Run Cypress
         uses: cypress-io/github-action@783cb3f07983868532cabaedaa1e6c00ff4786a8 # v7.1.9
         with:

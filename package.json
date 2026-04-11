@@ -66,8 +66,14 @@
     "vue-typical": "2.1.0"
   },
   "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "unrs-resolver",
+      "vue-demi"
+    ],
     "onlyBuiltDependencies": [
-      "workerd"
+      "cypress",
+      "esbuild"
     ]
   }
 }
