@@ -64,16 +64,5 @@
     "nuxt-umami": "3.2.1",
     "v-wave": "3.0.4",
     "vue-typical": "2.1.0"
-  },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "unrs-resolver",
-      "vue-demi"
-    ],
-    "onlyBuiltDependencies": [
-      "cypress",
-      "esbuild"
-    ]
   }
 }
