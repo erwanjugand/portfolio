@@ -108,9 +108,9 @@ jobs:
 
       - name: Publish to Cloudflare
         if: ${{ !env.ACT }}
-        uses: cloudflare/wrangler-action@da0e0dfe58b7a431659754fdf3f186c529afbe65 # v3.14.1
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         with:
-          wranglerVersion: '4.73'
+          wranglerVersion: '4.83'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --env ${{ github.ref_name == 'main' && 'prod' || 'dev' }}
