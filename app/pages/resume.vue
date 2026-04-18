@@ -220,6 +220,7 @@ defineI18nRoute({
         position: relative;
         z-index: 1;
         padding-inline: 8px;
+        color: var(--c-gray-25);
         text-align: center;
         text-transform: uppercase;
         background-color: var(--c-gray-87);
