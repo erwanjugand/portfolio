@@ -20,6 +20,10 @@ export const skills = [
   },
   {
     level: 3,
+    name: 'TypeScript',
+  },
+  {
+    level: 3,
     name: 'HTML',
   },
   {
@@ -32,11 +36,11 @@ export const skills = [
   },
   {
     level: 2,
-    name: 'TypeScript',
+    name: 'A11y',
   },
   {
     level: 1,
-    name: 'PHP',
+    name: 'Node.js',
   },
   {
     level: 1,
@@ -44,10 +48,10 @@ export const skills = [
   },
   {
     level: 1,
-    name: 'Mysql',
+    name: 'Rails',
   },
   {
     level: 1,
-    name: 'Rails',
+    name: 'MySQL',
   },
 ] as const satisfies Skill[]
