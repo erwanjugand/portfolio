@@ -53,7 +53,7 @@ jobs:
           NITRO_PRESET: cloudflare
 
       - name: Build size stats
-        uses: kevinmarrec/workflows/filesize-diff@728966ab82a97d6f2c8c81cad7a2df87b0052418 # main
+        uses: kevinmarrec/workflows/filesize-diff@00ba73dd1a648f4774af302138dde1fae36cb653 # main
         with:
           directories: .output/public,.output/server
 
