@@ -1,0 +1,7 @@
+minimumReleaseAgeExclude:
+  - '@erwanjugand/*'
+allowBuilds:
+  '@parcel/watcher': false
+  cypress: true
+  esbuild: true
+  unrs-resolver: false
