@@ -58,7 +58,7 @@ jobs:
           directories: .output/public,.output/server
 
       - name: Run Cypress
-        uses: cypress-io/github-action@783cb3f07983868532cabaedaa1e6c00ff4786a8 # v7.1.9
+        uses: cypress-io/github-action@c495c3ddffba403ba11be95fffb67e25203b3799 # v7.1.10
         with:
           start: npx wrangler dev .output/server/index.mjs --site .output/public --log-level error --port 3000
           wait-on: 'http://localhost:3000'
@@ -110,7 +110,7 @@ jobs:
         if: ${{ !env.ACT }}
         uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3.15.0
         with:
-          wranglerVersion: '4.85.0'
+          wranglerVersion: '4.86.0'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --env ${{ github.ref_name == 'main' && 'prod' || 'dev' }}
