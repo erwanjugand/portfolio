@@ -5,3 +5,5 @@ allowBuilds:
   cypress: true
   esbuild: true
   unrs-resolver: false
+  workerd: false
+  sharp: false
