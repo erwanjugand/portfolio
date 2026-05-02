@@ -1,5 +1,6 @@
-import withNuxt from './.nuxt/eslint.config.mjs'
+import { vueConfig } from '@erwanjugand/eslint-config'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
 
-import { vueConfig } from '@erwanjugand/eslint-config'
+import withNuxt from './.nuxt/eslint.config.mjs'
+
 export default withNuxt(eslintConfigPrettier).prepend(vueConfig)

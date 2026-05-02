@@ -130,7 +130,7 @@ defineI18nRoute({
           v-for="job of experience.jobs"
           :key="job.key"
           :job
-          :compact="experience.jobs.every(job => job.contract === 'internship')"
+          :compact="experience.jobs.every((job) => job.contract === 'internship')"
         />
       </div>
 

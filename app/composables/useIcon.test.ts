@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest'
+
 import { icons } from './useIcon'
 
 describe('useIcon', () => {

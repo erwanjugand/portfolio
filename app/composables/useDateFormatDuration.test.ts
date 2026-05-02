@@ -1,4 +1,5 @@
 import { describe, expect, test } from 'vitest'
+
 import { mockUseI18n } from '~/vitest/fixtures/useI18n'
 
 type Test = {

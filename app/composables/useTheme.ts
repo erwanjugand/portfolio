@@ -1,4 +1,5 @@
 import { useI18n } from 'vue-i18n'
+
 import type { Icon } from './useIcon'
 
 type ModeName = 'system' | 'light' | 'dark' | 'hacked'
