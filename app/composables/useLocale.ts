@@ -6,7 +6,7 @@ export default () => {
   const locales = i18n.locales
 
   const currentLocale = computed(() => {
-    return locales.value.find(l => l.code === locale.value) || locales.value[0]
+    return locales.value.find((l) => l.code === locale.value) || locales.value[0]
   })
 
   return {

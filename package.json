@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@erwanjugand/eslint-config": "2.3.0",
+    "@erwanjugand/prettier-config": "1.0.0",
     "@fortawesome/fontawesome-common-types": "7.2.0",
     "@fortawesome/free-brands-svg-icons": "7.2.0",
     "@fortawesome/pro-light-svg-icons": "7.2.0",

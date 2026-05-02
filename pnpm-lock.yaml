@@ -24,6 +24,9 @@ importers:
       '@erwanjugand/eslint-config':
         specifier: 2.3.0
         version: 2.3.0(@stylistic/eslint-plugin@5.10.0(eslint@10.2.1(jiti@2.6.1)))(@typescript-eslint/parser@8.59.1(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3))(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3)(vue-eslint-parser@10.4.0(eslint@10.2.1(jiti@2.6.1)))
+      '@erwanjugand/prettier-config':
+        specifier: 1.0.0
+        version: 1.0.0(@vue/compiler-sfc@3.5.33)(prettier@3.8.3)
       '@fortawesome/fontawesome-common-types':
         specifier: 7.2.0
         version: 7.2.0
@@ -435,6 +438,11 @@ packages:
     resolution: {integrity: sha512-lkT1uxonl3QySqMxRBdoNQ7fnCJhE6NYVIuPa/kccn94H7hXVgDaAuSwzHtnjVWN/VR6FtvIxV4mPKRVAvGaAw==}
     peerDependencies:
       eslint: ^10.0.0
+
+  '@erwanjugand/prettier-config@1.0.0':
+    resolution: {integrity: sha512-VwVnYI69GNwx8nlpjxBqvVY/TgTSrmP8TsACO3hrfebAXF++LMjras+UC6anbnhpJOSYntkEPsIc1q9EhBxkHA==}
+    peerDependencies:
+      prettier: ^3.0.0
 
   '@es-joy/jsdoccomment@0.86.0':
     resolution: {integrity: sha512-ukZmRQ81WiTpDWO6D/cTBM7XbrNtutHKvAVnZN/8pldAwLoJArGOvkNyxPTBGsPjsoaQBJxlH+tE2TNA/92Qgw==}
@@ -2678,6 +2686,25 @@ packages:
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
     engines: {node: '>=18'}
 
+  '@trivago/prettier-plugin-sort-imports@6.0.2':
+    resolution: {integrity: sha512-3DgfkukFyC/sE/VuYjaUUWoFfuVjPK55vOFDsxD56XXynFMCZDYFogH2l/hDfOsQAm1myoU/1xByJ3tWqtulXA==}
+    engines: {node: '>= 20'}
+    peerDependencies:
+      '@vue/compiler-sfc': 3.x
+      prettier: 2.x - 3.x
+      prettier-plugin-ember-template-tag: '>= 2.0.0'
+      prettier-plugin-svelte: 3.x
+      svelte: 4.x || 5.x
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+      prettier-plugin-ember-template-tag:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+      svelte:
+        optional: true
+
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
 
@@ -4584,6 +4611,9 @@ packages:
   jackspeak@3.4.3:
     resolution: {integrity: sha512-OGlZQpz2yfahA/Rd1Y8Cd9SIEsqvXkLVoSw/cgwhnhFMDbsQFeZYoJJ7bIZBS9BcamUW96asq/npPWugM+RQBw==}
 
+  javascript-natural-sort@0.7.1:
+    resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
+
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
@@ -4724,6 +4754,9 @@ packages:
   locate-path@8.0.0:
     resolution: {integrity: sha512-XT9ewWAC43tiAV7xDAPflMkG0qOPn2QjHqlgX8FOqmWa/rxnyYDulF9T0F7tRy1u+TVTmK/M//6VIOye+2zDXg==}
     engines: {node: '>=20'}
+
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lodash.defaults@4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
@@ -7106,6 +7139,17 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
+  '@erwanjugand/prettier-config@1.0.0(@vue/compiler-sfc@3.5.33)(prettier@3.8.3)':
+    dependencies:
+      '@trivago/prettier-plugin-sort-imports': 6.0.2(@vue/compiler-sfc@3.5.33)(prettier@3.8.3)
+      prettier: 3.8.3
+    transitivePeerDependencies:
+      - '@vue/compiler-sfc'
+      - prettier-plugin-ember-template-tag
+      - prettier-plugin-svelte
+      - supports-color
+      - svelte
+
   '@es-joy/jsdoccomment@0.86.0':
     dependencies:
       '@types/estree': 1.0.8
@@ -8935,6 +8979,22 @@ snapshots:
       lz-string: 1.5.0
       picocolors: 1.1.1
       pretty-format: 27.5.1
+
+  '@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.33)(prettier@3.8.3)':
+    dependencies:
+      '@babel/generator': 7.29.1
+      '@babel/parser': 7.29.3
+      '@babel/traverse': 7.29.0
+      '@babel/types': 7.29.0
+      javascript-natural-sort: 0.7.1
+      lodash-es: 4.18.1
+      minimatch: 9.0.9
+      parse-imports-exports: 0.2.4
+      prettier: 3.8.3
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.33
+    transitivePeerDependencies:
+      - supports-color
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -11006,6 +11066,8 @@ snapshots:
     optionalDependencies:
       '@pkgjs/parseargs': 0.11.0
 
+  javascript-natural-sort@0.7.1: {}
+
   jiti@2.6.1: {}
 
   js-beautify@1.15.4:
@@ -11156,6 +11218,8 @@ snapshots:
   locate-path@8.0.0:
     dependencies:
       p-locate: 6.0.0
+
+  lodash-es@4.18.1: {}
 
   lodash.defaults@4.2.0: {}
 

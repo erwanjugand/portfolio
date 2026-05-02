@@ -3,7 +3,7 @@ useColorMode()
 
 const i18nHead = useLocaleHead()
 useHead(() => ({
-  titleTemplate: title => 'Erwan Jugand' + (title ? ` - ${title}` : ''),
+  titleTemplate: (title) => 'Erwan Jugand' + (title ? ` - ${title}` : ''),
   htmlAttrs: i18nHead.value.htmlAttrs,
   link: [
     { rel: 'icon', type: 'image/png', href: '/favicon.png' },

@@ -1,7 +1,7 @@
-import type { Locale } from 'vue-i18n'
+import * as vueI18n from 'vue-i18n'
 import { vi } from 'vitest'
 import { computed } from 'vue'
-import * as vueI18n from 'vue-i18n'
+import type { Locale } from 'vue-i18n'
 
 const i18nLocales = ['en', 'fr'] as const satisfies Locale[]
 
@@ -10,7 +10,7 @@ interface LocaleObject {
   code: Locale
 }
 
-const i18nLocaleObjects: LocaleObject[] = i18nLocales.map(locale => ({
+const i18nLocaleObjects: LocaleObject[] = i18nLocales.map((locale) => ({
   code: locale,
 }))
 

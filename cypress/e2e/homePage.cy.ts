@@ -48,13 +48,13 @@ describe('Home page', () => {
     cy.get('@section').findByRole('heading', { level: 2, name: 'More information' }).should('be.exist')
     cy.get('@section')
       .findByRole('link', { name: 'Phone : 06 18 07 30 23' })
-      .should('have.attr', 'href', informations.find(info => info.title === 'phone')?.cta)
+      .should('have.attr', 'href', informations.find((info) => info.title === 'phone')?.cta)
     cy.get('@section')
       .findByRole('link', { name: 'Address : 35000 Rennes, France' })
-      .should('have.attr', 'href', informations.find(info => info.title === 'address')?.cta)
+      .should('have.attr', 'href', informations.find((info) => info.title === 'address')?.cta)
     cy.get('@section')
       .findByRole('link', { name: 'Email : erwan.jugand@gmail.com' })
-      .should('have.attr', 'href', informations.find(info => info.title === 'email')?.cta)
+      .should('have.attr', 'href', informations.find((info) => info.title === 'email')?.cta)
   })
 
   it('should have a environments section', () => {
