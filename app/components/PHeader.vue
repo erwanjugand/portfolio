@@ -153,6 +153,7 @@ const closeMenu = () => switchMenu.value?.hidePopover()
   &-switch-menu {
     position: fixed;
     position-area: bottom;
+    /* stylelint-disable-next-line plugin/use-baseline */
     position-anchor: --header-switch-cta;
     background-color: var(--c-background-3);
     border-radius: var(--border-radius-small);
