@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const lastRelease = releases[0]
 const localePath = useLocalePath()
 const CURRENT_YEAR = new Date().getFullYear()
+const COMMIT_SHA = import.meta.env.VITE_DEPLOY_COMMIT
+const COMMIT_URL = `https://github.com/erwanjugand/portfolio/commit/${COMMIT_SHA}`
+const COMMIT_NAME = COMMIT_SHA?.slice(0, 7)
 
 const isVisible = ref(false)
 const openEasterEgg = () => {
@@ -51,9 +53,16 @@ const closeEasterEgg = () => {
           </a>
         </div>
 
-        <NuxtLink class="footer-last-version" :to="localePath('changelog')">
-          {{ lastRelease.name }}
-        </NuxtLink>
+        <a
+          v-if="COMMIT_SHA"
+          class="footer-deploy-commit"
+          target="_blank"
+          rel="noopener"
+          :href="COMMIT_URL"
+          :title="$t('PFooter.commitTitle')"
+        >
+          {{ COMMIT_NAME }}
+        </a>
       </div>
     </footer>
     <PEasterEgg v-if="isVisible" @close="closeEasterEgg" />
@@ -127,7 +136,7 @@ const closeEasterEgg = () => {
     }
   }
 
-  &-last-version {
+  &-deploy-commit {
     grid-area: d;
 
     @media #{breakpoints.$medium-and-up} {
@@ -135,7 +144,7 @@ const closeEasterEgg = () => {
     }
   }
 
-  &-last-version,
+  &-deploy-commit,
   &-legal-mentions {
     --focus-radius: var(--border-radius-small);
     --focus-offset: 4px;

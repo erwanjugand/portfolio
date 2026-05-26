@@ -50,27 +50,20 @@ export const icons: Icons = {
   },
 
   light: {
-    boxFull: formatIcon(fal.faBoxFull),
     brightness: formatIcon(fal.faBrightness),
-    circleCheck: formatIcon(fal.faCircleCheck),
-    computer: formatIcon(fal.faComputer),
     display: formatIcon(fal.faDisplay),
     envelope: formatIcon(fal.faEnvelope),
-    envelopeOpenText: formatIcon(fal.faEnvelopeOpenText),
     gamepadModern: formatIcon(fal.faGamepadModern),
     newspaper: formatIcon(fal.faNewspaper),
-    penRuler: formatIcon(fal.faPenRuler),
     carSide: formatIcon(fal.faCarSide),
     phone: formatIcon(fal.faPhone),
     link: formatIcon(fal.faLink),
     mapLocationDot: formatIcon(fal.faMapLocationDot),
     moon: formatIcon(fal.faMoon),
-    sparkles: formatIcon(fal.faSparkles),
     star: formatIcon(fal.faStar),
     paintbrushPencil: formatIcon(fal.faPaintbrushPencil),
     listCheck: formatIcon(fal.faListCheck),
     users: formatIcon(fal.faUsers),
-    circleXmark: formatIcon(fal.faCircleXmark),
   },
 
   regular: {
