@@ -50,6 +50,7 @@ jobs:
           RAPID_API_HOST: ${{ secrets.RAPID_API_HOST }}
           NUXT_UMAMI_HOST: ${{ secrets.NUXT_UMAMI_HOST }}
           NUXT_UMAMI_ID: ${{ secrets.NUXT_UMAMI_ID }}
+          VITE_DEPLOY_COMMIT: ${{ github.sha }}
           NITRO_PRESET: cloudflare
 
       - name: Build size stats

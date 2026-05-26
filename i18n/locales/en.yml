@@ -12,54 +12,6 @@ pages:
   home:
     title: Home
     description: Discover my portfolio and have fun testing it :)
-  changelog:
-    title: Changelog
-    description: Curious to see the evolution of the portfolio? It's this way !
-    items:
-      1:
-        0:
-          0: "- Creation and launching of the portfolio with HTML/CSS/JS \n - Use LESS"
-          1: '- Added de LazyLoad'
-          2: "- Bugs fixes \n - Add Google Recaptcha 2"
-          3: "- SEO Optimization \n - Image optimization"
-        1:
-          0: "Dynamization of the website: \n - Using PHP 5.6 & MySQL \n - Creation of back-office"
-          1: '- Bugs fixes'
-          2: "- Added Easter Egg \n - Bugs fixes"
-        2:
-          0: "Back-office overhaul: \n - Security enhancement \n - new design \n - Improved upload system for images"
-          1: "- Update dependencies \n - Update to PHP 7.1"
-          2: "- Bugs fixes \n - Migration to a Progressive Web App"
-          3: "- Bugs fixes \n - Clean code"
-      2:
-        0:
-          0: "The website overhaul:  \n - Use Symfony 4.1 \n - End of support for Internet Explorer and older versions of browsers \n - Clean code \n - Removed several javascript and css dependencies \n - Switch LESS to SCSS \n - Update to PHP 7.2 \n - Added webp format for images \n - Bugs fixes \n - Added dark mode \n - Use of cookies for a better experience \n - Disabling Service Workers"
-          1: "- Update Symfony 4.2 \n - New “Contact” page \n - Switch to Recaptcha 3"
-        1:
-          0: "JavaScript overhaul : \n - Removing Jquery \n - Performance improvement \n - Update dependencies \n\n Other : \n - Improved Firefox support \n - Bugs fixes"
-          1: "- Updated and improved administration security \n - Update to PHP 7.3 \n - Bugs fixes"
-          2: '- Creation and automatic generation of the sitemap of the website'
-          3: "- Security enhancement \n - Improved dark mode"
-          4: '- Update dependencies'
-          5: "- Update to Symfony 4.4 \n - Update to PHP 7.4 \n - Update dependencies"
-          6: "- Added lazy loading for images \n - Update dependencies"
-      3:
-        0:
-          0: "The website overhaul: \n - Use Nuxt 3 \n - English support"
-        1:
-          0: "- Creation of an internal API to no longer expose the rapidApi api key \n - Update dependencies"
-          1: "- Improve accessibility \n - Improve Dark mode \n - Update dependencies"
-          2: "- Setup Cloudflare Analytics \n - Update dependencies"
-        2:
-          0: "- Improve page loading speed \n - Update dependencies"
-        3:
-          0: 'Migration to Nuxt 4'
-    tags:
-      dependencies: Dependencies
-      feature: Feature
-      fix: Fix
-      overhaul: Overhaul
-      security: Security
   pdf:
     download: Download CV
   resume:
@@ -106,6 +58,7 @@ PAbout:
 
 PFooter:
   copyright: 'Copyright© {year}: All rights reserved.'
+  commitTitle: 'View last deployed commit'
 
 PIntroduction:
   action: Show CV

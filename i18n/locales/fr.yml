@@ -12,54 +12,6 @@ pages:
   home:
     title: Accueil
     description: Découvrez mon portfolio et amusez-vous à le tester :)
-  changelog:
-    title: Journal de modifications
-    description: Curieux de voir l'évolution du portfolio ? C'est par ici !
-    items:
-      1:
-        0:
-          0: "- Création et mise en ligne du portfolio en HTML/CSS/JS \n - Utilisation de LESS"
-          1: '- Ajout de LazyLoad'
-          2: "- Correction de bugs \n - Ajout Google Recaptcha 2"
-          3: "- Optimisation du référencement \n - Optimisation des images"
-        1:
-          0: "Dynamisation du site : \n - Utilisation de PHP 5.6 & MySQL \n - Création d'une administration"
-          1: '- Correction de bugs'
-          2: "- Ajout d'un Easter Egg \n - Correction de bugs"
-        2:
-          0: "Refonte de l'administration : \n - Renforcement de la sécurité \n - Nouveau design \n - Meilleur système d'upload pour les images"
-          1: "- Correction de bugs \n - Migration vers une Progressive Web App"
-          2: "- Mise à jour des dépendances \n - Passage à PHP 7.1"
-          3: "- Correction de bugs \n - Optimisation du code"
-      2:
-        0:
-          0: "Refonte totale du site : \n - Refonte avec Symfony 4.1 \n - Fin du support d'Internet Explorer et des anciennes versions des navigateurs \n - Optimisation du code \n - Suppression de plusieurs dépendances javascript et css \n - Passage de LESS au SCSS \n - Passage à PHP 7.2 \n - Ajout du format webp pour les images \n - Correction de bugs \n - Mise en place d'un thème sombre \n - Utilisation des cookies pour une meilleure expérience \n - Désactivation des Services Workers"
-          1: "- Mise à jour vers Symfony 4.2 \n - Création d'une page « Contact » \n - Passage vers Recaptcha 3"
-        1:
-          0: "Refonte du javascript : \n - Suppression de Jquery \n - Meilleures performances \n - Mise à jour des dépendances \n\n Autre : \n - Meilleur support de Firefox \n - Correction de bugs"
-          1: "- Mise à jour et amélioration de la sécurité de l'administration \n - Passage à PHP 7.3 \n - Correction de bugs"
-          2: '- Création et génération automatique du sitemap du site'
-          3: "- Renforcement de la sécurité \n - Amélioration du mode sombre"
-          4: '- Mise à jour des dépendances'
-          5: "- Mise à jour vers Symfony 4.4 \n - Passage à PHP 7.4 \n - Mise à jour des dépendances"
-          6: "- Ajout d'un chargement paresseux pour les images \n - Mise à jour des dépendances"
-      3:
-        0:
-          0: "Refonte totale du site : \n - Utilisation de Nuxt 3 \n - Support de l'anglais"
-        1:
-          0: "- Création d'une API interne pour ne plus exposer la clé api de rapidApi \n - Mise à jour des dépendances"
-          1: "- Amélioration de l'accessibilité \n - Amélioration du thème sombre \n - Mise à jour des dépendances"
-          2: "- Mise en place de CloudFlare Analytics \n - Mise à jour des dépendances"
-        2:
-          0: "- Amélioration de la vitesse de chargement des pages \n - Mise à jour des dépendances"
-        3:
-          0: 'Migration vers Nuxt 4'
-    tags:
-      dependencies: Dépendances
-      feature: Fonctionnalité
-      fix: Correctif
-      overhaul: Refonte
-      security: Sécurité
   pdf:
     download: Télécharger le CV
   resume:
@@ -106,6 +58,7 @@ PAbout:
 
 PFooter:
   copyright: 'Copyright© {year} : Tout droits réservés.'
+  commitTitle: 'Voir le dernier commit déployé'
 
 PIntroduction:
   action: Afficher le CV
