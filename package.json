@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@11.4.0",
   "type": "module",
   "scripts": {
     "analyze": "nuxt analyze",
@@ -43,7 +43,7 @@
     "@vue/test-utils": "2.4.10",
     "@vueuse/core": "14.3.0",
     "@vueuse/nuxt": "14.3.0",
-    "cypress": "15.15.0",
+    "cypress": "15.16.0",
     "eslint": "10.4.0",
     "eslint-config-prettier": "10.1.8",
     "happy-dom": "20.9.0",
@@ -56,12 +56,12 @@
     "typescript": "6.0.3",
     "vite": "7.3.3",
     "vitest": "4.1.7",
-    "vue": "3.5.34",
-    "vue-tsc": "3.3.1",
-    "wrangler": "4.93.1"
+    "vue": "3.5.35",
+    "vue-tsc": "3.3.2",
+    "wrangler": "4.95.0"
   },
   "dependencies": {
-    "@nuxtjs/robots": "6.0.8",
+    "@nuxtjs/robots": "6.0.9",
     "nuxt-umami": "3.2.1",
     "v-wave": "3.0.4",
     "vue-typical": "2.1.0"
