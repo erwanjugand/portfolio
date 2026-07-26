@@ -8,6 +8,3 @@ allowBuilds:
   workerd: false
   sharp: false
   vue-demi: false
-overrides:
-  '@nuxt/vite-builder@4>vite': '^8.0.0' # Should no longer be necessary with Nuxt 5
-  'vite-node@5>vite': '^8.0.0' # Should no longer be necessary with Nuxt 5

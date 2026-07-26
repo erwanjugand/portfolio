@@ -4,10 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@nuxt/vite-builder@4>vite': ^8.0.0
-  vite-node@5>vite: ^8.0.0
-
 importers:
 
   .:
