@@ -4,9 +4,10 @@ node_modules
 .nitro
 .cache
 .output
+.wrangler
 .env
 .actrc
 dist
-cypress/videos
-cypress/screenshots
+playwright-report
+test-results
 public/_ca

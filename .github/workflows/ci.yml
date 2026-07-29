@@ -60,20 +60,20 @@ jobs:
         with:
           directories: .output/public,.output/server
 
-      - name: Run Cypress
-        uses: cypress-io/github-action@fa4a118725a8f001170d49631ea89e5d66fee626 # v7.4.1
-        with:
-          install: false
-          start: pnpm exec wrangler dev .output/server/index.mjs --site .output/public --log-level error --port 3000
-          wait-on: 'http://localhost:3000'
-          browser: chrome
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium firefox
 
-      - name: Upload Cypress Screenshots
+      - name: Run Playwright
+        run: pnpm test:e2e
+
+      - name: Upload Playwright artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         if: failure()
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          name: playwright-artifacts
+          path: |
+            playwright-report
+            test-results
           if-no-files-found: ignore
 
       - name: Upload Build
