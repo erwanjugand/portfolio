@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: mcr.microsoft.com/playwright:v1.62.1-resolute
     environment: ${{ github.ref_name }}
 
     steps:
@@ -60,11 +61,10 @@ jobs:
         with:
           directories: .output/public,.output/server
 
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-deps chromium firefox
-
       - name: Run Playwright
         run: pnpm test:e2e
+        env:
+          HOME: /root
 
       - name: Upload Playwright artifacts
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
