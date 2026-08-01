@@ -37,7 +37,7 @@
     "@nuxt/test-utils": "4.1.0",
     "@nuxtjs/color-mode": "4.0.1",
     "@nuxtjs/google-fonts": "3.2.0",
-    "@nuxtjs/i18n": "10.6.0",
+    "@nuxtjs/i18n": "10.5.0",
     "@playwright/test": "1.62.1",
     "@types/node": "24.13.3",
     "@vitest/ui": "4.1.10",
