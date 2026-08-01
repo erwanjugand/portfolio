@@ -19,6 +19,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 5,
   },
 
+  sourcemap: {
+    server: false,
+  },
+
   typescript: {
     tsConfig: { compilerOptions: STRICTNESS_TS_OPTIONS },
     nodeTsConfig: { compilerOptions: STRICTNESS_TS_OPTIONS },
