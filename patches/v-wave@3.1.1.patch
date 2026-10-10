@@ -1,0 +1,21 @@
+diff --git a/nuxt/index.ts b/nuxt/index.ts
+index 8dade01f4e34110eb692414629d35ed0ba0c50be..f910969129d90e8e5497aa95f74d4be3968fbd72 100644
+--- a/nuxt/index.ts
++++ b/nuxt/index.ts
+@@ -1,5 +1,5 @@
+ import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
+-import { DEFAULT_PLUGIN_OPTIONS, type IVWavePluginOptions } from '../src/options'
++import { DEFAULT_PLUGIN_OPTIONS, type IVWavePluginOptions } from '../src/options.ts'
+ 
+ type ModuleOptions = Partial<IVWavePluginOptions>
+ 
+diff --git a/src/options.ts b/src/options.ts
+index 188295fd73f0e3700ae0d7f60e37908a808c46e6..206fbe4481b2a952881209bf19d0fae8f43aa8fe 100644
+--- a/src/options.ts
++++ b/src/options.ts
+@@ -1,4 +1,4 @@
+-import type { Vector } from './types'
++import type { Vector } from './types.ts'
+ 
+ /**
+  * A controller object returned by `VWave.createTrigger()` that can be passed
