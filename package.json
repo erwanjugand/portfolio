@@ -61,7 +61,7 @@
     "wrangler": "4.149.0"
   },
   "dependencies": {
-    "@nuxtjs/robots": "6.2.4",
+    "@nuxtjs/robots": "7.0.2",
     "nuxt-umami": "3.2.1",
     "v-wave": "3.1.1",
     "vue-typical": "2.1.0"
