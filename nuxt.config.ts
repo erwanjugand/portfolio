@@ -80,10 +80,6 @@ export default defineNuxtConfig({
     'v-wave/nuxt',
   ],
 
-  imports: {
-    dirs: ['store'],
-  },
-
   i18n: {
     baseUrl: process.env.SITE_URL,
     detectBrowserLanguage: false,
