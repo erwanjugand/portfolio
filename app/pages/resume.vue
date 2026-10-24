@@ -139,7 +139,7 @@ defineI18nRoute({
         <div v-for="skill of skills" :key="skill.name" class="cv-main-skill">
           <p class="cv-main-skill-text" v-text="skill.name" />
           <PIcon
-            v-for="n of 3"
+            v-for="n of MAX_LEVEL"
             :key="n"
             class="cv-main-skill-level"
             :type="n > skill.level ? 'light' : 'solid'"
