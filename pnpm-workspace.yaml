@@ -1,12 +1,5 @@
 minimumReleaseAgeExclude:
   - '@erwanjugand/*'
-  - '@nuxt/cli@4.0.1'
-  - '@nuxt/kit@4.6.1'
-  - '@nuxt/nitro-server@4.6.1'
-  - '@nuxt/schema@4.6.1'
-  - '@nuxt/vite-builder@4.6.1'
-  - '@nuxt/vite-server@4.6.1'
-  - nuxt@4.6.1
 minimumReleaseAgeExcludePrune: true
 allowBuilds:
   '@parcel/watcher': false
@@ -16,4 +9,5 @@ allowBuilds:
   sharp: false
   vue-demi: false
 patchedDependencies:
+  '@nuxtjs/i18n@10.6.0': patches/@nuxtjs__i18n@10.6.0.patch
   v-wave@3.1.1: patches/v-wave@3.1.1.patch
