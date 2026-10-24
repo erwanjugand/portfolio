@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 
-const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const { d, locale } = useI18n()
 const isLoading = ref(false)
@@ -11,7 +10,7 @@ const download = async () => {
 
   const { data: pdfUrl } = await useFetch('/api/pdf', {
     query: {
-      url: runtimeConfig.public.siteUrl + route.path,
+      path: route.path,
       fileName: `Erwan Jugand - ${locale.value} - ${d(new Date(), 'short')}.pdf`,
     },
   })
