@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.64.1-resolute@sha256:5804dd8c666684ea858091d52c91ef97974caa999b25f0f03efa485d9ffeb434
+    container: mcr.microsoft.com/playwright:v1.64.1-resolute@sha256:d89d0e4a7058330a8334306a5aef1e00807863d31af27cf11348eed696d6e0ba
     environment: ${{ github.ref_name }}
 
     steps:
