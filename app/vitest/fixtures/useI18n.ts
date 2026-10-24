@@ -20,6 +20,7 @@ const mockUseI18n = (locale: Locale) =>
       locale: computed(() => locale),
       locales: computed(() => i18nLocaleObjects),
       t: (key: string) => key,
+      d: (date: Date) => date.toISOString(),
     } as keyof typeof useI18n
   })
 

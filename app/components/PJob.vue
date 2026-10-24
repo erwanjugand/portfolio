@@ -1,26 +1,10 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
 const { job } = defineProps<{
   job: Job
   single?: boolean
 }>()
 
-// Fix Cloudflare Worker (https://stackoverflow.com/questions/58491003/how-to-get-the-current-date-in-a-cloudflares-worker)
-const currentDate = new Date()
-const finishedAtValue = computed(() => job.finishedAt ?? currentDate)
-
-const { d, t } = useI18n()
-const title = computed(() => t(`PJob.items.${job.key}.title`))
-const description = computed(() => t(`PJob.items.${job.key}.description`))
-const contract = computed(() => `. ${t(`PJob.contract.${job.contract}`)}`)
-const startedAt = computed(() => d(job.startedAt, 'short'))
-const finishedAt = computed(() => {
-  const isToday = finishedAtValue.value === currentDate
-  return isToday ? t('PJob.today') : d(finishedAtValue.value, 'short')
-})
-const { duration } = useDateFormatDuration(() => job.startedAt, finishedAtValue)
-const time = computed(() => `${startedAt.value} - ${finishedAt.value} . ${duration.value}`)
+const { title, description, contract, time } = useJob(() => job)
 </script>
 
 <template>
