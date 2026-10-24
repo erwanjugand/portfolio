@@ -1,3 +1,5 @@
+import { defineEventHandler, getQuery, useRuntimeConfig } from 'nuxt/server'
+
 interface PdfResponse {
   pdf?: string
   mbIn?: number
