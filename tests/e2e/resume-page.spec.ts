@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test'
 test.describe('Resume page', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/en/resume')
+    // The server-rendered download button ignores clicks until Vue hydrates it
+    await page.waitForFunction(() => window.useNuxtApp?.().isHydrating === false)
   })
 
   test('should have a title', async ({ page }) => {
