@@ -39,9 +39,10 @@ defineI18nRoute({
       </p>
       <p class="scroll-animation-fade">Hébergement :</p>
       <p class="scroll-animation-fade">
-        Hébergeur : Scaleway<br />
-        8 rue de la Ville l’Evêque, 75008 Paris, France<br />
-        Site Web : <a href="https://www.scaleway.com">https://www.scaleway.com</a>
+        Hébergeur : Cloudflare, Inc.<br />
+        101 Townsend St, San Francisco, CA 94107, États-Unis<br />
+        Téléphone : +1 (650) 319-8930<br />
+        Site Web : <a href="https://www.cloudflare.com">https://www.cloudflare.com</a>
       </p>
 
       <PH2> 2. Conditions d’utilisation </PH2>
@@ -49,9 +50,9 @@ defineI18nRoute({
       <p class="scroll-animation-fade">
         <strong>Jugand Erwan</strong> met en œuvre tous les moyens dont elle dispose, pour assurer une information
         fiable et une mise à jour fiable de ses sites internet. Toutefois, des erreurs ou omissions peuvent survenir.
-        L'internaute devra donc s'assurer de l'exactitude des informations auprès de , et signaler toutes modifications
-        du site qu'il jugerait utile. n'est en aucun cas responsable de l'utilisation faite de ces informations, et de
-        tout préjudice direct ou indirect pouvant en découler.
+        L'internaute devra donc s'assurer de l'exactitude des informations auprès de Jugand Erwan, et signaler toutes
+        modifications du site qu'il jugerait utile. Jugand Erwan n'est en aucun cas responsable de l'utilisation faite
+        de ces informations, et de tout préjudice direct ou indirect pouvant en découler.
       </p>
       <p class="scroll-animation-fade">
         <strong>Cookies :</strong> Le site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> peut-être amené
@@ -62,17 +63,18 @@ defineI18nRoute({
         cookies.
       </p>
       <p class="scroll-animation-fade">
-        <strong>Liens hypertextes :</strong> Les sites internet de peuvent offrir des liens vers d’autres sites internet
-        ou d’autres ressources disponibles sur Internet. Jugand Erwan ne dispose d'aucun moyen pour contrôler les sites
-        en connexion avec ses sites internet. ne répond pas de la disponibilité de tels sites et sources externes, ni ne
-        la garantit. Elle ne peut être tenue pour responsable de tout dommage, de quelque nature que ce soit, résultant
-        du contenu de ces sites ou sources externes, et notamment des informations, produits ou services qu’ils
-        proposent, ou de tout usage qui peut être fait de ces éléments. Les risques liés à cette utilisation incombent
-        pleinement à l'internaute, qui doit se conformer à leurs conditions d'utilisation.
+        <strong>Liens hypertextes :</strong> Les sites internet de Jugand Erwan peuvent offrir des liens vers d’autres
+        sites internet ou d’autres ressources disponibles sur Internet. Jugand Erwan ne dispose d'aucun moyen pour
+        contrôler les sites en connexion avec ses sites internet. Jugand Erwan ne répond pas de la disponibilité de tels
+        sites et sources externes, ni ne la garantit. Elle ne peut être tenue pour responsable de tout dommage, de
+        quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment des
+        informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments. Les
+        risques liés à cette utilisation incombent pleinement à l'internaute, qui doit se conformer à leurs conditions
+        d'utilisation.
       </p>
       <p class="scroll-animation-fade">
-        Les utilisateurs, les abonnés et les visiteurs des sites internet de ne peuvent mettre en place un hyperlien en
-        direction de ce site sans l'autorisation expresse et préalable de Jugand Erwan.
+        Les utilisateurs, les abonnés et les visiteurs des sites internet de Jugand Erwan ne peuvent mettre en place un
+        hyperlien en direction de ce site sans l'autorisation expresse et préalable de Jugand Erwan.
       </p>
       <p class="scroll-animation-fade">
         Dans l'hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des
@@ -92,9 +94,8 @@ defineI18nRoute({
         possible. les renseignements figurant sur le site
         <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> ne sont pas exhaustifs et les photos non
         contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par
-        ailleurs, tous les informations indiquées sur le site https://erwan-jugand.fr<span style="color: #000"
-          ><b /></span
-        >sont données à titre indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.
+        ailleurs, tous les informations indiquées sur le site https://erwan-jugand.fr sont données à titre indicatif, et
+        sont susceptibles de changer ou d’évoluer sans préavis.
       </p>
 
       <PH2> 4. Limitation contractuelles sur les données </PH2>
@@ -108,12 +109,10 @@ defineI18nRoute({
       </p>
       <p class="scroll-animation-fade">
         Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa seule responsabilité. En
-        conséquence, ne saurait être tenu responsable d'un quelconque dommage subi par l'ordinateur de l'utilisateur ou
-        d'une quelconque perte de données consécutives au téléchargement.
-        <span style="color: #323333"
-          >De plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas
-          de virus et avec un navigateur de dernière génération mis-à-jour</span
-        >
+        conséquence, Jugand Erwan ne saurait être tenu responsable d'un quelconque dommage subi par l'ordinateur de
+        l'utilisateur ou d'une quelconque perte de données consécutives au téléchargement. De plus, l’utilisateur du
+        site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur
+        de dernière génération mis-à-jour
       </p>
       <p class="scroll-animation-fade">
         Les liens hypertextes mis en place dans le cadre du présent site internet en direction d'autres ressources
