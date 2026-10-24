@@ -36,5 +36,5 @@ Required : Install `ImageMagick`
 
 ```bash
 # Optimize images
-pnpm image
+pnpm fix:image
 ```
