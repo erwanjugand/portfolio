@@ -48,6 +48,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    typescript: {
+      tsConfig: { include: ['./types/typed-router.d.ts'] },
+    },
     prerender: {
       crawlLinks: true,
     },
