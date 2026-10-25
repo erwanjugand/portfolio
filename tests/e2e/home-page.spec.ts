@@ -18,7 +18,7 @@ test.describe('Home page', () => {
   test('should have a introduction section', async ({ page }) => {
     const section = page.locator('section#introduction')
 
-    await expect(section.getByRole('link', { name: 'Show CV' })).toHaveAttribute('href', '/en/resume')
+    await expect(section.getByRole('link', { name: 'View resume' })).toHaveAttribute('href', '/en/resume')
     await expect(section.getByRole('button', { name: 'Scroll down' })).toBeVisible()
   })
 
@@ -48,7 +48,7 @@ test.describe('Home page', () => {
     const section = page.locator('section#experiences')
     const experienceItems = section.getByRole('listitem')
 
-    await expect(section.getByRole('heading', { level: 2, name: 'Experiences' })).toBeVisible()
+    await expect(section.getByRole('heading', { level: 2, name: 'Experience' })).toBeVisible()
     await expect(experienceItems).toHaveCount(experiences.length)
 
     for (const [index, experience] of experiences.entries()) {

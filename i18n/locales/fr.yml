@@ -16,7 +16,7 @@ pages:
     download: Télécharger le CV
   resume:
     title: CV
-    description: Retrouvez toutes mes informations sous forme d'un CV
+    description: Retrouvez toutes mes informations sous forme de CV
     personalInformations:
       title: Infos personnelles
       car: Permis B
@@ -24,12 +24,12 @@ pages:
       title: Environnement
     hobbies:
       title: Loisirs
-      videoGame: Jeux vidéos
+      videoGame: Jeux vidéo
       highTech: Nouvelles technologies
     additionalSkill:
       title: Autres compétences
       management: Management
-      webDesign: WebDesign
+      webDesign: Webdesign
       productManagement: Gestion de projet
     experiences:
       title: Expériences professionnelles
@@ -37,40 +37,40 @@ pages:
       title: Compétences
   legalMentions:
     title: Mentions légales
-    description: En vrai, tout le monde s'en fiche de ce genre de page…
+    description: En vrai, tout le monde se fiche de ce genre de page…
   error:
-    cta: Revenir sur l'accueil
+    cta: Revenir à l'accueil
     4xx:
-      title: Page introuvable !
+      title: Page introuvable !
       text: Oups, cette page n'existe pas
     5xx:
-      title: Une erreur est survenue !
+      title: Une erreur est survenue !
       text: Je vais rectifier ça au plus vite :)
 
 PAbout:
-  profileAlt: Photo de profil de Erwan Jugand
-  text1: Salut, je m'appelle {name} et suis un {job} passionné et sensible aux bonnes pratiques de code.
+  profileAlt: Photo de profil d'Erwan Jugand
+  text1: Salut, je m'appelle {name} et je suis un {job} passionné et sensible aux bonnes pratiques de code.
   text1Job: développeur Front-End
-  text2: Mon cursus à {school} et mon expérience chez {enterprise} m'ont permis d'affiner ma sensibilité sur le design, la gestion de projet, UX/UI et le management.
-  text3: Le métier de développeur Front-End est un métier en constante évolution, offrant toujours plus d'outil pour concevoir des sites toujours plus performant.
-  text4: "Je suis aussi passionné d'informatique, de nouvelles technologies et surtout curieux \U0001F609!"
+  text2: Mon cursus à {school} et mon expérience chez {enterprise} m'ont permis d'affiner ma sensibilité au design, à la gestion de projet, à l'UX/UI et au management.
+  text3: Le développement Front-End est un métier en constante évolution, qui offre toujours plus d'outils pour concevoir des sites de plus en plus performants.
+  text4: "Je suis aussi passionné d'informatique, de nouvelles technologies et surtout curieux \U0001F609 !"
   title: À propos
 
 PFooter:
-  copyright: 'Copyright© {year} : Tout droits réservés.'
+  copyright: 'Copyright© {year} : Tous droits réservés.'
   commitTitle: 'Voir le dernier commit déployé'
 
 PIntroduction:
   action: Afficher le CV
-  scroll: Défiler en bas
+  scroll: Défiler vers le bas
   titleAlt: Lead développeur Front-End
 
 PHeader:
-  homeAction: Revenir sur l'accueil
+  homeAction: Revenir à l'accueil
   langAction: Changer la langue du site
-  langActionLabel: "@:PHeader.langAction{','} langue actuelle : {lang}"
+  langActionLabel: "@:PHeader.langAction{','} langue actuelle : {lang}"
   themeAction: Changer le thème du site
-  themeActionLabel: "@:PHeader.themeAction{','} thème actuel : {theme}"
+  themeActionLabel: "@:PHeader.themeAction{','} thème actuel : {theme}"
 
 PEnvironments:
   title: Mon environnement
@@ -80,7 +80,7 @@ PExperiences:
 
 PSkills:
   title: Mes compétences
-  level: 'Niveau de compétence : {current} sur {max}'
+  level: 'Niveau de compétence : {current} sur {max}'
 
 PMoreInformation:
   address: Adresse
@@ -96,20 +96,20 @@ PJob:
   items:
     sekostFrontEndDev:
       title: Développeur Front-End
-      description: Maintenance et évolution des rapports et l'interface du SaaS.
+      description: Maintenance et évolution des rapports et de l'interface du SaaS.
     steepleLeadFrontEndDev:
       title: Lead développeur Front-End
-      description: Structuration du pôle, pilotage des équipes techniques et développement continue du site Steeple.
+      description: Structuration du pôle, pilotage des équipes techniques et développement continu du site Steeple.
     steepleFrontEndDev:
       title: Développeur Front-End
       description: Refonte et mise à jour continue du site Steeple avec Nuxt.js, SCSS et TypeScript. Maintenance de l'application Android et de l'application Chrome. Conception et création du site vitrine sur WordPress.
     steepleWebIntegrator:
       title: Intégrateur web
-      description: Réalisation des maquettes du site Steeple sur Adobe XD suivit de l'intégration de celles-ci sur Ruby on Rails and SCSS. Planification et gestion de projet.
+      description: Réalisation des maquettes du site Steeple sur Adobe XD suivie de l'intégration de celles-ci en Ruby on Rails et SCSS. Planification et gestion de projet.
     vinciWebIntegrator:
       title: Intégrateur web
-      description: Recensement des contenus existants des entreprises du groupe VEFTGO pour préparer leurs migrations sur WordPress. Remontée de bugs auprès du chef de projet.
+      description: Recensement des contenus existants des entreprises du groupe VEFTGO pour préparer leur migration vers WordPress. Remontée de bugs auprès du chef de projet.
     lpcWebIntegrator:
-      title: Intégrateur Web
+      title: Intégrateur web
       description: Réalisation d'un site spécialisé dans l'affiliation domotique avec WordPress.
   today: aujourd'hui

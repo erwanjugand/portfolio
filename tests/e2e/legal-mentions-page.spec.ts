@@ -6,7 +6,7 @@ test.describe('Legal mentions page', () => {
   })
 
   test('should have a title', async ({ page }) => {
-    await expect(page).toHaveTitle('Erwan Jugand - Legal mentions')
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Legal mentions')
+    await expect(page).toHaveTitle('Erwan Jugand - Legal notice')
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Legal notice')
   })
 })

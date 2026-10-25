@@ -16,6 +16,6 @@ test.describe('Resume page', () => {
   })
 
   test('should have a download button', async ({ page }) => {
-    await expect(page.getByRole('button', { name: 'Download CV' })).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Download resume' })).toBeVisible()
   })
 })
