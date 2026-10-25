@@ -24,7 +24,9 @@ const scroll = () => {
       {{ $t('PIntroduction.action') }}
     </PButton>
     <button v-ripple class="introduction-scroll" :title="$t('PIntroduction.scroll')" @click="scroll">
-      <img width="48" height="80" aria-hidden="true" class="introduction-scroll-image" src="/img/mouse.svg" alt="" />
+      <span class="introduction-scroll-mouse">
+        <span class="introduction-scroll-wheel" />
+      </span>
     </button>
   </PSection>
 </template>
@@ -90,9 +92,43 @@ const scroll = () => {
     border-radius: 99px;
     opacity: 0.75;
 
-    &-image {
-      display: flex;
+    &-mouse {
+      display: block;
+      width: 48px;
+      height: 80px;
+      border: 2px solid #fff;
+      border-radius: 24px;
     }
+
+    &-wheel {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: 16px auto 0;
+      background-color: #fff;
+      border-radius: 50%;
+
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-wheel 1.5s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes scroll-wheel {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  10%,
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(32px);
   }
 }
 
