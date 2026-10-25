@@ -9,5 +9,4 @@ allowBuilds:
   sharp: false
   vue-demi: false
 patchedDependencies:
-  '@nuxtjs/i18n@10.6.0': patches/@nuxtjs__i18n@10.6.0.patch
   v-wave@3.1.1: patches/v-wave@3.1.1.patch

@@ -48,6 +48,10 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    imports: {
+      // @nuxtjs/i18n server runtime imports useRuntimeConfig from #imports, which Nuxt 5 no longer auto-imports in Nitro
+      presets: [{ from: 'nitropack/runtime', imports: ['useRuntimeConfig'] }],
+    },
     typescript: {
       tsConfig: { include: ['./types/typed-router.d.ts'] },
     },
