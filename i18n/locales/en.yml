@@ -13,47 +13,47 @@ pages:
     title: Home
     description: Discover my portfolio and have fun testing it :)
   pdf:
-    download: Download CV
+    download: Download resume
   resume:
     title: Resume
-    description: Find all information in a CV
+    description: Find all my information in resume form
     personalInformations:
       title: Personal info
-      car: Driving license
+      car: Driver's license
     environments:
       title: Environment
     hobbies:
       title: Hobbies
       videoGame: Video games
-      highTech: new technologies
+      highTech: New technologies
     additionalSkill:
-      title: Additional Skills
+      title: Additional skills
       management: Management
-      webDesign: WebDesign
+      webDesign: Web design
       productManagement: Project management
     experiences:
-      title: Professional experiences
+      title: Work experience
     skills:
       title: Skills
   legalMentions:
-    title: Legal mentions
+    title: Legal notice
     description: Nobody cares about this kind of page…
   error:
     cta: Back to homepage
     4xx:
-      title: Page not found !
+      title: Page not found!
       text: Oops, this page doesn't exist
     5xx:
-      title: An error has occurred !
-      text: I will rectify this as soon as possible :)
+      title: Something went wrong!
+      text: I'll fix this as soon as possible :)
 
 PAbout:
   profileAlt: Profile picture of Erwan Jugand
-  text1: Hello, my name is {name} and I am a passionate {job} and sensitive to good practices.
+  text1: Hi, my name is {name} and I'm a passionate {job} who cares about coding best practices.
   text1Job: Front-End developer
-  text2: My experience at {school} and at {enterprise} helped me to refine my sensibility on design, project management, UX/UI and team management.
-  text3: The job of Front-End developer is a constantly evolving job, always offering more tools to design ever more efficient websites.
-  text4: "I am also passionate about IT, New technologies and above all curious \U0001F609!"
+  text2: My studies at {school} and my experience at {enterprise} helped me hone my skills in design, project management, UX/UI and team management.
+  text3: Front-End development is a constantly evolving field, offering more and more tools to build ever better-performing websites.
+  text4: "I'm also passionate about IT and new technologies, and above all curious \U0001F609!"
   title: About
 
 PFooter:
@@ -61,12 +61,12 @@ PFooter:
   commitTitle: 'View last deployed commit'
 
 PIntroduction:
-  action: Show CV
+  action: View resume
   scroll: Scroll down
   titleAlt: Lead Front-End developer
 
 PHeader:
-  homeAction: Back to home
+  homeAction: Back to homepage
   langAction: Change site language
   langActionLabel: "@:PHeader.langAction{','} current language: {lang}"
   themeAction: Change site theme
@@ -76,7 +76,7 @@ PEnvironments:
   title: Environment
 
 PExperiences:
-  title: Experiences
+  title: Experience
 
 PSkills:
   title: Skills
@@ -96,20 +96,20 @@ PJob:
   items:
     sekostFrontEndDev:
       title: Front-End developer
-      description: Maintenance and evolution of reports and the SaaS interfaces.
+      description: Maintenance and improvement of the SaaS reports and interface.
     steepleLeadFrontEndDev:
       title: Lead Front-End developer
-      description: Structuring of the division, technical team management and continuous development of Steeple website.
+      description: Team structuring, technical team leadership and ongoing development of the Steeple website.
     steepleFrontEndDev:
       title: Front-End developer
-      description: Steeple website redesign and continuous update with Nuxt.js, SCSS and TypeScript. Android app and Chrome app maintenance. Conception and creation of the showcase site on WordPress.
+      description: Redesign and ongoing updates of the Steeple website with Nuxt.js, SCSS and TypeScript. Maintenance of the Android app and Chrome app. Design and development of the marketing website on WordPress.
     steepleWebIntegrator:
-      title: Web Integrator
-      description: Creation of models on Adobe XD followed by their integration on Ruby on Rails and SCSS. Planning and project management.
+      title: Web integrator
+      description: Design of the Steeple website mockups in Adobe XD, followed by their integration with Ruby on Rails and SCSS. Planning and project management.
     vinciWebIntegrator:
-      title: Web Integrator
-      description: Inventory of existing content from VEFTGO group companies to prepare their migrations to WordPress. Bugs reporting to the project manager.
+      title: Web integrator
+      description: Inventory of existing content from VEFTGO group companies to prepare their migration to WordPress. Bug reporting to the project manager.
     lpcWebIntegrator:
-      title: Web Integrator
-      description: Creation of a website specialized in home automation affiliation with WordPress
+      title: Web integrator
+      description: Development of a home automation affiliate website with WordPress.
   today: today
