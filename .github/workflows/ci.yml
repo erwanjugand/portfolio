@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: mcr.microsoft.com/playwright:v1.65.0-resolute@sha256:4d70b558dbaff71611b2f3e7a32aa2b4d42cfc892078ad368cb7ea229c2ffd1f
+    container: mcr.microsoft.com/playwright:v1.65.0-resolute@sha256:916c9fb63a8340822589dd5c821dae82e8012106bb8515a72f278d97f277446a
     environment: ${{ github.event_name == 'push' && github.ref_name || '' }}
 
     steps:
