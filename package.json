@@ -50,7 +50,7 @@
     "nuxt": "4.6.4",
     "prettier": "3.10.1",
     "sass-embedded": "1.108.2",
-    "stylelint": "17.16.0",
+    "stylelint": "18.0.0",
     "svgo": "4.1.0",
     "the-new-css-reset": "1.11.3",
     "typescript": "6.0.3",
