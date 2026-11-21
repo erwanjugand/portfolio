@@ -3,9 +3,9 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
   title: t('pages.legalMentions.title'),
-  meta: [{ name: 'description', content: t('pages.legalMentions.description') }],
+  description: t('pages.legalMentions.description'),
 })
 
 defineI18nRoute({
@@ -17,171 +17,177 @@ defineI18nRoute({
 </script>
 
 <template>
-  <main>
-    <PSection class="container legal-mentions">
-      <PH1>
+  <PSection>
+    <div class="container legal-mentions">
+      <PHeading tag="h1">
         {{ $t('pages.legalMentions.title') }}
-      </PH1>
+      </PHeading>
 
-      <PH2> 1. Présentation du site </PH2>
+      <div class="legal-mentions-content" lang="fr">
+        <h2 class="legal-mentions-title">1. Présentation du site</h2>
 
-      <p class="scroll-animation-fade">
-        Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’y parcourir ses
-        pages. En vous connectant sur ce site, vous acceptez sans réserves les présentes modalités. Aussi, conformément
-        à l’article n°6 de la Loi n°2004-575 du 21 Juin 2004 pour la confiance dans l’économie numérique, les
-        responsables du présent site internet <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> sont :
-      </p>
-      <p class="scroll-animation-fade">Editeur du Site :</p>
-      <p class="scroll-animation-fade">
-        Nom : Jugand<br />
-        Prénom : Erwan<br />
-        Email : erwan.jugand@gmail.com<br />
-      </p>
-      <p class="scroll-animation-fade">Hébergement :</p>
-      <p class="scroll-animation-fade">
-        Hébergeur : Cloudflare, Inc.<br />
-        101 Townsend St, San Francisco, CA 94107, États-Unis<br />
-        Téléphone : +1 (650) 319-8930<br />
-        Site Web : <a href="https://www.cloudflare.com">https://www.cloudflare.com</a>
-      </p>
+        <p>
+          Merci de lire avec attention les différentes modalités d’utilisation du présent site avant d’en parcourir les
+          pages. En vous connectant sur ce site, vous acceptez sans réserve les présentes modalités. Aussi, conformément
+          à l’article 6 de la loi n°&nbsp;2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, les
+          responsables du présent site internet
+          <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> sont&nbsp;:
+        </p>
+        <p>Éditeur du site&nbsp;:</p>
+        <p>
+          Nom&nbsp;: Jugand<br />
+          Prénom&nbsp;: Erwan<br />
+          Email&nbsp;: erwan.jugand@gmail.com
+        </p>
+        <p>Hébergement&nbsp;:</p>
+        <p>
+          Hébergeur&nbsp;: Cloudflare, Inc.<br />
+          101 Townsend St, San Francisco, CA 94107, États-Unis<br />
+          Téléphone&nbsp;: +1 (650) 319-8930<br />
+          Site web&nbsp;: <a href="https://www.cloudflare.com">https://www.cloudflare.com</a>
+        </p>
 
-      <PH2> 2. Conditions d’utilisation </PH2>
+        <h2 class="legal-mentions-title">2. Conditions d’utilisation</h2>
 
-      <p class="scroll-animation-fade">
-        <strong>Jugand Erwan</strong> met en œuvre tous les moyens dont elle dispose, pour assurer une information
-        fiable et une mise à jour fiable de ses sites internet. Toutefois, des erreurs ou omissions peuvent survenir.
-        L'internaute devra donc s'assurer de l'exactitude des informations auprès de Jugand Erwan, et signaler toutes
-        modifications du site qu'il jugerait utile. Jugand Erwan n'est en aucun cas responsable de l'utilisation faite
-        de ces informations, et de tout préjudice direct ou indirect pouvant en découler.
-      </p>
-      <p class="scroll-animation-fade">
-        <strong>Cookies :</strong> Le site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> peut-être amené
-        à vous demander l’acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookies est une
-        information déposée sur votre disque dur par le serveur du site que vous visitez. Il contient plusieurs données
-        qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et
-        enregistrer des informations . Certaines parties de ce site ne peuvent être fonctionnelles sans l’acceptation de
-        cookies.
-      </p>
-      <p class="scroll-animation-fade">
-        <strong>Liens hypertextes :</strong> Les sites internet de Jugand Erwan peuvent offrir des liens vers d’autres
-        sites internet ou d’autres ressources disponibles sur Internet. Jugand Erwan ne dispose d'aucun moyen pour
-        contrôler les sites en connexion avec ses sites internet. Jugand Erwan ne répond pas de la disponibilité de tels
-        sites et sources externes, ni ne la garantit. Elle ne peut être tenue pour responsable de tout dommage, de
-        quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment des
-        informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments. Les
-        risques liés à cette utilisation incombent pleinement à l'internaute, qui doit se conformer à leurs conditions
-        d'utilisation.
-      </p>
-      <p class="scroll-animation-fade">
-        Les utilisateurs, les abonnés et les visiteurs des sites internet de Jugand Erwan ne peuvent mettre en place un
-        hyperlien en direction de ce site sans l'autorisation expresse et préalable de Jugand Erwan.
-      </p>
-      <p class="scroll-animation-fade">
-        Dans l'hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des
-        sites internet de Jugand Erwan, il lui appartiendra d'adresser un email accessible sur le site afin de formuler
-        sa demande de mise en place d'un hyperlien. Jugand Erwan se réserve le droit d’accepter ou de refuser un
-        hyperlien sans avoir à en justifier sa décision.
-      </p>
+        <p>
+          <strong>Erwan Jugand</strong> met en œuvre tous les moyens à sa disposition pour assurer une information
+          fiable et une mise à jour fiable de ses sites internet. Toutefois, des erreurs ou omissions peuvent survenir.
+          L’internaute devra donc s’assurer de l’exactitude des informations auprès d’Erwan Jugand, et signaler toute
+          modification du site qu’il jugerait utile. Erwan Jugand n’est en aucun cas responsable de l’utilisation faite
+          de ces informations, et de tout préjudice direct ou indirect pouvant en découler.
+        </p>
+        <p>
+          <strong>Cookies&nbsp;:</strong> le site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> ne
+          dépose aucun cookie. Seule votre préférence de thème est enregistrée dans le stockage local de votre
+          navigateur. La mesure d’audience est réalisée avec Umami, de façon anonyme et sans cookie.
+        </p>
+        <p>
+          <strong>Liens hypertextes&nbsp;:</strong> les sites internet d’Erwan Jugand peuvent offrir des liens vers
+          d’autres sites internet ou d’autres ressources disponibles sur Internet. Erwan Jugand ne dispose d’aucun moyen
+          pour contrôler les sites en connexion avec ses sites internet. Erwan Jugand ne répond pas de la disponibilité
+          de tels sites et sources externes, ni ne la garantit. Sa responsabilité ne peut être engagée pour tout
+          dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes, et notamment
+          des informations, produits ou services qu’ils proposent, ou de tout usage qui peut être fait de ces éléments.
+          Les risques liés à cette utilisation incombent pleinement à l’internaute, qui doit se conformer à leurs
+          conditions d’utilisation.
+        </p>
+        <p>
+          Les utilisateurs, les abonnés et les visiteurs des sites internet d’Erwan Jugand ne peuvent mettre en place un
+          hyperlien en direction de ce site sans l’autorisation expresse et préalable d’Erwan Jugand.
+        </p>
+        <p>
+          Dans l’hypothèse où un utilisateur ou visiteur souhaiterait mettre en place un hyperlien en direction d’un des
+          sites internet d’Erwan Jugand, il lui appartiendra d’adresser un email à l’adresse indiquée sur le site afin
+          de formuler sa demande de mise en place d’un hyperlien. Erwan Jugand se réserve le droit d’accepter ou de
+          refuser un hyperlien sans avoir à justifier sa décision.
+        </p>
 
-      <PH2> 3. Services fournis </PH2>
+        <h2 class="legal-mentions-title">3. Services fournis</h2>
 
-      <p class="scroll-animation-fade">
-        L'ensemble des activités ainsi que ses informations sont présentés sur notre site
-        <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>.
-      </p>
-      <p class="scroll-animation-fade">
-        Jugand Erwan s’efforce de fournir sur le site https://erwan-jugand.fr des informations aussi précises que
-        possible. les renseignements figurant sur le site
-        <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> ne sont pas exhaustifs et les photos non
-        contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne. Par
-        ailleurs, tous les informations indiquées sur le site https://erwan-jugand.fr sont données à titre indicatif, et
-        sont susceptibles de changer ou d’évoluer sans préavis.
-      </p>
+        <p>
+          L’ensemble des activités ainsi que ses informations sont présentés sur notre site
+          <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>.
+        </p>
+        <p>
+          Erwan Jugand s’efforce de fournir sur le site https://erwan-jugand.fr des informations aussi précises que
+          possible. Les renseignements figurant sur le site
+          <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> ne sont pas exhaustifs et les photos non
+          contractuelles. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.
+          Par ailleurs, toutes les informations indiquées sur le site https://erwan-jugand.fr sont données à titre
+          indicatif, et sont susceptibles de changer ou d’évoluer sans préavis.
+        </p>
 
-      <PH2> 4. Limitation contractuelles sur les données </PH2>
+        <h2 class="legal-mentions-title">4. Limitations contractuelles sur les données</h2>
 
-      <p class="scroll-animation-fade">
-        Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes
-        périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions. Si vous constatez une
-        lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email, à
-        l’adresse erwan.jugand@gmail.com, en décrivant le problème de la manière la plus précise possible (page posant
-        problème, type d’ordinateur et de navigateur utilisé, …).
-      </p>
-      <p class="scroll-animation-fade">
-        Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa seule responsabilité. En
-        conséquence, Jugand Erwan ne saurait être tenu responsable d'un quelconque dommage subi par l'ordinateur de
-        l'utilisateur ou d'une quelconque perte de données consécutives au téléchargement. De plus, l’utilisateur du
-        site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un navigateur
-        de dernière génération mis-à-jour
-      </p>
-      <p class="scroll-animation-fade">
-        Les liens hypertextes mis en place dans le cadre du présent site internet en direction d'autres ressources
-        présentes sur le réseau Internet ne sauraient engager la responsabilité de Jugand Erwan.
-      </p>
+        <p>
+          Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à différentes
+          périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions. Si vous constatez une
+          lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email, à
+          l’adresse erwan.jugand@gmail.com, en décrivant le problème de la manière la plus précise possible (page posant
+          problème, type d’ordinateur et de navigateur utilisé, …).
+        </p>
+        <p>
+          Tout contenu téléchargé se fait aux risques et périls de l’utilisateur et sous sa seule responsabilité. En
+          conséquence, Erwan Jugand ne saurait être tenu responsable d’un quelconque dommage subi par l’ordinateur de
+          l’utilisateur ou d’une quelconque perte de données consécutive au téléchargement. De plus, l’utilisateur du
+          site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas de virus et avec un
+          navigateur de dernière génération mis à jour.
+        </p>
+        <p>
+          Les liens hypertextes mis en place dans le cadre du présent site internet en direction d’autres ressources
+          présentes sur le réseau Internet ne sauraient engager la responsabilité d’Erwan Jugand.
+        </p>
 
-      <PH2> 5. Propriété intellectuelle </PH2>
+        <h2 class="legal-mentions-title">5. Propriété intellectuelle</h2>
 
-      <p class="scroll-animation-fade">
-        Tout le contenu du présent sur le site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>, incluant,
-        de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi
-        que leur mise en forme sont la propriété exclusive de la Jugand Erwan à l'exception des marques, logos ou
-        contenus appartenant à d'autres sociétés partenaires ou auteurs.
-      </p>
-      <p class="scroll-animation-fade">
-        Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de
-        ces différents éléments est strictement interdite sans l'accord exprès par écrit de Jugand Erwan. Cette
-        représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les
-        articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction
-        constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les
-        propriétaires des Contenus copiés pourraient intenter une action en justice à votre encontre.
-      </p>
+        <p>
+          Tout le contenu présent sur le site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>, incluant,
+          de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi
+          que leur mise en forme, est la propriété exclusive d’Erwan Jugand à l’exception des marques, logos ou contenus
+          appartenant à d’autres sociétés partenaires ou auteurs.
+        </p>
+        <p>
+          Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de
+          ces différents éléments est strictement interdite sans l’accord exprès par écrit d’Erwan Jugand. Cette
+          représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les
+          articles L.335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction
+          constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur. En outre, les
+          propriétaires des contenus copiés pourraient intenter une action en justice à votre encontre.
+        </p>
 
-      <PH2> 6. Déclaration à la CNIL </PH2>
+        <h2 class="legal-mentions-title">6. Litiges</h2>
 
-      <p class="scroll-animation-fade">
-        Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 relative à la
-        protection des personnes physiques à l'égard des traitements de données à caractère personnel) relative à
-        l'informatique, aux fichiers et aux libertés, ce site n'a pas fait l'objet d'une déclaration auprès de la
-        Commission nationale de l'informatique et des libertés (<a href="http://www.cnil.fr/">www.cnil.fr</a>).
-      </p>
+        <p>
+          Les présentes conditions du site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> sont régies par
+          les lois françaises et toute contestation ou tout litige qui pourrait naître de l’interprétation ou de
+          l’exécution de celles-ci sera de la compétence exclusive des tribunaux. La langue de référence, pour le
+          règlement de contentieux éventuels, est le français.
+        </p>
 
-      <PH2> 7. Litiges </PH2>
+        <h2 class="legal-mentions-title">7. Données personnelles</h2>
 
-      <p class="scroll-animation-fade">
-        Les présentes conditions du site <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a> sont régies par
-        les lois françaises et toute contestation ou litiges qui pourraient naître de l'interprétation ou de l'exécution
-        de celles-ci seront de la compétence exclusive des tribunaux. La langue de référence, pour le règlement de
-        contentieux éventuels, est le français.
-      </p>
-
-      <PH2> 8. Données personnelles </PH2>
-
-      <p class="scroll-animation-fade">
-        De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez
-        notre site Internet <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>.
-      </p>
-    </PSection>
-  </main>
+        <p>
+          De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez
+          notre site internet <a href="https://erwan-jugand.fr">https://erwan-jugand.fr</a>.
+        </p>
+      </div>
+    </div>
+  </PSection>
 </template>
 
 <style lang="scss">
 .legal-mentions {
-  align-items: flex-start;
+  max-width: 720px;
 
-  .h2 {
-    margin-block: 32px;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+
+  &-title {
+    margin-top: var(--spacing-4);
+    font-size: 1.5em;
+    font-weight: var(--font-weight-bold);
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   p {
-    margin-block: 16px;
+    color: var(--c-ink-2);
   }
 
   strong {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-ink);
   }
 
   a {
-    color: var(--c-primary);
+    color: var(--c-accent-ink);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 }
 </style>

@@ -1,156 +1,256 @@
 <script setup lang="ts">
-import VTypical from 'vue-typical'
+import IntroductionVisual from '~/assets/images/introduction.svg'
 
 const localePath = useLocalePath()
 const behavior = useScrollBehavior()
-const scroll = () => {
-  window.scrollTo({ top: window.innerHeight - 64, behavior: behavior.value })
+const scrollToAbout = () => {
+  document.getElementById('about')?.scrollIntoView({ behavior: behavior.value })
 }
 </script>
 
 <template>
-  <PSection id="introduction" class="introduction">
-    <ClientOnly placeholder-tag="h1" placeholder="Erwan Jugand">
-      <VTypical
-        class="introduction-title"
-        wrapper="h1"
-        :loop="Infinity"
-        :aria-label="`Erwan Jugand | ${$t('PIntroduction.titleAlt')}`"
-        :steps="['Erwan Jugand', 4000, $t('PIntroduction.titleAlt'), 4000]"
-      />
-    </ClientOnly>
-    <PButton class="introduction-cv" :to="localePath('resume')" outlined>
-      <PIcon type="regular" name="download" />
-      {{ $t('PIntroduction.action') }}
-    </PButton>
-    <button v-ripple class="introduction-scroll" :title="$t('PIntroduction.scroll')" @click="scroll">
-      <span class="introduction-scroll-mouse">
-        <span class="introduction-scroll-wheel" />
-      </span>
-    </button>
-  </PSection>
+  <section id="introduction" class="introduction dotted">
+    <div class="container introduction-content">
+      <div class="introduction-visual">
+        <IntroductionVisual class="introduction-visual-hexagons" />
+        <PLogo class="introduction-visual-logo" />
+      </div>
+
+      <div class="introduction-text">
+        <h1 class="introduction-title">
+          Erwan<br />
+          Jugand
+        </h1>
+        <p class="introduction-subtitle" v-text="$t('jobTitle')" />
+        <PButton class="introduction-cv" :to="localePath('resume')">
+          <PIcon type="regular" name="download" />
+          {{ $t('PIntroduction.action') }}
+        </PButton>
+      </div>
+
+      <a class="introduction-scroll" href="#about" :title="$t('PIntroduction.scroll')" @click.prevent="scrollToAbout">
+        <SvgoHexagon class="introduction-scroll-hexagon" />
+        <span class="introduction-scroll-arrow">
+          <PIcon class="introduction-scroll-icon" type="light" name="arrowDown" />
+        </span>
+      </a>
+    </div>
+  </section>
 </template>
 
 <style lang="scss">
 .introduction {
-  &.section {
-    gap: 64px;
-    justify-content: space-around;
-    min-height: 100svh;
-    padding-block: 128px 64px;
-    background-image: image-set(
-      url('/img/background-mobile-x1.avif') type('image/avif') 1x,
-      url('/img/background-mobile-x2.avif') type('image/avif') 2x,
-      url('/img/background-mobile-x1.webp') type('image/webp') 1x,
-      url('/img/background-mobile-x2.webp') type('image/webp') 2x
-    );
-    background-repeat: no-repeat;
-    background-position: center bottom var(--background-position-y);
-    background-size: cover;
+  @media #{breakpoints.$large-and-up} {
+    --dotted-x: 70%;
+  }
 
-    @media #{breakpoints.$large-and-up} {
-      background-image: image-set(
-        url('/img/background-desktop-x1.avif') type('image/avif') 1x,
-        url('/img/background-desktop-x2.avif') type('image/avif') 2x,
-        url('/img/background-desktop-x1.webp') type('image/webp') 1x,
-        url('/img/background-desktop-x2.webp') type('image/webp') 2x
-      );
-    }
+  &-content {
+    display: grid;
+    grid-template:
+      'text visual' 1fr
+      'scroll scroll' auto
+      / 1fr minmax(0, 560px);
+    gap: var(--spacing-2) var(--spacing-8);
+    align-items: center;
+    min-height: calc(100svh - var(--header-height));
+    padding-block: max(var(--spacing-2), round(down, 4svh, var(--spacing-1)));
 
-    @supports (animation-timeline: view()) and (animation-range: exit-crossing 0% exit 100%) {
-      @media (prefers-reduced-motion: no-preference) {
-        animation: scroll-parallax linear both;
-        animation-timeline: view();
-        animation-range: exit-crossing 0% exit 100%;
-      }
+    @media #{breakpoints.$medium-and-down} {
+      grid-template:
+        '.' 1fr
+        'text' auto
+        'visual' auto
+        '.' 1fr
+        'scroll' auto
+        / 1fr;
+      justify-items: center;
     }
   }
 
-  h1 {
-    padding-inline: 1em;
-    font-size: clamp(2em, 6vw, 4em);
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 0 10px #000;
-    transition: font-size var(--transition);
+  &-visual {
+    display: grid;
+    grid-area: visual;
 
-    &::after {
-      font-weight: var(--font-weight-light);
-      content: '|';
-      animation: blink 1s infinite step-start;
+    @media #{breakpoints.$medium-and-down} {
+      width: clamp(176px, 72px + 28vw, 320px);
+    }
+
+    &-hexagons,
+    &-logo {
+      grid-area: 1 / 1;
+    }
+
+    &-hexagons {
+      overflow: visible;
+    }
+
+    &-logo {
+      place-self: center;
+      width: 15%;
+    }
+  }
+
+  &-petal,
+  &-petal path {
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    grid-area: text;
+    gap: var(--spacing-3);
+    align-items: flex-start;
+
+    @media #{breakpoints.$medium-and-down} {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &-title {
+    font-size: 3.5em;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+
+    @media #{breakpoints.$medium-and-up} {
+      font-size: 4em;
+    }
+
+    @media #{breakpoints.$large-and-up} {
+      font-size: 6em;
+    }
+  }
+
+  &-subtitle {
+    font-weight: var(--font-weight-medium);
+    color: var(--c-ink-2);
+
+    @media #{breakpoints.$medium-and-up} {
+      font-size: 1.25em;
+    }
+
+    @media #{breakpoints.$large-and-up} {
+      font-size: 1.5em;
     }
   }
 
   &-cv {
-    backdrop-filter: blur(20px);
+    margin-top: var(--spacing-1);
   }
 
   &-scroll {
-    --focus-radius: 99px;
-    --focus-offset: 2px;
+    display: grid;
+    grid-area: scroll;
+    justify-self: center;
+    width: var(--spacing-6);
+    margin-bottom: env(safe-area-inset-bottom);
+    color: var(--c-ink-2);
 
-    border-radius: 99px;
-    opacity: 0.75;
-
-    &-mouse {
-      display: block;
-      width: 48px;
-      height: 80px;
-      border: 2px solid #fff;
-      border-radius: 24px;
+    &-hexagon {
+      grid-area: 1 / 1;
+      fill: none;
+      stroke: var(--c-line-2);
+      transition:
+        stroke var(--transition),
+        stroke-width var(--transition);
     }
 
-    &-wheel {
-      display: block;
-      width: 10px;
-      height: 10px;
-      margin: 16px auto 0;
-      background-color: #fff;
-      border-radius: 50%;
+    &:hover &-hexagon {
+      stroke: var(--c-accent-ink);
+      stroke-width: 1.5px;
+    }
 
-      @media (prefers-reduced-motion: no-preference) {
-        animation: scroll-wheel 1.5s linear infinite;
-      }
+    &-arrow {
+      display: grid;
+      grid-area: 1 / 1;
+      place-items: center;
+      clip-path: polygon(50% 6%, 88% 28%, 88% 72%, 50% 94%, 12% 72%, 12% 28%);
+    }
+
+    &-icon {
+      height: var(--spacing-2);
+      fill: currentcolor;
     }
   }
 }
 
-@keyframes scroll-wheel {
-  0% {
-    opacity: 0;
-    transform: translateY(-8px);
+@media (prefers-reduced-motion: no-preference) {
+  .introduction-visual {
+    animation: introduction-zoom 1.2s var(--ease) 0.15s backwards;
   }
 
-  10%,
+  .introduction-title {
+    animation: reveal 0.9s var(--ease) 0.15s backwards;
+  }
+
+  .introduction-subtitle {
+    animation: reveal 0.9s var(--ease) 0.3s backwards;
+  }
+
+  .introduction-cv {
+    animation: reveal 0.9s var(--ease) 0.45s backwards;
+  }
+
+  .introduction-scroll-icon {
+    animation: introduction-drip 3s var(--ease) infinite;
+  }
+
+  .introduction-petal path {
+    animation: introduction-float 6s ease-in-out infinite;
+  }
+
+  .introduction-petal:nth-child(even) path {
+    animation-delay: -3s;
+  }
+
+  @supports (animation-timeline: scroll()) and (animation-range: 0 720px) {
+    .introduction-petal {
+      animation-name: introduction-petal;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 720px;
+    }
+  }
+}
+
+@keyframes introduction-zoom {
+  from {
+    opacity: 0;
+    scale: 0.7;
+  }
+}
+
+@keyframes introduction-petal {
+  to {
+    opacity: 0.25;
+    rotate: 30deg;
+    translate: var(--dx) var(--dy);
+  }
+}
+
+@keyframes introduction-float {
   50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateY(32px);
+    rotate: 2deg;
+    scale: 1.03;
   }
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-@property --background-position-y {
-  syntax: '<length>';
-  inherits: false;
-  initial-value: 0;
-}
-
-@keyframes scroll-parallax {
-  0% {
-    --background-position-y: 0px;
+@keyframes introduction-drip {
+  15%,
+  75% {
+    translate: 0 0;
   }
 
-  100% {
-    --background-position-y: calc(-100svh / 3);
+  45% {
+    translate: 0 180%;
+    animation-timing-function: step-end;
+  }
+
+  46% {
+    translate: 0 -180%;
   }
 }
 </style>

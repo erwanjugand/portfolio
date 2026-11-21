@@ -1,16 +1,9 @@
 <template>
-  <div class="layout">
+  <div>
     <PHeader />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <PFooter />
   </div>
 </template>
-
-<style lang="scss">
-.layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-}
-</style>

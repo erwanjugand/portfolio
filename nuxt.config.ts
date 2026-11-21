@@ -3,20 +3,24 @@ const STRICTNESS_TS_OPTIONS = {
   erasableSyntaxOnly: true,
   allowUnreachableCode: false,
   noFallthroughCasesInSwitch: true,
-  noImplicitAny: true,
   noImplicitReturns: true,
   noUnusedLocals: true,
   noUnusedParameters: true,
-  strictBindCallApply: true,
-  strictFunctionTypes: true,
-  strictNullChecks: true,
-  strictPropertyInitialization: true,
-  useUnknownInCatchVariables: true,
 }
 
 export default defineNuxtConfig({
   future: {
     compatibilityVersion: 5,
+  },
+
+  app: {
+    head: {
+      viewport: 'width=320, initial-scale=1, viewport-fit=cover',
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      ],
+    },
   },
 
   sourcemap: {
@@ -49,7 +53,6 @@ export default defineNuxtConfig({
 
   nitro: {
     imports: {
-      // @nuxtjs/i18n server runtime imports useRuntimeConfig from #imports, which Nuxt 5 no longer auto-imports in Nitro
       presets: [{ from: 'nitropack/runtime', imports: ['useRuntimeConfig'] }],
     },
     typescript: {
@@ -62,14 +65,9 @@ export default defineNuxtConfig({
       {
         baseURL: '/img',
         dir: 'public/img',
-        maxAge: 60 * 60 * 24 * 30, // 30 jours
+        maxAge: 60 * 60 * 24 * 30,
       },
     ],
-  },
-
-  experimental: {
-    writeEarlyHints: true,
-    extractAsyncDataHandlers: true,
   },
 
   modules: [
@@ -80,8 +78,8 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@vueuse/nuxt',
     'nuxt-umami',
+    'nuxt-svgo',
     '@nuxt/test-utils/module',
-    'v-wave/nuxt',
   ],
 
   i18n: {
@@ -111,7 +109,6 @@ export default defineNuxtConfig({
   umami: {
     id: process.env.NUXT_UMAMI_ID,
     host: process.env.NUXT_UMAMI_HOST,
-    autoTrack: true,
     ignoreLocalhost: true,
   },
 
@@ -119,14 +116,16 @@ export default defineNuxtConfig({
     classSuffix: '-mode',
   },
 
-  vWave: {
-    directive: 'ripple',
-  },
-
   googleFonts: {
     families: {
-      Inter: '300..500',
+      'Plus Jakarta Sans': '400..700',
     },
+  },
+
+  svgo: {
+    svgo: false,
+    defaultImport: 'component',
+    dts: true,
   },
 
   compatibilityDate: '2026-01-01',

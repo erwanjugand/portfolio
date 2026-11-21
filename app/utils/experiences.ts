@@ -7,7 +7,7 @@ export interface Job {
 
 export interface Experience {
   enterprise: string
-  jobs: Job[] | [Job]
+  jobs: Job[]
 }
 
 export const experiences = [

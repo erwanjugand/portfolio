@@ -6,16 +6,16 @@ describe('useJob', () => {
   test('should return the job texts', () => {
     mockUseI18n('en')
     const { title, description, contract } = useJob({ key: 'job', contract: 'cdi', startedAt: new Date(2020, 0) })
-    expect(title.value).toBe('PJob.items.job.title')
-    expect(description.value).toBe('PJob.items.job.description')
-    expect(contract.value).toBe('. PJob.contract.cdi')
+    expect(title.value).toBe('useJob.items.job.title')
+    expect(description.value).toBe('useJob.items.job.description')
+    expect(contract.value).toBe('useJob.contract.cdi')
   })
 
   test('time should end today, given a job without finishedAt', () => {
     mockUseI18n('en')
     const startedAt = new Date(2020, 0)
     const { time } = useJob({ key: 'job', contract: 'cdi', startedAt })
-    expect(time.value).toContain(`${startedAt.toISOString()} - PJob.today . `)
+    expect(time.value).toContain(`${startedAt.toISOString()} - useJob.today · `)
   })
 
   test('time should end at finishedAt, given a finished job', () => {
@@ -23,8 +23,6 @@ describe('useJob', () => {
     const startedAt = new Date(2020, 0)
     const finishedAt = new Date(2021, 2)
     const { time } = useJob({ key: 'job', contract: 'cdi', startedAt, finishedAt })
-    expect(time.value).toBe(
-      `${startedAt.toISOString()} - ${finishedAt.toISOString()} . useDateFormatDuration.years useDateFormatDuration.months`,
-    )
+    expect(time.value).toBe(`${startedAt.toISOString()} - ${finishedAt.toISOString()} · 1 year, 3 months`)
   })
 })

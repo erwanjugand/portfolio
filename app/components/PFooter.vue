@@ -15,177 +15,96 @@ const closeEasterEgg = () => {
 </script>
 
 <template>
-  <div class="footer-container">
-    <div class="footer-easter-egg-container">
-      <button v-ripple class="footer-easter-egg" title="?????" @click="openEasterEgg">
-        <PIcon type="custom" name="easterEgg" class="footer-easter-egg-icon" />
-      </button>
-    </div>
-    <footer class="footer">
-      <div class="container footer-content">
-        <p class="footer-copyright" v-text="$t('PFooter.copyright', { year: CURRENT_YEAR })" />
-
-        <NuxtLink class="footer-legal-mentions" :to="localePath('legal-mentions')">
+  <footer class="footer">
+    <div class="container footer-content">
+      <nav class="footer-links" :aria-label="$t('PFooter.links')">
+        <a class="footer-link" href="https://github.com/erwanjugand" target="_blank">GitHub</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/erwan-jugand/" target="_blank">LinkedIn</a>
+        <NuxtLink class="footer-link" :to="localePath('legal-mentions')">
           {{ $t('pages.legalMentions.title') }}
         </NuxtLink>
+      </nav>
 
-        <div class="footer-social-networks">
-          <a
-            v-ripple
-            target="_blank"
-            rel="noopener"
-            class="footer-github"
-            href="https://github.com/erwanjugand"
-            title="Github"
-          >
-            <PIcon type="brands" name="github" class="footer-github-icon" />
-          </a>
-
-          <a
-            v-ripple
-            target="_blank"
-            rel="noopener"
-            class="footer-linkedin"
-            href="https://www.linkedin.com/in/erwan-jugand/"
-            title="Linkedin"
-          >
-            <PIcon type="brands" name="linkedin" class="footer-linkedin-icon" />
-          </a>
-        </div>
-
-        <a
-          v-if="COMMIT_SHA"
-          class="footer-deploy-commit"
-          target="_blank"
-          rel="noopener"
-          :href="COMMIT_URL"
-          :title="$t('PFooter.commitTitle')"
-        >
-          {{ COMMIT_NAME }}
+      <p class="footer-meta">
+        <span class="footer-copyright" v-text="$t('PFooter.copyright', { year: CURRENT_YEAR })" />
+        <a v-if="COMMIT_SHA" class="footer-link" target="_blank" :href="COMMIT_URL" :title="$t('PFooter.commitTitle')">
+          #{{ COMMIT_NAME }}
         </a>
-      </div>
-    </footer>
+        <button class="footer-easter-egg" title="?????" aria-label="?????" @click="openEasterEgg">
+          <span class="footer-easter-egg-dot" />
+        </button>
+      </p>
+    </div>
     <PEasterEgg v-if="isVisible" @close="closeEasterEgg" />
-  </div>
+  </footer>
 </template>
 
 <style lang="scss">
 .footer {
-  position: relative;
-  background-color: var(--c-background-alt);
-
-  &-container {
-    position: relative;
-  }
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid var(--c-line);
 
   &-content {
-    display: grid;
-    grid-template:
-      'a'
-      'b'
-      'c'
-      'd';
-    gap: 16px 0;
-    place-items: center;
-    padding-block: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-4);
+    justify-content: space-between;
+    padding-block: var(--spacing-2);
+  }
 
-    @media #{breakpoints.$medium-and-up} {
-      grid-template:
-        'a c d'
-        'b c d';
-      gap: 0 16px;
-      justify-items: start;
-    }
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-3);
+    font-size: 0.875em;
+    font-weight: var(--font-weight-semibold);
+  }
 
-    @media #{breakpoints.$large-and-up} {
-      grid-template-columns: 1fr auto 1fr;
+  &-link {
+    padding-block: 12px;
+    line-height: var(--spacing-3);
+    background: linear-gradient(90deg, var(--c-g1), var(--c-g2)) 0 100% / 0 2px no-repeat content-box;
+    transition:
+      background-size var(--transition),
+      color var(--transition);
+
+    &:hover {
+      background-size: 100% 2px;
     }
+  }
+
+  &-meta {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-1);
+    align-items: center;
+    font-size: 0.875em;
+    color: var(--c-ink-3);
   }
 
   &-copyright {
-    grid-area: a;
-  }
-
-  &-legal-mentions {
-    grid-area: b;
-  }
-
-  &-social-networks {
-    display: flex;
-    grid-area: c;
-    gap: 16px;
-
-    @media #{breakpoints.$medium-and-up} {
-      justify-self: center;
-    }
-  }
-
-  &-github,
-  &-linkedin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
-    width: 64px;
-    height: 64px;
-    border-radius: var(--border-radius-small);
-
-    &-icon {
-      height: 2.5em;
-      fill: currentcolor;
-    }
-  }
-
-  &-deploy-commit {
-    grid-area: d;
-
-    @media #{breakpoints.$medium-and-up} {
-      justify-self: end;
-    }
-  }
-
-  &-deploy-commit,
-  &-legal-mentions {
-    --focus-radius: var(--border-radius-small);
-    --focus-offset: 4px;
-
-    &:hover {
-      text-decoration: underline;
+    @media #{breakpoints.$small-and-down} {
+      flex-basis: 100%;
     }
   }
 
   &-easter-egg {
-    --focus-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+    display: grid;
+    place-items: center;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
+    margin-inline-start: calc(-1 * var(--spacing-1));
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
-    padding: 8px;
-    color: var(--c-text-secondary-1);
-    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
-    fill: currentcolor;
-    transform: translateY(-50%);
-    transition:
-      transform var(--transition),
-      color var(--transition);
-
-    &:hover,
-    &:focus {
-      color: var(--c-text-secondary-2);
-      transform: translateY(-100%);
+    &-dot {
+      width: 8px;
+      aspect-ratio: 0.866;
+      background-color: var(--c-line-2);
+      clip-path: var(--hexagon);
+      transition: background-color var(--transition);
     }
 
-    &-container {
-      position: absolute;
-      top: 0;
-      right: 10%;
-    }
-
-    &-icon {
-      height: 2.5em;
-      fill: currentcolor;
+    &:hover &-dot {
+      background-color: var(--c-accent);
     }
   }
 }

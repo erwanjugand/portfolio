@@ -37,15 +37,13 @@ const formatDurationDateTests: Test[] = [
 ]
 
 describe('useDateFormatDuration', () => {
-  describe('formatDurationDate', () => {
-    test.each(formatDurationDateTests)(
-      'should return $expected, given the start date $startedAt and the end date $finishedAt with $locale locale',
-      ({ startedAt, finishedAt, yearExpected, monthExpected }) => {
-        mockUseI18n('en')
-        const { years, months } = useDateFormatDuration(new Date(startedAt), new Date(finishedAt))
-        expect(years.value).toBe(yearExpected)
-        expect(months.value).toBe(monthExpected)
-      },
-    )
-  })
+  test.each(formatDurationDateTests)(
+    'should return $yearExpected years and $monthExpected months, given the start date $startedAt and the end date $finishedAt',
+    ({ startedAt, finishedAt, yearExpected, monthExpected }) => {
+      mockUseI18n('en')
+      const { years, months } = useDateFormatDuration(new Date(startedAt), new Date(finishedAt))
+      expect(years.value).toBe(yearExpected)
+      expect(months.value).toBe(monthExpected)
+    },
+  )
 })

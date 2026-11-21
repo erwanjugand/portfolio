@@ -2,64 +2,67 @@
 import type { RouteLocationRaw } from 'vue-router'
 
 const { to = undefined } = defineProps<{
-  outlined?: boolean
   disabled?: boolean
   to?: RouteLocationRaw
 }>()
 
 const nuxtLink = resolveComponent('nuxt-link')
-const attrs = useAttrs()
-const type = computed(() => (to ? nuxtLink : attrs.href ? 'a' : 'button'))
+const type = computed(() => (to ? nuxtLink : 'button'))
 </script>
 
 <template>
-  <Component :is="type" v-ripple :disabled :to :class="['button', outlined ? 'button-outlined' : 'button-filled']">
+  <Component :is="type" :disabled :to class="button">
     <slot />
   </Component>
 </template>
 
 <style lang="scss">
-.button {
-  --focus-radius: var(--border-radius-small);
-  --focus-offset: 2px;
+@property --button-start {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
 
-  display: flex;
-  gap: 16px;
+@property --button-end {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+.button {
+  --button-start: var(--c-ink);
+  --button-end: var(--c-ink);
+
+  display: inline-flex;
+  gap: var(--spacing-2);
   align-items: center;
-  min-height: 3em;
-  padding: 0.5em 1.5em;
-  font-weight: var(--font-weight-bold);
-  line-height: 1.25em;
-  text-transform: uppercase;
-  border-radius: var(--border-radius-small);
-  box-shadow: inset 0 0 0 2px transparent;
+  min-height: 48px;
+  padding-inline: var(--spacing-4);
+  font-weight: var(--font-weight-semibold);
+  color: var(--c-bg);
+  background: linear-gradient(110deg, var(--button-start), var(--button-end));
+  fill: currentcolor;
   transition:
-    background-color var(--transition),
-    opacity var(--transition);
+    color var(--transition),
+    --button-start var(--transition),
+    --button-end var(--transition);
+
+  @supports (corner-shape: bevel) {
+    border-radius: 16px / 50%;
+    corner-shape: bevel;
+  }
 
   &:disabled {
     cursor: default;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
-  &-outlined {
-    color: var(--c-primary);
-    box-shadow: inset 0 0 0 2px var(--c-primary);
-    fill: var(--c-primary);
+  &:hover:not(:disabled),
+  &:focus-visible {
+    --button-start: var(--c-g1);
+    --button-end: var(--c-g2);
 
-    &:hover:not(:disabled) {
-      background-color: color-mix(in srgb, var(--c-primary) 10%, transparent);
-    }
-  }
-
-  &-filled {
-    color: var(--c-background-bg);
-    background-color: var(--c-primary);
-    fill: var(--c-background-bg);
-
-    &:hover:not(:disabled) {
-      background-color: color-mix(in srgb, var(--c-primary) 90%, var(--c-white));
-    }
+    color: #fff;
   }
 }
 </style>

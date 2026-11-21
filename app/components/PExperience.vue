@@ -1,15 +1,33 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
+import ExperienceNode from '~/assets/images/experience-node.svg'
+
 const { experience } = defineProps<{
   experience: Experience
 }>()
 
-const hasOneJob = computed(() => experience.jobs.length === 1)
+const { t } = useI18n()
+
+const years = computed(() => {
+  const start = Math.min(...experience.jobs.map(({ startedAt }) => startedAt.getFullYear()))
+  const end = Math.max(...experience.jobs.map(({ finishedAt }) => finishedAt?.getFullYear() ?? Infinity))
+
+  if (end === Infinity) return t('PExperience.since', { year: start })
+  return start === end ? `${start}` : `${start} - ${end}`
+})
 </script>
 
 <template>
   <li class="experience">
-    <h3 class="experience-header scroll-animation-fade" v-text="experience.enterprise" />
-    <PJob v-for="job of experience.jobs" :key="job.key" :job :single="hasOneJob" />
+    <div class="experience-header reveal">
+      <h3 class="experience-enterprise">
+        <ExperienceNode class="experience-node" />
+        {{ experience.enterprise }}
+      </h3>
+      <span class="experience-years" v-text="years" />
+    </div>
+    <PJob v-for="job of experience.jobs" :key="job.key" :job :marker="experience.jobs.length > 1" />
   </li>
 </template>
 
@@ -17,31 +35,39 @@ const hasOneJob = computed(() => experience.jobs.length === 1)
 .experience {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: var(--spacing-4);
 
   &-header {
-    --scroll-animation-y: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px var(--spacing-2);
+    align-items: baseline;
+  }
 
+  &-enterprise {
     position: relative;
-    padding-left: 64px;
     font-size: 1.5em;
     font-weight: var(--font-weight-bold);
 
-    &::before {
-      position: absolute;
-      top: calc(50% - 12px);
-      left: calc((24px * sqrt(3) - 24px) / 2);
-      box-sizing: border-box;
-      width: 24px;
-      height: 24px;
-      content: '';
-      background-color: var(--c-background-bg);
-      border: 3px solid transparent;
-      box-shadow:
-        0 0 0 3px var(--c-primary),
-        inset 0 0 0 1px var(--c-primary);
-      transform: rotate(45deg);
+    @media #{breakpoints.$medium-and-up} {
+      font-size: 2em;
     }
+  }
+
+  &-node {
+    position: absolute;
+    top: 0.5lh;
+    left: calc(var(--timeline-x) - var(--spacing-6) - var(--spacing-3) / 2);
+    width: var(--spacing-3);
+    background: linear-gradient(to bottom right, var(--c-g1), var(--c-g2));
+    clip-path: var(--hexagon);
+    translate: 0 -50%;
+  }
+
+  &-years {
+    font-size: 0.875em;
+    font-weight: var(--font-weight-medium);
+    color: var(--c-ink-3);
   }
 }
 </style>

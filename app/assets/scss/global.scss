@@ -1,47 +1,58 @@
-@use 'sass:color';
-@use './breakpoints' as breakpoints;
+@property --c-bg {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #f6f7fb;
+}
+
+:root,
+.light-mode {
+  --c-surface: light-dark(#fff, #12141d);
+  --c-ink: light-dark(#111322, #eceef6);
+  --c-ink-2: light-dark(#4a4f66, #aeb3c7);
+  --c-ink-3: light-dark(#62677d, #8d93aa);
+  --c-line: light-dark(#e3e5ee, #1f2231);
+  --c-line-2: light-dark(#cbd0e0, #2e3247);
+  --c-accent: #4c31fb;
+  --c-accent-ink: light-dark(#4c31fb, #9c8cff);
+  --c-g1: #4c31fb;
+  --c-g2: #0077db;
+}
 
 :root {
-  // Color
-  --c-primary: #0077db;
-  --c-primary-alt: #4c31fb;
-
   // Transition
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  // Border
-  --border-radius-small: 8px;
-  --border-radius-regular: 16px;
-  --border-radius-large: 32px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --transition: 0.3s var(--ease);
 
   // Font
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-bold: 500;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
 
-  // Safe area
-  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  // Border
+  --radius: 8px;
 
-  // Gray
-  --c-white: #fff;
-  --c-gray-95: hsl(from var(--c-primary) calc(h + 180) calc(pow(95, 3) / 100000 * 1%) calc(100% - 95%));
-  --c-gray-93: hsl(from var(--c-primary) calc(h + 180) calc(pow(93, 3) / 100000 * 1%) calc(100% - 93%));
-  --c-gray-90: hsl(from var(--c-primary) calc(h + 180) calc(pow(90, 3) / 100000 * 1%) calc(100% - 90%));
-  --c-gray-87: hsl(from var(--c-primary) calc(h + 180) calc(pow(87, 3) / 100000 * 1%) calc(100% - 87%));
-  --c-gray-84: hsl(from var(--c-primary) calc(h + 180) calc(pow(84, 3) / 100000 * 1%) calc(100% - 84%));
-  --c-gray-80: hsl(from var(--c-primary) calc(h + 180) calc(pow(80, 3) / 100000 * 1%) calc(100% - 80%));
-  --c-gray-75: hsl(from var(--c-primary) calc(h + 180) calc(pow(75, 3) / 100000 * 1%) calc(100% - 75%));
-  --c-gray-65: hsl(from var(--c-primary) calc(h + 180) calc(pow(65, 3) / 100000 * 1%) calc(100% - 65%));
-  --c-gray-50: hsl(from var(--c-primary) calc(h + 180) calc(pow(50, 3) / 100000 * 1%) calc(100% - 50%));
-  --c-gray-35: hsl(from var(--c-primary) calc(h + 180) calc(pow(35, 3) / 100000 * 1%) calc(100% - 35%));
-  --c-gray-25: hsl(from var(--c-primary) calc(h + 180) calc(pow(25, 3) / 100000 * 1%) calc(100% - 25%));
-  --c-gray-20: hsl(from var(--c-primary) calc(h + 180) calc(pow(20, 3) / 100000 * 1%) calc(100% - 20%));
-  --c-gray-16: hsl(from var(--c-primary) calc(h + 180) calc(pow(16, 3) / 100000 * 1%) calc(100% - 16%));
-  --c-gray-13: hsl(from var(--c-primary) calc(h + 180) calc(pow(13, 3) / 100000 * 1%) calc(100% - 13%));
-  --c-gray-10: hsl(from var(--c-primary) calc(h + 180) calc(pow(10, 3) / 100000 * 1%) calc(100% - 10%));
-  --c-gray-7: hsl(from var(--c-primary) calc(h + 180) calc(pow(7, 3) / 100000 * 1%) calc(100% - 7%));
-  --c-gray-5: hsl(from var(--c-primary) calc(h + 180) calc(pow(5, 3) / 100000 * 1%) calc(100% - 5%));
-  --c-black: #000;
+  // Shape
+  --hexagon: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  --chevron: polygon(
+    var(--spacing-1) 0,
+    calc(100% - var(--spacing-1)) 0,
+    100% 50%,
+    calc(100% - var(--spacing-1)) 100%,
+    var(--spacing-1) 100%,
+    0 50%
+  );
+
+  // Spacing
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-12: 96px;
+  --spacing-16: 128px;
+  --header-height: var(--spacing-8);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -51,107 +62,128 @@
 }
 
 html {
-  font-family: Inter, sans-serif;
-  line-height: 1.25;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  line-height: 1.5;
+  scroll-padding-top: var(--header-height);
+  transition:
+    color var(--transition),
+    --c-bg var(--transition);
   -webkit-tap-highlight-color: transparent;
-  color-scheme: var(--c-theme);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .light-mode {
-  color: var(--c-text);
-  background-color: var(--c-background-bg);
-
-  // Color
-  --c-theme: light;
-
-  // Text
-  --c-text: var(--c-gray-90);
-  --c-text-secondary-1: var(--c-gray-20);
-  --c-text-secondary-2: var(--c-gray-35);
-  --c-text-secondary-3: var(--c-gray-50);
-  --c-text-secondary-4: var(--c-gray-65);
-
-  // Background
-  --c-background-bg: var(--c-gray-5);
-  --c-background-alt: var(--c-gray-13);
-  --c-background-1: var(--c-white);
-  --c-background-2: var(--c-white);
-  --c-background-3: var(--c-white);
-
-  // Border
-  --c-border: transparent;
-
-  @media (prefers-contrast: more) {
-    // Text
-    --c-text: var(--c-white);
-    --c-text-secondary-1: var(--c-gray-50);
-    --c-text-secondary-2: var(--c-gray-75);
-    --c-text-secondary-3: var(--c-gray-90);
-    --c-text-secondary-4: var(--c-white);
-
-    // Background
-    --c-background-bg: var(--c-black);
-    --c-background-alt: var(--c-gray-5);
-  }
+  color-scheme: light;
 }
 
 .dark-mode,
-.hacked-mode {
-  color: var(--c-text);
-  background-color: var(--c-background-bg);
+.hacked-mode,
+.light-mode .inverted {
+  color-scheme: dark;
+}
 
-  // Color
-  --c-theme: dark;
-  --c-white: #000;
-  --c-black: #fff;
+.light-mode,
+.dark-mode,
+.hacked-mode,
+.light-mode .inverted {
+  --c-bg: light-dark(#f6f7fb, #0b0c12);
 
-  // Text
-  --c-text: var(--c-gray-5);
-  --c-text-secondary-1: var(--c-gray-80);
-  --c-text-secondary-2: var(--c-gray-65);
-  --c-text-secondary-3: var(--c-gray-50);
-  --c-text-secondary-4: var(--c-gray-35);
-
-  // Background
-  --c-background-bg: var(--c-gray-93);
-  --c-background-alt: var(--c-gray-87);
-  --c-background-1: var(--c-gray-90);
-  --c-background-2: var(--c-gray-87);
-  --c-background-3: var(--c-gray-84);
-
-  // Border
-  --c-border: color-mix(in srgb, var(--c-black) 5%, transparent);
-
-  @media (prefers-contrast: more) {
-    // Text
-    --c-text: var(--c-black);
-    --c-text-secondary-1: var(--c-gray-50);
-    --c-text-secondary-2: var(--c-gray-25);
-    --c-text-secondary-3: var(--c-gray-10);
-    --c-text-secondary-4: var(--c-black);
-
-    // Background
-    --c-background-bg: var(--c-gray-95);
-    --c-background-alt: var(--c-gray-93);
-    --c-background-1: var(--c-gray-93);
-    --c-background-2: var(--c-gray-90);
-    --c-background-3: var(--c-gray-87);
-  }
+  color: var(--c-ink);
+  background-color: var(--c-bg);
 }
 
 .hacked-mode {
-  --c-primary: #a23ffd;
+  --c-bg: #08060d;
+  --c-surface: #110d1a;
+  --c-ink: #ece4ff;
+  --c-ink-2: #bba9e6;
+  --c-ink-3: #9a88c6;
+  --c-line: #221a35;
+  --c-line-2: #3a2c5a;
+  --c-accent: #a23ffd;
+  --c-accent-ink: #c892ff;
+  --c-g1: #a23ffd;
+  --c-g2: #4c31fb;
+}
+
+@media (prefers-contrast: more) {
+  .light-mode,
+  .dark-mode,
+  .hacked-mode,
+  .light-mode .inverted {
+    --c-ink-2: var(--c-ink);
+    --c-ink-3: var(--c-ink);
+    --c-line: var(--c-line-2);
+    --c-line-2: color-mix(in srgb, var(--c-ink) 50%, var(--c-bg));
+    --c-accent: var(--c-accent-ink);
+  }
+
+  .light-mode,
+  .dark-mode {
+    --c-accent-ink: light-dark(#3a1fcc, #ad9fff);
+  }
+}
+
+a:hover {
+  color: var(--c-accent-ink);
 }
 
 button {
   cursor: pointer;
 }
 
+picture {
+  display: contents;
+}
+
 a,
 button {
   &:focus-visible {
-    outline: 2px solid var(--c-text);
-    outline-offset: var(--focus-offset, -2px);
-    border-radius: var(--focus-radius, var(--border-radius-regular));
+    outline: 2px solid var(--c-accent-ink);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+}
+
+.container {
+  width: min(95% - var(--spacing-4) - env(safe-area-inset-left) - env(safe-area-inset-right), 1280px);
+  margin-inline: auto;
+}
+
+.dotted {
+  --dotted-dot: radial-gradient(color-mix(in srgb, var(--c-line-2) 80%, transparent) 1px, transparent 1px);
+  --dotted-x: 50%;
+
+  background:
+    radial-gradient(ellipse 60% 65% at var(--dotted-x) 48%, transparent 5%, var(--c-bg) 72%),
+    var(--dotted-dot) 0 0 / 28px 48px,
+    var(--dotted-dot) 14px 24px / 28px 48px;
+
+  @media (prefers-contrast: more) {
+    background: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) and (animation-range: entry) {
+    .reveal {
+      animation: reveal linear backwards;
+      animation-timeline: view();
+      animation-range: cover 5% cover 15%;
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 24px;
   }
 }

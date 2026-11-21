@@ -3,18 +3,18 @@ import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
-useHead({
-  meta: [{ name: 'description', content: t('pages.home.description') }],
+useSeoMeta({
+  description: t('pages.home.description'),
 })
 </script>
 
 <template>
-  <main>
+  <div>
     <PIntroduction />
     <PAbout />
     <PSkills />
     <PExperiences />
     <PMoreInformation />
     <PEnvironments />
-  </main>
+  </div>
 </template>

@@ -1,4 +1,4 @@
-export interface Information {
+interface Information {
   title: string
   icon: string
   content: string
