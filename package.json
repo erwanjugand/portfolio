@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@12.18.0",
+  "packageManager": "pnpm@12.21.0",
   "type": "module",
   "scripts": {
     "analyze": "nuxt analyze",
@@ -39,12 +39,12 @@
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/i18n": "10.6.0",
     "@nuxtjs/robots": "7.0.2",
-    "@playwright/test": "1.65.0",
+    "@playwright/test": "1.65.1",
     "@types/node": "26.6.6",
-    "@vitest/ui": "5.1.0",
+    "@vitest/ui": "5.1.1",
     "@vueuse/core": "15.0.0",
     "@vueuse/nuxt": "15.0.0",
-    "eslint": "10.14.0",
+    "eslint": "10.15.0",
     "eslint-config-prettier": "10.1.8",
     "happy-dom": "21.0.4",
     "nuxt": "4.6.4",
@@ -57,9 +57,9 @@
     "the-new-css-reset": "1.11.3",
     "typescript": "6.0.3",
     "vite": "8.3.8",
-    "vitest": "5.1.0",
-    "vue": "3.5.45",
+    "vitest": "5.1.1",
+    "vue": "3.5.46",
     "vue-tsc": "3.3.14",
-    "wrangler": "4.161.0"
+    "wrangler": "4.165.0"
   }
 }
