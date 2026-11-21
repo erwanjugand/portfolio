@@ -72,7 +72,7 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/google-fonts',
+    '@nuxt/fonts',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
@@ -114,12 +114,6 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: '-mode',
-  },
-
-  googleFonts: {
-    families: {
-      'Plus Jakarta Sans': '400..700',
-    },
   },
 
   svgo: {
