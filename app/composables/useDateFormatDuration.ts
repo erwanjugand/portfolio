@@ -1,7 +1,7 @@
 import { useI18n } from 'vue-i18n'
 
 export default (startDate: MaybeRefOrGetter<Date>, endDate: MaybeRefOrGetter<Date>) => {
-  const { t } = useI18n()
+  const { locale } = useI18n()
 
   const gapYears = computed(() => toValue(endDate).getFullYear() - toValue(startDate).getFullYear())
   const gapMonths = computed(() => toValue(endDate).getMonth() - toValue(startDate).getMonth() + 1)
@@ -9,11 +9,9 @@ export default (startDate: MaybeRefOrGetter<Date>, endDate: MaybeRefOrGetter<Dat
   const months = computed(() => totalDiffMonths.value % 12)
   const years = computed(() => Math.floor(totalDiffMonths.value / 12))
 
-  const duration = computed(() => {
-    return `${years.value ? t('useDateFormatDuration.years', years.value) : ''} ${
-      months.value ? t('useDateFormatDuration.months', months.value) : ''
-    }`
-  })
+  const duration = computed(() =>
+    new Intl.DurationFormat(locale.value, { style: 'long' }).format({ years: years.value, months: months.value }),
+  )
 
   return {
     years,

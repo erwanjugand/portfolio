@@ -7,6 +7,3 @@ allowBuilds:
   unrs-resolver: false
   workerd: false
   sharp: false
-  vue-demi: false
-patchedDependencies:
-  v-wave@3.1.1: patches/v-wave@3.1.1.patch

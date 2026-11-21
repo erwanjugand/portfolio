@@ -1,99 +1,143 @@
+<script setup lang="ts">
+import AboutFrame from '~/assets/images/about-frame.svg'
+</script>
+
 <template>
   <PSection id="about">
-    <div class="container row">
-      <PH2 class="xs12">
+    <div class="container">
+      <PHeading>
         {{ $t('PAbout.title') }}
-      </PH2>
-      <picture class="xs12 l4 about-profile-container scroll-animation-fade">
-        <source
-          srcset="/img/erwan-jugand-x1.avif, /img/erwan-jugand-x2.avif 2x, /img/erwan-jugand-x3.avif 3x"
-          type="image/avif"
-        />
-        <img
-          width="312"
-          height="312"
-          class="about-profile"
-          src="/img/erwan-jugand-x1.webp"
-          srcset="/img/erwan-jugand-x2.webp 2x, /img/erwan-jugand-x3.webp 3x"
-          :alt="$t('PAbout.profileAlt')"
-        />
-      </picture>
-      <div class="xs12 l8 about-content scroll-animation-fade">
-        <I18nT tag="p" class="about-text" keypath="PAbout.text1" scope="global">
-          <template #name>
-            <strong>Erwan Jugand</strong>
-          </template>
-          <template #job>
-            <strong>{{ $t('PAbout.text1Job') }}</strong>
-          </template>
-        </I18nT>
-        <I18nT tag="p" class="about-text" keypath="PAbout.text2" scope="global">
-          <template #school>
-            <strong>Digital Campus</strong>
-          </template>
-          <template #enterprise>
-            <strong>Steeple</strong>
-          </template>
-        </I18nT>
-        <p class="about-text" v-text="$t('PAbout.text3')" />
-        <p class="about-text" v-text="$t('PAbout.text4')" />
+      </PHeading>
+      <div class="about-content">
+        <figure class="about-profile reveal">
+          <AboutFrame class="about-profile-frame" />
+          <picture>
+            <source type="image/avif" :srcset="profileImage.avifSrcset" sizes="400px" />
+            <img
+              class="about-profile-photo"
+              width="400"
+              height="400"
+              loading="lazy"
+              :src="profileImage.src"
+              :srcset="profileImage.srcset"
+              sizes="400px"
+              :alt="$t('PAbout.profileAlt')"
+            />
+          </picture>
+        </figure>
+        <div class="about-text">
+          <I18nT tag="p" class="reveal" keypath="PAbout.text1" scope="global">
+            <template #name>
+              <strong>Erwan Jugand</strong>
+            </template>
+            <template #job>
+              <strong>{{ $t('PAbout.text1Job') }}</strong>
+            </template>
+          </I18nT>
+          <I18nT tag="p" class="reveal" keypath="PAbout.text2" scope="global">
+            <template #school>
+              <strong>Digital Campus</strong>
+            </template>
+            <template #enterprise>
+              <strong>Steeple</strong>
+            </template>
+          </I18nT>
+          <p class="reveal" v-text="$t('PAbout.text3')" />
+          <p class="reveal" v-text="$t('PAbout.text4')" />
+        </div>
       </div>
     </div>
   </PSection>
 </template>
 
 <style lang="scss">
+@property --about-progress {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
 .about {
-  &-profile {
-    flex: 0 1 312px;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    background-color: var(--c-background-1);
-    border: 6px solid var(--c-background-3);
-    border-radius: 50%;
-    box-shadow:
-      inset 0 0 0 1px var(--c-border),
-      0 2px 1px -1px rgb(0 0 0 / 20%),
-      0 1px 1px 0 rgb(0 0 0 / 14%),
-      0 1px 3px 0 rgb(0 0 0 / 12%);
-
-    &-container {
-      display: flex;
-      justify-content: center;
-
-      --scroll-animation-y: 48px;
-
-      @media #{breakpoints.$large-and-up} {
-        --scroll-animation-y: 0;
-        --scroll-animation-x: -48px;
-      }
-    }
-  }
-
   &-content {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: var(--spacing-8) var(--spacing-12);
+    align-items: center;
     justify-content: center;
+  }
 
-    --scroll-animation-y: 48px;
+  &-profile {
+    display: grid;
 
-    @media #{breakpoints.$large-and-up} {
-      --scroll-animation-y: 0;
-      --scroll-animation-x: -48px;
+    &-frame {
+      grid-area: 1 / 1;
+      overflow: visible;
+    }
+
+    &-outer,
+    &-inner {
+      transform-origin: center;
+    }
+
+    &-outer {
+      rotate: calc(var(--about-progress) * 10deg);
+      scale: 1.2;
+    }
+
+    &-inner {
+      rotate: calc(var(--about-progress) * -6deg);
+      scale: 1.1;
+    }
+
+    &-photo {
+      --about-angle: calc(var(--about-progress) * 3deg);
+
+      grid-area: 1 / 1;
+      height: auto;
+      background-color: var(--c-line);
+      clip-path: polygon(
+        calc(50% + 50% * sin(var(--about-angle))) calc(50% - 50% * cos(var(--about-angle))),
+        calc(50% + 50% * sin(var(--about-angle) + 60deg)) calc(50% - 50% * cos(var(--about-angle) + 60deg)),
+        calc(50% + 50% * sin(var(--about-angle) + 120deg)) calc(50% - 50% * cos(var(--about-angle) + 120deg)),
+        calc(50% - 50% * sin(var(--about-angle))) calc(50% + 50% * cos(var(--about-angle))),
+        calc(50% - 50% * sin(var(--about-angle) + 60deg)) calc(50% + 50% * cos(var(--about-angle) + 60deg)),
+        calc(50% - 50% * sin(var(--about-angle) + 120deg)) calc(50% + 50% * cos(var(--about-angle) + 120deg))
+      );
     }
   }
 
   &-text {
-    transition: font-size var(--transition);
-
-    @media #{breakpoints.$large-and-up} {
-      font-size: 1.125em;
-    }
+    display: flex;
+    flex: 1 1 480px;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    max-width: 680px;
+    color: var(--c-ink-2);
 
     strong {
-      font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-semibold);
+      color: var(--c-ink);
     }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .about-profile-frame,
+    .about-profile-photo {
+      animation: about-spin linear both;
+      animation-timeline: view();
+    }
+  }
+}
+
+@keyframes about-spin {
+  from {
+    --about-progress: -1;
+  }
+
+  to {
+    --about-progress: 1;
   }
 }
 </style>

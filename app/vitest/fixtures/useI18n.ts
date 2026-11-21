@@ -3,25 +3,14 @@ import { vi } from 'vitest'
 import { computed } from 'vue'
 import type { Locale } from 'vue-i18n'
 
-const i18nLocales = ['en', 'fr'] as const satisfies Locale[]
-
-// TODO : Replace by official type from nuxt-i18n
-interface LocaleObject {
-  code: Locale
-}
-
-const i18nLocaleObjects: LocaleObject[] = i18nLocales.map((locale) => ({
-  code: locale,
-}))
-
 const mockUseI18n = (locale: Locale) =>
-  vi.spyOn(vueI18n, 'useI18n').mockImplementation(() => {
-    return {
-      locale: computed(() => locale),
-      locales: computed(() => i18nLocaleObjects),
-      t: (key: string) => key,
-      d: (date: Date) => date.toISOString(),
-    } as keyof typeof useI18n
-  })
+  vi.spyOn(vueI18n, 'useI18n').mockImplementation(
+    () =>
+      ({
+        locale: computed(() => locale),
+        t: (key: string) => key,
+        d: (date: Date) => date.toISOString(),
+      }) as unknown as ReturnType<typeof vueI18n.useI18n>,
+  )
 
-export { i18nLocales, i18nLocaleObjects, mockUseI18n }
+export { mockUseI18n }

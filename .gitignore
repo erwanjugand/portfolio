@@ -3,6 +3,7 @@ node_modules
 .nuxt
 .nitro
 .cache
+.data
 .output
 .wrangler
 .env
@@ -11,3 +12,4 @@ dist
 playwright-report
 test-results
 public/_ca
+.claude

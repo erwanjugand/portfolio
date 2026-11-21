@@ -1,4 +1,4 @@
-export interface Environment {
+interface Environment {
   title: string
   icon: Icon
 }

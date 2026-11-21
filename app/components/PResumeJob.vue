@@ -10,10 +10,10 @@ const { title, description, contract, time } = useJob(() => job)
 <template>
   <div class="cv-job">
     <div class="cv-job-header">
-      <h4 class="cv-job-title" v-text="title" />
-      <p class="cv-job-contract" v-text="contract" />
-      <p class="cv-job-time" v-text="time" />
+      <p class="cv-job-title" v-text="title" />
+      <span class="cv-job-contract" v-text="contract" />
     </div>
+    <p class="cv-job-time" v-text="time" />
     <p v-if="!compact" class="cv-job-description" v-text="description" />
   </div>
 </template>
@@ -22,35 +22,39 @@ const { title, description, contract, time } = useJob(() => job)
 .cv-job {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-inline: 8px;
+  gap: 4px;
 
   &-header {
-    display: grid;
-    grid: 'a b' 'c c';
-    grid-template-columns: auto 1fr;
-    gap: 0 0.3em;
-    font-size: 0.875em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    align-items: center;
   }
 
   &-title {
-    grid-area: a;
+    font-size: 0.75em;
     font-weight: var(--font-weight-bold);
   }
 
   &-contract {
-    grid-area: b;
-    color: var(--c-gray-75);
+    padding: 2px 12px;
+    font-size: 0.625em;
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-accent);
+    text-transform: uppercase;
+    background-color: color-mix(in srgb, var(--c-accent) 12%, var(--c-surface));
+    clip-path: var(--chevron);
   }
 
   &-time {
-    grid-area: c;
-    color: var(--c-gray-50);
+    font-size: 0.75em;
+    font-weight: var(--font-weight-medium);
+    color: var(--c-ink-3);
   }
 
   &-description {
-    font-size: 0.8125em;
-    color: var(--c-gray-75);
+    font-size: 0.75em;
+    color: var(--c-ink-2);
   }
 }
 </style>

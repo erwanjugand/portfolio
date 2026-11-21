@@ -1,214 +1,230 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 const { currentModeIcon, currentModeName, toggleMode } = useTheme()
-const { currentLocale, locales } = useLocale()
+const { locale: currentLocale, locales } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 
-// Menu
-const switchMenu = useTemplateRef('switch-menu')
-const closeMenu = () => switchMenu.value?.hidePopover()
+const themeTurns = ref(0)
+const toggleTheme = () => {
+  toggleMode()
+  themeTurns.value++
+}
 </script>
 
 <template>
   <header class="header">
     <div class="container header-content">
-      <NuxtLink v-ripple :to="localePath('index')" class="header-home" :title="$t('PHeader.homeAction')">
+      <NuxtLink :to="localePath('index')" class="header-home" :title="$t('PHeader.homeAction')">
         <PLogo class="header-logo" />
-        Erwan Jugand
+        <span class="header-name">Erwan Jugand</span>
       </NuxtLink>
 
-      <button
-        v-ripple
-        class="header-switch-cta"
-        popovertarget="switch-menu"
-        :aria-label="$t('PHeader.langActionLabel', { lang: currentLocale?.name })"
-        :title="$t('PHeader.langAction')"
-      >
-        <img class="header-switch-cta-image" :src="`/img/flag-${currentLocale?.code}.svg`" :alt="currentLocale?.name" />
-        <PIcon class="header-switch-cta-icon" type="solid" name="caretDown" />
-      </button>
-
-      <ul id="switch-menu" ref="switch-menu" role="menu" class="header-switch-menu" popover>
-        <li v-for="otherLocale of locales" :key="otherLocale.code" class="header-switch-menu-item">
+      <div class="header-lang">
+        <template v-for="(locale, index) of locales" :key="locale.code">
+          <span v-if="index > 0" class="header-lang-separator" aria-hidden="true">/</span>
           <NuxtLink
-            v-ripple
-            role="menuitem"
-            class="header-switch-menu-link"
-            :to="switchLocalePath(otherLocale.code)"
-            :title="otherLocale.name"
-            @click="closeMenu"
+            class="header-lang-link"
+            :to="switchLocalePath(locale.code)"
+            :lang="locale.language"
+            :hreflang="locale.language"
+            :title="locale.name"
+            :aria-current="locale.code === currentLocale ? 'page' : undefined"
           >
-            <img
-              class="header-switch-menu-image"
-              loading="lazy"
-              :src="`/img/flag-${otherLocale.language}.svg`"
-              :alt="otherLocale.name"
-            />
+            {{ locale.code.toUpperCase() }}
           </NuxtLink>
-        </li>
-      </ul>
+        </template>
+      </div>
 
-      <div class="header-toggle-theme-container">
+      <div class="header-theme-container">
         <ClientOnly>
           <button
-            v-ripple
-            class="header-toggle-theme"
+            class="header-theme"
             :aria-label="$t('PHeader.themeActionLabel', { theme: currentModeName })"
             :title="$t('PHeader.themeAction')"
-            @click="toggleMode()"
+            @click="toggleTheme"
           >
-            <PIcon class="header-toggle-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />
+            <SvgoHexagon class="header-theme-hexagon" :style="{ rotate: `${themeTurns * 60}deg` }" />
+            <PIcon class="header-theme-icon" :type="currentModeIcon.type" :name="currentModeIcon.name" />
           </button>
         </ClientOnly>
       </div>
     </div>
+
+    <span class="header-progress" aria-hidden="true" />
   </header>
 </template>
 
 <style lang="scss">
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  box-shadow:
-    inset 0 -1px 0 0 var(--c-border),
-    0 3px 1px -2px rgb(0 0 0 / 20%),
-    0 2px 2px 0 rgb(0 0 0 / 14%),
-    0 1px 5px 0 rgb(0 0 0 / 12%);
-  backdrop-filter: blur(20px);
+  z-index: 1;
+  background-color: color-mix(in srgb, var(--c-bg) 90%, transparent);
+  border-bottom: 1px solid var(--c-line);
+  backdrop-filter: blur(16px);
+
+  @media (prefers-contrast: more) {
+    background-color: var(--c-bg);
+  }
 
   @media print {
     display: none;
   }
 
-  .dark-mode &,
-  .hacked-mode & {
-    background-color: color-mix(in srgb, var(--c-gray-87) 80%, transparent);
-
-    @media (prefers-contrast: more) {
-      background-color: color-mix(in srgb, var(--c-gray-90) 90%, transparent);
-    }
-  }
-
-  .light-mode & {
-    background-color: rgb(255 255 255 / 80%);
-
-    @media (prefers-contrast: more) {
-      background-color: rgb(255 255 255 / 90%);
-    }
-  }
-
   &-content {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    height: 64px;
+    display: flex;
+    gap: var(--spacing-1);
+    align-items: center;
+    height: calc(var(--header-height) - 1px);
   }
 
   &-home {
     display: flex;
+    gap: var(--spacing-2);
     align-items: center;
-    justify-self: flex-start;
-    padding-inline: 16px;
-    font-size: 1.125em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: font-size var(--transition);
+    min-height: var(--spacing-6);
+    margin-inline-end: auto;
+    font-size: 0.875em;
+    font-weight: var(--font-weight-bold);
 
-    @media #{breakpoints.$small-and-down} {
-      font-size: 0;
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &-name {
+    display: none;
+
+    @media #{breakpoints.$small-and-up} {
+      display: inline;
     }
   }
 
   &-logo {
-    width: 70px;
-    margin-right: 1em;
-    fill: var(--c-primary);
+    width: 60px;
   }
 
-  &-switch-cta {
+  &-lang {
     display: flex;
     align-items: center;
-    padding-inline: 16px;
-    anchor-name: --header-switch-cta;
+    font-size: 0.875em;
 
-    &-icon {
-      width: 10px;
-      margin-left: 8px;
-      fill: var(--c-text);
-      transition: transform var(--transition);
-    }
-
-    &-image {
-      width: 32px;
-      height: 32px;
-    }
-
-    &:has(+ [popover]:popover-open) &-icon {
-      transform: rotate(180deg);
-    }
-  }
-
-  &-switch-menu {
-    position: fixed;
-    position-area: bottom;
-    /* stylelint-disable-next-line plugin/use-baseline */
-    position-anchor: --header-switch-cta;
-    background-color: var(--c-background-3);
-    border-radius: var(--border-radius-small);
-    scale: 0;
-    transition:
-      scale var(--transition) allow-discrete,
-      display var(--transition) allow-discrete,
-      overlay var(--transition) allow-discrete;
-
-    &:popover-open {
-      display: flex;
-      scale: 1;
-
-      @starting-style {
-        scale: 0;
-      }
+    &-separator {
+      color: var(--c-line-2);
     }
 
     &-link {
       display: flex;
-      width: max-content;
-      padding: 8px;
+      align-items: center;
+      justify-content: center;
+      min-width: var(--spacing-5);
+      min-height: var(--spacing-6);
+      font-weight: var(--font-weight-semibold);
+      color: var(--c-ink-3);
+      transition: color var(--transition);
 
-      &.router-link-exact-active {
-        background-color: var(--c-primary);
+      &:hover {
+        color: var(--c-accent-ink);
       }
-    }
 
-    &-item:first-child &-link {
-      border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
-    }
+      &[aria-current] {
+        color: var(--c-ink);
 
-    &-item:last-child &-link {
-      border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
-    }
-
-    &-image {
-      width: 32px;
-      height: 32px;
+        @media (prefers-contrast: more) {
+          text-decoration: underline 2px;
+          text-underline-offset: 4px;
+        }
+      }
     }
   }
 
-  &-toggle-theme {
-    display: flex;
-    align-items: center;
-    padding: 16px;
+  &-theme {
+    display: grid;
+    place-items: center;
+    width: var(--spacing-6);
+    height: var(--spacing-6);
 
     &-container {
-      width: 64px;
+      width: var(--spacing-6);
+      height: var(--spacing-6);
     }
 
-    &-icon.icon {
-      width: 2rem;
-      height: 2rem;
-      fill: var(--c-text);
+    &-hexagon {
+      grid-area: 1 / 1;
+      fill: transparent;
+      stroke: var(--c-line-2);
+      transition:
+        rotate var(--transition),
+        fill var(--transition),
+        stroke var(--transition),
+        stroke-width var(--transition);
+    }
+
+    &-icon {
+      grid-area: 1 / 1;
+      height: var(--spacing-2);
+      fill: currentcolor;
+      transition:
+        scale var(--transition),
+        color var(--transition);
+    }
+
+    &:hover &-hexagon {
+      fill: color-mix(in srgb, var(--c-accent-ink) 12%, transparent);
+      stroke: var(--c-accent-ink);
+      stroke-width: 1.5px;
+    }
+
+    &:hover &-icon {
+      color: var(--c-accent-ink);
+      scale: 1.1;
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    inset: auto 0 -1px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--c-g1), var(--c-g2));
+    transform-origin: 0 50%;
+    scale: 0 1;
+  }
+}
+
+@supports (animation-timeline: scroll()) and (animation-range: 0 96px) {
+  @media (prefers-reduced-motion: no-preference) {
+    .header,
+    .header-progress {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+    }
+
+    .header {
+      animation-range: 0 96px;
+
+      @media (prefers-contrast: no-preference) {
+        animation-name: header-background;
+      }
+    }
+
+    .header-progress {
+      animation-name: header-progress;
+    }
+
+    @keyframes header-background {
+      from {
+        background-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+
+    @keyframes header-progress {
+      to {
+        scale: 1;
+      }
     }
   }
 }

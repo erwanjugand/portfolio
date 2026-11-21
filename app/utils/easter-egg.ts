@@ -1,4 +1,4 @@
-export interface EasterEggStep {
+interface EasterEggStep {
   text: string
   value: number
   duration: number
@@ -6,32 +6,32 @@ export interface EasterEggStep {
 
 export const easterEggSteps = [
   {
-    text: 'Launch mlp.exe',
+    text: 'launch mlp.exe',
     value: 0,
     duration: 500,
   },
   {
-    text: 'Protocol initialization...',
+    text: 'protocol initialization…',
     value: 10,
     duration: 1500,
   },
   {
-    text: 'Recovery of user data...',
+    text: 'recovering user data…',
     value: 50,
     duration: 3500,
   },
   {
-    text: "Sends data to Skynet's servers...",
+    text: "sending data to Skynet's servers…",
     value: 80,
     duration: 5000,
   },
   {
-    text: 'Program completed !',
+    text: 'program completed!',
     value: 100,
     duration: 6000,
   },
   {
-    text: 'Good day ! <3',
+    text: 'good day! <3',
     value: 100,
     duration: 6500,
   },

@@ -2,7 +2,7 @@ import * as fab from '@fortawesome/free-brands-svg-icons'
 import * as fal from '@fortawesome/pro-light-svg-icons'
 import * as far from '@fortawesome/pro-regular-svg-icons'
 import * as fas from '@fortawesome/pro-solid-svg-icons'
-import type { IconDefinition, IconPathData, IconStyle } from '@fortawesome/fontawesome-common-types'
+import type { IconDefinition, IconStyle } from '@fortawesome/fontawesome-common-types'
 import type { MaybeRefOrGetter } from 'vue'
 
 export type IconType = IconStyle | 'custom'
@@ -12,15 +12,15 @@ export interface Icon {
   name: string
 }
 
-export interface IconData {
-  path: IconPathData
+interface IconData {
+  path: string
   viewbox: `0 0 ${number} ${number}`
 }
 
-export type Icons = Partial<Record<IconType, Record<string, IconData>>>
+type Icons = Partial<Record<IconType, Record<string, IconData>>>
 const formatIcon = (faIcon: IconDefinition): IconData => {
   return {
-    path: faIcon.icon[4],
+    path: [faIcon.icon[4]].flat().join(' '),
     viewbox: `0 0 ${faIcon.icon[0]} ${faIcon.icon[1]}`,
   }
 }
@@ -45,11 +45,10 @@ export const icons: Icons = {
     docker: formatIcon(fab.faDocker),
     ubuntu: formatIcon(fab.faUbuntu),
     gitAlt: formatIcon(fab.faGitAlt),
-    github: formatIcon(fab.faGithub),
-    linkedin: formatIcon(fab.faLinkedin),
   },
 
   light: {
+    arrowDown: formatIcon(fal.faArrowDown),
     brightness: formatIcon(fal.faBrightness),
     display: formatIcon(fal.faDisplay),
     envelope: formatIcon(fal.faEnvelope),
@@ -60,7 +59,6 @@ export const icons: Icons = {
     link: formatIcon(fal.faLink),
     mapLocationDot: formatIcon(fal.faMapLocationDot),
     moon: formatIcon(fal.faMoon),
-    star: formatIcon(fal.faStar),
     paintbrushPencil: formatIcon(fal.faPaintbrushPencil),
     listCheck: formatIcon(fal.faListCheck),
     users: formatIcon(fal.faUsers),
@@ -71,9 +69,7 @@ export const icons: Icons = {
   },
 
   solid: {
-    caretDown: formatIcon(fas.faCaretDown),
     rectangleTerminal: formatIcon(fas.faRectangleTerminal),
-    star: formatIcon(fas.faStar),
   },
 }
 

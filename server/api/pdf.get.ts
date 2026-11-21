@@ -11,13 +11,11 @@ interface PdfResponse {
   responseId?: string
 }
 
-// Resume page paths per locale, see defineI18nRoute in app/pages/resume.vue
 const RESUME_PATHS: string[] = ['/cv', '/en/resume'] satisfies RouteNamedMap['resume___fr' | 'resume___en']['path'][]
 
 export default defineEventHandler((event) => {
   const config = useRuntimeConfig()
   const query = getQuery(event)
-  // Static hosting serves /cv/ without redirect, so route.path may carry a trailing slash
   const path = typeof query.path === 'string' ? query.path.replace(/\/$/, '') : undefined
   const fileName = query.fileName
 

@@ -5,25 +5,23 @@ defineProps<{
 </script>
 
 <template>
-  <section :class="{ section: true, 'dark-mode': banner }">
+  <section class="section" :class="{ 'section-banner inverted': banner }">
     <slot />
   </section>
 </template>
 
 <style lang="scss">
-section.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-block: 64px;
-  transition: padding var(--transition);
+.section {
+  --section-padding: var(--spacing-8);
 
-  @media #{breakpoints.$large-and-up} {
-    padding-block: 96px;
+  padding-block: var(--section-padding);
+
+  @media #{breakpoints.$medium-and-up} {
+    --section-padding: var(--spacing-16);
   }
 
-  &.dark-mode {
-    background-color: var(--c-background-alt);
+  &-banner {
+    background-color: var(--c-surface);
   }
 }
 </style>

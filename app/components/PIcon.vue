@@ -11,9 +11,8 @@ const icon = useIcon(
 </script>
 
 <template>
-  <svg v-if="icon" class="icon" role="img" :viewBox="icon.viewbox" aria-hidden="true">
-    <path v-if="typeof icon.path === 'string'" :d="icon.path" />
-    <path v-for="(path, index) of icon.path" v-else :key="index" :d="path" />
+  <svg v-if="icon" class="icon" :viewBox="icon.viewbox" aria-hidden="true">
+    <path :d="icon.path" />
   </svg>
 </template>
 

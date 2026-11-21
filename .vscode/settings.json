@@ -34,5 +34,5 @@
     "activityBarTop.activeBorder": "#15202b",
     "statusBar.inactiveBackground": "#42b883"
   },
-  "i18n-ally.localesPaths": ["locales"]
+  "i18n-ally.localesPaths": ["i18n/locales"]
 }

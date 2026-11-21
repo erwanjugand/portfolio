@@ -1,80 +1,74 @@
 <script setup lang="ts">
 const { job } = defineProps<{
   job: Job
-  single?: boolean
+  marker?: boolean
 }>()
 
 const { title, description, contract, time } = useJob(() => job)
 </script>
 
 <template>
-  <div class="job scroll-animation-fade">
+  <article class="job reveal">
     <div class="job-header">
-      <h4 :class="['job-title', { 'job-title-anchor': !single }]" v-text="title" />
-      <p class="job-contract" v-text="contract" />
-      <p class="job-time" v-text="time" />
+      <h4 class="job-title">
+        <span v-if="marker" class="job-marker" aria-hidden="true" />
+        {{ title }}
+      </h4>
+      <span class="job-contract" v-text="contract" />
     </div>
+    <p class="job-time" v-text="time" />
     <p class="job-description" v-text="description" />
-  </div>
+  </article>
 </template>
 
 <style lang="scss">
 .job {
-  --scroll-animation-y: 48px;
-
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--spacing-1);
 
   &-header {
-    display: grid;
-    grid: 'a b' 'c c';
-    grid-template-columns: auto 1fr;
-    gap: 4px 0.3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-1) 12px;
     align-items: center;
   }
 
   &-title {
-    grid-area: a;
-    padding-left: 48px;
+    position: relative;
+    font-size: 1.125em;
     font-weight: var(--font-weight-bold);
-    color: var(--c-primary);
+  }
 
-    &-anchor {
-      position: relative;
-
-      &::before {
-        position: absolute;
-        top: calc(50% - 6px);
-        left: calc(((12px * sqrt(3)) + 8px) / 2);
-        box-sizing: border-box;
-        width: 12px;
-        height: 12px;
-        content: '';
-        background-color: var(--c-background-bg);
-        border: 3px solid transparent;
-        box-shadow: 0 0 0 3px var(--c-primary);
-        transform: rotate(45deg);
-      }
-    }
+  &-marker {
+    position: absolute;
+    top: 0.5lh;
+    left: calc(var(--timeline-x) - var(--spacing-6) - var(--spacing-1) / 2);
+    width: var(--spacing-1);
+    aspect-ratio: 0.866;
+    background-color: var(--c-line-2);
+    clip-path: var(--hexagon);
+    translate: 0 -50%;
   }
 
   &-contract {
-    grid-area: b;
-    font-weight: var(--font-weight-light);
-    color: var(--c-primary);
+    padding: 4px 12px;
+    font-size: 0.75em;
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-accent-ink);
+    text-transform: uppercase;
+    background-color: color-mix(in srgb, var(--c-accent) 12%, transparent);
+    clip-path: var(--chevron);
   }
 
   &-time {
-    grid-area: c;
-    padding-left: 48px;
-    font-size: 0.875rem;
-    color: var(--c-text-secondary-3);
+    font-size: 0.875em;
+    font-weight: var(--font-weight-medium);
+    color: var(--c-ink-3);
   }
 
   &-description {
-    padding-left: 48px;
-    white-space: pre-line;
+    color: var(--c-ink-2);
   }
 }
 </style>

@@ -1,6 +1,4 @@
-useDateFormatDuration:
-  months: 1 month | {n} months
-  years: 1 year | {n} years
+jobTitle: Lead Front-End developer
 
 useTheme:
   darkMode: Dark mode
@@ -8,18 +6,20 @@ useTheme:
   lightMode: Light mode
   systemMode: System mode
 
+layouts:
+  pdf:
+    title: Resume
+    download: Download resume
+
 pages:
   home:
-    title: Home
     description: Discover my portfolio and have fun testing it :)
-  pdf:
-    download: Download resume
   resume:
     title: Resume
     description: Find all my information in resume form
     personalInformations:
       title: Personal info
-      car: Driver's license
+      car: Driver’s license
     environments:
       title: Environment
     hobbies:
@@ -42,53 +42,62 @@ pages:
     cta: Back to homepage
     4xx:
       title: Page not found!
-      text: Oops, this page doesn't exist
+      text: Oops, this page doesn’t exist
     5xx:
       title: Something went wrong!
-      text: I'll fix this as soon as possible :)
+      text: I’ll fix this as soon as possible :)
 
 PAbout:
   profileAlt: Profile picture of Erwan Jugand
-  text1: Hi, my name is {name} and I'm a passionate {job} who cares about coding best practices.
+  text1: Hi, my name is {name} and I’m a passionate {job} who cares about coding best practices.
   text1Job: Front-End developer
   text2: My studies at {school} and my experience at {enterprise} helped me hone my skills in design, project management, UX/UI and team management.
   text3: Front-End development is a constantly evolving field, offering more and more tools to build ever better-performing websites.
-  text4: "I'm also passionate about IT and new technologies, and above all curious \U0001F609!"
+  text4: "I’m also passionate about IT and new technologies, and above all curious \U0001F609!"
   title: About
 
+PEasterEgg:
+  cancel: Cancel
+  process: Process
+  progress: Progress
+
 PFooter:
-  copyright: 'Copyright© {year}: All rights reserved.'
+  links: Links
+  copyright: '© {year} · All rights reserved'
   commitTitle: 'View last deployed commit'
 
 PIntroduction:
   action: View resume
   scroll: Scroll down
-  titleAlt: Lead Front-End developer
 
 PHeader:
   homeAction: Back to homepage
-  langAction: Change site language
-  langActionLabel: "@:PHeader.langAction{','} current language: {lang}"
   themeAction: Change site theme
   themeActionLabel: "@:PHeader.themeAction{','} current theme: {theme}"
 
 PEnvironments:
   title: Environment
 
+PExperience:
+  since: since {year}
+
 PExperiences:
   title: Experience
 
+PSkillLevel:
+  label: 'Skill level: {current} out of {max}'
+
 PSkills:
   title: Skills
-  level: 'Skill level: {current} out of {max}'
 
 PMoreInformation:
+  label: '{title}: {content}'
   address: Address
   email: Email
   phone: Phone
   title: More information
 
-PJob:
+useJob:
   contract:
     apprenticeship: Apprenticeship
     cdi: Permanent contract
