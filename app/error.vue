@@ -15,24 +15,24 @@ const errorStatus = computed(() => {
   return is4xxError ? '4xx' : '5xx'
 })
 
-useHead({
-  title: t(`pages.error.${errorStatus.value}.title`),
-})
+const i18nHead = useLocaleHead()
+useHead(() => ({
+  title: `Erwan Jugand - ${t(`pages.error.${errorStatus.value}.title`)}`,
+  htmlAttrs: i18nHead.value.htmlAttrs,
+}))
 
 const handleError = () => clearError({ redirect: localePath('index') })
 </script>
 
 <template>
-  <main class="error">
-    <PCard class="error-content">
-      <template #header>
-        <h1 v-text="$t(`pages.error.${errorStatus}.title`)" />
-      </template>
-      <p v-text="$t(`pages.error.${errorStatus}.text`)" />
-      <PButton class="error-cta" @click="handleError">
+  <main class="error dotted">
+    <div class="error-content">
+      <h1 class="error-title" v-text="$t(`pages.error.${errorStatus}.title`)" />
+      <p class="error-text" v-text="$t(`pages.error.${errorStatus}.text`)" />
+      <PButton @click="handleError">
         {{ $t('pages.error.cta') }}
       </PButton>
-    </PCard>
+    </div>
   </main>
 </template>
 
@@ -40,21 +40,29 @@ const handleError = () => clearError({ redirect: localePath('index') })
 .error {
   display: grid;
   place-items: center;
-  height: 100vh;
-  padding: 32px;
-  background: url('/img/bee.svg') center center;
+  min-height: 100svh;
+  padding: var(--spacing-4);
 
   &-content {
-    background-color: transparent;
-    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: center;
+    max-width: 560px;
+    text-align: center;
   }
 
-  &-cta {
-    margin: 16px auto 0;
+  &-title {
+    font-size: 2.25em;
+    font-weight: var(--font-weight-bold);
 
     @media #{breakpoints.$medium-and-up} {
-      margin: 24px auto 0;
+      font-size: 3em;
     }
+  }
+
+  &-text {
+    color: var(--c-ink-2);
   }
 }
 </style>

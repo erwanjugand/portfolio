@@ -1,55 +1,103 @@
+<script setup lang="ts">
+import InformationFrame from '~/assets/images/information-frame.svg'
+</script>
+
 <template>
   <PSection id="more-information" banner>
-    <div class="container row">
-      <PH2 class="xs12">
+    <div class="container">
+      <PHeading>
         {{ $t('PMoreInformation.title') }}
-      </PH2>
-
-      <div
-        v-for="information of informations"
-        :key="information.title"
-        class="information xs12 m6 l4 scroll-animation-fade"
-      >
-        <PHexagon turned>
-          <PIcon type="light" :name="information.icon" class="information-icon" />
-        </PHexagon>
-        <a
-          v-ripple
-          :href="information.cta"
-          :rel="information.externalLink ? 'noopener' : undefined"
-          :target="information.externalLink ? '_blank' : undefined"
-          class="information-link"
-          :aria-label="`${$t(`PMoreInformation.${information.title}`)} : ${information.content}`"
-        >
-          <span v-text="$t(`PMoreInformation.${information.title}`)" />
-          <span v-text="information.content" />
-        </a>
-      </div>
+      </PHeading>
+      <ul class="informations">
+        <li v-for="information of informations" :key="information.title" class="reveal">
+          <a
+            :href="information.cta"
+            :target="information.externalLink ? '_blank' : undefined"
+            class="information"
+            :aria-label="
+              $t('PMoreInformation.label', {
+                title: $t(`PMoreInformation.${information.title}`),
+                content: information.content,
+              })
+            "
+          >
+            <span class="information-hexagon">
+              <InformationFrame class="information-frame" />
+              <PIcon type="light" :name="information.icon" class="information-icon" />
+            </span>
+            <span class="information-text">
+              <span class="information-title" v-text="$t(`PMoreInformation.${information.title}`)" />
+              <span class="information-content" v-text="information.content" />
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
   </PSection>
 </template>
 
 <style lang="scss">
-.information {
-  --scroll-animation-y: 48px;
+.informations {
+  display: grid;
+  gap: var(--spacing-6);
 
+  @media #{breakpoints.$large-and-up} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.information {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-3);
   align-items: center;
+  color: var(--c-ink);
+  text-align: center;
 
-  &-icon {
-    height: 4em;
+  &-hexagon {
+    display: grid;
+    place-items: center;
+    width: 96px;
   }
 
-  &-link {
+  &-frame,
+  &-icon {
+    grid-area: 1 / 1;
+  }
+
+  &-frame {
+    width: 100%;
+    color: var(--c-accent-ink);
+  }
+
+  &-icon {
+    height: 2em;
+    fill: var(--c-accent-ink);
+  }
+
+  &-text {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    padding: 8px 16px;
-    margin-top: 24px;
-    text-decoration: none;
-    border-radius: var(--border-radius-regular);
+    gap: var(--spacing-1);
+  }
+
+  &-title {
+    font-size: 0.75em;
+    font-weight: var(--font-weight-semibold);
+    color: var(--c-ink-2);
+    text-transform: uppercase;
+  }
+
+  &-content {
+    font-size: 1.125em;
+    font-weight: var(--font-weight-semibold);
+    overflow-wrap: anywhere;
+    background: linear-gradient(90deg, var(--c-g1), var(--c-g2)) 0 100% / 0 2px no-repeat;
+    transition: background-size var(--transition);
+  }
+
+  &:hover &-content {
+    background-size: 100% 2px;
   }
 }
 </style>

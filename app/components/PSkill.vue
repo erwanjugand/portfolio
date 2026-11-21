@@ -5,63 +5,69 @@ defineProps<{
 </script>
 
 <template>
-  <PHexagon tag="li" tabindex="0" class="skill">
+  <li class="skill reveal">
+    <SvgoHexagonCell class="skill-background" />
     <span class="skill-name" v-text="skill.name" />
-    <div class="skill-score" role="img" :aria-label="$t('PSkills.level', { current: skill.level, max: MAX_LEVEL })">
-      <PIcon v-for="n of MAX_LEVEL" :key="n" :type="n > skill.level ? 'light' : 'solid'" name="star" />
-    </div>
-  </PHexagon>
+    <PSkillLevel :level="skill.level" />
+  </li>
 </template>
 
 <style lang="scss">
-@mixin show-content {
-  outline: none;
-  opacity: 1;
-  transform: translateY(-2.5rem);
-}
-
 .skill {
-  font-size: 1.5em;
-  cursor: pointer;
+  --skill-cell: color-mix(in srgb, var(--c-surface), var(--c-line));
+  --skill-row: round(down, var(--skills-index) / var(--skills-columns), 1);
 
-  &-name {
-    transform: translateY(0);
-    transition: transform var(--transition);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  grid-column: calc(2 * mod(var(--skills-index), var(--skills-columns)) + mod(var(--skill-row), 2) + 1) / span 2;
+  gap: var(--spacing-1);
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--skills-size) * 1.155);
+  margin: var(--skills-gap);
+  clip-path: var(--hexagon);
 
-    @media #{breakpoints.$touchscreen} {
-      transform: translateY(-2.5rem);
-    }
-
-    .skill:hover &,
-    .skill:focus & {
-      transform: translateY(-2.5rem);
-    }
+  @media (prefers-contrast: more) {
+    --skill-cell: var(--c-surface);
   }
 
-  &-score {
+  &-background {
     position: absolute;
-    top: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    fill: var(--skill-cell);
+    stroke: var(--c-line-2);
+    transition:
+      fill var(--transition),
+      stroke var(--transition),
+      stroke-width var(--transition);
+  }
+
+  &:hover &-background {
+    fill: color-mix(in srgb, var(--c-accent-ink) 12%, var(--skill-cell));
+    stroke: var(--c-accent-ink);
+    stroke-width: 1.5px;
+  }
+
+  &-name {
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) and (animation-range: entry) {
+    .skill {
+      animation-name: skill-zoom;
+    }
+  }
+}
+
+@keyframes skill-zoom {
+  from {
     opacity: 0;
-    transform: translateY(0);
-    transition: var(--transition);
-
-    @media #{breakpoints.$touchscreen} {
-      @include show-content;
-    }
-
-    .skill:hover &,
-    .skill:focus & {
-      @include show-content;
-    }
-
-    .icon {
-      width: 50%;
-      height: 1.75rem;
-      margin-top: 0.75rem;
-    }
+    scale: 0.7;
   }
 }
 </style>

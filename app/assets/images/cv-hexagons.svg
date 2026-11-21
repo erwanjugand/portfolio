@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 300 260">
+  <g style="fill:none;stroke:var(--c-line-2)">
+    <path d="m150 10 52 30v60l-52 30-52-30V40zm104 0 52 30v60l-52 30-52-30V40z"/>
+    <path d="m202 100 52 30v60l-52 30-52-30v-60z"/>
+    <path d="m98 100 52 30v60l-52 30-52-30v-60z" style="stroke-dasharray:4 6"/>
+    <path d="m306 100 52 30v60l-52 30-52-30v-60z"/>
+  </g>
+</svg>

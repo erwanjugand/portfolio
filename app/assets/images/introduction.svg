@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="-300 -300 600 600">
+  <defs>
+    <linearGradient id="introduction-gradient" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--c-g1)"/>
+      <stop offset="1" style="stop-color:var(--c-g2)"/>
+    </linearGradient>
+  </defs>
+  <g class="introduction-petal" style="--dx:62px;--dy:0px">
+    <path d="m138.4-74 64.09 37v74L138.4 74 74.31 37v-74z" style="fill:url(#introduction-gradient)"/>
+  </g>
+  <g class="introduction-petal" style="--dx:31px;--dy:-54px">
+    <path d="m69.2-193.86 64.09 37v74l-64.09 37-64.09-37v-74z" style="fill:none;stroke:var(--c-line-2);vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:-31px;--dy:-54px">
+    <path d="m-69.2-193.86 64.09 37v74l-64.09 37-64.09-37v-74z" style="fill:color-mix(in srgb,var(--c-accent) 8%,transparent);stroke:var(--c-accent);stroke-width:1.5px;vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:-62px;--dy:0px">
+    <path d="m-138.4-74 64.09 37v74l-64.09 37-64.09-37v-74z" style="fill:none;stroke:var(--c-line-2);stroke-dasharray:4 6;vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:-31px;--dy:54px">
+    <path d="m-69.2 45.86 64.09 37v74l-64.09 37-64.09-37v-74z" style="fill:none;stroke:var(--c-line-2);vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:31px;--dy:54px">
+    <path d="m69.2 45.86 64.09 37v74l-64.09 37-64.09-37v-74z" style="fill:var(--c-surface);stroke:var(--c-line-2);vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:70px;--dy:-60px">
+    <path d="m222-226 31.18 18v36L222-154l-31.18-18v-36z" style="fill:none;stroke:var(--c-line-2);vector-effect:non-scaling-stroke"/>
+  </g>
+  <g class="introduction-petal" style="--dx:-70px;--dy:60px">
+    <path d="m-222 154 31.18 18v36L-222 226l-31.18-18v-36z" style="fill:none;stroke:var(--c-line-2);vector-effect:non-scaling-stroke"/>
+  </g>
+  <path d="m0-74 64.09 37v74L0 74l-64.09-37v-74z" style="fill:var(--c-surface);stroke:url(#introduction-gradient);stroke-width:2;vector-effect:non-scaling-stroke"/>
+</svg>

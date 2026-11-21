@@ -20,9 +20,8 @@ test.describe('Header', () => {
     await expect(html).toHaveClass(/light-mode/)
   })
 
-  test('should switch the language, click on button', async ({ page }) => {
-    await page.getByRole('button', { name: 'Change site language, current language: English' }).click()
-    await page.getByRole('menuitem', { name: 'Français' }).click()
+  test('should switch the language, click on link', async ({ page }) => {
+    await page.getByRole('link', { name: 'FR', exact: true }).click()
 
     await expect(page.locator('html')).toHaveAttribute('lang', 'fr')
     await expect(page.getByRole('link', { name: 'Afficher le CV' })).toHaveAttribute('href', '/cv')

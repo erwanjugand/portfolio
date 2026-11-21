@@ -1,104 +1,80 @@
 <template>
-  <PSection id="skills" banner class="row">
+  <PSection id="skills" class="skills-section" :style="{ '--skills-count': skills.length }" banner>
     <div class="container">
-      <PH2 class="xs12">
+      <PHeading>
         {{ $t('PSkills.title') }}
-      </PH2>
-    </div>
-    <div class="skills-container">
-      <ul class="skills-wrapper">
-        <PSkill v-for="skill of skills" :key="skill.name" :skill class="scroll-animation-fade" />
+      </PHeading>
+      <ul class="skills">
+        <PSkill v-for="(skill, index) of skills" :key="skill.name" :skill :style="{ '--skills-index': index }" />
       </ul>
     </div>
   </PSection>
 </template>
 
 <style lang="scss">
+@use 'sass:list';
 @use 'sass:math';
 
-$hexagon-height: 200px;
-$hexagon-border-out: 3px;
-$hexagon-width: calc(($hexagon-height * 100 / sqrt(3)) / 100);
-$hexagon-space-to-remove: math.ceil(math.div($hexagon-border-out, math.sin(60deg)));
+$skills-gap: 4px;
+$skills-size-small: 116px;
+$skills-size: 160px;
 
-.skills-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  overflow: clip;
-  background: url('/img/bee.svg') center top;
-  background-position-x: calc(50% - #{math.div($hexagon-width, 4) + math.div($hexagon-space-to-remove, 2)});
+// Background
+$skills-max-rows: 16;
+$skills-row-images: ();
+$skills-row-positions: ();
+$skills-row-sizes: ();
+$skills-row-blends: ();
+
+@for $row from 0 to $skills-max-rows {
+  $index: $row + 1;
+  $shift: $row % 2 * 0.5;
+  $hidden: clamp(0px, (#{$index} - var(--skills-rows)) * 10000px, 10000px);
+  $x: calc(50% + var(--skills-offset) + #{$shift} * var(--skills-step));
+  $y: calc(var(--section-padding) - var(--skills-gap) + #{$row} * var(--skills-row) + #{$hidden});
+  $skills-row-images: list.append($skills-row-images, url('~/assets/images/skills-hexagon.svg'), $separator: comma);
+  $skills-row-positions: list.append($skills-row-positions, left $x bottom $y, $separator: comma);
+  $skills-row-sizes: list.append($skills-row-sizes, var(--skills-step) var(--skills-tile-height), $separator: comma);
+  $skills-row-blends: list.append($skills-row-blends, normal, $separator: comma);
+}
+
+.skills-section {
+  --skills-size: #{$skills-size-small};
+  --skills-gap: #{$skills-gap};
+  --skills-step: calc(var(--skills-size) + 2 * var(--skills-gap));
+  --skills-tile-height: calc(var(--skills-size) * 1.155 + 2 * var(--skills-gap));
+  --skills-columns: 1;
+  --skills-row: calc(var(--skills-step) * 0.866);
+  --skills-rows: round(up, var(--skills-count) / var(--skills-columns), 1);
+  --skills-width: calc(var(--skills-columns) * var(--skills-step) + var(--skills-step) / 2);
+  --skills-offset: calc(var(--skills-step) * (mod(var(--skills-rows) - 1, 2) - var(--skills-columns) + 0.5) / 2);
+
+  background-image: linear-gradient(var(--c-line-2) 0 0), $skills-row-images;
+  background-repeat: repeat-x;
+  background-position:
+    0 0,
+    $skills-row-positions;
+  background-size: auto, $skills-row-sizes;
+  background-blend-mode: darken, $skills-row-blends;
 
   @media #{breakpoints.$medium-and-up} {
-    background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
+    --skills-size: #{$skills-size};
   }
 
-  @media #{breakpoints.$large-and-up} {
-    background-position-x: calc(50% + #{math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2)});
-  }
-
-  @media #{breakpoints.$extra-large} {
-    background-position-x: calc(50% - #{$hexagon-width + math.div($hexagon-space-to-remove, 2)});
+  @each $columns, $size in (2: $skills-size-small, 3: $skills-size, 4: $skills-size, 6: $skills-size) {
+    @media (width >= #{math.ceil(math.div(100 * (($columns + 0.5) * ($size + 2 * $skills-gap) + 32px), 95))}) {
+      --skills-columns: #{$columns};
+    }
   }
 }
 
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: math.div($hexagon-height, 2) + math.div($hexagon-border-out, 2);
-
-  > * {
-    $margin-top: 0;
-    $margin-right: $hexagon-width * 1.5 - math.div($hexagon-space-to-remove, 2);
-    $margin-bottom: math.div(-$hexagon-height, 2) - math.div($hexagon-border-out, 2);
-    $margin-left: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
-
-    margin: $margin-top $margin-right $margin-bottom $margin-left;
-  }
-
-  @media #{breakpoints.$small-and-down} {
-    width: $hexagon-width * 3.5 - $hexagon-space-to-remove;
-
-    > *:nth-child(even) {
-      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
-      margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
-    }
-  }
-
-  @media #{breakpoints.$medium-only} {
-    width: $hexagon-width * 5 - $hexagon-space-to-remove;
-
-    > *:nth-child(3n + 2) {
-      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
-    }
-
-    > *:nth-child(3n + 3) {
-      margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
-    }
-  }
-
-  @media #{breakpoints.$large-only} {
-    width: $hexagon-width * 8 - $hexagon-space-to-remove * 3;
-
-    > *:nth-child(5n + 3) {
-      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
-    }
-
-    > *:nth-child(5n + 4) {
-      margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
-    }
-  }
-
-  @media #{breakpoints.$extra-large} {
-    width: $hexagon-width * 11 - $hexagon-space-to-remove * 3;
-
-    > *:nth-child(7n + 4) {
-      margin-right: math.div($hexagon-width, 2) - math.div($hexagon-space-to-remove, 2);
-    }
-
-    > *:nth-child(7n + 5) {
-      margin-left: $hexagon-width * 2 - $hexagon-space-to-remove;
-    }
-  }
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(var(--skills-step) / 2));
+  grid-auto-rows: var(--skills-row);
+  width: var(--skills-width);
+  padding-bottom: calc(var(--skills-size) * 1.155 + var(--skills-gap) - var(--skills-row));
+  margin-inline: calc((100% - var(--skills-width)) / 2);
+  margin-top: calc(-1 * var(--skills-gap));
 }
 </style>

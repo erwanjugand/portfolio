@@ -10,7 +10,7 @@ const modeIcons: ModeIcons = {
   light: { type: 'light', name: 'brightness' },
   dark: { type: 'light', name: 'moon' },
   hacked: { type: 'custom', name: 'easterEgg' },
-} as const
+}
 
 export default () => {
   const currentMode = useColorMode()

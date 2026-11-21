@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { environments } from '../../app/utils/environments'
 import { experiences } from '../../app/utils/experiences'
 import { informations } from '../../app/utils/informations'
-import { skills } from '../../app/utils/skills'
+import { MAX_LEVEL, skills } from '../../app/utils/skills'
 
 test.describe('Home page', () => {
   test.beforeEach(async ({ page }) => {
@@ -19,7 +19,7 @@ test.describe('Home page', () => {
     const section = page.locator('section#introduction')
 
     await expect(section.getByRole('link', { name: 'View resume' })).toHaveAttribute('href', '/en/resume')
-    await expect(section.getByRole('button', { name: 'Scroll down' })).toBeVisible()
+    await expect(section.getByRole('link', { name: 'Scroll down' })).toHaveAttribute('href', '#about')
   })
 
   test('should have a about section', async ({ page }) => {
@@ -39,8 +39,10 @@ test.describe('Home page', () => {
     for (const [index, skill] of skills.entries()) {
       const skillItem = skillItems.nth(index)
 
-      await expect(skillItem).toHaveAttribute('tabindex', '0')
       await expect(skillItem).toHaveText(skill.name)
+      await expect(
+        skillItem.getByRole('img', { name: `Skill level: ${skill.level} out of ${MAX_LEVEL}` }),
+      ).toBeVisible()
     }
   })
 
@@ -63,29 +65,23 @@ test.describe('Home page', () => {
     const emailCta = informations.find((information) => information.title === 'email')?.cta ?? ''
 
     await expect(section.getByRole('heading', { level: 2, name: 'More information' })).toBeVisible()
-    await expect(section.getByRole('link', { name: 'Phone : 06 18 07 30 23' })).toHaveAttribute('href', phoneCta)
-    await expect(section.getByRole('link', { name: 'Address : 35000 Rennes, France' })).toHaveAttribute(
+    await expect(section.getByRole('link', { name: 'Phone: 06 18 07 30 23' })).toHaveAttribute('href', phoneCta)
+    await expect(section.getByRole('link', { name: 'Address: 35000 Rennes, France' })).toHaveAttribute(
       'href',
       addressCta,
     )
-    await expect(section.getByRole('link', { name: 'Email : erwan.jugand@gmail.com' })).toHaveAttribute(
-      'href',
-      emailCta,
-    )
+    await expect(section.getByRole('link', { name: 'Email: erwan.jugand@gmail.com' })).toHaveAttribute('href', emailCta)
   })
 
   test('should have a environments section', async ({ page }) => {
     const section = page.locator('section#environments')
-    const environmentItems = section.getByRole('figure')
+    const environmentItems = section.getByRole('listitem')
 
     await expect(section.getByRole('heading', { level: 2, name: 'Environment' })).toBeVisible()
     await expect(environmentItems).toHaveCount(environments.length)
 
     for (const [index, environment] of environments.entries()) {
-      const environmentItem = environmentItems.nth(index)
-
-      await expect(environmentItem).toHaveAttribute('tabindex', '0')
-      await expect(environmentItem).toHaveText(environment.title)
+      await expect(environmentItems.nth(index)).toHaveText(environment.title)
     }
   })
 })
