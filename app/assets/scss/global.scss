@@ -5,7 +5,9 @@
 }
 
 :root,
-.light-mode {
+.light-mode,
+.dark-mode,
+.light-mode .inverted {
   --c-surface: light-dark(#fff, #12141d);
   --c-ink: light-dark(#111322, #eceef6);
   --c-ink-2: light-dark(#4a4f66, #aeb3c7);
@@ -126,7 +128,8 @@ h4 {
   }
 
   .light-mode,
-  .dark-mode {
+  .dark-mode,
+  .light-mode .inverted {
     --c-accent-ink: light-dark(#3a1fcc, #ad9fff);
   }
 }
