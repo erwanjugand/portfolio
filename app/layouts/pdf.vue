@@ -77,4 +77,10 @@ const download = async () => {
     }
   }
 }
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .pdf-toolbar {
+    animation: reveal 0.9s var(--ease) 0.15s backwards;
+  }
+}
 </style>
