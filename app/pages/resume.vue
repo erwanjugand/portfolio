@@ -382,4 +382,10 @@ defineI18nRoute({
     break-inside: avoid;
   }
 }
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .cv {
+    animation: reveal 0.9s var(--ease) 0.3s backwards;
+  }
+}
 </style>
