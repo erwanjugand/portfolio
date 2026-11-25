@@ -164,13 +164,23 @@ button {
   --dotted-dot: radial-gradient(color-mix(in srgb, var(--c-line-2) 80%, transparent) 1px, transparent 1px);
   --dotted-x: 50%;
 
-  background:
-    radial-gradient(ellipse 60% 65% at var(--dotted-x) 48%, transparent 5%, var(--c-bg) 72%),
-    var(--dotted-dot) 0 0 / 28px 48px,
-    var(--dotted-dot) 14px 24px / 28px 48px;
+  position: relative;
+  isolation: isolate;
 
-  @media (prefers-contrast: more) {
-    background: none;
+  // Mask the dots instead of overlaying a --c-bg gradient: GPU rendering leaves banding rings on such an overlay
+  &::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: '';
+    background:
+      var(--dotted-dot) 0 0 / 28px 48px,
+      var(--dotted-dot) 14px 24px / 28px 48px;
+    mask: radial-gradient(ellipse 60% 65% at var(--dotted-x) 48%, #000 5%, transparent 72%);
+
+    @media (prefers-contrast: more) {
+      display: none;
+    }
   }
 }
 
