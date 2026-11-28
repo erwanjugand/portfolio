@@ -185,7 +185,7 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) and (animation-range: entry) {
+  @supports (animation-timeline: view()) {
     .reveal {
       animation: reveal linear backwards;
       animation-timeline: view();
