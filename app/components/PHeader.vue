@@ -193,7 +193,7 @@ const toggleTheme = () => {
   }
 }
 
-@supports (animation-timeline: scroll()) and (animation-range: 0 96px) {
+@supports (animation-timeline: scroll()) {
   @media (prefers-reduced-motion: no-preference) {
     .header,
     .header-progress {

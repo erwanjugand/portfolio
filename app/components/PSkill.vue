@@ -57,7 +57,7 @@ defineProps<{
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: view()) and (animation-range: entry) {
+  @supports (animation-timeline: view()) {
     .skill {
       animation-name: skill-zoom;
     }

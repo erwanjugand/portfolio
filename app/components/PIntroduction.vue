@@ -205,7 +205,7 @@ const scrollToAbout = () => {
     animation-delay: -3s;
   }
 
-  @supports (animation-timeline: scroll()) and (animation-range: 0 720px) {
+  @supports (animation-timeline: scroll()) {
     .introduction-petal {
       animation-name: introduction-petal;
       animation-timing-function: linear;
